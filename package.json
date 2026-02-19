@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "smoke": "node scripts/smoke.mjs && next build"
+    "smoke": "node scripts/smoke.mjs && next build",
+    "seed": "node scripts/seed.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",
