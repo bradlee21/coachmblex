@@ -1,0 +1,45 @@
+{
+  "regionKey": "pelvis-hip",
+  "title": "Pelvis / Hip Landmarks",
+  "blueprint_code": "2.D",
+  "targets": [
+    { "id": "iliac_crest", "title": "Iliac Crest" },
+    { "id": "asis", "title": "ASIS" },
+    { "id": "aiis", "title": "AIIS" },
+    { "id": "psis", "title": "PSIS" },
+    { "id": "ischial_tuberosity", "title": "Ischial Tuberosity" },
+    { "id": "pubic_symphysis", "title": "Pubic Symphysis" },
+    { "id": "acetabulum", "title": "Acetabulum" },
+    { "id": "greater_trochanter", "title": "Greater Trochanter" },
+    { "id": "sacrum", "title": "Sacrum" }
+  ],
+  "labelSets": [
+    {
+      "id": "bony-landmarks",
+      "title": "Bony Landmarks",
+      "labels": [
+        { "id": "l-iliac-crest", "text": "Iliac Crest", "targetId": "iliac_crest" },
+        { "id": "l-asis", "text": "ASIS", "targetId": "asis" },
+        { "id": "l-aiis", "text": "AIIS", "targetId": "aiis" },
+        { "id": "l-psis", "text": "PSIS", "targetId": "psis" },
+        {
+          "id": "l-ischial-tuberosity",
+          "text": "Ischial Tuberosity",
+          "targetId": "ischial_tuberosity"
+        },
+        {
+          "id": "l-pubic-symphysis",
+          "text": "Pubic Symphysis",
+          "targetId": "pubic_symphysis"
+        },
+        { "id": "l-acetabulum", "text": "Acetabulum", "targetId": "acetabulum" },
+        {
+          "id": "l-greater-trochanter",
+          "text": "Greater Trochanter",
+          "targetId": "greater_trochanter"
+        },
+        { "id": "l-sacrum", "text": "Sacrum", "targetId": "sacrum" }
+      ]
+    }
+  ]
+}
