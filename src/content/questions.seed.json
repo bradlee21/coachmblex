@@ -4,299 +4,629 @@
     "subtopic": "pelvis",
     "concept_label": "Hip landmarks: ASIS",
     "prompt": "Which bony landmark is palpated at the front of the pelvis and often used for alignment checks?",
-    "choices": ["PSIS", "ASIS", "Ischial tuberosity", "Greater trochanter"],
+    "choices": [
+      "PSIS",
+      "ASIS",
+      "Ischial tuberosity",
+      "Greater trochanter"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "ASIS", "why": "The ASIS is the anterior superior iliac spine on the front pelvis.", "trap": "PSIS is posterior, not anterior.", "hook": "A for ASIS and Anterior." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "ASIS",
+      "why": "The ASIS is the anterior superior iliac spine on the front pelvis.",
+      "trap": "PSIS is posterior, not anterior.",
+      "hook": "A for ASIS and Anterior."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "pelvis",
     "concept_label": "Hip landmarks: PSIS",
     "prompt": "Dimples near the low back commonly overlie which landmark?",
-    "choices": ["ASIS", "Pubic tubercle", "PSIS", "Iliac crest"],
+    "choices": [
+      "ASIS",
+      "Pubic tubercle",
+      "PSIS",
+      "Iliac crest"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "PSIS", "why": "The posterior superior iliac spine often matches skin dimples.", "trap": "Iliac crest is broader and superior.", "hook": "P in PSIS means posterior." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "PSIS",
+      "why": "The posterior superior iliac spine often matches skin dimples.",
+      "trap": "Iliac crest is broader and superior.",
+      "hook": "P in PSIS means posterior."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "hip",
     "concept_label": "Hip landmarks: Greater trochanter",
     "prompt": "The large lateral projection on the proximal femur is the:",
-    "choices": ["Lesser trochanter", "Femoral head", "Greater trochanter", "Acetabulum"],
+    "choices": [
+      "Lesser trochanter",
+      "Femoral head",
+      "Greater trochanter",
+      "Acetabulum"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Greater trochanter", "why": "It is the palpable lateral prominence of the upper femur.", "trap": "Acetabulum is on the pelvis, not femur.", "hook": "Greater = easier to feel laterally." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Greater trochanter",
+      "why": "It is the palpable lateral prominence of the upper femur.",
+      "trap": "Acetabulum is on the pelvis, not femur.",
+      "hook": "Greater = easier to feel laterally."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "hip",
     "concept_label": "Hip landmarks: Ischial tuberosity",
     "prompt": "Which structure is commonly called the sit bone?",
-    "choices": ["ASIS", "Ischial tuberosity", "Pubic symphysis", "Iliac fossa"],
+    "choices": [
+      "ASIS",
+      "Ischial tuberosity",
+      "Pubic symphysis",
+      "Iliac fossa"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Ischial tuberosity", "why": "It bears weight during sitting.", "trap": "Pubic symphysis is a midline joint, not a sit bone.", "hook": "Sit bone = ischial tuberosity." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Ischial tuberosity",
+      "why": "It bears weight during sitting.",
+      "trap": "Pubic symphysis is a midline joint, not a sit bone.",
+      "hook": "Sit bone = ischial tuberosity."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "spine",
     "concept_label": "Spine landmarks: C7",
     "prompt": "The most prominent spinous process at the base of the neck is usually:",
-    "choices": ["C2", "C5", "C7", "T2"],
+    "choices": [
+      "C2",
+      "C5",
+      "C7",
+      "T2"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "C7", "why": "C7 commonly presents as a palpable vertebra prominens.", "trap": "T2 is lower and less typically used for this landmark.", "hook": "C7 is the classic neck-base bump." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "C7",
+      "why": "C7 commonly presents as a palpable vertebra prominens.",
+      "trap": "T2 is lower and less typically used for this landmark.",
+      "hook": "C7 is the classic neck-base bump."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "shoulder",
     "concept_label": "Scapula: Acromion",
     "prompt": "Which landmark forms the highest point of the shoulder?",
-    "choices": ["Coracoid process", "Acromion", "Spine of scapula", "Clavicle shaft"],
+    "choices": [
+      "Coracoid process",
+      "Acromion",
+      "Spine of scapula",
+      "Clavicle shaft"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Acromion", "why": "The acromion is the lateral extension of the scapular spine.", "trap": "Coracoid is anterior and deeper.", "hook": "Apex of shoulder starts with A = acromion." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Acromion",
+      "why": "The acromion is the lateral extension of the scapular spine.",
+      "trap": "Coracoid is anterior and deeper.",
+      "hook": "Apex of shoulder starts with A = acromion."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "kinesiology",
     "subtopic": "muscle action",
     "concept_label": "Gluteus medius function",
     "prompt": "Primary concentric action of gluteus medius is:",
-    "choices": ["Hip adduction", "Hip abduction", "Knee extension", "Ankle plantarflexion"],
+    "choices": [
+      "Hip adduction",
+      "Hip abduction",
+      "Knee extension",
+      "Ankle plantarflexion"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Hip abduction", "why": "Gluteus medius is a key hip abductor and frontal-plane stabilizer.", "trap": "Adduction is produced by medial thigh muscles.", "hook": "Medius manages midline drift by abducting." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Hip abduction",
+      "why": "Gluteus medius is a key hip abductor and frontal-plane stabilizer.",
+      "trap": "Adduction is produced by medial thigh muscles.",
+      "hook": "Medius manages midline drift by abducting."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.D"
   },
   {
     "domain": "kinesiology",
     "subtopic": "muscle action",
     "concept_label": "Hamstrings function",
     "prompt": "The hamstrings most directly contribute to:",
-    "choices": ["Knee flexion", "Knee extension", "Ankle inversion", "Scapular elevation"],
+    "choices": [
+      "Knee flexion",
+      "Knee extension",
+      "Ankle inversion",
+      "Scapular elevation"
+    ],
     "correct_index": 0,
-    "explanation": { "answer": "Knee flexion", "why": "Hamstrings cross posterior knee and flex it.", "trap": "Knee extension is quadriceps dominant.", "hook": "Hamstrings hinge the knee backward." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Knee flexion",
+      "why": "Hamstrings cross posterior knee and flex it.",
+      "trap": "Knee extension is quadriceps dominant.",
+      "hook": "Hamstrings hinge the knee backward."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.D"
   },
   {
     "domain": "kinesiology",
     "subtopic": "joint motion",
     "concept_label": "Closed-chain mechanics",
     "prompt": "In a closed-chain squat descent, the tibia primarily does what relative to the femur?",
-    "choices": ["External rotation only", "Anterior glide only", "Moves little while femur flexes on tibia", "Distracts from femur"],
+    "choices": [
+      "External rotation only",
+      "Anterior glide only",
+      "Moves little while femur flexes on tibia",
+      "Distracts from femur"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Moves little while femur flexes on tibia", "why": "With foot fixed, femur motion dominates in closed chain.", "trap": "Open-chain rules are easy to misapply.", "hook": "Closed chain means distal segment stays planted." },
-    "difficulty": "medium"
+    "explanation": {
+      "answer": "Moves little while femur flexes on tibia",
+      "why": "With foot fixed, femur motion dominates in closed chain.",
+      "trap": "Open-chain rules are easy to misapply.",
+      "hook": "Closed chain means distal segment stays planted."
+    },
+    "difficulty": "medium",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "kinesiology",
     "subtopic": "gait",
     "concept_label": "Gait phases",
     "prompt": "During normal gait, initial contact is typically with the:",
-    "choices": ["Forefoot", "Heel", "Midfoot", "Toes"],
+    "choices": [
+      "Forefoot",
+      "Heel",
+      "Midfoot",
+      "Toes"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Heel", "why": "Most typical gait begins with heel strike at initial contact.", "trap": "Forefoot strike occurs in some running patterns.", "hook": "IC often equals heel-first in walking." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Heel",
+      "why": "Most typical gait begins with heel strike at initial contact.",
+      "trap": "Forefoot strike occurs in some running patterns.",
+      "hook": "IC often equals heel-first in walking."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.F.1"
   },
   {
     "domain": "kinesiology",
     "subtopic": "core",
     "concept_label": "Transverse abdominis role",
     "prompt": "Transverse abdominis is best described as:",
-    "choices": ["Primary spinal extensor", "Deep abdominal stabilizer", "Prime hip flexor", "Scapular depressor"],
+    "choices": [
+      "Primary spinal extensor",
+      "Deep abdominal stabilizer",
+      "Prime hip flexor",
+      "Scapular depressor"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Deep abdominal stabilizer", "why": "It contributes to trunk stability and pressure regulation.", "trap": "Spinal extension is mainly erector spinae.", "hook": "Transverse acts like a corset." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Deep abdominal stabilizer",
+      "why": "It contributes to trunk stability and pressure regulation.",
+      "trap": "Spinal extension is mainly erector spinae.",
+      "hook": "Transverse acts like a corset."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.D"
   },
   {
     "domain": "anatomy",
     "subtopic": "nerve",
     "concept_label": "Sciatic nerve path",
     "prompt": "The sciatic nerve exits the pelvis inferior to which muscle in most people?",
-    "choices": ["Piriformis", "Obturator internus", "Gluteus minimus", "Iliacus"],
+    "choices": [
+      "Piriformis",
+      "Obturator internus",
+      "Gluteus minimus",
+      "Iliacus"
+    ],
     "correct_index": 0,
-    "explanation": { "answer": "Piriformis", "why": "Classic course is below piriformis.", "trap": "Variants exist but are less common.", "hook": "Think sciatic slips under piriformis." },
-    "difficulty": "medium"
+    "explanation": {
+      "answer": "Piriformis",
+      "why": "Classic course is below piriformis.",
+      "trap": "Variants exist but are less common.",
+      "hook": "Think sciatic slips under piriformis."
+    },
+    "difficulty": "medium",
+    "blueprint_code": "1.A.7"
   },
   {
     "domain": "anatomy",
     "subtopic": "knee",
     "concept_label": "ACL function",
     "prompt": "The ACL primarily resists excessive:",
-    "choices": ["Posterior tibial translation", "Anterior tibial translation", "Varus stress only", "Patellar glide"],
+    "choices": [
+      "Posterior tibial translation",
+      "Anterior tibial translation",
+      "Varus stress only",
+      "Patellar glide"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Anterior tibial translation", "why": "ACL restrains forward movement of tibia relative to femur.", "trap": "PCL handles posterior translation more directly.", "hook": "A in ACL aligns with anterior restraint." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Anterior tibial translation",
+      "why": "ACL restrains forward movement of tibia relative to femur.",
+      "trap": "PCL handles posterior translation more directly.",
+      "hook": "A in ACL aligns with anterior restraint."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "anatomy",
     "subtopic": "knee",
     "concept_label": "PCL function",
     "prompt": "The PCL mainly limits:",
-    "choices": ["Anterior tibial translation", "Posterior tibial translation", "Hip adduction", "Lumbar flexion"],
+    "choices": [
+      "Anterior tibial translation",
+      "Posterior tibial translation",
+      "Hip adduction",
+      "Lumbar flexion"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Posterior tibial translation", "why": "PCL is key restraint to backward tibial movement.", "trap": "ACL and PCL are commonly swapped by learners.", "hook": "P in PCL for posterior." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Posterior tibial translation",
+      "why": "PCL is key restraint to backward tibial movement.",
+      "trap": "ACL and PCL are commonly swapped by learners.",
+      "hook": "P in PCL for posterior."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "kinesiology",
     "subtopic": "exercise",
     "concept_label": "Squat prime movers",
     "prompt": "At the ascent phase of a squat, which pair contributes strongly?",
-    "choices": ["Biceps + triceps", "Quadriceps + gluteus maximus", "Tibialis anterior + peroneals", "Upper trapezius + levator scapulae"],
+    "choices": [
+      "Biceps + triceps",
+      "Quadriceps + gluteus maximus",
+      "Tibialis anterior + peroneals",
+      "Upper trapezius + levator scapulae"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Quadriceps + gluteus maximus", "why": "Knee extension and hip extension are dominant actions.", "trap": "Shank and shoulder groups are secondary here.", "hook": "Stand up from squat with quads and glutes." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Quadriceps + gluteus maximus",
+      "why": "Knee extension and hip extension are dominant actions.",
+      "trap": "Shank and shoulder groups are secondary here.",
+      "hook": "Stand up from squat with quads and glutes."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.B"
   },
   {
     "domain": "kinesiology",
     "subtopic": "plane",
     "concept_label": "Frontal plane motion",
     "prompt": "Hip abduction occurs primarily in which anatomical plane?",
-    "choices": ["Sagittal", "Frontal", "Transverse", "Oblique only"],
+    "choices": [
+      "Sagittal",
+      "Frontal",
+      "Transverse",
+      "Oblique only"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Frontal", "why": "Abduction/adduction are frontal-plane movements.", "trap": "Flexion/extension are sagittal.", "hook": "Frontal handles side-to-side." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Frontal",
+      "why": "Abduction/adduction are frontal-plane movements.",
+      "trap": "Flexion/extension are sagittal.",
+      "hook": "Frontal handles side-to-side."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "kinesiology",
     "subtopic": "plane",
     "concept_label": "Transverse plane motion",
     "prompt": "Trunk rotation is primarily a:",
-    "choices": ["Sagittal-plane action", "Frontal-plane action", "Transverse-plane action", "Coronal-only action"],
+    "choices": [
+      "Sagittal-plane action",
+      "Frontal-plane action",
+      "Transverse-plane action",
+      "Coronal-only action"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Transverse-plane action", "why": "Rotation around a vertical axis is transverse plane.", "trap": "Coronal and frontal are synonyms, not rotation-focused.", "hook": "Turn = transverse." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Transverse-plane action",
+      "why": "Rotation around a vertical axis is transverse plane.",
+      "trap": "Coronal and frontal are synonyms, not rotation-focused.",
+      "hook": "Turn = transverse."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "anatomy",
     "subtopic": "ankle",
     "concept_label": "Talocrural joint",
     "prompt": "Primary motions at the talocrural joint are:",
-    "choices": ["Inversion and eversion", "Flexion and extension of toes", "Dorsiflexion and plantarflexion", "Pronation and supination"],
+    "choices": [
+      "Inversion and eversion",
+      "Flexion and extension of toes",
+      "Dorsiflexion and plantarflexion",
+      "Pronation and supination"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Dorsiflexion and plantarflexion", "why": "Talocrural joint is the ankle hinge.", "trap": "Inversion/eversion are mainly subtalar.", "hook": "Talocrural = ankle hinge up and down." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Dorsiflexion and plantarflexion",
+      "why": "Talocrural joint is the ankle hinge.",
+      "trap": "Inversion/eversion are mainly subtalar.",
+      "hook": "Talocrural = ankle hinge up and down."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.E"
   },
   {
     "domain": "anatomy",
     "subtopic": "pelvis",
     "concept_label": "Pubic symphysis",
     "prompt": "The joint uniting left and right pubic bones is the:",
-    "choices": ["SI joint", "Pubic symphysis", "Lumbosacral joint", "Acetabulofemoral joint"],
+    "choices": [
+      "SI joint",
+      "Pubic symphysis",
+      "Lumbosacral joint",
+      "Acetabulofemoral joint"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Pubic symphysis", "why": "It is the fibrocartilaginous anterior pelvic joint.", "trap": "SI joints are posterior pelvis.", "hook": "Pubic bones meet at pubic symphysis." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Pubic symphysis",
+      "why": "It is the fibrocartilaginous anterior pelvic joint.",
+      "trap": "SI joints are posterior pelvis.",
+      "hook": "Pubic bones meet at pubic symphysis."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "pelvis",
     "concept_label": "Iliac crest",
     "prompt": "The superior border of the ilium is called:",
-    "choices": ["Linea aspera", "Iliac crest", "Obturator foramen", "Acetabular rim"],
+    "choices": [
+      "Linea aspera",
+      "Iliac crest",
+      "Obturator foramen",
+      "Acetabular rim"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Iliac crest", "why": "It is the top ridge of the ilium.", "trap": "Linea aspera is on posterior femur.", "hook": "Crest = top edge." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Iliac crest",
+      "why": "It is the top ridge of the ilium.",
+      "trap": "Linea aspera is on posterior femur.",
+      "hook": "Crest = top edge."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "kinesiology",
     "subtopic": "muscle action",
     "concept_label": "Glute max function",
     "prompt": "Gluteus maximus is a prime mover for:",
-    "choices": ["Hip extension", "Hip internal rotation only", "Knee flexion only", "Ankle dorsiflexion"],
+    "choices": [
+      "Hip extension",
+      "Hip internal rotation only",
+      "Knee flexion only",
+      "Ankle dorsiflexion"
+    ],
     "correct_index": 0,
-    "explanation": { "answer": "Hip extension", "why": "Glute max powerfully extends the hip.", "trap": "Knee flexion is hamstring dominant.", "hook": "Glute max drives stand-up power." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Hip extension",
+      "why": "Glute max powerfully extends the hip.",
+      "trap": "Knee flexion is hamstring dominant.",
+      "hook": "Glute max drives stand-up power."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.D"
   },
   {
     "domain": "kinesiology",
     "subtopic": "muscle action",
     "concept_label": "Iliopsoas role",
     "prompt": "Iliopsoas primarily performs:",
-    "choices": ["Hip extension", "Hip flexion", "Knee extension", "Foot inversion"],
+    "choices": [
+      "Hip extension",
+      "Hip flexion",
+      "Knee extension",
+      "Foot inversion"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Hip flexion", "why": "Iliacus and psoas major are strong hip flexors.", "trap": "Hip extension is opposite action.", "hook": "Psoas pulls femur toward torso." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Hip flexion",
+      "why": "Iliacus and psoas major are strong hip flexors.",
+      "trap": "Hip extension is opposite action.",
+      "hook": "Psoas pulls femur toward torso."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.D"
   },
   {
     "domain": "kinesiology",
     "subtopic": "assessment",
     "concept_label": "Trendelenburg sign",
     "prompt": "A positive Trendelenburg sign usually indicates weakness in:",
-    "choices": ["Hip abductors on stance side", "Hip adductors on swing side", "Quadriceps on stance side", "Calf muscles on swing side"],
+    "choices": [
+      "Hip abductors on stance side",
+      "Hip adductors on swing side",
+      "Quadriceps on stance side",
+      "Calf muscles on swing side"
+    ],
     "correct_index": 0,
-    "explanation": { "answer": "Hip abductors on stance side", "why": "Pelvic drop reflects poor frontal-plane pelvic control.", "trap": "Adductors are not primary anti-drop stabilizers.", "hook": "Trendelenburg tests glute med/min endurance." },
-    "difficulty": "medium"
+    "explanation": {
+      "answer": "Hip abductors on stance side",
+      "why": "Pelvic drop reflects poor frontal-plane pelvic control.",
+      "trap": "Adductors are not primary anti-drop stabilizers.",
+      "hook": "Trendelenburg tests glute med/min endurance."
+    },
+    "difficulty": "medium",
+    "blueprint_code": "2.C"
   },
   {
     "domain": "kinesiology",
     "subtopic": "kinetics",
     "concept_label": "Open vs closed chain",
     "prompt": "Leg extension machine is best classified as:",
-    "choices": ["Closed-chain exercise", "Open-chain exercise", "Isometric-only exercise", "Plyometric-only exercise"],
+    "choices": [
+      "Closed-chain exercise",
+      "Open-chain exercise",
+      "Isometric-only exercise",
+      "Plyometric-only exercise"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Open-chain exercise", "why": "Distal segment moves freely in leg extension.", "trap": "Closed chain requires fixed distal contact.", "hook": "If the foot is free, think open chain." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Open-chain exercise",
+      "why": "Distal segment moves freely in leg extension.",
+      "trap": "Closed chain requires fixed distal contact.",
+      "hook": "If the foot is free, think open chain."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "2.B"
   },
   {
     "domain": "anatomy",
     "subtopic": "hip",
     "concept_label": "Acetabulum",
     "prompt": "The socket portion of the hip joint is the:",
-    "choices": ["Femoral condyle", "Acetabulum", "Greater sciatic notch", "Obturator canal"],
+    "choices": [
+      "Femoral condyle",
+      "Acetabulum",
+      "Greater sciatic notch",
+      "Obturator canal"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Acetabulum", "why": "The femoral head articulates with the acetabulum.", "trap": "Femoral condyles belong to the knee.", "hook": "Ace the socket: acetabulum." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Acetabulum",
+      "why": "The femoral head articulates with the acetabulum.",
+      "trap": "Femoral condyles belong to the knee.",
+      "hook": "Ace the socket: acetabulum."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "1.A.6"
   },
   {
     "domain": "anatomy",
     "subtopic": "nerve",
     "concept_label": "Femoral nerve region",
     "prompt": "Femoral nerve irritation most often affects sensation in the:",
-    "choices": ["Posterior calf", "Anterior thigh", "Lateral forearm", "Upper trapezius region"],
+    "choices": [
+      "Posterior calf",
+      "Anterior thigh",
+      "Lateral forearm",
+      "Upper trapezius region"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Anterior thigh", "why": "Femoral distribution emphasizes anterior thigh and medial leg via saphenous branch.", "trap": "Posterior calf aligns more with tibial/sural patterns.", "hook": "Femoral = front thigh focus." },
-    "difficulty": "medium"
+    "explanation": {
+      "answer": "Anterior thigh",
+      "why": "Femoral distribution emphasizes anterior thigh and medial leg via saphenous branch.",
+      "trap": "Posterior calf aligns more with tibial/sural patterns.",
+      "hook": "Femoral = front thigh focus."
+    },
+    "difficulty": "medium",
+    "blueprint_code": "1.A.7"
   },
   {
     "domain": "ethics",
     "subtopic": "scope",
     "concept_label": "Scope of practice",
     "prompt": "When a client presents red-flag symptoms, the best first action is:",
-    "choices": ["Increase treatment intensity", "Ignore and continue routine plan", "Refer to appropriate medical provider", "Diagnose outside your scope"],
+    "choices": [
+      "Increase treatment intensity",
+      "Ignore and continue routine plan",
+      "Refer to appropriate medical provider",
+      "Diagnose outside your scope"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Refer to appropriate medical provider", "why": "Safety and scope require escalation for red flags.", "trap": "Diagnosing beyond scope increases risk.", "hook": "Red flags mean refer, not guess." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Refer to appropriate medical provider",
+      "why": "Safety and scope require escalation for red flags.",
+      "trap": "Diagnosing beyond scope increases risk.",
+      "hook": "Red flags mean refer, not guess."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "6.H"
   },
   {
     "domain": "ethics",
     "subtopic": "consent",
     "concept_label": "Informed consent",
     "prompt": "Informed consent should be obtained:",
-    "choices": ["Only once at first visit no matter changes", "Before treatment and when plan materially changes", "Only for minors", "Only when pain is present"],
+    "choices": [
+      "Only once at first visit no matter changes",
+      "Before treatment and when plan materially changes",
+      "Only for minors",
+      "Only when pain is present"
+    ],
     "correct_index": 1,
-    "explanation": { "answer": "Before treatment and when plan materially changes", "why": "Consent is ongoing and tied to treatment decisions.", "trap": "One-time consent is insufficient for major changes.", "hook": "Consent is a process, not a checkbox." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Before treatment and when plan materially changes",
+      "why": "Consent is ongoing and tied to treatment decisions.",
+      "trap": "One-time consent is insufficient for major changes.",
+      "hook": "Consent is a process, not a checkbox."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "6.A"
   },
   {
     "domain": "pathology",
     "subtopic": "inflammation",
     "concept_label": "Acute inflammation signs",
     "prompt": "Classic local signs of acute inflammation include all except:",
-    "choices": ["Heat", "Redness", "Numbness", "Swelling"],
+    "choices": [
+      "Heat",
+      "Redness",
+      "Numbness",
+      "Swelling"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Numbness", "why": "Classic signs are redness, heat, swelling, pain, and loss of function.", "trap": "Numbness may occur in other conditions but is not classic inflammation sign.", "hook": "Remember rubor, calor, tumor, dolor." },
-    "difficulty": "easy"
+    "explanation": {
+      "answer": "Numbness",
+      "why": "Classic signs are redness, heat, swelling, pain, and loss of function.",
+      "trap": "Numbness may occur in other conditions but is not classic inflammation sign.",
+      "hook": "Remember rubor, calor, tumor, dolor."
+    },
+    "difficulty": "easy",
+    "blueprint_code": "3.A"
   },
   {
     "domain": "pathology",
     "subtopic": "healing",
     "concept_label": "Tissue healing phases",
     "prompt": "Which healing phase is characterized by collagen remodeling and alignment over time?",
-    "choices": ["Inflammatory phase", "Proliferative phase", "Maturation/remodeling phase", "Hemostatic phase only"],
+    "choices": [
+      "Inflammatory phase",
+      "Proliferative phase",
+      "Maturation/remodeling phase",
+      "Hemostatic phase only"
+    ],
     "correct_index": 2,
-    "explanation": { "answer": "Maturation/remodeling phase", "why": "Later phase reorganizes collagen and improves tensile capacity.", "trap": "Inflammatory phase is early cleanup.", "hook": "Remodeling = long-game tissue quality." },
-    "difficulty": "medium"
+    "explanation": {
+      "answer": "Maturation/remodeling phase",
+      "why": "Later phase reorganizes collagen and improves tensile capacity.",
+      "trap": "Inflammatory phase is early cleanup.",
+      "hook": "Remodeling = long-game tissue quality."
+    },
+    "difficulty": "medium",
+    "blueprint_code": "1.C"
   }
 ]

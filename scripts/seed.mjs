@@ -19,6 +19,12 @@ const seedPath = resolve(process.cwd(), 'src/content/questions.seed.json');
 const raw = readFileSync(seedPath, 'utf8');
 const questions = JSON.parse(raw);
 
+const missingBlueprint = questions.filter((question) => !question.blueprint_code);
+if (missingBlueprint.length > 0) {
+  console.error('Every seeded question must include blueprint_code.');
+  process.exit(1);
+}
+
 const conceptRows = [];
 const conceptSeen = new Set();
 
@@ -68,6 +74,7 @@ if (prompts.length > 0) {
 const questionRows = questions.map((question) => ({
   domain: question.domain,
   subtopic: question.subtopic,
+  blueprint_code: question.blueprint_code,
   concept_id: question.concept_label
     ? conceptIdByKey.get(`${question.domain}::${question.concept_label}`) || null
     : null,
