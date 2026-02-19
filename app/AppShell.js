@@ -40,7 +40,8 @@ export default function AppShell({ children }) {
       if (isTypingTarget(event.target)) return;
 
       const key = event.key.toLowerCase();
-      const sessionPage = pathname === '/today' || pathname === '/drill';
+      const sessionPage =
+        pathname === '/today' || pathname === '/drill' || pathname === '/review';
       if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {
         return;
       }

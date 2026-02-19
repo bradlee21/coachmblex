@@ -15,14 +15,16 @@ function isTypingTarget(target) {
   );
 }
 
-export default function QuestionRunner({ title, questions }) {
+export default function QuestionRunner({ title, questions, onComplete }) {
   const { user } = useAuth();
   const [index, setIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [confidence, setConfidence] = useState('kinda');
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
+  const [results, setResults] = useState([]);
   const [status, setStatus] = useState('');
+  const [completionSent, setCompletionSent] = useState(false);
 
   useEffect(() => {
     setIndex(0);
@@ -30,7 +32,9 @@ export default function QuestionRunner({ title, questions }) {
     setConfidence('kinda');
     setSubmitted(false);
     setScore(0);
+    setResults([]);
     setStatus('');
+    setCompletionSent(false);
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
@@ -45,6 +49,15 @@ export default function QuestionRunner({ title, questions }) {
 
       const isCorrect = choiceIndex === current.correct_index;
       if (isCorrect) setScore((prev) => prev + 1);
+      setResults((prev) => [
+        ...prev,
+        {
+          question_id: current.id,
+          blueprint_code: current.blueprint_code || '',
+          correct: isCorrect,
+          confidence,
+        },
+      ]);
 
       const supabase = getSupabaseClient();
       if (!supabase || !user?.id) {
@@ -107,6 +120,17 @@ export default function QuestionRunner({ title, questions }) {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [current, goNext, isDone, submitAnswer]);
+
+  useEffect(() => {
+    if (!isDone || completionSent) return;
+    if (typeof onComplete !== 'function') return;
+    onComplete({
+      score,
+      total: questions.length,
+      results,
+    });
+    setCompletionSent(true);
+  }, [completionSent, isDone, onComplete, questions.length, results, score]);
 
   if (questions.length === 0) {
     return <p>No questions available yet.</p>;
