@@ -223,6 +223,16 @@ a {
   font-weight: 700;
 }
 
+.qtype-badge {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
 .choice-list {
   display: flex;
   flex-direction: column;

@@ -85,6 +85,7 @@ async function selectReviewQuestions(supabase, userId) {
       'id,concept_id,blueprint_code,prompt,choices,correct_index,explanation,difficulty,question_type'
     )
     .in('id', targetIds)
+    // TODO: Add reverse support in review once mixed-type runner modes are enabled.
     .eq('question_type', 'mcq');
 
   if (targetQuestionsResult.error) {

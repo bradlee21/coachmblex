@@ -658,5 +658,225 @@
     "difficulty": "medium",
     "blueprint_code": "1.C",
     "question_type": "mcq"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "system-structure",
+    "concept_label": "System structure: Cardiovascular",
+    "blueprint_code": "1.A.1",
+    "question_type": "reverse",
+    "prompt": "This body system includes the heart, blood vessels, and blood transport.",
+    "choices": [
+      "Cardiovascular",
+      "Digestive",
+      "Urinary",
+      "Respiratory"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Cardiovascular",
+      "why": "It handles circulation and perfusion.",
+      "trap": "Respiratory exchanges gas but does not circulate blood.",
+      "hook": "Cardio = heart + vessels."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "system-structure",
+    "concept_label": "System structure: Digestive",
+    "blueprint_code": "1.A.2",
+    "question_type": "reverse",
+    "prompt": "This system processes food, absorbs nutrients, and eliminates solid waste.",
+    "choices": [
+      "Digestive",
+      "Endocrine",
+      "Lymphatic & Immune",
+      "Sensory"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Digestive",
+      "why": "It breaks down food and absorbs nutrients.",
+      "trap": "Endocrine secretes hormones, not digestion.",
+      "hook": "Digestion drives nutrient uptake."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "system-function",
+    "concept_label": "System function: Nervous",
+    "blueprint_code": "1.B.7",
+    "question_type": "reverse",
+    "prompt": "This system coordinates sensation, processing, and motor responses.",
+    "choices": [
+      "Nervous",
+      "Respiratory",
+      "Urinary",
+      "Reproductive"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Nervous",
+      "why": "It controls signaling and coordination.",
+      "trap": "Respiratory is gas exchange focused.",
+      "hook": "Neurons network for control."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "system-function",
+    "concept_label": "System function: Respiratory",
+    "blueprint_code": "1.B.9",
+    "question_type": "reverse",
+    "prompt": "This system is primarily responsible for oxygen intake and carbon dioxide removal.",
+    "choices": [
+      "Respiratory",
+      "Integumentary",
+      "Digestive",
+      "Sensory"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Respiratory",
+      "why": "Ventilation and gas exchange are core roles.",
+      "trap": "Integumentary protects skin, not gas exchange.",
+      "hook": "Breathing equals respiratory function."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "system-function",
+    "concept_label": "System function: Musculoskeletal",
+    "blueprint_code": "1.B.6",
+    "question_type": "reverse",
+    "prompt": "This system provides structural support and enables movement through bones and muscles.",
+    "choices": [
+      "Musculoskeletal",
+      "Lymphatic & Immune",
+      "Endocrine",
+      "Urinary"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Musculoskeletal",
+      "why": "Movement and support come from muscles + skeleton.",
+      "trap": "Lymphatic handles fluid return and immune support.",
+      "hook": "Muscle + skeleton = motion platform."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-action",
+    "concept_label": "Hip action: Abduction",
+    "blueprint_code": "2.D",
+    "question_type": "reverse",
+    "prompt": "Movement of the femur away from the midline in the frontal plane is called:",
+    "choices": [
+      "Hip abduction",
+      "Hip adduction",
+      "Hip extension",
+      "Hip internal rotation"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Hip abduction",
+      "why": "Abduction moves away from midline.",
+      "trap": "Adduction is toward midline.",
+      "hook": "Abduct = away."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-action",
+    "concept_label": "Joint action: Knee extension",
+    "blueprint_code": "2.D",
+    "question_type": "reverse",
+    "prompt": "Straightening the knee from a bent position is:",
+    "choices": [
+      "Knee extension",
+      "Knee flexion",
+      "Hip extension",
+      "Ankle dorsiflexion"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Knee extension",
+      "why": "Extension increases joint angle at the knee.",
+      "trap": "Flexion decreases the knee angle.",
+      "hook": "Extend means straighten."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-action",
+    "concept_label": "Joint action: Hip flexion",
+    "blueprint_code": "2.D",
+    "question_type": "reverse",
+    "prompt": "Bringing the thigh toward the torso in the sagittal plane is:",
+    "choices": [
+      "Hip flexion",
+      "Hip extension",
+      "Hip abduction",
+      "Hip external rotation"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Hip flexion",
+      "why": "Flexion approximates the trunk and femur.",
+      "trap": "Extension moves thigh backward.",
+      "hook": "Flex at hip = thigh forward/up."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-function",
+    "concept_label": "Gluteus medius role",
+    "blueprint_code": "2.D",
+    "question_type": "reverse",
+    "prompt": "This muscle is key for pelvic stabilization during single-leg stance and abducts the hip.",
+    "choices": [
+      "Gluteus medius",
+      "Biceps femoris",
+      "Rectus femoris",
+      "Adductor longus"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Gluteus medius",
+      "why": "It supports frontal-plane pelvis control in gait.",
+      "trap": "Adductor longus adducts, not abducts.",
+      "hook": "Trendelenburg points to glute med."
+    },
+    "difficulty": "medium"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-function",
+    "concept_label": "Iliopsoas role reverse",
+    "blueprint_code": "2.D",
+    "question_type": "reverse",
+    "prompt": "This muscle group is a prime mover for hip flexion and includes psoas major + iliacus.",
+    "choices": [
+      "Iliopsoas",
+      "Gluteus maximus",
+      "Tensor fasciae latae",
+      "Semitendinosus"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Iliopsoas",
+      "why": "Iliacus and psoas major form a strong hip flexor unit.",
+      "trap": "Glute max is primarily hip extension.",
+      "hook": "Psoas + iliacus = iliopsoas."
+    },
+    "difficulty": "medium"
   }
 ]

@@ -153,6 +153,11 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       <p>
         Question {index + 1} of {questions.length}
       </p>
+      <p>
+        <span className="qtype-badge">
+          {current.question_type === 'reverse' ? 'Reverse' : 'MCQ'}
+        </span>
+      </p>
       <p className="runner-prompt">{current.prompt}</p>
 
       <div className="choice-list">

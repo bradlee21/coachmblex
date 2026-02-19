@@ -49,6 +49,7 @@ export default function DrillPage() {
 
   const selectedCode = leafCode || subsectionCode || sectionCode;
   const selectedNode = findNodeByCode(selectedCode);
+  const [questionType, setQuestionType] = useState('mcq');
   const [questions, setQuestions] = useState([]);
   const [started, setStarted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -71,6 +72,12 @@ export default function DrillPage() {
 
   useEffect(() => {
     const deepLinkCode = searchParams.get('code');
+    const deepLinkType = searchParams.get('type');
+    if (deepLinkType === 'reverse') {
+      setQuestionType('reverse');
+    } else if (deepLinkType === 'mcq') {
+      setQuestionType('mcq');
+    }
     if (!deepLinkCode) return;
     const node = findNodeByCode(deepLinkCode);
     if (!node) return;
@@ -104,9 +111,9 @@ export default function DrillPage() {
     const query = supabase
       .from('questions')
       .select(
-        'id,domain,subtopic,blueprint_code,prompt,choices,correct_index,explanation,difficulty,created_at'
+        'id,domain,subtopic,blueprint_code,question_type,prompt,choices,correct_index,explanation,difficulty,created_at'
       )
-      .eq('question_type', 'mcq')
+      .eq('question_type', questionType)
       .order('created_at', { ascending: false })
       .limit(60);
 
@@ -133,7 +140,7 @@ export default function DrillPage() {
     setStarted(true);
     if (picked.length < 10) {
       setMessage(
-        `Only ${picked.length} question(s) found for ${selectedCode}. Add more tagged content to reach 10.`
+        `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedCode}. Add more tagged content to reach 10.`
       );
     }
     setLoading(false);
@@ -170,6 +177,18 @@ export default function DrillPage() {
               {node.code} {node.title}
             </option>
           ))}
+        </select>
+      </div>
+
+      <div className="drill-controls">
+        <label htmlFor="drill-type">Question type</label>
+        <select
+          id="drill-type"
+          value={questionType}
+          onChange={(event) => setQuestionType(event.target.value)}
+        >
+          <option value="mcq">MCQ</option>
+          <option value="reverse">Reverse</option>
         </select>
       </div>
 

@@ -31,6 +31,15 @@ if (missingQuestionType.length > 0) {
   process.exit(1);
 }
 
+const allowedTypes = new Set(['mcq', 'reverse', 'fill']);
+const invalidQuestionType = questions.find(
+  (question) => !allowedTypes.has(question.question_type)
+);
+if (invalidQuestionType) {
+  console.error(`Invalid question_type: ${invalidQuestionType.question_type}`);
+  process.exit(1);
+}
+
 const conceptRows = [];
 const conceptSeen = new Set();
 
