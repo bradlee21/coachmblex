@@ -8,6 +8,7 @@ const AuthContext = createContext({
   session: null,
   loading: true,
   error: '',
+  warning: '',
 });
 
 async function ensureProfile(userId) {
@@ -28,22 +29,31 @@ export function AuthProvider({ children }) {
   const [session, setSession] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [warning, setWarning] = useState('');
   const mountedRef = useRef(true);
   const requestIdRef = useRef(0);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     mountedRef.current = true;
 
+    function clearAuthTimeout() {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
+      }
+    }
+
     function setLoadingSafe(value, reason) {
       if (!mountedRef.current) return;
-      console.debug(`[SESSION] loading=${value} (${reason})`);
+      console.debug(`[AUTH] loading=${value} (${reason})`);
       setLoading(value);
     }
 
     function setSessionSafe(nextSession, reason) {
       if (!mountedRef.current) return;
       console.debug(
-        `[SESSION] session=${nextSession?.user?.id ? 'present' : 'none'} (${reason})`
+        `[AUTH] session=${nextSession?.user?.id ? 'present' : 'none'} (${reason})`
       );
       setSession(nextSession ?? null);
     }
@@ -51,9 +61,17 @@ export function AuthProvider({ children }) {
     function setErrorSafe(message, reason) {
       if (!mountedRef.current) return;
       if (message) {
-        console.debug(`[SESSION] error (${reason}): ${message}`);
+        console.debug(`[AUTH] error (${reason}): ${message}`);
       }
       setError(message || '');
+    }
+
+    function setWarningSafe(message, reason) {
+      if (!mountedRef.current) return;
+      if (message) {
+        console.debug(`[AUTH] warning (${reason}): ${message}`);
+      }
+      setWarning(message || '');
     }
 
     async function loadSession() {
@@ -62,10 +80,11 @@ export function AuthProvider({ children }) {
       if (!supabase) {
         setErrorSafe('Supabase is not configured.', 'loadSession/no-client');
         setLoadingSafe(false, 'loadSession/no-client');
+        clearAuthTimeout();
         return;
       }
 
-      console.debug('[SESSION] getSession start');
+      console.debug('[AUTH] getSession start');
       try {
         const { data, error: sessionError } = await supabase.auth.getSession();
         if (requestId !== requestIdRef.current || !mountedRef.current) return;
@@ -75,6 +94,7 @@ export function AuthProvider({ children }) {
         } else {
           setErrorSafe('', 'getSession');
         }
+        setWarningSafe('', 'getSession');
 
         const currentSession = data?.session ?? null;
         setSessionSafe(currentSession, 'getSession');
@@ -94,11 +114,21 @@ export function AuthProvider({ children }) {
       } finally {
         if (requestId === requestIdRef.current) {
           setLoadingSafe(false, 'loadSession/finally');
+          clearAuthTimeout();
         }
       }
     }
 
     setLoadingSafe(true, 'initial');
+    setWarningSafe('', 'initial');
+
+    const timeoutRequestId = requestIdRef.current + 1;
+    timeoutRef.current = setTimeout(() => {
+      if (!mountedRef.current) return;
+      if (requestIdRef.current !== timeoutRequestId) return;
+      setWarningSafe('Auth check timed out. Refresh or re-sign in.', 'timeout');
+      setLoadingSafe(false, 'timeout');
+    }, 8000);
     loadSession();
 
     const supabase = getSupabaseClient();
@@ -111,9 +141,11 @@ export function AuthProvider({ children }) {
 
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, nextSession) => {
-        console.debug(`[SESSION] onAuthStateChange ${event}`);
+        console.debug(`[AUTH] onAuthStateChange ${event}`);
         setSessionSafe(nextSession ?? null, 'auth-change');
         setLoadingSafe(false, `auth-change/${event}`);
+        setWarningSafe('', `auth-change/${event}`);
+        clearAuthTimeout();
 
         if (nextSession?.user?.id) {
           try {
@@ -131,6 +163,7 @@ export function AuthProvider({ children }) {
 
     return () => {
       mountedRef.current = false;
+      clearAuthTimeout();
       authListener.subscription.unsubscribe();
     };
   }, []);
@@ -141,8 +174,9 @@ export function AuthProvider({ children }) {
       session,
       loading,
       error,
+      warning,
     }),
-    [error, loading, session]
+    [error, loading, session, warning]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
