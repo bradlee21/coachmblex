@@ -5,6 +5,7 @@ create table if not exists public.questions (
   domain text not null,
   subtopic text not null,
   blueprint_code text,
+  question_type text not null default 'mcq',
   concept_id uuid references public.concepts(id) on delete set null,
   prompt text not null,
   choices jsonb not null,
@@ -23,6 +24,7 @@ create index if not exists questions_blueprint_code_idx
 alter table public.questions add column if not exists blueprint_code text;
 create index if not exists questions_blueprint_code_idx
   on public.questions(blueprint_code);
+alter table public.questions add column if not exists question_type text default 'mcq';
 
 alter table public.questions enable row level security;
 

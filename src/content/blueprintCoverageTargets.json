@@ -1,0 +1,554 @@
+{
+  "1.A.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.5": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.6": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.7": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.8": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.9": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.10": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.A.11": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.5": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.6": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.7": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.8": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.9": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.10": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.B.11": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "1.D": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.B": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.D": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.E": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.F.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.F.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "2.F.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.B.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.B.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.B.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.B.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.B.5": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.D": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "3.E": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.B": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.D.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.D.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.E": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "4.F": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.B.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.B.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.D.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.D.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.D.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.E": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.F": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.G.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.G.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.G.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "5.G.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.B": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.D": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.E": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.F": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.G": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.H": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.I": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.J": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "6.K": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.A": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.B": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.C": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.D.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.D.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.D.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.E.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.E.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.E.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.E.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.F.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.F.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.1": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.2": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.3": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.4": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.5": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.6.a": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.G.6.b": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  },
+  "7.H": {
+    "mcq": 5,
+    "fill": 3,
+    "reverse": 3,
+    "diagram": 0
+  }
+}

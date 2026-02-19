@@ -79,6 +79,7 @@ export default function DrillPage() {
       .select(
         'id,domain,subtopic,blueprint_code,prompt,choices,correct_index,explanation,difficulty,created_at'
       )
+      .eq('question_type', 'mcq')
       .order('created_at', { ascending: false })
       .limit(60);
 

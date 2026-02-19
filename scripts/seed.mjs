@@ -25,6 +25,12 @@ if (missingBlueprint.length > 0) {
   process.exit(1);
 }
 
+const missingQuestionType = questions.filter((question) => !question.question_type);
+if (missingQuestionType.length > 0) {
+  console.error('Every seeded question must include question_type.');
+  process.exit(1);
+}
+
 const conceptRows = [];
 const conceptSeen = new Set();
 
@@ -75,6 +81,7 @@ const questionRows = questions.map((question) => ({
   domain: question.domain,
   subtopic: question.subtopic,
   blueprint_code: question.blueprint_code,
+  question_type: question.question_type || 'mcq',
   concept_id: question.concept_label
     ? conceptIdByKey.get(`${question.domain}::${question.concept_label}`) || null
     : null,

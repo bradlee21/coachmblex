@@ -18,7 +18,8 @@
       "hook": "A for ASIS and Anterior."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -39,7 +40,8 @@
       "hook": "P in PSIS means posterior."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -60,7 +62,8 @@
       "hook": "Greater = easier to feel laterally."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -81,7 +84,8 @@
       "hook": "Sit bone = ischial tuberosity."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -102,7 +106,8 @@
       "hook": "C7 is the classic neck-base bump."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -123,7 +128,8 @@
       "hook": "Apex of shoulder starts with A = acromion."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -144,7 +150,8 @@
       "hook": "Medius manages midline drift by abducting."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.D"
+    "blueprint_code": "2.D",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -165,7 +172,8 @@
       "hook": "Hamstrings hinge the knee backward."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.D"
+    "blueprint_code": "2.D",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -186,7 +194,8 @@
       "hook": "Closed chain means distal segment stays planted."
     },
     "difficulty": "medium",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -207,7 +216,8 @@
       "hook": "IC often equals heel-first in walking."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.F.1"
+    "blueprint_code": "2.F.1",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -228,7 +238,8 @@
       "hook": "Transverse acts like a corset."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.D"
+    "blueprint_code": "2.D",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -249,7 +260,8 @@
       "hook": "Think sciatic slips under piriformis."
     },
     "difficulty": "medium",
-    "blueprint_code": "1.A.7"
+    "blueprint_code": "1.A.7",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -270,7 +282,8 @@
       "hook": "A in ACL aligns with anterior restraint."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -291,7 +304,8 @@
       "hook": "P in PCL for posterior."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -312,7 +326,8 @@
       "hook": "Stand up from squat with quads and glutes."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.B"
+    "blueprint_code": "2.B",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -333,7 +348,8 @@
       "hook": "Frontal handles side-to-side."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -354,7 +370,8 @@
       "hook": "Turn = transverse."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -375,7 +392,8 @@
       "hook": "Talocrural = ankle hinge up and down."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.E"
+    "blueprint_code": "2.E",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -396,7 +414,8 @@
       "hook": "Pubic bones meet at pubic symphysis."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -417,7 +436,8 @@
       "hook": "Crest = top edge."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -438,7 +458,8 @@
       "hook": "Glute max drives stand-up power."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.D"
+    "blueprint_code": "2.D",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -459,7 +480,8 @@
       "hook": "Psoas pulls femur toward torso."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.D"
+    "blueprint_code": "2.D",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -480,7 +502,8 @@
       "hook": "Trendelenburg tests glute med/min endurance."
     },
     "difficulty": "medium",
-    "blueprint_code": "2.C"
+    "blueprint_code": "2.C",
+    "question_type": "mcq"
   },
   {
     "domain": "kinesiology",
@@ -501,7 +524,8 @@
       "hook": "If the foot is free, think open chain."
     },
     "difficulty": "easy",
-    "blueprint_code": "2.B"
+    "blueprint_code": "2.B",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -522,7 +546,8 @@
       "hook": "Ace the socket: acetabulum."
     },
     "difficulty": "easy",
-    "blueprint_code": "1.A.6"
+    "blueprint_code": "1.A.6",
+    "question_type": "mcq"
   },
   {
     "domain": "anatomy",
@@ -543,7 +568,8 @@
       "hook": "Femoral = front thigh focus."
     },
     "difficulty": "medium",
-    "blueprint_code": "1.A.7"
+    "blueprint_code": "1.A.7",
+    "question_type": "mcq"
   },
   {
     "domain": "ethics",
@@ -564,7 +590,8 @@
       "hook": "Red flags mean refer, not guess."
     },
     "difficulty": "easy",
-    "blueprint_code": "6.H"
+    "blueprint_code": "6.H",
+    "question_type": "mcq"
   },
   {
     "domain": "ethics",
@@ -585,7 +612,8 @@
       "hook": "Consent is a process, not a checkbox."
     },
     "difficulty": "easy",
-    "blueprint_code": "6.A"
+    "blueprint_code": "6.A",
+    "question_type": "mcq"
   },
   {
     "domain": "pathology",
@@ -606,7 +634,8 @@
       "hook": "Remember rubor, calor, tumor, dolor."
     },
     "difficulty": "easy",
-    "blueprint_code": "3.A"
+    "blueprint_code": "3.A",
+    "question_type": "mcq"
   },
   {
     "domain": "pathology",
@@ -627,6 +656,7 @@
       "hook": "Remodeling = long-game tissue quality."
     },
     "difficulty": "medium",
-    "blueprint_code": "1.C"
+    "blueprint_code": "1.C",
+    "question_type": "mcq"
   }
 ]
