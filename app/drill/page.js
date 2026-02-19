@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import {
@@ -23,6 +24,7 @@ function gatherLeafNodes(node, leafNodes = []) {
 }
 
 export default function DrillPage() {
+  const searchParams = useSearchParams();
   const topLevel = listTopLevelDomains();
   const [sectionCode, setSectionCode] = useState(topLevel[0]?.code || '');
 
@@ -66,6 +68,31 @@ export default function DrillPage() {
     setSubsectionCode(nextSubsectionCode);
     setLeafCode('');
   }
+
+  useEffect(() => {
+    const deepLinkCode = searchParams.get('code');
+    if (!deepLinkCode) return;
+    const node = findNodeByCode(deepLinkCode);
+    if (!node) return;
+
+    const deepSection = deepLinkCode.split('.')[0];
+    const nextSection =
+      mblexBlueprint.sections.find((section) => section.code === deepSection) || null;
+    if (!nextSection) return;
+
+    const nextSubsection =
+      nextSection.children.find(
+        (child) => deepLinkCode === child.code || deepLinkCode.startsWith(`${child.code}.`)
+      ) || nextSection.children[0];
+
+    setSectionCode(nextSection.code);
+    setSubsectionCode(nextSubsection?.code || '');
+    if (deepLinkCode === nextSection.code || deepLinkCode === nextSubsection?.code) {
+      setLeafCode('');
+    } else {
+      setLeafCode(deepLinkCode);
+    }
+  }, [searchParams]);
 
   async function startDrill() {
     const supabase = getSupabaseClient();
