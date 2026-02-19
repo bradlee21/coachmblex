@@ -1,117 +1,134 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import QuestionRunner from '../_components/QuestionRunner';
-import { getSupabaseClient } from '../../src/lib/supabaseClient';
+import { useMemo, useState } from 'react';
+import {
+  findNodeByCode,
+  listTopLevelDomains,
+  mblexBlueprint,
+} from '../../src/content/mblexBlueprint';
 
-function shuffle(items) {
-  const list = [...items];
-  for (let i = list.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [list[i], list[j]] = [list[j], list[i]];
+function gatherLeafNodes(node, leafNodes = []) {
+  if (!node.children?.length) {
+    leafNodes.push(node);
+    return leafNodes;
   }
-  return list;
+
+  for (const child of node.children) {
+    gatherLeafNodes(child, leafNodes);
+  }
+
+  return leafNodes;
 }
 
 export default function DrillPage() {
-  const [domains, setDomains] = useState([]);
-  const [domain, setDomain] = useState('');
-  const [questions, setQuestions] = useState([]);
-  const [loadingDomains, setLoadingDomains] = useState(true);
-  const [loadingQuestions, setLoadingQuestions] = useState(false);
-  const [error, setError] = useState('');
-  const [started, setStarted] = useState(false);
+  const topLevel = listTopLevelDomains();
+  const [sectionCode, setSectionCode] = useState(topLevel[0]?.code || '');
 
-  useEffect(() => {
-    async function loadDomains() {
-      const supabase = getSupabaseClient();
-      if (!supabase) {
-        setError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
-        setLoadingDomains(false);
-        return;
-      }
+  const sectionNode = useMemo(
+    () => mblexBlueprint.sections.find((section) => section.code === sectionCode) || null,
+    [sectionCode]
+  );
+  const subsectionOptions = sectionNode?.children || [];
+  const [subsectionCode, setSubsectionCode] = useState(subsectionOptions[0]?.code || '');
 
-      const { data, error: domainError } = await supabase
-        .from('questions')
-        .select('domain')
-        .limit(200);
+  const selectedSubsection = useMemo(
+    () => findNodeByCode(subsectionCode),
+    [subsectionCode]
+  );
+  const leafOptions = useMemo(() => {
+    if (!selectedSubsection) return [];
+    return gatherLeafNodes(selectedSubsection).filter(
+      (node) => node.code !== selectedSubsection.code
+    );
+  }, [selectedSubsection]);
+  const [leafCode, setLeafCode] = useState('');
 
-      if (domainError) {
-        setError(domainError.message);
-        setLoadingDomains(false);
-        return;
-      }
+  const selectedCode = leafCode || subsectionCode || sectionCode;
+  const selectedNode = findNodeByCode(selectedCode);
 
-      const uniqueDomains = Array.from(new Set((data || []).map((row) => row.domain))).sort();
-      setDomains(uniqueDomains);
-      setDomain(uniqueDomains[0] || '');
-      setLoadingDomains(false);
-    }
+  function onSelectSection(nextSectionCode) {
+    setSectionCode(nextSectionCode);
+    const nextSection = mblexBlueprint.sections.find(
+      (section) => section.code === nextSectionCode
+    );
+    const nextSubsection = nextSection?.children?.[0]?.code || '';
+    setSubsectionCode(nextSubsection);
+    setLeafCode('');
+  }
 
-    loadDomains();
-  }, []);
-
-  async function startDrill() {
-    if (!domain) return;
-
-    const supabase = getSupabaseClient();
-    if (!supabase) {
-      setError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
-      return;
-    }
-
-    setLoadingQuestions(true);
-    setError('');
-
-    const { data, error: questionError } = await supabase
-      .from('questions')
-      .select('id,domain,subtopic,prompt,choices,correct_index,explanation,difficulty')
-      .eq('domain', domain)
-      .limit(40);
-
-    if (questionError) {
-      setError(questionError.message);
-      setLoadingQuestions(false);
-      return;
-    }
-
-    setQuestions(shuffle(data || []).slice(0, 10));
-    setStarted(true);
-    setLoadingQuestions(false);
+  function onSelectSubsection(nextSubsectionCode) {
+    setSubsectionCode(nextSubsectionCode);
+    setLeafCode('');
   }
 
   return (
     <section>
       <h1>Drill</h1>
-      <p>Pick a domain and run a focused set of 10 questions.</p>
+      <p>Pick a blueprint topic for the next focused drill.</p>
+      <div className="drill-controls">
+        <label htmlFor="drill-section">Section</label>
+        <select
+          id="drill-section"
+          value={sectionCode}
+          onChange={(event) => onSelectSection(event.target.value)}
+        >
+          {topLevel.map((section) => (
+            <option key={section.code} value={section.code}>
+              {section.code}. {section.title}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      {loadingDomains ? <p>Loading domains...</p> : null}
-      {error ? <p className="status error">{error}</p> : null}
+      <div className="drill-controls">
+        <label htmlFor="drill-subsection">Subsection</label>
+        <select
+          id="drill-subsection"
+          value={subsectionCode}
+          onChange={(event) => onSelectSubsection(event.target.value)}
+        >
+          {subsectionOptions.map((node) => (
+            <option key={node.code} value={node.code}>
+              {node.code} {node.title}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      {!loadingDomains ? (
-        <div className="drill-controls">
-          <label htmlFor="drill-domain">Domain</label>
-          <select
-            id="drill-domain"
-            value={domain}
-            onChange={(event) => setDomain(event.target.value)}
-            disabled={loadingQuestions}
-          >
-            {domains.map((value) => (
-              <option key={value} value={value}>
-                {value}
-              </option>
-            ))}
-          </select>
-          <button type="button" onClick={startDrill} disabled={loadingQuestions || !domain}>
-            {loadingQuestions ? 'Loading...' : 'Start Drill'}
-          </button>
-        </div>
-      ) : null}
+      <div className="drill-controls">
+        <label htmlFor="drill-leaf">Leaf (optional)</label>
+        <select
+          id="drill-leaf"
+          value={leafCode}
+          onChange={(event) => setLeafCode(event.target.value)}
+        >
+          <option value="">Use subsection ({subsectionCode})</option>
+          {leafOptions.map((node) => (
+            <option key={node.code} value={node.code}>
+              {node.code} {node.title}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      {started && !loadingQuestions ? (
-        <QuestionRunner title={`Drill: ${domain}`} questions={questions} />
-      ) : null}
+      <div className="runner">
+        <p>
+          Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
+        </p>
+        {selectedNode ? (
+          <p>
+            Selected topic: {selectedNode.code} {selectedNode.title}
+          </p>
+        ) : null}
+        <p className="muted">
+          Placeholder only for this slice. Future drill sessions will filter questions by
+          blueprint code.
+        </p>
+      </div>
+
+      <div className="muted">
+        {/* Future tagging requirement: every content item must include blueprintCode and derived domain path. */}
+      </div>
     </section>
   );
 }
