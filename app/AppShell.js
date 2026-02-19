@@ -30,7 +30,7 @@ function isTypingTarget(target) {
 export default function AppShell({ children }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { user, loading } = useAuth();
+  const { user, loading, error } = useAuth();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const isAuthRoute = pathname.startsWith('/auth');
   const isProtectedRoute = PROTECTED_ROUTES.has(pathname);
@@ -63,6 +63,10 @@ export default function AppShell({ children }) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [pathname, router]);
+
+  useEffect(() => {
+    console.debug(`[SESSION] route=${pathname}`);
+  }, [pathname]);
 
   useEffect(() => {
     if (loading || !isProtectedRoute) return;
@@ -125,6 +129,7 @@ export default function AppShell({ children }) {
       </aside>
 
       <main className="content">{children}</main>
+      {error ? <p className="status error">{error}</p> : null}
 
       <aside
         id="review-drawer"

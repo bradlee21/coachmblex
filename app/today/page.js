@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 
@@ -25,48 +25,85 @@ export default function TodayPage() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const mountedRef = useRef(true);
+  const requestIdRef = useRef(0);
 
   useEffect(() => {
+    mountedRef.current = true;
+
+    function setLoadingSafe(value, reason) {
+      if (!mountedRef.current) return;
+      console.debug(`[SESSION] today loading=${value} (${reason})`);
+      setLoading(value);
+    }
+
+    function setErrorSafe(message) {
+      if (!mountedRef.current) return;
+      setError(message || '');
+    }
+
     async function loadQuestions() {
+      const requestId = ++requestIdRef.current;
+      setLoadingSafe(true, 'start');
       const supabase = getSupabaseClient();
       if (!supabase) {
-        setError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
-        setLoading(false);
+        setErrorSafe('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+        setLoadingSafe(false, 'no-client');
         return;
       }
 
       const selectFields =
         'id,domain,subtopic,blueprint_code,prompt,choices,correct_index,explanation,difficulty,created_at';
 
-      const [biasResult, allResult] = await Promise.all([
-        supabase
-          .from('questions')
-          .select(selectFields)
-          .eq('question_type', 'mcq')
-          .or('blueprint_code.like.1.%,blueprint_code.like.2.%')
-          .order('created_at', { ascending: false })
-          .limit(40),
-        supabase
-          .from('questions')
-          .select(selectFields)
-          .eq('question_type', 'mcq')
-          .not('blueprint_code', 'is', null)
-          .order('created_at', { ascending: false })
-          .limit(80),
-      ]);
+      console.debug('[SESSION] today query start');
+      try {
+        const [biasResult, allResult] = await Promise.all([
+          supabase
+            .from('questions')
+            .select(selectFields)
+            .eq('question_type', 'mcq')
+            .or('blueprint_code.like.1.%,blueprint_code.like.2.%')
+            .order('created_at', { ascending: false })
+            .limit(40),
+          supabase
+            .from('questions')
+            .select(selectFields)
+            .eq('question_type', 'mcq')
+            .not('blueprint_code', 'is', null)
+            .order('created_at', { ascending: false })
+            .limit(80),
+        ]);
 
-      if (biasResult.error || allResult.error) {
-        setError(biasResult.error?.message || allResult.error?.message || 'Failed to load questions.');
-        setLoading(false);
-        return;
+        if (requestId !== requestIdRef.current || !mountedRef.current) return;
+
+        if (biasResult.error || allResult.error) {
+          setErrorSafe(
+            biasResult.error?.message || allResult.error?.message || 'Failed to load questions.'
+          );
+          return;
+        }
+
+        const nextQuestions = pickTodayQuestions(biasResult.data || [], allResult.data || []);
+        setQuestions(nextQuestions.slice(0, 8));
+        setErrorSafe('');
+        console.debug(`[SESSION] today query success count=${nextQuestions.slice(0, 8).length}`);
+      } catch (loadError) {
+        if (requestId !== requestIdRef.current || !mountedRef.current) return;
+        const message =
+          loadError instanceof Error ? loadError.message : 'Failed to load questions.';
+        setErrorSafe(message);
+        console.debug(`[SESSION] today query error=${message}`);
+      } finally {
+        if (requestId === requestIdRef.current) {
+          setLoadingSafe(false, 'finally');
+        }
       }
-
-      const nextQuestions = pickTodayQuestions(biasResult.data || [], allResult.data || []);
-      setQuestions(nextQuestions.slice(0, 8));
-      setLoading(false);
     }
 
     loadQuestions();
+    return () => {
+      mountedRef.current = false;
+    };
   }, []);
 
   return (

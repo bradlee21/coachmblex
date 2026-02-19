@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
 
@@ -17,6 +17,7 @@ function isTypingTarget(target) {
 
 export default function QuestionRunner({ title, questions, onComplete }) {
   const { user } = useAuth();
+  const mountedRef = useRef(true);
   const [index, setIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [confidence, setConfidence] = useState('kinda');
@@ -27,6 +28,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   const [completionSent, setCompletionSent] = useState(false);
 
   useEffect(() => {
+    mountedRef.current = true;
     setIndex(0);
     setSelectedIndex(null);
     setConfidence('kinda');
@@ -35,6 +37,9 @@ export default function QuestionRunner({ title, questions, onComplete }) {
     setResults([]);
     setStatus('');
     setCompletionSent(false);
+    return () => {
+      mountedRef.current = false;
+    };
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
@@ -61,10 +66,14 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
       const supabase = getSupabaseClient();
       if (!supabase || !user?.id) {
-        setStatus('Attempt not saved: missing auth/session.');
+        if (mountedRef.current) {
+          setStatus('Attempt not saved: missing auth/session.');
+        }
+        console.debug(`[SESSION] runner persist skipped title=${title} reason=missing-session`);
         return;
       }
 
+      console.debug(`[SESSION] runner persist start title=${title} q=${current.id}`);
       const { error } = await supabase.from('attempts').insert({
         user_id: user.id,
         question_id: current.id,
@@ -72,13 +81,17 @@ export default function QuestionRunner({ title, questions, onComplete }) {
         confidence,
       });
 
+      if (!mountedRef.current) return;
+
       if (error) {
         setStatus(`Attempt save failed: ${error.message}`);
+        console.debug(`[SESSION] runner persist error title=${title} q=${current.id} ${error.message}`);
       } else {
         setStatus('');
+        console.debug(`[SESSION] runner persist success title=${title} q=${current.id}`);
       }
     },
-    [confidence, current, submitted, user?.id]
+    [confidence, current, submitted, title, user?.id]
   );
 
   const goNext = useCallback(() => {
@@ -129,8 +142,11 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       total: questions.length,
       results,
     });
+    console.debug(
+      `[SESSION] runner complete title=${title} score=${score}/${questions.length}`
+    );
     setCompletionSent(true);
-  }, [completionSent, isDone, onComplete, questions.length, results, score]);
+  }, [completionSent, isDone, onComplete, questions.length, results, score, title]);
 
   if (questions.length === 0) {
     return <p>No questions available yet.</p>;
