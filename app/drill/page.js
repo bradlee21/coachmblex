@@ -1,6 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
+import QuestionRunner from '../_components/QuestionRunner';
+import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import {
   findNodeByCode,
   listTopLevelDomains,
@@ -45,6 +47,10 @@ export default function DrillPage() {
 
   const selectedCode = leafCode || subsectionCode || sectionCode;
   const selectedNode = findNodeByCode(selectedCode);
+  const [questions, setQuestions] = useState([]);
+  const [started, setStarted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
   function onSelectSection(nextSectionCode) {
     setSectionCode(nextSectionCode);
@@ -61,10 +67,54 @@ export default function DrillPage() {
     setLeafCode('');
   }
 
+  async function startDrill() {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+      return;
+    }
+
+    const query = supabase
+      .from('questions')
+      .select(
+        'id,domain,subtopic,blueprint_code,prompt,choices,correct_index,explanation,difficulty,created_at'
+      )
+      .order('created_at', { ascending: false })
+      .limit(60);
+
+    if (leafCode) {
+      query.eq('blueprint_code', leafCode);
+    } else if (subsectionCode) {
+      query.like('blueprint_code', `${subsectionCode}%`);
+    } else {
+      query.like('blueprint_code', `${sectionCode}.%`);
+    }
+
+    setLoading(true);
+    setMessage('');
+
+    const { data, error } = await query;
+    if (error) {
+      setMessage(`Failed to load drill questions: ${error.message}`);
+      setLoading(false);
+      return;
+    }
+
+    const picked = (data || []).slice(0, 10);
+    setQuestions(picked);
+    setStarted(true);
+    if (picked.length < 10) {
+      setMessage(
+        `Only ${picked.length} question(s) found for ${selectedCode}. Add more tagged content to reach 10.`
+      );
+    }
+    setLoading(false);
+  }
+
   return (
     <section>
       <h1>Drill</h1>
-      <p>Pick a blueprint topic for the next focused drill.</p>
+      <p>Pick a blueprint topic and start a 10-question drill.</p>
       <div className="drill-controls">
         <label htmlFor="drill-section">Section</label>
         <select
@@ -121,14 +171,18 @@ export default function DrillPage() {
           </p>
         ) : null}
         <p className="muted">
-          Placeholder only for this slice. Future drill sessions will filter questions by
-          blueprint code.
+          Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
         </p>
       </div>
 
-      <div className="muted">
-        {/* Future tagging requirement: every content item must include blueprintCode and derived domain path. */}
+      <div className="drill-controls">
+        <button type="button" onClick={startDrill} disabled={loading || !selectedCode}>
+          {loading ? 'Loading...' : 'Start Drill'}
+        </button>
       </div>
+
+      {message ? <p className="status error">{message}</p> : null}
+      {started ? <QuestionRunner title={`Drill ${selectedCode}`} questions={questions} /> : null}
     </section>
   );
 }

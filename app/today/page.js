@@ -4,29 +4,21 @@ import { useEffect, useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 
-function shuffle(items) {
-  const list = [...items];
-  for (let i = list.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [list[i], list[j]] = [list[j], list[i]];
-  }
-  return list;
-}
-
 function pickTodayQuestions(biasPool, allPool) {
-  const preferred = shuffle(biasPool).slice(0, 6);
+  const preferred = biasPool.slice(0, 6);
   const used = new Set(preferred.map((item) => item.id));
-  const supplemental = shuffle(allPool).filter((item) => !used.has(item.id)).slice(0, 2);
+  const supplemental = allPool.filter((item) => !used.has(item.id)).slice(0, 2);
   const merged = [...preferred, ...supplemental];
 
   if (merged.length < 8) {
-    const fill = shuffle(allPool)
-      .filter((item) => !new Set(merged.map((q) => q.id)).has(item.id))
+    const mergedIds = new Set(merged.map((q) => q.id));
+    const fill = allPool
+      .filter((item) => !mergedIds.has(item.id))
       .slice(0, 8 - merged.length);
     return [...merged, ...fill];
   }
 
-  return shuffle(merged);
+  return merged;
 }
 
 export default function TodayPage() {
@@ -44,15 +36,21 @@ export default function TodayPage() {
       }
 
       const selectFields =
-        'id,domain,subtopic,prompt,choices,correct_index,explanation,difficulty';
+        'id,domain,subtopic,blueprint_code,prompt,choices,correct_index,explanation,difficulty,created_at';
 
       const [biasResult, allResult] = await Promise.all([
         supabase
           .from('questions')
           .select(selectFields)
-          .in('domain', ['anatomy', 'kinesiology'])
-          .limit(30),
-        supabase.from('questions').select(selectFields).limit(80),
+          .or('blueprint_code.like.1.%,blueprint_code.like.2.%')
+          .order('created_at', { ascending: false })
+          .limit(40),
+        supabase
+          .from('questions')
+          .select(selectFields)
+          .not('blueprint_code', 'is', null)
+          .order('created_at', { ascending: false })
+          .limit(80),
       ]);
 
       if (biasResult.error || allResult.error) {
