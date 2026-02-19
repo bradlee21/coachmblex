@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { getSupabaseClient } from '../src/lib/supabaseClient';
+import { useAuth } from '../src/providers/AuthProvider';
 
 const NAV_ITEMS = [
   { href: '/today', label: 'Today', key: 't' },
@@ -12,6 +14,7 @@ const NAV_ITEMS = [
   { href: '/progress', label: 'Progress', key: 'p' },
   { href: '/settings', label: 'Settings', key: 's' },
 ];
+const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
 
 function isTypingTarget(target) {
   if (!target) return false;
@@ -27,7 +30,10 @@ function isTypingTarget(target) {
 export default function AppShell({ children }) {
   const pathname = usePathname();
   const router = useRouter();
+  const { user, loading } = useAuth();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
+  const isAuthRoute = pathname.startsWith('/auth');
+  const isProtectedRoute = PROTECTED_ROUTES.has(pathname);
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -52,6 +58,32 @@ export default function AppShell({ children }) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [router]);
+
+  useEffect(() => {
+    if (loading || !isProtectedRoute) return;
+    if (!user) {
+      router.replace('/auth/sign-in');
+    }
+  }, [loading, isProtectedRoute, router, user]);
+
+  async function handleSignOut() {
+    const supabase = getSupabaseClient();
+    if (!supabase) return;
+    await supabase.auth.signOut();
+    router.replace('/auth/sign-in');
+  }
+
+  if (isAuthRoute) {
+    return <main className="auth-content">{children}</main>;
+  }
+
+  if (loading && isProtectedRoute) {
+    return <main className="auth-content">Loading session...</main>;
+  }
+
+  if (!user && isProtectedRoute) {
+    return <main className="auth-content">Redirecting to sign in...</main>;
+  }
 
   return (
     <div className="app-shell">
@@ -80,6 +112,11 @@ export default function AppShell({ children }) {
         >
           Review (0)
         </button>
+        {user ? (
+          <button type="button" className="sign-out" onClick={handleSignOut}>
+            Sign out
+          </button>
+        ) : null}
       </aside>
 
       <main className="content">{children}</main>

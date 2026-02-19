@@ -76,6 +76,21 @@ a {
   background: #e5e7eb;
 }
 
+.sign-out {
+  margin-top: 8px;
+  align-self: flex-start;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.sign-out:hover,
+.sign-out:focus-visible {
+  background: #f3f4f6;
+}
+
 .content {
   padding: 24px;
   max-width: 980px;
@@ -107,4 +122,91 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.auth-content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.auth-card h1 {
+  margin-top: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.auth-form input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px;
+  font: inherit;
+}
+
+.auth-form button,
+.button-row button {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+.auth-form button:hover,
+.auth-form button:focus-visible,
+.button-row button:hover,
+.button-row button:focus-visible {
+  background: #f3f4f6;
+}
+
+.auth-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.status {
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.status.success {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.status.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+}
+
+.button-row .active-btn {
+  background: #e5e7eb;
+  font-weight: 700;
 }
