@@ -40,6 +40,10 @@ export default function AppShell({ children }) {
       if (isTypingTarget(event.target)) return;
 
       const key = event.key.toLowerCase();
+      const sessionPage = pathname === '/today' || pathname === '/drill';
+      if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {
+        return;
+      }
 
       if (key === 'escape') {
         setIsReviewOpen(false);
@@ -57,7 +61,7 @@ export default function AppShell({ children }) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [router]);
+  }, [pathname, router]);
 
   useEffect(() => {
     if (loading || !isProtectedRoute) return;
