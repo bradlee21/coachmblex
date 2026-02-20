@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP17b: built Question Forge V1 at `/admin/questions` with blueprint search/picker, MCQ/Reverse/Fill type tabs, and keyboard-friendly Save / Save & New flows.
+- Question inserts now validate required fields, show clear success/error panels, and preserve blueprint/type on Save & New.
+- Added questions SQL policy docs for `questions_editor`/`admin` insert access and expanded lightweight smoke assertions for Question Forge rendering/gating.
 - TP17a: added `profiles.role` support (`user | questions_editor | admin`) in SQL docs with migration snippet.
 - Added gated `/admin/questions` "Question Forge" entry route and admin-role checks in AppShell.
 - Questions nav item now appears only for `admin` and `questions_editor`; unauthorized admin routes show a friendly access message.

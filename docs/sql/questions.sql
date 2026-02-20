@@ -33,3 +33,16 @@ create policy "Authenticated users can read questions"
   on public.questions
   for select
   using (auth.role() = 'authenticated');
+
+drop policy if exists "Editors can insert questions" on public.questions;
+create policy "Editors can insert questions"
+  on public.questions
+  for insert
+  with check (
+    exists (
+      select 1
+      from public.profiles p
+      where p.id = auth.uid()
+        and p.role in ('questions_editor', 'admin')
+    )
+  );

@@ -14,6 +14,7 @@ function assertMatch(source, pattern, message) {
 const appShellSource = read('app/AppShell.js');
 const authProviderSource = read('src/providers/AuthProvider.js');
 const todaySource = read('app/today/page.js');
+const adminQuestionsSource = read('app/admin/questions/page.js');
 
 assertMatch(
   appShellSource,
@@ -61,6 +62,18 @@ assertMatch(
   authProviderSource,
   /\.from\('profiles'\)\s*\.select\('role'\)/s,
   'Expected AuthProvider to load profile role for route gating.'
+);
+
+assertMatch(
+  appShellSource,
+  /roles:\s*\['admin',\s*'questions_editor'\]/,
+  'Expected Questions nav item to be visible only to admin and questions_editor roles.'
+);
+
+assertMatch(
+  adminQuestionsSource,
+  /<h1>Question Forge<\/h1>/,
+  'Expected /admin/questions page to render Question Forge heading.'
 );
 
 assertMatch(
