@@ -35,7 +35,6 @@ function getCodePrefix(code) {
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const QUICK_PARAM_KEYS = ['quick', 'q', 'qt', 'bc', 'tg', 'cid'];
-const DIAGNOSTIC_GROUP_CANDIDATES = ['pack_id', 'packId', 'source', 'metadata', 'subtopic'];
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -108,51 +107,33 @@ function getQuestionTags(question) {
   return [];
 }
 
-function normalizeDiagnosticGroupValue(column, rawValue) {
-  if (column === 'metadata' && rawValue && typeof rawValue === 'object') {
-    const metadataPack =
-      rawValue.pack_id || rawValue.packId || rawValue.source || rawValue.pack || null;
-    if (metadataPack) return String(metadataPack);
-    return '(metadata)';
+function parseMaybeObject(value) {
+  if (!value) return null;
+  if (typeof value === 'object' && !Array.isArray(value)) return value;
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) return null;
+  try {
+    const parsed = JSON.parse(trimmed);
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
   }
-  if (rawValue == null || rawValue === '') return '(none)';
-  return String(rawValue);
 }
 
-async function fetchGroupedCountsByColumn(supabase, column) {
-  const pageSize = 1000;
-  let from = 0;
-  const rows = [];
+function getPackId(row) {
+  if (row?.pack_id) return String(row.pack_id);
+  if (row?.packId) return String(row.packId);
 
-  for (;;) {
-    const { data, error } = await supabase
-      .from('questions')
-      .select(`id,${column}`)
-      .order('id', { ascending: true })
-      .range(from, from + pageSize - 1);
+  const sourceObject = parseMaybeObject(row?.source);
+  if (sourceObject?.pack_id) return String(sourceObject.pack_id);
+  if (sourceObject?.packId) return String(sourceObject.packId);
 
-    if (error) {
-      return { groups: [], error };
-    }
+  const metadataObject = parseMaybeObject(row?.metadata);
+  if (metadataObject?.pack_id) return String(metadataObject.pack_id);
+  if (metadataObject?.packId) return String(metadataObject.packId);
 
-    const pageRows = data || [];
-    if (pageRows.length === 0) break;
-    rows.push(...pageRows);
-    if (pageRows.length < pageSize) break;
-    from += pageRows.length;
-  }
-
-  const counts = new Map();
-  for (const row of rows) {
-    const value = normalizeDiagnosticGroupValue(column, row[column]);
-    counts.set(value, (counts.get(value) || 0) + 1);
-  }
-
-  const groups = Array.from(counts.entries())
-    .map(([value, count]) => ({ value, count }))
-    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
-
-  return { groups, error: null };
+  return 'unknown';
 }
 
 export default function DrillPage() {
@@ -214,8 +195,10 @@ export default function DrillPage() {
   const [diagnosticLoading, setDiagnosticLoading] = useState(false);
   const [diagnosticError, setDiagnosticError] = useState('');
   const [diagnosticTotal, setDiagnosticTotal] = useState(null);
-  const [diagnosticGroupColumn, setDiagnosticGroupColumn] = useState('');
-  const [diagnosticGroups, setDiagnosticGroups] = useState([]);
+  const [diagnosticSampleKeys, setDiagnosticSampleKeys] = useState('');
+  const [diagnosticPackGroups, setDiagnosticPackGroups] = useState([]);
+  const [diagnosticSubtopicGroups, setDiagnosticSubtopicGroups] = useState([]);
+  const [diagnosticPackTotalSum, setDiagnosticPackTotalSum] = useState(0);
   const supabaseHostname = useMemo(() => {
     const raw = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
     if (!raw) return '(missing NEXT_PUBLIC_SUPABASE_URL)';
@@ -302,8 +285,10 @@ export default function DrillPage() {
     if (!supabase) {
       setDiagnosticError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
       setDiagnosticTotal(0);
-      setDiagnosticGroupColumn('');
-      setDiagnosticGroups([]);
+      setDiagnosticSampleKeys('');
+      setDiagnosticPackGroups([]);
+      setDiagnosticSubtopicGroups([]);
+      setDiagnosticPackTotalSum(0);
       return;
     }
 
@@ -317,43 +302,83 @@ export default function DrillPage() {
     if (error) {
       setDiagnosticError(`Failed to load question count: ${error.message}`);
       setDiagnosticTotal(0);
-      setDiagnosticGroupColumn('');
-      setDiagnosticGroups([]);
+      setDiagnosticSampleKeys('');
+      setDiagnosticPackGroups([]);
+      setDiagnosticSubtopicGroups([]);
+      setDiagnosticPackTotalSum(0);
       setDiagnosticLoading(false);
       return;
     }
 
     setDiagnosticTotal(count ?? 0);
 
-    let resolvedColumn = '';
-    let resolvedGroups = [];
-    let lastErrorMessage = '';
+    const { data: sampleRows, error: sampleError } = await supabase
+      .from('questions')
+      .select('*')
+      .limit(1);
 
-    for (const column of DIAGNOSTIC_GROUP_CANDIDATES) {
-      const { groups, error: groupError } = await fetchGroupedCountsByColumn(supabase, column);
-      if (groupError) {
-        lastErrorMessage = groupError.message || String(groupError);
-        continue;
-      }
-      resolvedColumn = column;
-      resolvedGroups = groups;
-      break;
-    }
-
-    if (!resolvedColumn) {
-      setDiagnosticGroupColumn('');
-      setDiagnosticGroups([]);
-      setDiagnosticError(
-        lastErrorMessage
-          ? `Could not load grouped pack counts: ${lastErrorMessage}`
-          : 'Could not load grouped pack counts.'
-      );
+    if (sampleError) {
+      setDiagnosticError(`Failed to load sample row keys: ${sampleError.message}`);
+      setDiagnosticSampleKeys('');
+      setDiagnosticPackGroups([]);
+      setDiagnosticSubtopicGroups([]);
+      setDiagnosticPackTotalSum(0);
       setDiagnosticLoading(false);
       return;
     }
 
-    setDiagnosticGroupColumn(resolvedColumn);
-    setDiagnosticGroups(resolvedGroups);
+    const sampleRow = Array.isArray(sampleRows) && sampleRows.length > 0 ? sampleRows[0] : null;
+    setDiagnosticSampleKeys(sampleRow ? Object.keys(sampleRow).join(', ') : '(no rows)');
+
+    const pageSize = 1000;
+    let from = 0;
+    const rows = [];
+    for (;;) {
+      const { data: pageRows, error: pageError } = await supabase
+        .from('questions')
+        .select('*')
+        .order('id', { ascending: true })
+        .range(from, from + pageSize - 1);
+
+      if (pageError) {
+        setDiagnosticError(`Could not load grouped counts: ${pageError.message}`);
+        setDiagnosticPackGroups([]);
+        setDiagnosticSubtopicGroups([]);
+        setDiagnosticPackTotalSum(0);
+        setDiagnosticLoading(false);
+        return;
+      }
+
+      const data = pageRows || [];
+      if (data.length === 0) break;
+      rows.push(...data);
+      if (data.length < pageSize) break;
+      from += data.length;
+    }
+
+    const packCounts = new Map();
+    const subtopicCounts = new Map();
+
+    for (const row of rows) {
+      const packId = getPackId(row);
+      packCounts.set(packId, (packCounts.get(packId) || 0) + 1);
+
+      const subtopic = row?.subtopic ? String(row.subtopic) : '(none)';
+      subtopicCounts.set(subtopic, (subtopicCounts.get(subtopic) || 0) + 1);
+    }
+
+    const packGroups = Array.from(packCounts.entries())
+      .map(([value, valueCount]) => ({ value, count: valueCount }))
+      .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+
+    const subtopicGroups = Array.from(subtopicCounts.entries())
+      .map(([value, valueCount]) => ({ value, count: valueCount }))
+      .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+
+    setDiagnosticPackGroups(packGroups);
+    setDiagnosticSubtopicGroups(subtopicGroups);
+    setDiagnosticPackTotalSum(packGroups.reduce((sum, item) => sum + item.count, 0));
+    setDiagnosticError('');
     setDiagnosticLoading(false);
   }, []);
 
@@ -673,15 +698,31 @@ export default function DrillPage() {
           Total questions in DB:{' '}
           <strong>{diagnosticTotal == null ? '...' : String(diagnosticTotal)}</strong>
         </p>
-        {diagnosticGroupColumn ? (
-          <p>
-            Counts grouped by <strong>{diagnosticGroupColumn}</strong>
-          </p>
-        ) : null}
-        {diagnosticGroups.length > 0 ? (
+        <p>
+          Sample row keys: <strong>{diagnosticSampleKeys || '...'}</strong>
+        </p>
+        <p>
+          Counts grouped by <strong>pack</strong>
+        </p>
+        <p>
+          Pack totals sum: <strong>{diagnosticPackTotalSum}</strong>
+        </p>
+        {diagnosticPackGroups.length > 0 ? (
           <ul>
-            {diagnosticGroups.map((item) => (
-              <li key={`${item.value}-${item.count}`}>
+            {diagnosticPackGroups.map((item) => (
+              <li key={`pack-${item.value}-${item.count}`}>
+                {item.value}: {item.count}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <p>
+          Counts grouped by <strong>subtopic</strong>
+        </p>
+        {diagnosticSubtopicGroups.length > 0 ? (
+          <ul>
+            {diagnosticSubtopicGroups.map((item) => (
+              <li key={`subtopic-${item.value}-${item.count}`}>
                 {item.value}: {item.count}
               </li>
             ))}
