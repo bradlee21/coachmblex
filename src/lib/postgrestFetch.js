@@ -1,5 +1,3 @@
-import { getSupabaseClient } from './supabaseClient';
-
 function withTimeout(promise, ms = 8000, label = 'operation') {
   return new Promise((resolve, reject) => {
     const timeoutId = setTimeout(() => {
@@ -91,26 +89,7 @@ export async function postgrestFetch(
     }
   })();
 
-  let accessToken = null;
-  const supabase = getSupabaseClient();
-  if (supabase) {
-    try {
-      const { data, error } = await withTimeout(
-        supabase.auth.getSession(),
-        1000,
-        'postgrest_get_session'
-      );
-      if (!error) {
-        accessToken = data?.session?.access_token || null;
-      }
-    } catch {
-      accessToken = null;
-    }
-  }
-
-  if (!accessToken) {
-    accessToken = getStoredAccessToken(projectRef);
-  }
+  const accessToken = getStoredAccessToken(projectRef);
 
   if (!accessToken && isWrite) {
     return {
