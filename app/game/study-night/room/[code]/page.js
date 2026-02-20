@@ -13,6 +13,7 @@ import {
 
 const DEFAULT_STATE = {
   phase: 'pick',
+  game_type: 'mcq',
   turn_index: 0,
   category_key: null,
   question_id: null,
@@ -20,6 +21,14 @@ const DEFAULT_STATE = {
   duration_sec: 12,
   round_no: 1,
 };
+
+function normalizeGameType(value) {
+  return value === 'reverse' ? 'reverse' : 'mcq';
+}
+
+function getGameTypeLabel(value) {
+  return normalizeGameType(value) === 'reverse' ? 'Reverse' : 'MCQ';
+}
 
 function sortPlayers(players) {
   return [...players].sort((a, b) => {
@@ -181,6 +190,7 @@ export default function StudyNightRoomPage() {
   const [submittedByQuestion, setSubmittedByQuestion] = useState({});
   const [correctByQuestion, setCorrectByQuestion] = useState({});
   const [secondsLeft, setSecondsLeft] = useState(0);
+  const [selectedGameType, setSelectedGameType] = useState('mcq');
 
   const channelRef = useRef(null);
   const revealKeyRef = useRef('');
@@ -213,7 +223,7 @@ export default function StudyNightRoomPage() {
           'snapshot_players'
         ),
         timedPostgrest(
-          `study_room_state?room_id=eq.${roomId}&select=room_id,turn_index,phase,category_key,question_id,started_at,duration_sec,round_no,updated_at&limit=1`,
+          `study_room_state?room_id=eq.${roomId}&select=room_id,turn_index,phase,game_type,category_key,question_id,started_at,duration_sec,round_no,updated_at&limit=1`,
           undefined,
           'snapshot_state'
         ),
@@ -256,10 +266,11 @@ export default function StudyNightRoomPage() {
   );
 
   const pickCategoryAsHost = useCallback(
-    async (categoryKey) => {
+    async (categoryKey, gameType = 'mcq') => {
       if (!isHost || !room || room.status !== 'running' || state?.phase !== 'pick') return;
 
       const category = studyNightCategoryByKey[categoryKey];
+      const normalizedGameType = normalizeGameType(gameType);
       if (!category) {
         setMessage('Invalid category.');
         return;
@@ -268,7 +279,7 @@ export default function StudyNightRoomPage() {
       try {
         const offset = Math.max(0, (state?.round_no || 1) % 10);
         let questionResult = await timedPostgrest(
-          `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.mcq&blueprint_code=like.${encodeURIComponent(
+          `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.${normalizedGameType}&blueprint_code=like.${encodeURIComponent(
             `${category.prefix}%`
           )}&order=id.asc&offset=${offset}&limit=1`,
           undefined,
@@ -280,7 +291,7 @@ export default function StudyNightRoomPage() {
         let nextQuestion = firstRow(questionResult.data);
         if (!nextQuestion) {
           questionResult = await timedPostgrest(
-            `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.mcq&blueprint_code=like.${encodeURIComponent(
+            `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.${normalizedGameType}&blueprint_code=like.${encodeURIComponent(
               `${category.prefix}%`
             )}&order=id.asc&offset=0&limit=1`,
             undefined,
@@ -293,7 +304,7 @@ export default function StudyNightRoomPage() {
         }
 
         if (!nextQuestion) {
-          setMessage(`No MCQ found for category ${category.key}.`);
+          setMessage(`No ${getGameTypeLabel(normalizedGameType)} question found for category ${category.key}.`);
           return;
         }
 
@@ -307,6 +318,7 @@ export default function StudyNightRoomPage() {
             method: 'PATCH',
             body: {
               phase: 'question',
+              game_type: normalizedGameType,
               category_key: category.key,
               question_id: nextQuestion.id,
               started_at: new Date().toISOString(),
@@ -458,7 +470,7 @@ export default function StudyNightRoomPage() {
         ) {
           return;
         }
-        void pickCategoryAsHost(payload.categoryKey);
+        void pickCategoryAsHost(payload.categoryKey, payload.gameType);
       })
       .subscribe();
 
@@ -475,6 +487,12 @@ export default function StudyNightRoomPage() {
     state?.phase,
     user?.id,
   ]);
+
+  useEffect(() => {
+    if (state?.phase === 'pick') {
+      setSelectedGameType('mcq');
+    }
+  }, [state?.phase, state?.round_no]);
 
   useEffect(() => {
     if (state?.phase !== 'question' || !state?.started_at) {
@@ -553,9 +571,10 @@ export default function StudyNightRoomPage() {
 
   async function handlePickCategory(categoryKey) {
     if (!canPickCategory || !room || !user?.id) return;
+    const nextGameType = normalizeGameType(selectedGameType);
 
     if (isHost) {
-      await pickCategoryAsHost(categoryKey);
+      await pickCategoryAsHost(categoryKey, nextGameType);
       return;
     }
 
@@ -572,6 +591,7 @@ export default function StudyNightRoomPage() {
         roomId: room.id,
         userId: user.id,
         categoryKey,
+        gameType: nextGameType,
       },
     });
     setMessage('Category pick sent to host.');
@@ -759,6 +779,8 @@ export default function StudyNightRoomPage() {
   const winner = orderedPlayers.find((player) => getWedges(player).length >= 3) || null;
   const selectedAnswerIndex = question?.id ? selectedAnswer[question.id] : null;
   const explanationBlocks = question ? getExplanationBlocks(question.explanation) : [];
+  const currentGameType = normalizeGameType(state?.game_type || question?.question_type || 'mcq');
+  const currentGameTypeLabel = getGameTypeLabel(currentGameType);
 
   return (
     <section>
@@ -811,6 +833,16 @@ export default function StudyNightRoomPage() {
               <p className="muted">
                 Current turn: {currentTurnPlayer ? getDisplayName(currentTurnPlayer) : 'Unknown'}
               </p>
+              <label htmlFor="study-night-game-type">Game type</label>
+              <select
+                id="study-night-game-type"
+                value={selectedGameType}
+                onChange={(event) => setSelectedGameType(normalizeGameType(event.target.value))}
+                disabled={!canPickCategory}
+              >
+                <option value="mcq">MCQ</option>
+                <option value="reverse">Reverse</option>
+              </select>
               <div className="button-row game-wrap">
                 {studyNightCategories.map((category) => (
                   <button
@@ -831,7 +863,7 @@ export default function StudyNightRoomPage() {
 
           {room.status === 'running' && state?.phase === 'question' ? (
             <>
-              <h2>Quickfire MCQ</h2>
+              <h2>Quickfire {currentGameTypeLabel}</h2>
               <p className="muted">
                 Category: {currentCategory ? `${currentCategory.key} (${currentCategory.prefix})` : 'n/a'}
               </p>
@@ -867,6 +899,7 @@ export default function StudyNightRoomPage() {
               <h2>Reveal</h2>
               {question ? (
                 <>
+                  <p className="muted">Game type: {currentGameTypeLabel}</p>
                   <p className="muted">
                     Correct answer: {(question.choices || [])[question.correct_index] ?? 'Unknown'}
                   </p>

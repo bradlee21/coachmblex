@@ -41,8 +41,8 @@ assertMatch(
 
 assertMatch(
   roomSource,
-  /Quickfire MCQ/,
-  'Expected Study Night room route to render Quickfire MCQ phase.'
+  /Quickfire/,
+  'Expected Study Night room route to render Quickfire phase.'
 );
 
 console.log('Study Night smoke checks passed.');

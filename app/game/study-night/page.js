@@ -389,6 +389,7 @@ export default function StudyNightLandingPage() {
           body: {
             room_id: createdRoom.id,
             phase: 'pick',
+            game_type: 'mcq',
             turn_index: 0,
             round_no: 1,
             category_key: null,
