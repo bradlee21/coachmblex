@@ -7,11 +7,17 @@ create table if not exists public.study_room_players (
   display_name text,
   score int not null default 0,
   wedges jsonb not null default '[]'::jsonb,
+  coach_stats jsonb not null default '{}'::jsonb,
   joined_at timestamptz not null default now(),
   last_seen_at timestamptz not null default now(),
   unique(room_id, user_id),
-  check (jsonb_typeof(wedges) = 'array')
+  check (jsonb_typeof(wedges) = 'array'),
+  check (jsonb_typeof(coach_stats) = 'object')
 );
+
+-- Migration snippet for existing environments:
+alter table public.study_room_players
+  add column if not exists coach_stats jsonb not null default '{}'::jsonb;
 
 create index if not exists study_room_players_room_joined_idx
   on public.study_room_players(room_id, joined_at asc);
@@ -69,4 +75,4 @@ create policy "Hosts can update player rows in own room"
   );
 
 revoke update on public.study_room_players from authenticated;
-grant update(score, wedges, last_seen_at) on public.study_room_players to authenticated;
+grant update(score, wedges, last_seen_at, coach_stats) on public.study_room_players to authenticated;

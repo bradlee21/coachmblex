@@ -100,6 +100,34 @@ function createEmptyCoachStats() {
   };
 }
 
+function normalizeCoachStats(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return null;
+  const totalAnswered = Math.max(0, Math.floor(Number(value.totalAnswered) || 0));
+  const correct = Math.max(0, Math.floor(Number(value.correct) || 0));
+  const incorrect = Math.max(0, Math.floor(Number(value.incorrect) || 0));
+  const missesByPrefix = {};
+  if (value.missesByPrefix && typeof value.missesByPrefix === 'object' && !Array.isArray(value.missesByPrefix)) {
+    for (const [prefix, count] of Object.entries(value.missesByPrefix)) {
+      const normalizedCount = Math.floor(Number(count) || 0);
+      if (!prefix || normalizedCount <= 0) continue;
+      missesByPrefix[prefix] = normalizedCount;
+    }
+  }
+  return {
+    totalAnswered,
+    correct,
+    incorrect,
+    missesByPrefix,
+  };
+}
+
+function getPlayerCoachStats(player, coachStatsByUser) {
+  const persisted = normalizeCoachStats(player?.coach_stats);
+  if (persisted) return persisted;
+  const inMemory = normalizeCoachStats(player?.user_id ? coachStatsByUser[player.user_id] : null);
+  return inMemory || createEmptyCoachStats();
+}
+
 function getTopMissEntry(missesByPrefix) {
   const entries = Object.entries(missesByPrefix || {});
   if (entries.length === 0) return null;
@@ -393,7 +421,7 @@ export default function StudyNightRoomPage() {
           'snapshot_room'
         ),
         timedPostgrest(
-          `study_room_players?room_id=eq.${roomId}&select=id,room_id,user_id,display_name,score,wedges,joined_at,last_seen_at&order=joined_at.asc`,
+          `study_room_players?room_id=eq.${roomId}&select=id,room_id,user_id,display_name,score,wedges,coach_stats,joined_at,last_seen_at&order=joined_at.asc`,
           undefined,
           'snapshot_players'
         ),
@@ -477,9 +505,15 @@ export default function StudyNightRoomPage() {
     return { deck, deckPos };
   }, []);
 
-  const recordTurnStats = useCallback((playerUserId, wasCorrect, blueprintCode) => {
+  const recordTurnStats = useCallback(async (playerUserId, wasCorrect, blueprintCode) => {
     if (!playerUserId) return;
-    const previous = coachStatsRef.current[playerUserId] || createEmptyCoachStats();
+    const persistedFromPlayers = normalizeCoachStats(
+      players.find((player) => player.user_id === playerUserId)?.coach_stats
+    );
+    const previous =
+      normalizeCoachStats(coachStatsRef.current[playerUserId]) ||
+      persistedFromPlayers ||
+      createEmptyCoachStats();
     const next = {
       totalAnswered: previous.totalAnswered + 1,
       correct: previous.correct + (wasCorrect ? 1 : 0),
@@ -499,7 +533,26 @@ export default function StudyNightRoomPage() {
       [playerUserId]: next,
     };
     setCoachStatsVersion((value) => value + 1);
-  }, []);
+
+    if (!room?.id || (!isHost && user?.id !== playerUserId)) return;
+
+    const updateResponse = await timedPostgrest(
+      `study_room_players?room_id=eq.${room.id}&user_id=eq.${playerUserId}`,
+      {
+        method: 'PATCH',
+        body: { coach_stats: next },
+      },
+      'coach_stats_update'
+    );
+    if (!updateResponse.ok) {
+      devLog('[STUDY-NIGHT] coach_stats update failed', {
+        roomId: room.id,
+        playerUserId,
+        status: updateResponse.status,
+        error: updateResponse.errorText,
+      });
+    }
+  }, [isHost, players, room?.id, user?.id]);
 
   const pickCategoryAsHost = useCallback(
     async (categoryKey, gameType = 'mcq') => {
@@ -860,7 +913,7 @@ export default function StudyNightRoomPage() {
       wasCorrect = Boolean(correctByQuestion[state.question_id]);
     }
 
-    recordTurnStats(currentTurnPlayer.user_id, wasCorrect, question.blueprint_code);
+    void recordTurnStats(currentTurnPlayer.user_id, wasCorrect, question.blueprint_code);
     gradedTurnKeysRef.current[turnKey] = true;
   }, [
     correctByQuestion,
@@ -1235,9 +1288,7 @@ export default function StudyNightRoomPage() {
   const activeTurnKey = getTurnKey(room?.id, state);
   const alreadyAnsweredTurn = Boolean(activeTurnKey && submittedTurnKeysRef.current[activeTurnKey]);
   const coachStatsByUser = useMemo(() => coachStatsRef.current, [coachStatsVersion]);
-  const myCoachStats = myPlayer?.user_id
-    ? coachStatsByUser[myPlayer.user_id] || createEmptyCoachStats()
-    : createEmptyCoachStats();
+  const myCoachStats = myPlayer ? getPlayerCoachStats(myPlayer, coachStatsByUser) : createEmptyCoachStats();
   const nextPickSuggestions = getNextPickSuggestions(myCoachStats.missesByPrefix, myWedges);
 
   return (
@@ -1469,7 +1520,7 @@ export default function StudyNightRoomPage() {
               <h3>Coach Review</h3>
               <ul className="game-list">
                 {orderedPlayers.map((player) => {
-                  const stats = coachStatsByUser[player.user_id] || createEmptyCoachStats();
+                  const stats = getPlayerCoachStats(player, coachStatsByUser);
                   const topMiss = getTopMissEntry(stats.missesByPrefix);
                   return (
                     <li key={`coach-${player.id}`}>

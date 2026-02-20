@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP13: persisted per-player Coach Review aggregates to `study_room_players.coach_stats` (SQL docs + migration snippet + update grant).
+- Turn-resolution stats now write through to `coach_stats` and Finished Coach Review prefers persisted player stats with in-memory fallback.
 - Study Night TP12: added a concise Finished-only Coach Review panel (per-player Correct/Total, top missed prefix, and short next-pick suggestions for the current user).
 - Coach stats are tracked client-side per room at turn resolution time and are not shown during reveal.
 - Study Night TP11: updated UI terminology from wedges to marks/badges and removed Trivial-Pursuit-specific wording in Study Night screens.
