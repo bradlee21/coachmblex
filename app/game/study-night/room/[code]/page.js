@@ -380,7 +380,18 @@ function shouldRetryTransientMutationError(error) {
   );
 }
 
-async function patchStudyRoomStateWithRetry(path, body, label) {
+async function patchStudyRoomStateWithRetry(path, body, label, options = {}) {
+  const onMutation = typeof options.onMutation === 'function' ? options.onMutation : null;
+  if (onMutation) {
+    onMutation({
+      name: label,
+      at: Date.now(),
+      ok: null,
+      status: '',
+      message: 'running',
+    });
+  }
+
   try {
     const firstAttempt = await timedPostgrest(
       path,
@@ -392,12 +403,21 @@ async function patchStudyRoomStateWithRetry(path, body, label) {
     );
 
     if (!shouldRetryTransientMutationResponse(firstAttempt)) {
+      if (onMutation) {
+        onMutation({
+          name: label,
+          at: Date.now(),
+          ok: Boolean(firstAttempt.ok),
+          status: firstAttempt.status,
+          message: firstAttempt.ok ? 'ok' : (firstAttempt.errorText || 'request failed'),
+        });
+      }
       return firstAttempt;
     }
 
     devLog('[STUDY-NIGHT] transient state patch response, retrying once', label, firstAttempt.status);
     await delay(STATE_PATCH_RETRY_DELAY_MS);
-    return timedPostgrest(
+    const retryAttempt = await timedPostgrest(
       path,
       {
         method: 'PATCH',
@@ -405,14 +425,33 @@ async function patchStudyRoomStateWithRetry(path, body, label) {
       },
       `${label}_retry`
     );
+    if (onMutation) {
+      onMutation({
+        name: label,
+        at: Date.now(),
+        ok: Boolean(retryAttempt.ok),
+        status: retryAttempt.status,
+        message: retryAttempt.ok ? 'ok_after_retry' : (retryAttempt.errorText || 'retry failed'),
+      });
+    }
+    return retryAttempt;
   } catch (error) {
+    if (onMutation) {
+      onMutation({
+        name: label,
+        at: Date.now(),
+        ok: false,
+        status: 0,
+        message: String(error?.message || 'request error'),
+      });
+    }
     if (!shouldRetryTransientMutationError(error)) {
       throw error;
     }
 
     devLog('[STUDY-NIGHT] transient state patch error, retrying once', label, error);
     await delay(STATE_PATCH_RETRY_DELAY_MS);
-    return timedPostgrest(
+    const retryAttempt = await timedPostgrest(
       path,
       {
         method: 'PATCH',
@@ -420,6 +459,16 @@ async function patchStudyRoomStateWithRetry(path, body, label) {
       },
       `${label}_retry`
     );
+    if (onMutation) {
+      onMutation({
+        name: label,
+        at: Date.now(),
+        ok: Boolean(retryAttempt.ok),
+        status: retryAttempt.status,
+        message: retryAttempt.ok ? 'ok_after_retry' : (retryAttempt.errorText || 'retry failed'),
+      });
+    }
+    return retryAttempt;
   }
 }
 
@@ -487,6 +536,10 @@ export default function StudyNightRoomPage() {
   const [confirmResetRoom, setConfirmResetRoom] = useState(false);
   const [deckCountsByKey, setDeckCountsByKey] = useState({});
   const [deckHealthCategoryKey, setDeckHealthCategoryKey] = useState(studyNightCategories[0]?.key || '');
+  const [showDiagnostics, setShowDiagnostics] = useState(false);
+  const [realtimeStatus, setRealtimeStatus] = useState('idle');
+  const [lastSnapshotAt, setLastSnapshotAt] = useState(0);
+  const [lastMutation, setLastMutation] = useState(null);
 
   const channelRef = useRef(null);
   const revealKeyRef = useRef('');
@@ -577,6 +630,8 @@ export default function StudyNightRoomPage() {
       } else {
         setQuestion(null);
       }
+
+      setLastSnapshotAt(Date.now());
     })()
       .finally(() => {
         if (refreshInFlightRef.current?.promise === refreshPromise) {
@@ -783,7 +838,8 @@ export default function StudyNightRoomPage() {
             started_at: new Date().toISOString(),
             ...(nextDeckPos ? { deck_pos: nextDeckPos } : {}),
           },
-          'pick_update_state'
+          'pick_update_state',
+          { onMutation: setLastMutation }
         );
 
         if (!stateUpdateResult.ok) {
@@ -818,7 +874,8 @@ export default function StudyNightRoomPage() {
         phase: 'reveal',
         started_at: null,
       },
-      'question_to_reveal'
+      'question_to_reveal',
+      { onMutation: setLastMutation }
     );
 
     if (!response.ok) {
@@ -939,6 +996,7 @@ export default function StudyNightRoomPage() {
         void pickCategoryAsHost(payload.categoryKey, payload.gameType);
       })
       .subscribe((status) => {
+        setRealtimeStatus(String(status || 'unknown'));
         if (status !== 'SUBSCRIBED') return;
         const now = Date.now();
         if (now - lastRealtimeResyncAtRef.current < REALTIME_RESYNC_THROTTLE_MS) return;
@@ -948,6 +1006,7 @@ export default function StudyNightRoomPage() {
 
     return () => {
       channelRef.current = null;
+      setRealtimeStatus('CLOSED');
       void supabase.removeChannel(channel);
     };
   }, [
@@ -1346,7 +1405,8 @@ export default function StudyNightRoomPage() {
             phase: 'finished',
             started_at: null,
           },
-          'advance_finish_state'
+          'advance_finish_state',
+          { onMutation: setLastMutation }
         );
         if (!stateFinishResponse.ok) {
           throw toPostgrestError(stateFinishResponse, 'Failed to finish state.');
@@ -1367,7 +1427,8 @@ export default function StudyNightRoomPage() {
           started_at: null,
           round_no: (state.round_no || 1) + 1,
         },
-        'advance_next_turn'
+        'advance_next_turn',
+        { onMutation: setLastMutation }
       );
       if (!stateAdvanceResponse.ok) {
         throw toPostgrestError(stateAdvanceResponse, 'Failed to advance turn.');
@@ -1422,7 +1483,8 @@ export default function StudyNightRoomPage() {
           phase: 'finished',
           started_at: null,
         },
-        'host_tools_end_state'
+        'host_tools_end_state',
+        { onMutation: setLastMutation }
       );
       if (!stateFinishResponse.ok) {
         throw toPostgrestError(stateFinishResponse, 'Failed to end room state.');
@@ -1473,7 +1535,8 @@ export default function StudyNightRoomPage() {
           deck_pos: {},
           duration_sec: getRoomDurationSec(room),
         },
-        'host_tools_reset_state'
+        'host_tools_reset_state',
+        { onMutation: setLastMutation }
       );
       if (!stateResetResponse.ok) {
         throw toPostgrestError(stateResetResponse, 'Failed to reset room state.');
@@ -1895,7 +1958,35 @@ export default function StudyNightRoomPage() {
                 <button type="button" onClick={handleEndGame}>
                   End Game
                 </button>
+                <button type="button" onClick={() => setShowDiagnostics((value) => !value)}>
+                  {showDiagnostics ? 'Hide Diagnostics' : 'Show Diagnostics'}
+                </button>
               </div>
+              {showDiagnostics ? (
+                <div className="runner">
+                  <h3>Diagnostics</h3>
+                  <p className="muted">Realtime: {realtimeStatus || 'unknown'}</p>
+                  <p className="muted">
+                    Last snapshot:{' '}
+                    {lastSnapshotAt ? new Date(lastSnapshotAt).toLocaleString() : 'n/a'}
+                  </p>
+                  <p className="muted">
+                    Last mutation:{' '}
+                    {lastMutation?.name
+                      ? `${lastMutation.name} | ${lastMutation.ok === null ? 'running' : lastMutation.ok ? 'ok' : 'failed'}`
+                      : 'n/a'}
+                  </p>
+                  {lastMutation?.at ? (
+                    <p className="muted">Mutation time: {new Date(lastMutation.at).toLocaleString()}</p>
+                  ) : null}
+                  {lastMutation?.status !== undefined && lastMutation?.status !== '' ? (
+                    <p className="muted">Mutation status: {String(lastMutation.status)}</p>
+                  ) : null}
+                  {lastMutation?.message ? (
+                    <p className="muted">Mutation message: {lastMutation.message}</p>
+                  ) : null}
+                </div>
+              ) : null}
               <label htmlFor="study-night-confirm-reset" className="muted">
                 <input
                   id="study-night-confirm-reset"

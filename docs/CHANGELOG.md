@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-20
+- TP30: added a host-only Study Night diagnostics toggle with live realtime status, last snapshot refresh time, and last critical mutation result for in-room troubleshooting.
 - TP29: hardened Study Night stability with snapshot refresh de-duplication, realtime re-subscribe resync throttling, and single-retry handling for transient network failures on critical room-state PATCH mutations.
 - TP28: added `docs/release-checklist.md` with pre-demo checks, a 5-8 minute demo script, talking points, quick triage, and rollback notes.
 - Added critical-path smoke mode via `npm run smoke:critical` (Study Night + auth loading/question-forge route guards) while keeping default smoke behavior unchanged.
