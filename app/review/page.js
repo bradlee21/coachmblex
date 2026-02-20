@@ -214,7 +214,7 @@ export default function ReviewPage() {
       <p>Global review queue from misses and low-confidence answers.</p>
 
       {phase === 'idle' ? (
-        <button type="button" onClick={startReview}>
+        <button type="button" onClick={startReview} data-testid="review-start">
           Start Review (10)
         </button>
       ) : null}
@@ -222,7 +222,7 @@ export default function ReviewPage() {
       {phase === 'loading' ? <p>Building your review set...</p> : null}
 
       {phase === 'empty' ? (
-        <div className="runner">
+        <div className="runner" data-testid="review-empty">
           <p>No review items yet. Do Today or Drill first.</p>
           <div className="button-row">
             <Link className="nav-link active" href="/today">

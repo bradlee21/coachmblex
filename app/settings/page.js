@@ -78,7 +78,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <section>
+    <section data-testid="settings-root">
       <h1>Settings</h1>
       <p>Coach mode controls feedback tone.</p>
       <div className="settings-row">

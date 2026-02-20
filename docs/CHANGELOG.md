@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP-E2E-JOURNEY-1: added `e2e/journey.spec.ts` for a full authenticated route journey across Today, Drill, Review, Study Night, Anatomy, Progress, and Settings with one core action per page.
+- Added minimal E2E selector hooks for nav and route surfaces (`nav-*`, `review-start`, `review-empty`, `progress-stats`, `settings-root`, `anatomy-root`, `anatomy-pack-0`) to reduce brittle page targeting.
 - TP-E2E-3: added `e2e/study-night-critical.spec.ts` for a deterministic single-user Study Night host flow (create room -> start -> pick category -> question phase).
 - Added minimal Study Night test hooks (`study-night-create`, `study-night-start`, `study-night-phase`, `category-tile`, `study-night-question`) to stabilize E2E selectors without changing gameplay logic.
 - TP-E2E-GUARD-1: added `e2e/helpers/requireEnv.ts` so missing required E2E env vars now fail fast by default, with optional skip mode via `E2E_ALLOW_SKIP=1`.

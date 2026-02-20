@@ -23,6 +23,15 @@ const NAV_ITEMS = [
   { href: '/settings', label: 'Settings', key: 's' },
 ];
 const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
+const NAV_TEST_IDS = {
+  '/today': 'nav-today',
+  '/review': 'nav-review',
+  '/drill': 'nav-drill',
+  '/game/study-night': 'nav-study-night',
+  '/anatomy': 'nav-anatomy',
+  '/progress': 'nav-progress',
+  '/settings': 'nav-settings',
+};
 
 function normalizeRole(value) {
   if (value === 'admin') return 'admin';
@@ -159,6 +168,7 @@ export default function AppShell({ children }) {
                 <Link
                   className={`nav-link${pathname === item.href ? ' active' : ''}`}
                   href={item.href}
+                  data-testid={NAV_TEST_IDS[item.href]}
                 >
                   {item.label}
                 </Link>

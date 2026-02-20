@@ -45,7 +45,7 @@ export default function ProgressPage() {
   return (
     <section>
       <h1>Progress</h1>
-      <p>
+      <p data-testid="progress-stats">
         Blueprint leaf coverage: <strong>{stats.overallPercent}%</strong>
       </p>
 

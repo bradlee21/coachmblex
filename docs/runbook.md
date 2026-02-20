@@ -105,6 +105,8 @@ Automated checks:
 E2E note:
 - `npm run e2e` and `npm run e2e:once` are opt-in only.
 - E2E is not part of `npm run smoke` or `npm run build`.
+- `e2e/journey.spec.ts` provides a broad route journey (Today, Drill, Review, Study Night, Anatomy, Progress, Settings) with one core action per page.
+- Sign-up E2E is intentionally deferred until a deterministic email-confirmation strategy is in place.
 
 Manual checks:
 1. Auth/login works.
