@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP24: added Question Forge local draft autosave (`qforge:draft`) with debounce, timestamp, and meaningful-content-only saves.
+- Added restore/discard prompt for unsaved Question Forge drafts on load plus an unsaved-changes indicator and `beforeunload` guard.
+- Save/new/edit reset flows now update dirty baselines and clear local draft state to prevent stale restores.
 - TP23: added Finished Coach Review CTA "Drill my weak spots" to deep-link into `/drill` using the user's top missed prefix (or next-pick fallback).
 - Drill deep links now include safe type routing logic (omit for roulette; use last non-roulette game type with fallback) and disable with guidance when no target exists.
 - TP22: added Question Forge draft lint warnings (long prompt/fill answer, missing explanation fields, duplicate choices, and fill punctuation checks) in a QA Checks panel.

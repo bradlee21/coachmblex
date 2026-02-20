@@ -94,6 +94,8 @@ const SOFT_EXPLANATION_CHAR_LIMIT = 200;
 const PROMPT_SOFT_LIMIT = 240;
 const FILL_SOFT_LIMIT = 40;
 const REVIEW_QUEUE_FETCH_LIMIT = 200;
+const QFORGE_DRAFT_STORAGE_KEY = 'qforge:draft';
+const QFORGE_DRAFT_DEBOUNCE_MS = 1800;
 const DOMAIN_BY_SECTION_CODE = {
   '1': 'anatomy',
   '2': 'kinesiology',
@@ -310,6 +312,117 @@ function getReviewReasons(question) {
   return reasons;
 }
 
+function createQuestionDraftSnapshot(snapshot = {}) {
+  const snapshotChoices = Array.isArray(snapshot.choices) ? snapshot.choices : createDefaultChoices();
+  const choices = snapshotChoices.slice(0, 4).map((choice) => String(choice || ''));
+  while (choices.length < 4) {
+    choices.push('');
+  }
+  const correctIndex =
+    Number.isInteger(snapshot.correctIndex) && snapshot.correctIndex >= 0 && snapshot.correctIndex <= 3
+      ? snapshot.correctIndex
+      : 0;
+  return {
+    blueprintCode: String(snapshot.blueprintCode || ''),
+    questionType: normalizeQuestionType(snapshot.questionType),
+    prompt: String(snapshot.prompt || ''),
+    choices,
+    correctIndex,
+    fillAnswer: String(snapshot.fillAnswer || ''),
+    explanations: parseExplanation(snapshot.explanations),
+    editingQuestionId: String(snapshot.editingQuestionId || ''),
+  };
+}
+
+function normalizeQuestionDraftForCompare(snapshot) {
+  const normalized = createQuestionDraftSnapshot(snapshot);
+  return {
+    blueprintCode: normalizeWhitespace(normalized.blueprintCode),
+    questionType: normalizeQuestionType(normalized.questionType),
+    prompt: normalizeWhitespace(normalized.prompt),
+    choices: normalized.choices.map((choice) => normalizeWhitespace(choice)),
+    correctIndex:
+      normalized.questionType === 'fill'
+        ? 0
+        : Number.isInteger(normalized.correctIndex)
+          ? normalized.correctIndex
+          : 0,
+    fillAnswer: normalizeWhitespace(normalized.fillAnswer),
+    explanations: {
+      answer: normalizeWhitespace(normalized.explanations.answer),
+      why: normalizeWhitespace(normalized.explanations.why),
+      trap: normalizeWhitespace(normalized.explanations.trap),
+      hook: normalizeWhitespace(normalized.explanations.hook),
+    },
+    editingQuestionId: normalizeWhitespace(normalized.editingQuestionId),
+  };
+}
+
+function getQuestionDraftSnapshotString(snapshot) {
+  return JSON.stringify(normalizeQuestionDraftForCompare(snapshot));
+}
+
+function hasMeaningfulQuestionDraft(snapshot) {
+  const normalized = createQuestionDraftSnapshot(snapshot);
+  if (valueIsFilled(normalized.prompt)) return true;
+  if (valueIsFilled(normalized.fillAnswer)) return true;
+  if (normalized.choices.some((choice) => valueIsFilled(choice))) return true;
+  if (EXPLANATION_FIELDS.some((field) => valueIsFilled(normalized.explanations[field]))) return true;
+  return false;
+}
+
+function clearQuestionDraftStorage() {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.removeItem(QFORGE_DRAFT_STORAGE_KEY);
+  } catch (_error) {
+    // Ignore storage cleanup failures to keep the form usable.
+  }
+}
+
+function writeQuestionDraftStorage({ snapshot, baseline }) {
+  if (typeof window === 'undefined') return;
+  try {
+    const payload = {
+      savedAt: new Date().toISOString(),
+      baseline: typeof baseline === 'string' ? baseline : '',
+      snapshot: createQuestionDraftSnapshot(snapshot),
+    };
+    window.localStorage.setItem(QFORGE_DRAFT_STORAGE_KEY, JSON.stringify(payload));
+  } catch (_error) {
+    // Ignore storage write failures to keep authoring flow unblocked.
+  }
+}
+
+function readQuestionDraftStorage() {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = window.localStorage.getItem(QFORGE_DRAFT_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return null;
+    return {
+      savedAt: typeof parsed.savedAt === 'string' ? parsed.savedAt : '',
+      baseline: typeof parsed.baseline === 'string' ? parsed.baseline : '',
+      snapshot: createQuestionDraftSnapshot(parsed.snapshot),
+    };
+  } catch (_error) {
+    return null;
+  }
+}
+
+function formatDraftSavedAt(savedAt) {
+  if (!savedAt) return 'recently';
+  const parsed = new Date(savedAt);
+  if (Number.isNaN(parsed.getTime())) return 'recently';
+  return parsed.toLocaleString();
+}
+
+const EMPTY_QUESTION_DRAFT_SNAPSHOT = createQuestionDraftSnapshot();
+const EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING = getQuestionDraftSnapshotString(
+  EMPTY_QUESTION_DRAFT_SNAPSHOT
+);
+
 export default function AdminQuestionsPage() {
   const { user, role, loading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
@@ -342,8 +455,13 @@ export default function AdminQuestionsPage() {
   const [selectedTemplateId, setSelectedTemplateId] = useState('');
   const [overwriteTemplateValues, setOverwriteTemplateValues] = useState(false);
   const [templateAppliedMessage, setTemplateAppliedMessage] = useState('');
+  const [restoreDraftInfo, setRestoreDraftInfo] = useState(null);
+  const [baselineSnapshotString, setBaselineSnapshotString] = useState(
+    EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING
+  );
   const promptInputRef = useRef(null);
   const templateAppliedTimerRef = useRef(null);
+  const draftAutosaveTimerRef = useRef(null);
 
   const allNodes = useMemo(() => listAllNodesFlat(), []);
   const nodeByCode = useMemo(
@@ -505,6 +623,34 @@ export default function AdminQuestionsPage() {
   );
 
   const isEditing = Boolean(editingQuestionId);
+  const currentSnapshot = useMemo(
+    () =>
+      createQuestionDraftSnapshot({
+        blueprintCode: selectedBlueprintCode,
+        questionType,
+        prompt,
+        choices,
+        correctIndex,
+        fillAnswer,
+        explanations,
+        editingQuestionId,
+      }),
+    [
+      choices,
+      correctIndex,
+      editingQuestionId,
+      explanations,
+      fillAnswer,
+      prompt,
+      questionType,
+      selectedBlueprintCode,
+    ]
+  );
+  const currentSnapshotString = useMemo(
+    () => getQuestionDraftSnapshotString(currentSnapshot),
+    [currentSnapshot]
+  );
+  const isDirty = currentSnapshotString !== baselineSnapshotString;
 
   const refreshReviewQueue = useCallback(async () => {
     setReviewQueueLoading(true);
@@ -600,9 +746,56 @@ export default function AdminQuestionsPage() {
   }, [currentTypeTemplates, selectedTemplateId]);
 
   useEffect(() => {
+    const storedDraft = readQuestionDraftStorage();
+    if (!storedDraft) return;
+    if (!hasMeaningfulQuestionDraft(storedDraft.snapshot)) return;
+    const draftSnapshotString = getQuestionDraftSnapshotString(storedDraft.snapshot);
+    if (draftSnapshotString === EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING) return;
+    setRestoreDraftInfo(storedDraft);
+  }, []);
+
+  useEffect(() => {
+    if (restoreDraftInfo) return;
+    if (!isDirty) return;
+    if (!hasMeaningfulQuestionDraft(currentSnapshot)) return;
+
+    if (draftAutosaveTimerRef.current) {
+      clearTimeout(draftAutosaveTimerRef.current);
+    }
+    draftAutosaveTimerRef.current = setTimeout(() => {
+      writeQuestionDraftStorage({
+        snapshot: currentSnapshot,
+        baseline: baselineSnapshotString,
+      });
+    }, QFORGE_DRAFT_DEBOUNCE_MS);
+
+    return () => {
+      if (draftAutosaveTimerRef.current) {
+        clearTimeout(draftAutosaveTimerRef.current);
+      }
+    };
+  }, [baselineSnapshotString, currentSnapshot, isDirty, restoreDraftInfo]);
+
+  useEffect(() => {
+    if (!isDirty) return undefined;
+    const handleBeforeUnload = (event) => {
+      event.preventDefault();
+      event.returnValue = '';
+      return '';
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [isDirty]);
+
+  useEffect(() => {
     return () => {
       if (templateAppliedTimerRef.current) {
         clearTimeout(templateAppliedTimerRef.current);
+      }
+      if (draftAutosaveTimerRef.current) {
+        clearTimeout(draftAutosaveTimerRef.current);
       }
     };
   }, []);
@@ -614,6 +807,8 @@ export default function AdminQuestionsPage() {
   }
 
   function clearDraft(keepBlueprintAndType = true) {
+    const nextBlueprintCode = keepBlueprintAndType ? selectedBlueprintCode : '';
+    const nextQuestionType = keepBlueprintAndType ? normalizeQuestionType(questionType) : 'mcq';
     setPrompt('');
     setChoices(createDefaultChoices());
     setCorrectIndex(0);
@@ -626,6 +821,42 @@ export default function AdminQuestionsPage() {
       setSelectedBlueprintCode('');
       setQuestionType('mcq');
     }
+    setBaselineSnapshotString(
+      getQuestionDraftSnapshotString(
+        createQuestionDraftSnapshot({
+          blueprintCode: nextBlueprintCode,
+          questionType: nextQuestionType,
+        })
+      )
+    );
+    clearQuestionDraftStorage();
+    setRestoreDraftInfo(null);
+  }
+
+  function handleRestoreDraft() {
+    if (!restoreDraftInfo?.snapshot) return;
+    const restored = createQuestionDraftSnapshot(restoreDraftInfo.snapshot);
+    setSelectedBlueprintCode(restored.blueprintCode);
+    setQuestionType(restored.questionType);
+    setPrompt(restored.prompt);
+    setChoices(restored.choices);
+    setCorrectIndex(restored.correctIndex);
+    setFillAnswer(restored.fillAnswer);
+    setExplanations(restored.explanations);
+    setEditingQuestionId(restored.editingQuestionId);
+    setSavedInfo(null);
+    setErrorInfo(null);
+    setBaselineSnapshotString(
+      typeof restoreDraftInfo.baseline === 'string' && restoreDraftInfo.baseline
+        ? restoreDraftInfo.baseline
+        : EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING
+    );
+    setRestoreDraftInfo(null);
+  }
+
+  function handleDiscardDraft() {
+    clearQuestionDraftStorage();
+    setRestoreDraftInfo(null);
   }
 
   function updateChoice(index, value) {
@@ -737,6 +968,22 @@ export default function AdminQuestionsPage() {
           hook: payload.explanation?.hook || '',
         },
       });
+      setBaselineSnapshotString(
+        getQuestionDraftSnapshotString(
+          createQuestionDraftSnapshot({
+            blueprintCode: selectedBlueprintCode,
+            questionType,
+            prompt,
+            choices,
+            correctIndex,
+            fillAnswer,
+            explanations,
+            editingQuestionId: isPatch ? editingQuestionId : '',
+          })
+        )
+      );
+      clearQuestionDraftStorage();
+      setRestoreDraftInfo(null);
 
       if (mode === 'save_new') {
         clearDraft(true);
@@ -814,6 +1061,20 @@ export default function AdminQuestionsPage() {
         ? result.correct_index
         : 0;
     const explanation = parseExplanation(result.explanation);
+    const loadedFillAnswer =
+      normalizedType === 'fill'
+        ? String(loadedChoices[loadedCorrectIndex] || loadedChoices[0] || '')
+        : '';
+    const loadedSnapshot = createQuestionDraftSnapshot({
+      blueprintCode: String(result.blueprint_code || ''),
+      questionType: normalizedType,
+      prompt: String(result.prompt || ''),
+      choices: loadedChoices,
+      correctIndex: loadedCorrectIndex,
+      fillAnswer: loadedFillAnswer,
+      explanations: explanation,
+      editingQuestionId: String(result.id || ''),
+    });
 
     setEditingQuestionId(result.id);
     setSelectedBlueprintCode(String(result.blueprint_code || ''));
@@ -821,10 +1082,13 @@ export default function AdminQuestionsPage() {
     setPrompt(String(result.prompt || ''));
     setChoices(loadedChoices);
     setCorrectIndex(loadedCorrectIndex);
-    setFillAnswer(normalizedType === 'fill' ? String(loadedChoices[loadedCorrectIndex] || loadedChoices[0] || '') : '');
+    setFillAnswer(loadedFillAnswer);
     setExplanations(explanation);
     setSavedInfo(null);
     setErrorInfo(null);
+    setBaselineSnapshotString(getQuestionDraftSnapshotString(loadedSnapshot));
+    clearQuestionDraftStorage();
+    setRestoreDraftInfo(null);
   }
 
   function handleDuplicateLastQuestion() {
@@ -844,6 +1108,9 @@ export default function AdminQuestionsPage() {
     });
     setSavedInfo(null);
     setErrorInfo(null);
+    setBaselineSnapshotString(EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING);
+    clearQuestionDraftStorage();
+    setRestoreDraftInfo(null);
   }
 
   function handleStartNewQuestion() {
@@ -946,6 +1213,21 @@ export default function AdminQuestionsPage() {
     <section>
       <h1>Question Forge</h1>
       <p>Create and edit MBLEX questions.</p>
+      {restoreDraftInfo ? (
+        <div className="runner">
+          <p className="muted">
+            Restore unsaved draft from {formatDraftSavedAt(restoreDraftInfo.savedAt)}?
+          </p>
+          <div className="button-row">
+            <button type="button" onClick={handleRestoreDraft}>
+              Restore
+            </button>
+            <button type="button" onClick={handleDiscardDraft}>
+              Discard
+            </button>
+          </div>
+        </div>
+      ) : null}
       <div className="game-card">
         <h2>Coverage Gaps</h2>
         <p className="muted">Next 10 blueprint leaves to write based on target gaps.</p>
@@ -1111,6 +1393,7 @@ export default function AdminQuestionsPage() {
 
         <div className="game-card">
           <h2>Question Form</h2>
+          {isDirty ? <p className="muted">Unsaved changes</p> : null}
           {isEditing ? (
             <div className="status success">
               <p>Editing {editingQuestionId}</p>
