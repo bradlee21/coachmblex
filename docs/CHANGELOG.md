@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP10: hardened turn integrity by gating answer submission to the current turn player and showing waiting hints for others.
+- Added local per-turn submit guards (`room:round:turn:question`) to block double-scoring and surface "Already answered" feedback.
+- Added host-action guards/messages for Start/Advance and extra patch-target sanity checks in multiplayer update paths.
 - Study Night TP8: added room-state `deck` and `deck_pos` support (SQL docs + migration snippets) for host-authoritative question rotation.
 - Host start now prebuilds per-category/per-game-type question ID decks and initializes deck positions for synced multiplayer selection.
 - Turn question selection now consumes `deck/deck_pos` first and advances position per key, with deterministic fallback when a deck bucket is empty.

@@ -79,6 +79,11 @@ function toDeckPosMap(value) {
   return deckPos;
 }
 
+function getTurnKey(roomId, state) {
+  if (!roomId || !state) return '';
+  return `${roomId}:${state.round_no || 0}:${state.turn_index || 0}:${state.question_id || 'none'}`;
+}
+
 function normalizeGameType(value) {
   if (value === 'reverse') return 'reverse';
   if (value === 'fill') return 'fill';
@@ -289,6 +294,7 @@ export default function StudyNightRoomPage() {
   const revealKeyRef = useRef('');
   const scoreBaselineRef = useRef({});
   const rejoinSyncRef = useRef(false);
+  const submittedTurnKeysRef = useRef({});
 
   const orderedPlayers = useMemo(() => sortPlayers(players), [players]);
   const playerCount = orderedPlayers.length;
@@ -298,6 +304,7 @@ export default function StudyNightRoomPage() {
   const myWedges = getWedges(myPlayer);
   const isHost = Boolean(user?.id && room?.host_user_id === user.id);
   const isCurrentTurn = Boolean(user?.id && currentTurnPlayer?.user_id === user.id);
+  const isMyTurn = isCurrentTurn;
   const gameTypeMode = normalizeGameTypeMode(room?.game_type_mode);
   const isRouletteMode = gameTypeMode === 'roulette';
   const canPickCategory =
@@ -774,7 +781,11 @@ export default function StudyNightRoomPage() {
   ]);
 
   async function handleStartGame() {
-    if (!isHost || !room) return;
+    if (!room) return;
+    if (!isHost) {
+      setMessage('Only the host can start the game.');
+      return;
+    }
     try {
       const { deck, deckPos } = await buildRoomDeck();
 
@@ -848,6 +859,15 @@ export default function StudyNightRoomPage() {
   async function handleSubmitAnswer(submittedValue) {
     if (!room || !state || !question || !user?.id) return;
     if (state.phase !== 'question') return;
+    const turnKey = getTurnKey(room.id, state);
+    if (!isMyTurn) {
+      setMessage(`Waiting for ${currentTurnPlayer ? getDisplayName(currentTurnPlayer) : 'current player'}.`);
+      return;
+    }
+    if (turnKey && submittedTurnKeysRef.current[turnKey]) {
+      setMessage('Already answered.');
+      return;
+    }
     if (submittedByQuestion[question.id]) return;
 
     const activeQuestionType = normalizeGameType(question.question_type || state.game_type || 'mcq');
@@ -868,8 +888,12 @@ export default function StudyNightRoomPage() {
     setCorrectByQuestion((prev) => ({ ...prev, [question.id]: isCorrect }));
 
     try {
+      const actorUserId = user.id;
+      if (!actorUserId) {
+        throw new Error('Missing authenticated user.');
+      }
       const scoreReadResponse = await timedPostgrest(
-        `study_room_players?room_id=eq.${room.id}&user_id=eq.${user.id}&select=score&limit=1`,
+        `study_room_players?room_id=eq.${room.id}&user_id=eq.${actorUserId}&select=score&limit=1`,
         undefined,
         'submit_read_score'
       );
@@ -880,7 +904,7 @@ export default function StudyNightRoomPage() {
 
       const nextScore = (currentRow?.score || 0) + (isCorrect ? 100 : 0);
       const scoreUpdateResponse = await timedPostgrest(
-        `study_room_players?room_id=eq.${room.id}&user_id=eq.${user.id}`,
+        `study_room_players?room_id=eq.${room.id}&user_id=eq.${actorUserId}`,
         {
           method: 'PATCH',
           body: {
@@ -892,6 +916,9 @@ export default function StudyNightRoomPage() {
       );
       if (!scoreUpdateResponse.ok) {
         throw toPostgrestError(scoreUpdateResponse, 'Failed to update score.');
+      }
+      if (turnKey) {
+        submittedTurnKeysRef.current[turnKey] = true;
       }
     } catch (error) {
       const nextMessage = error instanceof Error ? error.message : 'Failed to submit answer.';
@@ -909,7 +936,11 @@ export default function StudyNightRoomPage() {
   }
 
   async function handleAdvanceTurn() {
-    if (!isHost || !room || !state || state.phase !== 'reveal' || playerCount === 0) return;
+    if (!room || !state || state.phase !== 'reveal' || playerCount === 0) return;
+    if (!isHost) {
+      setMessage('Only the host can advance turns.');
+      return;
+    }
     if (!currentTurnPlayer) return;
 
     try {
@@ -931,9 +962,13 @@ export default function StudyNightRoomPage() {
 
       let nextWedges = getWedges(currentTurnPlayer);
       if (currentTurnCorrect && categoryKey && !nextWedges.includes(categoryKey)) {
+        const wedgeTargetUserId = currentTurnPlayer.user_id;
+        if (!orderedPlayers.some((player) => player.user_id === wedgeTargetUserId)) {
+          throw new Error('Invalid wedge update target.');
+        }
         nextWedges = [...nextWedges, categoryKey];
         const wedgeResponse = await timedPostgrest(
-          `study_room_players?room_id=eq.${room.id}&user_id=eq.${currentTurnPlayer.user_id}`,
+          `study_room_players?room_id=eq.${room.id}&user_id=eq.${wedgeTargetUserId}`,
           {
             method: 'PATCH',
             body: {
@@ -1069,6 +1104,8 @@ export default function StudyNightRoomPage() {
   const isFillQuestion = currentGameType === 'fill';
   const correctAnswerText = question ? getCorrectAnswerText(question) : '';
   const currentTurnWedges = getWedges(currentTurnPlayer);
+  const activeTurnKey = getTurnKey(room?.id, state);
+  const alreadyAnsweredTurn = Boolean(activeTurnKey && submittedTurnKeysRef.current[activeTurnKey]);
 
   return (
     <section>
@@ -1176,6 +1213,12 @@ export default function StudyNightRoomPage() {
                 Category: {currentCategory ? `${currentCategory.key} (${currentCategory.prefix})` : 'n/a'}
               </p>
               <p className="muted">Time left: {secondsLeft}s</p>
+              {!isMyTurn ? (
+                <p className="muted">
+                  Waiting for {currentTurnPlayer ? getDisplayName(currentTurnPlayer) : 'current player'}.
+                </p>
+              ) : null}
+              {alreadyAnsweredTurn ? <p className="muted">Already answered.</p> : null}
               {question ? (
                 <>
                   <p className="runner-prompt">{question.prompt}</p>
@@ -1193,11 +1236,13 @@ export default function StudyNightRoomPage() {
                             [question.id]: event.target.value,
                           }))
                         }
-                        disabled={Boolean(submittedByQuestion[question.id])}
+                        disabled={!isMyTurn || alreadyAnsweredTurn || Boolean(submittedByQuestion[question.id])}
                       />
                       <button
                         type="submit"
                         disabled={
+                          !isMyTurn ||
+                          alreadyAnsweredTurn ||
                           Boolean(submittedByQuestion[question.id]) ||
                           !normalizeAnswerText(fillInputValue)
                         }
@@ -1214,7 +1259,7 @@ export default function StudyNightRoomPage() {
                             key={`${question.id}-${index}`}
                             type="button"
                             className={`choice-btn${isSelected ? ' selected' : ''}`}
-                            disabled={Boolean(submittedByQuestion[question.id])}
+                            disabled={!isMyTurn || alreadyAnsweredTurn || Boolean(submittedByQuestion[question.id])}
                             onClick={() => void handleSubmitAnswer(index)}
                           >
                             {String(choice)}
