@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Questions: added strict duplicate prevention on import plus a DB-level no-duplicates SQL migration in `docs/sql/run-these-queries/2026-02-20-questions-no-duplicates.sql`.
+- Added one-time cleanup script `npm run dedupe:questions` to remove existing strict duplicates while keeping earliest-created rows.
 - TP35: added a soft private-beta banner for authenticated users with inline `Send feedback` and `Dismiss` actions (no route gating).
 - Banner dismissal is persisted in localStorage (`betaBannerDismissed=true`) and does not affect auth/navigation flow.
 - TP34: added student first-run onboarding card on `/today` with coach mode selection and quick actions (`Start Today`, `Start Drill`, `Skip for now`).

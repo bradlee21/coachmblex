@@ -75,6 +75,19 @@ async function getQuestionCount(supabase) {
   return Number(count || 0);
 }
 
+function isUniqueViolation(error) {
+  if (!error) return false;
+  const code = normalizeText(error.code);
+  const message = normalizeText(error.message);
+  const details = normalizeText(error.details);
+  return (
+    code === '23505' ||
+    message.includes('duplicate key') ||
+    message.includes('unique constraint') ||
+    details.includes('already exists')
+  );
+}
+
 function normalizeText(value) {
   return String(value || '')
     .trim()
@@ -241,7 +254,7 @@ function validateAndMapQuestion(question, index) {
   };
 }
 
-async function insertBatch(supabase, rows, rowNumbers, failures) {
+async function insertBatch(supabase, rows, rowNumbers, failures, stats) {
   if (rows.length === 0) return 0;
 
   const { data, error } = await supabase
@@ -257,6 +270,14 @@ async function insertBatch(supabase, rows, rowNumbers, failures) {
   for (let i = 0; i < rows.length; i += 1) {
     const { error: rowError } = await supabase.from('questions').insert(rows[i]);
     if (rowError) {
+      if (isUniqueViolation(rowError)) {
+        stats.duplicateSkippedCount += 1;
+        failures.push({
+          rowNo: rowNumbers[i],
+          reasons: ['duplicate question blocked by DB unique guard'],
+        });
+        continue;
+      }
       failures.push({
         rowNo: rowNumbers[i],
         reasons: [`insert failed: ${rowError.message}`],
@@ -326,7 +347,9 @@ async function main() {
   const failures = [];
   const validRows = [];
   const validRowNumbers = [];
-  let duplicateSkippedCount = 0;
+  const stats = {
+    duplicateSkippedCount: 0,
+  };
   let seenSignatures = new Set();
 
   try {
@@ -347,7 +370,7 @@ async function main() {
 
     const signature = getQuestionSignature(result.row);
     if (seenSignatures.has(signature)) {
-      duplicateSkippedCount += 1;
+      stats.duplicateSkippedCount += 1;
       failures.push({
         rowNo: result.rowNo,
         reasons: ['duplicate question detected (strict signature)'],
@@ -365,7 +388,13 @@ async function main() {
     const end = Math.min(start + BATCH_SIZE, validRows.length);
     const batchRows = validRows.slice(start, end);
     const batchNumbers = validRowNumbers.slice(start, end);
-    const inserted = await insertBatch(supabase, batchRows, batchNumbers, failures);
+    const inserted = await insertBatch(
+      supabase,
+      batchRows,
+      batchNumbers,
+      failures,
+      stats
+    );
     insertedCount += inserted;
   }
 
@@ -374,7 +403,7 @@ async function main() {
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
   console.log(`Inserted: ${insertedCount}`);
-  console.log(`Skipped duplicates: ${duplicateSkippedCount}`);
+  console.log(`Skipped duplicates: ${stats.duplicateSkippedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
   try {
     const afterCount = await getQuestionCount(supabase);
