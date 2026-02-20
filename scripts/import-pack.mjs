@@ -15,6 +15,38 @@ const DOMAIN_BY_SECTION_CODE = {
   '7': 'practice',
 };
 
+function loadEnvFile(filePath) {
+  let raw;
+  try {
+    raw = readFileSync(filePath, 'utf8');
+  } catch {
+    return;
+  }
+
+  const lines = raw.split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+
+    const match = trimmed.match(/^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+    if (!match) continue;
+
+    const key = match[1];
+    let value = match[2] ?? '';
+
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+
+    if (process.env[key] == null) {
+      process.env[key] = value;
+    }
+  }
+}
+
 function usageAndExit() {
   console.error('Usage: node scripts/import-pack.mjs <path-to-pack.json>');
   process.exit(1);
@@ -155,6 +187,9 @@ async function insertBatch(supabase, rows, rowNumbers, failures) {
 }
 
 async function main() {
+  loadEnvFile(resolve(process.cwd(), '.env.local'));
+  loadEnvFile(resolve(process.cwd(), '.env'));
+
   const packPathArg = process.argv[2];
   if (!packPathArg) usageAndExit();
 
