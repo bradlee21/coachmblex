@@ -4,6 +4,8 @@ import { createContext, useContext, useEffect, useMemo, useRef, useState } from 
 import { getSupabaseClient } from '../lib/supabaseClient';
 import { devLog, devWarn } from '../lib/devLog';
 
+const AUTH_PROFILE_TIMEOUT_MS = 8000;
+
 const AuthContext = createContext({
   user: null,
   session: null,
@@ -12,6 +14,24 @@ const AuthContext = createContext({
   error: '',
   warning: '',
 });
+
+function withTimeout(promise, ms = AUTH_PROFILE_TIMEOUT_MS, label = 'operation') {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${ms}ms`));
+    }, ms);
+
+    Promise.resolve(promise)
+      .then((value) => {
+        clearTimeout(timer);
+        resolve(value);
+      })
+      .catch((error) => {
+        clearTimeout(timer);
+        reject(error);
+      });
+  });
+}
 
 function normalizeRole(value) {
   if (value === 'admin') return 'admin';
@@ -108,6 +128,36 @@ export function AuthProvider({ children }) {
       setWarning(message || '');
     }
 
+    async function syncProfileAndRole(userId, reason) {
+      if (!userId) {
+        setRoleSafe('user', `${reason}/no-session`);
+        return;
+      }
+
+      try {
+        await withTimeout(
+          ensureProfile(userId),
+          AUTH_PROFILE_TIMEOUT_MS,
+          `ensureProfile/${reason}`
+        );
+        const nextRole = await withTimeout(
+          fetchProfileRole(userId),
+          AUTH_PROFILE_TIMEOUT_MS,
+          `fetchProfileRole/${reason}`
+        );
+        setRoleSafe(nextRole, reason);
+      } catch (profileError) {
+        const message =
+          profileError instanceof Error ? profileError.message : 'Profile sync failed.';
+        setErrorSafe(message, `ensureProfile/${reason}`);
+        setWarningSafe(
+          'Profile sync timed out. Continuing with default access.',
+          `ensureProfile/${reason}`
+        );
+        setRoleSafe('user', `${reason}/error`);
+      }
+    }
+
     async function loadSession() {
       const requestId = ++requestIdRef.current;
       const supabase = getSupabaseClient();
@@ -133,20 +183,7 @@ export function AuthProvider({ children }) {
         const currentSession = data?.session ?? null;
         setSessionSafe(currentSession, 'getSession');
 
-        if (currentSession?.user?.id) {
-          try {
-            await ensureProfile(currentSession.user.id);
-            const nextRole = await fetchProfileRole(currentSession.user.id);
-            setRoleSafe(nextRole, 'getSession');
-          } catch (profileError) {
-            const message =
-              profileError instanceof Error ? profileError.message : 'Profile sync failed.';
-            setErrorSafe(message, 'ensureProfile/getSession');
-            setRoleSafe('user', 'getSession/error');
-          }
-        } else {
-          setRoleSafe('user', 'getSession/no-session');
-        }
+        await syncProfileAndRole(currentSession?.user?.id, 'getSession');
       } catch (unhandledError) {
         if (requestId !== requestIdRef.current || !mountedRef.current) return;
         const message =
@@ -189,22 +226,7 @@ export function AuthProvider({ children }) {
         setWarningSafe('', `auth-change/${event}`);
         clearAuthTimeout();
 
-        if (nextSession?.user?.id) {
-          try {
-            await ensureProfile(nextSession.user.id);
-            const nextRole = await fetchProfileRole(nextSession.user.id);
-            setRoleSafe(nextRole, `auth-change/${event}`);
-          } catch (profileError) {
-            const message =
-              profileError instanceof Error
-                ? profileError.message
-                : 'Profile sync failed.';
-            setErrorSafe(message, 'ensureProfile');
-            setRoleSafe('user', `auth-change/${event}/error`);
-          }
-        } else {
-          setRoleSafe('user', `auth-change/${event}/no-session`);
-        }
+        await syncProfileAndRole(nextSession?.user?.id, `auth-change/${event}`);
         setLoadingSafe(false, `auth-change/${event}/done`);
       }
     );
