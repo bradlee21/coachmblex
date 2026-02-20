@@ -23,11 +23,46 @@ const DEFAULT_STATE = {
 };
 
 function normalizeGameType(value) {
-  return value === 'reverse' ? 'reverse' : 'mcq';
+  if (value === 'reverse') return 'reverse';
+  if (value === 'fill') return 'fill';
+  return 'mcq';
 }
 
 function getGameTypeLabel(value) {
-  return normalizeGameType(value) === 'reverse' ? 'Reverse' : 'MCQ';
+  const normalized = normalizeGameType(value);
+  if (normalized === 'reverse') return 'Reverse';
+  if (normalized === 'fill') return 'Fill';
+  return 'MCQ';
+}
+
+function normalizeAnswerText(value) {
+  return String(value || '')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+}
+
+function getCorrectAnswerText(question) {
+  if (!question || typeof question !== 'object') return '';
+  const choices = Array.isArray(question.choices) ? question.choices : [];
+  const answerFromChoice = choices[question.correct_index];
+  if (typeof answerFromChoice === 'string' && answerFromChoice.trim()) {
+    return answerFromChoice.trim();
+  }
+
+  if (typeof question.explanation === 'string' && question.explanation.trim()) {
+    return question.explanation.trim();
+  }
+
+  if (
+    question.explanation &&
+    typeof question.explanation === 'object' &&
+    typeof question.explanation.answer === 'string' &&
+    question.explanation.answer.trim()
+  ) {
+    return question.explanation.answer.trim();
+  }
+  return '';
 }
 
 function sortPlayers(players) {
@@ -187,6 +222,7 @@ export default function StudyNightRoomPage() {
   const [message, setMessage] = useState('');
   const [loadErrorInfo, setLoadErrorInfo] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState({});
+  const [fillInputByQuestion, setFillInputByQuestion] = useState({});
   const [submittedByQuestion, setSubmittedByQuestion] = useState({});
   const [correctByQuestion, setCorrectByQuestion] = useState({});
   const [secondsLeft, setSecondsLeft] = useState(0);
@@ -597,13 +633,25 @@ export default function StudyNightRoomPage() {
     setMessage('Category pick sent to host.');
   }
 
-  async function handleSubmitAnswer(choiceIndex) {
+  async function handleSubmitAnswer(submittedValue) {
     if (!room || !state || !question || !user?.id) return;
     if (state.phase !== 'question') return;
     if (submittedByQuestion[question.id]) return;
 
-    const isCorrect = choiceIndex === question.correct_index;
-    setSelectedAnswer((prev) => ({ ...prev, [question.id]: choiceIndex }));
+    const activeQuestionType = normalizeGameType(question.question_type || state.game_type || 'mcq');
+    const submittedFillValue = normalizeAnswerText(submittedValue);
+    const correctAnswerText = getCorrectAnswerText(question);
+    const normalizedCorrectAnswer = normalizeAnswerText(correctAnswerText);
+    const isCorrect =
+      activeQuestionType === 'fill'
+        ? Boolean(submittedFillValue) && submittedFillValue === normalizedCorrectAnswer
+        : submittedValue === question.correct_index;
+
+    if (activeQuestionType === 'fill') {
+      setFillInputByQuestion((prev) => ({ ...prev, [question.id]: String(submittedValue || '') }));
+    } else {
+      setSelectedAnswer((prev) => ({ ...prev, [question.id]: submittedValue }));
+    }
     setSubmittedByQuestion((prev) => ({ ...prev, [question.id]: true }));
     setCorrectByQuestion((prev) => ({ ...prev, [question.id]: isCorrect }));
 
@@ -638,6 +686,14 @@ export default function StudyNightRoomPage() {
       setMessage(nextMessage);
       setSubmittedByQuestion((prev) => ({ ...prev, [question.id]: false }));
     }
+  }
+
+  function handleFillSubmit(event) {
+    event.preventDefault();
+    if (!question?.id) return;
+    const fillValue = fillInputByQuestion[question.id] || '';
+    if (!normalizeAnswerText(fillValue)) return;
+    void handleSubmitAnswer(fillValue);
   }
 
   async function handleAdvanceTurn() {
@@ -778,9 +834,12 @@ export default function StudyNightRoomPage() {
   const currentCategory = state?.category_key ? studyNightCategoryByKey[state.category_key] : null;
   const winner = orderedPlayers.find((player) => getWedges(player).length >= 3) || null;
   const selectedAnswerIndex = question?.id ? selectedAnswer[question.id] : null;
+  const fillInputValue = question?.id ? fillInputByQuestion[question.id] || '' : '';
   const explanationBlocks = question ? getExplanationBlocks(question.explanation) : [];
   const currentGameType = normalizeGameType(state?.game_type || question?.question_type || 'mcq');
   const currentGameTypeLabel = getGameTypeLabel(currentGameType);
+  const isFillQuestion = currentGameType === 'fill';
+  const correctAnswerText = question ? getCorrectAnswerText(question) : '';
 
   return (
     <section>
@@ -842,6 +901,7 @@ export default function StudyNightRoomPage() {
               >
                 <option value="mcq">MCQ</option>
                 <option value="reverse">Reverse</option>
+                <option value="fill">Fill</option>
               </select>
               <div className="button-row game-wrap">
                 {studyNightCategories.map((category) => (
@@ -871,22 +931,50 @@ export default function StudyNightRoomPage() {
               {question ? (
                 <>
                   <p className="runner-prompt">{question.prompt}</p>
-                  <div className="choice-list">
-                    {(question.choices || []).map((choice, index) => {
-                      const isSelected = selectedAnswerIndex === index;
-                      return (
-                        <button
-                          key={`${question.id}-${index}`}
-                          type="button"
-                          className={`choice-btn${isSelected ? ' selected' : ''}`}
-                          disabled={Boolean(submittedByQuestion[question.id])}
-                          onClick={() => void handleSubmitAnswer(index)}
-                        >
-                          {String(choice)}
-                        </button>
-                      );
-                    })}
-                  </div>
+                  {isFillQuestion ? (
+                    <form className="auth-form" onSubmit={handleFillSubmit}>
+                      <label htmlFor="study-night-fill-answer">Your answer</label>
+                      <input
+                        id="study-night-fill-answer"
+                        type="text"
+                        autoFocus
+                        value={fillInputValue}
+                        onChange={(event) =>
+                          setFillInputByQuestion((prev) => ({
+                            ...prev,
+                            [question.id]: event.target.value,
+                          }))
+                        }
+                        disabled={Boolean(submittedByQuestion[question.id])}
+                      />
+                      <button
+                        type="submit"
+                        disabled={
+                          Boolean(submittedByQuestion[question.id]) ||
+                          !normalizeAnswerText(fillInputValue)
+                        }
+                      >
+                        Submit
+                      </button>
+                    </form>
+                  ) : (
+                    <div className="choice-list">
+                      {(question.choices || []).map((choice, index) => {
+                        const isSelected = selectedAnswerIndex === index;
+                        return (
+                          <button
+                            key={`${question.id}-${index}`}
+                            type="button"
+                            className={`choice-btn${isSelected ? ' selected' : ''}`}
+                            disabled={Boolean(submittedByQuestion[question.id])}
+                            onClick={() => void handleSubmitAnswer(index)}
+                          >
+                            {String(choice)}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </>
               ) : (
                 <p className="muted">Loading question...</p>
@@ -900,9 +988,13 @@ export default function StudyNightRoomPage() {
               {question ? (
                 <>
                   <p className="muted">Game type: {currentGameTypeLabel}</p>
-                  <p className="muted">
-                    Correct answer: {(question.choices || [])[question.correct_index] ?? 'Unknown'}
-                  </p>
+                  {isFillQuestion ? (
+                    <p>
+                      <strong>Correct fill answer: {correctAnswerText || 'Unknown'}</strong>
+                    </p>
+                  ) : (
+                    <p className="muted">Correct answer: {correctAnswerText || 'Unknown'}</p>
+                  )}
                   {explanationBlocks.map((block) => (
                     <div key={block.label} className="explanation-box">
                       <strong>{block.label}:</strong> {block.text}

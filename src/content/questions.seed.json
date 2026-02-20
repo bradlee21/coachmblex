@@ -878,5 +878,195 @@
       "hook": "Psoas + iliacus = iliopsoas."
     },
     "difficulty": "medium"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "pelvis",
+    "concept_label": "Fill: anterior pelvis landmark",
+    "blueprint_code": "1.A.6",
+    "question_type": "fill",
+    "prompt": "Fill in the landmark: The anterior superior iliac spine is abbreviated as ____.",
+    "choices": [
+      "ASIS"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "ASIS",
+      "why": "ASIS stands for anterior superior iliac spine.",
+      "trap": "PSIS is the posterior landmark.",
+      "hook": "A in ASIS = anterior."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "pelvis",
+    "concept_label": "Fill: posterior pelvis landmark",
+    "blueprint_code": "1.A.6",
+    "question_type": "fill",
+    "prompt": "Fill in the landmark: The posterior superior iliac spine is abbreviated as ____.",
+    "choices": [
+      "PSIS"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "PSIS",
+      "why": "PSIS is the standard abbreviation.",
+      "trap": "ASIS is anterior, not posterior.",
+      "hook": "P in PSIS = posterior."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "anatomy",
+    "subtopic": "hip",
+    "concept_label": "Fill: lateral proximal femur landmark",
+    "blueprint_code": "1.A.6",
+    "question_type": "fill",
+    "prompt": "Name the large lateral prominence of the proximal femur: ____ ____.",
+    "choices": [
+      "greater trochanter"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Greater trochanter",
+      "why": "It is the palpable lateral bony landmark at the hip.",
+      "trap": "Acetabulum belongs to the pelvis.",
+      "hook": "Greater = big lateral bump."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-action",
+    "concept_label": "Fill: hip movement away from midline",
+    "blueprint_code": "2.D",
+    "question_type": "fill",
+    "prompt": "Movement of a limb away from the midline is called ____.",
+    "choices": [
+      "abduction"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Abduction",
+      "why": "Abduction moves away from body midline.",
+      "trap": "Adduction moves toward midline.",
+      "hook": "Abduct = away."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-action",
+    "concept_label": "Fill: knee straightening action",
+    "blueprint_code": "2.D",
+    "question_type": "fill",
+    "prompt": "Straightening the knee is called knee ____.",
+    "choices": [
+      "extension"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Extension",
+      "why": "Extension increases the knee joint angle.",
+      "trap": "Flexion bends the knee.",
+      "hook": "Extend means straighten."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "kinesiology",
+    "subtopic": "muscle-function",
+    "concept_label": "Fill: prime hip flexor group",
+    "blueprint_code": "2.D",
+    "question_type": "fill",
+    "prompt": "The muscle group made of iliacus and psoas major is the ____.",
+    "choices": [
+      "iliopsoas"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Iliopsoas",
+      "why": "Iliacus + psoas major form iliopsoas.",
+      "trap": "Glute max is a hip extensor.",
+      "hook": "Iliacus + psoas = iliopsoas."
+    },
+    "difficulty": "medium"
+  },
+  {
+    "domain": "pathology",
+    "subtopic": "contraindications",
+    "concept_label": "Fill: local contraindication example",
+    "blueprint_code": "3.A",
+    "question_type": "fill",
+    "prompt": "Open wounds are a ____ contraindication to direct massage over the area.",
+    "choices": [
+      "local"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Local",
+      "why": "The contraindication applies to the injured site.",
+      "trap": "Systemic conditions can be global contraindications.",
+      "hook": "Local problem, local avoid."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "pathology",
+    "subtopic": "inflammation",
+    "concept_label": "Fill: inflammation sign",
+    "blueprint_code": "3.A",
+    "question_type": "fill",
+    "prompt": "A classic inflammatory sign that feels warmer than surrounding tissue is ____.",
+    "choices": [
+      "heat"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Heat",
+      "why": "Heat is a cardinal sign of inflammation.",
+      "trap": "Numbness is neurological, not a cardinal inflammation sign.",
+      "hook": "Inflammation often runs hot."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "ethics",
+    "subtopic": "client-rights",
+    "concept_label": "Fill: permission before treatment",
+    "blueprint_code": "6.A",
+    "question_type": "fill",
+    "prompt": "Before beginning treatment, you must obtain informed ____.",
+    "choices": [
+      "consent"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Consent",
+      "why": "Client permission is required before care.",
+      "trap": "Assent alone is not the legal standard for adults.",
+      "hook": "No consent, no treatment."
+    },
+    "difficulty": "easy"
+  },
+  {
+    "domain": "ethics",
+    "subtopic": "professionalism",
+    "concept_label": "Fill: protecting client information",
+    "blueprint_code": "6.H",
+    "question_type": "fill",
+    "prompt": "Protecting private client records is maintaining client ____.",
+    "choices": [
+      "confidentiality"
+    ],
+    "correct_index": 0,
+    "explanation": {
+      "answer": "Confidentiality",
+      "why": "Professional ethics require safeguarding client information.",
+      "trap": "Transparency does not mean sharing private data.",
+      "hook": "Keep client info confidential."
+    },
+    "difficulty": "easy"
   }
 ]

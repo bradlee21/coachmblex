@@ -2,7 +2,7 @@ create table if not exists public.study_room_state (
   room_id uuid primary key references public.study_rooms(id) on delete cascade,
   turn_index int not null default 0,
   phase text not null default 'pick' check (phase in ('pick', 'question', 'reveal', 'finished')),
-  game_type text not null default 'mcq' check (game_type in ('mcq', 'reverse')),
+  game_type text not null default 'mcq', -- mcq | reverse | fill
   category_key text,
   question_id uuid references public.questions(id) on delete set null,
   started_at timestamptz,
@@ -14,6 +14,8 @@ create table if not exists public.study_room_state (
 -- Migration snippet for existing environments:
 alter table public.study_room_state
   add column if not exists game_type text not null default 'mcq';
+alter table public.study_room_state
+  drop constraint if exists study_room_state_game_type_check;
 
 create or replace function public.set_study_room_state_updated_at()
 returns trigger
