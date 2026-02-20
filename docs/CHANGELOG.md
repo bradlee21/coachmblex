@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP16: added deck health counts and host deck-health summary (MCQ/Reverse/Fill counts by category).
+- Roulette picks now avoid empty category/type buckets; if a picked category has no available deck questions, the turn stays in pick phase with a clear inline message.
 - Study Night TP15: added invite UX with Copy Code, Copy Invite Link, and Web Share support plus short copied/shared feedback.
 - Added deep-link join support via `/game/study-night?join=CODE` with input prefill and one-time auto-join for authenticated users.
 - Study Night TP14: added host-only Host Tools (Force Resync, End Game, Reset Room with inline confirmation) for stuck-state recovery.

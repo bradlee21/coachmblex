@@ -43,8 +43,11 @@ function normalizeGameTypeMode(value) {
   return value === 'roulette' ? 'roulette' : 'pick';
 }
 
-function chooseRouletteGameType(lastGameType) {
-  const options = STUDY_NIGHT_GAME_TYPES;
+function chooseRouletteGameType(lastGameType, availableTypes = STUDY_NIGHT_GAME_TYPES) {
+  const options = availableTypes
+    .map((type) => normalizeGameType(type))
+    .filter((type, index, list) => STUDY_NIGHT_GAME_TYPES.includes(type) && list.indexOf(type) === index);
+  if (options.length === 0) return '';
   const previous = normalizeGameType(lastGameType);
   let next = options[Math.floor(Math.random() * options.length)];
 
@@ -77,6 +80,35 @@ function toDeckPosMap(value) {
     deckPos[key] = Number.isFinite(numeric) && numeric >= 0 ? Math.floor(numeric) : 0;
   }
   return deckPos;
+}
+
+function buildDeckCountsMap(deckValue) {
+  const deck = toDeckMap(deckValue);
+  const counts = {};
+  for (const category of studyNightCategories) {
+    for (const gameType of STUDY_NIGHT_GAME_TYPES) {
+      const key = getDeckKey(category.key, gameType);
+      counts[key] = Array.isArray(deck[key]) ? deck[key].length : 0;
+    }
+  }
+  return counts;
+}
+
+function getDeckBucketCount(deckCounts, categoryKey, gameType) {
+  if (!categoryKey) return 0;
+  const key = getDeckKey(categoryKey, gameType);
+  const value = Number(deckCounts?.[key]);
+  return Number.isFinite(value) && value > 0 ? Math.floor(value) : 0;
+}
+
+function getAvailableDeckGameTypes(deckValue, categoryKey) {
+  if (!categoryKey) return [];
+  const deck = toDeckMap(deckValue);
+  return STUDY_NIGHT_GAME_TYPES.filter((gameType) => {
+    const key = getDeckKey(categoryKey, gameType);
+    const ids = deck[key];
+    return Array.isArray(ids) && ids.length > 0;
+  });
 }
 
 function getTurnKey(roomId, state) {
@@ -380,6 +412,8 @@ export default function StudyNightRoomPage() {
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [selectedGameType, setSelectedGameType] = useState('mcq');
   const [confirmResetRoom, setConfirmResetRoom] = useState(false);
+  const [deckCountsByKey, setDeckCountsByKey] = useState({});
+  const [deckHealthCategoryKey, setDeckHealthCategoryKey] = useState(studyNightCategories[0]?.key || '');
 
   const channelRef = useRef(null);
   const revealKeyRef = useRef('');
@@ -498,12 +532,14 @@ export default function StudyNightRoomPage() {
 
     const deck = {};
     const deckPos = {};
+    const deckCounts = {};
     for (const [key, ids] of entries) {
       deck[key] = ids;
       deckPos[key] = 0;
+      deckCounts[key] = Array.isArray(ids) ? ids.length : 0;
     }
 
-    return { deck, deckPos };
+    return { deck, deckPos, deckCounts };
   }, []);
 
   const recordTurnStats = useCallback(async (playerUserId, wasCorrect, blueprintCode) => {
@@ -561,10 +597,6 @@ export default function StudyNightRoomPage() {
 
       const category = studyNightCategoryByKey[categoryKey];
       const gameTypeMode = normalizeGameTypeMode(room.game_type_mode);
-      const normalizedGameType =
-        gameTypeMode === 'roulette'
-          ? chooseRouletteGameType(state?.game_type)
-          : normalizeGameType(gameType);
       if (!category) {
         setMessage('Invalid category.');
         return;
@@ -573,6 +605,21 @@ export default function StudyNightRoomPage() {
       try {
         const deck = toDeckMap(state?.deck);
         const deckPos = toDeckPosMap(state?.deck_pos);
+        let normalizedGameType = normalizeGameType(gameType);
+
+        if (gameTypeMode === 'roulette') {
+          const availableTypes = getAvailableDeckGameTypes(deck, category.key);
+          if (availableTypes.length === 0) {
+            setMessage('No questions available for this category yet.');
+            return;
+          }
+          normalizedGameType = chooseRouletteGameType(state?.game_type, availableTypes);
+          if (!normalizedGameType) {
+            setMessage('No questions available for this category yet.');
+            return;
+          }
+        }
+
         const deckKey = getDeckKey(category.key, normalizedGameType);
         const deckIds = Array.isArray(deck[deckKey]) ? deck[deckKey] : [];
         let nextDeckPos = null;
@@ -832,6 +879,21 @@ export default function StudyNightRoomPage() {
   }, [state?.phase, state?.round_no]);
 
   useEffect(() => {
+    setDeckCountsByKey(buildDeckCountsMap(state?.deck));
+  }, [state?.deck]);
+
+  useEffect(() => {
+    if (!state?.category_key) return;
+    if (!studyNightCategoryByKey[state.category_key]) return;
+    setDeckHealthCategoryKey(state.category_key);
+  }, [state?.category_key]);
+
+  useEffect(() => {
+    if (studyNightCategoryByKey[deckHealthCategoryKey]) return;
+    setDeckHealthCategoryKey(studyNightCategories[0]?.key || '');
+  }, [deckHealthCategoryKey]);
+
+  useEffect(() => {
     if (!room?.id) return;
     coachStatsRef.current = {};
     gradedTurnKeysRef.current = {};
@@ -969,7 +1031,8 @@ export default function StudyNightRoomPage() {
       return;
     }
     try {
-      const { deck, deckPos } = await buildRoomDeck();
+      const { deck, deckPos, deckCounts } = await buildRoomDeck();
+      setDeckCountsByKey(deckCounts);
 
       const roomUpdateResponse = await timedPostgrest(
         `study_rooms?id=eq.${room.id}`,
@@ -1012,6 +1075,7 @@ export default function StudyNightRoomPage() {
 
   async function handlePickCategory(categoryKey) {
     if (!canPickCategory || !room || !user?.id) return;
+    setDeckHealthCategoryKey(categoryKey);
     const nextGameType = isRouletteMode ? null : normalizeGameType(selectedGameType);
 
     if (isHost) {
@@ -1429,6 +1493,11 @@ export default function StudyNightRoomPage() {
   const currentTurnWedges = getWedges(currentTurnPlayer);
   const activeTurnKey = getTurnKey(room?.id, state);
   const alreadyAnsweredTurn = Boolean(activeTurnKey && submittedTurnKeysRef.current[activeTurnKey]);
+  const deckHealthCategory =
+    studyNightCategoryByKey[deckHealthCategoryKey] || studyNightCategories[0] || null;
+  const deckHealthMcqCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'mcq');
+  const deckHealthReverseCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'reverse');
+  const deckHealthFillCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'fill');
   const coachStatsByUser = useMemo(() => coachStatsRef.current, [coachStatsVersion]);
   const myCoachStats = myPlayer ? getPlayerCoachStats(myPlayer, coachStatsByUser) : createEmptyCoachStats();
   const nextPickSuggestions = getNextPickSuggestions(myCoachStats.missesByPrefix, myWedges);
@@ -1693,6 +1762,23 @@ export default function StudyNightRoomPage() {
           {isHost ? (
             <>
               <h2>Host Tools</h2>
+              <h3>Deck Health</h3>
+              <label htmlFor="study-night-deck-health-category">Category</label>
+              <select
+                id="study-night-deck-health-category"
+                value={deckHealthCategory?.key || ''}
+                onChange={(event) => setDeckHealthCategoryKey(event.target.value)}
+              >
+                {studyNightCategories.map((category) => (
+                  <option key={`deck-health-${category.key}`} value={category.key}>
+                    {category.key}. {category.label}
+                  </option>
+                ))}
+              </select>
+              <p className="muted">
+                {deckHealthCategory ? `${deckHealthCategory.key}. ${deckHealthCategory.label}` : 'Category n/a'} |
+                MCQ: {deckHealthMcqCount} | Reverse: {deckHealthReverseCount} | Fill: {deckHealthFillCount}
+              </p>
               <div className="choice-list">
                 <button type="button" onClick={handleForceResync}>
                   Force Resync
