@@ -96,6 +96,7 @@ const FILL_SOFT_LIMIT = 40;
 const REVIEW_QUEUE_FETCH_LIMIT = 200;
 const QFORGE_DRAFT_STORAGE_KEY = 'qforge:draft';
 const QFORGE_DRAFT_DEBOUNCE_MS = 1800;
+const QFORGE_ONBOARDING_DISMISSED_KEY = 'qforge:onboardingDismissed';
 const DOMAIN_BY_SECTION_CODE = {
   '1': 'anatomy',
   '2': 'kinesiology',
@@ -455,6 +456,7 @@ export default function AdminQuestionsPage() {
   const [selectedTemplateId, setSelectedTemplateId] = useState('');
   const [overwriteTemplateValues, setOverwriteTemplateValues] = useState(false);
   const [templateAppliedMessage, setTemplateAppliedMessage] = useState('');
+  const [showOnboarding, setShowOnboarding] = useState(true);
   const [restoreDraftInfo, setRestoreDraftInfo] = useState(null);
   const [baselineSnapshotString, setBaselineSnapshotString] = useState(
     EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING
@@ -746,6 +748,18 @@ export default function AdminQuestionsPage() {
   }, [currentTypeTemplates, selectedTemplateId]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const dismissed = window.localStorage.getItem(QFORGE_ONBOARDING_DISMISSED_KEY);
+      if (dismissed === 'true') {
+        setShowOnboarding(false);
+      }
+    } catch (_error) {
+      // Ignore localStorage errors and keep onboarding visible.
+    }
+  }, []);
+
+  useEffect(() => {
     const storedDraft = readQuestionDraftStorage();
     if (!storedDraft) return;
     if (!hasMeaningfulQuestionDraft(storedDraft.snapshot)) return;
@@ -857,6 +871,26 @@ export default function AdminQuestionsPage() {
   function handleDiscardDraft() {
     clearQuestionDraftStorage();
     setRestoreDraftInfo(null);
+  }
+
+  function handleDismissOnboarding() {
+    setShowOnboarding(false);
+    if (typeof window === 'undefined') return;
+    try {
+      window.localStorage.setItem(QFORGE_ONBOARDING_DISMISSED_KEY, 'true');
+    } catch (_error) {
+      // Ignore storage issues.
+    }
+  }
+
+  function handleShowOnboarding() {
+    setShowOnboarding(true);
+    if (typeof window === 'undefined') return;
+    try {
+      window.localStorage.removeItem(QFORGE_ONBOARDING_DISMISSED_KEY);
+    } catch (_error) {
+      // Ignore storage issues.
+    }
   }
 
   function updateChoice(index, value) {
@@ -1182,6 +1216,21 @@ export default function AdminQuestionsPage() {
     }, 0);
   }
 
+  function handleStartHere() {
+    const topGapCode = coverageGaps[0]?.code || '';
+    setQuestionType('mcq');
+    if (topGapCode) {
+      handleWriteNextFromGap(topGapCode);
+      return;
+    }
+    setTimeout(() => {
+      const node = promptInputRef.current;
+      if (!node) return;
+      node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      node.focus();
+    }, 0);
+  }
+
   if (loading) {
     return (
       <section>
@@ -1213,6 +1262,33 @@ export default function AdminQuestionsPage() {
     <section>
       <h1>Question Forge</h1>
       <p>Create and edit MBLEX questions.</p>
+      {!showOnboarding ? (
+        <button type="button" onClick={handleShowOnboarding}>
+          Show help
+        </button>
+      ) : null}
+      {showOnboarding ? (
+        <div className="game-card">
+          <h2>Quick Start Guide</h2>
+          <p className="muted">How to add a good MBLEX question:</p>
+          <ul>
+            <li>Pick a blueprint code using search or Coverage Gaps.</li>
+            <li>Keep the prompt short and specific.</li>
+            <li>For MCQ, use one clearly best answer with plausible distractors.</li>
+            <li>Keep Answer/Why/Trap/Hook concise and useful.</li>
+            <li>Use Preview before saving.</li>
+            <li>Use Coverage Gaps to target what is needed next.</li>
+          </ul>
+          <div className="button-row">
+            <button type="button" onClick={handleStartHere}>
+              Start here
+            </button>
+            <button type="button" onClick={handleDismissOnboarding}>
+              Don't show again
+            </button>
+          </div>
+        </div>
+      ) : null}
       {restoreDraftInfo ? (
         <div className="runner">
           <p className="muted">

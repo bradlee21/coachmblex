@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP25: added a Question Forge onboarding panel with concise authoring guidance and one-click "Start here" setup from top Coverage Gap.
+- Added persistent onboarding dismiss/show controls via localStorage so instructors can hide help and reopen it later.
 - TP24: added Question Forge local draft autosave (`qforge:draft`) with debounce, timestamp, and meaningful-content-only saves.
 - Added restore/discard prompt for unsaved Question Forge drafts on load plus an unsaved-changes indicator and `beforeunload` guard.
 - Save/new/edit reset flows now update dirty baselines and clear local draft state to prevent stale restores.
