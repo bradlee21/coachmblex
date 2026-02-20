@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP-E2E-RUN-1: added E2E tier scripts (`e2e:critical`, `e2e:journey`, `e2e:signup`) with strict no-loop flags (`--retries=0 --workers=1`).
+- Added `test:all` fast gate (`build -> smoke:critical -> e2e:critical`) and documented tier usage in runbook/release checklist.
 - TP-E2E-SIGNUP-1: added gated `e2e/signup.spec.ts` (enabled only with `E2E_SIGNUP=1`) with deterministic unique-email signup flow and hard-timeout auth assertions.
 - Added runbook notes for signup E2E env requirements (`E2E_SIGNUP`, `E2E_SIGNUP_PASSWORD`) and dependency on Supabase email confirmation being OFF.
 - TP-E2E-JOURNEY-1: added `e2e/journey.spec.ts` for a full authenticated route journey across Today, Drill, Review, Study Night, Anatomy, Progress, and Settings with one core action per page.

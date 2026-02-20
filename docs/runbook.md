@@ -105,6 +105,10 @@ Automated checks:
 E2E note:
 - `npm run e2e` and `npm run e2e:once` are opt-in only.
 - E2E is not part of `npm run smoke` or `npm run build`.
+- `npm run e2e:critical` runs fast critical-path specs only (login, drill, study-night).
+- `npm run e2e:journey` runs the broader cross-route journey and is heavier.
+- `npm run e2e:signup` runs signup coverage only and is gated by `E2E_SIGNUP=1`.
+- `npm run test:all` runs the demo-ready fast gate: `build -> smoke:critical -> e2e:critical`.
 - `e2e/journey.spec.ts` provides a broad route journey (Today, Drill, Review, Study Night, Anatomy, Progress, Settings) with one core action per page.
 - `e2e/signup.spec.ts` is gated and runs only when `E2E_SIGNUP=1`.
 - Signup E2E also requires `E2E_SIGNUP_PASSWORD` and assumes Supabase email confirmation is OFF for deterministic auto-login.

@@ -10,6 +10,10 @@
     "smoke:critical": "node scripts/smoke.mjs --critical",
     "e2e": "playwright test",
     "e2e:once": "playwright test --retries=0 --workers=1",
+    "e2e:critical": "playwright test e2e/critical.spec.ts e2e/drill-critical.spec.ts e2e/study-night-critical.spec.ts --retries=0 --workers=1",
+    "e2e:journey": "playwright test e2e/journey.spec.ts --retries=0 --workers=1",
+    "e2e:signup": "playwright test e2e/signup.spec.ts --retries=0 --workers=1",
+    "test:all": "npm run build && npm run smoke:critical && npm run e2e:critical",
     "seed": "node scripts/seed.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },

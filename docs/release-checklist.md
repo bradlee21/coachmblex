@@ -15,6 +15,7 @@
 - Quick health checks:
   - `npm run smoke:critical`
   - `npm run build`
+  - `npm run e2e:critical`
 
 ## Demo Script (5-8 minutes)
 1. Login
@@ -63,3 +64,8 @@
   - Re-apply known-good SQL from `docs/runbook.md` order if needed.
 - After rollback:
   - Re-run `npm run smoke:critical` and a manual Study Night room check.
+
+## E2E Tiers
+- Fast demo gate: `npm run test:all` (`build -> smoke:critical -> e2e:critical`).
+- Broad route pass (heavier, optional): `npm run e2e:journey`.
+- Signup pass (optional): `npm run e2e:signup` with `E2E_SIGNUP=1` and email confirmation disabled.
