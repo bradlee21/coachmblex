@@ -1,0 +1,2534 @@
+{
+  "pack_id": "ch11-nervous-v1",
+  "packId": "ch11-nervous-v1",
+  "title": "Nervous System Content Pack V1",
+  "chapter": "11",
+  "topic": "Nervous System",
+  "version": "v1",
+  "source": "Chapter 11 Nervous System (class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "physiology": 70,
+      "applied": 30
+    }
+  },
+  "notes": "Massage-relevant nervous system fundamentals for MBLEX prep, with scope-safe applied items and concise coaching explanations.",
+  "questions": [
+    {
+      "blueprint_code": "1.A.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: brain and spinal cord?",
+      "choices": {
+        "A": "central nervous system",
+        "B": "peripheral nervous system",
+        "C": "parasympathetic response",
+        "D": "motor unit"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "central nervous system best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: central control."
+      },
+      "why": "central nervous system best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: central control.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-001",
+      "answer": "central nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: nerves outside brain and spinal cord?",
+      "choices": {
+        "A": "peripheral nervous system",
+        "B": "somatic nervous system",
+        "C": "afferent pathway",
+        "D": "recruitment"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "peripheral nervous system best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: peripheral signaling."
+      },
+      "why": "peripheral nervous system best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: peripheral signaling.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-002",
+      "answer": "peripheral nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: voluntary skeletal muscle control?",
+      "choices": {
+        "A": "somatic nervous system",
+        "B": "autonomic nervous system",
+        "C": "efferent pathway",
+        "D": "rate coding"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "somatic nervous system best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: voluntary movement."
+      },
+      "why": "somatic nervous system best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: voluntary movement.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-003",
+      "answer": "somatic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: involuntary organ regulation?",
+      "choices": {
+        "A": "autonomic nervous system",
+        "B": "sympathetic response",
+        "C": "reflex arc",
+        "D": "muscle spindle"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "autonomic nervous system best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: automatic regulation."
+      },
+      "why": "autonomic nervous system best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: automatic regulation.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-004",
+      "answer": "autonomic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fight-or-flight readiness?",
+      "choices": {
+        "A": "sympathetic response",
+        "B": "parasympathetic response",
+        "C": "motor unit",
+        "D": "golgi tendon organ"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "sympathetic response best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: mobilize quickly."
+      },
+      "why": "sympathetic response best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: mobilize quickly.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-005",
+      "answer": "sympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: rest-and-digest regulation?",
+      "choices": {
+        "A": "parasympathetic response",
+        "B": "afferent pathway",
+        "C": "recruitment",
+        "D": "proprioception"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "parasympathetic response best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: recover and restore."
+      },
+      "why": "parasympathetic response best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: recover and restore.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-006",
+      "answer": "parasympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: sensory input traveling toward CNS?",
+      "choices": {
+        "A": "afferent pathway",
+        "B": "efferent pathway",
+        "C": "rate coding",
+        "D": "kinesthesia"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "afferent pathway best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: input to CNS."
+      },
+      "why": "afferent pathway best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: input to CNS.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-007",
+      "answer": "afferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: motor output traveling from CNS?",
+      "choices": {
+        "A": "efferent pathway",
+        "B": "reflex arc",
+        "C": "muscle spindle",
+        "D": "nociception"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "efferent pathway best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: output from CNS."
+      },
+      "why": "efferent pathway best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: output from CNS.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-008",
+      "answer": "efferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: receptor to sensory to integration to motor to effector sequence?",
+      "choices": {
+        "A": "reflex arc",
+        "B": "motor unit",
+        "C": "golgi tendon organ",
+        "D": "a-delta fiber signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "reflex arc best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: rapid automatic response."
+      },
+      "why": "reflex arc best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: rapid automatic response.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-009",
+      "answer": "reflex arc."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: one motor neuron and its muscle fibers?",
+      "choices": {
+        "A": "motor unit",
+        "B": "recruitment",
+        "C": "proprioception",
+        "D": "c fiber signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "motor unit best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: neural force unit."
+      },
+      "why": "motor unit best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: neural force unit.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-010",
+      "answer": "motor unit."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: activating additional motor units to raise force?",
+      "choices": {
+        "A": "recruitment",
+        "B": "rate coding",
+        "C": "kinesthesia",
+        "D": "acetylcholine at NMJ"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "recruitment best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: add force by units."
+      },
+      "why": "recruitment best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: add force by units.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-011",
+      "answer": "recruitment."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: changing force by changing neural firing frequency?",
+      "choices": {
+        "A": "rate coding",
+        "B": "muscle spindle",
+        "C": "nociception",
+        "D": "dermatome"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "rate coding best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: frequency control."
+      },
+      "why": "rate coding best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: frequency control.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-012",
+      "answer": "rate coding."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: receptor sensing muscle length and stretch rate?",
+      "choices": {
+        "A": "muscle spindle",
+        "B": "golgi tendon organ",
+        "C": "a-delta fiber signaling",
+        "D": "descending modulation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "muscle spindle best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: stretch sensing."
+      },
+      "why": "muscle spindle best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: stretch sensing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-013",
+      "answer": "muscle spindle."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: receptor sensing tendon tension?",
+      "choices": {
+        "A": "golgi tendon organ",
+        "B": "proprioception",
+        "C": "c fiber signaling",
+        "D": "all-or-none action potential"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "golgi tendon organ best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: tension sensing."
+      },
+      "why": "golgi tendon organ best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: tension sensing.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-014",
+      "answer": "golgi tendon organ."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: awareness of body position and movement?",
+      "choices": {
+        "A": "proprioception",
+        "B": "kinesthesia",
+        "C": "acetylcholine at NMJ",
+        "D": "myelination"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "proprioception best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: position awareness."
+      },
+      "why": "proprioception best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: position awareness.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-015",
+      "answer": "proprioception."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: awareness of movement in motion?",
+      "choices": {
+        "A": "kinesthesia",
+        "B": "nociception",
+        "C": "dermatome",
+        "D": "reciprocal inhibition"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "kinesthesia best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: movement awareness."
+      },
+      "why": "kinesthesia best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: movement awareness.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-016",
+      "answer": "kinesthesia."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: neural processing of potentially harmful stimuli?",
+      "choices": {
+        "A": "nociception",
+        "B": "a-delta fiber signaling",
+        "C": "descending modulation",
+        "D": "central nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "nociception best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: danger signaling."
+      },
+      "why": "nociception best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: danger signaling.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-017",
+      "answer": "nociception."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: faster sharper pain signaling?",
+      "choices": {
+        "A": "a-delta fiber signaling",
+        "B": "c fiber signaling",
+        "C": "all-or-none action potential",
+        "D": "peripheral nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "a-delta fiber signaling best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: fast pain."
+      },
+      "why": "a-delta fiber signaling best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: fast pain.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-018",
+      "answer": "a-delta fiber signaling."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: slower dull aching pain signaling?",
+      "choices": {
+        "A": "c fiber signaling",
+        "B": "acetylcholine at NMJ",
+        "C": "myelination",
+        "D": "somatic nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "c fiber signaling best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: slow ache."
+      },
+      "why": "c fiber signaling best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: slow ache.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-019",
+      "answer": "c fiber signaling."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: primary transmitter at skeletal neuromuscular junction?",
+      "choices": {
+        "A": "acetylcholine at NMJ",
+        "B": "dermatome",
+        "C": "reciprocal inhibition",
+        "D": "autonomic nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "acetylcholine at NMJ best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: nmj transmitter."
+      },
+      "why": "acetylcholine at NMJ best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: nmj transmitter.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-020",
+      "answer": "acetylcholine at NMJ."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: skin zone linked to one spinal nerve root?",
+      "choices": {
+        "A": "dermatome",
+        "B": "descending modulation",
+        "C": "central nervous system",
+        "D": "sympathetic response"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "dermatome best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: sensory map."
+      },
+      "why": "dermatome best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: sensory map.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-021",
+      "answer": "dermatome."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: brain influence on spinal pain processing?",
+      "choices": {
+        "A": "descending modulation",
+        "B": "all-or-none action potential",
+        "C": "peripheral nervous system",
+        "D": "parasympathetic response"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "descending modulation best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: top-down tuning."
+      },
+      "why": "descending modulation best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: top-down tuning.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-022",
+      "answer": "descending modulation."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: full spike once threshold is reached?",
+      "choices": {
+        "A": "all-or-none action potential",
+        "B": "myelination",
+        "C": "somatic nervous system",
+        "D": "afferent pathway"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "all-or-none action potential best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: spike rule."
+      },
+      "why": "all-or-none action potential best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: spike rule.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-023",
+      "answer": "all-or-none action potential."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: insulation that increases conduction speed?",
+      "choices": {
+        "A": "myelination",
+        "B": "reciprocal inhibition",
+        "C": "autonomic nervous system",
+        "D": "efferent pathway"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "myelination best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: faster conduction."
+      },
+      "why": "myelination best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: faster conduction.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-024",
+      "answer": "myelination."
+    },
+    {
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: agonist activation reducing opposing activity?",
+      "choices": {
+        "A": "reciprocal inhibition",
+        "B": "central nervous system",
+        "C": "sympathetic response",
+        "D": "reflex arc"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "reciprocal inhibition best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: smooth coordination."
+      },
+      "why": "reciprocal inhibition best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: smooth coordination.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-025",
+      "answer": "reciprocal inhibition."
+    },
+    {
+      "blueprint_code": "1.A.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: central control?",
+      "choices": {
+        "A": "central nervous system",
+        "B": "autonomic nervous system",
+        "C": "efferent pathway",
+        "D": "rate coding"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "central nervous system is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: brain and spinal cord."
+      },
+      "why": "central nervous system is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: brain and spinal cord.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-026",
+      "answer": "central nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: peripheral signaling?",
+      "choices": {
+        "A": "peripheral nervous system",
+        "B": "sympathetic response",
+        "C": "reflex arc",
+        "D": "muscle spindle"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "peripheral nervous system is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: nerves outside brain and spinal cord."
+      },
+      "why": "peripheral nervous system is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: nerves outside brain and spinal cord.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-027",
+      "answer": "peripheral nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: voluntary movement?",
+      "choices": {
+        "A": "somatic nervous system",
+        "B": "parasympathetic response",
+        "C": "motor unit",
+        "D": "golgi tendon organ"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "somatic nervous system is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: voluntary skeletal muscle control."
+      },
+      "why": "somatic nervous system is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: voluntary skeletal muscle control.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-028",
+      "answer": "somatic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: automatic regulation?",
+      "choices": {
+        "A": "autonomic nervous system",
+        "B": "afferent pathway",
+        "C": "recruitment",
+        "D": "proprioception"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "autonomic nervous system is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: involuntary organ regulation."
+      },
+      "why": "autonomic nervous system is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: involuntary organ regulation.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-029",
+      "answer": "autonomic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: mobilize quickly?",
+      "choices": {
+        "A": "sympathetic response",
+        "B": "efferent pathway",
+        "C": "rate coding",
+        "D": "kinesthesia"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "sympathetic response is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: fight-or-flight readiness."
+      },
+      "why": "sympathetic response is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: fight-or-flight readiness.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-030",
+      "answer": "sympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: recover and restore?",
+      "choices": {
+        "A": "parasympathetic response",
+        "B": "reflex arc",
+        "C": "muscle spindle",
+        "D": "nociception"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "parasympathetic response is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: rest-and-digest regulation."
+      },
+      "why": "parasympathetic response is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: rest-and-digest regulation.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-031",
+      "answer": "parasympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: input to CNS?",
+      "choices": {
+        "A": "afferent pathway",
+        "B": "motor unit",
+        "C": "golgi tendon organ",
+        "D": "a-delta fiber signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "afferent pathway is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: sensory input traveling toward CNS."
+      },
+      "why": "afferent pathway is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: sensory input traveling toward CNS.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-032",
+      "answer": "afferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: output from CNS?",
+      "choices": {
+        "A": "efferent pathway",
+        "B": "recruitment",
+        "C": "proprioception",
+        "D": "c fiber signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "efferent pathway is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: motor output traveling from CNS."
+      },
+      "why": "efferent pathway is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: motor output traveling from CNS.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-033",
+      "answer": "efferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: rapid automatic response?",
+      "choices": {
+        "A": "reflex arc",
+        "B": "rate coding",
+        "C": "kinesthesia",
+        "D": "acetylcholine at NMJ"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "reflex arc is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: receptor to sensory to integration to motor to effector sequence."
+      },
+      "why": "reflex arc is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: receptor to sensory to integration to motor to effector sequence.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-034",
+      "answer": "reflex arc."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: neural force unit?",
+      "choices": {
+        "A": "motor unit",
+        "B": "muscle spindle",
+        "C": "nociception",
+        "D": "dermatome"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "motor unit is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: one motor neuron and its muscle fibers."
+      },
+      "why": "motor unit is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: one motor neuron and its muscle fibers.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-035",
+      "answer": "motor unit."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: add force by units?",
+      "choices": {
+        "A": "recruitment",
+        "B": "golgi tendon organ",
+        "C": "a-delta fiber signaling",
+        "D": "descending modulation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "recruitment is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: activating additional motor units to raise force."
+      },
+      "why": "recruitment is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: activating additional motor units to raise force.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-036",
+      "answer": "recruitment."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: frequency control?",
+      "choices": {
+        "A": "rate coding",
+        "B": "proprioception",
+        "C": "c fiber signaling",
+        "D": "all-or-none action potential"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "rate coding is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: changing force by changing neural firing frequency."
+      },
+      "why": "rate coding is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: changing force by changing neural firing frequency.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-037",
+      "answer": "rate coding."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: stretch sensing?",
+      "choices": {
+        "A": "muscle spindle",
+        "B": "kinesthesia",
+        "C": "acetylcholine at NMJ",
+        "D": "myelination"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "muscle spindle is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: receptor sensing muscle length and stretch rate."
+      },
+      "why": "muscle spindle is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: receptor sensing muscle length and stretch rate.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-038",
+      "answer": "muscle spindle."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: tension sensing?",
+      "choices": {
+        "A": "golgi tendon organ",
+        "B": "nociception",
+        "C": "dermatome",
+        "D": "reciprocal inhibition"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "golgi tendon organ is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: receptor sensing tendon tension."
+      },
+      "why": "golgi tendon organ is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: receptor sensing tendon tension.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-039",
+      "answer": "golgi tendon organ."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: position awareness?",
+      "choices": {
+        "A": "proprioception",
+        "B": "a-delta fiber signaling",
+        "C": "descending modulation",
+        "D": "central nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "proprioception is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: awareness of body position and movement."
+      },
+      "why": "proprioception is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: awareness of body position and movement.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-040",
+      "answer": "proprioception."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: movement awareness?",
+      "choices": {
+        "A": "kinesthesia",
+        "B": "c fiber signaling",
+        "C": "all-or-none action potential",
+        "D": "peripheral nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "kinesthesia is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: awareness of movement in motion."
+      },
+      "why": "kinesthesia is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: awareness of movement in motion.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-041",
+      "answer": "kinesthesia."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: danger signaling?",
+      "choices": {
+        "A": "nociception",
+        "B": "acetylcholine at NMJ",
+        "C": "myelination",
+        "D": "somatic nervous system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "nociception is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: neural processing of potentially harmful stimuli."
+      },
+      "why": "nociception is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: neural processing of potentially harmful stimuli.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-042",
+      "answer": "nociception."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: document findings and refer when neuro signs progress?",
+      "choices": {
+        "A": "scope-based referral",
+        "B": "objective charting",
+        "C": "breathing cueing",
+        "D": "session pacing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-based referral best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: refer when worsening."
+      },
+      "why": "scope-based referral best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: refer when worsening.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-043",
+      "answer": "scope-based referral."
+    },
+    {
+      "blueprint_code": "6.I",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: record client report and observed response clearly?",
+      "choices": {
+        "A": "objective charting",
+        "B": "contraindication screening",
+        "C": "pause-and-reassess",
+        "D": "trend monitoring"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "objective charting best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: chart clearly."
+      },
+      "why": "objective charting best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: chart clearly.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-044",
+      "answer": "objective charting."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: use intake findings to guide safety decisions?",
+      "choices": {
+        "A": "contraindication screening",
+        "B": "graded pressure",
+        "C": "proprioceptive cueing",
+        "D": "non-curative framing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "contraindication screening best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: screen first."
+      },
+      "why": "contraindication screening best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: screen first.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-045",
+      "answer": "contraindication screening."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: adjust load gradually using client feedback?",
+      "choices": {
+        "A": "graded pressure",
+        "B": "relaxation support",
+        "C": "scope language",
+        "D": "scope-based referral"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "graded pressure best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: dose gradually."
+      },
+      "why": "graded pressure best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: dose gradually.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-046",
+      "answer": "graded pressure."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: use calm pacing to support downshift response?",
+      "choices": {
+        "A": "relaxation support",
+        "B": "breathing cueing",
+        "C": "session pacing",
+        "D": "objective charting"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "relaxation support best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: calm pacing."
+      },
+      "why": "relaxation support best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: calm pacing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-047",
+      "answer": "relaxation support."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pair breath cues with manual input for regulation?",
+      "choices": {
+        "A": "breathing cueing",
+        "B": "pause-and-reassess",
+        "C": "trend monitoring",
+        "D": "contraindication screening"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "breathing cueing best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: breath supports ease."
+      },
+      "why": "breathing cueing best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: breath supports ease.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-048",
+      "answer": "breathing cueing."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: reduce stimulus when sharp radiating symptoms appear?",
+      "choices": {
+        "A": "pause-and-reassess",
+        "B": "proprioceptive cueing",
+        "C": "non-curative framing",
+        "D": "graded pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pause-and-reassess best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: pause on symptom spike."
+      },
+      "why": "pause-and-reassess best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: pause on symptom spike.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-049",
+      "answer": "pause-and-reassess."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: coach awareness-based movement cues?",
+      "choices": {
+        "A": "proprioceptive cueing",
+        "B": "scope language",
+        "C": "scope-based referral",
+        "D": "relaxation support"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "proprioceptive cueing best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: cue awareness."
+      },
+      "why": "proprioceptive cueing best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: cue awareness.",
+      "difficulty": 3,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-050",
+      "answer": "proprioceptive cueing."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: describe findings without diagnosis claims?",
+      "choices": {
+        "A": "scope language",
+        "B": "session pacing",
+        "C": "objective charting",
+        "D": "breathing cueing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope language best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: observe not diagnose."
+      },
+      "why": "scope language best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: observe not diagnose.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-051",
+      "answer": "scope language."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: use transitions that maintain client regulation?",
+      "choices": {
+        "A": "session pacing",
+        "B": "trend monitoring",
+        "C": "contraindication screening",
+        "D": "pause-and-reassess"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "session pacing best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: paced transitions."
+      },
+      "why": "session pacing best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: paced transitions.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-052",
+      "answer": "session pacing."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: track symptom change across visits for safety?",
+      "choices": {
+        "A": "trend monitoring",
+        "B": "non-curative framing",
+        "C": "graded pressure",
+        "D": "proprioceptive cueing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "trend monitoring best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: track trends."
+      },
+      "why": "trend monitoring best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: track trends.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-053",
+      "answer": "trend monitoring."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: frame massage as supportive, not definitive cure?",
+      "choices": {
+        "A": "non-curative framing",
+        "B": "scope-based referral",
+        "C": "relaxation support",
+        "D": "scope language"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "non-curative framing best matches this definition.",
+        "trap": "Distractors are related but define different concepts.",
+        "hook": "Link it to: supportive framing."
+      },
+      "why": "non-curative framing best matches this definition.",
+      "trap": "Distractors are related but define different concepts.",
+      "hook": "Link it to: supportive framing.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-054",
+      "answer": "non-curative framing."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: refer when worsening?",
+      "choices": {
+        "A": "scope-based referral",
+        "B": "graded pressure",
+        "C": "proprioceptive cueing",
+        "D": "non-curative framing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-based referral is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: document findings and refer when neuro signs progress."
+      },
+      "why": "scope-based referral is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: document findings and refer when neuro signs progress.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-055",
+      "answer": "scope-based referral."
+    },
+    {
+      "blueprint_code": "6.I",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: chart clearly?",
+      "choices": {
+        "A": "objective charting",
+        "B": "relaxation support",
+        "C": "scope language",
+        "D": "scope-based referral"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "objective charting is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: record client report and observed response clearly."
+      },
+      "why": "objective charting is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: record client report and observed response clearly.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-056",
+      "answer": "objective charting."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: screen first?",
+      "choices": {
+        "A": "contraindication screening",
+        "B": "breathing cueing",
+        "C": "session pacing",
+        "D": "objective charting"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "contraindication screening is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: use intake findings to guide safety decisions."
+      },
+      "why": "contraindication screening is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: use intake findings to guide safety decisions.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-057",
+      "answer": "contraindication screening."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: dose gradually?",
+      "choices": {
+        "A": "graded pressure",
+        "B": "pause-and-reassess",
+        "C": "trend monitoring",
+        "D": "contraindication screening"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "graded pressure is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: adjust load gradually using client feedback."
+      },
+      "why": "graded pressure is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: adjust load gradually using client feedback.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-058",
+      "answer": "graded pressure."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: calm pacing?",
+      "choices": {
+        "A": "relaxation support",
+        "B": "proprioceptive cueing",
+        "C": "non-curative framing",
+        "D": "graded pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "relaxation support is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: use calm pacing to support downshift response."
+      },
+      "why": "relaxation support is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: use calm pacing to support downshift response.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-059",
+      "answer": "relaxation support."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In session planning, which concept best fits: breath supports ease?",
+      "choices": {
+        "A": "breathing cueing",
+        "B": "scope language",
+        "C": "scope-based referral",
+        "D": "relaxation support"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "breathing cueing is the best fit for this practice scenario.",
+        "trap": "The other options are useful concepts but not the best match here.",
+        "hook": "Think: pair breath cues with manual input for regulation."
+      },
+      "why": "breathing cueing is the best fit for this practice scenario.",
+      "trap": "The other options are useful concepts but not the best match here.",
+      "hook": "Think: pair breath cues with manual input for regulation.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-060",
+      "answer": "breathing cueing."
+    },
+    {
+      "blueprint_code": "1.A.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: brain and spinal cord.",
+      "choices": {
+        "A": "somatic nervous system",
+        "B": "central nervous system",
+        "C": "afferent pathway",
+        "D": "recruitment"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "central nervous system is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: central control."
+      },
+      "why": "central nervous system is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: central control.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-061",
+      "answer": "central nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: nerves outside brain and spinal cord.",
+      "choices": {
+        "A": "autonomic nervous system",
+        "B": "peripheral nervous system",
+        "C": "efferent pathway",
+        "D": "rate coding"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "peripheral nervous system is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: peripheral signaling."
+      },
+      "why": "peripheral nervous system is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: peripheral signaling.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-062",
+      "answer": "peripheral nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: voluntary skeletal muscle control.",
+      "choices": {
+        "A": "sympathetic response",
+        "B": "somatic nervous system",
+        "C": "reflex arc",
+        "D": "muscle spindle"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "somatic nervous system is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: voluntary movement."
+      },
+      "why": "somatic nervous system is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: voluntary movement.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-063",
+      "answer": "somatic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: involuntary organ regulation.",
+      "choices": {
+        "A": "parasympathetic response",
+        "B": "autonomic nervous system",
+        "C": "motor unit",
+        "D": "golgi tendon organ"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "autonomic nervous system is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: automatic regulation."
+      },
+      "why": "autonomic nervous system is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: automatic regulation.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-064",
+      "answer": "autonomic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: fight-or-flight readiness.",
+      "choices": {
+        "A": "afferent pathway",
+        "B": "sympathetic response",
+        "C": "recruitment",
+        "D": "proprioception"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "sympathetic response is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: mobilize quickly."
+      },
+      "why": "sympathetic response is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: mobilize quickly.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-065",
+      "answer": "sympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: rest-and-digest regulation.",
+      "choices": {
+        "A": "efferent pathway",
+        "B": "parasympathetic response",
+        "C": "rate coding",
+        "D": "kinesthesia"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "parasympathetic response is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: recover and restore."
+      },
+      "why": "parasympathetic response is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: recover and restore.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-066",
+      "answer": "parasympathetic response."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: sensory input traveling toward CNS.",
+      "choices": {
+        "A": "reflex arc",
+        "B": "afferent pathway",
+        "C": "muscle spindle",
+        "D": "nociception"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "afferent pathway is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: input to CNS."
+      },
+      "why": "afferent pathway is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: input to CNS.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-067",
+      "answer": "afferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: motor output traveling from CNS.",
+      "choices": {
+        "A": "motor unit",
+        "B": "efferent pathway",
+        "C": "golgi tendon organ",
+        "D": "a-delta fiber signaling"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "efferent pathway is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: output from CNS."
+      },
+      "why": "efferent pathway is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: output from CNS.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-068",
+      "answer": "efferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: receptor to sensory to integration to motor to effector sequence.",
+      "choices": {
+        "A": "recruitment",
+        "B": "reflex arc",
+        "C": "proprioception",
+        "D": "c fiber signaling"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "reflex arc is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: rapid automatic response."
+      },
+      "why": "reflex arc is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: rapid automatic response.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-069",
+      "answer": "reflex arc."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: one motor neuron and its muscle fibers.",
+      "choices": {
+        "A": "rate coding",
+        "B": "motor unit",
+        "C": "kinesthesia",
+        "D": "acetylcholine at NMJ"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "motor unit is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: neural force unit."
+      },
+      "why": "motor unit is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: neural force unit.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-070",
+      "answer": "motor unit."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: activating additional motor units to raise force.",
+      "choices": {
+        "A": "muscle spindle",
+        "B": "recruitment",
+        "C": "nociception",
+        "D": "dermatome"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "recruitment is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: add force by units."
+      },
+      "why": "recruitment is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: add force by units.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-071",
+      "answer": "recruitment."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: changing force by changing neural firing frequency.",
+      "choices": {
+        "A": "golgi tendon organ",
+        "B": "rate coding",
+        "C": "a-delta fiber signaling",
+        "D": "descending modulation"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "rate coding is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: frequency control."
+      },
+      "why": "rate coding is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: frequency control.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-072",
+      "answer": "rate coding."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: receptor sensing muscle length and stretch rate.",
+      "choices": {
+        "A": "proprioception",
+        "B": "muscle spindle",
+        "C": "c fiber signaling",
+        "D": "all-or-none action potential"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "muscle spindle is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: stretch sensing."
+      },
+      "why": "muscle spindle is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: stretch sensing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-073",
+      "answer": "muscle spindle."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: receptor sensing tendon tension.",
+      "choices": {
+        "A": "kinesthesia",
+        "B": "golgi tendon organ",
+        "C": "acetylcholine at NMJ",
+        "D": "myelination"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "golgi tendon organ is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: tension sensing."
+      },
+      "why": "golgi tendon organ is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: tension sensing.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-074",
+      "answer": "golgi tendon organ."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: awareness of body position and movement.",
+      "choices": {
+        "A": "nociception",
+        "B": "proprioception",
+        "C": "dermatome",
+        "D": "reciprocal inhibition"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "proprioception is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: position awareness."
+      },
+      "why": "proprioception is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: position awareness.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-075",
+      "answer": "proprioception."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: awareness of movement in motion.",
+      "choices": {
+        "A": "a-delta fiber signaling",
+        "B": "kinesthesia",
+        "C": "descending modulation",
+        "D": "central nervous system"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "kinesthesia is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: movement awareness."
+      },
+      "why": "kinesthesia is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: movement awareness.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-076",
+      "answer": "kinesthesia."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: neural processing of potentially harmful stimuli.",
+      "choices": {
+        "A": "c fiber signaling",
+        "B": "nociception",
+        "C": "all-or-none action potential",
+        "D": "peripheral nervous system"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "nociception is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: danger signaling."
+      },
+      "why": "nociception is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: danger signaling.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-077",
+      "answer": "nociception."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: faster sharper pain signaling.",
+      "choices": {
+        "A": "acetylcholine at NMJ",
+        "B": "a-delta fiber signaling",
+        "C": "myelination",
+        "D": "somatic nervous system"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "a-delta fiber signaling is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: fast pain."
+      },
+      "why": "a-delta fiber signaling is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: fast pain.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-078",
+      "answer": "a-delta fiber signaling."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: document findings and refer when neuro signs progress.",
+      "choices": {
+        "A": "contraindication screening",
+        "B": "scope-based referral",
+        "C": "pause-and-reassess",
+        "D": "trend monitoring"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "scope-based referral is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: refer when worsening."
+      },
+      "why": "scope-based referral is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: refer when worsening.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-079",
+      "answer": "scope-based referral."
+    },
+    {
+      "blueprint_code": "6.I",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: record client report and observed response clearly.",
+      "choices": {
+        "A": "graded pressure",
+        "B": "objective charting",
+        "C": "proprioceptive cueing",
+        "D": "non-curative framing"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "objective charting is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: chart clearly."
+      },
+      "why": "objective charting is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: chart clearly.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-080",
+      "answer": "objective charting."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: use intake findings to guide safety decisions.",
+      "choices": {
+        "A": "relaxation support",
+        "B": "contraindication screening",
+        "C": "scope language",
+        "D": "scope-based referral"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "contraindication screening is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: screen first."
+      },
+      "why": "contraindication screening is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: screen first.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-081",
+      "answer": "contraindication screening."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: adjust load gradually using client feedback.",
+      "choices": {
+        "A": "breathing cueing",
+        "B": "graded pressure",
+        "C": "session pacing",
+        "D": "objective charting"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "graded pressure is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: dose gradually."
+      },
+      "why": "graded pressure is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: dose gradually.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-082",
+      "answer": "graded pressure."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: use calm pacing to support downshift response.",
+      "choices": {
+        "A": "pause-and-reassess",
+        "B": "relaxation support",
+        "C": "trend monitoring",
+        "D": "contraindication screening"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "relaxation support is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: calm pacing."
+      },
+      "why": "relaxation support is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: calm pacing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-083",
+      "answer": "relaxation support."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: pair breath cues with manual input for regulation.",
+      "choices": {
+        "A": "proprioceptive cueing",
+        "B": "breathing cueing",
+        "C": "non-curative framing",
+        "D": "graded pressure"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "breathing cueing is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: breath supports ease."
+      },
+      "why": "breathing cueing is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: breath supports ease.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-084",
+      "answer": "breathing cueing."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: reduce stimulus when sharp radiating symptoms appear.",
+      "choices": {
+        "A": "scope language",
+        "B": "pause-and-reassess",
+        "C": "scope-based referral",
+        "D": "relaxation support"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pause-and-reassess is the correct reverse-recall match.",
+        "trap": "Nearby terms can sound similar but map to different functions.",
+        "hook": "Anchor with: pause on symptom spike."
+      },
+      "why": "pause-and-reassess is the correct reverse-recall match.",
+      "trap": "Nearby terms can sound similar but map to different functions.",
+      "hook": "Anchor with: pause on symptom spike.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-085",
+      "answer": "pause-and-reassess."
+    },
+    {
+      "blueprint_code": "1.A.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: brain and spinal cord.",
+      "correct_text": "central nervous system",
+      "explanation": {
+        "why": "central nervous system completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: central control."
+      },
+      "why": "central nervous system completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: central control.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-086",
+      "answer": "central nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: nerves outside brain and spinal cord.",
+      "correct_text": "peripheral nervous system",
+      "explanation": {
+        "why": "peripheral nervous system completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: peripheral signaling."
+      },
+      "why": "peripheral nervous system completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: peripheral signaling.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-087",
+      "answer": "peripheral nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: voluntary skeletal muscle control.",
+      "correct_text": "somatic nervous system",
+      "explanation": {
+        "why": "somatic nervous system completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: voluntary movement."
+      },
+      "why": "somatic nervous system completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: voluntary movement.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-088",
+      "answer": "somatic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: involuntary organ regulation.",
+      "correct_text": "autonomic nervous system",
+      "explanation": {
+        "why": "autonomic nervous system completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: automatic regulation."
+      },
+      "why": "autonomic nervous system completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: automatic regulation.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-089",
+      "answer": "autonomic nervous system."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: sensory input traveling toward CNS.",
+      "correct_text": "afferent pathway",
+      "explanation": {
+        "why": "afferent pathway completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: input to CNS."
+      },
+      "why": "afferent pathway completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: input to CNS.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-090",
+      "answer": "afferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: motor output traveling from CNS.",
+      "correct_text": "efferent pathway",
+      "explanation": {
+        "why": "efferent pathway completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: output from CNS."
+      },
+      "why": "efferent pathway completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: output from CNS.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-091",
+      "answer": "efferent pathway."
+    },
+    {
+      "blueprint_code": "1.B.7",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: one motor neuron and its muscle fibers.",
+      "correct_text": "motor unit",
+      "explanation": {
+        "why": "motor unit completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: neural force unit."
+      },
+      "why": "motor unit completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: neural force unit.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-092",
+      "answer": "motor unit."
+    },
+    {
+      "blueprint_code": "2.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: receptor sensing muscle length and stretch rate.",
+      "correct_text": "muscle spindle",
+      "explanation": {
+        "why": "muscle spindle completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: stretch sensing."
+      },
+      "why": "muscle spindle completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: stretch sensing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-093",
+      "answer": "muscle spindle."
+    },
+    {
+      "blueprint_code": "1.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: neural processing of potentially harmful stimuli.",
+      "correct_text": "nociception",
+      "explanation": {
+        "why": "nociception completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: danger signaling."
+      },
+      "why": "nociception completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: danger signaling.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-094",
+      "answer": "nociception."
+    },
+    {
+      "blueprint_code": "2.D",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: agonist activation reducing opposing activity.",
+      "correct_text": "reciprocal inhibition",
+      "explanation": {
+        "why": "reciprocal inhibition completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: smooth coordination."
+      },
+      "why": "reciprocal inhibition completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: smooth coordination.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "physiology",
+      "id": "ch11-nervous-v1-095",
+      "answer": "reciprocal inhibition."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: document findings and refer when neuro signs progress.",
+      "correct_text": "scope-based referral",
+      "explanation": {
+        "why": "scope-based referral completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: refer when worsening."
+      },
+      "why": "scope-based referral completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: refer when worsening.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-096",
+      "answer": "scope-based referral."
+    },
+    {
+      "blueprint_code": "6.I",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: record client report and observed response clearly.",
+      "correct_text": "objective charting",
+      "explanation": {
+        "why": "objective charting completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: chart clearly."
+      },
+      "why": "objective charting completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: chart clearly.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-097",
+      "answer": "objective charting."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: adjust load gradually using client feedback.",
+      "correct_text": "graded pressure",
+      "explanation": {
+        "why": "graded pressure completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: dose gradually."
+      },
+      "why": "graded pressure completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: dose gradually.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-098",
+      "answer": "graded pressure."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: use calm pacing to support downshift response.",
+      "correct_text": "relaxation support",
+      "explanation": {
+        "why": "relaxation support completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: calm pacing."
+      },
+      "why": "relaxation support completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: calm pacing.",
+      "difficulty": 1,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-099",
+      "answer": "relaxation support."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: describe findings without diagnosis claims.",
+      "correct_text": "scope language",
+      "explanation": {
+        "why": "scope language completes the statement accurately.",
+        "trap": "Similar terms may describe adjacent but different concepts.",
+        "hook": "Memory cue: observe not diagnose."
+      },
+      "why": "scope language completes the statement accurately.",
+      "trap": "Similar terms may describe adjacent but different concepts.",
+      "hook": "Memory cue: observe not diagnose.",
+      "difficulty": 2,
+      "tags": [],
+      "domain": "applied",
+      "id": "ch11-nervous-v1-100",
+      "answer": "scope language."
+    }
+  ]
+}
