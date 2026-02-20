@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP6: added `game_type_mode` room setting (`pick` or `roulette`) with create-room controls and SQL docs/migration snippets.
+- Roulette mode now hides manual game-type selection and lets the host auto-select MCQ/Reverse/Fill with a simple no-repeat reroll rule.
+- Pick/question UI now surfaces the active turn game type label for both modes.
 - Study Night TP5: added host-configurable room settings (`win_wedges`, `duration_sec`, `question_count`) to room creation and SQL docs.
 - Study Night runtime now uses room-level win/timer settings with backward-compatible defaults for older rooms.
 - Study Night TP4: enforced Trivial Pursuit wedge win threshold via `WIN_WEDGES` with host finishing the room when any player reaches the target.

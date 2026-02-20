@@ -10,6 +10,7 @@ import { useAuth } from '../../../src/providers/AuthProvider';
 const CODE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 const DEFAULT_CREATE_WIN_WEDGES = 3;
 const DEFAULT_CREATE_DURATION_SEC = 12;
+const DEFAULT_CREATE_GAME_TYPE_MODE = 'pick';
 const CREATE_WIN_WEDGES_OPTIONS = [3, 5, 7];
 const CREATE_DURATION_SEC_OPTIONS = [10, 12, 15, 20];
 
@@ -141,6 +142,7 @@ export default function StudyNightLandingPage() {
   const [createStep, setCreateStep] = useState('');
   const [createWinWedges, setCreateWinWedges] = useState(DEFAULT_CREATE_WIN_WEDGES);
   const [createDurationSec, setCreateDurationSec] = useState(DEFAULT_CREATE_DURATION_SEC);
+  const [createGameTypeMode, setCreateGameTypeMode] = useState(DEFAULT_CREATE_GAME_TYPE_MODE);
   const [busyAction, setBusyAction] = useState('');
   const [checkingConnection, setCheckingConnection] = useState(false);
   const [connectionReport, setConnectionReport] = useState(null);
@@ -329,6 +331,7 @@ export default function StudyNightLandingPage() {
               code,
               host_user_id: user.id,
               status: 'lobby',
+              game_type_mode: createGameTypeMode,
               win_wedges: createWinWedges,
               duration_sec: createDurationSec,
               question_count: createQuestionCount,
@@ -452,7 +455,7 @@ export default function StudyNightLandingPage() {
         postgrestFetch(
           `study_rooms?code=eq.${encodeURIComponent(
             normalizedJoinCode
-          )}&select=id,code,host_user_id,status&limit=1`
+          )}&select=id,code,host_user_id,status,game_type_mode,win_wedges,duration_sec,question_count&limit=1`
         ),
         8000,
         'join_room_select'
@@ -512,6 +515,16 @@ export default function StudyNightLandingPage() {
         <div className="game-card">
           <h2>Create Room</h2>
           <p className="muted">Start a new lobby and invite friends with a code.</p>
+          <label htmlFor="create-game-type-mode">Game type mode</label>
+          <select
+            id="create-game-type-mode"
+            value={createGameTypeMode}
+            onChange={(event) => setCreateGameTypeMode(event.target.value)}
+            disabled={creating}
+          >
+            <option value="pick">Pick</option>
+            <option value="roulette">Roulette</option>
+          </select>
           <label htmlFor="create-win-wedges">Win wedges</label>
           <select
             id="create-win-wedges"

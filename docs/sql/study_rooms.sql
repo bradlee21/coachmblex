@@ -5,6 +5,7 @@ create table if not exists public.study_rooms (
   code text unique not null,
   host_user_id uuid not null references auth.users(id),
   status text not null default 'lobby' check (status in ('lobby', 'running', 'finished')),
+  game_type_mode text not null default 'pick' check (game_type_mode in ('pick', 'roulette')),
   win_wedges int not null default 3,
   duration_sec int not null default 12,
   question_count int not null default 1,
@@ -12,6 +13,8 @@ create table if not exists public.study_rooms (
 );
 
 -- Migration snippet for existing environments:
+alter table public.study_rooms
+  add column if not exists game_type_mode text not null default 'pick';
 alter table public.study_rooms
   add column if not exists win_wedges int not null default 3;
 alter table public.study_rooms

@@ -35,6 +35,23 @@ function getRoomDurationSec(room) {
   return Number.isFinite(value) && value > 0 ? value : DEFAULT_DURATION_SEC;
 }
 
+function normalizeGameTypeMode(value) {
+  return value === 'roulette' ? 'roulette' : 'pick';
+}
+
+function chooseRouletteGameType(lastGameType) {
+  const options = ['mcq', 'reverse', 'fill'];
+  const previous = normalizeGameType(lastGameType);
+  let next = options[Math.floor(Math.random() * options.length)];
+
+  if (options.length > 1 && next === previous) {
+    const alternatives = options.filter((option) => option !== previous);
+    next = alternatives[Math.floor(Math.random() * alternatives.length)];
+  }
+
+  return next;
+}
+
 function normalizeGameType(value) {
   if (value === 'reverse') return 'reverse';
   if (value === 'fill') return 'fill';
@@ -253,6 +270,8 @@ export default function StudyNightRoomPage() {
   const myWedges = getWedges(myPlayer);
   const isHost = Boolean(user?.id && room?.host_user_id === user.id);
   const isCurrentTurn = Boolean(user?.id && currentTurnPlayer?.user_id === user.id);
+  const gameTypeMode = normalizeGameTypeMode(room?.game_type_mode);
+  const isRouletteMode = gameTypeMode === 'roulette';
   const canPickCategory =
     room?.status === 'running' && state?.phase === 'pick' && Boolean(currentTurnPlayer) && (isCurrentTurn || isHost);
 
@@ -262,7 +281,7 @@ export default function StudyNightRoomPage() {
 
       const [roomResult, playerResult, stateResult] = await Promise.all([
         timedPostgrest(
-          `study_rooms?id=eq.${roomId}&select=id,code,host_user_id,status,win_wedges,duration_sec,question_count,created_at&limit=1`,
+          `study_rooms?id=eq.${roomId}&select=id,code,host_user_id,status,game_type_mode,win_wedges,duration_sec,question_count,created_at&limit=1`,
           undefined,
           'snapshot_room'
         ),
@@ -319,7 +338,11 @@ export default function StudyNightRoomPage() {
       if (!isHost || !room || room.status !== 'running' || state?.phase !== 'pick') return;
 
       const category = studyNightCategoryByKey[categoryKey];
-      const normalizedGameType = normalizeGameType(gameType);
+      const gameTypeMode = normalizeGameTypeMode(room.game_type_mode);
+      const normalizedGameType =
+        gameTypeMode === 'roulette'
+          ? chooseRouletteGameType(state?.game_type)
+          : normalizeGameType(gameType);
       if (!category) {
         setMessage('Invalid category.');
         return;
@@ -386,7 +409,15 @@ export default function StudyNightRoomPage() {
         setMessage(nextMessage);
       }
     },
-    [isHost, orderedPlayers, refreshRoomSnapshot, room, state?.phase, state?.round_no]
+    [
+      isHost,
+      orderedPlayers,
+      refreshRoomSnapshot,
+      room,
+      state?.phase,
+      state?.round_no,
+      state?.game_type,
+    ]
   );
 
   const movePhaseToReveal = useCallback(async () => {
@@ -431,7 +462,7 @@ export default function StudyNightRoomPage() {
         const roomResponse = await timedPostgrest(
           `study_rooms?code=eq.${encodeURIComponent(
             roomCode
-          )}&select=id,code,host_user_id,status,win_wedges,duration_sec,question_count,created_at&limit=1`,
+          )}&select=id,code,host_user_id,status,game_type_mode,win_wedges,duration_sec,question_count,created_at&limit=1`,
           undefined,
           'load_room_by_code'
         );
@@ -621,7 +652,7 @@ export default function StudyNightRoomPage() {
 
   async function handlePickCategory(categoryKey) {
     if (!canPickCategory || !room || !user?.id) return;
-    const nextGameType = normalizeGameType(selectedGameType);
+    const nextGameType = isRouletteMode ? null : normalizeGameType(selectedGameType);
 
     if (isHost) {
       await pickCategoryAsHost(categoryKey, nextGameType);
@@ -641,7 +672,7 @@ export default function StudyNightRoomPage() {
         roomId: room.id,
         userId: user.id,
         categoryKey,
-        gameType: nextGameType,
+        gameType: nextGameType || undefined,
       },
     });
     setMessage('Category pick sent to host.');
@@ -865,6 +896,9 @@ export default function StudyNightRoomPage() {
   const explanationBlocks = question ? getExplanationBlocks(question.explanation) : [];
   const currentGameType = normalizeGameType(state?.game_type || question?.question_type || 'mcq');
   const currentGameTypeLabel = getGameTypeLabel(currentGameType);
+  const pickPhaseGameTypeLabel = isRouletteMode
+    ? 'MCQ / Reverse / Fill (host roulette)'
+    : getGameTypeLabel(selectedGameType);
   const isFillQuestion = currentGameType === 'fill';
   const correctAnswerText = question ? getCorrectAnswerText(question) : '';
   const currentTurnWedges = getWedges(currentTurnPlayer);
@@ -921,17 +955,22 @@ export default function StudyNightRoomPage() {
               <p className="muted">
                 Current turn: {currentTurnPlayer ? getDisplayName(currentTurnPlayer) : 'Unknown'}
               </p>
-              <label htmlFor="study-night-game-type">Game type</label>
-              <select
-                id="study-night-game-type"
-                value={selectedGameType}
-                onChange={(event) => setSelectedGameType(normalizeGameType(event.target.value))}
-                disabled={!canPickCategory}
-              >
-                <option value="mcq">MCQ</option>
-                <option value="reverse">Reverse</option>
-                <option value="fill">Fill</option>
-              </select>
+              <p className="muted">This turn: {pickPhaseGameTypeLabel}</p>
+              {!isRouletteMode ? (
+                <>
+                  <label htmlFor="study-night-game-type">Game type</label>
+                  <select
+                    id="study-night-game-type"
+                    value={selectedGameType}
+                    onChange={(event) => setSelectedGameType(normalizeGameType(event.target.value))}
+                    disabled={!canPickCategory}
+                  >
+                    <option value="mcq">MCQ</option>
+                    <option value="reverse">Reverse</option>
+                    <option value="fill">Fill</option>
+                  </select>
+                </>
+              ) : null}
               <div className="button-row game-wrap">
                 {studyNightCategories.map((category) => (
                   (() => {
@@ -964,6 +1003,7 @@ export default function StudyNightRoomPage() {
           {room.status === 'running' && state?.phase === 'question' ? (
             <>
               <h2>Quickfire {currentGameTypeLabel}</h2>
+              <p className="muted">This turn: {currentGameTypeLabel}</p>
               <p className="muted">
                 Category: {currentCategory ? `${currentCategory.key} (${currentCategory.prefix})` : 'n/a'}
               </p>
