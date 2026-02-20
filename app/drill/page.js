@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
+import { studyCollections } from '../../src/content/studyCollections';
 import {
   findNodeByCode,
   listTopLevelDomains,
@@ -33,6 +34,7 @@ function getCodePrefix(code) {
 }
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
+const QUICK_PARAM_KEYS = ['quick', 'q', 'qt', 'bc', 'tg', 'cid'];
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -59,6 +61,22 @@ function parseQuickTypes(value) {
   return parsed;
 }
 
+function parseCsv(value) {
+  if (!value) return [];
+  return Array.from(
+    new Set(
+      String(value)
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean)
+    )
+  );
+}
+
+function toCsv(values) {
+  return Array.from(new Set((values || []).filter(Boolean))).join(',');
+}
+
 function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
 }
@@ -75,6 +93,18 @@ function matchesQuickSearch(question, term) {
   }
   const haystack = `${prompt} ${tagText} ${choiceText}`.toLowerCase();
   return haystack.includes(term);
+}
+
+function getQuestionTags(question) {
+  if (Array.isArray(question?.tags)) {
+    return question.tags
+      .map((item) => String(item || '').trim().toLowerCase())
+      .filter(Boolean);
+  }
+  if (typeof question?.tags === 'string') {
+    return parseCsv(question.tags).map((item) => item.toLowerCase());
+  }
+  return [];
 }
 
 export default function DrillPage() {
@@ -113,9 +143,16 @@ export default function DrillPage() {
     reverse: true,
     fill: true,
   });
+  const [quickBlueprintCodes, setQuickBlueprintCodes] = useState([]);
+  const [quickTags, setQuickTags] = useState([]);
+  const [selectedCollectionId, setSelectedCollectionId] = useState('');
   const selectedQuickTypes = useMemo(
     () => QUICK_TYPES.filter((type) => quickTypes[type]),
     [quickTypes]
+  );
+  const selectedCollection = useMemo(
+    () => studyCollections.find((collection) => collection.id === selectedCollectionId) || null,
+    [selectedCollectionId]
   );
   const [quickMatches, setQuickMatches] = useState(null);
   const [quickLoading, setQuickLoading] = useState(false);
@@ -159,8 +196,14 @@ export default function DrillPage() {
     const deepLinkType = searchParams.get('type');
     const quickQuery = searchParams.get('q') || '';
     const quickTypeQuery = searchParams.get('qt');
+    const quickBlueprintCodeQuery = searchParams.get('bc');
+    const quickTagQuery = searchParams.get('tg');
+    const quickCollectionIdQuery = searchParams.get('cid') || '';
     setQuickSearch(quickQuery);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
+    setQuickBlueprintCodes(parseCsv(quickBlueprintCodeQuery));
+    setQuickTags(parseCsv(quickTagQuery).map((item) => item.toLowerCase()));
+    setSelectedCollectionId(quickCollectionIdQuery);
     if (deepLinkType === 'reverse') {
       setQuestionType('reverse');
     } else if (deepLinkType === 'fill') {
@@ -191,52 +234,86 @@ export default function DrillPage() {
     }
   }, [searchParams]);
 
-  const refreshQuickMatches = useCallback(async () => {
+  const fetchQuickMatches = useCallback(async (filters) => {
     const supabase = getSupabaseClient();
     if (!supabase) {
-      setQuickMatches(0);
-      setQuickQuestions([]);
-      setQuickMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
-      return;
+      return {
+        matches: [],
+        error: 'Supabase is not configured. Check NEXT_PUBLIC_* environment values.',
+      };
     }
 
-    if (selectedQuickTypes.length === 0) {
-      setQuickMatches(0);
-      setQuickQuestions([]);
-      setQuickMessage('Pick at least one type.');
-      return;
+    const types = filters.types || [];
+    if (types.length === 0) {
+      return {
+        matches: [],
+        error: 'Pick at least one type.',
+      };
     }
-
-    const requestId = quickSearchRequestIdRef.current + 1;
-    quickSearchRequestIdRef.current = requestId;
-    setQuickLoading(true);
-    setQuickMessage('');
 
     const { data, error } = await supabase
       .from('questions')
       .select(
         'id,domain,subtopic,blueprint_code,question_type,prompt,choices,correct_index,explanation,difficulty,created_at'
       )
-      .in('question_type', selectedQuickTypes)
+      .in('question_type', types)
       .order('created_at', { ascending: false })
       .limit(1000);
+
+    if (error) {
+      return {
+        matches: [],
+        error: `Failed to load quick drill matches: ${error.message}`,
+      };
+    }
+
+    const term = String(filters.searchTerm || '').trim().toLowerCase();
+    const blueprintCodes = filters.blueprintCodes || [];
+    const tags = (filters.tags || []).map((item) => String(item || '').trim().toLowerCase());
+    const filtered = (data || []).filter((question) => {
+      if (!types.includes(getQuestionType(question))) return false;
+      if (blueprintCodes.length > 0 && !blueprintCodes.includes(String(question?.blueprint_code || ''))) {
+        return false;
+      }
+      if (tags.length > 0 && Object.prototype.hasOwnProperty.call(question, 'tags')) {
+        const questionTags = getQuestionTags(question);
+        if (!questionTags.some((tag) => tags.includes(tag))) {
+          return false;
+        }
+      }
+      return matchesQuickSearch(question, term);
+    });
+
+    return {
+      matches: filtered,
+      error: '',
+    };
+  }, []);
+
+  const refreshQuickMatches = useCallback(async () => {
+    const requestId = quickSearchRequestIdRef.current + 1;
+    quickSearchRequestIdRef.current = requestId;
+    setQuickLoading(true);
+    setQuickMessage('');
+
+    const { matches, error } = await fetchQuickMatches({
+      searchTerm: quickSearch,
+      types: selectedQuickTypes,
+      blueprintCodes: quickBlueprintCodes,
+      tags: quickTags,
+    });
 
     if (requestId !== quickSearchRequestIdRef.current) return;
 
     if (error) {
       setQuickMatches(0);
       setQuickQuestions([]);
-      setQuickMessage(`Failed to load quick drill matches: ${error.message}`);
+      setQuickMessage(error);
       setQuickLoading(false);
       return;
     }
 
-    const term = quickSearch.trim().toLowerCase();
-    const filtered = (data || []).filter((question) => {
-      if (!selectedQuickTypes.includes(getQuestionType(question))) return false;
-      return matchesQuickSearch(question, term);
-    });
-
+    const filtered = matches || [];
     setQuickQuestions(filtered);
     setQuickMatches(filtered.length);
     if (filtered.length === 0) {
@@ -245,7 +322,7 @@ export default function DrillPage() {
       setQuickMessage('');
     }
     setQuickLoading(false);
-  }, [quickSearch, selectedQuickTypes]);
+  }, [fetchQuickMatches, quickSearch, quickBlueprintCodes, quickTags, selectedQuickTypes]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -304,37 +381,100 @@ export default function DrillPage() {
   }
 
   function toggleQuickType(type) {
+    setSelectedCollectionId('');
     setQuickTypes((prev) => ({
       ...prev,
       [type]: !prev[type],
     }));
   }
 
-  function startQuickDrill() {
-    if (selectedQuickTypes.length === 0) {
-      setQuickMessage('Pick at least one type.');
-      return;
-    }
-
-    if (quickQuestions.length === 0) {
-      setQuickMessage('No matches. Try a broader term.');
-      return;
-    }
-
+  function buildQuickUrlParams({
+    searchValue,
+    typesValue,
+    blueprintCodesValue,
+    tagsValue,
+    collectionIdValue,
+  }) {
     const params = new URLSearchParams(searchParams.toString());
-    const trimmedSearch = quickSearch.trim();
+    const trimmedSearch = String(searchValue || '').trim();
     if (trimmedSearch) {
       params.set('q', trimmedSearch);
     } else {
       params.delete('q');
     }
-    params.set('qt', selectedQuickTypes.join(','));
+    const typesCsv = toCsv(typesValue);
+    if (typesCsv) {
+      params.set('qt', typesCsv);
+    } else {
+      params.delete('qt');
+    }
+    const blueprintCsv = toCsv(blueprintCodesValue);
+    if (blueprintCsv) {
+      params.set('bc', blueprintCsv);
+    } else {
+      params.delete('bc');
+    }
+    const tagCsv = toCsv(tagsValue);
+    if (tagCsv) {
+      params.set('tg', tagCsv);
+    } else {
+      params.delete('tg');
+    }
+    if (collectionIdValue) {
+      params.set('cid', collectionIdValue);
+    } else {
+      params.delete('cid');
+    }
     params.set('quick', '1');
+    return params;
+  }
+
+  async function startQuickDrillWithFilters({
+    searchValue,
+    typesValue,
+    blueprintCodesValue,
+    tagsValue,
+    collectionIdValue,
+  }) {
+    if (!typesValue || typesValue.length === 0) {
+      setQuickMessage('Pick at least one type.');
+      return;
+    }
+    setQuickLoading(true);
+    const { matches, error } = await fetchQuickMatches({
+      searchTerm: searchValue,
+      types: typesValue,
+      blueprintCodes: blueprintCodesValue,
+      tags: tagsValue,
+    });
+    if (error) {
+      setQuickMessage(error);
+      setQuickMatches(0);
+      setQuickQuestions([]);
+      setQuickLoading(false);
+      return;
+    }
+    const filtered = matches || [];
+    setQuickQuestions(filtered);
+    setQuickMatches(filtered.length);
+    if (filtered.length === 0) {
+      setQuickMessage('No matches. Try a broader term.');
+      setQuickLoading(false);
+      return;
+    }
+
+    const params = buildQuickUrlParams({
+      searchValue,
+      typesValue,
+      blueprintCodesValue,
+      tagsValue,
+      collectionIdValue,
+    });
     router.push(`${pathname}?${params.toString()}`);
 
-    const picked = quickQuestions.slice(0, 10);
-    const quickType = selectedQuickTypes.length === 1 ? selectedQuickTypes[0] : 'any';
-    const quickPrefix = trimmedSearch ? `search:${trimmedSearch}` : 'quick';
+    const picked = filtered.slice(0, 10);
+    const quickType = typesValue.length === 1 ? typesValue[0] : 'any';
+    const quickPrefix = searchValue?.trim() ? `search:${searchValue.trim()}` : 'quick';
     setActiveSessionMeta({ codePrefix: quickPrefix, type: quickType });
     setQuestions(picked);
     setStarted(true);
@@ -346,12 +486,73 @@ export default function DrillPage() {
     } else {
       setMessage('');
     }
+    setQuickLoading(false);
+  }
+
+  function startQuickDrill() {
+    void startQuickDrillWithFilters({
+      searchValue: quickSearch,
+      typesValue: selectedQuickTypes,
+      blueprintCodesValue: quickBlueprintCodes,
+      tagsValue: quickTags,
+      collectionIdValue: selectedCollectionId,
+    });
+  }
+
+  function launchCollection(collection) {
+    const nextTypes =
+      Array.isArray(collection.types) && collection.types.length > 0
+        ? collection.types.filter((type) => QUICK_TYPES.includes(type))
+        : QUICK_TYPES;
+    const nextTypesState = {
+      mcq: nextTypes.includes('mcq'),
+      reverse: nextTypes.includes('reverse'),
+      fill: nextTypes.includes('fill'),
+    };
+    const nextQuery = String(collection.query || '');
+    const nextBlueprintCodes = Array.isArray(collection.blueprint_codes)
+      ? collection.blueprint_codes
+      : [];
+    const nextTags = Array.isArray(collection.tags)
+      ? collection.tags.map((tag) => String(tag || '').trim().toLowerCase()).filter(Boolean)
+      : [];
+
+    setQuickSearch(nextQuery);
+    setQuickTypes(nextTypesState);
+    setQuickBlueprintCodes(nextBlueprintCodes);
+    setQuickTags(nextTags);
+    setSelectedCollectionId(collection.id);
+
+    void startQuickDrillWithFilters({
+      searchValue: nextQuery,
+      typesValue: nextTypes,
+      blueprintCodesValue: nextBlueprintCodes,
+      tagsValue: nextTags,
+      collectionIdValue: collection.id,
+    });
   }
 
   return (
     <section>
       <h1>Drill</h1>
       <p>Pick a blueprint topic and start a 10-question drill.</p>
+
+      <div className="runner">
+        <h2>Quick Collections</h2>
+        <p className="muted">Curated one-click sets for fast study starts.</p>
+        <div className="drill-controls">
+          {studyCollections.map((collection) => (
+            <button
+              key={collection.id}
+              type="button"
+              onClick={() => launchCollection(collection)}
+              disabled={quickLoading}
+            >
+              {collection.title}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className="runner">
         <h2>Quick Drill</h2>
@@ -362,7 +563,10 @@ export default function DrillPage() {
             type="text"
             placeholder="e.g., piriformis, sympathetic, blood flow"
             value={quickSearch}
-            onChange={(event) => setQuickSearch(event.target.value)}
+            onChange={(event) => {
+              setSelectedCollectionId('');
+              setQuickSearch(event.target.value);
+            }}
           />
         </div>
         <div className="drill-controls" role="group" aria-label="Quick Drill type filters">
@@ -392,6 +596,11 @@ export default function DrillPage() {
             Fill
           </label>
         </div>
+        {selectedCollection ? (
+          <p className="muted">
+            Selected collection: <strong>{selectedCollection.title}</strong>
+          </p>
+        ) : null}
         <p className="muted">Matches: {quickMatches == null ? '...' : quickMatches}</p>
         {quickLoading ? <p className="muted">Checking matches...</p> : null}
         {quickMessage ? <p className="status error">{quickMessage}</p> : null}
