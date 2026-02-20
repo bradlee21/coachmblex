@@ -682,7 +682,12 @@ export default function StudyNightLandingPage() {
           <select id="create-question-count" value={createQuestionCount} disabled>
             <option value={1}>1</option>
           </select>
-          <button type="button" onClick={handleCreateRoom} disabled={creating}>
+          <button
+            type="button"
+            onClick={handleCreateRoom}
+            disabled={creating}
+            data-testid="study-night-create"
+          >
             {creating ? 'Creating...' : 'Create room'}
           </button>
           {creating ? <p className="muted">Step: {createStep || 'insert_room'}</p> : null}

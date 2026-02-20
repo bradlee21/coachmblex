@@ -552,7 +552,7 @@ export default function StudyNightRoomPage() {
   const submittedTurnKeysRef = useRef({});
   const gradedTurnKeysRef = useRef({});
   const coachStatsRef = useRef({});
-  const [coachStatsVersion, setCoachStatsVersion] = useState(0);
+  const [, setCoachStatsVersion] = useState(0);
 
   const orderedPlayers = useMemo(() => sortPlayers(players), [players]);
   const playerCount = orderedPlayers.length;
@@ -1657,7 +1657,7 @@ export default function StudyNightRoomPage() {
   const deckHealthMcqCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'mcq');
   const deckHealthReverseCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'reverse');
   const deckHealthFillCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'fill');
-  const coachStatsByUser = useMemo(() => coachStatsRef.current, [coachStatsVersion]);
+  const coachStatsByUser = coachStatsRef.current;
   const myCoachStats = myPlayer ? getPlayerCoachStats(myPlayer, coachStatsByUser) : createEmptyCoachStats();
   const myTopMiss = getTopMissEntry(myCoachStats.missesByPrefix);
   const myTopMissPrefix = myTopMiss?.prefix || '';
@@ -1669,7 +1669,7 @@ export default function StudyNightRoomPage() {
     const lastType = normalizeGameType(state?.game_type || question?.question_type || 'mcq');
     return lastType === 'reverse' ? 'reverse' : 'mcq';
   })();
-  const drillHref = useMemo(() => {
+  const drillHref = (() => {
     if (!drillPrefix) return '';
     const params = new URLSearchParams();
     params.set('code', drillPrefix);
@@ -1677,12 +1677,12 @@ export default function StudyNightRoomPage() {
       params.set('type', drillTypeParam);
     }
     return `/drill?${params.toString()}`;
-  }, [drillPrefix, drillTypeParam]);
+  })();
 
   return (
     <section>
       <h1>Study Night Room {room.code}</h1>
-      <p className="muted">
+      <p className="muted" data-testid="study-night-phase">
         Status: {room.status} | Round: {state?.round_no || 1} | Phase: {state?.phase || 'pick'} |
         Win marks: {roomWinWedges} | Timer: {roomDurationSec}s
       </p>
@@ -1726,7 +1726,12 @@ export default function StudyNightRoomPage() {
               <h2>Lobby</h2>
               <p className="muted">Share code {room.code} with friends.</p>
               {isHost ? (
-                <button type="button" onClick={handleStartGame} disabled={orderedPlayers.length < 1}>
+                <button
+                  type="button"
+                  onClick={handleStartGame}
+                  disabled={orderedPlayers.length < 1}
+                  data-testid="study-night-start"
+                >
                   Start
                 </button>
               ) : (
@@ -1765,6 +1770,7 @@ export default function StudyNightRoomPage() {
                       <button
                         key={category.key}
                         type="button"
+                        data-testid="category-tile"
                         className={`category-tile${isOwnedByCurrentTurnPlayer ? ' earned' : ''}`}
                         onClick={() => void handlePickCategory(category.key)}
                         disabled={!canPickCategory || isOwnedByCurrentTurnPlayer}
@@ -1789,7 +1795,7 @@ export default function StudyNightRoomPage() {
           ) : null}
 
           {room.status === 'running' && state?.phase === 'question' ? (
-            <>
+            <div data-testid="study-night-question">
               <h2>Quickfire {currentGameTypeLabel}</h2>
               <p className="muted">This turn: {currentGameTypeLabel}</p>
               <p className="muted">
@@ -1855,7 +1861,7 @@ export default function StudyNightRoomPage() {
               ) : (
                 <p className="muted">Loading question...</p>
               )}
-            </>
+            </div>
           ) : null}
 
           {room.status === 'running' && state?.phase === 'reveal' ? (

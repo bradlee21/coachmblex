@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP-E2E-3: added `e2e/study-night-critical.spec.ts` for a deterministic single-user Study Night host flow (create room -> start -> pick category -> question phase).
+- Added minimal Study Night test hooks (`study-night-create`, `study-night-start`, `study-night-phase`, `category-tile`, `study-night-question`) to stabilize E2E selectors without changing gameplay logic.
 - TP-E2E-GUARD-1: added `e2e/helpers/requireEnv.ts` so missing required E2E env vars now fail fast by default, with optional skip mode via `E2E_ALLOW_SKIP=1`.
 - TP-E2E-2: added `e2e/drill-critical.spec.ts` for login -> drill start -> answer-first-question flow with explicit step timeouts and skip-on-missing-seed behavior.
 - TP-E2E-1: added opt-in Playwright setup with single-run scripts (`e2e`, `e2e:once`) configured for no retries and one worker.
