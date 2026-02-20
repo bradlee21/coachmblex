@@ -24,6 +24,7 @@ const NAV_ITEMS = [
   { href: '/settings', label: 'Settings', key: 's' },
 ];
 const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
+const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
   '/today': 'nav-today',
   '/review': 'nav-review',
@@ -146,6 +147,7 @@ export default function AppShell({ children }) {
   const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
   const [feedbackStatus, setFeedbackStatus] = useState({ type: '', message: '' });
   const [feedbackContextToCopy, setFeedbackContextToCopy] = useState(null);
+  const [showBetaBanner, setShowBetaBanner] = useState(false);
   const isAuthRoute = pathname.startsWith('/auth');
   const isRootRoute = pathname === '/';
   const isPublicRoute = isAuthRoute || isRootRoute;
@@ -206,6 +208,17 @@ export default function AppShell({ children }) {
     }
   }, [loading, isProtectedRoute, router, user]);
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!user || isAuthRoute) {
+      setShowBetaBanner(false);
+      return;
+    }
+
+    const dismissed = window.localStorage.getItem(BETA_BANNER_DISMISSED_KEY) === 'true';
+    setShowBetaBanner(!dismissed);
+  }, [isAuthRoute, user]);
+
   async function handleSignOut() {
     setIsReviewOpen(false);
     setIsFeedbackOpen(false);
@@ -228,6 +241,12 @@ export default function AppShell({ children }) {
   function closeFeedbackModal() {
     if (feedbackSubmitting) return;
     setIsFeedbackOpen(false);
+  }
+
+  function dismissBetaBanner() {
+    setShowBetaBanner(false);
+    if (typeof window === 'undefined') return;
+    window.localStorage.setItem(BETA_BANNER_DISMISSED_KEY, 'true');
   }
 
   async function handleCopyFeedbackContext() {
@@ -373,7 +392,24 @@ export default function AppShell({ children }) {
         ) : null}
       </aside>
 
-      <main className="content">{children}</main>
+      <main className="content">
+        {showBetaBanner ? (
+          <div className="beta-banner" data-testid="beta-banner">
+            <p className="muted">
+              Private Beta - things may break. Please use Send feedback if you hit issues.
+            </p>
+            <div className="button-row">
+              <button type="button" onClick={openFeedbackModal}>
+                Send feedback
+              </button>
+              <button type="button" onClick={dismissBetaBanner}>
+                Dismiss
+              </button>
+            </div>
+          </div>
+        ) : null}
+        {children}
+      </main>
       {error ? <p className="status error">{error}</p> : null}
       {warning ? <p className="muted">{warning}</p> : null}
 

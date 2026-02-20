@@ -115,6 +115,18 @@ a {
   margin-top: 0;
 }
 
+.beta-banner {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff7ed;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.beta-banner .button-row {
+  margin-top: 8px;
+}
+
 .drawer {
   position: fixed;
   top: 0;

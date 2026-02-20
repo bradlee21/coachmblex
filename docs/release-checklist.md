@@ -43,6 +43,7 @@
 - Short explanation format (Answer/Why/Trap/Hook) improves teaching clarity.
 - Study Night supports multiplayer collaborative practice with host-driven flow.
 - Coach Review turns gameplay misses into targeted Drill follow-up.
+- During private beta, ask testers to use in-app Send feedback for issues.
 
 ## If Something Breaks (Quick Triage)
 1. Realtime checks

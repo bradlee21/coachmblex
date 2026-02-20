@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP35: added a soft private-beta banner for authenticated users with inline `Send feedback` and `Dismiss` actions (no route gating).
+- Banner dismissal is persisted in localStorage (`betaBannerDismissed=true`) and does not affect auth/navigation flow.
 - TP34: added student first-run onboarding card on `/today` with coach mode selection and quick actions (`Start Today`, `Start Drill`, `Skip for now`).
 - Onboarding completion now persists best-effort to `profiles` (`coach_mode`, `onboarding_complete`) without blocking navigation; existing active users are auto-suppressed via attempts-based check/backfill guidance.
 - Added profile SQL docs/migration for `onboarding_complete` and copy/paste query file `docs/sql/run-these-queries/2026-02-20-tp34-onboarding-complete.sql`.
