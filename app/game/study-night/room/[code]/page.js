@@ -84,6 +84,62 @@ function getTurnKey(roomId, state) {
   return `${roomId}:${state.round_no || 0}:${state.turn_index || 0}:${state.question_id || 'none'}`;
 }
 
+function getMissPrefix(blueprintCode) {
+  if (typeof blueprintCode !== 'string' || !blueprintCode.trim()) return '';
+  const parts = blueprintCode.split('.').filter(Boolean);
+  if (parts.length >= 2) return `${parts[0]}.${parts[1]}`;
+  return parts[0] || '';
+}
+
+function createEmptyCoachStats() {
+  return {
+    totalAnswered: 0,
+    correct: 0,
+    incorrect: 0,
+    missesByPrefix: {},
+  };
+}
+
+function getTopMissEntry(missesByPrefix) {
+  const entries = Object.entries(missesByPrefix || {});
+  if (entries.length === 0) return null;
+  entries.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const [prefix, count] = entries[0];
+  return { prefix, count };
+}
+
+function getNextPickSuggestions(missesByPrefix, ownedKeys) {
+  const owned = new Set(Array.isArray(ownedKeys) ? ownedKeys : []);
+  const unearned = studyNightCategories.filter((category) => !owned.has(category.key));
+  const sortedMisses = Object.entries(missesByPrefix || {}).sort(
+    (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
+  );
+
+  const picks = [];
+  const used = new Set();
+
+  for (const [prefix] of sortedMisses) {
+    const match = unearned.find(
+      (category) => !used.has(category.key) && prefix.startsWith(category.prefix)
+    );
+    if (!match) continue;
+    picks.push(match);
+    used.add(match.key);
+    if (picks.length >= 2) break;
+  }
+
+  if (picks.length < 2) {
+    for (const category of unearned) {
+      if (used.has(category.key)) continue;
+      picks.push(category);
+      used.add(category.key);
+      if (picks.length >= 2) break;
+    }
+  }
+
+  return picks;
+}
+
 function normalizeGameType(value) {
   if (value === 'reverse') return 'reverse';
   if (value === 'fill') return 'fill';
@@ -301,6 +357,9 @@ export default function StudyNightRoomPage() {
   const scoreBaselineRef = useRef({});
   const rejoinSyncRef = useRef(false);
   const submittedTurnKeysRef = useRef({});
+  const gradedTurnKeysRef = useRef({});
+  const coachStatsRef = useRef({});
+  const [coachStatsVersion, setCoachStatsVersion] = useState(0);
 
   const orderedPlayers = useMemo(() => sortPlayers(players), [players]);
   const playerCount = orderedPlayers.length;
@@ -416,6 +475,30 @@ export default function StudyNightRoomPage() {
     }
 
     return { deck, deckPos };
+  }, []);
+
+  const recordTurnStats = useCallback((playerUserId, wasCorrect, blueprintCode) => {
+    if (!playerUserId) return;
+    const previous = coachStatsRef.current[playerUserId] || createEmptyCoachStats();
+    const next = {
+      totalAnswered: previous.totalAnswered + 1,
+      correct: previous.correct + (wasCorrect ? 1 : 0),
+      incorrect: previous.incorrect + (wasCorrect ? 0 : 1),
+      missesByPrefix: { ...(previous.missesByPrefix || {}) },
+    };
+
+    if (!wasCorrect) {
+      const missPrefix = getMissPrefix(blueprintCode);
+      if (missPrefix) {
+        next.missesByPrefix[missPrefix] = (next.missesByPrefix[missPrefix] || 0) + 1;
+      }
+    }
+
+    coachStatsRef.current = {
+      ...coachStatsRef.current,
+      [playerUserId]: next,
+    };
+    setCoachStatsVersion((value) => value + 1);
   }, []);
 
   const pickCategoryAsHost = useCallback(
@@ -695,6 +778,13 @@ export default function StudyNightRoomPage() {
   }, [state?.phase, state?.round_no]);
 
   useEffect(() => {
+    if (!room?.id) return;
+    coachStatsRef.current = {};
+    gradedTurnKeysRef.current = {};
+    setCoachStatsVersion((value) => value + 1);
+  }, [room?.id]);
+
+  useEffect(() => {
     if (!room?.id || !user?.id || loadingRoom) return undefined;
     if (orderedPlayers.some((player) => player.user_id === user.id)) return undefined;
     if (rejoinSyncRef.current) return undefined;
@@ -749,6 +839,38 @@ export default function StudyNightRoomPage() {
       clearInterval(intervalId);
     };
   }, [room?.id, user?.id]);
+
+  useEffect(() => {
+    if (!room?.id || state?.phase !== 'reveal') return;
+    if (!state?.question_id || !question || !currentTurnPlayer) return;
+
+    const turnKey = getTurnKey(room.id, state);
+    if (!turnKey || gradedTurnKeysRef.current[turnKey]) return;
+
+    const baselineScores = scoreBaselineRef.current[state.question_id] || null;
+    const turnPlayerBaseline =
+      baselineScores && typeof baselineScores[currentTurnPlayer.user_id] === 'number'
+        ? baselineScores[currentTurnPlayer.user_id]
+        : null;
+
+    let wasCorrect = false;
+    if (typeof turnPlayerBaseline === 'number') {
+      wasCorrect = (currentTurnPlayer.score || 0) >= turnPlayerBaseline + 100;
+    } else if (currentTurnPlayer.user_id === user?.id) {
+      wasCorrect = Boolean(correctByQuestion[state.question_id]);
+    }
+
+    recordTurnStats(currentTurnPlayer.user_id, wasCorrect, question.blueprint_code);
+    gradedTurnKeysRef.current[turnKey] = true;
+  }, [
+    correctByQuestion,
+    currentTurnPlayer,
+    question,
+    recordTurnStats,
+    room?.id,
+    state,
+    user?.id,
+  ]);
 
   useEffect(() => {
     if (state?.phase !== 'question' || !state?.started_at) {
@@ -1112,6 +1234,11 @@ export default function StudyNightRoomPage() {
   const currentTurnWedges = getWedges(currentTurnPlayer);
   const activeTurnKey = getTurnKey(room?.id, state);
   const alreadyAnsweredTurn = Boolean(activeTurnKey && submittedTurnKeysRef.current[activeTurnKey]);
+  const coachStatsByUser = useMemo(() => coachStatsRef.current, [coachStatsVersion]);
+  const myCoachStats = myPlayer?.user_id
+    ? coachStatsByUser[myPlayer.user_id] || createEmptyCoachStats()
+    : createEmptyCoachStats();
+  const nextPickSuggestions = getNextPickSuggestions(myCoachStats.missesByPrefix, myWedges);
 
   return (
     <section>
@@ -1339,6 +1466,34 @@ export default function StudyNightRoomPage() {
                   </li>
                 ))}
               </ul>
+              <h3>Coach Review</h3>
+              <ul className="game-list">
+                {orderedPlayers.map((player) => {
+                  const stats = coachStatsByUser[player.user_id] || createEmptyCoachStats();
+                  const topMiss = getTopMissEntry(stats.missesByPrefix);
+                  return (
+                    <li key={`coach-${player.id}`}>
+                      <strong>{getDisplayName(player)}</strong>
+                      <div className="muted">
+                        Correct: {stats.correct}/{stats.totalAnswered}
+                      </div>
+                      <div className="muted">
+                        {topMiss
+                          ? `Top miss: ${topMiss.prefix} (${topMiss.count})`
+                          : 'No misses recorded.'}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+              {myPlayer ? (
+                <p className="muted">
+                  Next picks:{' '}
+                  {nextPickSuggestions.length > 0
+                    ? nextPickSuggestions.map((category) => `${category.key}`).join(', ')
+                    : 'No suggestions.'}
+                </p>
+              ) : null}
             </>
           ) : null}
         </div>

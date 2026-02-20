@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP12: added a concise Finished-only Coach Review panel (per-player Correct/Total, top missed prefix, and short next-pick suggestions for the current user).
+- Coach stats are tracked client-side per room at turn resolution time and are not shown during reveal.
 - Study Night TP11: updated UI terminology from wedges to marks/badges and removed Trivial-Pursuit-specific wording in Study Night screens.
 - Pick phase now renders neutral category progress tiles with earned indicators and disabled earned categories.
 - Player and finished views now show earned-category chips with check marks and explicit progress counts toward the win target.
