@@ -1,4 +1,35 @@
 const { defineConfig } = require('@playwright/test');
+const { existsSync, readFileSync } = require('node:fs');
+
+function normalizeEnvValue(value) {
+  const raw = String(value || '').trim();
+  if (
+    (raw.startsWith('"') && raw.endsWith('"')) ||
+    (raw.startsWith("'") && raw.endsWith("'"))
+  ) {
+    return raw.slice(1, -1).trim();
+  }
+  return raw;
+}
+
+function loadEnvFile(path) {
+  if (!existsSync(path)) return;
+  const content = readFileSync(path, 'utf8');
+  for (const line of content.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    const index = trimmed.indexOf('=');
+    if (index <= 0) continue;
+    const key = trimmed.slice(0, index).trim();
+    const value = normalizeEnvValue(trimmed.slice(index + 1).trim());
+    if (!process.env[key]) {
+      process.env[key] = value;
+    }
+  }
+}
+
+loadEnvFile('.env.local');
+loadEnvFile('.env');
 
 module.exports = defineConfig({
   testDir: './e2e',
