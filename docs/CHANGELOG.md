@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP31: added `docs/security-checklist.md` summarizing route and table access expectations for `user`, `questions_editor`, and `admin` roles.
+- Added `scripts/rls-sanity.mjs` anon-key read-only probe for Study Night protected tables (and questions anon-read expectation) and wired it into smoke/critical smoke checks.
 - TP30: added a host-only Study Night diagnostics toggle with live realtime status, last snapshot refresh time, and last critical mutation result for in-room troubleshooting.
 - TP29: hardened Study Night stability with snapshot refresh de-duplication, realtime re-subscribe resync throttling, and single-retry handling for transient network failures on critical room-state PATCH mutations.
 - TP28: added `docs/release-checklist.md` with pre-demo checks, a 5-8 minute demo script, talking points, quick triage, and rollback notes.
