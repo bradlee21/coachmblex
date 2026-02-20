@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { getSupabaseClient } from '../src/lib/supabaseClient';
@@ -13,10 +13,38 @@ const NAV_ITEMS = [
   { href: '/drill', label: 'Drill', key: 'd' },
   { href: '/game/study-night', label: 'Study Night', key: 'n' },
   { href: '/anatomy', label: 'Anatomy', key: 'a' },
+  {
+    href: '/admin/questions',
+    label: 'Questions',
+    key: 'q',
+    roles: ['admin', 'questions_editor'],
+  },
   { href: '/progress', label: 'Progress', key: 'p' },
   { href: '/settings', label: 'Settings', key: 's' },
 ];
 const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
+
+function normalizeRole(value) {
+  if (value === 'admin') return 'admin';
+  if (value === 'questions_editor') return 'questions_editor';
+  return 'user';
+}
+
+function canAccessNavItem(item, role) {
+  if (!item?.roles || item.roles.length === 0) return true;
+  const normalizedRole = normalizeRole(role);
+  return item.roles.includes(normalizedRole);
+}
+
+function canAccessAdminRoute(pathname, role) {
+  if (!pathname?.startsWith('/admin')) return true;
+  const normalizedRole = normalizeRole(role);
+  if (normalizedRole === 'admin') return true;
+  if (normalizedRole === 'questions_editor') {
+    return pathname === '/admin/questions' || pathname.startsWith('/admin/questions/');
+  }
+  return false;
+}
 
 function isTypingTarget(target) {
   if (!target) return false;
@@ -32,11 +60,17 @@ function isTypingTarget(target) {
 export default function AppShell({ children }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { user, loading, error, warning } = useAuth();
+  const { user, role, loading, error, warning } = useAuth();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const isAuthRoute = pathname.startsWith('/auth');
+  const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
-  const isProtectedRoute = PROTECTED_ROUTES.has(pathname) || isGameRoute;
+  const isProtectedRoute = PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute;
+  const hasAdminAccess = canAccessAdminRoute(pathname, role);
+  const visibleNavItems = useMemo(
+    () => NAV_ITEMS.filter((item) => canAccessNavItem(item, role)),
+    [role]
+  );
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -56,7 +90,7 @@ export default function AppShell({ children }) {
 
       if (event.metaKey || event.ctrlKey || event.altKey) return;
 
-      const navItem = NAV_ITEMS.find((item) => item.key === key);
+      const navItem = visibleNavItems.find((item) => item.key === key);
       if (!navItem) return;
 
       event.preventDefault();
@@ -65,7 +99,7 @@ export default function AppShell({ children }) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [pathname, router]);
+  }, [pathname, router, visibleNavItems]);
 
   useEffect(() => {
     devLog(`[AUTH] route=${pathname}`);
@@ -104,13 +138,17 @@ export default function AppShell({ children }) {
     return <main className="auth-content">Redirecting to sign in...</main>;
   }
 
+  if (isAdminRoute && !hasAdminAccess) {
+    return <main className="auth-content">You do not have access to this area.</main>;
+  }
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
         <h1 className="brand">Coach MBLEx</h1>
         <nav aria-label="Primary">
           <ul className="nav-list">
-            {NAV_ITEMS.map((item) => (
+            {visibleNavItems.map((item) => (
               <li key={item.href}>
                 <Link
                   className={`nav-link${pathname === item.href ? ' active' : ''}`}

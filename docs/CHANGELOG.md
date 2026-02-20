@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP17a: added `profiles.role` support (`user | questions_editor | admin`) in SQL docs with migration snippet.
+- Added gated `/admin/questions` "Question Forge" entry route and admin-role checks in AppShell.
+- Questions nav item now appears only for `admin` and `questions_editor`; unauthorized admin routes show a friendly access message.
 - Study Night TP16: added deck health counts and host deck-health summary (MCQ/Reverse/Fill counts by category).
 - Roulette picks now avoid empty category/type buckets; if a picked category has no available deck questions, the turn stays in pick phase with a clear inline message.
 - Study Night TP15: added invite UX with Copy Code, Copy Invite Link, and Web Share support plus short copied/shared feedback.

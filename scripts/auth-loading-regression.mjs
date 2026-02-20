@@ -35,8 +35,32 @@ assertMatch(
 
 assertMatch(
   authProviderSource,
-  /setLoadingSafe\(false,\s*`auth-change\/\$\{event\}`\);/,
-  'Expected auth state change path to clear loading immediately after login.'
+  /setLoadingSafe\(false,\s*`auth-change\/\$\{event\}\/done`\);/,
+  'Expected auth state change path to clear loading after role/profile sync.'
+);
+
+assertMatch(
+  appShellSource,
+  /href:\s*'\/admin\/questions'/,
+  'Expected AppShell nav to include /admin/questions entry.'
+);
+
+assertMatch(
+  appShellSource,
+  /if\s*\(\s*normalizedRole\s*===\s*'questions_editor'\s*\)\s*{\s*return pathname === '\/admin\/questions' \|\| pathname\.startsWith\('\/admin\/questions\/'\);\s*}/s,
+  'Expected questions_editor role to be limited to /admin/questions routes.'
+);
+
+assertMatch(
+  appShellSource,
+  /if\s*\(\s*isAdminRoute\s*&&\s*!hasAdminAccess\s*\)\s*{\s*return <main className="auth-content">You do not have access to this area\.<\/main>;\s*}/s,
+  'Expected admin route guard to block unauthorized users with friendly message.'
+);
+
+assertMatch(
+  authProviderSource,
+  /\.from\('profiles'\)\s*\.select\('role'\)/s,
+  'Expected AuthProvider to load profile role for route gating.'
 );
 
 assertMatch(

@@ -7,10 +7,17 @@ import { devLog, devWarn } from '../lib/devLog';
 const AuthContext = createContext({
   user: null,
   session: null,
+  role: 'user',
   loading: true,
   error: '',
   warning: '',
 });
+
+function normalizeRole(value) {
+  if (value === 'admin') return 'admin';
+  if (value === 'questions_editor') return 'questions_editor';
+  return 'user';
+}
 
 async function ensureProfile(userId) {
   const supabase = getSupabaseClient();
@@ -26,8 +33,27 @@ async function ensureProfile(userId) {
   }
 }
 
+async function fetchProfileRole(userId) {
+  const supabase = getSupabaseClient();
+  if (!supabase || !userId) return 'user';
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', userId)
+    .maybeSingle();
+
+  if (error) {
+    devWarn('Failed to load profile role', error.message);
+    return 'user';
+  }
+
+  return normalizeRole(data?.role);
+}
+
 export function AuthProvider({ children }) {
   const [session, setSession] = useState(null);
+  const [role, setRole] = useState('user');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [warning, setWarning] = useState('');
@@ -57,6 +83,13 @@ export function AuthProvider({ children }) {
         `[AUTH] session=${nextSession?.user?.id ? 'present' : 'none'} (${reason})`
       );
       setSession(nextSession ?? null);
+    }
+
+    function setRoleSafe(nextRole, reason) {
+      if (!mountedRef.current) return;
+      const normalized = normalizeRole(nextRole);
+      devLog(`[AUTH] role=${normalized} (${reason})`);
+      setRole(normalized);
     }
 
     function setErrorSafe(message, reason) {
@@ -101,17 +134,25 @@ export function AuthProvider({ children }) {
         setSessionSafe(currentSession, 'getSession');
 
         if (currentSession?.user?.id) {
-          void ensureProfile(currentSession.user.id).catch((profileError) => {
+          try {
+            await ensureProfile(currentSession.user.id);
+            const nextRole = await fetchProfileRole(currentSession.user.id);
+            setRoleSafe(nextRole, 'getSession');
+          } catch (profileError) {
             const message =
               profileError instanceof Error ? profileError.message : 'Profile sync failed.';
             setErrorSafe(message, 'ensureProfile/getSession');
-          });
+            setRoleSafe('user', 'getSession/error');
+          }
+        } else {
+          setRoleSafe('user', 'getSession/no-session');
         }
       } catch (unhandledError) {
         if (requestId !== requestIdRef.current || !mountedRef.current) return;
         const message =
           unhandledError instanceof Error ? unhandledError.message : 'Session load failed.';
         setErrorSafe(message, 'getSession/catch');
+        setRoleSafe('user', 'getSession/catch');
       } finally {
         if (requestId === requestIdRef.current) {
           setLoadingSafe(false, 'loadSession/finally');
@@ -143,22 +184,28 @@ export function AuthProvider({ children }) {
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, nextSession) => {
         devLog(`[AUTH] onAuthStateChange ${event}`);
+        setLoadingSafe(true, `auth-change/${event}/start`);
         setSessionSafe(nextSession ?? null, 'auth-change');
-        setLoadingSafe(false, `auth-change/${event}`);
         setWarningSafe('', `auth-change/${event}`);
         clearAuthTimeout();
 
         if (nextSession?.user?.id) {
           try {
             await ensureProfile(nextSession.user.id);
+            const nextRole = await fetchProfileRole(nextSession.user.id);
+            setRoleSafe(nextRole, `auth-change/${event}`);
           } catch (profileError) {
             const message =
               profileError instanceof Error
                 ? profileError.message
                 : 'Profile sync failed.';
             setErrorSafe(message, 'ensureProfile');
+            setRoleSafe('user', `auth-change/${event}/error`);
           }
+        } else {
+          setRoleSafe('user', `auth-change/${event}/no-session`);
         }
+        setLoadingSafe(false, `auth-change/${event}/done`);
       }
     );
 
@@ -173,11 +220,12 @@ export function AuthProvider({ children }) {
     () => ({
       user: session?.user ?? null,
       session,
+      role,
       loading,
       error,
       warning,
     }),
-    [error, loading, session, warning]
+    [error, loading, role, session, warning]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
