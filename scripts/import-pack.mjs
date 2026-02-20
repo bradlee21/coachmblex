@@ -81,6 +81,66 @@ function normalizeText(value) {
     .replace(/\s+/g, ' ');
 }
 
+function normalizeSignatureText(value) {
+  return normalizeText(value).toLowerCase();
+}
+
+function getQuestionSignature(question) {
+  return JSON.stringify({
+    question_type: normalizeSignatureText(question?.question_type),
+    blueprint_code: normalizeSignatureText(question?.blueprint_code),
+    prompt: normalizeSignatureText(question?.prompt),
+    choices: Array.isArray(question?.choices)
+      ? question.choices.map((choice) => normalizeSignatureText(choice))
+      : [],
+    correct_index:
+      Number.isInteger(question?.correct_index) || typeof question?.correct_index === 'number'
+        ? Number(question.correct_index)
+        : null,
+    explanation: {
+      answer: normalizeSignatureText(question?.explanation?.answer),
+      why: normalizeSignatureText(question?.explanation?.why),
+      trap: normalizeSignatureText(question?.explanation?.trap),
+      hook: normalizeSignatureText(question?.explanation?.hook),
+    },
+  });
+}
+
+async function loadExistingQuestionSignatures(supabase) {
+  const signatures = new Set();
+  const PAGE_SIZE = 1000;
+  let from = 0;
+
+  while (true) {
+    const to = from + PAGE_SIZE - 1;
+    const { data, error } = await supabase
+      .from('questions')
+      .select(
+        'question_type, blueprint_code, prompt, choices, correct_index, explanation'
+      )
+      .range(from, to);
+
+    if (error) {
+      throw new Error(error.message || 'Failed to load existing questions');
+    }
+
+    if (!Array.isArray(data) || data.length === 0) {
+      break;
+    }
+
+    for (const row of data) {
+      signatures.add(getQuestionSignature(row));
+    }
+
+    if (data.length < PAGE_SIZE) {
+      break;
+    }
+    from += PAGE_SIZE;
+  }
+
+  return signatures;
+}
+
 function getDomainFromBlueprint(blueprintCode) {
   const root = String(blueprintCode || '').split('.')[0];
   return DOMAIN_BY_SECTION_CODE[root] || 'general';
@@ -266,6 +326,17 @@ async function main() {
   const failures = [];
   const validRows = [];
   const validRowNumbers = [];
+  let duplicateSkippedCount = 0;
+  let seenSignatures = new Set();
+
+  try {
+    seenSignatures = await loadExistingQuestionSignatures(supabase);
+    console.log(`Existing strict signatures loaded: ${seenSignatures.size}`);
+  } catch (error) {
+    console.log(
+      `Existing strict signature pre-check unavailable (${error instanceof Error ? error.message : String(error)}). Continuing without dedupe guard.`
+    );
+  }
 
   for (let i = 0; i < pack.questions.length; i += 1) {
     const result = validateAndMapQuestion(pack.questions[i], i);
@@ -273,6 +344,18 @@ async function main() {
       failures.push({ rowNo: result.rowNo, reasons: result.errors });
       continue;
     }
+
+    const signature = getQuestionSignature(result.row);
+    if (seenSignatures.has(signature)) {
+      duplicateSkippedCount += 1;
+      failures.push({
+        rowNo: result.rowNo,
+        reasons: ['duplicate question detected (strict signature)'],
+      });
+      continue;
+    }
+
+    seenSignatures.add(signature);
     validRows.push(result.row);
     validRowNumbers.push(result.rowNo);
   }
@@ -291,6 +374,7 @@ async function main() {
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
   console.log(`Inserted: ${insertedCount}`);
+  console.log(`Skipped duplicates: ${duplicateSkippedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
   try {
     const afterCount = await getQuestionCount(supabase);
