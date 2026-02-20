@@ -106,7 +106,8 @@ E2E note:
 - `npm run e2e` and `npm run e2e:once` are opt-in only.
 - E2E is not part of `npm run smoke` or `npm run build`.
 - `e2e/journey.spec.ts` provides a broad route journey (Today, Drill, Review, Study Night, Anatomy, Progress, Settings) with one core action per page.
-- Sign-up E2E is intentionally deferred until a deterministic email-confirmation strategy is in place.
+- `e2e/signup.spec.ts` is gated and runs only when `E2E_SIGNUP=1`.
+- Signup E2E also requires `E2E_SIGNUP_PASSWORD` and assumes Supabase email confirmation is OFF for deterministic auto-login.
 
 Manual checks:
 1. Auth/login works.
