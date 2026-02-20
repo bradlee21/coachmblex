@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP28: added `docs/release-checklist.md` with pre-demo checks, a 5-8 minute demo script, talking points, quick triage, and rollback notes.
+- Added critical-path smoke mode via `npm run smoke:critical` (Study Night + auth loading/question-forge route guards) while keeping default smoke behavior unchanged.
 - TP27: added `docs/runbook.md` with end-to-end V1 setup for Supabase + Vercel, required env vars, SQL migration order, Realtime replication tables, seeding, verification, and troubleshooting.
 - TP26: added `docs/instructor-onboarding.md` with step-by-step instructor setup, role SQL snippet, policy checklist, verification steps, and troubleshooting notes.
 - Added a Question Forge role/permissions status block with a safe non-destructive check (read probe + policy guidance) to surface onboarding issues quickly.

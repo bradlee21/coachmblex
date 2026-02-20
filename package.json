@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "smoke": "node scripts/smoke.mjs && next build",
+    "smoke:critical": "node scripts/smoke.mjs --critical",
     "seed": "node scripts/seed.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },

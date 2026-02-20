@@ -2,6 +2,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync, readFileSync } from 'node:fs';
 
 const required = ['NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_ANON_KEY'];
+const isCritical = process.argv.includes('--critical');
 
 function loadEnvFile(path) {
   if (!existsSync(path)) return;
@@ -35,22 +36,22 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
-const studyNightRegression = spawnSync('node', ['scripts/study-night-smoke.mjs'], {
-  stdio: 'inherit',
-  shell: true,
-});
-
-if (studyNightRegression.status !== 0) {
-  process.exit(studyNightRegression.status ?? 1);
+function runNodeScript(path) {
+  const result = spawnSync('node', [path], {
+    stdio: 'inherit',
+    shell: true,
+  });
+  if (result.status !== 0) {
+    process.exit(result.status ?? 1);
+  }
 }
 
-const authRegression = spawnSync('node', ['scripts/auth-loading-regression.mjs'], {
-  stdio: 'inherit',
-  shell: true,
-});
+runNodeScript('scripts/study-night-smoke.mjs');
+runNodeScript('scripts/auth-loading-regression.mjs');
 
-if (authRegression.status !== 0) {
-  process.exit(authRegression.status ?? 1);
+if (isCritical) {
+  console.log('Critical smoke checks passed.');
+  process.exit(0);
 }
 
 const result = spawnSync('npx', ['next', 'build'], {
