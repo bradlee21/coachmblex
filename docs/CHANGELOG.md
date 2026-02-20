@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP23: added Finished Coach Review CTA "Drill my weak spots" to deep-link into `/drill` using the user's top missed prefix (or next-pick fallback).
+- Drill deep links now include safe type routing logic (omit for roulette; use last non-roulette game type with fallback) and disable with guidance when no target exists.
 - TP22: added Question Forge draft lint warnings (long prompt/fill answer, missing explanation fields, duplicate choices, and fill punctuation checks) in a QA Checks panel.
 - Added a Review Queue panel that scans recent questions and flags likely QA issues, with one-click load into edit mode and refresh/loading/error states.
 - TP21: added Question Forge templates by question type with prompt skeletons, choice placeholders, and explanation scaffolds.

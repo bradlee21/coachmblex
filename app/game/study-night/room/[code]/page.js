@@ -1,7 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { getSupabaseClient } from '../../../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../../../src/lib/postgrestFetch';
 import { devLog } from '../../../../../src/lib/devLog';
@@ -394,6 +394,7 @@ async function ensureRoomMembership(roomId, user) {
 
 export default function StudyNightRoomPage() {
   const params = useParams();
+  const router = useRouter();
   const codeParam = Array.isArray(params?.code) ? params.code[0] : params?.code;
   const roomCode = String(codeParam || '').toUpperCase();
   const { user, loading: authLoading } = useAuth();
@@ -1500,7 +1501,25 @@ export default function StudyNightRoomPage() {
   const deckHealthFillCount = getDeckBucketCount(deckCountsByKey, deckHealthCategory?.key, 'fill');
   const coachStatsByUser = useMemo(() => coachStatsRef.current, [coachStatsVersion]);
   const myCoachStats = myPlayer ? getPlayerCoachStats(myPlayer, coachStatsByUser) : createEmptyCoachStats();
+  const myTopMiss = getTopMissEntry(myCoachStats.missesByPrefix);
+  const myTopMissPrefix = myTopMiss?.prefix || '';
   const nextPickSuggestions = getNextPickSuggestions(myCoachStats.missesByPrefix, myWedges);
+  const mySuggestedCategoryPrefix = nextPickSuggestions[0]?.key || '';
+  const drillPrefix = myTopMissPrefix || mySuggestedCategoryPrefix || '';
+  const drillTypeParam = (() => {
+    if (isRouletteMode) return '';
+    const lastType = normalizeGameType(state?.game_type || question?.question_type || 'mcq');
+    return lastType === 'reverse' ? 'reverse' : 'mcq';
+  })();
+  const drillHref = useMemo(() => {
+    if (!drillPrefix) return '';
+    const params = new URLSearchParams();
+    params.set('code', drillPrefix);
+    if (drillTypeParam) {
+      params.set('type', drillTypeParam);
+    }
+    return `/drill?${params.toString()}`;
+  }, [drillPrefix, drillTypeParam]);
 
   return (
     <section>
@@ -1749,12 +1768,27 @@ export default function StudyNightRoomPage() {
                 })}
               </ul>
               {myPlayer ? (
-                <p className="muted">
-                  Next picks:{' '}
-                  {nextPickSuggestions.length > 0
-                    ? nextPickSuggestions.map((category) => `${category.key}`).join(', ')
-                    : 'No suggestions.'}
-                </p>
+                <>
+                  <p className="muted">
+                    Next picks:{' '}
+                    {nextPickSuggestions.length > 0
+                      ? nextPickSuggestions.map((category) => `${category.key}`).join(', ')
+                      : 'No suggestions.'}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (!drillHref) return;
+                      router.push(drillHref);
+                    }}
+                    disabled={!drillHref}
+                  >
+                    Drill my weak spots
+                  </button>
+                  {!drillHref ? (
+                    <p className="muted">No drill target yet; play again or answer more questions.</p>
+                  ) : null}
+                </>
               ) : null}
             </>
           ) : null}
