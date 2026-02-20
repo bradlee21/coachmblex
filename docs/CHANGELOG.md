@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP22: added Question Forge draft lint warnings (long prompt/fill answer, missing explanation fields, duplicate choices, and fill punctuation checks) in a QA Checks panel.
+- Added a Review Queue panel that scans recent questions and flags likely QA issues, with one-click load into edit mode and refresh/loading/error states.
 - TP21: added Question Forge templates by question type with prompt skeletons, choice placeholders, and explanation scaffolds.
 - Added safe template apply controls (template select, overwrite toggle, apply button) that preserve existing content unless overwrite is enabled.
 - Applying a template now focuses the prompt and shows a short "Template applied" confirmation.

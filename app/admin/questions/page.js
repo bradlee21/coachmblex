@@ -91,6 +91,9 @@ const QUESTION_TEMPLATES = {
 };
 const EXPLANATION_FIELDS = ['answer', 'why', 'trap', 'hook'];
 const SOFT_EXPLANATION_CHAR_LIMIT = 200;
+const PROMPT_SOFT_LIMIT = 240;
+const FILL_SOFT_LIMIT = 40;
+const REVIEW_QUEUE_FETCH_LIMIT = 200;
 const DOMAIN_BY_SECTION_CODE = {
   '1': 'anatomy',
   '2': 'kinesiology',
@@ -215,6 +218,98 @@ function valueIsFilled(value) {
   return normalizeWhitespace(value).length > 0;
 }
 
+function hasDisallowedFillPunctuation(value) {
+  return /[!"#$%&()*+,./:;<=>?@[\\\]^_`{|}~]/.test(String(value || ''));
+}
+
+function getFillAnswerFromQuestion(question) {
+  const choices = Array.isArray(question?.choices) ? question.choices : [];
+  const index =
+    Number.isInteger(question?.correct_index) && question.correct_index >= 0
+      ? question.correct_index
+      : 0;
+  return String(choices[index] || choices[0] || '');
+}
+
+function getDraftLintWarnings({
+  prompt,
+  questionType,
+  choices,
+  fillAnswer,
+  explanations,
+}) {
+  const warnings = [];
+  const trimmedPrompt = normalizeWhitespace(prompt);
+  if (trimmedPrompt.length > PROMPT_SOFT_LIMIT) {
+    warnings.push(`Prompt is long (${trimmedPrompt.length}/${PROMPT_SOFT_LIMIT}).`);
+  }
+
+  const missingExplanationFields = EXPLANATION_FIELDS.filter(
+    (field) => !valueIsFilled(explanations?.[field])
+  );
+  if (missingExplanationFields.length > 0) {
+    warnings.push(`Missing explanation fields: ${missingExplanationFields.join(', ')}.`);
+  }
+
+  if (questionType === 'fill') {
+    const normalizedFillAnswer = normalizeWhitespace(fillAnswer);
+    if (normalizedFillAnswer.length > FILL_SOFT_LIMIT) {
+      warnings.push(
+        `Fill answer is long (${normalizedFillAnswer.length}/${FILL_SOFT_LIMIT}).`
+      );
+    }
+    if (normalizedFillAnswer && hasDisallowedFillPunctuation(normalizedFillAnswer)) {
+      warnings.push('Fill answer has punctuation beyond hyphen/apostrophe.');
+    }
+    return warnings;
+  }
+
+  const normalizedChoices = (Array.isArray(choices) ? choices : []).map((choice) =>
+    normalizeWhitespace(choice)
+  );
+  const seen = new Map();
+  for (const choice of normalizedChoices) {
+    if (!choice) continue;
+    seen.set(choice, (seen.get(choice) || 0) + 1);
+  }
+  const duplicates = [...seen.entries()]
+    .filter(([, count]) => count > 1)
+    .map(([value]) => value);
+  if (duplicates.length > 0) {
+    warnings.push(`Duplicate choices found: ${duplicates.join(', ')}.`);
+  }
+  return warnings;
+}
+
+function getReviewReasons(question) {
+  const reasons = [];
+  const explanation = parseExplanation(question?.explanation);
+  const missingExplanationFields = EXPLANATION_FIELDS.filter(
+    (field) => !valueIsFilled(explanation[field])
+  );
+  if (missingExplanationFields.length > 0) {
+    reasons.push(`Missing explanation: ${missingExplanationFields.join(', ')}`);
+  }
+
+  const promptLength = normalizeWhitespace(question?.prompt).length;
+  if (promptLength > PROMPT_SOFT_LIMIT) {
+    reasons.push(`Long prompt (${promptLength}/${PROMPT_SOFT_LIMIT})`);
+  }
+
+  const questionType = normalizeQuestionType(question?.question_type);
+  if (questionType === 'fill') {
+    const fillAnswer = normalizeWhitespace(getFillAnswerFromQuestion(question));
+    if (fillAnswer.length > FILL_SOFT_LIMIT) {
+      reasons.push(`Long fill answer (${fillAnswer.length}/${FILL_SOFT_LIMIT})`);
+    }
+    if (fillAnswer && hasDisallowedFillPunctuation(fillAnswer)) {
+      reasons.push('Fill answer punctuation');
+    }
+  }
+
+  return reasons;
+}
+
 export default function AdminQuestionsPage() {
   const { user, role, loading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
@@ -236,6 +331,10 @@ export default function AdminQuestionsPage() {
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searchErrorInfo, setSearchErrorInfo] = useState(null);
+  const [reviewQueueItems, setReviewQueueItems] = useState([]);
+  const [reviewQueueLoading, setReviewQueueLoading] = useState(false);
+  const [reviewQueueError, setReviewQueueError] = useState(null);
+  const [reviewQueueCheckedAt, setReviewQueueCheckedAt] = useState('');
   const [coverageGaps, setCoverageGaps] = useState([]);
   const [coverageLoading, setCoverageLoading] = useState(false);
   const [coverageError, setCoverageError] = useState('');
@@ -385,6 +484,17 @@ export default function AdminQuestionsPage() {
       explanation: normalizedExplanations,
     };
   }, [choices, correctIndex, explanations, fillAnswer, isFillType, prompt, questionType]);
+  const lintWarnings = useMemo(
+    () =>
+      getDraftLintWarnings({
+        prompt,
+        questionType,
+        choices,
+        fillAnswer,
+        explanations,
+      }),
+    [choices, explanations, fillAnswer, prompt, questionType]
+  );
   const currentTypeTemplates = useMemo(
     () => QUESTION_TEMPLATES[normalizeQuestionType(questionType)] || [],
     [questionType]
@@ -395,6 +505,41 @@ export default function AdminQuestionsPage() {
   );
 
   const isEditing = Boolean(editingQuestionId);
+
+  const refreshReviewQueue = useCallback(async () => {
+    setReviewQueueLoading(true);
+    setReviewQueueError(null);
+    try {
+      const params = new URLSearchParams({
+        select: 'id,blueprint_code,question_type,prompt,choices,correct_index,explanation,created_at',
+        order: 'created_at.desc',
+        limit: String(REVIEW_QUEUE_FETCH_LIMIT),
+      });
+      const response = await withTimeout(
+        postgrestFetch(`questions?${params.toString()}`),
+        8000,
+        'forge_review_queue'
+      );
+      if (!response.ok) {
+        throw toPostgrestError(response, 'Failed to load review queue.');
+      }
+      const rows = Array.isArray(response.data) ? response.data : [];
+      const flagged = rows
+        .map((row) => ({
+          row,
+          reasons: getReviewReasons(row),
+        }))
+        .filter((item) => item.reasons.length > 0)
+        .slice(0, 25);
+      setReviewQueueItems(flagged);
+      setReviewQueueCheckedAt(new Date().toISOString());
+    } catch (error) {
+      setReviewQueueError(toErrorInfo(error, 'Failed to load review queue.'));
+      setReviewQueueItems([]);
+    } finally {
+      setReviewQueueLoading(false);
+    }
+  }, []);
 
   const refreshCoverageGaps = useCallback(async () => {
     const supabase = getSupabaseClient();
@@ -444,6 +589,10 @@ export default function AdminQuestionsPage() {
   useEffect(() => {
     void refreshCoverageGaps();
   }, [refreshCoverageGaps]);
+
+  useEffect(() => {
+    void refreshReviewQueue();
+  }, [refreshReviewQueue]);
 
   useEffect(() => {
     if (currentTypeTemplates.some((template) => template.id === selectedTemplateId)) return;
@@ -888,6 +1037,41 @@ export default function AdminQuestionsPage() {
         </div>
         <p className="muted">{searchResults.length} result(s).</p>
       </div>
+      <div className="game-card">
+        <h2>Review Queue</h2>
+        <p className="muted">Flagged recent questions that may need QA cleanup.</p>
+        <button
+          type="button"
+          onClick={() => void refreshReviewQueue()}
+          disabled={reviewQueueLoading}
+        >
+          {reviewQueueLoading ? 'Refreshing...' : 'Refresh review queue'}
+        </button>
+        {reviewQueueCheckedAt ? <p className="muted">Checked: {reviewQueueCheckedAt}</p> : null}
+        {reviewQueueError ? (
+          <div className="status error">
+            <p>{reviewQueueError.message}</p>
+            {reviewQueueError.details ? <p>Details: {reviewQueueError.details}</p> : null}
+            {reviewQueueError.hint ? <p>Hint: {reviewQueueError.hint}</p> : null}
+            {reviewQueueError.code ? <p>Code: {reviewQueueError.code}</p> : null}
+            {reviewQueueError.status ? <p>Status: {reviewQueueError.status}</p> : null}
+          </div>
+        ) : null}
+        <div className="choice-list" role="listbox" aria-label="Flagged questions review queue">
+          {reviewQueueItems.map((item) => (
+            <button
+              key={`review-queue-${item.row.id}`}
+              type="button"
+              onClick={() => handleLoadSearchResult(item.row)}
+            >
+              {item.row.blueprint_code || 'n/a'} | {normalizeQuestionType(item.row.question_type)} |{' '}
+              {buildPromptSnippet(item.row.prompt, 90)}
+              {item.reasons.length > 0 ? ` | ${item.reasons.join(' ; ')}` : ''}
+            </button>
+          ))}
+        </div>
+        <p className="muted">{reviewQueueItems.length} flagged item(s).</p>
+      </div>
 
       <div className="game-grid">
         <div className="game-card">
@@ -939,6 +1123,18 @@ export default function AdminQuestionsPage() {
             <p className="muted">
               Required fields: Blueprint code, question type, prompt, and Answer/Why/Trap/Hook guidance.
             </p>
+          </div>
+          <div className="runner">
+            <h3>QA Checks</h3>
+            {lintWarnings.length > 0 ? (
+              lintWarnings.map((warning, index) => (
+                <p key={`qa-warning-${index}`} className="muted">
+                  {warning}
+                </p>
+              ))
+            ) : (
+              <p className="muted">No draft lint warnings.</p>
+            )}
           </div>
           {!validation.isValid ? (
             <div className="status error">
