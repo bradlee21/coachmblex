@@ -7,7 +7,7 @@ import { postgrestFetch } from '../../../src/lib/postgrestFetch';
 import { devLog } from '../../../src/lib/devLog';
 import { useAuth } from '../../../src/providers/AuthProvider';
 
-const CODE_CHARS = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+const CODE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
 function createRoomCode(length = 6) {
   let value = '';
@@ -312,8 +312,9 @@ export default function StudyNightLandingPage() {
     try {
       let createdRoom = null;
 
-      for (let attempt = 0; attempt < 6; attempt += 1) {
+      for (let attempt = 1; attempt <= 5; attempt += 1) {
         const code = createRoomCode();
+        setStep('insert_room');
         const insertRoomResponse = await withTimeout(
           postgrestFetch('study_rooms', {
             method: 'POST',
@@ -326,6 +327,11 @@ export default function StudyNightLandingPage() {
           }),
           timeoutMs,
           'insert_room'
+        );
+        devLog(
+          '[STUDY-NIGHT] create insert_room status',
+          `attempt=${attempt}`,
+          `status=${insertRoomResponse?.status ?? 'n/a'}`
         );
         devLog('[STUDY-NIGHT] create insert_room response', insertRoomResponse);
         if (insertRoomResponse.ok) {
@@ -340,13 +346,19 @@ export default function StudyNightLandingPage() {
           insertRoomResponse,
           'Failed to insert study room.'
         );
-        if (roomInsertError.code !== '23505' && insertRoomResponse.status !== 409) {
+        const errorText = String(insertRoomResponse?.errorText || '').toLowerCase();
+        const isUniqueConflict =
+          insertRoomResponse.status === 409 ||
+          roomInsertError.code === '23505' ||
+          errorText.includes('duplicate') ||
+          errorText.includes('unique');
+        if (!isUniqueConflict) {
           throw roomInsertError;
         }
       }
 
       if (!createdRoom) {
-        throw new Error('Could not reserve a room code. Try again.');
+        throw new Error('Could not generate a unique room code. Try again.');
       }
 
       setStep('upsert_host_player');
