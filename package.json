@@ -8,6 +8,8 @@
     "start": "next start",
     "smoke": "node scripts/smoke.mjs && next build",
     "smoke:critical": "node scripts/smoke.mjs --critical",
+    "e2e": "playwright test",
+    "e2e:once": "playwright test --retries=0 --workers=1",
     "seed": "node scripts/seed.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },
@@ -16,5 +18,8 @@
     "next": "14.2.33",
     "react": "18.3.1",
     "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
   }
 }

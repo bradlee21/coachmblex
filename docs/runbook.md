@@ -92,6 +92,15 @@ Channel note:
 Automated checks:
 1. `npm run smoke`
 2. `npm run build`
+3. Optional E2E single run:
+   - Set `E2E_BASE_URL` (optional; defaults to `http://localhost:3000`)
+   - Set `E2E_EMAIL` and `E2E_PASSWORD`
+   - Run `npm run e2e:once`
+   - If credentials are not set, the critical spec skips by design
+
+E2E note:
+- `npm run e2e` and `npm run e2e:once` are opt-in only.
+- E2E is not part of `npm run smoke` or `npm run build`.
 
 Manual checks:
 1. Auth/login works.

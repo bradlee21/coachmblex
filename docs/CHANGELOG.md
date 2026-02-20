@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP-E2E-1: added opt-in Playwright setup with single-run scripts (`e2e`, `e2e:once`) configured for no retries and one worker.
+- Added a minimal critical login spec (`e2e/critical.spec.ts`) that skips with a clear message when `E2E_EMAIL`/`E2E_PASSWORD` are not set.
 - TP32: added minimal privacy-safe telemetry plumbing with `usage_events` SQL docs/migration scripts and a best-effort `trackEvent` helper that never blocks UX.
 - Added event tracking touchpoints for Today, Drill, Study Night (create/join/finished), and Question Forge save using counts/prefix/type metadata only (no question text or answers).
 - TP31: added `docs/security-checklist.md` summarizing route and table access expectations for `user`, `questions_editor`, and `admin` roles.
