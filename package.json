@@ -16,6 +16,7 @@
     "test:all": "npm run build && npm run smoke:critical && npm run e2e:critical",
     "seed": "node scripts/seed.mjs",
     "import:pack": "node scripts/import-pack.mjs",
+    "import:all-packs": "node scripts/import-all-packs.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },
   "dependencies": {
