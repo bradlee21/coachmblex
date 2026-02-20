@@ -95,6 +95,9 @@ Automated checks:
 3. Optional E2E single run:
    - Set `E2E_BASE_URL` (optional; defaults to `http://localhost:3000`)
    - Set `E2E_EMAIL` and `E2E_PASSWORD`
+   - Optional drill test overrides:
+     - `E2E_DRILL_CODE` (default `2.D`)
+     - `E2E_DRILL_TYPE` (default `mcq`)
    - Run `npm run e2e:once`
    - If credentials are not set, the critical spec skips by design
 

@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-20
+- TP-E2E-2: added `e2e/drill-critical.spec.ts` for login -> drill start -> answer-first-question flow with explicit step timeouts and skip-on-missing-seed behavior.
 - TP-E2E-1: added opt-in Playwright setup with single-run scripts (`e2e`, `e2e:once`) configured for no retries and one worker.
 - Added a minimal critical login spec (`e2e/critical.spec.ts`) that skips with a clear message when `E2E_EMAIL`/`E2E_PASSWORD` are not set.
 - TP32: added minimal privacy-safe telemetry plumbing with `usage_events` SQL docs/migration scripts and a best-effort `trackEvent` helper that never blocks UX.
