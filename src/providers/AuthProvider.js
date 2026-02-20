@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../lib/supabaseClient';
+import { devLog, devWarn } from '../lib/devLog';
 
 const AuthContext = createContext({
   user: null,
@@ -21,7 +22,7 @@ async function ensureProfile(userId) {
     .upsert({ id: userId }, { onConflict: 'id', ignoreDuplicates: true });
 
   if (error) {
-    console.error('Failed to ensure profile row', error.message);
+    devWarn('Failed to ensure profile row', error.message);
   }
 }
 
@@ -46,13 +47,13 @@ export function AuthProvider({ children }) {
 
     function setLoadingSafe(value, reason) {
       if (!mountedRef.current) return;
-      console.debug(`[AUTH] loading=${value} (${reason})`);
+      devLog(`[AUTH] loading=${value} (${reason})`);
       setLoading(value);
     }
 
     function setSessionSafe(nextSession, reason) {
       if (!mountedRef.current) return;
-      console.debug(
+      devLog(
         `[AUTH] session=${nextSession?.user?.id ? 'present' : 'none'} (${reason})`
       );
       setSession(nextSession ?? null);
@@ -61,7 +62,7 @@ export function AuthProvider({ children }) {
     function setErrorSafe(message, reason) {
       if (!mountedRef.current) return;
       if (message) {
-        console.debug(`[AUTH] error (${reason}): ${message}`);
+        devLog(`[AUTH] error (${reason}): ${message}`);
       }
       setError(message || '');
     }
@@ -69,7 +70,7 @@ export function AuthProvider({ children }) {
     function setWarningSafe(message, reason) {
       if (!mountedRef.current) return;
       if (message) {
-        console.debug(`[AUTH] warning (${reason}): ${message}`);
+        devLog(`[AUTH] warning (${reason}): ${message}`);
       }
       setWarning(message || '');
     }
@@ -84,7 +85,7 @@ export function AuthProvider({ children }) {
         return;
       }
 
-      console.debug('[AUTH] getSession start');
+      devLog('[AUTH] getSession start');
       try {
         const { data, error: sessionError } = await supabase.auth.getSession();
         if (requestId !== requestIdRef.current || !mountedRef.current) return;
@@ -141,7 +142,7 @@ export function AuthProvider({ children }) {
 
     const { data: authListener } = supabase.auth.onAuthStateChange(
       async (event, nextSession) => {
-        console.debug(`[AUTH] onAuthStateChange ${event}`);
+        devLog(`[AUTH] onAuthStateChange ${event}`);
         setSessionSafe(nextSession ?? null, 'auth-change');
         setLoadingSafe(false, `auth-change/${event}`);
         setWarningSafe('', `auth-change/${event}`);

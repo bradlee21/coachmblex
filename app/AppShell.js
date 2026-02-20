@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { getSupabaseClient } from '../src/lib/supabaseClient';
+import { devLog } from '../src/lib/devLog';
 import { useAuth } from '../src/providers/AuthProvider';
 
 const NAV_ITEMS = [
   { href: '/today', label: 'Today', key: 't' },
   { href: '/review', label: 'Review', key: 'r' },
   { href: '/drill', label: 'Drill', key: 'd' },
+  { href: '/game/study-night', label: 'Study Night', key: 'n' },
   { href: '/anatomy', label: 'Anatomy', key: 'a' },
   { href: '/progress', label: 'Progress', key: 'p' },
   { href: '/settings', label: 'Settings', key: 's' },
@@ -33,7 +35,8 @@ export default function AppShell({ children }) {
   const { user, loading, error, warning } = useAuth();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const isAuthRoute = pathname.startsWith('/auth');
-  const isProtectedRoute = PROTECTED_ROUTES.has(pathname);
+  const isGameRoute = pathname?.startsWith('/game');
+  const isProtectedRoute = PROTECTED_ROUTES.has(pathname) || isGameRoute;
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -65,12 +68,12 @@ export default function AppShell({ children }) {
   }, [pathname, router]);
 
   useEffect(() => {
-    console.debug(`[AUTH] route=${pathname}`);
+    devLog(`[AUTH] route=${pathname}`);
   }, [pathname]);
 
   useEffect(() => {
     if (!isProtectedRoute) return;
-    console.debug(
+    devLog(
       `[AUTH] guard loading=${loading} user=${user?.id ? 'present' : 'none'} route=${pathname}`
     );
   }, [isProtectedRoute, loading, pathname, user?.id]);

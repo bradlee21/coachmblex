@@ -35,6 +35,24 @@ if (missing.length > 0) {
   process.exit(1);
 }
 
+const studyNightRegression = spawnSync('node', ['scripts/study-night-smoke.mjs'], {
+  stdio: 'inherit',
+  shell: true,
+});
+
+if (studyNightRegression.status !== 0) {
+  process.exit(studyNightRegression.status ?? 1);
+}
+
+const authRegression = spawnSync('node', ['scripts/auth-loading-regression.mjs'], {
+  stdio: 'inherit',
+  shell: true,
+});
+
+if (authRegression.status !== 0) {
+  process.exit(authRegression.status ?? 1);
+}
+
 const result = spawnSync('npx', ['next', 'build'], {
   stdio: 'inherit',
   shell: true,

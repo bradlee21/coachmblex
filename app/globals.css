@@ -423,3 +423,33 @@ a {
   background: #fee2e2;
   color: #991b1b;
 }
+
+.game-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 12px 0;
+}
+
+.game-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  padding: 14px;
+}
+
+.game-card h2 {
+  margin-top: 0;
+}
+
+.game-list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-wrap {
+  flex-wrap: wrap;
+}
