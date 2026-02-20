@@ -15,6 +15,8 @@ const DEFAULT_WIN_WEDGES = 3;
 const DEFAULT_DURATION_SEC = 12;
 const STUDY_NIGHT_GAME_TYPES = ['mcq', 'reverse', 'fill'];
 const STUDY_NIGHT_DECK_SIZE = 25;
+const REALTIME_RESYNC_THROTTLE_MS = 2000;
+const STATE_PATCH_RETRY_DELAY_MS = 500;
 
 const DEFAULT_STATE = {
   phase: 'pick',
@@ -351,6 +353,76 @@ async function timedPostgrest(path, options, label) {
   return withTimeout(postgrestFetch(path, options), 8000, label);
 }
 
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+function shouldRetryTransientMutationResponse(response) {
+  if (!response || response.ok) return false;
+  if (Number(response.status) === 0) return true;
+  const errorText = String(response.errorText || '').toLowerCase();
+  return (
+    errorText.includes('failed to fetch') ||
+    errorText.includes('networkerror') ||
+    errorText.includes('network request failed')
+  );
+}
+
+function shouldRetryTransientMutationError(error) {
+  const message = String(error?.message || '').toLowerCase();
+  return (
+    message.includes('failed to fetch') ||
+    message.includes('networkerror') ||
+    message.includes('network request failed') ||
+    message.includes('timed out')
+  );
+}
+
+async function patchStudyRoomStateWithRetry(path, body, label) {
+  try {
+    const firstAttempt = await timedPostgrest(
+      path,
+      {
+        method: 'PATCH',
+        body,
+      },
+      label
+    );
+
+    if (!shouldRetryTransientMutationResponse(firstAttempt)) {
+      return firstAttempt;
+    }
+
+    devLog('[STUDY-NIGHT] transient state patch response, retrying once', label, firstAttempt.status);
+    await delay(STATE_PATCH_RETRY_DELAY_MS);
+    return timedPostgrest(
+      path,
+      {
+        method: 'PATCH',
+        body,
+      },
+      `${label}_retry`
+    );
+  } catch (error) {
+    if (!shouldRetryTransientMutationError(error)) {
+      throw error;
+    }
+
+    devLog('[STUDY-NIGHT] transient state patch error, retrying once', label, error);
+    await delay(STATE_PATCH_RETRY_DELAY_MS);
+    return timedPostgrest(
+      path,
+      {
+        method: 'PATCH',
+        body,
+      },
+      `${label}_retry`
+    );
+  }
+}
+
 function firstRow(data) {
   return Array.isArray(data) ? data[0] || null : null;
 }
@@ -420,6 +492,8 @@ export default function StudyNightRoomPage() {
   const revealKeyRef = useRef('');
   const scoreBaselineRef = useRef({});
   const rejoinSyncRef = useRef(false);
+  const refreshInFlightRef = useRef(null);
+  const lastRealtimeResyncAtRef = useRef(0);
   const submittedTurnKeysRef = useRef({});
   const gradedTurnKeysRef = useRef({});
   const coachStatsRef = useRef({});
@@ -446,10 +520,13 @@ export default function StudyNightRoomPage() {
     }).length;
   }, [orderedPlayers]);
 
-  const refreshRoomSnapshot = useCallback(
-    async (roomId) => {
-      if (!roomId) return;
+  const refreshRoomSnapshot = useCallback((roomId) => {
+    if (!roomId) return Promise.resolve();
+    if (refreshInFlightRef.current?.roomId === roomId) {
+      return refreshInFlightRef.current.promise;
+    }
 
+    const refreshPromise = (async () => {
       const [roomResult, playerResult, stateResult] = await Promise.all([
         timedPostgrest(
           `study_rooms?id=eq.${roomId}&select=id,code,host_user_id,status,game_type_mode,win_wedges,duration_sec,question_count,created_at&limit=1`,
@@ -500,9 +577,19 @@ export default function StudyNightRoomPage() {
       } else {
         setQuestion(null);
       }
-    },
-    [setPlayers, setQuestion, setRoom, setState]
-  );
+    })()
+      .finally(() => {
+        if (refreshInFlightRef.current?.promise === refreshPromise) {
+          refreshInFlightRef.current = null;
+        }
+      });
+
+    refreshInFlightRef.current = {
+      roomId,
+      promise: refreshPromise,
+    };
+    return refreshPromise;
+  }, []);
 
   const buildRoomDeck = useCallback(async () => {
     const entries = await Promise.all(
@@ -686,18 +773,15 @@ export default function StudyNightRoomPage() {
           orderedPlayers.map((player) => [player.user_id, player.score || 0])
         );
 
-        const stateUpdateResult = await timedPostgrest(
+        const stateUpdateResult = await patchStudyRoomStateWithRetry(
           `study_room_state?room_id=eq.${room.id}`,
           {
-            method: 'PATCH',
-            body: {
-              phase: 'question',
-              game_type: normalizedGameType,
-              category_key: category.key,
-              question_id: nextQuestion.id,
-              started_at: new Date().toISOString(),
-              ...(nextDeckPos ? { deck_pos: nextDeckPos } : {}),
-            },
+            phase: 'question',
+            game_type: normalizedGameType,
+            category_key: category.key,
+            question_id: nextQuestion.id,
+            started_at: new Date().toISOString(),
+            ...(nextDeckPos ? { deck_pos: nextDeckPos } : {}),
           },
           'pick_update_state'
         );
@@ -728,14 +812,11 @@ export default function StudyNightRoomPage() {
   const movePhaseToReveal = useCallback(async () => {
     if (!isHost || !room || state?.phase !== 'question') return;
 
-    const response = await timedPostgrest(
+    const response = await patchStudyRoomStateWithRetry(
       `study_room_state?room_id=eq.${room.id}`,
       {
-        method: 'PATCH',
-        body: {
-          phase: 'reveal',
-          started_at: null,
-        },
+        phase: 'reveal',
+        started_at: null,
       },
       'question_to_reveal'
     );
@@ -857,7 +938,13 @@ export default function StudyNightRoomPage() {
         }
         void pickCategoryAsHost(payload.categoryKey, payload.gameType);
       })
-      .subscribe();
+      .subscribe((status) => {
+        if (status !== 'SUBSCRIBED') return;
+        const now = Date.now();
+        if (now - lastRealtimeResyncAtRef.current < REALTIME_RESYNC_THROTTLE_MS) return;
+        lastRealtimeResyncAtRef.current = now;
+        void refreshRoomSnapshot(room.id);
+      });
 
     return () => {
       channelRef.current = null;
@@ -1253,14 +1340,11 @@ export default function StudyNightRoomPage() {
           throw toPostgrestError(roomFinishResponse, 'Failed to finish room.');
         }
 
-        const stateFinishResponse = await timedPostgrest(
+        const stateFinishResponse = await patchStudyRoomStateWithRetry(
           `study_room_state?room_id=eq.${room.id}`,
           {
-            method: 'PATCH',
-            body: {
-              phase: 'finished',
-              started_at: null,
-            },
+            phase: 'finished',
+            started_at: null,
           },
           'advance_finish_state'
         );
@@ -1273,18 +1357,15 @@ export default function StudyNightRoomPage() {
       }
 
       const nextTurnIndex = playerCount > 0 ? (turnIndex + 1) % playerCount : 0;
-      const stateAdvanceResponse = await timedPostgrest(
+      const stateAdvanceResponse = await patchStudyRoomStateWithRetry(
         `study_room_state?room_id=eq.${room.id}`,
         {
-          method: 'PATCH',
-          body: {
-            turn_index: nextTurnIndex,
-            phase: 'pick',
-            category_key: null,
-            question_id: null,
-            started_at: null,
-            round_no: (state.round_no || 1) + 1,
-          },
+          turn_index: nextTurnIndex,
+          phase: 'pick',
+          category_key: null,
+          question_id: null,
+          started_at: null,
+          round_no: (state.round_no || 1) + 1,
         },
         'advance_next_turn'
       );
@@ -1335,14 +1416,11 @@ export default function StudyNightRoomPage() {
         throw toPostgrestError(roomFinishResponse, 'Failed to end room.');
       }
 
-      const stateFinishResponse = await timedPostgrest(
+      const stateFinishResponse = await patchStudyRoomStateWithRetry(
         `study_room_state?room_id=eq.${room.id}`,
         {
-          method: 'PATCH',
-          body: {
-            phase: 'finished',
-            started_at: null,
-          },
+          phase: 'finished',
+          started_at: null,
         },
         'host_tools_end_state'
       );
@@ -1382,21 +1460,18 @@ export default function StudyNightRoomPage() {
         throw toPostgrestError(roomResetResponse, 'Failed to reset room.');
       }
 
-      const stateResetResponse = await timedPostgrest(
+      const stateResetResponse = await patchStudyRoomStateWithRetry(
         `study_room_state?room_id=eq.${room.id}`,
         {
-          method: 'PATCH',
-          body: {
-            phase: 'pick',
-            game_type: 'mcq',
-            turn_index: 0,
-            category_key: null,
-            question_id: null,
-            started_at: null,
-            round_no: 1,
-            deck_pos: {},
-            duration_sec: getRoomDurationSec(room),
-          },
+          phase: 'pick',
+          game_type: 'mcq',
+          turn_index: 0,
+          category_key: null,
+          question_id: null,
+          started_at: null,
+          round_no: 1,
+          deck_pos: {},
+          duration_sec: getRoomDurationSec(room),
         },
         'host_tools_reset_state'
       );
