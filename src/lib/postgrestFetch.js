@@ -38,7 +38,11 @@ export async function postgrestFetch(
   const supabase = getSupabaseClient();
   if (supabase) {
     try {
-      const { data, error } = await supabase.auth.getSession();
+      const { data, error } = await withTimeout(
+        supabase.auth.getSession(),
+        1000,
+        'postgrest_get_session'
+      );
       if (!error) {
         accessToken = data?.session?.access_token || null;
       }
