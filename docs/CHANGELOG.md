@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP33: added in-app private-beta feedback modal in `AppShell` with required message, optional email, and PostgREST persistence to `public.feedback`.
+- Feedback submissions now include safe context (`pathname`, `role`, timestamp, and Study Night diagnostics snapshot when on room pages) with copy-context fallback on submit errors.
+- Added SQL docs/migration scripts for `public.feedback` (`docs/sql/feedback.sql` and `docs/sql/run-these-queries/2026-02-20-tp33-feedback.sql`) plus runbook retrieval notes.
 - TP-E2E-RUN-1: added E2E tier scripts (`e2e:critical`, `e2e:journey`, `e2e:signup`) with strict no-loop flags (`--retries=0 --workers=1`).
 - Added `test:all` fast gate (`build -> smoke:critical -> e2e:critical`) and documented tier usage in runbook/release checklist.
 - TP-E2E-SIGNUP-1: added gated `e2e/signup.spec.ts` (enabled only with `E2E_SIGNUP=1`) with deterministic unique-email signup flow and hard-timeout auth assertions.

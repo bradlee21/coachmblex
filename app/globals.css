@@ -91,6 +91,21 @@ a {
   background: #f3f4f6;
 }
 
+.feedback-trigger {
+  margin-top: 8px;
+  align-self: flex-start;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.feedback-trigger:hover,
+.feedback-trigger:focus-visible {
+  background: #f3f4f6;
+}
+
 .content {
   padding: 24px;
   max-width: 980px;
@@ -122,6 +137,26 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.feedback-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.feedback-modal {
+  width: 100%;
+  max-width: 520px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 16px;
 }
 
 .auth-content {
@@ -156,6 +191,14 @@ a {
   border-radius: 6px;
   padding: 8px;
   font: inherit;
+}
+
+.auth-form textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px;
+  font: inherit;
+  resize: vertical;
 }
 
 .auth-form button,

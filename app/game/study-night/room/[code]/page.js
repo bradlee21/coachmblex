@@ -1598,6 +1598,49 @@ export default function StudyNightRoomPage() {
     }
   }
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    window.__coachMblexStudyNightDiagnostics = {
+      roomCode,
+      realtimeStatus: realtimeStatus || '',
+      lastSnapshotAt:
+        typeof lastSnapshotAt === 'number' && Number.isFinite(lastSnapshotAt)
+          ? lastSnapshotAt
+          : null,
+      lastMutation: lastMutation
+        ? {
+            name: lastMutation.name || '',
+            ok:
+              typeof lastMutation.ok === 'boolean' || lastMutation.ok === null
+                ? lastMutation.ok
+                : null,
+            status: lastMutation.status ?? '',
+            message:
+              typeof lastMutation.message === 'string'
+                ? lastMutation.message.slice(0, 240)
+                : '',
+          }
+        : null,
+      phase: state?.phase || '',
+      round_no:
+        typeof state?.round_no === 'number' && Number.isFinite(state.round_no)
+          ? state.round_no
+          : null,
+      turn_index:
+        typeof state?.turn_index === 'number' && Number.isFinite(state.turn_index)
+          ? state.turn_index
+          : null,
+    };
+  }, [lastMutation, lastSnapshotAt, realtimeStatus, roomCode, state?.phase, state?.round_no, state?.turn_index]);
+
+  useEffect(
+    () => () => {
+      if (typeof window === 'undefined') return;
+      delete window.__coachMblexStudyNightDiagnostics;
+    },
+    []
+  );
+
   if (authLoading || loadingRoom) {
     return (
       <section>

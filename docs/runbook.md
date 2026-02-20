@@ -50,6 +50,7 @@ Run these files in this order:
 6. `docs/sql/study_rooms.sql`
 7. `docs/sql/study_room_players.sql`
 8. `docs/sql/study_room_state.sql`
+9. `docs/sql/feedback.sql`
 
 This order ensures role-based policies and table dependencies are ready before Study Night writes.
 
@@ -61,6 +62,7 @@ If patching an already-running environment, apply in this order:
    - `docs/sql/study_rooms.sql`
    - `docs/sql/study_room_players.sql`
    - `docs/sql/study_room_state.sql`
+   - `docs/sql/feedback.sql`
 
 ## Realtime Setup (Study Night)
 Study Night uses Supabase Realtime subscriptions + broadcast in room pages.
@@ -126,6 +128,13 @@ Manual checks:
    - Search and edit same question.
 5. Role guard:
    - `questions_editor` cannot access unrelated `/admin/*` pages.
+
+## Feedback Retrieval
+- Feedback is stored in `public.feedback`.
+- Admin users can read rows in Supabase Table Editor because select is RLS-gated to `profiles.role='admin'`.
+- SQL (admin session) to review latest reports:
+  - `select id, user_id, email, message, context, created_at from public.feedback order by created_at desc limit 100;`
+- If admin select policy is not applied in your environment, read via service-role SQL/session only.
 
 ## Troubleshooting
 ### RLS symptoms
