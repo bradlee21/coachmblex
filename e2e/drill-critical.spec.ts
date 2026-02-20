@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
+import { requireEnv } from './helpers/requireEnv';
 
+const envCheck = requireEnv(['E2E_EMAIL', 'E2E_PASSWORD']);
 const E2E_EMAIL = process.env.E2E_EMAIL || '';
 const E2E_PASSWORD = process.env.E2E_PASSWORD || '';
 const E2E_DRILL_CODE = process.env.E2E_DRILL_CODE || '2.D';
@@ -25,8 +27,8 @@ async function login(page) {
 
 test('critical path drill start and answer first question', async ({ page }) => {
   test.skip(
-    !E2E_EMAIL || !E2E_PASSWORD,
-    'Skipping drill e2e test: set E2E_EMAIL and E2E_PASSWORD.'
+    envCheck.mode === 'skip',
+    `Skipping drill e2e test (E2E_ALLOW_SKIP=1). Missing: ${envCheck.missing.join(', ')}`
   );
 
   await login(page);

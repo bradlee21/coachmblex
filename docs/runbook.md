@@ -99,7 +99,8 @@ Automated checks:
      - `E2E_DRILL_CODE` (default `2.D`)
      - `E2E_DRILL_TYPE` (default `mcq`)
    - Run `npm run e2e:once`
-   - If credentials are not set, the critical spec skips by design
+   - Default behavior: missing required E2E creds fails fast with a clear error
+   - To allow skip locally, set `E2E_ALLOW_SKIP=1`
 
 E2E note:
 - `npm run e2e` and `npm run e2e:once` are opt-in only.

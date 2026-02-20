@@ -1,12 +1,14 @@
 import { expect, test } from '@playwright/test';
+import { requireEnv } from './helpers/requireEnv';
 
+const envCheck = requireEnv(['E2E_EMAIL', 'E2E_PASSWORD']);
 const E2E_EMAIL = process.env.E2E_EMAIL || '';
 const E2E_PASSWORD = process.env.E2E_PASSWORD || '';
 
 test('critical path login to protected page', async ({ page }) => {
   test.skip(
-    !E2E_EMAIL || !E2E_PASSWORD,
-    'Skipping e2e login test: set E2E_EMAIL and E2E_PASSWORD.'
+    envCheck.mode === 'skip',
+    `Skipping e2e login test (E2E_ALLOW_SKIP=1). Missing: ${envCheck.missing.join(', ')}`
   );
 
   await page.goto('/');
