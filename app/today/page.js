@@ -1,9 +1,11 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
+import { useAuth } from '../../src/providers/AuthProvider';
 
 function pickTodayQuestions(biasPool, allPool) {
   const preferred = biasPool.slice(0, 6);
@@ -23,9 +25,14 @@ function pickTodayQuestions(biasPool, allPool) {
 }
 
 export default function TodayPage() {
+  const router = useRouter();
+  const { user } = useAuth();
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [onboardingLoading, setOnboardingLoading] = useState(true);
+  const [onboardingVisible, setOnboardingVisible] = useState(false);
+  const [onboardingCoachMode, setOnboardingCoachMode] = useState('gentle');
   const mountedRef = useRef(true);
   const requestIdRef = useRef(0);
   const todayStartSentRef = useRef(false);
@@ -122,10 +129,139 @@ export default function TodayPage() {
     void trackEvent('today_start');
   }, [error, loading, questions.length]);
 
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function loadOnboarding() {
+      if (!user?.id) {
+        if (!isCancelled) {
+          setOnboardingLoading(false);
+          setOnboardingVisible(false);
+        }
+        return;
+      }
+
+      const supabase = getSupabaseClient();
+      if (!supabase) {
+        if (!isCancelled) {
+          setOnboardingLoading(false);
+          setOnboardingVisible(false);
+        }
+        return;
+      }
+
+      try {
+        const { data: profileData, error: profileError } = await supabase
+          .from('profiles')
+          .select('coach_mode,onboarding_complete')
+          .eq('id', user.id)
+          .maybeSingle();
+
+        if (isCancelled) return;
+        if (profileError) {
+          setOnboardingVisible(false);
+          return;
+        }
+
+        const nextCoachMode = profileData?.coach_mode === 'push' ? 'push' : 'gentle';
+        setOnboardingCoachMode(nextCoachMode);
+
+        if (profileData?.onboarding_complete) {
+          setOnboardingVisible(false);
+          return;
+        }
+
+        const { data: attemptsData } = await supabase
+          .from('attempts')
+          .select('id')
+          .eq('user_id', user.id)
+          .limit(1);
+        if (isCancelled) return;
+
+        const hasAttempts = Array.isArray(attemptsData) && attemptsData.length > 0;
+        if (hasAttempts) {
+          setOnboardingVisible(false);
+          void supabase
+            .from('profiles')
+            .update({ onboarding_complete: true })
+            .eq('id', user.id);
+          return;
+        }
+
+        setOnboardingVisible(true);
+      } finally {
+        if (!isCancelled) {
+          setOnboardingLoading(false);
+        }
+      }
+    }
+
+    setOnboardingLoading(true);
+    loadOnboarding();
+    return () => {
+      isCancelled = true;
+    };
+  }, [user?.id]);
+
+  function completeOnboarding(nextPath = '') {
+    setOnboardingVisible(false);
+
+    const supabase = getSupabaseClient();
+    if (supabase && user?.id) {
+      void supabase
+        .from('profiles')
+        .update({
+          coach_mode: onboardingCoachMode,
+          onboarding_complete: true,
+        })
+        .eq('id', user.id);
+    }
+
+    if (nextPath) {
+      router.push(nextPath);
+    }
+  }
+
   return (
     <section>
       <h1>Today</h1>
       <p>Daily run: 8 questions with extra anatomy and kinesiology coverage.</p>
+      {!onboardingLoading && onboardingVisible ? (
+        <div className="runner" data-testid="today-onboarding">
+          <h2>Quick setup</h2>
+          <p className="muted">Pick your coach mode, then start studying.</p>
+          <div className="settings-row">
+            <span>Coach mode:</span>
+            <div className="button-row">
+              <button
+                type="button"
+                className={onboardingCoachMode === 'gentle' ? 'active-btn' : ''}
+                onClick={() => setOnboardingCoachMode('gentle')}
+              >
+                Gentle
+              </button>
+              <button
+                type="button"
+                className={onboardingCoachMode === 'push' ? 'active-btn' : ''}
+                onClick={() => setOnboardingCoachMode('push')}
+              >
+                Push
+              </button>
+            </div>
+          </div>
+          <div className="button-row">
+            <button type="button" onClick={() => completeOnboarding()}>
+              Start Today
+            </button>
+            <button type="button" onClick={() => completeOnboarding('/drill?code=2.D&type=mcq')}>
+              Start Drill
+            </button>
+            <button type="button" onClick={() => completeOnboarding()}>
+              Skip for now
+            </button>
+          </div>
+        </div>
+      ) : null}
       {loading ? <p>Loading questions...</p> : null}
       {error ? <p className="status error">{error}</p> : null}
       {!loading && !error ? (

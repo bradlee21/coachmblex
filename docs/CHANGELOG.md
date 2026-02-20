@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP34: added student first-run onboarding card on `/today` with coach mode selection and quick actions (`Start Today`, `Start Drill`, `Skip for now`).
+- Onboarding completion now persists best-effort to `profiles` (`coach_mode`, `onboarding_complete`) without blocking navigation; existing active users are auto-suppressed via attempts-based check/backfill guidance.
+- Added profile SQL docs/migration for `onboarding_complete` and copy/paste query file `docs/sql/run-these-queries/2026-02-20-tp34-onboarding-complete.sql`.
 - TP33: added in-app private-beta feedback modal in `AppShell` with required message, optional email, and PostgREST persistence to `public.feedback`.
 - Feedback submissions now include safe context (`pathname`, `role`, timestamp, and Study Night diagnostics snapshot when on room pages) with copy-context fallback on submit errors.
 - Added SQL docs/migration scripts for `public.feedback` (`docs/sql/feedback.sql` and `docs/sql/run-these-queries/2026-02-20-tp33-feedback.sql`) plus runbook retrieval notes.

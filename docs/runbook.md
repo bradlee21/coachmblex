@@ -58,7 +58,8 @@ This order ensures role-based policies and table dependencies are ready before S
 If patching an already-running environment, apply in this order:
 1. `docs/sql/run-these-queries/2026-02-20-tp17a-tp17b-roles-and-forge.sql`
 2. `docs/sql/run-these-queries/2026-02-20-tp19-question-forge-update-policy.sql`
-3. Re-run latest table docs as needed for additive `alter table if not exists` snippets:
+3. `docs/sql/run-these-queries/2026-02-20-tp34-onboarding-complete.sql`
+4. Re-run latest table docs as needed for additive `alter table if not exists` snippets:
    - `docs/sql/study_rooms.sql`
    - `docs/sql/study_room_players.sql`
    - `docs/sql/study_room_state.sql`
