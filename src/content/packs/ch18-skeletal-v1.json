@@ -1,0 +1,3019 @@
+{
+  "pack_id": "ch18-skeletal-v1",
+  "packId": "ch18-skeletal-v1",
+  "title": "Skeletal System Content Pack V1",
+  "chapter": "18",
+  "topic": "Skeletal System",
+  "version": "v1",
+  "source": "Chapter 18 Skeletal System (breadth mode class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "structure": 70,
+      "function": 30
+    }
+  },
+  "notes": "Breadth mode v1 pack with canonical blueprint-coded skeletal coverage and scope-safe function/caution framing.",
+  "questions": [
+    {
+      "id": "ch18-skeletal-v1-001",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: dense outer bone tissue contributing to strength and load support?",
+      "choices": {
+        "A": "spongy bone",
+        "B": "compact bone",
+        "C": "periosteum",
+        "D": "endosteum"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "compact bone is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: compact bone."
+      },
+      "why": "compact bone is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: compact bone.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "compact bone."
+    },
+    {
+      "id": "ch18-skeletal-v1-002",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: trabecular bone tissue with lattice-like structure and marrow spaces?",
+      "choices": {
+        "A": "periosteum",
+        "B": "endosteum",
+        "C": "spongy bone",
+        "D": "medullary cavity"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "spongy bone is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: spongy bone."
+      },
+      "why": "spongy bone is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: spongy bone.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "spongy bone."
+    },
+    {
+      "id": "ch18-skeletal-v1-003",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fibrous vascular membrane covering external bone surfaces except articular cartilage?",
+      "choices": {
+        "A": "endosteum",
+        "B": "medullary cavity",
+        "C": "red marrow",
+        "D": "periosteum"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "periosteum is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: periosteum."
+      },
+      "why": "periosteum is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: periosteum.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "periosteum."
+    },
+    {
+      "id": "ch18-skeletal-v1-004",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: thin membrane lining medullary cavity and internal bone surfaces?",
+      "choices": {
+        "A": "endosteum",
+        "B": "medullary cavity",
+        "C": "red marrow",
+        "D": "yellow marrow"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "endosteum is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: endosteum."
+      },
+      "why": "endosteum is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: endosteum.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "endosteum."
+    },
+    {
+      "id": "ch18-skeletal-v1-005",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: central cavity in long bones containing marrow?",
+      "choices": {
+        "A": "red marrow",
+        "B": "medullary cavity",
+        "C": "yellow marrow",
+        "D": "epiphysis"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "medullary cavity is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: medullary cavity."
+      },
+      "why": "medullary cavity is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: medullary cavity.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "medullary cavity."
+    },
+    {
+      "id": "ch18-skeletal-v1-006",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: marrow tissue associated with blood cell formation?",
+      "choices": {
+        "A": "yellow marrow",
+        "B": "epiphysis",
+        "C": "red marrow",
+        "D": "diaphysis"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "red marrow is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: red marrow."
+      },
+      "why": "red marrow is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: red marrow.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "red marrow."
+    },
+    {
+      "id": "ch18-skeletal-v1-007",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: marrow tissue with higher fat content in adult long bone shafts?",
+      "choices": {
+        "A": "epiphysis",
+        "B": "diaphysis",
+        "C": "metaphysis",
+        "D": "yellow marrow"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "yellow marrow is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: yellow marrow."
+      },
+      "why": "yellow marrow is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: yellow marrow.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "yellow marrow."
+    },
+    {
+      "id": "ch18-skeletal-v1-008",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: expanded end region of a long bone?",
+      "choices": {
+        "A": "epiphysis",
+        "B": "diaphysis",
+        "C": "metaphysis",
+        "D": "articular cartilage"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "epiphysis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: epiphysis."
+      },
+      "why": "epiphysis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: epiphysis.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "epiphysis."
+    },
+    {
+      "id": "ch18-skeletal-v1-009",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: shaft region of a long bone?",
+      "choices": {
+        "A": "metaphysis",
+        "B": "diaphysis",
+        "C": "articular cartilage",
+        "D": "subchondral bone"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "diaphysis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: diaphysis."
+      },
+      "why": "diaphysis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: diaphysis.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "diaphysis."
+    },
+    {
+      "id": "ch18-skeletal-v1-010",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: transition region between epiphysis and diaphysis?",
+      "choices": {
+        "A": "articular cartilage",
+        "B": "subchondral bone",
+        "C": "metaphysis",
+        "D": "tubercle"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "metaphysis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: metaphysis."
+      },
+      "why": "metaphysis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: metaphysis.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "metaphysis."
+    },
+    {
+      "id": "ch18-skeletal-v1-011",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: hyaline cartilage covering synovial joint surfaces?",
+      "choices": {
+        "A": "subchondral bone",
+        "B": "tubercle",
+        "C": "tuberosity",
+        "D": "articular cartilage"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "articular cartilage is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: articular cartilage."
+      },
+      "why": "articular cartilage is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: articular cartilage.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "joints",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "articular cartilage."
+    },
+    {
+      "id": "ch18-skeletal-v1-012",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: bone layer immediately beneath articular cartilage?",
+      "choices": {
+        "A": "subchondral bone",
+        "B": "tubercle",
+        "C": "tuberosity",
+        "D": "crest"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "subchondral bone is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: subchondral bone."
+      },
+      "why": "subchondral bone is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: subchondral bone.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "joints",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "subchondral bone."
+    },
+    {
+      "id": "ch18-skeletal-v1-013",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: small rounded bony projection serving as attachment landmark?",
+      "choices": {
+        "A": "tuberosity",
+        "B": "tubercle",
+        "C": "crest",
+        "D": "spine process"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "tubercle is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: tubercle."
+      },
+      "why": "tubercle is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: tubercle.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "tubercle."
+    },
+    {
+      "id": "ch18-skeletal-v1-014",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: larger roughened bony projection commonly used for attachment?",
+      "choices": {
+        "A": "crest",
+        "B": "spine process",
+        "C": "tuberosity",
+        "D": "condyle"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "tuberosity is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: tuberosity."
+      },
+      "why": "tuberosity is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: tuberosity.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "tuberosity."
+    },
+    {
+      "id": "ch18-skeletal-v1-015",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: prominent elongated bony ridge?",
+      "choices": {
+        "A": "spine process",
+        "B": "condyle",
+        "C": "epicondyle",
+        "D": "crest"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "crest is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: crest."
+      },
+      "why": "crest is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: crest.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "crest."
+    },
+    {
+      "id": "ch18-skeletal-v1-016",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: sharp slender bony projection term used in many landmarks?",
+      "choices": {
+        "A": "spine process",
+        "B": "condyle",
+        "C": "epicondyle",
+        "D": "foramen"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "spine process is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: spine process."
+      },
+      "why": "spine process is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: spine process.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "spine process."
+    },
+    {
+      "id": "ch18-skeletal-v1-017",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: rounded articular prominence at bone end?",
+      "choices": {
+        "A": "epicondyle",
+        "B": "condyle",
+        "C": "foramen",
+        "D": "fossa"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "condyle is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: condyle."
+      },
+      "why": "condyle is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: condyle.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "condyle."
+    },
+    {
+      "id": "ch18-skeletal-v1-018",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: projection located above or beside a condyle?",
+      "choices": {
+        "A": "foramen",
+        "B": "fossa",
+        "C": "epicondyle",
+        "D": "facet"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "epicondyle is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: epicondyle."
+      },
+      "why": "epicondyle is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: epicondyle.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "epicondyle."
+    },
+    {
+      "id": "ch18-skeletal-v1-019",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: opening through bone for passage of structures?",
+      "choices": {
+        "A": "fossa",
+        "B": "facet",
+        "C": "head of bone",
+        "D": "foramen"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "foramen is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: foramen."
+      },
+      "why": "foramen is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: foramen.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "foramen."
+    },
+    {
+      "id": "ch18-skeletal-v1-020",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: shallow depression on a bone surface?",
+      "choices": {
+        "A": "fossa",
+        "B": "facet",
+        "C": "head of bone",
+        "D": "neck of bone"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "fossa is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fossa."
+      },
+      "why": "fossa is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fossa.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "fossa."
+    },
+    {
+      "id": "ch18-skeletal-v1-021",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: small relatively flat articular surface?",
+      "choices": {
+        "A": "head of bone",
+        "B": "facet",
+        "C": "neck of bone",
+        "D": "axial skeleton"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "facet is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: facet."
+      },
+      "why": "facet is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: facet.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "facet."
+    },
+    {
+      "id": "ch18-skeletal-v1-022",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: rounded expanded articular end of a bone?",
+      "choices": {
+        "A": "neck of bone",
+        "B": "axial skeleton",
+        "C": "head of bone",
+        "D": "appendicular skeleton"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "head of bone is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: head of bone."
+      },
+      "why": "head of bone is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: head of bone.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "head of bone."
+    },
+    {
+      "id": "ch18-skeletal-v1-023",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: narrow region adjacent to a bone head?",
+      "choices": {
+        "A": "axial skeleton",
+        "B": "appendicular skeleton",
+        "C": "fibrous joint",
+        "D": "neck of bone"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "neck of bone is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: neck of bone."
+      },
+      "why": "neck of bone is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: neck of bone.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "neck of bone."
+    },
+    {
+      "id": "ch18-skeletal-v1-024",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: skeletal division including skull vertebral column and thoracic cage?",
+      "choices": {
+        "A": "axial skeleton",
+        "B": "appendicular skeleton",
+        "C": "fibrous joint",
+        "D": "cartilaginous joint"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "axial skeleton is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: axial skeleton."
+      },
+      "why": "axial skeleton is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: axial skeleton.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "skeletal-divisions",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "axial skeleton."
+    },
+    {
+      "id": "ch18-skeletal-v1-025",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: skeletal division including limbs and limb girdles?",
+      "choices": {
+        "A": "fibrous joint",
+        "B": "appendicular skeleton",
+        "C": "cartilaginous joint",
+        "D": "synovial joint"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "appendicular skeleton is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: appendicular skeleton."
+      },
+      "why": "appendicular skeleton is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: appendicular skeleton.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "skeletal-divisions",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "appendicular skeleton."
+    },
+    {
+      "id": "ch18-skeletal-v1-026",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint class connected primarily by dense connective tissue?",
+      "choices": {
+        "A": "cartilaginous joint",
+        "B": "synovial joint",
+        "C": "fibrous joint",
+        "D": "synovial cavity"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "fibrous joint is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fibrous joint."
+      },
+      "why": "fibrous joint is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fibrous joint.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "joint-classification",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "fibrous joint."
+    },
+    {
+      "id": "ch18-skeletal-v1-027",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint class connected primarily by cartilage?",
+      "choices": {
+        "A": "synovial joint",
+        "B": "synovial cavity",
+        "C": "synovial membrane",
+        "D": "cartilaginous joint"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "cartilaginous joint is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: cartilaginous joint."
+      },
+      "why": "cartilaginous joint is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: cartilaginous joint.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "joint-classification",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "cartilaginous joint."
+    },
+    {
+      "id": "ch18-skeletal-v1-028",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint class with capsule cavity and synovial fluid?",
+      "choices": {
+        "A": "synovial joint",
+        "B": "synovial cavity",
+        "C": "synovial membrane",
+        "D": "fibrous capsule"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "synovial joint is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: synovial joint."
+      },
+      "why": "synovial joint is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: synovial joint.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "joint-classification",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "synovial joint."
+    },
+    {
+      "id": "ch18-skeletal-v1-029",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fluid-containing space inside a synovial joint?",
+      "choices": {
+        "A": "synovial membrane",
+        "B": "synovial cavity",
+        "C": "fibrous capsule",
+        "D": "synovial fluid"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "synovial cavity is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: synovial cavity."
+      },
+      "why": "synovial cavity is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: synovial cavity.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "synovial cavity."
+    },
+    {
+      "id": "ch18-skeletal-v1-030",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inner lining of synovial capsule producing synovial fluid?",
+      "choices": {
+        "A": "fibrous capsule",
+        "B": "synovial fluid",
+        "C": "synovial membrane",
+        "D": "ligament"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "synovial membrane is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: synovial membrane."
+      },
+      "why": "synovial membrane is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: synovial membrane.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "synovial membrane."
+    },
+    {
+      "id": "ch18-skeletal-v1-031",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: outer connective tissue layer enclosing a synovial joint?",
+      "choices": {
+        "A": "synovial fluid",
+        "B": "ligament",
+        "C": "bursa",
+        "D": "fibrous capsule"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "fibrous capsule is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fibrous capsule."
+      },
+      "why": "fibrous capsule is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fibrous capsule.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "fibrous capsule."
+    },
+    {
+      "id": "ch18-skeletal-v1-032",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: lubricating fluid reducing friction in synovial joints?",
+      "choices": {
+        "A": "synovial fluid",
+        "B": "ligament",
+        "C": "bursa",
+        "D": "meniscus concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "synovial fluid is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: synovial fluid."
+      },
+      "why": "synovial fluid is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: synovial fluid.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "synovial fluid."
+    },
+    {
+      "id": "ch18-skeletal-v1-033",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: connective tissue structure linking bone to bone?",
+      "choices": {
+        "A": "bursa",
+        "B": "ligament",
+        "C": "meniscus concept",
+        "D": "hyaline cartilage"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "ligament is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: ligament."
+      },
+      "why": "ligament is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: ligament.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "ligament."
+    },
+    {
+      "id": "ch18-skeletal-v1-034",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fluid-filled sac reducing friction between moving tissues?",
+      "choices": {
+        "A": "meniscus concept",
+        "B": "hyaline cartilage",
+        "C": "bursa",
+        "D": "fibrocartilage"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "bursa is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: bursa."
+      },
+      "why": "bursa is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: bursa.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "bursa."
+    },
+    {
+      "id": "ch18-skeletal-v1-035",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fibrocartilage structure concept improving joint congruency and load distribution?",
+      "choices": {
+        "A": "hyaline cartilage",
+        "B": "fibrocartilage",
+        "C": "elastic cartilage",
+        "D": "meniscus concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "meniscus concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: meniscus concept."
+      },
+      "why": "meniscus concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: meniscus concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "meniscus concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-036",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: cartilage type commonly covering articular surfaces and supporting smooth motion?",
+      "choices": {
+        "A": "hyaline cartilage",
+        "B": "fibrocartilage",
+        "C": "elastic cartilage",
+        "D": "cervical spine region"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hyaline cartilage is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: hyaline cartilage."
+      },
+      "why": "hyaline cartilage is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: hyaline cartilage.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "cartilage-types",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "hyaline cartilage."
+    },
+    {
+      "id": "ch18-skeletal-v1-037",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: cartilage type rich in collagen supporting tensile and compressive loads?",
+      "choices": {
+        "A": "elastic cartilage",
+        "B": "fibrocartilage",
+        "C": "cervical spine region",
+        "D": "thoracic spine region"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "fibrocartilage is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fibrocartilage."
+      },
+      "why": "fibrocartilage is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fibrocartilage.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "cartilage-types",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "fibrocartilage."
+    },
+    {
+      "id": "ch18-skeletal-v1-038",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: cartilage type with higher elasticity in flexible structures?",
+      "choices": {
+        "A": "cervical spine region",
+        "B": "thoracic spine region",
+        "C": "elastic cartilage",
+        "D": "lumbar spine region"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "elastic cartilage is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: elastic cartilage."
+      },
+      "why": "elastic cartilage is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: elastic cartilage.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "cartilage-types",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "elastic cartilage."
+    },
+    {
+      "id": "ch18-skeletal-v1-039",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: vertebral region in neck containing seven vertebrae?",
+      "choices": {
+        "A": "thoracic spine region",
+        "B": "lumbar spine region",
+        "C": "sacrum",
+        "D": "cervical spine region"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "cervical spine region is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: cervical spine region."
+      },
+      "why": "cervical spine region is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: cervical spine region.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "cervical spine region."
+    },
+    {
+      "id": "ch18-skeletal-v1-040",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: vertebral region associated with rib articulations?",
+      "choices": {
+        "A": "thoracic spine region",
+        "B": "lumbar spine region",
+        "C": "sacrum",
+        "D": "coccyx"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thoracic spine region is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: thoracic spine region."
+      },
+      "why": "thoracic spine region is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: thoracic spine region.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "thoracic spine region."
+    },
+    {
+      "id": "ch18-skeletal-v1-041",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: vertebral region in lower back with larger load-bearing vertebrae?",
+      "choices": {
+        "A": "sacrum",
+        "B": "lumbar spine region",
+        "C": "coccyx",
+        "D": "intervertebral disc"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lumbar spine region is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lumbar spine region."
+      },
+      "why": "lumbar spine region is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lumbar spine region.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "lumbar spine region."
+    },
+    {
+      "id": "ch18-skeletal-v1-042",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fused vertebral structure forming posterior pelvis base?",
+      "choices": {
+        "A": "coccyx",
+        "B": "intervertebral disc",
+        "C": "sacrum",
+        "D": "annulus fibrosus"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "sacrum is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: sacrum."
+      },
+      "why": "sacrum is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: sacrum.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "sacrum."
+    },
+    {
+      "id": "ch18-skeletal-v1-043",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: terminal fused vertebral segment inferior to sacrum?",
+      "choices": {
+        "A": "intervertebral disc",
+        "B": "annulus fibrosus",
+        "C": "nucleus pulposus",
+        "D": "coccyx"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "coccyx is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: coccyx."
+      },
+      "why": "coccyx is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: coccyx.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "coccyx."
+    },
+    {
+      "id": "ch18-skeletal-v1-044",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fibrocartilaginous structure between vertebral bodies?",
+      "choices": {
+        "A": "intervertebral disc",
+        "B": "annulus fibrosus",
+        "C": "nucleus pulposus",
+        "D": "normal cervical lordosis"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "intervertebral disc is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: intervertebral disc."
+      },
+      "why": "intervertebral disc is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: intervertebral disc.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "intervertebral disc."
+    },
+    {
+      "id": "ch18-skeletal-v1-045",
+      "blueprint_code": "1.A.6",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: outer fibrous ring of intervertebral disc?",
+      "choices": {
+        "A": "nucleus pulposus",
+        "B": "annulus fibrosus",
+        "C": "normal cervical lordosis",
+        "D": "normal thoracic kyphosis"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "annulus fibrosus is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: annulus fibrosus."
+      },
+      "why": "annulus fibrosus is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: annulus fibrosus.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "annulus fibrosus."
+    },
+    {
+      "id": "ch18-skeletal-v1-046",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint movement decreasing angle between segments in sagittal plane?",
+      "choices": {
+        "A": "extension",
+        "B": "abduction",
+        "C": "flexion",
+        "D": "adduction"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "flexion is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: flexion."
+      },
+      "why": "flexion is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: flexion.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "flexion."
+    },
+    {
+      "id": "ch18-skeletal-v1-047",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint movement increasing angle between segments in sagittal plane?",
+      "choices": {
+        "A": "abduction",
+        "B": "adduction",
+        "C": "internal rotation",
+        "D": "extension"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "extension is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: extension."
+      },
+      "why": "extension is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: extension.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "extension."
+    },
+    {
+      "id": "ch18-skeletal-v1-048",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint movement away from midline in frontal plane?",
+      "choices": {
+        "A": "abduction",
+        "B": "adduction",
+        "C": "internal rotation",
+        "D": "external rotation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "abduction is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: abduction."
+      },
+      "why": "abduction is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: abduction.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "abduction."
+    },
+    {
+      "id": "ch18-skeletal-v1-049",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: joint movement toward midline in frontal plane?",
+      "choices": {
+        "A": "internal rotation",
+        "B": "adduction",
+        "C": "external rotation",
+        "D": "circumduction concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "adduction is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: adduction."
+      },
+      "why": "adduction is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: adduction.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "adduction."
+    },
+    {
+      "id": "ch18-skeletal-v1-050",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: axial movement turning anterior surface toward midline?",
+      "choices": {
+        "A": "external rotation",
+        "B": "circumduction concept",
+        "C": "internal rotation",
+        "D": "pronation concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "internal rotation is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: internal rotation."
+      },
+      "why": "internal rotation is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: internal rotation.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "internal rotation."
+    },
+    {
+      "id": "ch18-skeletal-v1-051",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: axial movement turning anterior surface away from midline?",
+      "choices": {
+        "A": "circumduction concept",
+        "B": "pronation concept",
+        "C": "supination concept",
+        "D": "external rotation"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "external rotation is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: external rotation."
+      },
+      "why": "external rotation is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: external rotation.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "external rotation."
+    },
+    {
+      "id": "ch18-skeletal-v1-052",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: combined movement concept tracing a cone-like path?",
+      "choices": {
+        "A": "circumduction concept",
+        "B": "pronation concept",
+        "C": "supination concept",
+        "D": "dorsiflexion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "circumduction concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: circumduction concept."
+      },
+      "why": "circumduction concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: circumduction concept.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "circumduction concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-053",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: forearm rotational concept with palm turning posterior/down in anatomical terms?",
+      "choices": {
+        "A": "supination concept",
+        "B": "pronation concept",
+        "C": "dorsiflexion",
+        "D": "plantarflexion"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pronation concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: pronation concept."
+      },
+      "why": "pronation concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: pronation concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "pronation concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-054",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: forearm rotational concept with palm turning anterior/up in anatomical terms?",
+      "choices": {
+        "A": "dorsiflexion",
+        "B": "plantarflexion",
+        "C": "supination concept",
+        "D": "neutral spine concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "supination concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: supination concept."
+      },
+      "why": "supination concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: supination concept.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "supination concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-055",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: ankle movement bringing dorsum of foot toward shin?",
+      "choices": {
+        "A": "plantarflexion",
+        "B": "neutral spine concept",
+        "C": "anterior pelvic tilt concept",
+        "D": "dorsiflexion"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "dorsiflexion is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: dorsiflexion."
+      },
+      "why": "dorsiflexion is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: dorsiflexion.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "dorsiflexion."
+    },
+    {
+      "id": "ch18-skeletal-v1-056",
+      "blueprint_code": "2.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: ankle movement pointing foot downward?",
+      "choices": {
+        "A": "plantarflexion",
+        "B": "neutral spine concept",
+        "C": "anterior pelvic tilt concept",
+        "D": "posterior pelvic tilt concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "plantarflexion is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: plantarflexion."
+      },
+      "why": "plantarflexion is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: plantarflexion.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "plantarflexion."
+    },
+    {
+      "id": "ch18-skeletal-v1-057",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: postural concept balancing physiological curves without excessive strain?",
+      "choices": {
+        "A": "anterior pelvic tilt concept",
+        "B": "neutral spine concept",
+        "C": "posterior pelvic tilt concept",
+        "D": "sagittal plane association"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "neutral spine concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: neutral spine concept."
+      },
+      "why": "neutral spine concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: neutral spine concept.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "posture",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "neutral spine concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-058",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pelvic orientation concept where ASIS tends to move anterior/inferior?",
+      "choices": {
+        "A": "posterior pelvic tilt concept",
+        "B": "sagittal plane association",
+        "C": "anterior pelvic tilt concept",
+        "D": "frontal plane association"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "anterior pelvic tilt concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: anterior pelvic tilt concept."
+      },
+      "why": "anterior pelvic tilt concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: anterior pelvic tilt concept.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "posture",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "anterior pelvic tilt concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-059",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pelvic orientation concept where ASIS tends to move posterior/superior?",
+      "choices": {
+        "A": "sagittal plane association",
+        "B": "frontal plane association",
+        "C": "transverse plane association",
+        "D": "posterior pelvic tilt concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "posterior pelvic tilt concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: posterior pelvic tilt concept."
+      },
+      "why": "posterior pelvic tilt concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: posterior pelvic tilt concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "posture",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "posterior pelvic tilt concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-060",
+      "blueprint_code": "2.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: movement-plane association for flexion and extension patterns?",
+      "choices": {
+        "A": "sagittal plane association",
+        "B": "frontal plane association",
+        "C": "transverse plane association",
+        "D": "acute fracture suspicion referral"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "sagittal plane association is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: sagittal plane association."
+      },
+      "why": "sagittal plane association is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: sagittal plane association.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "planes",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "sagittal plane association."
+    },
+    {
+      "id": "ch18-skeletal-v1-061",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: gel-like central core of intervertebral disc?",
+      "choices": {
+        "A": "normal cervical lordosis",
+        "B": "nucleus pulposus",
+        "C": "normal thoracic kyphosis",
+        "D": "normal lumbar lordosis"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "nucleus pulposus is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: nucleus pulposus."
+      },
+      "why": "nucleus pulposus is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: nucleus pulposus.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "nucleus pulposus."
+    },
+    {
+      "id": "ch18-skeletal-v1-062",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: anteriorly convex cervical curvature pattern?",
+      "choices": {
+        "A": "normal thoracic kyphosis",
+        "B": "normal lumbar lordosis",
+        "C": "normal cervical lordosis",
+        "D": "scoliosis definition concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "normal cervical lordosis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: normal cervical lordosis."
+      },
+      "why": "normal cervical lordosis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: normal cervical lordosis.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "curvature",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "normal cervical lordosis."
+    },
+    {
+      "id": "ch18-skeletal-v1-063",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: posteriorly convex thoracic curvature pattern?",
+      "choices": {
+        "A": "normal lumbar lordosis",
+        "B": "scoliosis definition concept",
+        "C": "vertebral body",
+        "D": "normal thoracic kyphosis"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "normal thoracic kyphosis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: normal thoracic kyphosis."
+      },
+      "why": "normal thoracic kyphosis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: normal thoracic kyphosis.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "curvature",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "normal thoracic kyphosis."
+    },
+    {
+      "id": "ch18-skeletal-v1-064",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: anteriorly convex lumbar curvature pattern?",
+      "choices": {
+        "A": "normal lumbar lordosis",
+        "B": "scoliosis definition concept",
+        "C": "vertebral body",
+        "D": "vertebral arch"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "normal lumbar lordosis is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: normal lumbar lordosis."
+      },
+      "why": "normal lumbar lordosis is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: normal lumbar lordosis.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "curvature",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "normal lumbar lordosis."
+    },
+    {
+      "id": "ch18-skeletal-v1-065",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: lateral spinal curvature definition concept in frontal plane?",
+      "choices": {
+        "A": "vertebral body",
+        "B": "scoliosis definition concept",
+        "C": "vertebral arch",
+        "D": "vertebral foramen"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "scoliosis definition concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: scoliosis definition concept."
+      },
+      "why": "scoliosis definition concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: scoliosis definition concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "curvature",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "scoliosis definition concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-066",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: anterior weight-bearing portion of a vertebra?",
+      "choices": {
+        "A": "vertebral arch",
+        "B": "vertebral foramen",
+        "C": "vertebral body",
+        "D": "costal cartilage concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "vertebral body is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: vertebral body."
+      },
+      "why": "vertebral body is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: vertebral body.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "vertebral body."
+    },
+    {
+      "id": "ch18-skeletal-v1-067",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: posterior vertebral structure enclosing vertebral foramen?",
+      "choices": {
+        "A": "vertebral foramen",
+        "B": "costal cartilage concept",
+        "C": "sternum",
+        "D": "vertebral arch"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "vertebral arch is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: vertebral arch."
+      },
+      "why": "vertebral arch is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: vertebral arch.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "vertebral arch."
+    },
+    {
+      "id": "ch18-skeletal-v1-068",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: opening within vertebra contributing to spinal canal?",
+      "choices": {
+        "A": "vertebral foramen",
+        "B": "costal cartilage concept",
+        "C": "sternum",
+        "D": "rib cage framework"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "vertebral foramen is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: vertebral foramen."
+      },
+      "why": "vertebral foramen is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: vertebral foramen.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "vertebral foramen."
+    },
+    {
+      "id": "ch18-skeletal-v1-069",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: cartilage connecting ribs to sternum regionally?",
+      "choices": {
+        "A": "sternum",
+        "B": "costal cartilage concept",
+        "C": "rib cage framework",
+        "D": "suture joint concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "costal cartilage concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: costal cartilage concept."
+      },
+      "why": "costal cartilage concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: costal cartilage concept.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "thorax",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "costal cartilage concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-070",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: midline thoracic bone including manubrium body and xiphoid?",
+      "choices": {
+        "A": "rib cage framework",
+        "B": "suture joint concept",
+        "C": "sternum",
+        "D": "symphysis concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "sternum is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: sternum."
+      },
+      "why": "sternum is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: sternum.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "thorax",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "sternum."
+    },
+    {
+      "id": "ch18-skeletal-v1-071",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: thoracic skeletal framework contributing to protection and respiratory movement?",
+      "choices": {
+        "A": "suture joint concept",
+        "B": "symphysis concept",
+        "C": "growth plate concept",
+        "D": "rib cage framework"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "rib cage framework is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: rib cage framework."
+      },
+      "why": "rib cage framework is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: rib cage framework.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "thorax",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "rib cage framework."
+    },
+    {
+      "id": "ch18-skeletal-v1-072",
+      "blueprint_code": "2.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: fibrous joint concept typical of many skull articulations?",
+      "choices": {
+        "A": "suture joint concept",
+        "B": "symphysis concept",
+        "C": "growth plate concept",
+        "D": "sesamoid bone concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "suture joint concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: suture joint concept."
+      },
+      "why": "suture joint concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: suture joint concept.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "joint-classification",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "suture joint concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-073",
+      "blueprint_code": "2.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: cartilaginous joint concept with fibrocartilage connection?",
+      "choices": {
+        "A": "growth plate concept",
+        "B": "symphysis concept",
+        "C": "sesamoid bone concept",
+        "D": "compact bone"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "symphysis concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: symphysis concept."
+      },
+      "why": "symphysis concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: symphysis concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "joint-classification",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "symphysis concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-074",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: epiphyseal cartilage concept associated with longitudinal growth?",
+      "choices": {
+        "A": "sesamoid bone concept",
+        "B": "compact bone",
+        "C": "growth plate concept",
+        "D": "spongy bone"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "growth plate concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: growth plate concept."
+      },
+      "why": "growth plate concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: growth plate concept.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "growth plate concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-075",
+      "blueprint_code": "1.A.6",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: bone type concept formed within tendons to modify force vectors?",
+      "choices": {
+        "A": "compact bone",
+        "B": "spongy bone",
+        "C": "periosteum",
+        "D": "sesamoid bone concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "sesamoid bone concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: sesamoid bone concept."
+      },
+      "why": "sesamoid bone concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: sesamoid bone concept.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "sesamoid bone concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-076",
+      "blueprint_code": "2.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: movement-plane association for abduction and adduction patterns?",
+      "choices": {
+        "A": "frontal plane association",
+        "B": "transverse plane association",
+        "C": "acute fracture suspicion referral",
+        "D": "osteoporosis fragility pressure moderation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "frontal plane association is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: frontal plane association."
+      },
+      "why": "frontal plane association is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: frontal plane association.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "planes",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "frontal plane association."
+    },
+    {
+      "id": "ch18-skeletal-v1-077",
+      "blueprint_code": "2.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: movement-plane association for rotational patterns?",
+      "choices": {
+        "A": "acute fracture suspicion referral",
+        "B": "transverse plane association",
+        "C": "osteoporosis fragility pressure moderation",
+        "D": "calm referral language for severe bony pain"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "transverse plane association is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: transverse plane association."
+      },
+      "why": "transverse plane association is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: transverse plane association.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "planes",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "transverse plane association."
+    },
+    {
+      "id": "ch18-skeletal-v1-078",
+      "blueprint_code": "3.B.2",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: scope-safe action to defer and refer when acute fracture is suspected?",
+      "choices": {
+        "A": "osteoporosis fragility pressure moderation",
+        "B": "calm referral language for severe bony pain",
+        "C": "acute fracture suspicion referral",
+        "D": "observe-not-diagnose skeletal boundary"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "acute fracture suspicion referral is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: acute fracture suspicion referral."
+      },
+      "why": "acute fracture suspicion referral is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: acute fracture suspicion referral.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "caution",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "acute fracture suspicion referral."
+    },
+    {
+      "id": "ch18-skeletal-v1-079",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: pressure-moderation concept for clients reporting fragile bone status?",
+      "choices": {
+        "A": "calm referral language for severe bony pain",
+        "B": "observe-not-diagnose skeletal boundary",
+        "C": "document client-reported skeletal conditions",
+        "D": "osteoporosis fragility pressure moderation"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "osteoporosis fragility pressure moderation is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: osteoporosis fragility pressure moderation."
+      },
+      "why": "osteoporosis fragility pressure moderation is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: osteoporosis fragility pressure moderation.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "caution",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "osteoporosis fragility pressure moderation."
+    },
+    {
+      "id": "ch18-skeletal-v1-080",
+      "blueprint_code": "3.B.2",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: non-alarming referral wording when severe unexplained bony pain is reported?",
+      "choices": {
+        "A": "calm referral language for severe bony pain",
+        "B": "observe-not-diagnose skeletal boundary",
+        "C": "document client-reported skeletal conditions",
+        "D": "joint loading comfort pacing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "calm referral language for severe bony pain is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: calm referral language for severe bony pain."
+      },
+      "why": "calm referral language for severe bony pain is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: calm referral language for severe bony pain.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "referral",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "calm referral language for severe bony pain."
+    },
+    {
+      "id": "ch18-skeletal-v1-081",
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: scope boundary emphasizing observation and documentation over diagnosis?",
+      "choices": {
+        "A": "document client-reported skeletal conditions",
+        "B": "observe-not-diagnose skeletal boundary",
+        "C": "joint loading comfort pacing",
+        "D": "positioning adjustment for spinal comfort"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "observe-not-diagnose skeletal boundary is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: observe-not-diagnose skeletal boundary."
+      },
+      "why": "observe-not-diagnose skeletal boundary is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: observe-not-diagnose skeletal boundary.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "scope",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "observe-not-diagnose skeletal boundary."
+    },
+    {
+      "id": "ch18-skeletal-v1-082",
+      "blueprint_code": "5.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: objective note-taking of client-reported bone/joint conditions?",
+      "choices": {
+        "A": "joint loading comfort pacing",
+        "B": "positioning adjustment for spinal comfort",
+        "C": "document client-reported skeletal conditions",
+        "D": "end-range caution concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "document client-reported skeletal conditions is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: document client-reported skeletal conditions."
+      },
+      "why": "document client-reported skeletal conditions is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: document client-reported skeletal conditions.",
+      "difficulty": 2,
+      "tags": [
+        "skeletal",
+        "documentation",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "document client-reported skeletal conditions."
+    },
+    {
+      "id": "ch18-skeletal-v1-083",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: gradual pacing concept for movement or positioning around sensitive joints?",
+      "choices": {
+        "A": "positioning adjustment for spinal comfort",
+        "B": "end-range caution concept",
+        "C": "arthrokinematic awareness concept",
+        "D": "joint loading comfort pacing"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "joint loading comfort pacing is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: joint loading comfort pacing."
+      },
+      "why": "joint loading comfort pacing is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: joint loading comfort pacing.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "caution",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "joint loading comfort pacing."
+    },
+    {
+      "id": "ch18-skeletal-v1-084",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: positioning modification concept to reduce discomfort during session?",
+      "choices": {
+        "A": "positioning adjustment for spinal comfort",
+        "B": "end-range caution concept",
+        "C": "arthrokinematic awareness concept",
+        "D": "closed-chain movement concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "positioning adjustment for spinal comfort is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: positioning adjustment for spinal comfort."
+      },
+      "why": "positioning adjustment for spinal comfort is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: positioning adjustment for spinal comfort.",
+      "difficulty": 3,
+      "tags": [
+        "skeletal",
+        "positioning",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "positioning adjustment for spinal comfort."
+    },
+    {
+      "id": "ch18-skeletal-v1-085",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: practice concept avoiding forced end-range movement beyond comfort?",
+      "choices": {
+        "A": "arthrokinematic awareness concept",
+        "B": "end-range caution concept",
+        "C": "closed-chain movement concept",
+        "D": "open-chain movement concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "end-range caution concept is the best match for this skeletal concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: end-range caution concept."
+      },
+      "why": "end-range caution concept is the best match for this skeletal concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: end-range caution concept.",
+      "difficulty": 1,
+      "tags": [
+        "skeletal",
+        "safety",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "end-range caution concept."
+    },
+    {
+      "id": "ch18-skeletal-v1-086",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Dense outer bone tissue is called ____ bone.",
+      "correct_text": "compact",
+      "explanation": {
+        "why": "The correct fill term is compact.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: compact."
+      },
+      "why": "The correct fill term is compact.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: compact.",
+      "difficulty": 2,
+      "tags": [
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "compact."
+    },
+    {
+      "id": "ch18-skeletal-v1-087",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Lattice-like internal bone tissue is ____ bone.",
+      "correct_text": "spongy",
+      "explanation": {
+        "why": "The correct fill term is spongy.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: spongy."
+      },
+      "why": "The correct fill term is spongy.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: spongy.",
+      "difficulty": 3,
+      "tags": [
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "spongy."
+    },
+    {
+      "id": "ch18-skeletal-v1-088",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The outer membrane covering most bone surfaces is the ____.",
+      "correct_text": "periosteum",
+      "explanation": {
+        "why": "The correct fill term is periosteum.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: periosteum."
+      },
+      "why": "The correct fill term is periosteum.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: periosteum.",
+      "difficulty": 2,
+      "tags": [
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "periosteum."
+    },
+    {
+      "id": "ch18-skeletal-v1-089",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The shaft of a long bone is the ____.",
+      "correct_text": "diaphysis",
+      "explanation": {
+        "why": "The correct fill term is diaphysis.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: diaphysis."
+      },
+      "why": "The correct fill term is diaphysis.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: diaphysis.",
+      "difficulty": 1,
+      "tags": [
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "diaphysis."
+    },
+    {
+      "id": "ch18-skeletal-v1-090",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The end region of a long bone is an ____.",
+      "correct_text": "epiphysis",
+      "explanation": {
+        "why": "The correct fill term is epiphysis.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: epiphysis."
+      },
+      "why": "The correct fill term is epiphysis.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: epiphysis.",
+      "difficulty": 3,
+      "tags": [
+        "bone-structure",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "epiphysis."
+    },
+    {
+      "id": "ch18-skeletal-v1-091",
+      "blueprint_code": "2.E",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "A rounded articular prominence is called a ____.",
+      "correct_text": "condyle",
+      "explanation": {
+        "why": "The correct fill term is condyle.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: condyle."
+      },
+      "why": "The correct fill term is condyle.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: condyle.",
+      "difficulty": 1,
+      "tags": [
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "condyle."
+    },
+    {
+      "id": "ch18-skeletal-v1-092",
+      "blueprint_code": "2.E",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "A hole through bone is called a ____.",
+      "correct_text": "foramen",
+      "explanation": {
+        "why": "The correct fill term is foramen.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: foramen."
+      },
+      "why": "The correct fill term is foramen.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: foramen.",
+      "difficulty": 2,
+      "tags": [
+        "bone-markings",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "foramen."
+    },
+    {
+      "id": "ch18-skeletal-v1-093",
+      "blueprint_code": "2.E",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "A synovial joint contains a fluid-filled joint ____.",
+      "correct_text": "cavity",
+      "explanation": {
+        "why": "The correct fill term is cavity.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: cavity."
+      },
+      "why": "The correct fill term is cavity.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: cavity.",
+      "difficulty": 3,
+      "tags": [
+        "joint-features",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "cavity."
+    },
+    {
+      "id": "ch18-skeletal-v1-094",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The connective structure between vertebral bodies is the intervertebral ____.",
+      "correct_text": "disc",
+      "explanation": {
+        "why": "The correct fill term is disc.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: disc."
+      },
+      "why": "The correct fill term is disc.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: disc.",
+      "difficulty": 2,
+      "tags": [
+        "spine",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "disc."
+    },
+    {
+      "id": "ch18-skeletal-v1-095",
+      "blueprint_code": "1.A.6",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Lateral spinal curvature in frontal plane is termed ____.",
+      "correct_text": "scoliosis",
+      "explanation": {
+        "why": "The correct fill term is scoliosis.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: scoliosis."
+      },
+      "why": "The correct fill term is scoliosis.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: scoliosis.",
+      "difficulty": 1,
+      "tags": [
+        "curvature",
+        "skeletal-v1",
+        "structure"
+      ],
+      "domain": "structure",
+      "answer": "scoliosis."
+    },
+    {
+      "id": "ch18-skeletal-v1-096",
+      "blueprint_code": "2.D",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Movement decreasing a joint angle is ____.",
+      "correct_text": "flexion",
+      "explanation": {
+        "why": "The correct fill term is flexion.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: flexion."
+      },
+      "why": "The correct fill term is flexion.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: flexion.",
+      "difficulty": 3,
+      "tags": [
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "flexion."
+    },
+    {
+      "id": "ch18-skeletal-v1-097",
+      "blueprint_code": "2.D",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Movement increasing a joint angle is ____.",
+      "correct_text": "extension",
+      "explanation": {
+        "why": "The correct fill term is extension.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: extension."
+      },
+      "why": "The correct fill term is extension.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: extension.",
+      "difficulty": 1,
+      "tags": [
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "extension."
+    },
+    {
+      "id": "ch18-skeletal-v1-098",
+      "blueprint_code": "2.D",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Movement away from midline is ____.",
+      "correct_text": "abduction",
+      "explanation": {
+        "why": "The correct fill term is abduction.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: abduction."
+      },
+      "why": "The correct fill term is abduction.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: abduction.",
+      "difficulty": 2,
+      "tags": [
+        "rom",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "abduction."
+    },
+    {
+      "id": "ch18-skeletal-v1-099",
+      "blueprint_code": "3.B.2",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "If acute fracture is suspected, defer and ____.",
+      "correct_text": "refer",
+      "explanation": {
+        "why": "The correct fill term is refer.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: refer."
+      },
+      "why": "The correct fill term is refer.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: refer.",
+      "difficulty": 3,
+      "tags": [
+        "caution",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "refer."
+    },
+    {
+      "id": "ch18-skeletal-v1-100",
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Massage professionals should observe and document, not ____.",
+      "correct_text": "diagnose",
+      "explanation": {
+        "why": "The correct fill term is diagnose.",
+        "trap": "Use the exact skeletal term expected by the prompt.",
+        "hook": "Recall: diagnose."
+      },
+      "why": "The correct fill term is diagnose.",
+      "trap": "Use the exact skeletal term expected by the prompt.",
+      "hook": "Recall: diagnose.",
+      "difficulty": 2,
+      "tags": [
+        "scope",
+        "skeletal-v1",
+        "function"
+      ],
+      "domain": "function",
+      "answer": "diagnose."
+    }
+  ]
+}
