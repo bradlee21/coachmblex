@@ -379,6 +379,7 @@ export default function StudyNightRoomPage() {
   const [correctByQuestion, setCorrectByQuestion] = useState({});
   const [secondsLeft, setSecondsLeft] = useState(0);
   const [selectedGameType, setSelectedGameType] = useState('mcq');
+  const [confirmResetRoom, setConfirmResetRoom] = useState(false);
 
   const channelRef = useRef(null);
   const revealKeyRef = useRef('');
@@ -1233,6 +1234,147 @@ export default function StudyNightRoomPage() {
     }
   }
 
+  async function handleForceResync() {
+    if (!room) return;
+    if (!isHost) {
+      setMessage('Only the host can force resync.');
+      return;
+    }
+
+    try {
+      await refreshRoomSnapshot(room.id);
+      setMessage('');
+    } catch (error) {
+      const nextMessage = error instanceof Error ? error.message : 'Failed to resync room.';
+      setMessage(nextMessage);
+    }
+  }
+
+  async function handleEndGame() {
+    if (!room) return;
+    if (!isHost) {
+      setMessage('Only the host can end the game.');
+      return;
+    }
+
+    try {
+      const roomFinishResponse = await timedPostgrest(
+        `study_rooms?id=eq.${room.id}`,
+        {
+          method: 'PATCH',
+          body: { status: 'finished' },
+        },
+        'host_tools_end_room'
+      );
+      if (!roomFinishResponse.ok) {
+        throw toPostgrestError(roomFinishResponse, 'Failed to end room.');
+      }
+
+      const stateFinishResponse = await timedPostgrest(
+        `study_room_state?room_id=eq.${room.id}`,
+        {
+          method: 'PATCH',
+          body: {
+            phase: 'finished',
+            started_at: null,
+          },
+        },
+        'host_tools_end_state'
+      );
+      if (!stateFinishResponse.ok) {
+        throw toPostgrestError(stateFinishResponse, 'Failed to end room state.');
+      }
+
+      await refreshRoomSnapshot(room.id);
+      setMessage('');
+    } catch (error) {
+      const nextMessage = error instanceof Error ? error.message : 'Failed to end game.';
+      setMessage(nextMessage);
+    }
+  }
+
+  async function handleResetRoom() {
+    if (!room) return;
+    if (!isHost) {
+      setMessage('Only the host can reset the room.');
+      return;
+    }
+    if (!confirmResetRoom) {
+      setMessage('Confirm reset before continuing.');
+      return;
+    }
+
+    try {
+      const roomResetResponse = await timedPostgrest(
+        `study_rooms?id=eq.${room.id}`,
+        {
+          method: 'PATCH',
+          body: { status: 'lobby' },
+        },
+        'host_tools_reset_room'
+      );
+      if (!roomResetResponse.ok) {
+        throw toPostgrestError(roomResetResponse, 'Failed to reset room.');
+      }
+
+      const stateResetResponse = await timedPostgrest(
+        `study_room_state?room_id=eq.${room.id}`,
+        {
+          method: 'PATCH',
+          body: {
+            phase: 'pick',
+            game_type: 'mcq',
+            turn_index: 0,
+            category_key: null,
+            question_id: null,
+            started_at: null,
+            round_no: 1,
+            deck_pos: {},
+            duration_sec: getRoomDurationSec(room),
+          },
+        },
+        'host_tools_reset_state'
+      );
+      if (!stateResetResponse.ok) {
+        throw toPostgrestError(stateResetResponse, 'Failed to reset room state.');
+      }
+
+      const playersResetResponse = await timedPostgrest(
+        `study_room_players?room_id=eq.${room.id}`,
+        {
+          method: 'PATCH',
+          body: {
+            score: 0,
+            wedges: [],
+            coach_stats: {},
+            last_seen_at: new Date().toISOString(),
+          },
+        },
+        'host_tools_reset_players'
+      );
+      if (!playersResetResponse.ok) {
+        throw toPostgrestError(playersResetResponse, 'Failed to reset player progress.');
+      }
+
+      scoreBaselineRef.current = {};
+      submittedTurnKeysRef.current = {};
+      gradedTurnKeysRef.current = {};
+      coachStatsRef.current = {};
+      setCoachStatsVersion((value) => value + 1);
+      setSelectedAnswer({});
+      setFillInputByQuestion({});
+      setSubmittedByQuestion({});
+      setCorrectByQuestion({});
+      setConfirmResetRoom(false);
+
+      await refreshRoomSnapshot(room.id);
+      setMessage('');
+    } catch (error) {
+      const nextMessage = error instanceof Error ? error.message : 'Failed to reset room.';
+      setMessage(nextMessage);
+    }
+  }
+
   if (authLoading || loadingRoom) {
     return (
       <section>
@@ -1545,6 +1687,34 @@ export default function StudyNightRoomPage() {
                     : 'No suggestions.'}
                 </p>
               ) : null}
+            </>
+          ) : null}
+
+          {isHost ? (
+            <>
+              <h2>Host Tools</h2>
+              <div className="choice-list">
+                <button type="button" onClick={handleForceResync}>
+                  Force Resync
+                </button>
+                <button type="button" onClick={handleEndGame}>
+                  End Game
+                </button>
+              </div>
+              <label htmlFor="study-night-confirm-reset" className="muted">
+                <input
+                  id="study-night-confirm-reset"
+                  type="checkbox"
+                  checked={confirmResetRoom}
+                  onChange={(event) => setConfirmResetRoom(event.target.checked)}
+                />{' '}
+                Are you sure?
+              </label>
+              <div>
+                <button type="button" onClick={handleResetRoom} disabled={!confirmResetRoom}>
+                  Reset Room
+                </button>
+              </div>
             </>
           ) : null}
         </div>
