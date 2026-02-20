@@ -3,6 +3,8 @@ create table if not exists public.study_room_state (
   turn_index int not null default 0,
   phase text not null default 'pick' check (phase in ('pick', 'question', 'reveal', 'finished')),
   game_type text not null default 'mcq', -- mcq | reverse | fill
+  deck jsonb not null default '{}'::jsonb,
+  deck_pos jsonb not null default '{}'::jsonb,
   category_key text,
   question_id uuid references public.questions(id) on delete set null,
   started_at timestamptz,
@@ -16,6 +18,10 @@ alter table public.study_room_state
   add column if not exists game_type text not null default 'mcq';
 alter table public.study_room_state
   drop constraint if exists study_room_state_game_type_check;
+alter table public.study_room_state
+  add column if not exists deck jsonb not null default '{}'::jsonb;
+alter table public.study_room_state
+  add column if not exists deck_pos jsonb not null default '{}'::jsonb;
 
 create or replace function public.set_study_room_state_updated_at()
 returns trigger

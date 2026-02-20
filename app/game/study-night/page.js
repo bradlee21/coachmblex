@@ -409,6 +409,8 @@ export default function StudyNightLandingPage() {
             question_id: null,
             started_at: null,
             duration_sec: createDurationSec,
+            deck: {},
+            deck_pos: {},
           },
           headers: { prefer: 'resolution=merge-duplicates,return=representation' },
         }),

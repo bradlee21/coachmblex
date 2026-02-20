@@ -13,10 +13,14 @@ import {
 
 const DEFAULT_WIN_WEDGES = 3;
 const DEFAULT_DURATION_SEC = 12;
+const STUDY_NIGHT_GAME_TYPES = ['mcq', 'reverse', 'fill'];
+const STUDY_NIGHT_DECK_SIZE = 25;
 
 const DEFAULT_STATE = {
   phase: 'pick',
   game_type: 'mcq',
+  deck: {},
+  deck_pos: {},
   turn_index: 0,
   category_key: null,
   question_id: null,
@@ -40,7 +44,7 @@ function normalizeGameTypeMode(value) {
 }
 
 function chooseRouletteGameType(lastGameType) {
-  const options = ['mcq', 'reverse', 'fill'];
+  const options = STUDY_NIGHT_GAME_TYPES;
   const previous = normalizeGameType(lastGameType);
   let next = options[Math.floor(Math.random() * options.length)];
 
@@ -50,6 +54,29 @@ function chooseRouletteGameType(lastGameType) {
   }
 
   return next;
+}
+
+function getDeckKey(categoryKey, gameType) {
+  return `${categoryKey}:${normalizeGameType(gameType)}`;
+}
+
+function toDeckMap(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const deck = {};
+  for (const [key, ids] of Object.entries(value)) {
+    deck[key] = Array.isArray(ids) ? ids.filter((id) => typeof id === 'string') : [];
+  }
+  return deck;
+}
+
+function toDeckPosMap(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return {};
+  const deckPos = {};
+  for (const [key, pos] of Object.entries(value)) {
+    const numeric = Number(pos);
+    deckPos[key] = Number.isFinite(numeric) && numeric >= 0 ? Math.floor(numeric) : 0;
+  }
+  return deckPos;
 }
 
 function normalizeGameType(value) {
@@ -299,7 +326,7 @@ export default function StudyNightRoomPage() {
           'snapshot_players'
         ),
         timedPostgrest(
-          `study_room_state?room_id=eq.${roomId}&select=room_id,turn_index,phase,game_type,category_key,question_id,started_at,duration_sec,round_no,updated_at&limit=1`,
+          `study_room_state?room_id=eq.${roomId}&select=room_id,turn_index,phase,game_type,deck,deck_pos,category_key,question_id,started_at,duration_sec,round_no,updated_at&limit=1`,
           undefined,
           'snapshot_state'
         ),
@@ -341,6 +368,43 @@ export default function StudyNightRoomPage() {
     [setPlayers, setQuestion, setRoom, setState]
   );
 
+  const buildRoomDeck = useCallback(async () => {
+    const entries = await Promise.all(
+      studyNightCategories.flatMap((category) =>
+        STUDY_NIGHT_GAME_TYPES.map(async (gameType) => {
+          const key = getDeckKey(category.key, gameType);
+          const labelKey = key.replace(':', '_');
+          const response = await timedPostgrest(
+            `questions?select=id&question_type=eq.${gameType}&blueprint_code=like.${encodeURIComponent(
+              `${category.prefix}%`
+            )}&order=id.asc&limit=${STUDY_NIGHT_DECK_SIZE}`,
+            undefined,
+            `build_deck_${labelKey}`
+          );
+
+          if (!response.ok) {
+            devLog('[STUDY-NIGHT] build deck fetch failed', key, response);
+            return [key, []];
+          }
+
+          const ids = (Array.isArray(response.data) ? response.data : [])
+            .map((row) => row?.id)
+            .filter((id) => typeof id === 'string');
+          return [key, ids];
+        })
+      )
+    );
+
+    const deck = {};
+    const deckPos = {};
+    for (const [key, ids] of entries) {
+      deck[key] = ids;
+      deckPos[key] = 0;
+    }
+
+    return { deck, deckPos };
+  }, []);
+
   const pickCategoryAsHost = useCallback(
     async (categoryKey, gameType = 'mcq') => {
       if (!isHost || !room || room.status !== 'running' || state?.phase !== 'pick') return;
@@ -357,30 +421,62 @@ export default function StudyNightRoomPage() {
       }
 
       try {
-        const offset = Math.max(0, (state?.round_no || 1) % 10);
-        let questionResult = await timedPostgrest(
-          `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.${normalizedGameType}&blueprint_code=like.${encodeURIComponent(
-            `${category.prefix}%`
-          )}&order=id.asc&offset=${offset}&limit=1`,
-          undefined,
-          'pick_question_offset'
-        );
-        if (!questionResult.ok) {
-          throw toPostgrestError(questionResult, 'Failed to load category question.');
+        const deck = toDeckMap(state?.deck);
+        const deckPos = toDeckPosMap(state?.deck_pos);
+        const deckKey = getDeckKey(category.key, normalizedGameType);
+        const deckIds = Array.isArray(deck[deckKey]) ? deck[deckKey] : [];
+        let nextDeckPos = null;
+        let nextQuestion = null;
+
+        if (deckIds.length > 0) {
+          const pos = typeof deckPos[deckKey] === 'number' ? deckPos[deckKey] : 0;
+          const deckQuestionId = deckIds[pos % deckIds.length];
+          if (deckQuestionId) {
+            const deckQuestionResult = await timedPostgrest(
+              `questions?id=eq.${deckQuestionId}&select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&limit=1`,
+              undefined,
+              'pick_question_deck'
+            );
+            if (deckQuestionResult.ok) {
+              nextQuestion = firstRow(deckQuestionResult.data);
+              if (nextQuestion) {
+                nextDeckPos = {
+                  ...deckPos,
+                  [deckKey]: pos + 1,
+                };
+              }
+            } else {
+              devLog('[STUDY-NIGHT] deck question fallback triggered', deckKey, deckQuestionResult);
+            }
+          }
         }
-        let nextQuestion = firstRow(questionResult.data);
+
         if (!nextQuestion) {
-          questionResult = await timedPostgrest(
+          const offset = Math.max(0, (state?.round_no || 1) % 10);
+          let questionResult = await timedPostgrest(
             `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.${normalizedGameType}&blueprint_code=like.${encodeURIComponent(
               `${category.prefix}%`
-            )}&order=id.asc&offset=0&limit=1`,
+            )}&order=id.asc&offset=${offset}&limit=1`,
             undefined,
-            'pick_question_fallback'
+            'pick_question_offset'
           );
           if (!questionResult.ok) {
-            throw toPostgrestError(questionResult, 'Failed to load fallback category question.');
+            throw toPostgrestError(questionResult, 'Failed to load category question.');
           }
           nextQuestion = firstRow(questionResult.data);
+          if (!nextQuestion) {
+            questionResult = await timedPostgrest(
+              `questions?select=id,prompt,choices,correct_index,explanation,blueprint_code,question_type&question_type=eq.${normalizedGameType}&blueprint_code=like.${encodeURIComponent(
+                `${category.prefix}%`
+              )}&order=id.asc&offset=0&limit=1`,
+              undefined,
+              'pick_question_fallback'
+            );
+            if (!questionResult.ok) {
+              throw toPostgrestError(questionResult, 'Failed to load fallback category question.');
+            }
+            nextQuestion = firstRow(questionResult.data);
+          }
         }
 
         if (!nextQuestion) {
@@ -402,6 +498,7 @@ export default function StudyNightRoomPage() {
               category_key: category.key,
               question_id: nextQuestion.id,
               started_at: new Date().toISOString(),
+              ...(nextDeckPos ? { deck_pos: nextDeckPos } : {}),
             },
           },
           'pick_update_state'
@@ -425,6 +522,8 @@ export default function StudyNightRoomPage() {
       state?.phase,
       state?.round_no,
       state?.game_type,
+      state?.deck,
+      state?.deck_pos,
     ]
   );
 
@@ -677,6 +776,8 @@ export default function StudyNightRoomPage() {
   async function handleStartGame() {
     if (!isHost || !room) return;
     try {
+      const { deck, deckPos } = await buildRoomDeck();
+
       const roomUpdateResponse = await timedPostgrest(
         `study_rooms?id=eq.${room.id}`,
         {
@@ -697,6 +798,8 @@ export default function StudyNightRoomPage() {
             room_id: room.id,
             ...DEFAULT_STATE,
             duration_sec: getRoomDurationSec(room),
+            deck,
+            deck_pos: deckPos,
           },
           headers: { prefer: 'resolution=merge-duplicates,return=representation' },
         },

@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP8: added room-state `deck` and `deck_pos` support (SQL docs + migration snippets) for host-authoritative question rotation.
+- Host start now prebuilds per-category/per-game-type question ID decks and initializes deck positions for synced multiplayer selection.
+- Turn question selection now consumes `deck/deck_pos` first and advances position per key, with deterministic fallback when a deck bucket is empty.
 - Study Night TP7: added player `last_seen_at` heartbeat updates every 15 seconds for reconnect-aware activity tracking.
 - Added safe rejoin membership sync on room load so refresh/disconnect users are re-upserted if their player row is missing.
 - Added lightweight `Active X / Total Y` presence hint in the room player panel.
