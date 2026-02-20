@@ -1,0 +1,3019 @@
+{
+  "pack_id": "ch16-respiratory-v1",
+  "packId": "ch16-respiratory-v1",
+  "title": "Respiratory System Content Pack V1",
+  "chapter": "16",
+  "topic": "Respiratory System",
+  "version": "v1",
+  "source": "Chapter 16 Respiratory System (breadth mode class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "physiology": 70,
+      "applied": 30
+    }
+  },
+  "notes": "Breadth mode v1 pack with canonical blueprint-coded respiratory coverage and scope-safe applied massage considerations.",
+  "questions": [
+    {
+      "id": "ch16-respiratory-v1-001",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: airway region including nasal cavity pharynx and laryngeal structures?",
+      "choices": {
+        "A": "lower respiratory tract",
+        "B": "upper respiratory tract",
+        "C": "nasal cavity role",
+        "D": "pharynx role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "upper respiratory tract is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: upper respiratory tract."
+      },
+      "why": "upper respiratory tract is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: upper respiratory tract.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "upper respiratory tract."
+    },
+    {
+      "id": "ch16-respiratory-v1-002",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: airway region including trachea bronchi bronchioles and lungs?",
+      "choices": {
+        "A": "nasal cavity role",
+        "B": "pharynx role",
+        "C": "lower respiratory tract",
+        "D": "larynx role"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "lower respiratory tract is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: lower respiratory tract."
+      },
+      "why": "lower respiratory tract is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: lower respiratory tract.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lower respiratory tract."
+    },
+    {
+      "id": "ch16-respiratory-v1-003",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: upper-airway role in warming humidifying and filtering inhaled air?",
+      "choices": {
+        "A": "pharynx role",
+        "B": "larynx role",
+        "C": "trachea role",
+        "D": "nasal cavity role"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "nasal cavity role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: nasal cavity role."
+      },
+      "why": "nasal cavity role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: nasal cavity role.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "nasal cavity role."
+    },
+    {
+      "id": "ch16-respiratory-v1-004",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: shared passageway role connecting nasal/oral regions to lower airway?",
+      "choices": {
+        "A": "pharynx role",
+        "B": "larynx role",
+        "C": "trachea role",
+        "D": "primary bronchi"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pharynx role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: pharynx role."
+      },
+      "why": "pharynx role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: pharynx role.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "pharynx role."
+    },
+    {
+      "id": "ch16-respiratory-v1-005",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: airway structure role in voice and airway protection?",
+      "choices": {
+        "A": "trachea role",
+        "B": "larynx role",
+        "C": "primary bronchi",
+        "D": "bronchioles"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "larynx role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: larynx role."
+      },
+      "why": "larynx role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: larynx role.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "larynx role."
+    },
+    {
+      "id": "ch16-respiratory-v1-006",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: conducting airway tube carrying air toward primary bronchi?",
+      "choices": {
+        "A": "primary bronchi",
+        "B": "bronchioles",
+        "C": "trachea role",
+        "D": "alveoli"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "trachea role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: trachea role."
+      },
+      "why": "trachea role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: trachea role.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "trachea role."
+    },
+    {
+      "id": "ch16-respiratory-v1-007",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: major airway branches entering each lung?",
+      "choices": {
+        "A": "bronchioles",
+        "B": "alveoli",
+        "C": "alveolar-capillary membrane",
+        "D": "primary bronchi"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "primary bronchi is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: primary bronchi."
+      },
+      "why": "primary bronchi is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: primary bronchi.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "primary bronchi."
+    },
+    {
+      "id": "ch16-respiratory-v1-008",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: small conducting airway branches leading toward alveolar regions?",
+      "choices": {
+        "A": "bronchioles",
+        "B": "alveoli",
+        "C": "alveolar-capillary membrane",
+        "D": "visceral pleura"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "bronchioles is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: bronchioles."
+      },
+      "why": "bronchioles is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: bronchioles.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "bronchioles."
+    },
+    {
+      "id": "ch16-respiratory-v1-009",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: microscopic air sacs where gas exchange primarily occurs?",
+      "choices": {
+        "A": "alveolar-capillary membrane",
+        "B": "alveoli",
+        "C": "visceral pleura",
+        "D": "parietal pleura"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "alveoli is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: alveoli."
+      },
+      "why": "alveoli is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: alveoli.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "anatomy",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "alveoli."
+    },
+    {
+      "id": "ch16-respiratory-v1-010",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: thin interface where oxygen and carbon dioxide diffuse?",
+      "choices": {
+        "A": "visceral pleura",
+        "B": "parietal pleura",
+        "C": "alveolar-capillary membrane",
+        "D": "pleural fluid"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "alveolar-capillary membrane is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: alveolar-capillary membrane."
+      },
+      "why": "alveolar-capillary membrane is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: alveolar-capillary membrane.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "alveolar-capillary membrane."
+    },
+    {
+      "id": "ch16-respiratory-v1-011",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pleural layer directly covering lung surfaces?",
+      "choices": {
+        "A": "parietal pleura",
+        "B": "pleural fluid",
+        "C": "negative intrapleural pressure concept",
+        "D": "visceral pleura"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "visceral pleura is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: visceral pleura."
+      },
+      "why": "visceral pleura is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: visceral pleura.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "pleura",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "visceral pleura."
+    },
+    {
+      "id": "ch16-respiratory-v1-012",
+      "blueprint_code": "1.A.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pleural layer lining inner thoracic cavity wall?",
+      "choices": {
+        "A": "parietal pleura",
+        "B": "pleural fluid",
+        "C": "negative intrapleural pressure concept",
+        "D": "diaphragm"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "parietal pleura is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: parietal pleura."
+      },
+      "why": "parietal pleura is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: parietal pleura.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "pleura",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "parietal pleura."
+    },
+    {
+      "id": "ch16-respiratory-v1-013",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: lubricating fluid reducing friction between pleural layers?",
+      "choices": {
+        "A": "negative intrapleural pressure concept",
+        "B": "pleural fluid",
+        "C": "diaphragm",
+        "D": "external intercostals"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pleural fluid is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: pleural fluid."
+      },
+      "why": "pleural fluid is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: pleural fluid.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "pleura",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "pleural fluid."
+    },
+    {
+      "id": "ch16-respiratory-v1-014",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pressure relationship helping maintain lung expansion?",
+      "choices": {
+        "A": "diaphragm",
+        "B": "external intercostals",
+        "C": "negative intrapleural pressure concept",
+        "D": "inhalation"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "negative intrapleural pressure concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: negative intrapleural pressure concept."
+      },
+      "why": "negative intrapleural pressure concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: negative intrapleural pressure concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "negative intrapleural pressure concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-015",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: primary muscle of quiet inhalation?",
+      "choices": {
+        "A": "external intercostals",
+        "B": "inhalation",
+        "C": "exhalation at rest",
+        "D": "diaphragm"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "diaphragm is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: diaphragm."
+      },
+      "why": "diaphragm is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: diaphragm.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "diaphragm."
+    },
+    {
+      "id": "ch16-respiratory-v1-016",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: muscles that assist rib cage expansion during inhalation?",
+      "choices": {
+        "A": "external intercostals",
+        "B": "inhalation",
+        "C": "exhalation at rest",
+        "D": "forced exhalation concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "external intercostals is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: external intercostals."
+      },
+      "why": "external intercostals is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: external intercostals.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "external intercostals."
+    },
+    {
+      "id": "ch16-respiratory-v1-017",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: phase where thoracic expansion promotes airflow into lungs?",
+      "choices": {
+        "A": "exhalation at rest",
+        "B": "inhalation",
+        "C": "forced exhalation concept",
+        "D": "thoracic volume increase"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "inhalation is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: inhalation."
+      },
+      "why": "inhalation is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: inhalation.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "inhalation."
+    },
+    {
+      "id": "ch16-respiratory-v1-018",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: phase where elastic recoil drives airflow out under quiet conditions?",
+      "choices": {
+        "A": "forced exhalation concept",
+        "B": "thoracic volume increase",
+        "C": "exhalation at rest",
+        "D": "thoracic volume decrease"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "exhalation at rest is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: exhalation at rest."
+      },
+      "why": "exhalation at rest is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: exhalation at rest.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "exhalation at rest."
+    },
+    {
+      "id": "ch16-respiratory-v1-019",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: active exhalation pattern recruiting additional expiratory muscles?",
+      "choices": {
+        "A": "thoracic volume increase",
+        "B": "thoracic volume decrease",
+        "C": "ventilation",
+        "D": "forced exhalation concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "forced exhalation concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: forced exhalation concept."
+      },
+      "why": "forced exhalation concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: forced exhalation concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "forced exhalation concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-020",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: mechanical change generally associated with inhalation?",
+      "choices": {
+        "A": "thoracic volume increase",
+        "B": "thoracic volume decrease",
+        "C": "ventilation",
+        "D": "perfusion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thoracic volume increase is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: thoracic volume increase."
+      },
+      "why": "thoracic volume increase is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: thoracic volume increase.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thoracic volume increase."
+    },
+    {
+      "id": "ch16-respiratory-v1-021",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: mechanical change generally associated with exhalation?",
+      "choices": {
+        "A": "ventilation",
+        "B": "thoracic volume decrease",
+        "C": "perfusion",
+        "D": "ventilation-perfusion matching concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "thoracic volume decrease is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: thoracic volume decrease."
+      },
+      "why": "thoracic volume decrease is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: thoracic volume decrease.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thoracic volume decrease."
+    },
+    {
+      "id": "ch16-respiratory-v1-022",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: movement of air between atmosphere and alveoli?",
+      "choices": {
+        "A": "perfusion",
+        "B": "ventilation-perfusion matching concept",
+        "C": "ventilation",
+        "D": "physiologic dead space concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "ventilation is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: ventilation."
+      },
+      "why": "ventilation is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: ventilation.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "ventilation."
+    },
+    {
+      "id": "ch16-respiratory-v1-023",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: blood flow through pulmonary capillaries around alveoli?",
+      "choices": {
+        "A": "ventilation-perfusion matching concept",
+        "B": "physiologic dead space concept",
+        "C": "diffusion gradient concept",
+        "D": "perfusion"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "perfusion is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: perfusion."
+      },
+      "why": "perfusion is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: perfusion.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "v-q",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "perfusion."
+    },
+    {
+      "id": "ch16-respiratory-v1-024",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level concept that effective gas exchange needs balanced airflow and blood flow?",
+      "choices": {
+        "A": "ventilation-perfusion matching concept",
+        "B": "physiologic dead space concept",
+        "C": "diffusion gradient concept",
+        "D": "oxygen diffusion direction"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "ventilation-perfusion matching concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: ventilation-perfusion matching concept."
+      },
+      "why": "ventilation-perfusion matching concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: ventilation-perfusion matching concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "v-q",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "ventilation-perfusion matching concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-025",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: ventilated volume not participating effectively in gas exchange?",
+      "choices": {
+        "A": "diffusion gradient concept",
+        "B": "physiologic dead space concept",
+        "C": "oxygen diffusion direction",
+        "D": "carbon dioxide diffusion direction"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "physiologic dead space concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: physiologic dead space concept."
+      },
+      "why": "physiologic dead space concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: physiologic dead space concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "v-q",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "physiologic dead space concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-026",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: gas movement from higher to lower partial pressure regions?",
+      "choices": {
+        "A": "oxygen diffusion direction",
+        "B": "carbon dioxide diffusion direction",
+        "C": "diffusion gradient concept",
+        "D": "hemoglobin oxygen transport"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "diffusion gradient concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: diffusion gradient concept."
+      },
+      "why": "diffusion gradient concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: diffusion gradient concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "diffusion gradient concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-027",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: typical net movement of oxygen from alveoli into pulmonary blood?",
+      "choices": {
+        "A": "carbon dioxide diffusion direction",
+        "B": "hemoglobin oxygen transport",
+        "C": "carbon dioxide transport forms",
+        "D": "oxygen diffusion direction"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "oxygen diffusion direction is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: oxygen diffusion direction."
+      },
+      "why": "oxygen diffusion direction is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: oxygen diffusion direction.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "oxygen diffusion direction."
+    },
+    {
+      "id": "ch16-respiratory-v1-028",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: typical net movement of carbon dioxide from blood into alveoli?",
+      "choices": {
+        "A": "carbon dioxide diffusion direction",
+        "B": "hemoglobin oxygen transport",
+        "C": "carbon dioxide transport forms",
+        "D": "tidal volume"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "carbon dioxide diffusion direction is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: carbon dioxide diffusion direction."
+      },
+      "why": "carbon dioxide diffusion direction is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: carbon dioxide diffusion direction.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "carbon dioxide diffusion direction."
+    },
+    {
+      "id": "ch16-respiratory-v1-029",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: primary blood transport mechanism for oxygen?",
+      "choices": {
+        "A": "carbon dioxide transport forms",
+        "B": "hemoglobin oxygen transport",
+        "C": "tidal volume",
+        "D": "inspiratory reserve volume concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "hemoglobin oxygen transport is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: hemoglobin oxygen transport."
+      },
+      "why": "hemoglobin oxygen transport is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: hemoglobin oxygen transport.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "transport",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "hemoglobin oxygen transport."
+    },
+    {
+      "id": "ch16-respiratory-v1-030",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level concept that carbon dioxide travels dissolved bound and bicarbonate-associated?",
+      "choices": {
+        "A": "tidal volume",
+        "B": "inspiratory reserve volume concept",
+        "C": "carbon dioxide transport forms",
+        "D": "expiratory reserve volume concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "carbon dioxide transport forms is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: carbon dioxide transport forms."
+      },
+      "why": "carbon dioxide transport forms is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: carbon dioxide transport forms.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "transport",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "carbon dioxide transport forms."
+    },
+    {
+      "id": "ch16-respiratory-v1-031",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: air volume moved during a typical quiet breath?",
+      "choices": {
+        "A": "inspiratory reserve volume concept",
+        "B": "expiratory reserve volume concept",
+        "C": "residual volume concept",
+        "D": "tidal volume"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "tidal volume is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: tidal volume."
+      },
+      "why": "tidal volume is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: tidal volume.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "tidal volume."
+    },
+    {
+      "id": "ch16-respiratory-v1-032",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: additional inhaled volume beyond quiet inspiration?",
+      "choices": {
+        "A": "inspiratory reserve volume concept",
+        "B": "expiratory reserve volume concept",
+        "C": "residual volume concept",
+        "D": "vital capacity concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "inspiratory reserve volume concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: inspiratory reserve volume concept."
+      },
+      "why": "inspiratory reserve volume concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: inspiratory reserve volume concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "inspiratory reserve volume concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-033",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: additional exhaled volume beyond quiet exhalation?",
+      "choices": {
+        "A": "residual volume concept",
+        "B": "expiratory reserve volume concept",
+        "C": "vital capacity concept",
+        "D": "minute ventilation concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "expiratory reserve volume concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: expiratory reserve volume concept."
+      },
+      "why": "expiratory reserve volume concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: expiratory reserve volume concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "expiratory reserve volume concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-034",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: air remaining in lungs after maximal exhalation effort?",
+      "choices": {
+        "A": "vital capacity concept",
+        "B": "minute ventilation concept",
+        "C": "residual volume concept",
+        "D": "alveolar ventilation concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "residual volume concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: residual volume concept."
+      },
+      "why": "residual volume concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: residual volume concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "residual volume concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-035",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: maximal exchangeable volume between deep inhalation and deep exhalation?",
+      "choices": {
+        "A": "minute ventilation concept",
+        "B": "alveolar ventilation concept",
+        "C": "central chemoreceptor concept",
+        "D": "vital capacity concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "vital capacity concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: vital capacity concept."
+      },
+      "why": "vital capacity concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: vital capacity concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "vital capacity concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-036",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: total air moved per minute based on rate and tidal volume?",
+      "choices": {
+        "A": "minute ventilation concept",
+        "B": "alveolar ventilation concept",
+        "C": "central chemoreceptor concept",
+        "D": "peripheral chemoreceptor concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "minute ventilation concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: minute ventilation concept."
+      },
+      "why": "minute ventilation concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: minute ventilation concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "minute ventilation concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-037",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fresh air reaching alveoli for gas exchange each minute?",
+      "choices": {
+        "A": "central chemoreceptor concept",
+        "B": "alveolar ventilation concept",
+        "C": "peripheral chemoreceptor concept",
+        "D": "medullary respiratory centers concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "alveolar ventilation concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: alveolar ventilation concept."
+      },
+      "why": "alveolar ventilation concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: alveolar ventilation concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "alveolar ventilation concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-038",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level control concept responding primarily to carbon dioxide related changes?",
+      "choices": {
+        "A": "peripheral chemoreceptor concept",
+        "B": "medullary respiratory centers concept",
+        "C": "central chemoreceptor concept",
+        "D": "pons modulation concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "central chemoreceptor concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: central chemoreceptor concept."
+      },
+      "why": "central chemoreceptor concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: central chemoreceptor concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "central chemoreceptor concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-039",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level control concept responding to blood oxygen and related changes?",
+      "choices": {
+        "A": "medullary respiratory centers concept",
+        "B": "pons modulation concept",
+        "C": "hypercapnia concept",
+        "D": "peripheral chemoreceptor concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "peripheral chemoreceptor concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: peripheral chemoreceptor concept."
+      },
+      "why": "peripheral chemoreceptor concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: peripheral chemoreceptor concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "peripheral chemoreceptor concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-040",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: brainstem control concept setting basic rhythmic breathing pattern?",
+      "choices": {
+        "A": "medullary respiratory centers concept",
+        "B": "pons modulation concept",
+        "C": "hypercapnia concept",
+        "D": "hypoxemia concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "medullary respiratory centers concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: medullary respiratory centers concept."
+      },
+      "why": "medullary respiratory centers concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: medullary respiratory centers concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "medullary respiratory centers concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-041",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: brainstem modulation concept smoothing transitions in breathing pattern?",
+      "choices": {
+        "A": "hypercapnia concept",
+        "B": "pons modulation concept",
+        "C": "hypoxemia concept",
+        "D": "respiratory rate concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pons modulation concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: pons modulation concept."
+      },
+      "why": "pons modulation concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: pons modulation concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "pons modulation concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-042",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: elevated carbon dioxide state associated with increased respiratory drive?",
+      "choices": {
+        "A": "hypoxemia concept",
+        "B": "respiratory rate concept",
+        "C": "hypercapnia concept",
+        "D": "work of breathing concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "hypercapnia concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: hypercapnia concept."
+      },
+      "why": "hypercapnia concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: hypercapnia concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "hypercapnia concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-043",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: reduced arterial oxygen level concept affecting respiratory signaling?",
+      "choices": {
+        "A": "respiratory rate concept",
+        "B": "work of breathing concept",
+        "C": "airway resistance concept",
+        "D": "hypoxemia concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "hypoxemia concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: hypoxemia concept."
+      },
+      "why": "hypoxemia concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: hypoxemia concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "hypoxemia concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-044",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: number of breaths per minute measure?",
+      "choices": {
+        "A": "respiratory rate concept",
+        "B": "work of breathing concept",
+        "C": "airway resistance concept",
+        "D": "lung compliance concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "respiratory rate concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: respiratory rate concept."
+      },
+      "why": "respiratory rate concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: respiratory rate concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "respiratory rate concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-045",
+      "blueprint_code": "1.B.9",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: effort required to move air through the respiratory system?",
+      "choices": {
+        "A": "airway resistance concept",
+        "B": "work of breathing concept",
+        "C": "lung compliance concept",
+        "D": "surfactant concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "work of breathing concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: work of breathing concept."
+      },
+      "why": "work of breathing concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: work of breathing concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "work of breathing concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-046",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: positioning strategy often improving perceived ease of breathing?",
+      "choices": {
+        "A": "side-lying comfort option",
+        "B": "avoid compressive prone setup if uncomfortable",
+        "C": "upright positioning for breathing comfort",
+        "D": "pace pressure with breath rhythm"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "upright positioning for breathing comfort is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: upright positioning for breathing comfort."
+      },
+      "why": "upright positioning for breathing comfort is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: upright positioning for breathing comfort.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "positioning",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "upright positioning for breathing comfort."
+    },
+    {
+      "id": "ch16-respiratory-v1-047",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: alternative positioning when supine or prone feels restrictive?",
+      "choices": {
+        "A": "avoid compressive prone setup if uncomfortable",
+        "B": "pace pressure with breath rhythm",
+        "C": "frequent breathing comfort check-ins",
+        "D": "side-lying comfort option"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "side-lying comfort option is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: side-lying comfort option."
+      },
+      "why": "side-lying comfort option is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: side-lying comfort option.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "positioning",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "side-lying comfort option."
+    },
+    {
+      "id": "ch16-respiratory-v1-048",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: adjustment strategy when prone pressure limits comfortable breathing?",
+      "choices": {
+        "A": "avoid compressive prone setup if uncomfortable",
+        "B": "pace pressure with breath rhythm",
+        "C": "frequent breathing comfort check-ins",
+        "D": "asthma report intake clarification"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "avoid compressive prone setup if uncomfortable is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: avoid compressive prone setup if uncomfortable."
+      },
+      "why": "avoid compressive prone setup if uncomfortable is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: avoid compressive prone setup if uncomfortable.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "positioning",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "avoid compressive prone setup if uncomfortable."
+    },
+    {
+      "id": "ch16-respiratory-v1-049",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: technique pacing strategy coordinated with client breathing?",
+      "choices": {
+        "A": "frequent breathing comfort check-ins",
+        "B": "pace pressure with breath rhythm",
+        "C": "asthma report intake clarification",
+        "D": "COPD report intake clarification"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pace pressure with breath rhythm is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: pace pressure with breath rhythm."
+      },
+      "why": "pace pressure with breath rhythm is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: pace pressure with breath rhythm.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "communication",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "pace pressure with breath rhythm."
+    },
+    {
+      "id": "ch16-respiratory-v1-050",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: communication strategy for monitoring comfort during session?",
+      "choices": {
+        "A": "asthma report intake clarification",
+        "B": "COPD report intake clarification",
+        "C": "frequent breathing comfort check-ins",
+        "D": "defer if severe shortness of breath present"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "frequent breathing comfort check-ins is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: frequent breathing comfort check-ins."
+      },
+      "why": "frequent breathing comfort check-ins is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: frequent breathing comfort check-ins.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "communication",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "frequent breathing comfort check-ins."
+    },
+    {
+      "id": "ch16-respiratory-v1-051",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: intake step about triggers inhaler use and current symptom status?",
+      "choices": {
+        "A": "COPD report intake clarification",
+        "B": "defer if severe shortness of breath present",
+        "C": "pause if dizziness emerges",
+        "D": "asthma report intake clarification"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "asthma report intake clarification is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: asthma report intake clarification."
+      },
+      "why": "asthma report intake clarification is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: asthma report intake clarification.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "intake",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "asthma report intake clarification."
+    },
+    {
+      "id": "ch16-respiratory-v1-052",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: intake step about baseline tolerance and current breathing status?",
+      "choices": {
+        "A": "COPD report intake clarification",
+        "B": "defer if severe shortness of breath present",
+        "C": "pause if dizziness emerges",
+        "D": "refer for concerning cyanotic appearance"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "COPD report intake clarification is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: COPD report intake clarification."
+      },
+      "why": "COPD report intake clarification is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: COPD report intake clarification.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "intake",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "COPD report intake clarification."
+    },
+    {
+      "id": "ch16-respiratory-v1-053",
+      "blueprint_code": "3.B.2",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: safety-first action when severe breathing distress is present?",
+      "choices": {
+        "A": "pause if dizziness emerges",
+        "B": "defer if severe shortness of breath present",
+        "C": "refer for concerning cyanotic appearance",
+        "D": "scope-safe language for respiratory symptoms"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "defer if severe shortness of breath present is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: defer if severe shortness of breath present."
+      },
+      "why": "defer if severe shortness of breath present is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: defer if severe shortness of breath present.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "referral",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "defer if severe shortness of breath present."
+    },
+    {
+      "id": "ch16-respiratory-v1-054",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: session safety action when dizziness develops during treatment?",
+      "choices": {
+        "A": "refer for concerning cyanotic appearance",
+        "B": "scope-safe language for respiratory symptoms",
+        "C": "pause if dizziness emerges",
+        "D": "document client-reported breathing conditions"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "pause if dizziness emerges is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: pause if dizziness emerges."
+      },
+      "why": "pause if dizziness emerges is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: pause if dizziness emerges.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "safety",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "pause if dizziness emerges."
+    },
+    {
+      "id": "ch16-respiratory-v1-055",
+      "blueprint_code": "3.B.2",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: calm referral action for concerning blue-gray discoloration signs?",
+      "choices": {
+        "A": "scope-safe language for respiratory symptoms",
+        "B": "document client-reported breathing conditions",
+        "C": "non-alarming referral wording",
+        "D": "refer for concerning cyanotic appearance"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "refer for concerning cyanotic appearance is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: refer for concerning cyanotic appearance."
+      },
+      "why": "refer for concerning cyanotic appearance is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: refer for concerning cyanotic appearance.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "referral",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "refer for concerning cyanotic appearance."
+    },
+    {
+      "id": "ch16-respiratory-v1-056",
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: communication boundary describing observations without diagnosis?",
+      "choices": {
+        "A": "scope-safe language for respiratory symptoms",
+        "B": "document client-reported breathing conditions",
+        "C": "non-alarming referral wording",
+        "D": "allow seated recovery breaks"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-safe language for respiratory symptoms is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: scope-safe language for respiratory symptoms."
+      },
+      "why": "scope-safe language for respiratory symptoms is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: scope-safe language for respiratory symptoms.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "scope",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "scope-safe language for respiratory symptoms."
+    },
+    {
+      "id": "ch16-respiratory-v1-057",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: objective note-taking of client respiratory history and reports?",
+      "choices": {
+        "A": "non-alarming referral wording",
+        "B": "document client-reported breathing conditions",
+        "C": "allow seated recovery breaks",
+        "D": "avoid aggressive chest compression techniques if uncomfortable"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "document client-reported breathing conditions is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: document client-reported breathing conditions."
+      },
+      "why": "document client-reported breathing conditions is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: document client-reported breathing conditions.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "documentation",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "document client-reported breathing conditions."
+    },
+    {
+      "id": "ch16-respiratory-v1-058",
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: clear calm wording when advising medical follow-up?",
+      "choices": {
+        "A": "allow seated recovery breaks",
+        "B": "avoid aggressive chest compression techniques if uncomfortable",
+        "C": "non-alarming referral wording",
+        "D": "airflow comfort check in room"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "non-alarming referral wording is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: non-alarming referral wording."
+      },
+      "why": "non-alarming referral wording is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: non-alarming referral wording.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "communication",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "non-alarming referral wording."
+    },
+    {
+      "id": "ch16-respiratory-v1-059",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pacing strategy offering pause and posture resets as needed?",
+      "choices": {
+        "A": "avoid aggressive chest compression techniques if uncomfortable",
+        "B": "airflow comfort check in room",
+        "C": "hygiene around cough/sneeze etiquette",
+        "D": "allow seated recovery breaks"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "allow seated recovery breaks is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: allow seated recovery breaks."
+      },
+      "why": "allow seated recovery breaks is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: allow seated recovery breaks.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "pacing",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "allow seated recovery breaks."
+    },
+    {
+      "id": "ch16-respiratory-v1-060",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: comfort-guided modification around thoracic pressure tolerance?",
+      "choices": {
+        "A": "avoid aggressive chest compression techniques if uncomfortable",
+        "B": "airflow comfort check in room",
+        "C": "hygiene around cough/sneeze etiquette",
+        "D": "clean touched surfaces after session"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "avoid aggressive chest compression techniques if uncomfortable is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: avoid aggressive chest compression techniques if uncomfortable."
+      },
+      "why": "avoid aggressive chest compression techniques if uncomfortable is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: avoid aggressive chest compression techniques if uncomfortable.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "pacing",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "avoid aggressive chest compression techniques if uncomfortable."
+    },
+    {
+      "id": "ch16-respiratory-v1-061",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: opposition to airflow within conducting pathways?",
+      "choices": {
+        "A": "lung compliance concept",
+        "B": "airway resistance concept",
+        "C": "surfactant concept",
+        "D": "mucociliary clearance concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "airway resistance concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: airway resistance concept."
+      },
+      "why": "airway resistance concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: airway resistance concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "airway resistance concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-062",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: distensibility concept describing ease of lung expansion?",
+      "choices": {
+        "A": "surfactant concept",
+        "B": "mucociliary clearance concept",
+        "C": "lung compliance concept",
+        "D": "cough reflex concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "lung compliance concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: lung compliance concept."
+      },
+      "why": "lung compliance concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: lung compliance concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lung compliance concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-063",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: alveolar surface substance helping reduce collapse tendency?",
+      "choices": {
+        "A": "mucociliary clearance concept",
+        "B": "cough reflex concept",
+        "C": "sneeze reflex concept",
+        "D": "surfactant concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "surfactant concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: surfactant concept."
+      },
+      "why": "surfactant concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: surfactant concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "alveoli",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "surfactant concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-064",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: airway defense mechanism moving trapped particles upward?",
+      "choices": {
+        "A": "mucociliary clearance concept",
+        "B": "cough reflex concept",
+        "C": "sneeze reflex concept",
+        "D": "humidification role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "mucociliary clearance concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: mucociliary clearance concept."
+      },
+      "why": "mucociliary clearance concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: mucociliary clearance concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "mucociliary clearance concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-065",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: airway protective reflex for clearing irritants and secretions?",
+      "choices": {
+        "A": "sneeze reflex concept",
+        "B": "cough reflex concept",
+        "C": "humidification role",
+        "D": "warming inspired air role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "cough reflex concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: cough reflex concept."
+      },
+      "why": "cough reflex concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: cough reflex concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "cough reflex concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-066",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: upper-airway protective reflex helping expel irritants?",
+      "choices": {
+        "A": "humidification role",
+        "B": "warming inspired air role",
+        "C": "sneeze reflex concept",
+        "D": "respiratory acidosis concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "sneeze reflex concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: sneeze reflex concept."
+      },
+      "why": "sneeze reflex concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: sneeze reflex concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "sneeze reflex concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-067",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: airway role adding moisture to inspired air?",
+      "choices": {
+        "A": "warming inspired air role",
+        "B": "respiratory acidosis concept",
+        "C": "respiratory alkalosis concept",
+        "D": "humidification role"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "humidification role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: humidification role."
+      },
+      "why": "humidification role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: humidification role.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "humidification role."
+    },
+    {
+      "id": "ch16-respiratory-v1-068",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: upper-airway role helping condition inhaled air temperature?",
+      "choices": {
+        "A": "warming inspired air role",
+        "B": "respiratory acidosis concept",
+        "C": "respiratory alkalosis concept",
+        "D": "diaphragmatic breathing pattern"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "warming inspired air role is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: warming inspired air role."
+      },
+      "why": "warming inspired air role is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: warming inspired air role.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "warming inspired air role."
+    },
+    {
+      "id": "ch16-respiratory-v1-069",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept where inadequate ventilation can increase carbon dioxide and lower pH?",
+      "choices": {
+        "A": "respiratory alkalosis concept",
+        "B": "respiratory acidosis concept",
+        "C": "diaphragmatic breathing pattern",
+        "D": "apical breathing pattern"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "respiratory acidosis concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: respiratory acidosis concept."
+      },
+      "why": "respiratory acidosis concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: respiratory acidosis concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "acid-base",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "respiratory acidosis concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-070",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept where excessive ventilation can reduce carbon dioxide and raise pH?",
+      "choices": {
+        "A": "diaphragmatic breathing pattern",
+        "B": "apical breathing pattern",
+        "C": "respiratory alkalosis concept",
+        "D": "oxygen saturation concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "respiratory alkalosis concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: respiratory alkalosis concept."
+      },
+      "why": "respiratory alkalosis concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: respiratory alkalosis concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "acid-base",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "respiratory alkalosis concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-071",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: breathing pattern emphasizing diaphragmatic excursion?",
+      "choices": {
+        "A": "apical breathing pattern",
+        "B": "oxygen saturation concept",
+        "C": "functional residual capacity concept",
+        "D": "diaphragmatic breathing pattern"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "diaphragmatic breathing pattern is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: diaphragmatic breathing pattern."
+      },
+      "why": "diaphragmatic breathing pattern is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: diaphragmatic breathing pattern.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "diaphragmatic breathing pattern."
+    },
+    {
+      "id": "ch16-respiratory-v1-072",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: breathing pattern with relatively greater upper chest contribution?",
+      "choices": {
+        "A": "apical breathing pattern",
+        "B": "oxygen saturation concept",
+        "C": "functional residual capacity concept",
+        "D": "respiratory membrane thickness concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "apical breathing pattern is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: apical breathing pattern."
+      },
+      "why": "apical breathing pattern is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: apical breathing pattern.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "apical breathing pattern."
+    },
+    {
+      "id": "ch16-respiratory-v1-073",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: percentage measure of hemoglobin oxygen-binding occupancy?",
+      "choices": {
+        "A": "functional residual capacity concept",
+        "B": "oxygen saturation concept",
+        "C": "respiratory membrane thickness concept",
+        "D": "upper respiratory tract"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "oxygen saturation concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: oxygen saturation concept."
+      },
+      "why": "oxygen saturation concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: oxygen saturation concept.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "transport",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "oxygen saturation concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-074",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: volume concept describing air remaining after a quiet exhalation?",
+      "choices": {
+        "A": "respiratory membrane thickness concept",
+        "B": "upper respiratory tract",
+        "C": "functional residual capacity concept",
+        "D": "lower respiratory tract"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "functional residual capacity concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: functional residual capacity concept."
+      },
+      "why": "functional residual capacity concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: functional residual capacity concept.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "functional residual capacity concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-075",
+      "blueprint_code": "1.B.9",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept that membrane properties influence gas diffusion efficiency?",
+      "choices": {
+        "A": "upper respiratory tract",
+        "B": "lower respiratory tract",
+        "C": "nasal cavity role",
+        "D": "respiratory membrane thickness concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "respiratory membrane thickness concept is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: respiratory membrane thickness concept."
+      },
+      "why": "respiratory membrane thickness concept is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: respiratory membrane thickness concept.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "respiratory membrane thickness concept."
+    },
+    {
+      "id": "ch16-respiratory-v1-076",
+      "blueprint_code": "7.D.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: environmental comfort check for temperature and airflow preferences?",
+      "choices": {
+        "A": "airflow comfort check in room",
+        "B": "hygiene around cough/sneeze etiquette",
+        "C": "clean touched surfaces after session",
+        "D": "hand hygiene before and after treatment"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "airflow comfort check in room is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: airflow comfort check in room."
+      },
+      "why": "airflow comfort check in room is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: airflow comfort check in room.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "environment",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "airflow comfort check in room."
+    },
+    {
+      "id": "ch16-respiratory-v1-077",
+      "blueprint_code": "7.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: infection-control behavior reducing respiratory droplet spread risk?",
+      "choices": {
+        "A": "clean touched surfaces after session",
+        "B": "hygiene around cough/sneeze etiquette",
+        "C": "hand hygiene before and after treatment",
+        "D": "consent before modifying breathing-focused approach"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "hygiene around cough/sneeze etiquette is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: hygiene around cough/sneeze etiquette."
+      },
+      "why": "hygiene around cough/sneeze etiquette is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: hygiene around cough/sneeze etiquette.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "hygiene",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "hygiene around cough/sneeze etiquette."
+    },
+    {
+      "id": "ch16-respiratory-v1-078",
+      "blueprint_code": "7.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: infection-control routine for shared-contact surfaces?",
+      "choices": {
+        "A": "hand hygiene before and after treatment",
+        "B": "consent before modifying breathing-focused approach",
+        "C": "clean touched surfaces after session",
+        "D": "observe effort not diagnose condition"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "clean touched surfaces after session is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: clean touched surfaces after session."
+      },
+      "why": "clean touched surfaces after session is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: clean touched surfaces after session.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "hygiene",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "clean touched surfaces after session."
+    },
+    {
+      "id": "ch16-respiratory-v1-079",
+      "blueprint_code": "7.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: standard hygiene behavior around client contact?",
+      "choices": {
+        "A": "consent before modifying breathing-focused approach",
+        "B": "observe effort not diagnose condition",
+        "C": "gentle start for breath-sensitive clients",
+        "D": "hand hygiene before and after treatment"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "hand hygiene before and after treatment is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: hand hygiene before and after treatment."
+      },
+      "why": "hand hygiene before and after treatment is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: hand hygiene before and after treatment.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "hygiene",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "hand hygiene before and after treatment."
+    },
+    {
+      "id": "ch16-respiratory-v1-080",
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: permission step before changing technique emphasis?",
+      "choices": {
+        "A": "consent before modifying breathing-focused approach",
+        "B": "observe effort not diagnose condition",
+        "C": "gentle start for breath-sensitive clients",
+        "D": "stop and reassess if breath discomfort escalates"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "consent before modifying breathing-focused approach is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: consent before modifying breathing-focused approach."
+      },
+      "why": "consent before modifying breathing-focused approach is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: consent before modifying breathing-focused approach.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "consent",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "consent before modifying breathing-focused approach."
+    },
+    {
+      "id": "ch16-respiratory-v1-081",
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: scope boundary emphasizing observation over diagnostic labeling?",
+      "choices": {
+        "A": "gentle start for breath-sensitive clients",
+        "B": "observe effort not diagnose condition",
+        "C": "stop and reassess if breath discomfort escalates",
+        "D": "encourage client-paced breathing"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "observe effort not diagnose condition is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: observe effort not diagnose condition."
+      },
+      "why": "observe effort not diagnose condition is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: observe effort not diagnose condition.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "scope",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "observe effort not diagnose condition."
+    },
+    {
+      "id": "ch16-respiratory-v1-082",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: intensity strategy starting lighter and progressing by tolerance?",
+      "choices": {
+        "A": "stop and reassess if breath discomfort escalates",
+        "B": "encourage client-paced breathing",
+        "C": "gentle start for breath-sensitive clients",
+        "D": "avoid prolonged breath-restrictive draping"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "gentle start for breath-sensitive clients is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: gentle start for breath-sensitive clients."
+      },
+      "why": "gentle start for breath-sensitive clients is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: gentle start for breath-sensitive clients.",
+      "difficulty": 2,
+      "tags": [
+        "respiratory",
+        "pacing",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "gentle start for breath-sensitive clients."
+    },
+    {
+      "id": "ch16-respiratory-v1-083",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: safety action when breathing discomfort rises during care?",
+      "choices": {
+        "A": "encourage client-paced breathing",
+        "B": "avoid prolonged breath-restrictive draping",
+        "C": "screen recent respiratory illness symptoms",
+        "D": "stop and reassess if breath discomfort escalates"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "stop and reassess if breath discomfort escalates is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: stop and reassess if breath discomfort escalates."
+      },
+      "why": "stop and reassess if breath discomfort escalates is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: stop and reassess if breath discomfort escalates.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "safety",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "stop and reassess if breath discomfort escalates."
+    },
+    {
+      "id": "ch16-respiratory-v1-084",
+      "blueprint_code": "5.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: communication approach supporting client-controlled breathing cadence?",
+      "choices": {
+        "A": "encourage client-paced breathing",
+        "B": "avoid prolonged breath-restrictive draping",
+        "C": "screen recent respiratory illness symptoms",
+        "D": "defer in acute respiratory distress"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "encourage client-paced breathing is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: encourage client-paced breathing."
+      },
+      "why": "encourage client-paced breathing is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: encourage client-paced breathing.",
+      "difficulty": 3,
+      "tags": [
+        "respiratory",
+        "communication",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "encourage client-paced breathing."
+    },
+    {
+      "id": "ch16-respiratory-v1-085",
+      "blueprint_code": "7.F.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: draping adjustment to preserve respiratory comfort?",
+      "choices": {
+        "A": "screen recent respiratory illness symptoms",
+        "B": "avoid prolonged breath-restrictive draping",
+        "C": "defer in acute respiratory distress",
+        "D": "calmly explain reason for respiratory referral"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "avoid prolonged breath-restrictive draping is the best match for this respiratory concept.",
+        "trap": "Distractors are related respiratory terms but are not the most precise match.",
+        "hook": "Cue: avoid prolonged breath-restrictive draping."
+      },
+      "why": "avoid prolonged breath-restrictive draping is the best match for this respiratory concept.",
+      "trap": "Distractors are related respiratory terms but are not the most precise match.",
+      "hook": "Cue: avoid prolonged breath-restrictive draping.",
+      "difficulty": 1,
+      "tags": [
+        "respiratory",
+        "draping",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "avoid prolonged breath-restrictive draping."
+    },
+    {
+      "id": "ch16-respiratory-v1-086",
+      "blueprint_code": "1.A.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Gas exchange primarily occurs in the ____.",
+      "correct_text": "alveoli",
+      "explanation": {
+        "why": "The correct fill term is alveoli.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: alveoli."
+      },
+      "why": "The correct fill term is alveoli.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: alveoli.",
+      "difficulty": 2,
+      "tags": [
+        "gas-exchange",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "alveoli."
+    },
+    {
+      "id": "ch16-respiratory-v1-087",
+      "blueprint_code": "1.A.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The main muscle of quiet inhalation is the ____.",
+      "correct_text": "diaphragm",
+      "explanation": {
+        "why": "The correct fill term is diaphragm.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: diaphragm."
+      },
+      "why": "The correct fill term is diaphragm.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: diaphragm.",
+      "difficulty": 3,
+      "tags": [
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "diaphragm."
+    },
+    {
+      "id": "ch16-respiratory-v1-088",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Movement of air in and out of lungs is called ____.",
+      "correct_text": "ventilation",
+      "explanation": {
+        "why": "The correct fill term is ventilation.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: ventilation."
+      },
+      "why": "The correct fill term is ventilation.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: ventilation.",
+      "difficulty": 2,
+      "tags": [
+        "mechanics",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "ventilation."
+    },
+    {
+      "id": "ch16-respiratory-v1-089",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Pulmonary capillary blood flow around alveoli is called ____.",
+      "correct_text": "perfusion",
+      "explanation": {
+        "why": "The correct fill term is perfusion.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: perfusion."
+      },
+      "why": "The correct fill term is perfusion.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: perfusion.",
+      "difficulty": 1,
+      "tags": [
+        "v-q",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "perfusion."
+    },
+    {
+      "id": "ch16-respiratory-v1-090",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Typical quiet-breath volume is called ____ volume.",
+      "correct_text": "tidal",
+      "explanation": {
+        "why": "The correct fill term is tidal.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: tidal."
+      },
+      "why": "The correct fill term is tidal.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: tidal.",
+      "difficulty": 3,
+      "tags": [
+        "volumes",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "tidal."
+    },
+    {
+      "id": "ch16-respiratory-v1-091",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Most oxygen transport in blood is via ____.",
+      "correct_text": "hemoglobin",
+      "explanation": {
+        "why": "The correct fill term is hemoglobin.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: hemoglobin."
+      },
+      "why": "The correct fill term is hemoglobin.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: hemoglobin.",
+      "difficulty": 1,
+      "tags": [
+        "transport",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "hemoglobin."
+    },
+    {
+      "id": "ch16-respiratory-v1-092",
+      "blueprint_code": "1.A.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The pleural layer directly covering lungs is the ____ pleura.",
+      "correct_text": "visceral",
+      "explanation": {
+        "why": "The correct fill term is visceral.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: visceral."
+      },
+      "why": "The correct fill term is visceral.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: visceral.",
+      "difficulty": 2,
+      "tags": [
+        "pleura",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "visceral."
+    },
+    {
+      "id": "ch16-respiratory-v1-093",
+      "blueprint_code": "1.A.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The pleural layer lining thoracic wall is the ____ pleura.",
+      "correct_text": "parietal",
+      "explanation": {
+        "why": "The correct fill term is parietal.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: parietal."
+      },
+      "why": "The correct fill term is parietal.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: parietal.",
+      "difficulty": 3,
+      "tags": [
+        "pleura",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "parietal."
+    },
+    {
+      "id": "ch16-respiratory-v1-094",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Chemical control responding strongly to CO2 includes central ____ receptors.",
+      "correct_text": "chemoreceptor",
+      "explanation": {
+        "why": "The correct fill term is chemoreceptor.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: chemoreceptor."
+      },
+      "why": "The correct fill term is chemoreceptor.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: chemoreceptor.",
+      "difficulty": 2,
+      "tags": [
+        "control",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "chemoreceptor."
+    },
+    {
+      "id": "ch16-respiratory-v1-095",
+      "blueprint_code": "1.B.9",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Upward movement of mucus in airways relies on ____ clearance.",
+      "correct_text": "mucociliary",
+      "explanation": {
+        "why": "The correct fill term is mucociliary.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: mucociliary."
+      },
+      "why": "The correct fill term is mucociliary.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: mucociliary.",
+      "difficulty": 1,
+      "tags": [
+        "defense",
+        "respiratory-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "mucociliary."
+    },
+    {
+      "id": "ch16-respiratory-v1-096",
+      "blueprint_code": "3.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "If prone feels restrictive, change client ____.",
+      "correct_text": "positioning",
+      "explanation": {
+        "why": "The correct fill term is positioning.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: positioning."
+      },
+      "why": "The correct fill term is positioning.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: positioning.",
+      "difficulty": 3,
+      "tags": [
+        "positioning",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "positioning."
+    },
+    {
+      "id": "ch16-respiratory-v1-097",
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Massage professionals should observe and document, not ____.",
+      "correct_text": "diagnose",
+      "explanation": {
+        "why": "The correct fill term is diagnose.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: diagnose."
+      },
+      "why": "The correct fill term is diagnose.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: diagnose.",
+      "difficulty": 1,
+      "tags": [
+        "scope",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "diagnose."
+    },
+    {
+      "id": "ch16-respiratory-v1-098",
+      "blueprint_code": "3.B.2",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "With severe shortness of breath, defer and ____.",
+      "correct_text": "refer",
+      "explanation": {
+        "why": "The correct fill term is refer.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: refer."
+      },
+      "why": "The correct fill term is refer.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: refer.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "refer."
+    },
+    {
+      "id": "ch16-respiratory-v1-099",
+      "blueprint_code": "7.B",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Before and after sessions, perform hand ____.",
+      "correct_text": "hygiene",
+      "explanation": {
+        "why": "The correct fill term is hygiene.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: hygiene."
+      },
+      "why": "The correct fill term is hygiene.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: hygiene.",
+      "difficulty": 3,
+      "tags": [
+        "hygiene",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "hygiene."
+    },
+    {
+      "id": "ch16-respiratory-v1-100",
+      "blueprint_code": "5.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Use frequent ____ to confirm breathing comfort during treatment.",
+      "correct_text": "check-ins",
+      "explanation": {
+        "why": "The correct fill term is check-ins.",
+        "trap": "Use the exact respiratory term expected by the prompt.",
+        "hook": "Recall: check-ins."
+      },
+      "why": "The correct fill term is check-ins.",
+      "trap": "Use the exact respiratory term expected by the prompt.",
+      "hook": "Recall: check-ins.",
+      "difficulty": 2,
+      "tags": [
+        "communication",
+        "respiratory-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "check-ins."
+    }
+  ]
+}
