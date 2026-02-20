@@ -511,7 +511,7 @@ export default function StudyNightLandingPage() {
   return (
     <section>
       <h1>Study Night</h1>
-      <p>Multiplayer Trivial-Pursuit style MBLEX practice.</p>
+      <p>Multiplayer category-based MBLEX practice.</p>
 
       <div className="game-grid">
         <div className="game-card">
@@ -527,7 +527,7 @@ export default function StudyNightLandingPage() {
             <option value="pick">Pick</option>
             <option value="roulette">Roulette</option>
           </select>
-          <label htmlFor="create-win-wedges">Win wedges</label>
+          <label htmlFor="create-win-wedges">Win marks</label>
           <select
             id="create-win-wedges"
             value={createWinWedges}

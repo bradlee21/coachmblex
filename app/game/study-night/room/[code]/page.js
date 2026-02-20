@@ -149,6 +149,12 @@ function getWedges(player) {
   return [];
 }
 
+function getCategoryLabelByKey(key) {
+  const category = studyNightCategoryByKey[key];
+  if (category) return `${category.key}. ${category.label}`;
+  return `Category ${key}`;
+}
+
 function getExplanationBlocks(explanation) {
   if (!explanation) return [];
   if (typeof explanation === 'string') {
@@ -964,7 +970,7 @@ export default function StudyNightRoomPage() {
       if (currentTurnCorrect && categoryKey && !nextWedges.includes(categoryKey)) {
         const wedgeTargetUserId = currentTurnPlayer.user_id;
         if (!orderedPlayers.some((player) => player.user_id === wedgeTargetUserId)) {
-          throw new Error('Invalid wedge update target.');
+          throw new Error('Invalid mark update target.');
         }
         nextWedges = [...nextWedges, categoryKey];
         const wedgeResponse = await timedPostgrest(
@@ -979,7 +985,7 @@ export default function StudyNightRoomPage() {
           'advance_update_wedge'
         );
         if (!wedgeResponse.ok) {
-          throw toPostgrestError(wedgeResponse, 'Failed to award wedge.');
+          throw toPostgrestError(wedgeResponse, 'Failed to award mark.');
         }
       }
 
@@ -1112,7 +1118,7 @@ export default function StudyNightRoomPage() {
       <h1>Study Night Room {room.code}</h1>
       <p className="muted">
         Status: {room.status} | Round: {state?.round_no || 1} | Phase: {state?.phase || 'pick'} |
-        Win wedges: {roomWinWedges} | Timer: {roomDurationSec}s
+        Win marks: {roomWinWedges} | Timer: {roomDurationSec}s
       </p>
 
       <div className="game-grid">
@@ -1129,8 +1135,17 @@ export default function StudyNightRoomPage() {
                   {isTurn ? ' (turn)' : ''}
                   {player.user_id === room.host_user_id ? ' (host)' : ''}
                   <div className="muted">Score: {player.score || 0}</div>
-                  <div className="muted">
-                    Wedges ({wedges.length}): {wedges.length > 0 ? wedges.join(', ') : 'none'}
+                  <div className="muted">Earned {wedges.length} / {roomWinWedges}</div>
+                  <div className="mark-chip-row">
+                    {wedges.length > 0 ? (
+                      wedges.map((key) => (
+                        <span key={`${player.id}-${key}`} className="mark-chip">
+                          <span aria-hidden="true">✓</span> {getCategoryLabelByKey(key)}
+                        </span>
+                      ))
+                    ) : (
+                      <span className="muted">No marks yet.</span>
+                    )}
                   </div>
                   <div className="muted">Seat: {index + 1}</div>
                 </li>
@@ -1176,7 +1191,7 @@ export default function StudyNightRoomPage() {
                   </select>
                 </>
               ) : null}
-              <div className="button-row game-wrap">
+              <div className="category-tile-grid">
                 {studyNightCategories.map((category) => (
                   (() => {
                     const isOwnedByCurrentTurnPlayer = currentTurnWedges.includes(category.key);
@@ -1184,14 +1199,16 @@ export default function StudyNightRoomPage() {
                       <button
                         key={category.key}
                         type="button"
+                        className={`category-tile${isOwnedByCurrentTurnPlayer ? ' earned' : ''}`}
                         onClick={() => void handlePickCategory(category.key)}
                         disabled={!canPickCategory || isOwnedByCurrentTurnPlayer}
                         aria-label={`${category.key}: ${category.label}${
                           isOwnedByCurrentTurnPlayer ? ' (owned)' : ''
                         }`}
                       >
-                        {category.key}: {category.label}
-                        {isOwnedByCurrentTurnPlayer ? ' (owned)' : ''}
+                        <strong>{category.label}</strong>
+                        <span className="muted">Category {category.key}</span>
+                        {isOwnedByCurrentTurnPlayer ? <span className="category-earned">Earned</span> : null}
                       </button>
                     );
                   })()
@@ -1317,7 +1334,7 @@ export default function StudyNightRoomPage() {
                     <strong>{getDisplayName(player)}</strong>
                     <div className="muted">Final score: {player.score || 0}</div>
                     <div className="muted">
-                      Wedges: {getWedges(player).length}/{roomWinWedges}
+                      Earned: {getWedges(player).length}/{roomWinWedges}
                     </div>
                   </li>
                 ))}
@@ -1327,7 +1344,7 @@ export default function StudyNightRoomPage() {
         </div>
       </div>
 
-      <p className="muted">Your wedges: {myWedges.length > 0 ? myWedges.join(', ') : 'none'}</p>
+      <p className="muted">Your marks: Earned {myWedges.length} / {roomWinWedges}</p>
       {loadErrorInfo ? (
         <div className="status error">
           <p>{loadErrorInfo.message}</p>

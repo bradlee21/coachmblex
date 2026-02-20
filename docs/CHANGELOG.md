@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP11: updated UI terminology from wedges to marks/badges and removed Trivial-Pursuit-specific wording in Study Night screens.
+- Pick phase now renders neutral category progress tiles with earned indicators and disabled earned categories.
+- Player and finished views now show earned-category chips with check marks and explicit progress counts toward the win target.
 - Study Night TP10: hardened turn integrity by gating answer submission to the current turn player and showing waiting hints for others.
 - Added local per-turn submit guards (`room:round:turn:question`) to block double-scoring and surface "Already answered" feedback.
 - Added host-action guards/messages for Start/Advance and extra patch-target sanity checks in multiplayer update paths.
