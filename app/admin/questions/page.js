@@ -1,8 +1,10 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { listAllNodesFlat } from '../../../src/content/mblexBlueprint';
+import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../src/lib/postgrestFetch';
+import { getCoverageStats } from '../../../src/lib/coverageStats';
 import { useAuth } from '../../../src/providers/AuthProvider';
 
 const QUESTION_TYPE_OPTIONS = [
@@ -159,6 +161,11 @@ export default function AdminQuestionsPage() {
   const [searchResults, setSearchResults] = useState([]);
   const [searching, setSearching] = useState(false);
   const [searchErrorInfo, setSearchErrorInfo] = useState(null);
+  const [coverageGaps, setCoverageGaps] = useState([]);
+  const [coverageLoading, setCoverageLoading] = useState(false);
+  const [coverageError, setCoverageError] = useState('');
+  const [coverageCheckedAt, setCoverageCheckedAt] = useState('');
+  const promptInputRef = useRef(null);
 
   const allNodes = useMemo(() => listAllNodesFlat(), []);
   const nodeByCode = useMemo(
@@ -301,6 +308,55 @@ export default function AdminQuestionsPage() {
   }, [choices, correctIndex, explanations, fillAnswer, isFillType, prompt, questionType]);
 
   const isEditing = Boolean(editingQuestionId);
+
+  const refreshCoverageGaps = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setCoverageError('Supabase is not configured.');
+      setCoverageGaps([]);
+      return;
+    }
+
+    setCoverageLoading(true);
+    setCoverageError('');
+    try {
+      const stats = await getCoverageStats(supabase);
+      const topGaps = (stats.rows || [])
+        .map((row) => {
+          const target =
+            Number(row?.targets?.mcq || 0) +
+            Number(row?.targets?.fill || 0) +
+            Number(row?.targets?.reverse || 0);
+          const current =
+            Number(row?.counts?.mcq || 0) +
+            Number(row?.counts?.fill || 0) +
+            Number(row?.counts?.reverse || 0);
+          const gap = Math.max(0, target - current);
+          return {
+            code: row.code,
+            titlePath: row.titlePath,
+            current,
+            target,
+            gap,
+          };
+        })
+        .filter((item) => item.gap > 0)
+        .sort((a, b) => b.gap - a.gap || a.code.localeCompare(b.code))
+        .slice(0, 10);
+      setCoverageGaps(topGaps);
+      setCoverageCheckedAt(new Date().toISOString());
+    } catch (error) {
+      const info = toErrorInfo(error, 'Failed to load coverage gaps.');
+      setCoverageError(info.message);
+      setCoverageGaps([]);
+    } finally {
+      setCoverageLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    void refreshCoverageGaps();
+  }, [refreshCoverageGaps]);
 
   function onSelectBlueprint(code) {
     setSelectedBlueprintCode(code);
@@ -545,6 +601,19 @@ export default function AdminQuestionsPage() {
     clearDraft(false);
   }
 
+  function handleWriteNextFromGap(code) {
+    if (!code) return;
+    setSelectedBlueprintCode(code);
+    setErrorInfo(null);
+    setSavedInfo(null);
+    setTimeout(() => {
+      const node = promptInputRef.current;
+      if (!node) return;
+      node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      node.focus();
+    }, 0);
+  }
+
   if (loading) {
     return (
       <section>
@@ -576,6 +645,34 @@ export default function AdminQuestionsPage() {
     <section>
       <h1>Question Forge</h1>
       <p>Create and edit MBLEX questions.</p>
+      <div className="game-card">
+        <h2>Coverage Gaps</h2>
+        <p className="muted">Next 10 blueprint leaves to write based on target gaps.</p>
+        <button type="button" onClick={() => void refreshCoverageGaps()} disabled={coverageLoading}>
+          {coverageLoading ? 'Refreshing...' : 'Refresh counts'}
+        </button>
+        {coverageCheckedAt ? <p className="muted">Checked: {coverageCheckedAt}</p> : null}
+        {coverageError ? <p className="status error">{coverageError}</p> : null}
+        {coverageLoading ? <p className="muted">Loading gaps...</p> : null}
+        {!coverageLoading && !coverageError ? (
+          <div className="choice-list" role="listbox" aria-label="Top coverage gaps">
+            {coverageGaps.length > 0 ? (
+              coverageGaps.map((item) => (
+                <button
+                  key={`coverage-gap-${item.code}`}
+                  type="button"
+                  onClick={() => handleWriteNextFromGap(item.code)}
+                  title={item.titlePath}
+                >
+                  {item.code} | {item.current}/{item.target} | Gap {item.gap} | Write next
+                </button>
+              ))
+            ) : (
+              <p className="muted">No gaps found for question targets.</p>
+            )}
+          </div>
+        ) : null}
+      </div>
       <div className="game-card">
         <h2>Search Existing Questions</h2>
         <form className="auth-form" onSubmit={handleSearchQuestions}>
@@ -726,6 +823,7 @@ export default function AdminQuestionsPage() {
 
             <label htmlFor="forge-prompt">Prompt</label>
             <textarea
+              ref={promptInputRef}
               id="forge-prompt"
               value={prompt}
               onChange={(event) => setPrompt(event.target.value)}

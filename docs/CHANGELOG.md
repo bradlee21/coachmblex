@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP20: added Question Forge Coverage Gaps panel using blueprint targets + live DB counts to show top 10 missing blueprint leaves (current/target/gap).
+- Added one-click "Write next" actions from gaps to preselect blueprint code and focus the prompt field, plus on-demand refresh/loading/error states.
 - TP19: added Question Forge search/load/edit mode with keyword/prefix/type filters and selectable result rows for existing questions.
 - Form now supports PATCH updates when editing an existing question, with clear Editing state, New Question reset, and Updated success feedback.
 - Added questions SQL policy docs and copy/paste migration script for `questions_editor`/`admin` update permissions.
