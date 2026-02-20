@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP21: added Question Forge templates by question type with prompt skeletons, choice placeholders, and explanation scaffolds.
+- Added safe template apply controls (template select, overwrite toggle, apply button) that preserve existing content unless overwrite is enabled.
+- Applying a template now focuses the prompt and shows a short "Template applied" confirmation.
 - TP20: added Question Forge Coverage Gaps panel using blueprint targets + live DB counts to show top 10 missing blueprint leaves (current/target/gap).
 - Added one-click "Write next" actions from gaps to preselect blueprint code and focus the prompt field, plus on-demand refresh/loading/error states.
 - TP19: added Question Forge search/load/edit mode with keyword/prefix/type filters and selectable result rows for existing questions.

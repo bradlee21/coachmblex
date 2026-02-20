@@ -18,6 +18,77 @@ const SEARCH_TYPE_OPTIONS = [
   { value: 'reverse', label: 'Reverse' },
   { value: 'fill', label: 'Fill' },
 ];
+const QUESTION_TEMPLATES = {
+  mcq: [
+    {
+      id: 'mcq-core-concept',
+      label: 'Core Concept Check',
+      promptSkeleton: 'Which statement best describes [concept] in [context]?',
+      choices: [
+        'Correct concept statement',
+        'Common misconception 1',
+        'Common misconception 2',
+        'Distractor from related topic',
+      ],
+      explanations: {
+        answer: 'Correct concept statement',
+        why: 'State why the correct answer is true in one sentence.',
+        trap: 'Explain why the main distractor is tempting but wrong.',
+        hook: 'Short memory hook tied to blueprint language.',
+      },
+    },
+    {
+      id: 'mcq-clinical-scenario',
+      label: 'Clinical Scenario',
+      promptSkeleton: 'A client presents with [finding]. Which action is most appropriate next?',
+      choices: [
+        'Best next step',
+        'Unsafe option',
+        'Partially true but incomplete option',
+        'Irrelevant option',
+      ],
+      explanations: {
+        answer: 'Best next step',
+        why: 'Connect action to safety/assessment principles.',
+        trap: 'Highlight why unsafe or partial options fail.',
+        hook: 'One-line rule to apply on test day.',
+      },
+    },
+  ],
+  reverse: [
+    {
+      id: 'reverse-definition-match',
+      label: 'Definition Match',
+      promptSkeleton: 'This term describes [definition/scenario].',
+      choices: [
+        'Correct term',
+        'Related but incorrect term',
+        'Broader category',
+        'Unrelated term',
+      ],
+      explanations: {
+        answer: 'Correct term',
+        why: 'Explain key discriminating feature.',
+        trap: 'Clarify the lookalike term difference.',
+        hook: 'Mnemonic or contrast phrase.',
+      },
+    },
+  ],
+  fill: [
+    {
+      id: 'fill-key-term',
+      label: 'Key Term Fill',
+      promptSkeleton: 'Fill in the blank: [statement] is called ____.',
+      fillAnswer: 'expected term',
+      explanations: {
+        answer: 'expected term',
+        why: 'Define the term in plain language.',
+        trap: 'Note the most common mistaken term.',
+        hook: 'Short cue for recall.',
+      },
+    },
+  ],
+};
 const EXPLANATION_FIELDS = ['answer', 'why', 'trap', 'hook'];
 const SOFT_EXPLANATION_CHAR_LIMIT = 200;
 const DOMAIN_BY_SECTION_CODE = {
@@ -140,6 +211,10 @@ function parseExplanation(value) {
   };
 }
 
+function valueIsFilled(value) {
+  return normalizeWhitespace(value).length > 0;
+}
+
 export default function AdminQuestionsPage() {
   const { user, role, loading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
@@ -165,7 +240,11 @@ export default function AdminQuestionsPage() {
   const [coverageLoading, setCoverageLoading] = useState(false);
   const [coverageError, setCoverageError] = useState('');
   const [coverageCheckedAt, setCoverageCheckedAt] = useState('');
+  const [selectedTemplateId, setSelectedTemplateId] = useState('');
+  const [overwriteTemplateValues, setOverwriteTemplateValues] = useState(false);
+  const [templateAppliedMessage, setTemplateAppliedMessage] = useState('');
   const promptInputRef = useRef(null);
+  const templateAppliedTimerRef = useRef(null);
 
   const allNodes = useMemo(() => listAllNodesFlat(), []);
   const nodeByCode = useMemo(
@@ -306,6 +385,14 @@ export default function AdminQuestionsPage() {
       explanation: normalizedExplanations,
     };
   }, [choices, correctIndex, explanations, fillAnswer, isFillType, prompt, questionType]);
+  const currentTypeTemplates = useMemo(
+    () => QUESTION_TEMPLATES[normalizeQuestionType(questionType)] || [],
+    [questionType]
+  );
+  const selectedTemplate = useMemo(
+    () => currentTypeTemplates.find((template) => template.id === selectedTemplateId) || null,
+    [currentTypeTemplates, selectedTemplateId]
+  );
 
   const isEditing = Boolean(editingQuestionId);
 
@@ -357,6 +444,19 @@ export default function AdminQuestionsPage() {
   useEffect(() => {
     void refreshCoverageGaps();
   }, [refreshCoverageGaps]);
+
+  useEffect(() => {
+    if (currentTypeTemplates.some((template) => template.id === selectedTemplateId)) return;
+    setSelectedTemplateId(currentTypeTemplates[0]?.id || '');
+  }, [currentTypeTemplates, selectedTemplateId]);
+
+  useEffect(() => {
+    return () => {
+      if (templateAppliedTimerRef.current) {
+        clearTimeout(templateAppliedTimerRef.current);
+      }
+    };
+  }, []);
 
   function onSelectBlueprint(code) {
     setSelectedBlueprintCode(code);
@@ -601,6 +701,58 @@ export default function AdminQuestionsPage() {
     clearDraft(false);
   }
 
+  function handleApplyTemplate() {
+    if (!selectedTemplate) return;
+
+    const overwrite = overwriteTemplateValues;
+    const nextPrompt = String(selectedTemplate.promptSkeleton || '');
+    if (overwrite || !valueIsFilled(prompt)) {
+      setPrompt(nextPrompt);
+    }
+
+    if (isFillType) {
+      const nextFillAnswer = String(selectedTemplate.fillAnswer || selectedTemplate.explanations?.answer || '');
+      if (overwrite || !valueIsFilled(fillAnswer)) {
+        setFillAnswer(nextFillAnswer);
+      }
+    } else if (Array.isArray(selectedTemplate.choices)) {
+      setChoices((current) =>
+        current.map((choice, index) => {
+          const templateChoice = String(selectedTemplate.choices[index] || '');
+          if (overwrite || !valueIsFilled(choice)) return templateChoice;
+          return choice;
+        })
+      );
+    }
+
+    setExplanations((current) => {
+      const next = { ...current };
+      for (const field of EXPLANATION_FIELDS) {
+        const templateValue = String(selectedTemplate.explanations?.[field] || '');
+        if (!templateValue) continue;
+        if (overwrite || !valueIsFilled(next[field])) {
+          next[field] = templateValue;
+        }
+      }
+      return next;
+    });
+
+    setTemplateAppliedMessage('Template applied');
+    if (templateAppliedTimerRef.current) {
+      clearTimeout(templateAppliedTimerRef.current);
+    }
+    templateAppliedTimerRef.current = setTimeout(() => {
+      setTemplateAppliedMessage('');
+    }, 1000);
+
+    setTimeout(() => {
+      const node = promptInputRef.current;
+      if (!node) return;
+      node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      node.focus();
+    }, 0);
+  }
+
   function handleWriteNextFromGap(code) {
     if (!code) return;
     setSelectedBlueprintCode(code);
@@ -807,6 +959,37 @@ export default function AdminQuestionsPage() {
                 {option.label}
               </button>
             ))}
+          </div>
+          <div className="auth-form">
+            <label htmlFor="forge-template-select">Template</label>
+            <select
+              id="forge-template-select"
+              value={selectedTemplateId}
+              onChange={(event) => setSelectedTemplateId(event.target.value)}
+            >
+              {currentTypeTemplates.map((template) => (
+                <option key={`forge-template-${template.id}`} value={template.id}>
+                  {template.label}
+                </option>
+              ))}
+            </select>
+            <label htmlFor="forge-template-overwrite" className="muted">
+              <input
+                id="forge-template-overwrite"
+                type="checkbox"
+                checked={overwriteTemplateValues}
+                onChange={(event) => setOverwriteTemplateValues(event.target.checked)}
+              />{' '}
+              Overwrite existing fields
+            </label>
+            <button
+              type="button"
+              onClick={handleApplyTemplate}
+              disabled={!selectedTemplate}
+            >
+              Apply Template
+            </button>
+            {templateAppliedMessage ? <p className="muted">{templateAppliedMessage}</p> : null}
           </div>
           {validation.errors.questionType ? <p className="status error">{validation.errors.questionType}</p> : null}
 
