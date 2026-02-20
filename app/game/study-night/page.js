@@ -346,14 +346,26 @@ export default function StudyNightLandingPage() {
           insertRoomResponse,
           'Failed to insert study room.'
         );
-        const errorText = String(insertRoomResponse?.errorText || '').toLowerCase();
+        const rawErrorText = String(insertRoomResponse?.errorText || '');
+        const errorText = rawErrorText.toLowerCase();
+        const errorSnippet = rawErrorText.slice(0, 200);
+        devLog(
+          '[STUDY-NIGHT] create insert_room failure',
+          'path=study_rooms',
+          `status=${insertRoomResponse?.status ?? 'n/a'}`,
+          `error=${errorSnippet}`
+        );
         const isUniqueConflict =
           insertRoomResponse.status === 409 ||
           roomInsertError.code === '23505' ||
           errorText.includes('duplicate') ||
           errorText.includes('unique');
         if (!isUniqueConflict) {
-          throw roomInsertError;
+          throw new Error(
+            `insert_room failed: HTTP ${insertRoomResponse?.status ?? 'n/a'} ${
+              errorSnippet || roomInsertError.message
+            }`
+          );
         }
       }
 

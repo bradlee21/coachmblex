@@ -1,13 +1,26 @@
 import { getSupabaseClient } from './supabaseClient';
 
+function withTimeout(promise, ms = 8000, label = 'operation') {
+  return new Promise((resolve, reject) => {
+    const timeoutId = setTimeout(() => {
+      reject(new Error(`${label} timed out after ${ms}ms`));
+    }, ms);
+
+    Promise.resolve(promise)
+      .then(resolve)
+      .catch(reject)
+      .finally(() => clearTimeout(timeoutId));
+  });
+}
+
 export async function postgrestFetch(
   path,
   { method = 'GET', body, headers = {}, signal } = {}
 ) {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const rawBase = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  if (!supabaseUrl || !anonKey) {
+  if (!rawBase || !anonKey) {
     return {
       ok: false,
       status: 0,
@@ -15,6 +28,11 @@ export async function postgrestFetch(
       errorText: 'Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY.',
     };
   }
+
+  const normalizedBase = rawBase.startsWith('http') ? rawBase : `https://${rawBase}`;
+  const base = normalizedBase.replace(/\/$/, '');
+  const normalizedPath = String(path || '').replace(/^\//, '');
+  const url = `${base}/rest/v1/${normalizedPath}`;
 
   let accessToken = null;
   const supabase = getSupabaseClient();
@@ -32,29 +50,37 @@ export async function postgrestFetch(
   const mergedHeaders = {
     apikey: anonKey,
     authorization: `Bearer ${accessToken || anonKey}`,
+    accept: 'application/json',
     ...headers,
   };
 
   if (body !== undefined) {
-    mergedHeaders['content-type'] = mergedHeaders['content-type'] || 'application/json';
+    mergedHeaders['content-type'] = 'application/json';
     mergedHeaders.prefer = mergedHeaders.prefer || 'return=representation';
   }
 
-  const response = await fetch(`${supabaseUrl}/rest/v1/${path}`, {
+  const response = await fetch(url, {
     method,
     headers: mergedHeaders,
     body: body !== undefined ? JSON.stringify(body) : undefined,
     signal,
   });
 
-  const text = await response.text();
+  let text = '';
+  try {
+    text = await withTimeout(response.text(), 8000, 'postgrest_response_text');
+  } catch (error) {
+    text = error instanceof Error ? error.message : 'Failed to read response text.';
+  }
+
   let parsed = null;
 
-  if (text) {
+  const trimmed = text.trim();
+  if (trimmed && (trimmed.startsWith('{') || trimmed.startsWith('['))) {
     try {
-      parsed = JSON.parse(text);
+      parsed = JSON.parse(trimmed);
     } catch {
-      parsed = text;
+      parsed = null;
     }
   }
 
@@ -62,6 +88,6 @@ export async function postgrestFetch(
     ok: response.ok,
     status: response.status,
     data: parsed,
-    errorText: response.ok ? '' : text,
+    errorText: text,
   };
 }
