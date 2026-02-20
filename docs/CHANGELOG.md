@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP26: added `docs/instructor-onboarding.md` with step-by-step instructor setup, role SQL snippet, policy checklist, verification steps, and troubleshooting notes.
+- Added a Question Forge role/permissions status block with a safe non-destructive check (read probe + policy guidance) to surface onboarding issues quickly.
 - TP25: added a Question Forge onboarding panel with concise authoring guidance and one-click "Start here" setup from top Coverage Gap.
 - Added persistent onboarding dismiss/show controls via localStorage so instructors can hide help and reopen it later.
 - TP24: added Question Forge local draft autosave (`qforge:draft`) with debounce, timestamp, and meaningful-content-only saves.

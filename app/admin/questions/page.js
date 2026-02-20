@@ -419,6 +419,13 @@ function formatDraftSavedAt(savedAt) {
   return parsed.toLocaleString();
 }
 
+function formatRoleForDisplay(value) {
+  const normalized = normalizeRole(value);
+  if (normalized === 'questions_editor') return 'questions_editor';
+  if (normalized === 'admin') return 'admin';
+  return 'user';
+}
+
 const EMPTY_QUESTION_DRAFT_SNAPSHOT = createQuestionDraftSnapshot();
 const EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING = getQuestionDraftSnapshotString(
   EMPTY_QUESTION_DRAFT_SNAPSHOT
@@ -457,6 +464,8 @@ export default function AdminQuestionsPage() {
   const [overwriteTemplateValues, setOverwriteTemplateValues] = useState(false);
   const [templateAppliedMessage, setTemplateAppliedMessage] = useState('');
   const [showOnboarding, setShowOnboarding] = useState(true);
+  const [permissionsCheckLoading, setPermissionsCheckLoading] = useState(false);
+  const [permissionsCheckResult, setPermissionsCheckResult] = useState(null);
   const [restoreDraftInfo, setRestoreDraftInfo] = useState(null);
   const [baselineSnapshotString, setBaselineSnapshotString] = useState(
     EMPTY_QUESTION_DRAFT_SNAPSHOT_STRING
@@ -893,6 +902,61 @@ export default function AdminQuestionsPage() {
     }
   }
 
+  async function handleRunPermissionsCheck() {
+    if (permissionsCheckLoading) return;
+    setPermissionsCheckLoading(true);
+    try {
+      const response = await withTimeout(
+        postgrestFetch('questions?select=id&limit=1'),
+        8000,
+        'qforge_permissions_read_check'
+      );
+      const checkedAt = new Date().toISOString();
+      if (response.ok) {
+        const rows = Array.isArray(response.data) ? response.data : [];
+        setPermissionsCheckResult({
+          checkedAt,
+          readOk: true,
+          readStatus: response.status,
+          readMessage: `Read check passed (${rows.length} row(s) returned).`,
+          writeCheckMode: 'safe-no-write',
+          writeMessage:
+            'Write check is skipped to avoid test data. Use Save on a real draft to verify INSERT/UPDATE policy access.',
+        });
+      } else {
+        const info = toPostgrestError(response, 'Read check failed.');
+        setPermissionsCheckResult({
+          checkedAt,
+          readOk: false,
+          readStatus: response.status || '',
+          readMessage: info.message,
+          readDetails: info.details,
+          readHint: info.hint,
+          readCode: info.code,
+          writeCheckMode: 'safe-no-write',
+          writeMessage:
+            'If role is correct but read fails, verify questions SELECT policy and RLS configuration.',
+        });
+      }
+    } catch (error) {
+      const info = toErrorInfo(error, 'Permissions check failed.');
+      setPermissionsCheckResult({
+        checkedAt: new Date().toISOString(),
+        readOk: false,
+        readStatus: info.status,
+        readMessage: info.message,
+        readDetails: info.details,
+        readHint: info.hint,
+        readCode: info.code,
+        writeCheckMode: 'safe-no-write',
+        writeMessage:
+          'Write check is skipped in safe mode. Validate save permissions by creating or updating a real question.',
+      });
+    } finally {
+      setPermissionsCheckLoading(false);
+    }
+  }
+
   function updateChoice(index, value) {
     setChoices((current) => {
       const next = [...current];
@@ -1289,6 +1353,37 @@ export default function AdminQuestionsPage() {
           </div>
         </div>
       ) : null}
+      <div className="game-card">
+        <h2>Role and Permissions Status</h2>
+        <p className="muted">Current role: {formatRoleForDisplay(role)}</p>
+        <p className="muted">User: {user?.email || user?.id || 'unknown'}</p>
+        <button
+          type="button"
+          onClick={() => void handleRunPermissionsCheck()}
+          disabled={permissionsCheckLoading}
+        >
+          {permissionsCheckLoading ? 'Checking...' : 'Run permissions check'}
+        </button>
+        {permissionsCheckResult ? (
+          <div className={permissionsCheckResult.readOk ? 'status success' : 'status error'}>
+            {permissionsCheckResult.checkedAt ? (
+              <p>Checked: {permissionsCheckResult.checkedAt}</p>
+            ) : null}
+            <p>{permissionsCheckResult.readMessage}</p>
+            {permissionsCheckResult.readStatus ? (
+              <p>Status: {permissionsCheckResult.readStatus}</p>
+            ) : null}
+            {permissionsCheckResult.readCode ? <p>Code: {permissionsCheckResult.readCode}</p> : null}
+            {permissionsCheckResult.readDetails ? <p>Details: {permissionsCheckResult.readDetails}</p> : null}
+            {permissionsCheckResult.readHint ? <p>Hint: {permissionsCheckResult.readHint}</p> : null}
+            <p>{permissionsCheckResult.writeMessage}</p>
+          </div>
+        ) : (
+          <p className="muted">
+            Safe mode check runs a read probe only. It does not insert test rows.
+          </p>
+        )}
+      </div>
       {restoreDraftInfo ? (
         <div className="runner">
           <p className="muted">
