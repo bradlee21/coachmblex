@@ -31,13 +31,35 @@ function loadEnvFile(path) {
 loadEnvFile('.env.local');
 loadEnvFile('.env');
 
+const configuredBaseURL = process.env.E2E_BASE_URL || 'http://localhost:3000';
+let baseURL = configuredBaseURL;
+let webServer;
+try {
+  const parsedBaseURL = new URL(configuredBaseURL);
+  const isLocalHost =
+    parsedBaseURL.hostname === 'localhost' || parsedBaseURL.hostname === '127.0.0.1';
+  if (isLocalHost) {
+    const managedPort = process.env.E2E_SERVER_PORT || '3100';
+    baseURL = `http://127.0.0.1:${managedPort}`;
+    webServer = {
+      command: `npm run dev -- --hostname 127.0.0.1 --port ${managedPort}`,
+      url: baseURL,
+      reuseExistingServer: false,
+      timeout: 120000,
+    };
+  }
+} catch {
+  webServer = undefined;
+}
+
 module.exports = defineConfig({
   testDir: './e2e',
   retries: 0,
   workers: 1,
   reporter: 'list',
+  webServer,
   use: {
-    baseURL: process.env.E2E_BASE_URL || 'http://localhost:3000',
+    baseURL,
     headless: true,
     trace: 'off',
     video: 'off',
