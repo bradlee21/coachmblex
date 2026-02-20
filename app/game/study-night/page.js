@@ -8,6 +8,10 @@ import { devLog } from '../../../src/lib/devLog';
 import { useAuth } from '../../../src/providers/AuthProvider';
 
 const CODE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const DEFAULT_CREATE_WIN_WEDGES = 3;
+const DEFAULT_CREATE_DURATION_SEC = 12;
+const CREATE_WIN_WEDGES_OPTIONS = [3, 5, 7];
+const CREATE_DURATION_SEC_OPTIONS = [10, 12, 15, 20];
 
 function createRoomCode(length = 6) {
   let value = '';
@@ -135,9 +139,12 @@ export default function StudyNightLandingPage() {
   const [errorInfo, setErrorInfo] = useState(null);
   const [creating, setCreating] = useState(false);
   const [createStep, setCreateStep] = useState('');
+  const [createWinWedges, setCreateWinWedges] = useState(DEFAULT_CREATE_WIN_WEDGES);
+  const [createDurationSec, setCreateDurationSec] = useState(DEFAULT_CREATE_DURATION_SEC);
   const [busyAction, setBusyAction] = useState('');
   const [checkingConnection, setCheckingConnection] = useState(false);
   const [connectionReport, setConnectionReport] = useState(null);
+  const createQuestionCount = 1;
 
   const normalizedJoinCode = useMemo(
     () => joinCodeInput.trim().toUpperCase(),
@@ -322,6 +329,9 @@ export default function StudyNightLandingPage() {
               code,
               host_user_id: user.id,
               status: 'lobby',
+              win_wedges: createWinWedges,
+              duration_sec: createDurationSec,
+              question_count: createQuestionCount,
             },
             headers: { prefer: 'return=representation' },
           }),
@@ -395,7 +405,7 @@ export default function StudyNightLandingPage() {
             category_key: null,
             question_id: null,
             started_at: null,
-            duration_sec: 12,
+            duration_sec: createDurationSec,
           },
           headers: { prefer: 'resolution=merge-duplicates,return=representation' },
         }),
@@ -502,6 +512,36 @@ export default function StudyNightLandingPage() {
         <div className="game-card">
           <h2>Create Room</h2>
           <p className="muted">Start a new lobby and invite friends with a code.</p>
+          <label htmlFor="create-win-wedges">Win wedges</label>
+          <select
+            id="create-win-wedges"
+            value={createWinWedges}
+            onChange={(event) => setCreateWinWedges(Number(event.target.value))}
+            disabled={creating}
+          >
+            {CREATE_WIN_WEDGES_OPTIONS.map((value) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="create-duration-sec">Timer (seconds)</label>
+          <select
+            id="create-duration-sec"
+            value={createDurationSec}
+            onChange={(event) => setCreateDurationSec(Number(event.target.value))}
+            disabled={creating}
+          >
+            {CREATE_DURATION_SEC_OPTIONS.map((value) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+          <label htmlFor="create-question-count">Question count</label>
+          <select id="create-question-count" value={createQuestionCount} disabled>
+            <option value={1}>1</option>
+          </select>
           <button type="button" onClick={handleCreateRoom} disabled={creating}>
             {creating ? 'Creating...' : 'Create room'}
           </button>

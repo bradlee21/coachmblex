@@ -5,8 +5,19 @@ create table if not exists public.study_rooms (
   code text unique not null,
   host_user_id uuid not null references auth.users(id),
   status text not null default 'lobby' check (status in ('lobby', 'running', 'finished')),
+  win_wedges int not null default 3,
+  duration_sec int not null default 12,
+  question_count int not null default 1,
   created_at timestamptz not null default now()
 );
+
+-- Migration snippet for existing environments:
+alter table public.study_rooms
+  add column if not exists win_wedges int not null default 3;
+alter table public.study_rooms
+  add column if not exists duration_sec int not null default 12;
+alter table public.study_rooms
+  add column if not exists question_count int not null default 1;
 
 create index if not exists study_rooms_code_idx
   on public.study_rooms(code);

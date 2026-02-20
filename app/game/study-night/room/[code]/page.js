@@ -11,6 +11,9 @@ import {
   studyNightCategoryByKey,
 } from '../../../../../src/game/studyNightCategories';
 
+const DEFAULT_WIN_WEDGES = 3;
+const DEFAULT_DURATION_SEC = 12;
+
 const DEFAULT_STATE = {
   phase: 'pick',
   game_type: 'mcq',
@@ -18,10 +21,19 @@ const DEFAULT_STATE = {
   category_key: null,
   question_id: null,
   started_at: null,
-  duration_sec: 12,
+  duration_sec: DEFAULT_DURATION_SEC,
   round_no: 1,
 };
-const WIN_WEDGES = 3;
+
+function getRoomWinWedges(room) {
+  const value = Number(room?.win_wedges);
+  return Number.isFinite(value) && value > 0 ? value : DEFAULT_WIN_WEDGES;
+}
+
+function getRoomDurationSec(room) {
+  const value = Number(room?.duration_sec);
+  return Number.isFinite(value) && value > 0 ? value : DEFAULT_DURATION_SEC;
+}
 
 function normalizeGameType(value) {
   if (value === 'reverse') return 'reverse';
@@ -250,7 +262,7 @@ export default function StudyNightRoomPage() {
 
       const [roomResult, playerResult, stateResult] = await Promise.all([
         timedPostgrest(
-          `study_rooms?id=eq.${roomId}&select=id,code,host_user_id,status,created_at&limit=1`,
+          `study_rooms?id=eq.${roomId}&select=id,code,host_user_id,status,win_wedges,duration_sec,question_count,created_at&limit=1`,
           undefined,
           'snapshot_room'
         ),
@@ -419,7 +431,7 @@ export default function StudyNightRoomPage() {
         const roomResponse = await timedPostgrest(
           `study_rooms?code=eq.${encodeURIComponent(
             roomCode
-          )}&select=id,code,host_user_id,status,created_at&limit=1`,
+          )}&select=id,code,host_user_id,status,win_wedges,duration_sec,question_count,created_at&limit=1`,
           undefined,
           'load_room_by_code'
         );
@@ -539,7 +551,7 @@ export default function StudyNightRoomPage() {
 
     const tick = () => {
       const startedAtMs = new Date(state.started_at).getTime();
-      const durationMs = (state.duration_sec || 12) * 1000;
+      const durationMs = getRoomDurationSec(room) * 1000;
       const deadlineMs = startedAtMs + durationMs;
       const remainingMs = Math.max(0, deadlineMs - Date.now());
       const remainingSec = Math.ceil(remainingMs / 1000);
@@ -560,7 +572,7 @@ export default function StudyNightRoomPage() {
     isHost,
     movePhaseToReveal,
     room?.id,
-    state?.duration_sec,
+    room?.duration_sec,
     state?.phase,
     state?.question_id,
     state?.round_no,
@@ -589,6 +601,7 @@ export default function StudyNightRoomPage() {
           body: {
             room_id: room.id,
             ...DEFAULT_STATE,
+            duration_sec: getRoomDurationSec(room),
           },
           headers: { prefer: 'resolution=merge-duplicates,return=representation' },
         },
@@ -702,6 +715,7 @@ export default function StudyNightRoomPage() {
     if (!currentTurnPlayer) return;
 
     try {
+      const roomWinWedges = getRoomWinWedges(room);
       const questionId = state.question_id;
       const categoryKey = state.category_key;
       const baselineScores = questionId ? scoreBaselineRef.current[questionId] : null;
@@ -744,7 +758,7 @@ export default function StudyNightRoomPage() {
         };
       });
       const winnerAfterReveal =
-        playersAfterReveal.find((player) => getWedges(player).length >= WIN_WEDGES) || null;
+        playersAfterReveal.find((player) => getWedges(player).length >= roomWinWedges) || null;
 
       if (winnerAfterReveal) {
         const roomFinishResponse = await timedPostgrest(
@@ -843,7 +857,9 @@ export default function StudyNightRoomPage() {
   }
 
   const currentCategory = state?.category_key ? studyNightCategoryByKey[state.category_key] : null;
-  const winner = orderedPlayers.find((player) => getWedges(player).length >= WIN_WEDGES) || null;
+  const roomWinWedges = getRoomWinWedges(room);
+  const roomDurationSec = getRoomDurationSec(room);
+  const winner = orderedPlayers.find((player) => getWedges(player).length >= roomWinWedges) || null;
   const selectedAnswerIndex = question?.id ? selectedAnswer[question.id] : null;
   const fillInputValue = question?.id ? fillInputByQuestion[question.id] || '' : '';
   const explanationBlocks = question ? getExplanationBlocks(question.explanation) : [];
@@ -857,7 +873,8 @@ export default function StudyNightRoomPage() {
     <section>
       <h1>Study Night Room {room.code}</h1>
       <p className="muted">
-        Status: {room.status} | Round: {state?.round_no || 1} | Phase: {state?.phase || 'pick'}
+        Status: {room.status} | Round: {state?.round_no || 1} | Phase: {state?.phase || 'pick'} |
+        Win wedges: {roomWinWedges} | Timer: {roomDurationSec}s
       </p>
 
       <div className="game-grid">
@@ -1047,7 +1064,7 @@ export default function StudyNightRoomPage() {
                     <strong>{getDisplayName(player)}</strong>
                     <div className="muted">Final score: {player.score || 0}</div>
                     <div className="muted">
-                      Wedges: {getWedges(player).length}/{WIN_WEDGES}
+                      Wedges: {getWedges(player).length}/{roomWinWedges}
                     </div>
                   </li>
                 ))}

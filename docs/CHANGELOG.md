@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP5: added host-configurable room settings (`win_wedges`, `duration_sec`, `question_count`) to room creation and SQL docs.
+- Study Night runtime now uses room-level win/timer settings with backward-compatible defaults for older rooms.
 - Study Night TP4: enforced Trivial Pursuit wedge win threshold via `WIN_WEDGES` with host finishing the room when any player reaches the target.
 - Study Night pick phase now marks and disables categories already owned by the current turn player to encourage wedge variety.
 - Study Night finished view now includes a final scoreboard with per-player score and wedge progress.
