@@ -35,6 +35,7 @@ function getCodePrefix(code) {
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const QUICK_PARAM_KEYS = ['quick', 'q', 'qt', 'bc', 'tg', 'cid'];
+const DIAGNOSTIC_GROUP_CANDIDATES = ['pack_id', 'packId', 'source', 'metadata', 'subtopic'];
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -107,6 +108,53 @@ function getQuestionTags(question) {
   return [];
 }
 
+function normalizeDiagnosticGroupValue(column, rawValue) {
+  if (column === 'metadata' && rawValue && typeof rawValue === 'object') {
+    const metadataPack =
+      rawValue.pack_id || rawValue.packId || rawValue.source || rawValue.pack || null;
+    if (metadataPack) return String(metadataPack);
+    return '(metadata)';
+  }
+  if (rawValue == null || rawValue === '') return '(none)';
+  return String(rawValue);
+}
+
+async function fetchGroupedCountsByColumn(supabase, column) {
+  const pageSize = 1000;
+  let from = 0;
+  const rows = [];
+
+  for (;;) {
+    const { data, error } = await supabase
+      .from('questions')
+      .select(`id,${column}`)
+      .order('id', { ascending: true })
+      .range(from, from + pageSize - 1);
+
+    if (error) {
+      return { groups: [], error };
+    }
+
+    const pageRows = data || [];
+    if (pageRows.length === 0) break;
+    rows.push(...pageRows);
+    if (pageRows.length < pageSize) break;
+    from += pageRows.length;
+  }
+
+  const counts = new Map();
+  for (const row of rows) {
+    const value = normalizeDiagnosticGroupValue(column, row[column]);
+    counts.set(value, (counts.get(value) || 0) + 1);
+  }
+
+  const groups = Array.from(counts.entries())
+    .map(([value, count]) => ({ value, count }))
+    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+
+  return { groups, error: null };
+}
+
 export default function DrillPage() {
   const router = useRouter();
   const pathname = usePathname();
@@ -163,6 +211,21 @@ export default function DrillPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [activeSessionMeta, setActiveSessionMeta] = useState({ codePrefix: '', type: 'mcq' });
+  const [diagnosticLoading, setDiagnosticLoading] = useState(false);
+  const [diagnosticError, setDiagnosticError] = useState('');
+  const [diagnosticTotal, setDiagnosticTotal] = useState(null);
+  const [diagnosticGroupColumn, setDiagnosticGroupColumn] = useState('');
+  const [diagnosticGroups, setDiagnosticGroups] = useState([]);
+  const supabaseHostname = useMemo(() => {
+    const raw = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+    if (!raw) return '(missing NEXT_PUBLIC_SUPABASE_URL)';
+    try {
+      const normalized = raw.startsWith('http') ? raw : `https://${raw}`;
+      return new URL(normalized).hostname;
+    } catch {
+      return '(invalid NEXT_PUBLIC_SUPABASE_URL)';
+    }
+  }, []);
 
   const handleDrillComplete = useCallback(
     ({ score, total }) => {
@@ -233,6 +296,70 @@ export default function DrillPage() {
       setLeafCode(deepLinkCode);
     }
   }, [searchParams]);
+
+  const loadDiagnostics = useCallback(async () => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setDiagnosticError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+      setDiagnosticTotal(0);
+      setDiagnosticGroupColumn('');
+      setDiagnosticGroups([]);
+      return;
+    }
+
+    setDiagnosticLoading(true);
+    setDiagnosticError('');
+
+    const { count, error } = await supabase
+      .from('questions')
+      .select('id', { head: true, count: 'exact' });
+
+    if (error) {
+      setDiagnosticError(`Failed to load question count: ${error.message}`);
+      setDiagnosticTotal(0);
+      setDiagnosticGroupColumn('');
+      setDiagnosticGroups([]);
+      setDiagnosticLoading(false);
+      return;
+    }
+
+    setDiagnosticTotal(count ?? 0);
+
+    let resolvedColumn = '';
+    let resolvedGroups = [];
+    let lastErrorMessage = '';
+
+    for (const column of DIAGNOSTIC_GROUP_CANDIDATES) {
+      const { groups, error: groupError } = await fetchGroupedCountsByColumn(supabase, column);
+      if (groupError) {
+        lastErrorMessage = groupError.message || String(groupError);
+        continue;
+      }
+      resolvedColumn = column;
+      resolvedGroups = groups;
+      break;
+    }
+
+    if (!resolvedColumn) {
+      setDiagnosticGroupColumn('');
+      setDiagnosticGroups([]);
+      setDiagnosticError(
+        lastErrorMessage
+          ? `Could not load grouped pack counts: ${lastErrorMessage}`
+          : 'Could not load grouped pack counts.'
+      );
+      setDiagnosticLoading(false);
+      return;
+    }
+
+    setDiagnosticGroupColumn(resolvedColumn);
+    setDiagnosticGroups(resolvedGroups);
+    setDiagnosticLoading(false);
+  }, []);
+
+  useEffect(() => {
+    void loadDiagnostics();
+  }, [loadDiagnostics]);
 
   const fetchQuickMatches = useCallback(async (filters) => {
     const supabase = getSupabaseClient();
@@ -536,6 +663,38 @@ export default function DrillPage() {
     <section>
       <h1>Drill</h1>
       <p>Pick a blueprint topic and start a 10-question drill.</p>
+
+      <details className="runner">
+        <summary>Diagnostics</summary>
+        <p>
+          Connected Supabase hostname: <strong>{supabaseHostname}</strong>
+        </p>
+        <p>
+          Total questions in DB:{' '}
+          <strong>{diagnosticTotal == null ? '...' : String(diagnosticTotal)}</strong>
+        </p>
+        {diagnosticGroupColumn ? (
+          <p>
+            Counts grouped by <strong>{diagnosticGroupColumn}</strong>
+          </p>
+        ) : null}
+        {diagnosticGroups.length > 0 ? (
+          <ul>
+            {diagnosticGroups.map((item) => (
+              <li key={`${item.value}-${item.count}`}>
+                {item.value}: {item.count}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        {diagnosticError ? <p className="status error">{diagnosticError}</p> : null}
+        {diagnosticLoading ? <p className="muted">Loading diagnostics...</p> : null}
+        <div className="drill-controls">
+          <button type="button" onClick={() => void loadDiagnostics()} disabled={diagnosticLoading}>
+            Refresh diagnostics
+          </button>
+        </div>
+      </details>
 
       <div className="runner">
         <h2>Quick Collections</h2>
