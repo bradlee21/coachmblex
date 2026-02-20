@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP19: added Question Forge search/load/edit mode with keyword/prefix/type filters and selectable result rows for existing questions.
+- Form now supports PATCH updates when editing an existing question, with clear Editing state, New Question reset, and Updated success feedback.
+- Added questions SQL policy docs and copy/paste migration script for `questions_editor`/`admin` update permissions.
 - TP18: added strong inline Question Forge validation (required fields, duplicate choice checks, and top summary) that blocks invalid saves.
 - Added read-only Question Forge preview for prompt, choices/fill answer, and Answer/Why/Trap/Hook blocks to match saved structure.
 - Added post-save Duplicate flow to clone the most recently saved question into a new draft for fast variant authoring.

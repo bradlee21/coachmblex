@@ -46,3 +46,24 @@ create policy "Editors can insert questions"
         and p.role in ('questions_editor', 'admin')
     )
   );
+
+drop policy if exists "Editors can update questions" on public.questions;
+create policy "Editors can update questions"
+  on public.questions
+  for update
+  using (
+    exists (
+      select 1
+      from public.profiles p
+      where p.id = auth.uid()
+        and p.role in ('questions_editor', 'admin')
+    )
+  )
+  with check (
+    exists (
+      select 1
+      from public.profiles p
+      where p.id = auth.uid()
+        and p.role in ('questions_editor', 'admin')
+    )
+  );

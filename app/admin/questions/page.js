@@ -10,6 +10,12 @@ const QUESTION_TYPE_OPTIONS = [
   { value: 'reverse', label: 'Reverse' },
   { value: 'fill', label: 'Fill' },
 ];
+const SEARCH_TYPE_OPTIONS = [
+  { value: 'any', label: 'Any type' },
+  { value: 'mcq', label: 'MCQ' },
+  { value: 'reverse', label: 'Reverse' },
+  { value: 'fill', label: 'Fill' },
+];
 const EXPLANATION_FIELDS = ['answer', 'why', 'trap', 'hook'];
 const SOFT_EXPLANATION_CHAR_LIMIT = 200;
 const DOMAIN_BY_SECTION_CODE = {
@@ -108,6 +114,30 @@ function normalizeWhitespace(value) {
     .replace(/\s+/g, ' ');
 }
 
+function buildPromptSnippet(value, maxLength = 120) {
+  const clean = normalizeWhitespace(value);
+  if (clean.length <= maxLength) return clean;
+  return `${clean.slice(0, maxLength - 1)}...`;
+}
+
+function normalizeQuestionType(value) {
+  if (value === 'reverse') return 'reverse';
+  if (value === 'fill') return 'fill';
+  return 'mcq';
+}
+
+function parseExplanation(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return createDefaultExplanations();
+  }
+  return {
+    answer: String(value.answer || ''),
+    why: String(value.why || ''),
+    trap: String(value.trap || ''),
+    hook: String(value.hook || ''),
+  };
+}
+
 export default function AdminQuestionsPage() {
   const { user, role, loading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
@@ -122,6 +152,13 @@ export default function AdminQuestionsPage() {
   const [errorInfo, setErrorInfo] = useState(null);
   const [savedInfo, setSavedInfo] = useState(null);
   const [lastSavedDraft, setLastSavedDraft] = useState(null);
+  const [editingQuestionId, setEditingQuestionId] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [searchBlueprintPrefix, setSearchBlueprintPrefix] = useState('');
+  const [searchQuestionType, setSearchQuestionType] = useState('any');
+  const [searchResults, setSearchResults] = useState([]);
+  const [searching, setSearching] = useState(false);
+  const [searchErrorInfo, setSearchErrorInfo] = useState(null);
 
   const allNodes = useMemo(() => listAllNodesFlat(), []);
   const nodeByCode = useMemo(
@@ -263,10 +300,27 @@ export default function AdminQuestionsPage() {
     };
   }, [choices, correctIndex, explanations, fillAnswer, isFillType, prompt, questionType]);
 
+  const isEditing = Boolean(editingQuestionId);
+
   function onSelectBlueprint(code) {
     setSelectedBlueprintCode(code);
     setSavedInfo(null);
     setErrorInfo(null);
+  }
+
+  function clearDraft(keepBlueprintAndType = true) {
+    setPrompt('');
+    setChoices(createDefaultChoices());
+    setCorrectIndex(0);
+    setFillAnswer('');
+    setExplanations(createDefaultExplanations());
+    setSavedInfo(null);
+    setErrorInfo(null);
+    setEditingQuestionId('');
+    if (!keepBlueprintAndType) {
+      setSelectedBlueprintCode('');
+      setQuestionType('mcq');
+    }
   }
 
   function updateChoice(index, value) {
@@ -338,18 +392,23 @@ export default function AdminQuestionsPage() {
 
     try {
       const payload = buildInsertPayload();
+      const isPatch = Boolean(editingQuestionId);
+      const path = isPatch
+        ? `questions?id=eq.${encodeURIComponent(editingQuestionId)}`
+        : 'questions';
+      const method = isPatch ? 'PATCH' : 'POST';
       const response = await withTimeout(
-        postgrestFetch('questions', {
-          method: 'POST',
+        postgrestFetch(path, {
+          method,
           body: payload,
           headers: { prefer: 'return=representation' },
         }),
         8000,
-        'forge_insert_question'
+        isPatch ? 'forge_update_question' : 'forge_insert_question'
       );
 
       if (!response.ok) {
-        throw toPostgrestError(response, 'Failed to save question.');
+        throw toPostgrestError(response, isPatch ? 'Failed to update question.' : 'Failed to save question.');
       }
 
       const row = Array.isArray(response.data) ? response.data[0] || null : null;
@@ -357,6 +416,7 @@ export default function AdminQuestionsPage() {
         id: row?.id || 'unknown',
         blueprintCode: payload.blueprint_code,
         questionType: payload.question_type,
+        action: isPatch ? 'updated' : 'saved',
       });
       setLastSavedDraft({
         blueprintCode: payload.blueprint_code,
@@ -374,14 +434,10 @@ export default function AdminQuestionsPage() {
       });
 
       if (mode === 'save_new') {
-        setPrompt('');
-        setChoices(createDefaultChoices());
-        setCorrectIndex(0);
-        setFillAnswer('');
-        setExplanations(createDefaultExplanations());
+        clearDraft(true);
       }
     } catch (error) {
-      setErrorInfo(toErrorInfo(error, 'Failed to save question.'));
+      setErrorInfo(toErrorInfo(error, isEditing ? 'Failed to update question.' : 'Failed to save question.'));
     } finally {
       setSavingMode('');
     }
@@ -396,8 +452,79 @@ export default function AdminQuestionsPage() {
     void saveQuestion('save_new');
   }
 
+  async function handleSearchQuestions(event) {
+    if (event?.preventDefault) event.preventDefault();
+    setSearching(true);
+    setSearchErrorInfo(null);
+
+    try {
+      const params = new URLSearchParams({
+        select: 'id,blueprint_code,question_type,prompt,choices,correct_index,explanation,created_at',
+        order: 'created_at.desc',
+        limit: '25',
+      });
+
+      const trimmedKeyword = normalizeWhitespace(searchKeyword);
+      if (trimmedKeyword) {
+        params.set('prompt', `ilike.*${trimmedKeyword}*`);
+      }
+
+      const trimmedPrefix = normalizeWhitespace(searchBlueprintPrefix).toUpperCase();
+      if (trimmedPrefix) {
+        params.set('blueprint_code', `like.${trimmedPrefix}%`);
+      }
+
+      if (searchQuestionType !== 'any') {
+        params.set('question_type', `eq.${searchQuestionType}`);
+      }
+
+      const response = await withTimeout(
+        postgrestFetch(`questions?${params.toString()}`),
+        8000,
+        'forge_search_questions'
+      );
+      if (!response.ok) {
+        throw toPostgrestError(response, 'Failed to search questions.');
+      }
+      setSearchResults(Array.isArray(response.data) ? response.data : []);
+    } catch (error) {
+      setSearchErrorInfo(toErrorInfo(error, 'Failed to search questions.'));
+    } finally {
+      setSearching(false);
+    }
+  }
+
+  function handleLoadSearchResult(result) {
+    if (!result || !result.id) return;
+
+    const normalizedType = normalizeQuestionType(result.question_type);
+    const loadedChoices = Array.isArray(result.choices)
+      ? result.choices.slice(0, 4).map((choice) => String(choice || ''))
+      : createDefaultChoices();
+    while (loadedChoices.length < 4) {
+      loadedChoices.push('');
+    }
+    const loadedCorrectIndex =
+      Number.isInteger(result.correct_index) && result.correct_index >= 0 && result.correct_index <= 3
+        ? result.correct_index
+        : 0;
+    const explanation = parseExplanation(result.explanation);
+
+    setEditingQuestionId(result.id);
+    setSelectedBlueprintCode(String(result.blueprint_code || ''));
+    setQuestionType(normalizedType);
+    setPrompt(String(result.prompt || ''));
+    setChoices(loadedChoices);
+    setCorrectIndex(loadedCorrectIndex);
+    setFillAnswer(normalizedType === 'fill' ? String(loadedChoices[loadedCorrectIndex] || loadedChoices[0] || '') : '');
+    setExplanations(explanation);
+    setSavedInfo(null);
+    setErrorInfo(null);
+  }
+
   function handleDuplicateLastQuestion() {
     if (!lastSavedDraft) return;
+    setEditingQuestionId('');
     setSelectedBlueprintCode(lastSavedDraft.blueprintCode || '');
     setQuestionType(lastSavedDraft.questionType || 'mcq');
     setPrompt(lastSavedDraft.prompt || '');
@@ -412,6 +539,10 @@ export default function AdminQuestionsPage() {
     });
     setSavedInfo(null);
     setErrorInfo(null);
+  }
+
+  function handleStartNewQuestion() {
+    clearDraft(false);
   }
 
   if (loading) {
@@ -445,6 +576,69 @@ export default function AdminQuestionsPage() {
     <section>
       <h1>Question Forge</h1>
       <p>Create and edit MBLEX questions.</p>
+      <div className="game-card">
+        <h2>Search Existing Questions</h2>
+        <form className="auth-form" onSubmit={handleSearchQuestions}>
+          <label htmlFor="forge-search-keyword">Keyword</label>
+          <input
+            id="forge-search-keyword"
+            type="text"
+            value={searchKeyword}
+            onChange={(event) => setSearchKeyword(event.target.value)}
+            placeholder="Search prompt text"
+          />
+
+          <label htmlFor="forge-search-prefix">Blueprint prefix</label>
+          <input
+            id="forge-search-prefix"
+            type="text"
+            value={searchBlueprintPrefix}
+            onChange={(event) => setSearchBlueprintPrefix(event.target.value.toUpperCase())}
+            placeholder="2.D"
+          />
+
+          <label htmlFor="forge-search-type">Type</label>
+          <select
+            id="forge-search-type"
+            value={searchQuestionType}
+            onChange={(event) => setSearchQuestionType(event.target.value)}
+          >
+            {SEARCH_TYPE_OPTIONS.map((option) => (
+              <option key={`forge-search-type-${option.value}`} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+
+          <button type="submit" disabled={searching}>
+            {searching ? 'Searching...' : 'Search'}
+          </button>
+        </form>
+        {searchErrorInfo ? (
+          <div className="status error">
+            <p>{searchErrorInfo.message}</p>
+            {searchErrorInfo.details ? <p>Details: {searchErrorInfo.details}</p> : null}
+            {searchErrorInfo.hint ? <p>Hint: {searchErrorInfo.hint}</p> : null}
+            {searchErrorInfo.code ? <p>Code: {searchErrorInfo.code}</p> : null}
+            {searchErrorInfo.status ? <p>Status: {searchErrorInfo.status}</p> : null}
+          </div>
+        ) : null}
+        <div className="choice-list" role="listbox" aria-label="Question search results">
+          {searchResults.map((result) => (
+            <button
+              key={`forge-result-${result.id}`}
+              type="button"
+              onClick={() => handleLoadSearchResult(result)}
+              className={editingQuestionId === result.id ? 'active-btn' : ''}
+              aria-selected={editingQuestionId === result.id}
+            >
+              {result.blueprint_code || 'n/a'} | {normalizeQuestionType(result.question_type)} |{' '}
+              {buildPromptSnippet(result.prompt)}
+            </button>
+          ))}
+        </div>
+        <p className="muted">{searchResults.length} result(s).</p>
+      </div>
 
       <div className="game-grid">
         <div className="game-card">
@@ -484,6 +678,14 @@ export default function AdminQuestionsPage() {
 
         <div className="game-card">
           <h2>Question Form</h2>
+          {isEditing ? (
+            <div className="status success">
+              <p>Editing {editingQuestionId}</p>
+              <button type="button" onClick={handleStartNewQuestion}>
+                New Question
+              </button>
+            </div>
+          ) : null}
           <div className="runner">
             <p className="muted">
               Required fields: Blueprint code, question type, prompt, and Answer/Why/Trap/Hook guidance.
@@ -660,7 +862,7 @@ export default function AdminQuestionsPage() {
 
           {savedInfo ? (
             <div className="status success">
-              <p>Saved (id: {savedInfo.id})</p>
+              <p>{savedInfo.action === 'updated' ? 'Updated' : 'Saved'} (id: {savedInfo.id})</p>
               <p>
                 {savedInfo.blueprintCode} | {savedInfo.questionType}
               </p>
