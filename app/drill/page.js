@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
+import { trackEvent } from '../../src/lib/trackEvent';
 import {
   findNodeByCode,
   listTopLevelDomains,
@@ -21,6 +22,14 @@ function gatherLeafNodes(node, leafNodes = []) {
   }
 
   return leafNodes;
+}
+
+function getCodePrefix(code) {
+  const parts = String(code || '')
+    .split('.')
+    .filter(Boolean);
+  if (parts.length >= 2) return `${parts[0]}.${parts[1]}`;
+  return parts[0] || '';
 }
 
 export default function DrillPage() {
@@ -54,6 +63,19 @@ export default function DrillPage() {
   const [started, setStarted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [activeSessionMeta, setActiveSessionMeta] = useState({ codePrefix: '', type: 'mcq' });
+
+  const handleDrillComplete = useCallback(
+    ({ score, total }) => {
+      void trackEvent('drill_complete', {
+        codePrefix: activeSessionMeta.codePrefix || getCodePrefix(selectedCode),
+        type: activeSessionMeta.type || questionType,
+        correct: Number(score) || 0,
+        total: Number(total) || 0,
+      });
+    },
+    [activeSessionMeta.codePrefix, activeSessionMeta.type, questionType, selectedCode]
+  );
 
   function onSelectSection(nextSectionCode) {
     setSectionCode(nextSectionCode);
@@ -136,8 +158,12 @@ export default function DrillPage() {
     }
 
     const picked = (data || []).slice(0, 10);
+    const codePrefix = getCodePrefix(selectedCode);
+    const type = questionType === 'reverse' ? 'reverse' : 'mcq';
+    setActiveSessionMeta({ codePrefix, type });
     setQuestions(picked);
     setStarted(true);
+    void trackEvent('drill_start', { codePrefix, type });
     if (picked.length < 10) {
       setMessage(
         `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedCode}. Add more tagged content to reach 10.`
@@ -229,7 +255,13 @@ export default function DrillPage() {
       </div>
 
       {message ? <p className="status error">{message}</p> : null}
-      {started ? <QuestionRunner title={`Drill ${selectedCode}`} questions={questions} /> : null}
+      {started ? (
+        <QuestionRunner
+          title={`Drill ${selectedCode}`}
+          questions={questions}
+          onComplete={handleDrillComplete}
+        />
+      ) : null}
     </section>
   );
 }

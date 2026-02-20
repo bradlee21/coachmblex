@@ -5,6 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { getSupabaseClient } from '../../../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../../../src/lib/postgrestFetch';
 import { devLog } from '../../../../../src/lib/devLog';
+import { trackEvent } from '../../../../../src/lib/trackEvent';
 import { useAuth } from '../../../../../src/providers/AuthProvider';
 import {
   studyNightCategories,
@@ -547,6 +548,7 @@ export default function StudyNightRoomPage() {
   const rejoinSyncRef = useRef(false);
   const refreshInFlightRef = useRef(null);
   const lastRealtimeResyncAtRef = useRef(0);
+  const finishedEventKeyRef = useRef('');
   const submittedTurnKeysRef = useRef({});
   const gradedTurnKeysRef = useRef({});
   const coachStatsRef = useRef({});
@@ -1102,6 +1104,24 @@ export default function StudyNightRoomPage() {
       clearInterval(intervalId);
     };
   }, [room?.id, user?.id]);
+
+  useEffect(() => {
+    if (!room?.id || !user?.id) return;
+    const isFinished = room.status === 'finished' || state?.phase === 'finished';
+    if (!isFinished) return;
+
+    const eventKey = `${room.id}:${user.id}`;
+    if (finishedEventKeyRef.current === eventKey) return;
+    finishedEventKeyRef.current = eventKey;
+
+    const createdAtMs = new Date(room.created_at || 0).getTime();
+    const durationSec =
+      Number.isFinite(createdAtMs) && createdAtMs > 0
+        ? Math.max(0, Math.round((Date.now() - createdAtMs) / 1000))
+        : 0;
+
+    void trackEvent('study_night_finished', { durationSec });
+  }, [room?.created_at, room?.id, room?.status, state?.phase, user?.id]);
 
   useEffect(() => {
     if (!room?.id || state?.phase !== 'reveal') return;

@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- TP32: added minimal privacy-safe telemetry plumbing with `usage_events` SQL docs/migration scripts and a best-effort `trackEvent` helper that never blocks UX.
+- Added event tracking touchpoints for Today, Drill, Study Night (create/join/finished), and Question Forge save using counts/prefix/type metadata only (no question text or answers).
 - TP31: added `docs/security-checklist.md` summarizing route and table access expectations for `user`, `questions_editor`, and `admin` roles.
 - Added `scripts/rls-sanity.mjs` anon-key read-only probe for Study Night protected tables (and questions anon-read expectation) and wired it into smoke/critical smoke checks.
 - TP30: added a host-only Study Night diagnostics toggle with live realtime status, last snapshot refresh time, and last critical mutation result for in-room troubleshooting.

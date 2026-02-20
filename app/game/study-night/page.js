@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../src/lib/postgrestFetch';
 import { devLog } from '../../../src/lib/devLog';
+import { trackEvent } from '../../../src/lib/trackEvent';
 import { useAuth } from '../../../src/providers/AuthProvider';
 
 const CODE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -438,6 +439,11 @@ export default function StudyNightLandingPage() {
 
       setKnownRoomCode(createdRoom.code);
       setJoinCodeInput(createdRoom.code);
+      void trackEvent('study_night_create', {
+        gameTypeMode: createGameTypeMode,
+        winWedges: createWinWedges,
+        durationSec: createDurationSec,
+      });
       setStep('upsert_host_player');
       const playerUpsertResponse = await upsertPlayerMembership(
         createdRoom.id,
@@ -535,6 +541,7 @@ export default function StudyNightLandingPage() {
       );
       devLog('[STUDY-NIGHT] join room upsert_player response', joinPlayerUpsertResponse);
       setKnownRoomCode(room.code);
+      void trackEvent('study_night_join');
       router.push(`/game/study-night/room/${room.code}`);
     } catch (error) {
       devLog('[STUDY-NIGHT] join room failed', error);

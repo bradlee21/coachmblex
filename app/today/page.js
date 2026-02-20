@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
+import { trackEvent } from '../../src/lib/trackEvent';
 
 function pickTodayQuestions(biasPool, allPool) {
   const preferred = biasPool.slice(0, 6);
@@ -27,6 +28,14 @@ export default function TodayPage() {
   const [error, setError] = useState('');
   const mountedRef = useRef(true);
   const requestIdRef = useRef(0);
+  const todayStartSentRef = useRef(false);
+
+  const handleTodayComplete = useCallback(({ score, total }) => {
+    void trackEvent('today_complete', {
+      correct: Number(score) || 0,
+      total: Number(total) || 0,
+    });
+  }, []);
 
   useEffect(() => {
     mountedRef.current = true;
@@ -106,13 +115,22 @@ export default function TodayPage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (todayStartSentRef.current) return;
+    if (loading || error || questions.length === 0) return;
+    todayStartSentRef.current = true;
+    void trackEvent('today_start');
+  }, [error, loading, questions.length]);
+
   return (
     <section>
       <h1>Today</h1>
       <p>Daily run: 8 questions with extra anatomy and kinesiology coverage.</p>
       {loading ? <p>Loading questions...</p> : null}
       {error ? <p className="status error">{error}</p> : null}
-      {!loading && !error ? <QuestionRunner title="Today Session" questions={questions} /> : null}
+      {!loading && !error ? (
+        <QuestionRunner title="Today Session" questions={questions} onComplete={handleTodayComplete} />
+      ) : null}
     </section>
   );
 }

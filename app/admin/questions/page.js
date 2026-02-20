@@ -5,6 +5,7 @@ import { listAllNodesFlat } from '../../../src/content/mblexBlueprint';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../src/lib/postgrestFetch';
 import { getCoverageStats } from '../../../src/lib/coverageStats';
+import { trackEvent } from '../../../src/lib/trackEvent';
 import { useAuth } from '../../../src/providers/AuthProvider';
 
 const QUESTION_TYPE_OPTIONS = [
@@ -203,6 +204,14 @@ function normalizeQuestionType(value) {
   if (value === 'reverse') return 'reverse';
   if (value === 'fill') return 'fill';
   return 'mcq';
+}
+
+function getBlueprintPrefix(code) {
+  const parts = String(code || '')
+    .split('.')
+    .filter(Boolean);
+  if (parts.length >= 2) return `${parts[0]}.${parts[1]}`;
+  return parts[0] || '';
 }
 
 function parseExplanation(value) {
@@ -1065,6 +1074,10 @@ export default function AdminQuestionsPage() {
           trap: payload.explanation?.trap || '',
           hook: payload.explanation?.hook || '',
         },
+      });
+      void trackEvent('qforge_save', {
+        type: normalizeQuestionType(payload.question_type),
+        codePrefix: getBlueprintPrefix(payload.blueprint_code),
       });
       setBaselineSnapshotString(
         getQuestionDraftSnapshotString(
