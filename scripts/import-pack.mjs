@@ -52,6 +52,29 @@ function usageAndExit() {
   process.exit(1);
 }
 
+function getHostnameFromUrl(rawUrl) {
+  try {
+    const normalized = String(rawUrl || '').startsWith('http')
+      ? String(rawUrl)
+      : `https://${String(rawUrl || '')}`;
+    return new URL(normalized).hostname || '(unknown)';
+  } catch {
+    return '(invalid-url)';
+  }
+}
+
+async function getQuestionCount(supabase) {
+  const { count, error } = await supabase
+    .from('questions')
+    .select('id', { count: 'exact', head: true });
+
+  if (error) {
+    throw new Error(error.message || 'Unknown count error');
+  }
+
+  return Number(count || 0);
+}
+
 function normalizeText(value) {
   return String(value || '')
     .trim()
@@ -228,6 +251,18 @@ async function main() {
     auth: { persistSession: false },
   });
 
+  const hostname = getHostnameFromUrl(supabaseUrl);
+  console.log(`Import target Supabase hostname: ${hostname}`);
+  let beforeCount = 0;
+  try {
+    beforeCount = await getQuestionCount(supabase);
+    console.log(`Questions in DB before import: ${beforeCount}`);
+  } catch (error) {
+    console.log(
+      `Questions in DB before import: unavailable (${error instanceof Error ? error.message : String(error)})`
+    );
+  }
+
   const failures = [];
   const validRows = [];
   const validRowNumbers = [];
@@ -257,6 +292,14 @@ async function main() {
   console.log(`Total rows: ${pack.questions.length}`);
   console.log(`Inserted: ${insertedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
+  try {
+    const afterCount = await getQuestionCount(supabase);
+    console.log(`Questions in DB after import: ${afterCount}`);
+  } catch (error) {
+    console.log(
+      `Questions in DB after import: unavailable (${error instanceof Error ? error.message : String(error)})`
+    );
+  }
 
   if (invalidCount > 0) {
     console.log('Invalid rows:');
