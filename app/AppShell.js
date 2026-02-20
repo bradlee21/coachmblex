@@ -58,14 +58,17 @@ function isTypingTarget(target) {
 }
 
 export default function AppShell({ children }) {
-  const pathname = usePathname();
+  const pathname = usePathname() || '/';
   const router = useRouter();
   const { user, role, loading, error, warning } = useAuth();
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const isAuthRoute = pathname.startsWith('/auth');
+  const isRootRoute = pathname === '/';
+  const isPublicRoute = isAuthRoute || isRootRoute;
   const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
-  const isProtectedRoute = PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute;
+  const isProtectedRoute =
+    !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
   const visibleNavItems = useMemo(
     () => NAV_ITEMS.filter((item) => canAccessNavItem(item, role)),
@@ -120,10 +123,13 @@ export default function AppShell({ children }) {
   }, [loading, isProtectedRoute, router, user]);
 
   async function handleSignOut() {
+    setIsReviewOpen(false);
     const supabase = getSupabaseClient();
-    if (!supabase) return;
-    await supabase.auth.signOut();
+    if (supabase) {
+      await supabase.auth.signOut();
+    }
     router.replace('/auth/sign-in');
+    router.refresh();
   }
 
   if (isAuthRoute) {
