@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP7: added player `last_seen_at` heartbeat updates every 15 seconds for reconnect-aware activity tracking.
+- Added safe rejoin membership sync on room load so refresh/disconnect users are re-upserted if their player row is missing.
+- Added lightweight `Active X / Total Y` presence hint in the room player panel.
 - Study Night TP6: added `game_type_mode` room setting (`pick` or `roulette`) with create-room controls and SQL docs/migration snippets.
 - Roulette mode now hides manual game-type selection and lets the host auto-select MCQ/Reverse/Fill with a simple no-repeat reroll rule.
 - Pick/question UI now surfaces the active turn game type label for both modes.

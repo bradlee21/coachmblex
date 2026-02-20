@@ -261,6 +261,7 @@ export default function StudyNightRoomPage() {
   const channelRef = useRef(null);
   const revealKeyRef = useRef('');
   const scoreBaselineRef = useRef({});
+  const rejoinSyncRef = useRef(false);
 
   const orderedPlayers = useMemo(() => sortPlayers(players), [players]);
   const playerCount = orderedPlayers.length;
@@ -274,6 +275,13 @@ export default function StudyNightRoomPage() {
   const isRouletteMode = gameTypeMode === 'roulette';
   const canPickCategory =
     room?.status === 'running' && state?.phase === 'pick' && Boolean(currentTurnPlayer) && (isCurrentTurn || isHost);
+  const activePlayersCount = useMemo(() => {
+    const activeAfterMs = Date.now() - 60000;
+    return orderedPlayers.filter((player) => {
+      const seenAtMs = new Date(player.last_seen_at || 0).getTime();
+      return seenAtMs >= activeAfterMs;
+    }).length;
+  }, [orderedPlayers]);
 
   const refreshRoomSnapshot = useCallback(
     async (roomId) => {
@@ -573,6 +581,62 @@ export default function StudyNightRoomPage() {
       setSelectedGameType('mcq');
     }
   }, [state?.phase, state?.round_no]);
+
+  useEffect(() => {
+    if (!room?.id || !user?.id || loadingRoom) return undefined;
+    if (orderedPlayers.some((player) => player.user_id === user.id)) return undefined;
+    if (rejoinSyncRef.current) return undefined;
+
+    rejoinSyncRef.current = true;
+    let isMounted = true;
+
+    async function ensureMembershipAfterRefresh() {
+      try {
+        await ensureRoomMembership(room.id, user);
+        if (isMounted) {
+          await refreshRoomSnapshot(room.id);
+        }
+      } catch (error) {
+        devLog('[STUDY-NIGHT] rejoin membership sync failed', error);
+      } finally {
+        rejoinSyncRef.current = false;
+      }
+    }
+
+    void ensureMembershipAfterRefresh();
+    return () => {
+      isMounted = false;
+    };
+  }, [loadingRoom, orderedPlayers, refreshRoomSnapshot, room?.id, user]);
+
+  useEffect(() => {
+    if (!room?.id || !user?.id) return undefined;
+
+    let cancelled = false;
+    const sendHeartbeat = async () => {
+      const response = await timedPostgrest(
+        `study_room_players?room_id=eq.${room.id}&user_id=eq.${user.id}`,
+        {
+          method: 'PATCH',
+          body: { last_seen_at: new Date().toISOString() },
+        },
+        'heartbeat_last_seen'
+      );
+      if (!response.ok && !cancelled) {
+        devLog('[STUDY-NIGHT] heartbeat failed', response);
+      }
+    };
+
+    void sendHeartbeat();
+    const intervalId = setInterval(() => {
+      void sendHeartbeat();
+    }, 15000);
+
+    return () => {
+      cancelled = true;
+      clearInterval(intervalId);
+    };
+  }, [room?.id, user?.id]);
 
   useEffect(() => {
     if (state?.phase !== 'question' || !state?.started_at) {
@@ -914,6 +978,7 @@ export default function StudyNightRoomPage() {
       <div className="game-grid">
         <div className="game-card">
           <h2>Players</h2>
+          <p className="muted">Active {activePlayersCount} / Total {orderedPlayers.length}</p>
           <ul className="game-list">
             {orderedPlayers.map((player, index) => {
               const wedges = getWedges(player);
