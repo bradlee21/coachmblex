@@ -1,0 +1,3034 @@
+{
+  "pack_id": "ch12-endocrine-v1",
+  "packId": "ch12-endocrine-v1",
+  "title": "Endocrine Content Pack V1",
+  "chapter": "12",
+  "topic": "Endocrine System",
+  "version": "v1",
+  "source": "Chapter 12 Endocrine System (class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "physiology": 70,
+      "applied": 30
+    }
+  },
+  "notes": "Canonical blueprint-coded endocrine fundamentals plus scope-safe massage cautions and referral framing. Applied items avoid diagnosis and medical advice.",
+  "questions": [
+    {
+      "blueprint_code": "1.A.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: ductless gland that releases hormones into blood?",
+      "choices": {
+        "A": "endocrine gland",
+        "B": "peptide hormone",
+        "C": "hypothalamus role",
+        "D": "parathyroid hormone role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "endocrine gland is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: hormones travel via blood."
+      },
+      "why": "endocrine gland is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: hormones travel via blood.",
+      "difficulty": 3,
+      "tags": [
+        "endocrine",
+        "gland",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-001",
+      "answer": "endocrine gland."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: water-soluble messenger that usually binds membrane receptors?",
+      "choices": {
+        "A": "peptide hormone",
+        "B": "steroid hormone",
+        "C": "anterior pituitary",
+        "D": "calcitonin role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "peptide hormone is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: peptides usually stay outside cell."
+      },
+      "why": "peptide hormone is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: peptides usually stay outside cell.",
+      "difficulty": 2,
+      "tags": [
+        "peptide",
+        "receptor",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-002",
+      "answer": "peptide hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: lipid-soluble messenger that can influence gene expression?",
+      "choices": {
+        "A": "steroid hormone",
+        "B": "water-soluble hormone signaling",
+        "C": "posterior pituitary",
+        "D": "insulin role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "steroid hormone is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: steroid can enter cell."
+      },
+      "why": "steroid hormone is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: steroid can enter cell.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "gene-expression",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-003",
+      "answer": "steroid hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: often uses cell-surface receptors and second messengers?",
+      "choices": {
+        "A": "water-soluble hormone signaling",
+        "B": "lipid-soluble hormone signaling",
+        "C": "TSH function",
+        "D": "glucagon role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "water-soluble hormone signaling is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: surface receptor pathway."
+      },
+      "why": "water-soluble hormone signaling is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: surface receptor pathway.",
+      "difficulty": 2,
+      "tags": [
+        "water-soluble",
+        "second-messenger",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-004",
+      "answer": "water-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: often uses intracellular receptors?",
+      "choices": {
+        "A": "lipid-soluble hormone signaling",
+        "B": "negative feedback loop",
+        "C": "thyroid hormone effect",
+        "D": "pancreatic endocrine function"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lipid-soluble hormone signaling is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: inside-cell signaling."
+      },
+      "why": "lipid-soluble hormone signaling is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: inside-cell signaling.",
+      "difficulty": 1,
+      "tags": [
+        "lipid-soluble",
+        "intracellular-receptor",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-005",
+      "answer": "lipid-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: output dampens further hormone release?",
+      "choices": {
+        "A": "negative feedback loop",
+        "B": "hypothalamus role",
+        "C": "parathyroid hormone role",
+        "D": "adrenal cortex role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "negative feedback loop is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: self-limiting control."
+      },
+      "why": "negative feedback loop is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: self-limiting control.",
+      "difficulty": 2,
+      "tags": [
+        "feedback-loop",
+        "homeostasis",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-006",
+      "answer": "negative feedback loop."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: links nervous and endocrine regulation?",
+      "choices": {
+        "A": "hypothalamus role",
+        "B": "anterior pituitary",
+        "C": "calcitonin role",
+        "D": "adrenal medulla role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hypothalamus role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: brain-endocrine bridge."
+      },
+      "why": "hypothalamus role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: brain-endocrine bridge.",
+      "difficulty": 1,
+      "tags": [
+        "hypothalamus",
+        "integration",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-007",
+      "answer": "hypothalamus role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: pituitary region that secretes tropic hormones?",
+      "choices": {
+        "A": "anterior pituitary",
+        "B": "posterior pituitary",
+        "C": "insulin role",
+        "D": "cortisol overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "anterior pituitary is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: anterior = glandular hormones."
+      },
+      "why": "anterior pituitary is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: anterior = glandular hormones.",
+      "difficulty": 2,
+      "tags": [
+        "pituitary",
+        "anterior",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-008",
+      "answer": "anterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: pituitary region that releases ADH and oxytocin made in hypothalamus?",
+      "choices": {
+        "A": "posterior pituitary",
+        "B": "TSH function",
+        "C": "glucagon role",
+        "D": "aldosterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "posterior pituitary is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: posterior releases stored hormones."
+      },
+      "why": "posterior pituitary is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: posterior releases stored hormones.",
+      "difficulty": 3,
+      "tags": [
+        "pituitary",
+        "posterior",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-009",
+      "answer": "posterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: stimulates thyroid hormone production?",
+      "choices": {
+        "A": "TSH function",
+        "B": "thyroid hormone effect",
+        "C": "pancreatic endocrine function",
+        "D": "epinephrine overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "TSH function is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: TSH drives thyroid."
+      },
+      "why": "TSH function is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: TSH drives thyroid.",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "TSH",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-010",
+      "answer": "TSH function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports baseline metabolic activity?",
+      "choices": {
+        "A": "thyroid hormone effect",
+        "B": "parathyroid hormone role",
+        "C": "adrenal cortex role",
+        "D": "melatonin overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thyroid hormone effect is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: thyroid sets metabolic pace."
+      },
+      "why": "thyroid hormone effect is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: thyroid sets metabolic pace.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "metabolism",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-011",
+      "answer": "thyroid hormone effect."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: helps raise blood calcium when needed?",
+      "choices": {
+        "A": "parathyroid hormone role",
+        "B": "calcitonin role",
+        "C": "adrenal medulla role",
+        "D": "estrogen overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "parathyroid hormone role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: PTH supports calcium rise."
+      },
+      "why": "parathyroid hormone role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: PTH supports calcium rise.",
+      "difficulty": 2,
+      "tags": [
+        "PTH",
+        "calcium",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-012",
+      "answer": "parathyroid hormone role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: helps lower blood calcium tendency?",
+      "choices": {
+        "A": "calcitonin role",
+        "B": "insulin role",
+        "C": "cortisol overview",
+        "D": "progesterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "calcitonin role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: calcitonin counters high calcium."
+      },
+      "why": "calcitonin role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: calcitonin counters high calcium.",
+      "difficulty": 1,
+      "tags": [
+        "calcitonin",
+        "calcium",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-013",
+      "answer": "calcitonin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports glucose uptake and lowers blood glucose?",
+      "choices": {
+        "A": "insulin role",
+        "B": "glucagon role",
+        "C": "aldosterone overview",
+        "D": "testosterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "insulin role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: insulin helps move glucose into cells."
+      },
+      "why": "insulin role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: insulin helps move glucose into cells.",
+      "difficulty": 2,
+      "tags": [
+        "insulin",
+        "glucose",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-014",
+      "answer": "insulin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports blood glucose increase between meals?",
+      "choices": {
+        "A": "glucagon role",
+        "B": "pancreatic endocrine function",
+        "C": "epinephrine overview",
+        "D": "endocrine gland"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "glucagon role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: glucagon raises available glucose."
+      },
+      "why": "glucagon role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: glucagon raises available glucose.",
+      "difficulty": 1,
+      "tags": [
+        "glucagon",
+        "glucose",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-015",
+      "answer": "glucagon role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: balances glucose using insulin and glucagon?",
+      "choices": {
+        "A": "pancreatic endocrine function",
+        "B": "adrenal cortex role",
+        "C": "melatonin overview",
+        "D": "peptide hormone"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pancreatic endocrine function is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: pancreas balances sugar."
+      },
+      "why": "pancreatic endocrine function is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: pancreas balances sugar.",
+      "difficulty": 2,
+      "tags": [
+        "pancreas",
+        "homeostasis",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-016",
+      "answer": "pancreatic endocrine function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: produces steroid hormones like cortisol and aldosterone?",
+      "choices": {
+        "A": "adrenal cortex role",
+        "B": "adrenal medulla role",
+        "C": "estrogen overview",
+        "D": "steroid hormone"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "adrenal cortex role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: cortex = steroid output."
+      },
+      "why": "adrenal cortex role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: cortex = steroid output.",
+      "difficulty": 3,
+      "tags": [
+        "adrenal",
+        "cortex",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-017",
+      "answer": "adrenal cortex role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: releases catecholamines for rapid stress response?",
+      "choices": {
+        "A": "adrenal medulla role",
+        "B": "cortisol overview",
+        "C": "progesterone overview",
+        "D": "water-soluble hormone signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "adrenal medulla role is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: medulla = rapid stress chemistry."
+      },
+      "why": "adrenal medulla role is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: medulla = rapid stress chemistry.",
+      "difficulty": 2,
+      "tags": [
+        "adrenal",
+        "medulla",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-018",
+      "answer": "adrenal medulla role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports stress adaptation and energy availability?",
+      "choices": {
+        "A": "cortisol overview",
+        "B": "aldosterone overview",
+        "C": "testosterone overview",
+        "D": "lipid-soluble hormone signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "cortisol overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: cortisol helps cope with demand."
+      },
+      "why": "cortisol overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: cortisol helps cope with demand.",
+      "difficulty": 1,
+      "tags": [
+        "cortisol",
+        "stress",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-019",
+      "answer": "cortisol overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports sodium-water balance and blood volume regulation?",
+      "choices": {
+        "A": "aldosterone overview",
+        "B": "epinephrine overview",
+        "C": "endocrine gland",
+        "D": "negative feedback loop"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "aldosterone overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: aldosterone tracks salt-water balance."
+      },
+      "why": "aldosterone overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: aldosterone tracks salt-water balance.",
+      "difficulty": 2,
+      "tags": [
+        "aldosterone",
+        "fluid-balance",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-020",
+      "answer": "aldosterone overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports short-term alert response?",
+      "choices": {
+        "A": "epinephrine overview",
+        "B": "melatonin overview",
+        "C": "peptide hormone",
+        "D": "hypothalamus role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "epinephrine overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: epinephrine prepares action."
+      },
+      "why": "epinephrine overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: epinephrine prepares action.",
+      "difficulty": 1,
+      "tags": [
+        "epinephrine",
+        "sympathetic",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-021",
+      "answer": "epinephrine overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: helps coordinate circadian timing and sleep readiness?",
+      "choices": {
+        "A": "melatonin overview",
+        "B": "estrogen overview",
+        "C": "steroid hormone",
+        "D": "anterior pituitary"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "melatonin overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: melatonin cues sleep timing."
+      },
+      "why": "melatonin overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: melatonin cues sleep timing.",
+      "difficulty": 2,
+      "tags": [
+        "melatonin",
+        "circadian",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-022",
+      "answer": "melatonin overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: participates in reproductive and systemic regulation?",
+      "choices": {
+        "A": "estrogen overview",
+        "B": "progesterone overview",
+        "C": "water-soluble hormone signaling",
+        "D": "posterior pituitary"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "estrogen overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: estrogen has broad effects."
+      },
+      "why": "estrogen overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: estrogen has broad effects.",
+      "difficulty": 1,
+      "tags": [
+        "estrogen",
+        "reproductive",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-023",
+      "answer": "estrogen overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports reproductive cycle regulation?",
+      "choices": {
+        "A": "progesterone overview",
+        "B": "testosterone overview",
+        "C": "lipid-soluble hormone signaling",
+        "D": "TSH function"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "progesterone overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: progesterone supports cycle phases."
+      },
+      "why": "progesterone overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: progesterone supports cycle phases.",
+      "difficulty": 2,
+      "tags": [
+        "progesterone",
+        "reproductive",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-024",
+      "answer": "progesterone overview."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: supports anabolic signaling and reproductive function?",
+      "choices": {
+        "A": "testosterone overview",
+        "B": "endocrine gland",
+        "C": "negative feedback loop",
+        "D": "thyroid hormone effect"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "testosterone overview is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: testosterone supports anabolic tone."
+      },
+      "why": "testosterone overview is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: testosterone supports anabolic tone.",
+      "difficulty": 3,
+      "tags": [
+        "testosterone",
+        "reproductive",
+        "physiology",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-025",
+      "answer": "testosterone overview."
+    },
+    {
+      "blueprint_code": "1.A.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: hormones travel via blood?",
+      "choices": {
+        "A": "endocrine gland",
+        "B": "water-soluble hormone signaling",
+        "C": "posterior pituitary",
+        "D": "insulin role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "endocrine gland best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: ductless gland that releases hormones into blood."
+      },
+      "why": "endocrine gland best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: ductless gland that releases hormones into blood.",
+      "difficulty": 2,
+      "tags": [
+        "endocrine",
+        "gland",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-026",
+      "answer": "endocrine gland."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: peptides usually stay outside cell?",
+      "choices": {
+        "A": "peptide hormone",
+        "B": "lipid-soluble hormone signaling",
+        "C": "TSH function",
+        "D": "glucagon role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "peptide hormone best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: water-soluble messenger that usually binds membrane receptors."
+      },
+      "why": "peptide hormone best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: water-soluble messenger that usually binds membrane receptors.",
+      "difficulty": 1,
+      "tags": [
+        "peptide",
+        "receptor",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-027",
+      "answer": "peptide hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: steroid can enter cell?",
+      "choices": {
+        "A": "steroid hormone",
+        "B": "negative feedback loop",
+        "C": "thyroid hormone effect",
+        "D": "pancreatic endocrine function"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "steroid hormone best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: lipid-soluble messenger that can influence gene expression."
+      },
+      "why": "steroid hormone best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: lipid-soluble messenger that can influence gene expression.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "gene-expression",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-028",
+      "answer": "steroid hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: surface receptor pathway?",
+      "choices": {
+        "A": "water-soluble hormone signaling",
+        "B": "hypothalamus role",
+        "C": "parathyroid hormone role",
+        "D": "adrenal cortex role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "water-soluble hormone signaling best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: often uses cell-surface receptors and second messengers."
+      },
+      "why": "water-soluble hormone signaling best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: often uses cell-surface receptors and second messengers.",
+      "difficulty": 1,
+      "tags": [
+        "water-soluble",
+        "second-messenger",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-029",
+      "answer": "water-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: inside-cell signaling?",
+      "choices": {
+        "A": "lipid-soluble hormone signaling",
+        "B": "anterior pituitary",
+        "C": "calcitonin role",
+        "D": "adrenal medulla role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lipid-soluble hormone signaling best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: often uses intracellular receptors."
+      },
+      "why": "lipid-soluble hormone signaling best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: often uses intracellular receptors.",
+      "difficulty": 1,
+      "tags": [
+        "lipid-soluble",
+        "intracellular-receptor",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-030",
+      "answer": "lipid-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: self-limiting control?",
+      "choices": {
+        "A": "negative feedback loop",
+        "B": "posterior pituitary",
+        "C": "insulin role",
+        "D": "cortisol overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "negative feedback loop best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: output dampens further hormone release."
+      },
+      "why": "negative feedback loop best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: output dampens further hormone release.",
+      "difficulty": 1,
+      "tags": [
+        "feedback-loop",
+        "homeostasis",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-031",
+      "answer": "negative feedback loop."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: brain-endocrine bridge?",
+      "choices": {
+        "A": "hypothalamus role",
+        "B": "TSH function",
+        "C": "glucagon role",
+        "D": "aldosterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hypothalamus role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: links nervous and endocrine regulation."
+      },
+      "why": "hypothalamus role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: links nervous and endocrine regulation.",
+      "difficulty": 2,
+      "tags": [
+        "hypothalamus",
+        "integration",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-032",
+      "answer": "hypothalamus role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: anterior = glandular hormones?",
+      "choices": {
+        "A": "anterior pituitary",
+        "B": "thyroid hormone effect",
+        "C": "pancreatic endocrine function",
+        "D": "epinephrine overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "anterior pituitary best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: pituitary region that secretes tropic hormones."
+      },
+      "why": "anterior pituitary best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: pituitary region that secretes tropic hormones.",
+      "difficulty": 1,
+      "tags": [
+        "pituitary",
+        "anterior",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-033",
+      "answer": "anterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: posterior releases stored hormones?",
+      "choices": {
+        "A": "posterior pituitary",
+        "B": "parathyroid hormone role",
+        "C": "adrenal cortex role",
+        "D": "melatonin overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "posterior pituitary best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: pituitary region that releases ADH and oxytocin made in hypothalamus."
+      },
+      "why": "posterior pituitary best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: pituitary region that releases ADH and oxytocin made in hypothalamus.",
+      "difficulty": 1,
+      "tags": [
+        "pituitary",
+        "posterior",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-034",
+      "answer": "posterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: TSH drives thyroid?",
+      "choices": {
+        "A": "TSH function",
+        "B": "calcitonin role",
+        "C": "adrenal medulla role",
+        "D": "estrogen overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "TSH function best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: stimulates thyroid hormone production."
+      },
+      "why": "TSH function best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: stimulates thyroid hormone production.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "TSH",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-035",
+      "answer": "TSH function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: thyroid sets metabolic pace?",
+      "choices": {
+        "A": "thyroid hormone effect",
+        "B": "insulin role",
+        "C": "cortisol overview",
+        "D": "progesterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thyroid hormone effect best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: supports baseline metabolic activity."
+      },
+      "why": "thyroid hormone effect best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: supports baseline metabolic activity.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "metabolism",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-036",
+      "answer": "thyroid hormone effect."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: PTH supports calcium rise?",
+      "choices": {
+        "A": "parathyroid hormone role",
+        "B": "glucagon role",
+        "C": "aldosterone overview",
+        "D": "testosterone overview"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "parathyroid hormone role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: helps raise blood calcium when needed."
+      },
+      "why": "parathyroid hormone role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: helps raise blood calcium when needed.",
+      "difficulty": 1,
+      "tags": [
+        "PTH",
+        "calcium",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-037",
+      "answer": "parathyroid hormone role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: calcitonin counters high calcium?",
+      "choices": {
+        "A": "calcitonin role",
+        "B": "pancreatic endocrine function",
+        "C": "epinephrine overview",
+        "D": "endocrine gland"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "calcitonin role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: helps lower blood calcium tendency."
+      },
+      "why": "calcitonin role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: helps lower blood calcium tendency.",
+      "difficulty": 2,
+      "tags": [
+        "calcitonin",
+        "calcium",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-038",
+      "answer": "calcitonin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: insulin helps move glucose into cells?",
+      "choices": {
+        "A": "insulin role",
+        "B": "adrenal cortex role",
+        "C": "melatonin overview",
+        "D": "peptide hormone"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "insulin role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: supports glucose uptake and lowers blood glucose."
+      },
+      "why": "insulin role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: supports glucose uptake and lowers blood glucose.",
+      "difficulty": 1,
+      "tags": [
+        "insulin",
+        "glucose",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-039",
+      "answer": "insulin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: glucagon raises available glucose?",
+      "choices": {
+        "A": "glucagon role",
+        "B": "adrenal medulla role",
+        "C": "estrogen overview",
+        "D": "steroid hormone"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "glucagon role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: supports blood glucose increase between meals."
+      },
+      "why": "glucagon role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: supports blood glucose increase between meals.",
+      "difficulty": 1,
+      "tags": [
+        "glucagon",
+        "glucose",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-040",
+      "answer": "glucagon role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: pancreas balances sugar?",
+      "choices": {
+        "A": "pancreatic endocrine function",
+        "B": "cortisol overview",
+        "C": "progesterone overview",
+        "D": "water-soluble hormone signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pancreatic endocrine function best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: balances glucose using insulin and glucagon."
+      },
+      "why": "pancreatic endocrine function best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: balances glucose using insulin and glucagon.",
+      "difficulty": 1,
+      "tags": [
+        "pancreas",
+        "homeostasis",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-041",
+      "answer": "pancreatic endocrine function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: cortex = steroid output?",
+      "choices": {
+        "A": "adrenal cortex role",
+        "B": "aldosterone overview",
+        "C": "testosterone overview",
+        "D": "lipid-soluble hormone signaling"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "adrenal cortex role best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: produces steroid hormones like cortisol and aldosterone."
+      },
+      "why": "adrenal cortex role best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: produces steroid hormones like cortisol and aldosterone.",
+      "difficulty": 1,
+      "tags": [
+        "adrenal",
+        "cortex",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-042",
+      "answer": "adrenal cortex role."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: LMT documents signs and client reports without diagnosing endocrine disease?",
+      "choices": {
+        "A": "scope-safe observation",
+        "B": "diabetes sensation caution",
+        "C": "steroid medication skin caution",
+        "D": "session reassessment"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-safe observation is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: observe and refer, do not diagnose."
+      },
+      "why": "scope-safe observation is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: observe and refer, do not diagnose.",
+      "difficulty": 3,
+      "tags": [
+        "scope",
+        "communication",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-043",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: note reported sensation changes and adjust pressure conservatively?",
+      "choices": {
+        "A": "diabetes sensation caution",
+        "B": "foot care caution",
+        "C": "hydration support cue",
+        "D": "scope-safe observation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "diabetes sensation caution is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: sensation change means gentler dosing."
+      },
+      "why": "diabetes sensation caution is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: sensation change means gentler dosing.",
+      "difficulty": 2,
+      "tags": [
+        "diabetes",
+        "sensation",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-044",
+      "answer": "diabetes sensation caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: use care with feet when client reports diabetes-related sensitivity changes?",
+      "choices": {
+        "A": "foot care caution",
+        "B": "blood sugar awareness",
+        "C": "consent-first pacing",
+        "D": "diabetes sensation caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "foot care caution is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: protect sensitive tissues."
+      },
+      "why": "foot care caution is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: protect sensitive tissues.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "foot-care",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-045",
+      "answer": "foot care caution."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: confirm client is comfortable and aware of energy status before longer sessions?",
+      "choices": {
+        "A": "blood sugar awareness",
+        "B": "thyroid fatigue pacing",
+        "C": "referral for concerning symptoms",
+        "D": "foot care caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "blood sugar awareness is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: check readiness and stability."
+      },
+      "why": "blood sugar awareness is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: check readiness and stability.",
+      "difficulty": 2,
+      "tags": [
+        "diabetes",
+        "intake",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-046",
+      "answer": "blood sugar awareness."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: if client reports fatigue, pace session load and reassess response?",
+      "choices": {
+        "A": "thyroid fatigue pacing",
+        "B": "heat/cold intolerance adjustment",
+        "C": "professional wording",
+        "D": "blood sugar awareness"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thyroid fatigue pacing is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: pace to tolerance."
+      },
+      "why": "thyroid fatigue pacing is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: pace to tolerance.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "fatigue",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-047",
+      "answer": "thyroid fatigue pacing."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: if client reports heat or cold intolerance, adapt room and intensity?",
+      "choices": {
+        "A": "heat/cold intolerance adjustment",
+        "B": "steroid medication skin caution",
+        "C": "session reassessment",
+        "D": "thyroid fatigue pacing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "heat/cold intolerance adjustment is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: adjust environment and load."
+      },
+      "why": "heat/cold intolerance adjustment is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: adjust environment and load.",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "comfort",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-048",
+      "answer": "heat/cold intolerance adjustment."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: reported steroid use can correlate with easier bruising and skin fragility?",
+      "choices": {
+        "A": "steroid medication skin caution",
+        "B": "hydration support cue",
+        "C": "scope-safe observation",
+        "D": "heat/cold intolerance adjustment"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "steroid medication skin caution is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: lighter pressure can reduce skin stress."
+      },
+      "why": "steroid medication skin caution is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: lighter pressure can reduce skin stress.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "skin-fragility",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-049",
+      "answer": "steroid medication skin caution."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: encourage general hydration habits consistent with client comfort and plans?",
+      "choices": {
+        "A": "hydration support cue",
+        "B": "consent-first pacing",
+        "C": "diabetes sensation caution",
+        "D": "steroid medication skin caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hydration support cue is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: support recovery basics."
+      },
+      "why": "hydration support cue is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: support recovery basics.",
+      "difficulty": 2,
+      "tags": [
+        "hydration",
+        "recovery",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-050",
+      "answer": "hydration support cue."
+    },
+    {
+      "blueprint_code": "6.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: check consent when changing intensity or treatment area?",
+      "choices": {
+        "A": "consent-first pacing",
+        "B": "referral for concerning symptoms",
+        "C": "foot care caution",
+        "D": "hydration support cue"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "consent-first pacing is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: consent is ongoing."
+      },
+      "why": "consent-first pacing is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: consent is ongoing.",
+      "difficulty": 3,
+      "tags": [
+        "consent",
+        "ethics",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-051",
+      "answer": "consent-first pacing."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: unexplained confusion, severe swelling, or persistent dizziness should be referred?",
+      "choices": {
+        "A": "referral for concerning symptoms",
+        "B": "professional wording",
+        "C": "blood sugar awareness",
+        "D": "consent-first pacing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "referral for concerning symptoms is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: concerning changes need referral."
+      },
+      "why": "referral for concerning symptoms is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: concerning changes need referral.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "red-flags",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-052",
+      "answer": "referral for concerning symptoms."
+    },
+    {
+      "blueprint_code": "6.I",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: use neutral language and avoid medical claims in endocrine discussions?",
+      "choices": {
+        "A": "professional wording",
+        "B": "session reassessment",
+        "C": "thyroid fatigue pacing",
+        "D": "referral for concerning symptoms"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "professional wording is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: neutral language protects trust."
+      },
+      "why": "professional wording is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: neutral language protects trust.",
+      "difficulty": 1,
+      "tags": [
+        "communication",
+        "professionalism",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-053",
+      "answer": "professional wording."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: re-check comfort and symptoms during session to guide safe adjustments?",
+      "choices": {
+        "A": "session reassessment",
+        "B": "scope-safe observation",
+        "C": "heat/cold intolerance adjustment",
+        "D": "professional wording"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "session reassessment is the best match for this endocrine concept.",
+        "trap": "The distractors are related endocrine terms but do not match this definition.",
+        "hook": "Memory cue: reassess to dose safely."
+      },
+      "why": "session reassessment is the best match for this endocrine concept.",
+      "trap": "The distractors are related endocrine terms but do not match this definition.",
+      "hook": "Memory cue: reassess to dose safely.",
+      "difficulty": 2,
+      "tags": [
+        "reassessment",
+        "planning",
+        "applied",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-054",
+      "answer": "session reassessment."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: observe and refer, do not diagnose?",
+      "choices": {
+        "A": "scope-safe observation",
+        "B": "blood sugar awareness",
+        "C": "consent-first pacing",
+        "D": "diabetes sensation caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-safe observation best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: LMT documents signs and client reports without diagnosing endocrine disease."
+      },
+      "why": "scope-safe observation best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: LMT documents signs and client reports without diagnosing endocrine disease.",
+      "difficulty": 2,
+      "tags": [
+        "scope",
+        "communication",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-055",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: sensation change means gentler dosing?",
+      "choices": {
+        "A": "diabetes sensation caution",
+        "B": "thyroid fatigue pacing",
+        "C": "referral for concerning symptoms",
+        "D": "foot care caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "diabetes sensation caution best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: note reported sensation changes and adjust pressure conservatively."
+      },
+      "why": "diabetes sensation caution best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: note reported sensation changes and adjust pressure conservatively.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "sensation",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-056",
+      "answer": "diabetes sensation caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: protect sensitive tissues?",
+      "choices": {
+        "A": "foot care caution",
+        "B": "heat/cold intolerance adjustment",
+        "C": "professional wording",
+        "D": "blood sugar awareness"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "foot care caution best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: use care with feet when client reports diabetes-related sensitivity changes."
+      },
+      "why": "foot care caution best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: use care with feet when client reports diabetes-related sensitivity changes.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "foot-care",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-057",
+      "answer": "foot care caution."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: check readiness and stability?",
+      "choices": {
+        "A": "blood sugar awareness",
+        "B": "steroid medication skin caution",
+        "C": "session reassessment",
+        "D": "thyroid fatigue pacing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "blood sugar awareness best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: confirm client is comfortable and aware of energy status before longer sessions."
+      },
+      "why": "blood sugar awareness best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: confirm client is comfortable and aware of energy status before longer sessions.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "intake",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-058",
+      "answer": "blood sugar awareness."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: pace to tolerance?",
+      "choices": {
+        "A": "thyroid fatigue pacing",
+        "B": "hydration support cue",
+        "C": "scope-safe observation",
+        "D": "heat/cold intolerance adjustment"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "thyroid fatigue pacing best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: if client reports fatigue, pace session load and reassess response."
+      },
+      "why": "thyroid fatigue pacing best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: if client reports fatigue, pace session load and reassess response.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "fatigue",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-059",
+      "answer": "thyroid fatigue pacing."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: adjust environment and load?",
+      "choices": {
+        "A": "heat/cold intolerance adjustment",
+        "B": "consent-first pacing",
+        "C": "diabetes sensation caution",
+        "D": "steroid medication skin caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "heat/cold intolerance adjustment best supports safe, scope-appropriate session planning.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor to: if client reports heat or cold intolerance, adapt room and intensity."
+      },
+      "why": "heat/cold intolerance adjustment best supports safe, scope-appropriate session planning.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor to: if client reports heat or cold intolerance, adapt room and intensity.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "comfort",
+        "applied-context",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-060",
+      "answer": "heat/cold intolerance adjustment."
+    },
+    {
+      "blueprint_code": "1.A.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: ductless gland that releases hormones into blood.",
+      "choices": {
+        "A": "steroid hormone",
+        "B": "endocrine gland",
+        "C": "anterior pituitary",
+        "D": "calcitonin role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "endocrine gland is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: hormones travel via blood."
+      },
+      "why": "endocrine gland is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: hormones travel via blood.",
+      "difficulty": 1,
+      "tags": [
+        "endocrine",
+        "gland",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-061",
+      "answer": "endocrine gland."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: water-soluble messenger that usually binds membrane receptors.",
+      "choices": {
+        "A": "water-soluble hormone signaling",
+        "B": "peptide hormone",
+        "C": "posterior pituitary",
+        "D": "insulin role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "peptide hormone is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: peptides usually stay outside cell."
+      },
+      "why": "peptide hormone is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: peptides usually stay outside cell.",
+      "difficulty": 2,
+      "tags": [
+        "peptide",
+        "receptor",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-062",
+      "answer": "peptide hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: lipid-soluble messenger that can influence gene expression.",
+      "choices": {
+        "A": "lipid-soluble hormone signaling",
+        "B": "steroid hormone",
+        "C": "TSH function",
+        "D": "glucagon role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "steroid hormone is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: steroid can enter cell."
+      },
+      "why": "steroid hormone is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: steroid can enter cell.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "gene-expression",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-063",
+      "answer": "steroid hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: often uses cell-surface receptors and second messengers.",
+      "choices": {
+        "A": "negative feedback loop",
+        "B": "water-soluble hormone signaling",
+        "C": "thyroid hormone effect",
+        "D": "pancreatic endocrine function"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "water-soluble hormone signaling is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: surface receptor pathway."
+      },
+      "why": "water-soluble hormone signaling is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: surface receptor pathway.",
+      "difficulty": 2,
+      "tags": [
+        "water-soluble",
+        "second-messenger",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-064",
+      "answer": "water-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: often uses intracellular receptors.",
+      "choices": {
+        "A": "hypothalamus role",
+        "B": "lipid-soluble hormone signaling",
+        "C": "parathyroid hormone role",
+        "D": "adrenal cortex role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lipid-soluble hormone signaling is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: inside-cell signaling."
+      },
+      "why": "lipid-soluble hormone signaling is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: inside-cell signaling.",
+      "difficulty": 1,
+      "tags": [
+        "lipid-soluble",
+        "intracellular-receptor",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-065",
+      "answer": "lipid-soluble hormone signaling."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: output dampens further hormone release.",
+      "choices": {
+        "A": "anterior pituitary",
+        "B": "negative feedback loop",
+        "C": "calcitonin role",
+        "D": "adrenal medulla role"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "negative feedback loop is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: self-limiting control."
+      },
+      "why": "negative feedback loop is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: self-limiting control.",
+      "difficulty": 2,
+      "tags": [
+        "feedback-loop",
+        "homeostasis",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-066",
+      "answer": "negative feedback loop."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: links nervous and endocrine regulation.",
+      "choices": {
+        "A": "posterior pituitary",
+        "B": "hypothalamus role",
+        "C": "insulin role",
+        "D": "cortisol overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "hypothalamus role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: brain-endocrine bridge."
+      },
+      "why": "hypothalamus role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: brain-endocrine bridge.",
+      "difficulty": 1,
+      "tags": [
+        "hypothalamus",
+        "integration",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-067",
+      "answer": "hypothalamus role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: pituitary region that secretes tropic hormones.",
+      "choices": {
+        "A": "TSH function",
+        "B": "anterior pituitary",
+        "C": "glucagon role",
+        "D": "aldosterone overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "anterior pituitary is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: anterior = glandular hormones."
+      },
+      "why": "anterior pituitary is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: anterior = glandular hormones.",
+      "difficulty": 2,
+      "tags": [
+        "pituitary",
+        "anterior",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-068",
+      "answer": "anterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: pituitary region that releases ADH and oxytocin made in hypothalamus.",
+      "choices": {
+        "A": "thyroid hormone effect",
+        "B": "posterior pituitary",
+        "C": "pancreatic endocrine function",
+        "D": "epinephrine overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "posterior pituitary is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: posterior releases stored hormones."
+      },
+      "why": "posterior pituitary is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: posterior releases stored hormones.",
+      "difficulty": 1,
+      "tags": [
+        "pituitary",
+        "posterior",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-069",
+      "answer": "posterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: stimulates thyroid hormone production.",
+      "choices": {
+        "A": "parathyroid hormone role",
+        "B": "TSH function",
+        "C": "adrenal cortex role",
+        "D": "melatonin overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "TSH function is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: TSH drives thyroid."
+      },
+      "why": "TSH function is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: TSH drives thyroid.",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "TSH",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-070",
+      "answer": "TSH function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: supports baseline metabolic activity.",
+      "choices": {
+        "A": "calcitonin role",
+        "B": "thyroid hormone effect",
+        "C": "adrenal medulla role",
+        "D": "estrogen overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "thyroid hormone effect is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: thyroid sets metabolic pace."
+      },
+      "why": "thyroid hormone effect is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: thyroid sets metabolic pace.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "metabolism",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-071",
+      "answer": "thyroid hormone effect."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: helps raise blood calcium when needed.",
+      "choices": {
+        "A": "insulin role",
+        "B": "parathyroid hormone role",
+        "C": "cortisol overview",
+        "D": "progesterone overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "parathyroid hormone role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: PTH supports calcium rise."
+      },
+      "why": "parathyroid hormone role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: PTH supports calcium rise.",
+      "difficulty": 2,
+      "tags": [
+        "PTH",
+        "calcium",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-072",
+      "answer": "parathyroid hormone role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: helps lower blood calcium tendency.",
+      "choices": {
+        "A": "glucagon role",
+        "B": "calcitonin role",
+        "C": "aldosterone overview",
+        "D": "testosterone overview"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "calcitonin role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: calcitonin counters high calcium."
+      },
+      "why": "calcitonin role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: calcitonin counters high calcium.",
+      "difficulty": 1,
+      "tags": [
+        "calcitonin",
+        "calcium",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-073",
+      "answer": "calcitonin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: supports glucose uptake and lowers blood glucose.",
+      "choices": {
+        "A": "pancreatic endocrine function",
+        "B": "insulin role",
+        "C": "epinephrine overview",
+        "D": "endocrine gland"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "insulin role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: insulin helps move glucose into cells."
+      },
+      "why": "insulin role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: insulin helps move glucose into cells.",
+      "difficulty": 2,
+      "tags": [
+        "insulin",
+        "glucose",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-074",
+      "answer": "insulin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: supports blood glucose increase between meals.",
+      "choices": {
+        "A": "adrenal cortex role",
+        "B": "glucagon role",
+        "C": "melatonin overview",
+        "D": "peptide hormone"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "glucagon role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: glucagon raises available glucose."
+      },
+      "why": "glucagon role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: glucagon raises available glucose.",
+      "difficulty": 1,
+      "tags": [
+        "glucagon",
+        "glucose",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-075",
+      "answer": "glucagon role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: balances glucose using insulin and glucagon.",
+      "choices": {
+        "A": "adrenal medulla role",
+        "B": "pancreatic endocrine function",
+        "C": "estrogen overview",
+        "D": "steroid hormone"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pancreatic endocrine function is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: pancreas balances sugar."
+      },
+      "why": "pancreatic endocrine function is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: pancreas balances sugar.",
+      "difficulty": 2,
+      "tags": [
+        "pancreas",
+        "homeostasis",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-076",
+      "answer": "pancreatic endocrine function."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: produces steroid hormones like cortisol and aldosterone.",
+      "choices": {
+        "A": "cortisol overview",
+        "B": "adrenal cortex role",
+        "C": "progesterone overview",
+        "D": "water-soluble hormone signaling"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "adrenal cortex role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: cortex = steroid output."
+      },
+      "why": "adrenal cortex role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: cortex = steroid output.",
+      "difficulty": 1,
+      "tags": [
+        "adrenal",
+        "cortex",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-077",
+      "answer": "adrenal cortex role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: releases catecholamines for rapid stress response.",
+      "choices": {
+        "A": "aldosterone overview",
+        "B": "adrenal medulla role",
+        "C": "testosterone overview",
+        "D": "lipid-soluble hormone signaling"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "adrenal medulla role is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: medulla = rapid stress chemistry."
+      },
+      "why": "adrenal medulla role is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: medulla = rapid stress chemistry.",
+      "difficulty": 2,
+      "tags": [
+        "adrenal",
+        "medulla",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-078",
+      "answer": "adrenal medulla role."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: LMT documents signs and client reports without diagnosing endocrine disease.",
+      "choices": {
+        "A": "foot care caution",
+        "B": "scope-safe observation",
+        "C": "hydration support cue",
+        "D": "scope-safe observation"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "scope-safe observation is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: observe and refer, do not diagnose."
+      },
+      "why": "scope-safe observation is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: observe and refer, do not diagnose.",
+      "difficulty": 1,
+      "tags": [
+        "scope",
+        "communication",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-079",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: note reported sensation changes and adjust pressure conservatively.",
+      "choices": {
+        "A": "blood sugar awareness",
+        "B": "diabetes sensation caution",
+        "C": "consent-first pacing",
+        "D": "diabetes sensation caution"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "diabetes sensation caution is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: sensation change means gentler dosing."
+      },
+      "why": "diabetes sensation caution is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: sensation change means gentler dosing.",
+      "difficulty": 2,
+      "tags": [
+        "diabetes",
+        "sensation",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-080",
+      "answer": "diabetes sensation caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: use care with feet when client reports diabetes-related sensitivity changes.",
+      "choices": {
+        "A": "thyroid fatigue pacing",
+        "B": "foot care caution",
+        "C": "referral for concerning symptoms",
+        "D": "foot care caution"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "foot care caution is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: protect sensitive tissues."
+      },
+      "why": "foot care caution is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: protect sensitive tissues.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "foot-care",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-081",
+      "answer": "foot care caution."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: confirm client is comfortable and aware of energy status before longer sessions.",
+      "choices": {
+        "A": "heat/cold intolerance adjustment",
+        "B": "blood sugar awareness",
+        "C": "professional wording",
+        "D": "blood sugar awareness"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "blood sugar awareness is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: check readiness and stability."
+      },
+      "why": "blood sugar awareness is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: check readiness and stability.",
+      "difficulty": 2,
+      "tags": [
+        "diabetes",
+        "intake",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-082",
+      "answer": "blood sugar awareness."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: if client reports fatigue, pace session load and reassess response.",
+      "choices": {
+        "A": "steroid medication skin caution",
+        "B": "thyroid fatigue pacing",
+        "C": "session reassessment",
+        "D": "thyroid fatigue pacing"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "thyroid fatigue pacing is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: pace to tolerance."
+      },
+      "why": "thyroid fatigue pacing is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: pace to tolerance.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "fatigue",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-083",
+      "answer": "thyroid fatigue pacing."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: if client reports heat or cold intolerance, adapt room and intensity.",
+      "choices": {
+        "A": "hydration support cue",
+        "B": "heat/cold intolerance adjustment",
+        "C": "scope-safe observation",
+        "D": "heat/cold intolerance adjustment"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "heat/cold intolerance adjustment is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: adjust environment and load."
+      },
+      "why": "heat/cold intolerance adjustment is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: adjust environment and load.",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "comfort",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-084",
+      "answer": "heat/cold intolerance adjustment."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: reported steroid use can correlate with easier bruising and skin fragility.",
+      "choices": {
+        "A": "consent-first pacing",
+        "B": "steroid medication skin caution",
+        "C": "diabetes sensation caution",
+        "D": "steroid medication skin caution"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "steroid medication skin caution is the correct reverse-recall match.",
+        "trap": "Nearby endocrine terms can sound similar but differ in role.",
+        "hook": "Quick link: lighter pressure can reduce skin stress."
+      },
+      "why": "steroid medication skin caution is the correct reverse-recall match.",
+      "trap": "Nearby endocrine terms can sound similar but differ in role.",
+      "hook": "Quick link: lighter pressure can reduce skin stress.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "skin-fragility",
+        "reverse",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-085",
+      "answer": "steroid medication skin caution."
+    },
+    {
+      "blueprint_code": "1.A.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: ductless gland that releases hormones into blood.",
+      "correct_text": "endocrine gland",
+      "explanation": {
+        "why": "endocrine gland correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: hormones travel via blood."
+      },
+      "why": "endocrine gland correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: hormones travel via blood.",
+      "difficulty": 2,
+      "tags": [
+        "endocrine",
+        "gland",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-086",
+      "answer": "endocrine gland."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: water-soluble messenger that usually binds membrane receptors.",
+      "correct_text": "peptide hormone",
+      "explanation": {
+        "why": "peptide hormone correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: peptides usually stay outside cell."
+      },
+      "why": "peptide hormone correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: peptides usually stay outside cell.",
+      "difficulty": 1,
+      "tags": [
+        "peptide",
+        "receptor",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-087",
+      "answer": "peptide hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: lipid-soluble messenger that can influence gene expression.",
+      "correct_text": "steroid hormone",
+      "explanation": {
+        "why": "steroid hormone correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: steroid can enter cell."
+      },
+      "why": "steroid hormone correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: steroid can enter cell.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "gene-expression",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-088",
+      "answer": "steroid hormone."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: output dampens further hormone release.",
+      "correct_text": "negative feedback loop",
+      "explanation": {
+        "why": "negative feedback loop correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: self-limiting control."
+      },
+      "why": "negative feedback loop correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: self-limiting control.",
+      "difficulty": 1,
+      "tags": [
+        "feedback-loop",
+        "homeostasis",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-089",
+      "answer": "negative feedback loop."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: pituitary region that secretes tropic hormones.",
+      "correct_text": "anterior pituitary",
+      "explanation": {
+        "why": "anterior pituitary correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: anterior = glandular hormones."
+      },
+      "why": "anterior pituitary correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: anterior = glandular hormones.",
+      "difficulty": 1,
+      "tags": [
+        "pituitary",
+        "anterior",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-090",
+      "answer": "anterior pituitary."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: supports baseline metabolic activity.",
+      "correct_text": "thyroid hormone effect",
+      "explanation": {
+        "why": "thyroid hormone effect correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: thyroid sets metabolic pace."
+      },
+      "why": "thyroid hormone effect correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: thyroid sets metabolic pace.",
+      "difficulty": 2,
+      "tags": [
+        "thyroid",
+        "metabolism",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-091",
+      "answer": "thyroid hormone effect."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: supports glucose uptake and lowers blood glucose.",
+      "correct_text": "insulin role",
+      "explanation": {
+        "why": "insulin role correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: insulin helps move glucose into cells."
+      },
+      "why": "insulin role correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: insulin helps move glucose into cells.",
+      "difficulty": 1,
+      "tags": [
+        "insulin",
+        "glucose",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-092",
+      "answer": "insulin role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: supports blood glucose increase between meals.",
+      "correct_text": "glucagon role",
+      "explanation": {
+        "why": "glucagon role correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: glucagon raises available glucose."
+      },
+      "why": "glucagon role correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: glucagon raises available glucose.",
+      "difficulty": 1,
+      "tags": [
+        "glucagon",
+        "glucose",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-093",
+      "answer": "glucagon role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: releases catecholamines for rapid stress response.",
+      "correct_text": "adrenal medulla role",
+      "explanation": {
+        "why": "adrenal medulla role correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: medulla = rapid stress chemistry."
+      },
+      "why": "adrenal medulla role correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: medulla = rapid stress chemistry.",
+      "difficulty": 1,
+      "tags": [
+        "adrenal",
+        "medulla",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-094",
+      "answer": "adrenal medulla role."
+    },
+    {
+      "blueprint_code": "1.B.3",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: helps coordinate circadian timing and sleep readiness.",
+      "correct_text": "melatonin overview",
+      "explanation": {
+        "why": "melatonin overview correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: melatonin cues sleep timing."
+      },
+      "why": "melatonin overview correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: melatonin cues sleep timing.",
+      "difficulty": 1,
+      "tags": [
+        "melatonin",
+        "circadian",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "physiology",
+      "id": "ch12-endocrine-v1-095",
+      "answer": "melatonin overview."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: LMT documents signs and client reports without diagnosing endocrine disease.",
+      "correct_text": "scope-safe observation",
+      "explanation": {
+        "why": "scope-safe observation correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: observe and refer, do not diagnose."
+      },
+      "why": "scope-safe observation correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: observe and refer, do not diagnose.",
+      "difficulty": 2,
+      "tags": [
+        "scope",
+        "communication",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-096",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: note reported sensation changes and adjust pressure conservatively.",
+      "correct_text": "diabetes sensation caution",
+      "explanation": {
+        "why": "diabetes sensation caution correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: sensation change means gentler dosing."
+      },
+      "why": "diabetes sensation caution correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: sensation change means gentler dosing.",
+      "difficulty": 1,
+      "tags": [
+        "diabetes",
+        "sensation",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-097",
+      "answer": "diabetes sensation caution."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: if client reports fatigue, pace session load and reassess response.",
+      "correct_text": "thyroid fatigue pacing",
+      "explanation": {
+        "why": "thyroid fatigue pacing correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: pace to tolerance."
+      },
+      "why": "thyroid fatigue pacing correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: pace to tolerance.",
+      "difficulty": 1,
+      "tags": [
+        "thyroid",
+        "fatigue",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-098",
+      "answer": "thyroid fatigue pacing."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: reported steroid use can correlate with easier bruising and skin fragility.",
+      "correct_text": "steroid medication skin caution",
+      "explanation": {
+        "why": "steroid medication skin caution correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: lighter pressure can reduce skin stress."
+      },
+      "why": "steroid medication skin caution correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: lighter pressure can reduce skin stress.",
+      "difficulty": 1,
+      "tags": [
+        "steroid",
+        "skin-fragility",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-099",
+      "answer": "steroid medication skin caution."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key endocrine term: unexplained confusion, severe swelling, or persistent dizziness should be referred.",
+      "correct_text": "referral for concerning symptoms",
+      "explanation": {
+        "why": "referral for concerning symptoms correctly completes this statement.",
+        "trap": "Similar terms may be related but describe different endocrine functions.",
+        "hook": "Cue: concerning changes need referral."
+      },
+      "why": "referral for concerning symptoms correctly completes this statement.",
+      "trap": "Similar terms may be related but describe different endocrine functions.",
+      "hook": "Cue: concerning changes need referral.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "red-flags",
+        "fill",
+        "endocrine"
+      ],
+      "domain": "applied",
+      "id": "ch12-endocrine-v1-100",
+      "answer": "referral for concerning symptoms."
+    }
+  ]
+}
