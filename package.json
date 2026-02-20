@@ -15,6 +15,7 @@
     "e2e:signup": "playwright test e2e/signup.spec.ts --retries=0 --workers=1",
     "test:all": "npm run build && npm run smoke:critical && npm run e2e:critical",
     "seed": "node scripts/seed.mjs",
+    "import:pack": "node scripts/import-pack.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },
   "dependencies": {
