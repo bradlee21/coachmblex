@@ -1,0 +1,3034 @@
+{
+  "pack_id": "ch13-cardio-blood-v1",
+  "packId": "ch13-cardio-blood-v1",
+  "title": "Cardiovascular and Blood Content Pack V1",
+  "chapter": "13",
+  "topic": "Cardiovascular and Blood",
+  "version": "v1",
+  "source": "Chapter 13 Cardiovascular/Blood (class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "physiology": 70,
+      "applied": 30
+    }
+  },
+  "notes": "Canonical blueprint-coded cardiovascular/blood fundamentals plus massage-safe applied cautions and referral framing. Applied items remain scope-safe and non-diagnostic.",
+  "questions": [
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: muscular pump that drives blood through circulation?",
+      "choices": {
+        "A": "heart",
+        "B": "right atrium",
+        "C": "pulmonary valve",
+        "D": "systemic circulation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "heart is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: heart drives flow."
+      },
+      "why": "heart is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: heart drives flow.",
+      "difficulty": 3,
+      "tags": [
+        "heart-anatomy",
+        "circulation",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-001",
+      "answer": "heart."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: chamber that receives systemic venous blood?",
+      "choices": {
+        "A": "right atrium",
+        "B": "right ventricle",
+        "C": "aortic valve",
+        "D": "pulmonary circulation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "right atrium is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: right atrium receives return."
+      },
+      "why": "right atrium is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: right atrium receives return.",
+      "difficulty": 2,
+      "tags": [
+        "heart-chambers",
+        "venous-return",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-002",
+      "answer": "right atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: chamber that pumps blood to lungs?",
+      "choices": {
+        "A": "right ventricle",
+        "B": "left atrium",
+        "C": "aorta",
+        "D": "systole"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "right ventricle is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: right ventricle to lungs."
+      },
+      "why": "right ventricle is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: right ventricle to lungs.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "pulmonary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-003",
+      "answer": "right ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: chamber that receives oxygenated blood from lungs?",
+      "choices": {
+        "A": "left atrium",
+        "B": "left ventricle",
+        "C": "vena cava",
+        "D": "diastole"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "left atrium is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: left atrium receives pulmonary return."
+      },
+      "why": "left atrium is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: left atrium receives pulmonary return.",
+      "difficulty": 2,
+      "tags": [
+        "heart-chambers",
+        "pulmonary-return",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-004",
+      "answer": "left atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: chamber that pumps oxygenated blood to systemic circulation?",
+      "choices": {
+        "A": "left ventricle",
+        "B": "tricuspid valve",
+        "C": "pulmonary artery",
+        "D": "stroke volume"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "left ventricle is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: left ventricle to body."
+      },
+      "why": "left ventricle is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: left ventricle to body.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "systemic",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-005",
+      "answer": "left ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: valve between right atrium and right ventricle?",
+      "choices": {
+        "A": "tricuspid valve",
+        "B": "mitral valve",
+        "C": "pulmonary vein",
+        "D": "cardiac output"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "tricuspid valve is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: right AV valve."
+      },
+      "why": "tricuspid valve is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: right AV valve.",
+      "difficulty": 2,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-006",
+      "answer": "tricuspid valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: valve between left atrium and left ventricle?",
+      "choices": {
+        "A": "mitral valve",
+        "B": "pulmonary valve",
+        "C": "systemic circulation",
+        "D": "systolic pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "mitral valve is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: left AV valve."
+      },
+      "why": "mitral valve is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: left AV valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-007",
+      "answer": "mitral valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: semilunar valve between right ventricle and pulmonary trunk?",
+      "choices": {
+        "A": "pulmonary valve",
+        "B": "aortic valve",
+        "C": "pulmonary circulation",
+        "D": "diastolic pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pulmonary valve is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: RV outflow valve."
+      },
+      "why": "pulmonary valve is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: RV outflow valve.",
+      "difficulty": 2,
+      "tags": [
+        "valves",
+        "pulmonary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-008",
+      "answer": "pulmonary valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: semilunar valve between left ventricle and aorta?",
+      "choices": {
+        "A": "aortic valve",
+        "B": "aorta",
+        "C": "systole",
+        "D": "peripheral resistance"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "aortic valve is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: LV outflow valve."
+      },
+      "why": "aortic valve is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: LV outflow valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "systemic",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-009",
+      "answer": "aortic valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: largest artery carrying blood from left ventricle?",
+      "choices": {
+        "A": "aorta",
+        "B": "vena cava",
+        "C": "diastole",
+        "D": "artery"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "aorta is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: main systemic artery."
+      },
+      "why": "aorta is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: main systemic artery.",
+      "difficulty": 3,
+      "tags": [
+        "major-vessels",
+        "arteries",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-010",
+      "answer": "aorta."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: major vein returning systemic blood to right atrium?",
+      "choices": {
+        "A": "vena cava",
+        "B": "pulmonary artery",
+        "C": "stroke volume",
+        "D": "vein"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "vena cava is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: main venous return."
+      },
+      "why": "vena cava is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: main venous return.",
+      "difficulty": 1,
+      "tags": [
+        "major-vessels",
+        "veins",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-011",
+      "answer": "vena cava."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: vessel carrying blood from heart to lungs?",
+      "choices": {
+        "A": "pulmonary artery",
+        "B": "pulmonary vein",
+        "C": "cardiac output",
+        "D": "capillary"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pulmonary artery is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: to lungs from RV."
+      },
+      "why": "pulmonary artery is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: to lungs from RV.",
+      "difficulty": 2,
+      "tags": [
+        "major-vessels",
+        "pulmonary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-012",
+      "answer": "pulmonary artery."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: vessel carrying oxygenated blood from lungs to heart?",
+      "choices": {
+        "A": "pulmonary vein",
+        "B": "systemic circulation",
+        "C": "systolic pressure",
+        "D": "plasma"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pulmonary vein is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: to LA from lungs."
+      },
+      "why": "pulmonary vein is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: to LA from lungs.",
+      "difficulty": 1,
+      "tags": [
+        "major-vessels",
+        "pulmonary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-013",
+      "answer": "pulmonary vein."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: blood flow loop between heart and body tissues?",
+      "choices": {
+        "A": "systemic circulation",
+        "B": "pulmonary circulation",
+        "C": "diastolic pressure",
+        "D": "red blood cell"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "systemic circulation is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: body loop."
+      },
+      "why": "systemic circulation is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: body loop.",
+      "difficulty": 2,
+      "tags": [
+        "circulation",
+        "systemic",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-014",
+      "answer": "systemic circulation."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: blood flow loop between heart and lungs?",
+      "choices": {
+        "A": "pulmonary circulation",
+        "B": "systole",
+        "C": "peripheral resistance",
+        "D": "white blood cell"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pulmonary circulation is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: lung loop."
+      },
+      "why": "pulmonary circulation is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: lung loop.",
+      "difficulty": 1,
+      "tags": [
+        "circulation",
+        "pulmonary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-015",
+      "answer": "pulmonary circulation."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: phase of cardiac contraction/ejection?",
+      "choices": {
+        "A": "systole",
+        "B": "diastole",
+        "C": "artery",
+        "D": "platelet"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "systole is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: squeeze phase."
+      },
+      "why": "systole is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: squeeze phase.",
+      "difficulty": 2,
+      "tags": [
+        "cardiac-cycle",
+        "systole",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-016",
+      "answer": "systole."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: phase of cardiac relaxation/filling?",
+      "choices": {
+        "A": "diastole",
+        "B": "stroke volume",
+        "C": "vein",
+        "D": "hemoglobin"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "diastole is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: fill phase."
+      },
+      "why": "diastole is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: fill phase.",
+      "difficulty": 1,
+      "tags": [
+        "cardiac-cycle",
+        "diastole",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-017",
+      "answer": "diastole."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: amount of blood ejected by a ventricle per beat?",
+      "choices": {
+        "A": "stroke volume",
+        "B": "cardiac output",
+        "C": "capillary",
+        "D": "oxygen transport"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "stroke volume is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: blood per beat."
+      },
+      "why": "stroke volume is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: blood per beat.",
+      "difficulty": 2,
+      "tags": [
+        "hemodynamics",
+        "stroke-volume",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-018",
+      "answer": "stroke volume."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: volume pumped per minute (heart rate ? stroke volume)?",
+      "choices": {
+        "A": "cardiac output",
+        "B": "systolic pressure",
+        "C": "plasma",
+        "D": "venous return"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "cardiac output is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: flow per minute."
+      },
+      "why": "cardiac output is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: flow per minute.",
+      "difficulty": 3,
+      "tags": [
+        "hemodynamics",
+        "cardiac-output",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-019",
+      "answer": "cardiac output."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: arterial pressure during ventricular contraction?",
+      "choices": {
+        "A": "systolic pressure",
+        "B": "diastolic pressure",
+        "C": "red blood cell",
+        "D": "perfusion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "systolic pressure is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: top BP value."
+      },
+      "why": "systolic pressure is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: top BP value.",
+      "difficulty": 2,
+      "tags": [
+        "blood-pressure",
+        "systolic",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-020",
+      "answer": "systolic pressure."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: arterial pressure during ventricular relaxation?",
+      "choices": {
+        "A": "diastolic pressure",
+        "B": "peripheral resistance",
+        "C": "white blood cell",
+        "D": "lymphatic return"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "diastolic pressure is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: bottom BP value."
+      },
+      "why": "diastolic pressure is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: bottom BP value.",
+      "difficulty": 1,
+      "tags": [
+        "blood-pressure",
+        "diastolic",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-021",
+      "answer": "diastolic pressure."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: opposition to blood flow in vessels?",
+      "choices": {
+        "A": "peripheral resistance",
+        "B": "artery",
+        "C": "platelet",
+        "D": "edema concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "peripheral resistance is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: resistance affects pressure."
+      },
+      "why": "peripheral resistance is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: resistance affects pressure.",
+      "difficulty": 2,
+      "tags": [
+        "blood-pressure",
+        "resistance",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-022",
+      "answer": "peripheral resistance."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: vessel carrying blood away from heart?",
+      "choices": {
+        "A": "artery",
+        "B": "vein",
+        "C": "hemoglobin",
+        "D": "heart"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "artery is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: away from heart."
+      },
+      "why": "artery is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: away from heart.",
+      "difficulty": 1,
+      "tags": [
+        "vessels",
+        "artery",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-023",
+      "answer": "artery."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: vessel carrying blood toward heart?",
+      "choices": {
+        "A": "vein",
+        "B": "capillary",
+        "C": "oxygen transport",
+        "D": "right atrium"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "vein is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: toward heart."
+      },
+      "why": "vein is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: toward heart.",
+      "difficulty": 2,
+      "tags": [
+        "vessels",
+        "vein",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-024",
+      "answer": "vein."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: small exchange vessel between blood and tissues?",
+      "choices": {
+        "A": "capillary",
+        "B": "plasma",
+        "C": "venous return",
+        "D": "right ventricle"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "capillary is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: exchange site."
+      },
+      "why": "capillary is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: exchange site.",
+      "difficulty": 1,
+      "tags": [
+        "vessels",
+        "capillary",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-025",
+      "answer": "capillary."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: liquid component transporting cells and dissolved substances?",
+      "choices": {
+        "A": "plasma",
+        "B": "red blood cell",
+        "C": "perfusion",
+        "D": "left atrium"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "plasma is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: liquid blood matrix."
+      },
+      "why": "plasma is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: liquid blood matrix.",
+      "difficulty": 2,
+      "tags": [
+        "blood-components",
+        "plasma",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-026",
+      "answer": "plasma."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: cell that primarily transports oxygen via hemoglobin?",
+      "choices": {
+        "A": "red blood cell",
+        "B": "white blood cell",
+        "C": "lymphatic return",
+        "D": "left ventricle"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "red blood cell is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: oxygen carrier."
+      },
+      "why": "red blood cell is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: oxygen carrier.",
+      "difficulty": 1,
+      "tags": [
+        "blood-components",
+        "rbc",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-027",
+      "answer": "red blood cell."
+    },
+    {
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: cell involved in immune defense?",
+      "choices": {
+        "A": "white blood cell",
+        "B": "platelet",
+        "C": "edema concept",
+        "D": "tricuspid valve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "white blood cell is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: defense cell."
+      },
+      "why": "white blood cell is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: defense cell.",
+      "difficulty": 3,
+      "tags": [
+        "blood-components",
+        "wbc",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-028",
+      "answer": "white blood cell."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: cell fragment that supports clotting?",
+      "choices": {
+        "A": "platelet",
+        "B": "hemoglobin",
+        "C": "heart",
+        "D": "mitral valve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "platelet is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: clot support."
+      },
+      "why": "platelet is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: clot support.",
+      "difficulty": 1,
+      "tags": [
+        "blood-components",
+        "platelet",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-029",
+      "answer": "platelet."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: protein in red blood cells that binds oxygen?",
+      "choices": {
+        "A": "hemoglobin",
+        "B": "oxygen transport",
+        "C": "right atrium",
+        "D": "pulmonary valve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hemoglobin is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: oxygen-binding protein."
+      },
+      "why": "hemoglobin is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: oxygen-binding protein.",
+      "difficulty": 2,
+      "tags": [
+        "oxygen-transport",
+        "hemoglobin",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-030",
+      "answer": "hemoglobin."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: delivery of oxygen from lungs to tissues by blood?",
+      "choices": {
+        "A": "oxygen transport",
+        "B": "venous return",
+        "C": "right ventricle",
+        "D": "aortic valve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "oxygen transport is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: oxygen delivery."
+      },
+      "why": "oxygen transport is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: oxygen delivery.",
+      "difficulty": 1,
+      "tags": [
+        "oxygen-transport",
+        "perfusion",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-031",
+      "answer": "oxygen transport."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: blood flow returning to heart through veins?",
+      "choices": {
+        "A": "venous return",
+        "B": "perfusion",
+        "C": "left atrium",
+        "D": "aorta"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "venous return is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: return flow."
+      },
+      "why": "venous return is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: return flow.",
+      "difficulty": 2,
+      "tags": [
+        "hemodynamics",
+        "venous-return",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-032",
+      "answer": "venous return."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: delivery of blood flow to tissue capillary beds?",
+      "choices": {
+        "A": "perfusion",
+        "B": "lymphatic return",
+        "C": "left ventricle",
+        "D": "vena cava"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "perfusion is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: tissue flow."
+      },
+      "why": "perfusion is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: tissue flow.",
+      "difficulty": 1,
+      "tags": [
+        "hemodynamics",
+        "perfusion",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-033",
+      "answer": "perfusion."
+    },
+    {
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: movement of interstitial fluid back to circulation via lymphatics?",
+      "choices": {
+        "A": "lymphatic return",
+        "B": "edema concept",
+        "C": "tricuspid valve",
+        "D": "pulmonary artery"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lymphatic return is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: fluid return support."
+      },
+      "why": "lymphatic return is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: fluid return support.",
+      "difficulty": 2,
+      "tags": [
+        "lymphatic",
+        "fluid-balance",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-034",
+      "answer": "lymphatic return."
+    },
+    {
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: excess interstitial fluid accumulation in tissues?",
+      "choices": {
+        "A": "edema concept",
+        "B": "heart",
+        "C": "mitral valve",
+        "D": "pulmonary vein"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "edema concept is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: fluid accumulation."
+      },
+      "why": "edema concept is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: fluid accumulation.",
+      "difficulty": 1,
+      "tags": [
+        "edema",
+        "fluid-balance",
+        "physiology",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-035",
+      "answer": "edema concept."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: heart drives flow?",
+      "choices": {
+        "A": "heart",
+        "B": "left atrium",
+        "C": "aorta",
+        "D": "systole"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "heart best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: muscular pump that drives blood through circulation."
+      },
+      "why": "heart best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: muscular pump that drives blood through circulation.",
+      "difficulty": 2,
+      "tags": [
+        "heart-anatomy",
+        "circulation",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-036",
+      "answer": "heart."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: right atrium receives return?",
+      "choices": {
+        "A": "right atrium",
+        "B": "left ventricle",
+        "C": "vena cava",
+        "D": "diastole"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "right atrium best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: chamber that receives systemic venous blood."
+      },
+      "why": "right atrium best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: chamber that receives systemic venous blood.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "venous-return",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-037",
+      "answer": "right atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: right ventricle to lungs?",
+      "choices": {
+        "A": "right ventricle",
+        "B": "tricuspid valve",
+        "C": "pulmonary artery",
+        "D": "stroke volume"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "right ventricle best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: chamber that pumps blood to lungs."
+      },
+      "why": "right ventricle best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: chamber that pumps blood to lungs.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "pulmonary",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-038",
+      "answer": "right ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: left atrium receives pulmonary return?",
+      "choices": {
+        "A": "left atrium",
+        "B": "mitral valve",
+        "C": "pulmonary vein",
+        "D": "cardiac output"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "left atrium best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: chamber that receives oxygenated blood from lungs."
+      },
+      "why": "left atrium best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: chamber that receives oxygenated blood from lungs.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "pulmonary-return",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-039",
+      "answer": "left atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: left ventricle to body?",
+      "choices": {
+        "A": "left ventricle",
+        "B": "pulmonary valve",
+        "C": "systemic circulation",
+        "D": "systolic pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "left ventricle best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: chamber that pumps oxygenated blood to systemic circulation."
+      },
+      "why": "left ventricle best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: chamber that pumps oxygenated blood to systemic circulation.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "systemic",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-040",
+      "answer": "left ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: right AV valve?",
+      "choices": {
+        "A": "tricuspid valve",
+        "B": "aortic valve",
+        "C": "pulmonary circulation",
+        "D": "diastolic pressure"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "tricuspid valve best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: valve between right atrium and right ventricle."
+      },
+      "why": "tricuspid valve best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: valve between right atrium and right ventricle.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-041",
+      "answer": "tricuspid valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: left AV valve?",
+      "choices": {
+        "A": "mitral valve",
+        "B": "aorta",
+        "C": "systole",
+        "D": "peripheral resistance"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "mitral valve best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: valve between left atrium and left ventricle."
+      },
+      "why": "mitral valve best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: valve between left atrium and left ventricle.",
+      "difficulty": 2,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-042",
+      "answer": "mitral valve."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: LMT can observe and document signs but should not diagnose cardiovascular disease?",
+      "choices": {
+        "A": "scope-safe observation",
+        "B": "defer-and-refer for chest pain",
+        "C": "edema comfort strategy",
+        "D": "defer-and-refer for chest pain"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-safe observation is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: observe/document without diagnosis."
+      },
+      "why": "scope-safe observation is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: observe/document without diagnosis.",
+      "difficulty": 3,
+      "tags": [
+        "scope",
+        "communication",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-043",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: reported chest pain should defer massage and prompt medical referral?",
+      "choices": {
+        "A": "defer-and-refer for chest pain",
+        "B": "defer-and-refer for shortness of breath",
+        "C": "severe/unexplained edema referral",
+        "D": "defer-and-refer for shortness of breath"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for chest pain is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: chest pain is referral cue."
+      },
+      "why": "defer-and-refer for chest pain is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: chest pain is referral cue.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "safety",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-044",
+      "answer": "defer-and-refer for chest pain."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: unexplained breathing difficulty during intake/session warrants referral?",
+      "choices": {
+        "A": "defer-and-refer for shortness of breath",
+        "B": "defer-and-refer for dizziness/confusion",
+        "C": "hydration cue",
+        "D": "defer-and-refer for dizziness/confusion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for shortness of breath is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: breathing distress needs referral."
+      },
+      "why": "defer-and-refer for shortness of breath is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: breathing distress needs referral.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-045",
+      "answer": "defer-and-refer for shortness of breath."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: new unexplained dizziness or confusion should pause care and refer?",
+      "choices": {
+        "A": "defer-and-refer for dizziness/confusion",
+        "B": "reported high blood pressure caution",
+        "C": "pacing strategy",
+        "D": "reported high blood pressure caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for dizziness/confusion is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: neurovascular symptoms need referral."
+      },
+      "why": "defer-and-refer for dizziness/confusion is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: neurovascular symptoms need referral.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "safety",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-046",
+      "answer": "defer-and-refer for dizziness/confusion."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: if client reports uncontrolled high BP, reduce load and defer when needed?",
+      "choices": {
+        "A": "reported high blood pressure caution",
+        "B": "varicose vein caution",
+        "C": "consent and communication",
+        "D": "varicose vein caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "reported high blood pressure caution is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: pressure and pacing should be conservative."
+      },
+      "why": "reported high blood pressure caution is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: pressure and pacing should be conservative.",
+      "difficulty": 1,
+      "tags": [
+        "blood-pressure",
+        "caution",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-047",
+      "answer": "reported high blood pressure caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: avoid deep direct pressure over varicose veins?",
+      "choices": {
+        "A": "varicose vein caution",
+        "B": "anticoagulant awareness",
+        "C": "scope-safe observation",
+        "D": "anticoagulant awareness"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "varicose vein caution is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: work around vulnerable veins."
+      },
+      "why": "varicose vein caution is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: work around vulnerable veins.",
+      "difficulty": 2,
+      "tags": [
+        "varicose-veins",
+        "caution",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-048",
+      "answer": "varicose vein caution."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: clients on blood thinners may bruise more easily; moderate pressure?",
+      "choices": {
+        "A": "anticoagulant awareness",
+        "B": "edema comfort strategy",
+        "C": "defer-and-refer for chest pain",
+        "D": "edema comfort strategy"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "anticoagulant awareness is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: dose pressure to bruise risk."
+      },
+      "why": "anticoagulant awareness is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: dose pressure to bruise risk.",
+      "difficulty": 1,
+      "tags": [
+        "medications",
+        "anticoagulant",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-049",
+      "answer": "anticoagulant awareness."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: for edema, use gentle approach and comfortable positioning?",
+      "choices": {
+        "A": "edema comfort strategy",
+        "B": "severe/unexplained edema referral",
+        "C": "defer-and-refer for shortness of breath",
+        "D": "severe/unexplained edema referral"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "edema comfort strategy is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: comfort-first positioning."
+      },
+      "why": "edema comfort strategy is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: comfort-first positioning.",
+      "difficulty": 2,
+      "tags": [
+        "edema",
+        "positioning",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-050",
+      "answer": "edema comfort strategy."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: marked or unexplained swelling should be referred?",
+      "choices": {
+        "A": "severe/unexplained edema referral",
+        "B": "hydration cue",
+        "C": "defer-and-refer for dizziness/confusion",
+        "D": "hydration cue"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "severe/unexplained edema referral is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: unexplained swelling needs evaluation."
+      },
+      "why": "severe/unexplained edema referral is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: unexplained swelling needs evaluation.",
+      "difficulty": 1,
+      "tags": [
+        "edema",
+        "referral",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-051",
+      "answer": "severe/unexplained edema referral."
+    },
+    {
+      "blueprint_code": "4.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: encourage general hydration habits as part of comfort and recovery support?",
+      "choices": {
+        "A": "hydration cue",
+        "B": "pacing strategy",
+        "C": "reported high blood pressure caution",
+        "D": "pacing strategy"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hydration cue is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: basic hydration supports comfort."
+      },
+      "why": "hydration cue is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: basic hydration supports comfort.",
+      "difficulty": 3,
+      "tags": [
+        "hydration",
+        "recovery",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-052",
+      "answer": "hydration cue."
+    },
+    {
+      "blueprint_code": "5.G.4",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: use shorter blocks and reassessment for lower tolerance clients?",
+      "choices": {
+        "A": "pacing strategy",
+        "B": "consent and communication",
+        "C": "varicose vein caution",
+        "D": "consent and communication"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "pacing strategy is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: dose by response."
+      },
+      "why": "pacing strategy is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: dose by response.",
+      "difficulty": 1,
+      "tags": [
+        "pacing",
+        "reassessment",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-053",
+      "answer": "pacing strategy."
+    },
+    {
+      "blueprint_code": "6.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which concept best matches: confirm consent when changing pressure/positioning?",
+      "choices": {
+        "A": "consent and communication",
+        "B": "scope-safe observation",
+        "C": "anticoagulant awareness",
+        "D": "scope-safe observation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "consent and communication is the best match for this cardiovascular concept.",
+        "trap": "Distractors are related terms but do not match this exact definition.",
+        "hook": "Memory cue: consent is ongoing."
+      },
+      "why": "consent and communication is the best match for this cardiovascular concept.",
+      "trap": "Distractors are related terms but do not match this exact definition.",
+      "hook": "Memory cue: consent is ongoing.",
+      "difficulty": 2,
+      "tags": [
+        "consent",
+        "ethics",
+        "applied",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-054",
+      "answer": "consent and communication."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: observe/document without diagnosis?",
+      "choices": {
+        "A": "scope-safe observation",
+        "B": "defer-and-refer for dizziness/confusion",
+        "C": "hydration cue",
+        "D": "defer-and-refer for dizziness/confusion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "scope-safe observation best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: LMT can observe and document signs but should not diagnose cardiovascular disease."
+      },
+      "why": "scope-safe observation best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: LMT can observe and document signs but should not diagnose cardiovascular disease.",
+      "difficulty": 2,
+      "tags": [
+        "scope",
+        "communication",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-055",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: chest pain is referral cue?",
+      "choices": {
+        "A": "defer-and-refer for chest pain",
+        "B": "reported high blood pressure caution",
+        "C": "pacing strategy",
+        "D": "reported high blood pressure caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for chest pain best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: reported chest pain should defer massage and prompt medical referral."
+      },
+      "why": "defer-and-refer for chest pain best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: reported chest pain should defer massage and prompt medical referral.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-056",
+      "answer": "defer-and-refer for chest pain."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: breathing distress needs referral?",
+      "choices": {
+        "A": "defer-and-refer for shortness of breath",
+        "B": "varicose vein caution",
+        "C": "consent and communication",
+        "D": "varicose vein caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for shortness of breath best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: unexplained breathing difficulty during intake/session warrants referral."
+      },
+      "why": "defer-and-refer for shortness of breath best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: unexplained breathing difficulty during intake/session warrants referral.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-057",
+      "answer": "defer-and-refer for shortness of breath."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: neurovascular symptoms need referral?",
+      "choices": {
+        "A": "defer-and-refer for dizziness/confusion",
+        "B": "anticoagulant awareness",
+        "C": "scope-safe observation",
+        "D": "anticoagulant awareness"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer-and-refer for dizziness/confusion best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: new unexplained dizziness or confusion should pause care and refer."
+      },
+      "why": "defer-and-refer for dizziness/confusion best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: new unexplained dizziness or confusion should pause care and refer.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-058",
+      "answer": "defer-and-refer for dizziness/confusion."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: pressure and pacing should be conservative?",
+      "choices": {
+        "A": "reported high blood pressure caution",
+        "B": "edema comfort strategy",
+        "C": "defer-and-refer for chest pain",
+        "D": "edema comfort strategy"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "reported high blood pressure caution best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: if client reports uncontrolled high BP, reduce load and defer when needed."
+      },
+      "why": "reported high blood pressure caution best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: if client reports uncontrolled high BP, reduce load and defer when needed.",
+      "difficulty": 1,
+      "tags": [
+        "blood-pressure",
+        "caution",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-059",
+      "answer": "reported high blood pressure caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "In massage planning, which concept is most relevant to: work around vulnerable veins?",
+      "choices": {
+        "A": "varicose vein caution",
+        "B": "severe/unexplained edema referral",
+        "C": "defer-and-refer for shortness of breath",
+        "D": "severe/unexplained edema referral"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "varicose vein caution best fits this scope-safe session context.",
+        "trap": "Other options may be true concepts but are less directly relevant here.",
+        "hook": "Anchor phrase: avoid deep direct pressure over varicose veins."
+      },
+      "why": "varicose vein caution best fits this scope-safe session context.",
+      "trap": "Other options may be true concepts but are less directly relevant here.",
+      "hook": "Anchor phrase: avoid deep direct pressure over varicose veins.",
+      "difficulty": 1,
+      "tags": [
+        "varicose-veins",
+        "caution",
+        "applied-context",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-060",
+      "answer": "varicose vein caution."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: muscular pump that drives blood through circulation.",
+      "choices": {
+        "A": "right ventricle",
+        "B": "heart",
+        "C": "aortic valve",
+        "D": "pulmonary circulation"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "heart is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: heart drives flow."
+      },
+      "why": "heart is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: heart drives flow.",
+      "difficulty": 1,
+      "tags": [
+        "heart-anatomy",
+        "circulation",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-061",
+      "answer": "heart."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: chamber that receives systemic venous blood.",
+      "choices": {
+        "A": "left atrium",
+        "B": "right atrium",
+        "C": "aorta",
+        "D": "systole"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "right atrium is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: right atrium receives return."
+      },
+      "why": "right atrium is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: right atrium receives return.",
+      "difficulty": 2,
+      "tags": [
+        "heart-chambers",
+        "venous-return",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-062",
+      "answer": "right atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: chamber that pumps blood to lungs.",
+      "choices": {
+        "A": "left ventricle",
+        "B": "right ventricle",
+        "C": "vena cava",
+        "D": "diastole"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "right ventricle is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: right ventricle to lungs."
+      },
+      "why": "right ventricle is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: right ventricle to lungs.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "pulmonary",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-063",
+      "answer": "right ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: chamber that receives oxygenated blood from lungs.",
+      "choices": {
+        "A": "tricuspid valve",
+        "B": "left atrium",
+        "C": "pulmonary artery",
+        "D": "stroke volume"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "left atrium is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: left atrium receives pulmonary return."
+      },
+      "why": "left atrium is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: left atrium receives pulmonary return.",
+      "difficulty": 2,
+      "tags": [
+        "heart-chambers",
+        "pulmonary-return",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-064",
+      "answer": "left atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: chamber that pumps oxygenated blood to systemic circulation.",
+      "choices": {
+        "A": "mitral valve",
+        "B": "left ventricle",
+        "C": "pulmonary vein",
+        "D": "cardiac output"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "left ventricle is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: left ventricle to body."
+      },
+      "why": "left ventricle is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: left ventricle to body.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "systemic",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-065",
+      "answer": "left ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: valve between right atrium and right ventricle.",
+      "choices": {
+        "A": "pulmonary valve",
+        "B": "tricuspid valve",
+        "C": "systemic circulation",
+        "D": "systolic pressure"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "tricuspid valve is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: right AV valve."
+      },
+      "why": "tricuspid valve is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: right AV valve.",
+      "difficulty": 2,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-066",
+      "answer": "tricuspid valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: valve between left atrium and left ventricle.",
+      "choices": {
+        "A": "aortic valve",
+        "B": "mitral valve",
+        "C": "pulmonary circulation",
+        "D": "diastolic pressure"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "mitral valve is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: left AV valve."
+      },
+      "why": "mitral valve is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: left AV valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-067",
+      "answer": "mitral valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: semilunar valve between right ventricle and pulmonary trunk.",
+      "choices": {
+        "A": "aorta",
+        "B": "pulmonary valve",
+        "C": "systole",
+        "D": "peripheral resistance"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pulmonary valve is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: RV outflow valve."
+      },
+      "why": "pulmonary valve is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: RV outflow valve.",
+      "difficulty": 2,
+      "tags": [
+        "valves",
+        "pulmonary",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-068",
+      "answer": "pulmonary valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: semilunar valve between left ventricle and aorta.",
+      "choices": {
+        "A": "vena cava",
+        "B": "aortic valve",
+        "C": "diastole",
+        "D": "artery"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "aortic valve is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: LV outflow valve."
+      },
+      "why": "aortic valve is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: LV outflow valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "systemic",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-069",
+      "answer": "aortic valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: largest artery carrying blood from left ventricle.",
+      "choices": {
+        "A": "pulmonary artery",
+        "B": "aorta",
+        "C": "stroke volume",
+        "D": "vein"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "aorta is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: main systemic artery."
+      },
+      "why": "aorta is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: main systemic artery.",
+      "difficulty": 2,
+      "tags": [
+        "major-vessels",
+        "arteries",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-070",
+      "answer": "aorta."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: major vein returning systemic blood to right atrium.",
+      "choices": {
+        "A": "pulmonary vein",
+        "B": "vena cava",
+        "C": "cardiac output",
+        "D": "capillary"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "vena cava is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: main venous return."
+      },
+      "why": "vena cava is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: main venous return.",
+      "difficulty": 1,
+      "tags": [
+        "major-vessels",
+        "veins",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-071",
+      "answer": "vena cava."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: vessel carrying blood from heart to lungs.",
+      "choices": {
+        "A": "systemic circulation",
+        "B": "pulmonary artery",
+        "C": "systolic pressure",
+        "D": "plasma"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pulmonary artery is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: to lungs from RV."
+      },
+      "why": "pulmonary artery is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: to lungs from RV.",
+      "difficulty": 2,
+      "tags": [
+        "major-vessels",
+        "pulmonary",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-072",
+      "answer": "pulmonary artery."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: vessel carrying oxygenated blood from lungs to heart.",
+      "choices": {
+        "A": "pulmonary circulation",
+        "B": "pulmonary vein",
+        "C": "diastolic pressure",
+        "D": "red blood cell"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pulmonary vein is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: to LA from lungs."
+      },
+      "why": "pulmonary vein is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: to LA from lungs.",
+      "difficulty": 1,
+      "tags": [
+        "major-vessels",
+        "pulmonary",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-073",
+      "answer": "pulmonary vein."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: blood flow loop between heart and body tissues.",
+      "choices": {
+        "A": "systole",
+        "B": "systemic circulation",
+        "C": "peripheral resistance",
+        "D": "white blood cell"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "systemic circulation is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: body loop."
+      },
+      "why": "systemic circulation is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: body loop.",
+      "difficulty": 2,
+      "tags": [
+        "circulation",
+        "systemic",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-074",
+      "answer": "systemic circulation."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: blood flow loop between heart and lungs.",
+      "choices": {
+        "A": "diastole",
+        "B": "pulmonary circulation",
+        "C": "artery",
+        "D": "platelet"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pulmonary circulation is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: lung loop."
+      },
+      "why": "pulmonary circulation is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: lung loop.",
+      "difficulty": 1,
+      "tags": [
+        "circulation",
+        "pulmonary",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-075",
+      "answer": "pulmonary circulation."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: phase of cardiac contraction/ejection.",
+      "choices": {
+        "A": "stroke volume",
+        "B": "systole",
+        "C": "vein",
+        "D": "hemoglobin"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "systole is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: squeeze phase."
+      },
+      "why": "systole is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: squeeze phase.",
+      "difficulty": 2,
+      "tags": [
+        "cardiac-cycle",
+        "systole",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-076",
+      "answer": "systole."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: phase of cardiac relaxation/filling.",
+      "choices": {
+        "A": "cardiac output",
+        "B": "diastole",
+        "C": "capillary",
+        "D": "oxygen transport"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "diastole is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: fill phase."
+      },
+      "why": "diastole is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: fill phase.",
+      "difficulty": 1,
+      "tags": [
+        "cardiac-cycle",
+        "diastole",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-077",
+      "answer": "diastole."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: amount of blood ejected by a ventricle per beat.",
+      "choices": {
+        "A": "systolic pressure",
+        "B": "stroke volume",
+        "C": "plasma",
+        "D": "venous return"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "stroke volume is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: blood per beat."
+      },
+      "why": "stroke volume is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: blood per beat.",
+      "difficulty": 2,
+      "tags": [
+        "hemodynamics",
+        "stroke-volume",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-078",
+      "answer": "stroke volume."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: LMT can observe and document signs but should not diagnose cardiovascular disease.",
+      "choices": {
+        "A": "defer-and-refer for shortness of breath",
+        "B": "scope-safe observation",
+        "C": "severe/unexplained edema referral",
+        "D": "defer-and-refer for shortness of breath"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "scope-safe observation is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: observe/document without diagnosis."
+      },
+      "why": "scope-safe observation is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: observe/document without diagnosis.",
+      "difficulty": 1,
+      "tags": [
+        "scope",
+        "communication",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-079",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: reported chest pain should defer massage and prompt medical referral.",
+      "choices": {
+        "A": "defer-and-refer for dizziness/confusion",
+        "B": "defer-and-refer for chest pain",
+        "C": "hydration cue",
+        "D": "defer-and-refer for dizziness/confusion"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "defer-and-refer for chest pain is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: chest pain is referral cue."
+      },
+      "why": "defer-and-refer for chest pain is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: chest pain is referral cue.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "safety",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-080",
+      "answer": "defer-and-refer for chest pain."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: unexplained breathing difficulty during intake/session warrants referral.",
+      "choices": {
+        "A": "reported high blood pressure caution",
+        "B": "defer-and-refer for shortness of breath",
+        "C": "pacing strategy",
+        "D": "reported high blood pressure caution"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "defer-and-refer for shortness of breath is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: breathing distress needs referral."
+      },
+      "why": "defer-and-refer for shortness of breath is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: breathing distress needs referral.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-081",
+      "answer": "defer-and-refer for shortness of breath."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: new unexplained dizziness or confusion should pause care and refer.",
+      "choices": {
+        "A": "varicose vein caution",
+        "B": "defer-and-refer for dizziness/confusion",
+        "C": "consent and communication",
+        "D": "varicose vein caution"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "defer-and-refer for dizziness/confusion is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: neurovascular symptoms need referral."
+      },
+      "why": "defer-and-refer for dizziness/confusion is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: neurovascular symptoms need referral.",
+      "difficulty": 2,
+      "tags": [
+        "referral",
+        "safety",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-082",
+      "answer": "defer-and-refer for dizziness/confusion."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: if client reports uncontrolled high BP, reduce load and defer when needed.",
+      "choices": {
+        "A": "anticoagulant awareness",
+        "B": "reported high blood pressure caution",
+        "C": "scope-safe observation",
+        "D": "anticoagulant awareness"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "reported high blood pressure caution is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: pressure and pacing should be conservative."
+      },
+      "why": "reported high blood pressure caution is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: pressure and pacing should be conservative.",
+      "difficulty": 1,
+      "tags": [
+        "blood-pressure",
+        "caution",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-083",
+      "answer": "reported high blood pressure caution."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: avoid deep direct pressure over varicose veins.",
+      "choices": {
+        "A": "edema comfort strategy",
+        "B": "varicose vein caution",
+        "C": "defer-and-refer for chest pain",
+        "D": "edema comfort strategy"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "varicose vein caution is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: work around vulnerable veins."
+      },
+      "why": "varicose vein caution is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: work around vulnerable veins.",
+      "difficulty": 2,
+      "tags": [
+        "varicose-veins",
+        "caution",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-084",
+      "answer": "varicose vein caution."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Select the best term for: clients on blood thinners may bruise more easily; moderate pressure.",
+      "choices": {
+        "A": "severe/unexplained edema referral",
+        "B": "anticoagulant awareness",
+        "C": "defer-and-refer for shortness of breath",
+        "D": "severe/unexplained edema referral"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "anticoagulant awareness is the correct reverse-recall match.",
+        "trap": "Nearby terms are plausible but map to different roles.",
+        "hook": "Quick link: dose pressure to bruise risk."
+      },
+      "why": "anticoagulant awareness is the correct reverse-recall match.",
+      "trap": "Nearby terms are plausible but map to different roles.",
+      "hook": "Quick link: dose pressure to bruise risk.",
+      "difficulty": 1,
+      "tags": [
+        "medications",
+        "anticoagulant",
+        "reverse",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-085",
+      "answer": "anticoagulant awareness."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: muscular pump that drives blood through circulation.",
+      "correct_text": "heart",
+      "explanation": {
+        "why": "heart correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: heart drives flow."
+      },
+      "why": "heart correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: heart drives flow.",
+      "difficulty": 2,
+      "tags": [
+        "heart-anatomy",
+        "circulation",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-086",
+      "answer": "heart."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: chamber that receives systemic venous blood.",
+      "correct_text": "right atrium",
+      "explanation": {
+        "why": "right atrium correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: right atrium receives return."
+      },
+      "why": "right atrium correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: right atrium receives return.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "venous-return",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-087",
+      "answer": "right atrium."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: chamber that pumps oxygenated blood to systemic circulation.",
+      "correct_text": "left ventricle",
+      "explanation": {
+        "why": "left ventricle correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: left ventricle to body."
+      },
+      "why": "left ventricle correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: left ventricle to body.",
+      "difficulty": 1,
+      "tags": [
+        "heart-chambers",
+        "systemic",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-088",
+      "answer": "left ventricle."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: valve between left atrium and left ventricle.",
+      "correct_text": "mitral valve",
+      "explanation": {
+        "why": "mitral valve correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: left AV valve."
+      },
+      "why": "mitral valve correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: left AV valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "heart-anatomy",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-089",
+      "answer": "mitral valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: semilunar valve between left ventricle and aorta.",
+      "correct_text": "aortic valve",
+      "explanation": {
+        "why": "aortic valve correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: LV outflow valve."
+      },
+      "why": "aortic valve correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: LV outflow valve.",
+      "difficulty": 1,
+      "tags": [
+        "valves",
+        "systemic",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-090",
+      "answer": "aortic valve."
+    },
+    {
+      "blueprint_code": "1.A.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: major vein returning systemic blood to right atrium.",
+      "correct_text": "vena cava",
+      "explanation": {
+        "why": "vena cava correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: main venous return."
+      },
+      "why": "vena cava correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: main venous return.",
+      "difficulty": 2,
+      "tags": [
+        "major-vessels",
+        "veins",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-091",
+      "answer": "vena cava."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: amount of blood ejected by a ventricle per beat.",
+      "correct_text": "stroke volume",
+      "explanation": {
+        "why": "stroke volume correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: blood per beat."
+      },
+      "why": "stroke volume correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: blood per beat.",
+      "difficulty": 1,
+      "tags": [
+        "hemodynamics",
+        "stroke-volume",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-092",
+      "answer": "stroke volume."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: arterial pressure during ventricular relaxation.",
+      "correct_text": "diastolic pressure",
+      "explanation": {
+        "why": "diastolic pressure correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: bottom BP value."
+      },
+      "why": "diastolic pressure correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: bottom BP value.",
+      "difficulty": 1,
+      "tags": [
+        "blood-pressure",
+        "diastolic",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-093",
+      "answer": "diastolic pressure."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: cell that primarily transports oxygen via hemoglobin.",
+      "correct_text": "red blood cell",
+      "explanation": {
+        "why": "red blood cell correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: oxygen carrier."
+      },
+      "why": "red blood cell correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: oxygen carrier.",
+      "difficulty": 1,
+      "tags": [
+        "blood-components",
+        "rbc",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-094",
+      "answer": "red blood cell."
+    },
+    {
+      "blueprint_code": "1.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: protein in red blood cells that binds oxygen.",
+      "correct_text": "hemoglobin",
+      "explanation": {
+        "why": "hemoglobin correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: oxygen-binding protein."
+      },
+      "why": "hemoglobin correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: oxygen-binding protein.",
+      "difficulty": 1,
+      "tags": [
+        "oxygen-transport",
+        "hemoglobin",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "physiology",
+      "id": "ch13-cardio-blood-v1-095",
+      "answer": "hemoglobin."
+    },
+    {
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: LMT can observe and document signs but should not diagnose cardiovascular disease.",
+      "correct_text": "scope-safe observation",
+      "explanation": {
+        "why": "scope-safe observation correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: observe/document without diagnosis."
+      },
+      "why": "scope-safe observation correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: observe/document without diagnosis.",
+      "difficulty": 2,
+      "tags": [
+        "scope",
+        "communication",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-096",
+      "answer": "scope-safe observation."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: reported chest pain should defer massage and prompt medical referral.",
+      "correct_text": "defer-and-refer for chest pain",
+      "explanation": {
+        "why": "defer-and-refer for chest pain correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: chest pain is referral cue."
+      },
+      "why": "defer-and-refer for chest pain correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: chest pain is referral cue.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "safety",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-097",
+      "answer": "defer-and-refer for chest pain."
+    },
+    {
+      "blueprint_code": "3.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: avoid deep direct pressure over varicose veins.",
+      "correct_text": "varicose vein caution",
+      "explanation": {
+        "why": "varicose vein caution correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: work around vulnerable veins."
+      },
+      "why": "varicose vein caution correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: work around vulnerable veins.",
+      "difficulty": 1,
+      "tags": [
+        "varicose-veins",
+        "caution",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-098",
+      "answer": "varicose vein caution."
+    },
+    {
+      "blueprint_code": "3.E",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: clients on blood thinners may bruise more easily; moderate pressure.",
+      "correct_text": "anticoagulant awareness",
+      "explanation": {
+        "why": "anticoagulant awareness correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: dose pressure to bruise risk."
+      },
+      "why": "anticoagulant awareness correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: dose pressure to bruise risk.",
+      "difficulty": 1,
+      "tags": [
+        "medications",
+        "anticoagulant",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-099",
+      "answer": "anticoagulant awareness."
+    },
+    {
+      "blueprint_code": "5.G.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fill in the key term: marked or unexplained swelling should be referred.",
+      "correct_text": "severe/unexplained edema referral",
+      "explanation": {
+        "why": "severe/unexplained edema referral correctly completes this cardiovascular statement.",
+        "trap": "Related terms may fit the topic but not this exact definition.",
+        "hook": "Cue: unexplained swelling needs evaluation."
+      },
+      "why": "severe/unexplained edema referral correctly completes this cardiovascular statement.",
+      "trap": "Related terms may fit the topic but not this exact definition.",
+      "hook": "Cue: unexplained swelling needs evaluation.",
+      "difficulty": 1,
+      "tags": [
+        "edema",
+        "referral",
+        "fill",
+        "cardio-blood"
+      ],
+      "domain": "applied",
+      "id": "ch13-cardio-blood-v1-100",
+      "answer": "severe/unexplained edema referral."
+    }
+  ]
+}
