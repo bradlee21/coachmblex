@@ -1,6 +1,8 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP15: added invite UX with Copy Code, Copy Invite Link, and Web Share support plus short copied/shared feedback.
+- Added deep-link join support via `/game/study-night?join=CODE` with input prefill and one-time auto-join for authenticated users.
 - Study Night TP14: added host-only Host Tools (Force Resync, End Game, Reset Room with inline confirmation) for stuck-state recovery.
 - End Game now sets `study_rooms.status='finished'` and `study_room_state.phase='finished'`; Reset Room returns to lobby and clears score/marks/coach stats for all room players.
 - Study Night TP13: persisted per-player Coach Review aggregates to `study_room_players.coach_stats` (SQL docs + migration snippet + update grant).

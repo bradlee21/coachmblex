@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { postgrestFetch } from '../../../src/lib/postgrestFetch';
 import { devLog } from '../../../src/lib/devLog';
@@ -135,6 +135,7 @@ async function upsertPlayerMembership(roomId, user, timeoutMs = 8000, label = 'u
 
 export default function StudyNightLandingPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { user, loading } = useAuth();
   const [joinCodeInput, setJoinCodeInput] = useState('');
   const [errorInfo, setErrorInfo] = useState(null);
@@ -146,12 +147,35 @@ export default function StudyNightLandingPage() {
   const [busyAction, setBusyAction] = useState('');
   const [checkingConnection, setCheckingConnection] = useState(false);
   const [connectionReport, setConnectionReport] = useState(null);
+  const [knownRoomCode, setKnownRoomCode] = useState('');
+  const [copyFeedback, setCopyFeedback] = useState('');
   const createQuestionCount = 1;
+  const copyFeedbackTimeoutRef = useRef(null);
+  const prefilledJoinCodeRef = useRef('');
+  const autoJoinAttemptRef = useRef('');
+
+  const joinCodeFromParam = useMemo(() => {
+    const rawValue = searchParams?.get('join') || '';
+    return String(rawValue).trim().toUpperCase();
+  }, [searchParams]);
 
   const normalizedJoinCode = useMemo(
     () => joinCodeInput.trim().toUpperCase(),
     [joinCodeInput]
   );
+  const inviteCode = useMemo(
+    () => (knownRoomCode || normalizedJoinCode || joinCodeFromParam || '').trim().toUpperCase(),
+    [joinCodeFromParam, knownRoomCode, normalizedJoinCode]
+  );
+  const inviteLink = useMemo(() => {
+    if (!inviteCode) return '';
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const joinValue = encodeURIComponent(inviteCode);
+    return origin
+      ? `${origin}/game/study-night?join=${joinValue}`
+      : `/game/study-night?join=${joinValue}`;
+  }, [inviteCode]);
+  const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function';
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
   const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
   const maskedAnonKey = maskAnonKey(supabaseAnonKey);
@@ -165,6 +189,32 @@ export default function StudyNightLandingPage() {
         : null,
     [supabaseAnonKey]
   );
+
+  const showCopyFeedback = useCallback((value) => {
+    setCopyFeedback(value);
+    if (copyFeedbackTimeoutRef.current) {
+      clearTimeout(copyFeedbackTimeoutRef.current);
+    }
+    copyFeedbackTimeoutRef.current = setTimeout(() => {
+      setCopyFeedback('');
+    }, 1200);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (copyFeedbackTimeoutRef.current) {
+        clearTimeout(copyFeedbackTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!joinCodeFromParam) return;
+    if (prefilledJoinCodeRef.current === joinCodeFromParam) return;
+    prefilledJoinCodeRef.current = joinCodeFromParam;
+    setJoinCodeInput(joinCodeFromParam);
+    setKnownRoomCode(joinCodeFromParam);
+  }, [joinCodeFromParam]);
 
   async function runFetchCheck(url, headers, label) {
     if (!url) {
@@ -386,6 +436,8 @@ export default function StudyNightLandingPage() {
         throw new Error('Could not generate a unique room code. Try again.');
       }
 
+      setKnownRoomCode(createdRoom.code);
+      setJoinCodeInput(createdRoom.code);
       setStep('upsert_host_player');
       const playerUpsertResponse = await upsertPlayerMembership(
         createdRoom.id,
@@ -435,13 +487,14 @@ export default function StudyNightLandingPage() {
     }
   }
 
-  async function handleJoinRoom(event) {
-    event.preventDefault();
+  const joinRoomByCode = useCallback(async (rawCode) => {
     if (!user) return;
-    if (!normalizedJoinCode) {
+    const code = String(rawCode || '').trim().toUpperCase();
+    if (!code) {
       setErrorInfo(toErrorInfo({ message: 'Enter a room code.' }));
       return;
     }
+    if (busyAction === 'join') return;
 
     const supabase = getSupabaseClient();
     if (!supabase) {
@@ -456,7 +509,7 @@ export default function StudyNightLandingPage() {
       const roomResponse = await withTimeout(
         postgrestFetch(
           `study_rooms?code=eq.${encodeURIComponent(
-            normalizedJoinCode
+            code
           )}&select=id,code,host_user_id,status,game_type_mode,win_wedges,duration_sec,question_count&limit=1`
         ),
         8000,
@@ -481,12 +534,74 @@ export default function StudyNightLandingPage() {
         'join_room_player'
       );
       devLog('[STUDY-NIGHT] join room upsert_player response', joinPlayerUpsertResponse);
+      setKnownRoomCode(room.code);
       router.push(`/game/study-night/room/${room.code}`);
     } catch (error) {
       devLog('[STUDY-NIGHT] join room failed', error);
       setErrorInfo(toErrorInfo(error, 'Failed to join room.'));
     } finally {
       setBusyAction('');
+    }
+  }, [busyAction, router, user]);
+
+  async function handleJoinRoom(event) {
+    event.preventDefault();
+    await joinRoomByCode(normalizedJoinCode);
+  }
+
+  useEffect(() => {
+    if (loading || !user || !joinCodeFromParam) return;
+    if (autoJoinAttemptRef.current === joinCodeFromParam) return;
+    autoJoinAttemptRef.current = joinCodeFromParam;
+    void joinRoomByCode(joinCodeFromParam);
+  }, [joinCodeFromParam, joinRoomByCode, loading, user]);
+
+  async function handleCopyCode() {
+    if (!inviteCode) return;
+    const canCopy = typeof navigator !== 'undefined' && typeof navigator.clipboard?.writeText === 'function';
+    if (!canCopy) {
+      setErrorInfo(toErrorInfo({ message: 'Clipboard API is unavailable.' }));
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(inviteCode);
+      showCopyFeedback('Copied');
+    } catch (error) {
+      setErrorInfo(toErrorInfo(error, 'Failed to copy room code.'));
+    }
+  }
+
+  async function handleCopyInviteLink() {
+    if (!inviteLink) return;
+    const canCopy = typeof navigator !== 'undefined' && typeof navigator.clipboard?.writeText === 'function';
+    if (!canCopy) {
+      setErrorInfo(toErrorInfo({ message: 'Clipboard API is unavailable.' }));
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(inviteLink);
+      showCopyFeedback('Copied');
+    } catch (error) {
+      setErrorInfo(toErrorInfo(error, 'Failed to copy invite link.'));
+    }
+  }
+
+  async function handleShareInvite() {
+    if (!inviteCode || !inviteLink) return;
+    if (!canShare) {
+      setErrorInfo(toErrorInfo({ message: 'Share API is unavailable.' }));
+      return;
+    }
+    try {
+      await navigator.share({
+        title: 'Study Night',
+        text: `Join my Study Night room: ${inviteCode}`,
+        url: inviteLink,
+      });
+      showCopyFeedback('Shared');
+    } catch (error) {
+      if (error?.name === 'AbortError') return;
+      setErrorInfo(toErrorInfo(error, 'Failed to share invite.'));
     }
   }
 
@@ -504,6 +619,9 @@ export default function StudyNightLandingPage() {
       <section>
         <h1>Study Night</h1>
         <p className="muted">Redirecting to sign in...</p>
+        {joinCodeFromParam ? (
+          <p className="muted">Sign in to join room {joinCodeFromParam}.</p>
+        ) : null}
       </section>
     );
   }
@@ -561,6 +679,23 @@ export default function StudyNightLandingPage() {
             {creating ? 'Creating...' : 'Create room'}
           </button>
           {creating ? <p className="muted">Step: {createStep || 'insert_room'}</p> : null}
+          {inviteCode ? (
+            <div>
+              <p className="muted">Invite code: {inviteCode}</p>
+              <div className="choice-list">
+                <button type="button" onClick={handleCopyCode}>
+                  Copy Code
+                </button>
+                <button type="button" onClick={handleCopyInviteLink}>
+                  Copy Invite Link
+                </button>
+                <button type="button" onClick={handleShareInvite} disabled={!canShare}>
+                  Share
+                </button>
+              </div>
+              {copyFeedback ? <p className="muted">{copyFeedback}</p> : null}
+            </div>
+          ) : null}
         </div>
 
         <div className="game-card">
