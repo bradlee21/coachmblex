@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- TP18: added strong inline Question Forge validation (required fields, duplicate choice checks, and top summary) that blocks invalid saves.
+- Added read-only Question Forge preview for prompt, choices/fill answer, and Answer/Why/Trap/Hook blocks to match saved structure.
+- Added post-save Duplicate flow to clone the most recently saved question into a new draft for fast variant authoring.
 - TP17b: built Question Forge V1 at `/admin/questions` with blueprint search/picker, MCQ/Reverse/Fill type tabs, and keyboard-friendly Save / Save & New flows.
 - Question inserts now validate required fields, show clear success/error panels, and preserve blueprint/type on Save & New.
 - Added questions SQL policy docs for `questions_editor`/`admin` insert access and expanded lightweight smoke assertions for Question Forge rendering/gating.

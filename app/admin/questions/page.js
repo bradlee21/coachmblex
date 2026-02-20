@@ -102,6 +102,12 @@ function createDefaultExplanations() {
   };
 }
 
+function normalizeWhitespace(value) {
+  return String(value || '')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
 export default function AdminQuestionsPage() {
   const { user, role, loading } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
@@ -115,6 +121,7 @@ export default function AdminQuestionsPage() {
   const [savingMode, setSavingMode] = useState('');
   const [errorInfo, setErrorInfo] = useState(null);
   const [savedInfo, setSavedInfo] = useState(null);
+  const [lastSavedDraft, setLastSavedDraft] = useState(null);
 
   const allNodes = useMemo(() => listAllNodesFlat(), []);
   const nodeByCode = useMemo(
@@ -165,6 +172,96 @@ export default function AdminQuestionsPage() {
     : '';
   const isFillType = questionType === 'fill';
   const canAccess = ['admin', 'questions_editor'].includes(normalizeRole(role));
+  const validation = useMemo(() => {
+    const summary = [];
+    const errors = {
+      blueprintCode: '',
+      questionType: '',
+      prompt: '',
+      fillAnswer: '',
+      choices: ['', '', '', ''],
+      correctIndex: '',
+      duplicateChoices: '',
+    };
+
+    if (!selectedBlueprintCode.trim()) {
+      errors.blueprintCode = 'Blueprint code is required.';
+      summary.push(errors.blueprintCode);
+    }
+
+    if (!questionType) {
+      errors.questionType = 'Question type is required.';
+      summary.push(errors.questionType);
+    }
+
+    if (!prompt.trim()) {
+      errors.prompt = 'Prompt is required.';
+      summary.push(errors.prompt);
+    }
+
+    if (questionType === 'fill') {
+      if (!fillAnswer.trim()) {
+        errors.fillAnswer = 'Correct answer text is required for Fill.';
+        summary.push(errors.fillAnswer);
+      }
+    } else {
+      const normalizedChoices = choices.map((choice) => normalizeWhitespace(choice));
+      normalizedChoices.forEach((choice, index) => {
+        if (!choice) {
+          errors.choices[index] = `${toChoiceLabel(index)} choice is required.`;
+        }
+      });
+      for (const error of errors.choices) {
+        if (error) summary.push(error);
+      }
+
+      const seen = new Map();
+      for (const choice of normalizedChoices) {
+        if (!choice) continue;
+        seen.set(choice, (seen.get(choice) || 0) + 1);
+      }
+      const duplicateValues = [...seen.entries()]
+        .filter(([, count]) => count > 1)
+        .map(([value]) => value);
+      if (duplicateValues.length > 0) {
+        errors.duplicateChoices = `Duplicate choices are not allowed: ${duplicateValues.join(', ')}`;
+        summary.push(errors.duplicateChoices);
+      }
+
+      if (!Number.isInteger(correctIndex) || correctIndex < 0 || correctIndex > 3) {
+        errors.correctIndex = 'Select the correct choice (A-D).';
+        summary.push(errors.correctIndex);
+      }
+    }
+
+    return {
+      isValid: summary.length === 0,
+      summary,
+      errors,
+    };
+  }, [choices, correctIndex, fillAnswer, prompt, questionType, selectedBlueprintCode]);
+  const previewQuestion = useMemo(() => {
+    const normalizedChoices = isFillType
+      ? [normalizeWhitespace(fillAnswer), '', '', '']
+      : choices.map((choice) => normalizeWhitespace(choice));
+    const normalizedCorrectIndex = isFillType ? 0 : correctIndex;
+    const normalizedExplanations = {
+      answer:
+        normalizeWhitespace(explanations.answer) ||
+        normalizeWhitespace(normalizedChoices[normalizedCorrectIndex]),
+      why: normalizeWhitespace(explanations.why),
+      trap: normalizeWhitespace(explanations.trap),
+      hook: normalizeWhitespace(explanations.hook),
+    };
+
+    return {
+      question_type: questionType,
+      prompt: prompt || '',
+      choices: normalizedChoices,
+      correct_index: normalizedCorrectIndex,
+      explanation: normalizedExplanations,
+    };
+  }, [choices, correctIndex, explanations, fillAnswer, isFillType, prompt, questionType]);
 
   function onSelectBlueprint(code) {
     setSelectedBlueprintCode(code);
@@ -185,39 +282,12 @@ export default function AdminQuestionsPage() {
   }
 
   function validatePayload() {
-    const trimmedPrompt = prompt.trim();
-    if (!selectedBlueprintCode) {
-      return { ok: false, error: toErrorInfo({ message: 'Select a blueprint code.' }) };
-    }
-    if (!trimmedPrompt) {
-      return { ok: false, error: toErrorInfo({ message: 'Prompt is required.' }) };
-    }
-
-    if (isFillType) {
-      const trimmedFillAnswer = fillAnswer.trim();
-      if (!trimmedFillAnswer) {
-        return {
-          ok: false,
-          error: toErrorInfo({ message: 'Fill questions require a correct answer text.' }),
-        };
-      }
-      return { ok: true };
-    }
-
-    const normalizedChoices = choices.map((choice) => choice.trim());
-    if (normalizedChoices.some((choice) => !choice)) {
+    if (!validation.isValid) {
       return {
         ok: false,
-        error: toErrorInfo({ message: 'MCQ/Reverse questions require all 4 choices.' }),
+        error: toErrorInfo({ message: `Fix validation issues before saving (${validation.summary.length}).` }),
       };
     }
-    if (correctIndex < 0 || correctIndex > 3) {
-      return {
-        ok: false,
-        error: toErrorInfo({ message: 'Select the correct choice (A-D).' }),
-      };
-    }
-
     return { ok: true };
   }
 
@@ -226,18 +296,18 @@ export default function AdminQuestionsPage() {
     const sectionCode = selectedCode.split('.')[0];
     const domain = DOMAIN_BY_SECTION_CODE[sectionCode] || 'general';
     const subtopic = selectedCode;
-    const trimmedPrompt = prompt.trim();
+    const trimmedPrompt = normalizeWhitespace(prompt);
 
     const normalizedChoices = isFillType
-      ? [fillAnswer.trim(), '', '', '']
-      : choices.map((choice) => choice.trim());
+      ? [normalizeWhitespace(fillAnswer), '', '', '']
+      : choices.map((choice) => normalizeWhitespace(choice));
     const normalizedCorrectIndex = isFillType ? 0 : correctIndex;
 
     const normalizedExplanations = {
-      answer: explanations.answer.trim() || normalizedChoices[normalizedCorrectIndex] || '',
-      why: explanations.why.trim(),
-      trap: explanations.trap.trim(),
-      hook: explanations.hook.trim(),
+      answer: normalizeWhitespace(explanations.answer) || normalizedChoices[normalizedCorrectIndex] || '',
+      why: normalizeWhitespace(explanations.why),
+      trap: normalizeWhitespace(explanations.trap),
+      hook: normalizeWhitespace(explanations.hook),
     };
 
     return {
@@ -288,6 +358,20 @@ export default function AdminQuestionsPage() {
         blueprintCode: payload.blueprint_code,
         questionType: payload.question_type,
       });
+      setLastSavedDraft({
+        blueprintCode: payload.blueprint_code,
+        questionType: payload.question_type,
+        prompt: payload.prompt,
+        choices: Array.isArray(payload.choices) ? payload.choices.slice(0, 4) : createDefaultChoices(),
+        correctIndex: Number.isInteger(payload.correct_index) ? payload.correct_index : 0,
+        fillAnswer: Array.isArray(payload.choices) ? payload.choices[0] || '' : '',
+        explanations: {
+          answer: payload.explanation?.answer || '',
+          why: payload.explanation?.why || '',
+          trap: payload.explanation?.trap || '',
+          hook: payload.explanation?.hook || '',
+        },
+      });
 
       if (mode === 'save_new') {
         setPrompt('');
@@ -310,6 +394,24 @@ export default function AdminQuestionsPage() {
 
   function handleSaveNew() {
     void saveQuestion('save_new');
+  }
+
+  function handleDuplicateLastQuestion() {
+    if (!lastSavedDraft) return;
+    setSelectedBlueprintCode(lastSavedDraft.blueprintCode || '');
+    setQuestionType(lastSavedDraft.questionType || 'mcq');
+    setPrompt(lastSavedDraft.prompt || '');
+    setChoices(Array.isArray(lastSavedDraft.choices) ? lastSavedDraft.choices.slice(0, 4) : createDefaultChoices());
+    setCorrectIndex(Number.isInteger(lastSavedDraft.correctIndex) ? lastSavedDraft.correctIndex : 0);
+    setFillAnswer(lastSavedDraft.fillAnswer || '');
+    setExplanations({
+      answer: lastSavedDraft.explanations?.answer || '',
+      why: lastSavedDraft.explanations?.why || '',
+      trap: lastSavedDraft.explanations?.trap || '',
+      hook: lastSavedDraft.explanations?.hook || '',
+    });
+    setSavedInfo(null);
+    setErrorInfo(null);
   }
 
   if (loading) {
@@ -387,6 +489,14 @@ export default function AdminQuestionsPage() {
               Required fields: Blueprint code, question type, prompt, and Answer/Why/Trap/Hook guidance.
             </p>
           </div>
+          {!validation.isValid ? (
+            <div className="status error">
+              <p>Fix these before saving:</p>
+              {validation.summary.slice(0, 5).map((item, index) => (
+                <p key={`forge-validation-${index}`}>{item}</p>
+              ))}
+            </div>
+          ) : null}
           <div className="button-row">
             {QUESTION_TYPE_OPTIONS.map((option) => (
               <button
@@ -399,6 +509,7 @@ export default function AdminQuestionsPage() {
               </button>
             ))}
           </div>
+          {validation.errors.questionType ? <p className="status error">{validation.errors.questionType}</p> : null}
 
           <form className="auth-form" onSubmit={handleSubmit}>
             <label htmlFor="forge-blueprint-code">Blueprint code</label>
@@ -409,6 +520,7 @@ export default function AdminQuestionsPage() {
               readOnly
               placeholder="Pick from left panel"
             />
+            {validation.errors.blueprintCode ? <p className="status error">{validation.errors.blueprintCode}</p> : null}
 
             <label htmlFor="forge-prompt">Prompt</label>
             <textarea
@@ -418,6 +530,7 @@ export default function AdminQuestionsPage() {
               placeholder="Write the question prompt"
               rows={4}
             />
+            {validation.errors.prompt ? <p className="status error">{validation.errors.prompt}</p> : null}
 
             {isFillType ? (
               <>
@@ -429,6 +542,7 @@ export default function AdminQuestionsPage() {
                   onChange={(event) => setFillAnswer(event.target.value)}
                   placeholder="Enter the expected fill answer"
                 />
+                {validation.errors.fillAnswer ? <p className="status error">{validation.errors.fillAnswer}</p> : null}
               </>
             ) : (
               <>
@@ -445,8 +559,14 @@ export default function AdminQuestionsPage() {
                       onChange={(event) => updateChoice(index, event.target.value)}
                       placeholder={`Choice ${toChoiceLabel(index)}`}
                     />
+                    {validation.errors.choices[index] ? (
+                      <p className="status error">{validation.errors.choices[index]}</p>
+                    ) : null}
                   </div>
                 ))}
+                {validation.errors.duplicateChoices ? (
+                  <p className="status error">{validation.errors.duplicateChoices}</p>
+                ) : null}
 
                 <label htmlFor="forge-correct-index">Correct choice</label>
                 <select
@@ -460,6 +580,7 @@ export default function AdminQuestionsPage() {
                     </option>
                   ))}
                 </select>
+                {validation.errors.correctIndex ? <p className="status error">{validation.errors.correctIndex}</p> : null}
               </>
             )}
 
@@ -488,14 +609,54 @@ export default function AdminQuestionsPage() {
             })}
 
             <div className="button-row">
-              <button type="submit" disabled={Boolean(savingMode)}>
+              <button type="submit" disabled={Boolean(savingMode) || !validation.isValid}>
                 {savingMode === 'save' ? 'Saving...' : 'Save'}
               </button>
-              <button type="button" onClick={handleSaveNew} disabled={Boolean(savingMode)}>
+              <button
+                type="button"
+                onClick={handleSaveNew}
+                disabled={Boolean(savingMode) || !validation.isValid}
+              >
                 {savingMode === 'save_new' ? 'Saving...' : 'Save & New'}
               </button>
             </div>
           </form>
+
+          <h3>Preview</h3>
+          <div className="runner">
+            <p className="muted">Read-only preview of what will be saved.</p>
+            <p className="runner-prompt">{previewQuestion.prompt || 'Prompt preview...'}</p>
+            {isFillType ? (
+              <p className="muted">
+                Correct fill answer: <strong>{previewQuestion.choices[0] || 'n/a'}</strong>
+              </p>
+            ) : (
+              <div className="choice-list">
+                {previewQuestion.choices.map((choice, index) => {
+                  const isCorrect = previewQuestion.correct_index === index;
+                  return (
+                    <button
+                      key={`preview-choice-${index}`}
+                      type="button"
+                      className={`choice-btn${isCorrect ? ' selected' : ''}`}
+                      disabled
+                    >
+                      {toChoiceLabel(index)}. {choice || '(empty)'}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            {EXPLANATION_FIELDS.map((field) => {
+              const text = previewQuestion.explanation?.[field] || '';
+              if (!text) return null;
+              return (
+                <div key={`preview-explanation-${field}`} className="explanation-box">
+                  <strong>{field.charAt(0).toUpperCase() + field.slice(1)}:</strong> {text}
+                </div>
+              );
+            })}
+          </div>
 
           {savedInfo ? (
             <div className="status success">
@@ -503,6 +664,9 @@ export default function AdminQuestionsPage() {
               <p>
                 {savedInfo.blueprintCode} | {savedInfo.questionType}
               </p>
+              <button type="button" onClick={handleDuplicateLastQuestion} disabled={!lastSavedDraft}>
+                Duplicate
+              </button>
             </div>
           ) : null}
 
