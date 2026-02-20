@@ -1,6 +1,9 @@
 # Changelog
 
 ## 2026-02-20
+- Study Night TP4: enforced Trivial Pursuit wedge win threshold via `WIN_WEDGES` with host finishing the room when any player reaches the target.
+- Study Night pick phase now marks and disables categories already owned by the current turn player to encourage wedge variety.
+- Study Night finished view now includes a final scoreboard with per-player score and wedge progress.
 - Study Night TP3a: added Fill as a third per-turn mini-game option (`mcq`, `reverse`, `fill`) in the category pick phase.
 - Study Night question phase now renders a fill-in text input for fill questions with normalized answer matching and Enter-to-submit behavior.
 - Added fill question seed coverage for Study Night testing with canonical `blueprint_code` prefixes.

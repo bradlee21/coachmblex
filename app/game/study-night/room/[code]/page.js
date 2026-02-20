@@ -21,6 +21,7 @@ const DEFAULT_STATE = {
   duration_sec: 12,
   round_no: 1,
 };
+const WIN_WEDGES = 3;
 
 function normalizeGameType(value) {
   if (value === 'reverse') return 'reverse';
@@ -735,7 +736,17 @@ export default function StudyNightRoomPage() {
         }
       }
 
-      if (nextWedges.length >= 3) {
+      const playersAfterReveal = orderedPlayers.map((player) => {
+        if (player.user_id !== currentTurnPlayer.user_id) return player;
+        return {
+          ...player,
+          wedges: nextWedges,
+        };
+      });
+      const winnerAfterReveal =
+        playersAfterReveal.find((player) => getWedges(player).length >= WIN_WEDGES) || null;
+
+      if (winnerAfterReveal) {
         const roomFinishResponse = await timedPostgrest(
           `study_rooms?id=eq.${room.id}`,
           {
@@ -832,7 +843,7 @@ export default function StudyNightRoomPage() {
   }
 
   const currentCategory = state?.category_key ? studyNightCategoryByKey[state.category_key] : null;
-  const winner = orderedPlayers.find((player) => getWedges(player).length >= 3) || null;
+  const winner = orderedPlayers.find((player) => getWedges(player).length >= WIN_WEDGES) || null;
   const selectedAnswerIndex = question?.id ? selectedAnswer[question.id] : null;
   const fillInputValue = question?.id ? fillInputByQuestion[question.id] || '' : '';
   const explanationBlocks = question ? getExplanationBlocks(question.explanation) : [];
@@ -840,6 +851,7 @@ export default function StudyNightRoomPage() {
   const currentGameTypeLabel = getGameTypeLabel(currentGameType);
   const isFillQuestion = currentGameType === 'fill';
   const correctAnswerText = question ? getCorrectAnswerText(question) : '';
+  const currentTurnWedges = getWedges(currentTurnPlayer);
 
   return (
     <section>
@@ -905,18 +917,29 @@ export default function StudyNightRoomPage() {
               </select>
               <div className="button-row game-wrap">
                 {studyNightCategories.map((category) => (
-                  <button
-                    key={category.key}
-                    type="button"
-                    onClick={() => void handlePickCategory(category.key)}
-                    disabled={!canPickCategory}
-                  >
-                    {category.key}: {category.label}
-                  </button>
+                  (() => {
+                    const isOwnedByCurrentTurnPlayer = currentTurnWedges.includes(category.key);
+                    return (
+                      <button
+                        key={category.key}
+                        type="button"
+                        onClick={() => void handlePickCategory(category.key)}
+                        disabled={!canPickCategory || isOwnedByCurrentTurnPlayer}
+                        aria-label={`${category.key}: ${category.label}${
+                          isOwnedByCurrentTurnPlayer ? ' (owned)' : ''
+                        }`}
+                      >
+                        {category.key}: {category.label}
+                        {isOwnedByCurrentTurnPlayer ? ' (owned)' : ''}
+                      </button>
+                    );
+                  })()
                 ))}
               </div>
               {!canPickCategory ? (
                 <p className="muted">Only the current player can pick (host can override).</p>
+              ) : currentTurnWedges.length > 0 ? (
+                <p className="muted">Owned categories are disabled for this turn player.</p>
               ) : null}
             </>
           ) : null}
@@ -1018,6 +1041,17 @@ export default function StudyNightRoomPage() {
               <p className="muted">
                 Winner: {winner ? getDisplayName(winner) : 'No winner recorded'}
               </p>
+              <ul className="game-list">
+                {orderedPlayers.map((player) => (
+                  <li key={`final-${player.id}`}>
+                    <strong>{getDisplayName(player)}</strong>
+                    <div className="muted">Final score: {player.score || 0}</div>
+                    <div className="muted">
+                      Wedges: {getWedges(player).length}/{WIN_WEDGES}
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </>
           ) : null}
         </div>
