@@ -33,6 +33,28 @@ function getCodePrefix(code) {
   return parts[0] || '';
 }
 
+function getBlueprintSectionCode(code) {
+  const parts = String(code || '')
+    .split('.')
+    .filter(Boolean);
+  return parts[0] || '';
+}
+
+function getBlueprintSubsectionCode(code) {
+  const parts = String(code || '')
+    .split('.')
+    .filter(Boolean);
+  if (parts.length >= 2) return `${parts[0]}.${parts[1]}`;
+  return '';
+}
+
+function getBlueprintLabel(code) {
+  if (!code) return '(unknown)';
+  const node = findNodeByCode(code);
+  if (!node) return code;
+  return `${node.code} ${node.title}`;
+}
+
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const QUICK_PARAM_KEYS = ['quick', 'q', 'qt', 'bc', 'tg', 'cid'];
 
@@ -197,7 +219,7 @@ export default function DrillPage() {
   const [diagnosticTotal, setDiagnosticTotal] = useState(null);
   const [diagnosticSampleKeys, setDiagnosticSampleKeys] = useState('');
   const [diagnosticPackGroups, setDiagnosticPackGroups] = useState([]);
-  const [diagnosticSubtopicGroups, setDiagnosticSubtopicGroups] = useState([]);
+  const [diagnosticBlueprintGroups, setDiagnosticBlueprintGroups] = useState([]);
   const [diagnosticPackTotalSum, setDiagnosticPackTotalSum] = useState(0);
   const supabaseHostname = useMemo(() => {
     const raw = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -287,7 +309,7 @@ export default function DrillPage() {
       setDiagnosticTotal(0);
       setDiagnosticSampleKeys('');
       setDiagnosticPackGroups([]);
-      setDiagnosticSubtopicGroups([]);
+      setDiagnosticBlueprintGroups([]);
       setDiagnosticPackTotalSum(0);
       return;
     }
@@ -304,7 +326,7 @@ export default function DrillPage() {
       setDiagnosticTotal(0);
       setDiagnosticSampleKeys('');
       setDiagnosticPackGroups([]);
-      setDiagnosticSubtopicGroups([]);
+      setDiagnosticBlueprintGroups([]);
       setDiagnosticPackTotalSum(0);
       setDiagnosticLoading(false);
       return;
@@ -321,7 +343,7 @@ export default function DrillPage() {
       setDiagnosticError(`Failed to load sample row keys: ${sampleError.message}`);
       setDiagnosticSampleKeys('');
       setDiagnosticPackGroups([]);
-      setDiagnosticSubtopicGroups([]);
+      setDiagnosticBlueprintGroups([]);
       setDiagnosticPackTotalSum(0);
       setDiagnosticLoading(false);
       return;
@@ -343,7 +365,7 @@ export default function DrillPage() {
       if (pageError) {
         setDiagnosticError(`Could not load grouped counts: ${pageError.message}`);
         setDiagnosticPackGroups([]);
-        setDiagnosticSubtopicGroups([]);
+        setDiagnosticBlueprintGroups([]);
         setDiagnosticPackTotalSum(0);
         setDiagnosticLoading(false);
         return;
@@ -357,26 +379,27 @@ export default function DrillPage() {
     }
 
     const packCounts = new Map();
-    const subtopicCounts = new Map();
+    const blueprintCounts = new Map();
 
     for (const row of rows) {
       const packId = getPackId(row);
       packCounts.set(packId, (packCounts.get(packId) || 0) + 1);
 
-      const subtopic = row?.subtopic ? String(row.subtopic) : '(none)';
-      subtopicCounts.set(subtopic, (subtopicCounts.get(subtopic) || 0) + 1);
+      const subsectionCode = getBlueprintSubsectionCode(row?.blueprint_code);
+      const subsectionLabel = getBlueprintLabel(subsectionCode || '(none)');
+      blueprintCounts.set(subsectionLabel, (blueprintCounts.get(subsectionLabel) || 0) + 1);
     }
 
     const packGroups = Array.from(packCounts.entries())
       .map(([value, valueCount]) => ({ value, count: valueCount }))
       .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
 
-    const subtopicGroups = Array.from(subtopicCounts.entries())
+    const blueprintGroups = Array.from(blueprintCounts.entries())
       .map(([value, valueCount]) => ({ value, count: valueCount }))
       .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
 
     setDiagnosticPackGroups(packGroups);
-    setDiagnosticSubtopicGroups(subtopicGroups);
+    setDiagnosticBlueprintGroups(blueprintGroups);
     setDiagnosticPackTotalSum(packGroups.reduce((sum, item) => sum + item.count, 0));
     setDiagnosticError('');
     setDiagnosticLoading(false);
@@ -526,7 +549,7 @@ export default function DrillPage() {
     void trackEvent('drill_start', { codePrefix, type });
     if (picked.length < 10) {
       setMessage(
-        `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedCode}. Add more tagged content to reach 10.`
+        `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedTopicLabel}. Add more tagged content to reach 10.`
       );
     }
     setLoading(false);
@@ -684,6 +707,15 @@ export default function DrillPage() {
     });
   }
 
+  const sectionLabel = getBlueprintLabel(getBlueprintSectionCode(selectedCode) || sectionCode);
+  const subsectionLabel = getBlueprintLabel(
+    getBlueprintSubsectionCode(selectedCode) || subsectionCode
+  );
+  const leafLabel = leafCode ? getBlueprintLabel(leafCode) : 'Using subsection scope';
+  const selectedTopicLabel = selectedNode
+    ? `${selectedNode.code} ${selectedNode.title}`
+    : getBlueprintLabel(selectedCode);
+
   return (
     <section>
       <h1>Drill</h1>
@@ -717,12 +749,12 @@ export default function DrillPage() {
           </ul>
         ) : null}
         <p>
-          Counts grouped by <strong>subtopic</strong>
+          Counts grouped by <strong>blueprint subsection</strong>
         </p>
-        {diagnosticSubtopicGroups.length > 0 ? (
+        {diagnosticBlueprintGroups.length > 0 ? (
           <ul>
-            {diagnosticSubtopicGroups.map((item) => (
-              <li key={`subtopic-${item.value}-${item.count}`}>
+            {diagnosticBlueprintGroups.map((item) => (
+              <li key={`blueprint-${item.value}-${item.count}`}>
                 {item.value}: {item.count}
               </li>
             ))}
@@ -874,11 +906,18 @@ export default function DrillPage() {
         <p>
           Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
         </p>
-        {selectedNode ? (
-          <p>
-            Selected topic: {selectedNode.code} {selectedNode.title}
-          </p>
-        ) : null}
+        <p>
+          Section: <strong>{sectionLabel}</strong>
+        </p>
+        <p>
+          Subsection: <strong>{subsectionLabel}</strong>
+        </p>
+        <p>
+          Leaf: <strong>{leafLabel}</strong>
+        </p>
+        <p>
+          Selected topic: {selectedTopicLabel}
+        </p>
         <p className="muted">
           Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
         </p>
@@ -893,7 +932,7 @@ export default function DrillPage() {
       {message ? <p className="status error">{message}</p> : null}
       {started ? (
         <QuestionRunner
-          title={`Drill ${selectedCode}`}
+          title={`Drill ${selectedTopicLabel}`}
           questions={questions}
           onComplete={handleDrillComplete}
         />
