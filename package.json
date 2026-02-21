@@ -17,6 +17,7 @@
     "seed": "node scripts/seed.mjs",
     "import:pack": "node scripts/import-pack.mjs",
     "import:all-packs": "node scripts/import-all-packs.mjs",
+    "wipe:question-bank": "node scripts/wipe-question-bank.mjs",
     "dedupe:questions": "node scripts/dedupe-questions.mjs",
     "coverage:gen": "node scripts/generateCoverageTargets.mjs"
   },
