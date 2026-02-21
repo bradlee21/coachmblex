@@ -119,8 +119,48 @@ function getQuestionSignature(question) {
   });
 }
 
-async function loadExistingQuestionSignatures(supabase) {
+function getQuestionBaseSignature(question) {
+  return JSON.stringify({
+    question_type: normalizeSignatureText(question?.question_type),
+    blueprint_code: normalizeSignatureText(question?.blueprint_code),
+    prompt: normalizeSignatureText(question?.prompt),
+    choices: Array.isArray(question?.choices)
+      ? question.choices.map((choice) => normalizeSignatureText(choice))
+      : [],
+    correct_index:
+      Number.isInteger(question?.correct_index) || typeof question?.correct_index === 'number'
+        ? Number(question.correct_index)
+        : null,
+  });
+}
+
+function getExplanationCoverageScore(question) {
+  const explanation = question?.explanation || {};
+  let score = 0;
+  if (normalizeText(explanation.answer)) score += 1;
+  if (normalizeText(explanation.why)) score += 1;
+  if (normalizeText(explanation.trap)) score += 1;
+  if (normalizeText(explanation.hook)) score += 1;
+  return score;
+}
+
+function pickUpdateTargetByBaseSignature(candidates) {
+  if (!Array.isArray(candidates) || candidates.length === 0) return null;
+  let selected = candidates[0];
+  let selectedScore = getExplanationCoverageScore(selected);
+  for (const row of candidates.slice(1)) {
+    const rowScore = getExplanationCoverageScore(row);
+    if (rowScore < selectedScore) {
+      selected = row;
+      selectedScore = rowScore;
+    }
+  }
+  return selected;
+}
+
+async function loadExistingQuestionIndex(supabase) {
   const signatures = new Set();
+  const byBaseSignature = new Map();
   const PAGE_SIZE = 1000;
   let from = 0;
 
@@ -129,7 +169,7 @@ async function loadExistingQuestionSignatures(supabase) {
     const { data, error } = await supabase
       .from('questions')
       .select(
-        'question_type, blueprint_code, prompt, choices, correct_index, explanation'
+        'id,domain,subtopic,question_type,blueprint_code,prompt,choices,correct_index,explanation,difficulty'
       )
       .range(from, to);
 
@@ -143,6 +183,10 @@ async function loadExistingQuestionSignatures(supabase) {
 
     for (const row of data) {
       signatures.add(getQuestionSignature(row));
+      const baseSignature = getQuestionBaseSignature(row);
+      const existing = byBaseSignature.get(baseSignature) || [];
+      existing.push(row);
+      byBaseSignature.set(baseSignature, existing);
     }
 
     if (data.length < PAGE_SIZE) {
@@ -151,7 +195,7 @@ async function loadExistingQuestionSignatures(supabase) {
     from += PAGE_SIZE;
   }
 
-  return signatures;
+  return { signatures, byBaseSignature };
 }
 
 function getDomainFromBlueprint(blueprintCode) {
@@ -294,6 +338,38 @@ async function insertBatch(supabase, rows, rowNumbers, failures, stats) {
   return inserted;
 }
 
+async function updateBatch(supabase, updates, failures, stats) {
+  if (updates.length === 0) return 0;
+  let updated = 0;
+
+  for (const item of updates) {
+    const { error } = await supabase
+      .from('questions')
+      .update(item.row)
+      .eq('id', item.id);
+
+    if (error) {
+      if (isUniqueViolation(error)) {
+        stats.duplicateSkippedCount += 1;
+        failures.push({
+          rowNo: item.rowNo,
+          reasons: ['duplicate question blocked by DB unique guard on update'],
+        });
+        continue;
+      }
+      failures.push({
+        rowNo: item.rowNo,
+        reasons: [`update failed: ${error.message}`],
+      });
+      continue;
+    }
+
+    updated += 1;
+  }
+
+  return updated;
+}
+
 async function main() {
   loadEnvFile(resolve(process.cwd(), '.env.local'));
   loadEnvFile(resolve(process.cwd(), '.env'));
@@ -349,15 +425,20 @@ async function main() {
   }
 
   const failures = [];
-  const validRows = [];
-  const validRowNumbers = [];
+  const rowsToInsert = [];
+  const rowNumbersToInsert = [];
+  const rowsToUpdate = [];
+  const processedBaseSignatures = new Set();
   const stats = {
     duplicateSkippedCount: 0,
   };
   let seenSignatures = new Set();
+  let existingRowsByBase = new Map();
 
   try {
-    seenSignatures = await loadExistingQuestionSignatures(supabase);
+    const existingIndex = await loadExistingQuestionIndex(supabase);
+    seenSignatures = existingIndex.signatures;
+    existingRowsByBase = existingIndex.byBaseSignature;
     console.log(`Existing strict signatures loaded: ${seenSignatures.size}`);
   } catch (error) {
     console.log(
@@ -382,16 +463,50 @@ async function main() {
       continue;
     }
 
+    const baseSignature = getQuestionBaseSignature(result.row);
+    const existingCandidates = existingRowsByBase.get(baseSignature) || [];
+    if (existingCandidates.length > 0) {
+      if (processedBaseSignatures.has(baseSignature)) {
+        stats.duplicateSkippedCount += 1;
+        failures.push({
+          rowNo: result.rowNo,
+          reasons: ['duplicate question detected (base signature)'],
+        });
+        continue;
+      }
+
+      const target = pickUpdateTargetByBaseSignature(existingCandidates);
+      if (target?.id) {
+        rowsToUpdate.push({
+          id: target.id,
+          rowNo: result.rowNo,
+          row: result.row,
+        });
+        processedBaseSignatures.add(baseSignature);
+        seenSignatures.add(signature);
+        continue;
+      }
+    }
+
     seenSignatures.add(signature);
-    validRows.push(result.row);
-    validRowNumbers.push(result.rowNo);
+    rowsToInsert.push(result.row);
+    rowNumbersToInsert.push(result.rowNo);
+    existingRowsByBase.set(baseSignature, [result.row]);
   }
 
+  let updatedCount = 0;
+  updatedCount = await updateBatch(
+    supabase,
+    rowsToUpdate,
+    failures,
+    stats
+  );
+
   let insertedCount = 0;
-  for (let start = 0; start < validRows.length; start += BATCH_SIZE) {
-    const end = Math.min(start + BATCH_SIZE, validRows.length);
-    const batchRows = validRows.slice(start, end);
-    const batchNumbers = validRowNumbers.slice(start, end);
+  for (let start = 0; start < rowsToInsert.length; start += BATCH_SIZE) {
+    const end = Math.min(start + BATCH_SIZE, rowsToInsert.length);
+    const batchRows = rowsToInsert.slice(start, end);
+    const batchNumbers = rowNumbersToInsert.slice(start, end);
     const inserted = await insertBatch(
       supabase,
       batchRows,
@@ -406,6 +521,7 @@ async function main() {
   console.log(`Pack: ${normalizeText(pack.packId) || '(no packId)'}`);
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
+  console.log(`Updated: ${updatedCount}`);
   console.log(`Inserted: ${insertedCount}`);
   console.log(`Skipped duplicates: ${stats.duplicateSkippedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
