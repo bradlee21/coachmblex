@@ -19,22 +19,88 @@ function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
-function resolveExplanationDetails(question) {
+function normalizeText(value) {
+  return toText(value).toLowerCase().replace(/\s+/g, ' ');
+}
+
+function toIndexFromLetter(value) {
+  const letter = toText(value).toUpperCase();
+  if (letter.length !== 1) return null;
+  if (letter < 'A' || letter > 'Z') return null;
+  return letter.charCodeAt(0) - 65;
+}
+
+function toIndexFromNumber(value, choiceCount) {
+  if (typeof value === 'number' && Number.isInteger(value)) {
+    if (value >= 0 && value < choiceCount) return value;
+    if (value >= 1 && value <= choiceCount) return value - 1;
+  }
+  const asText = toText(value);
+  if (!/^-?\d+$/.test(asText)) return null;
+  const parsed = Number(asText);
+  if (!Number.isInteger(parsed)) return null;
+  if (parsed >= 0 && parsed < choiceCount) return parsed;
+  if (parsed >= 1 && parsed <= choiceCount) return parsed - 1;
+  return null;
+}
+
+function resolveCorrectChoiceIndex(question) {
+  const choices = Array.isArray(question?.choices) ? question.choices : [];
+  if (choices.length === 0) return null;
+
+  const explicitChoiceKeys = [
+    question?.correct_choice,
+    question?.answer_key,
+    question?.correct_option,
+  ];
+  for (const key of explicitChoiceKeys) {
+    const byLetter = toIndexFromLetter(key);
+    if (byLetter != null && byLetter >= 0 && byLetter < choices.length) {
+      return byLetter;
+    }
+    const byNumber = toIndexFromNumber(key, choices.length);
+    if (byNumber != null) return byNumber;
+  }
+
+  const explicitIndices = [question?.correct_index, question?.correctIndex];
+  for (const value of explicitIndices) {
+    const parsed = toIndexFromNumber(value, choices.length);
+    if (parsed != null) return parsed;
+  }
+
+  const fallbackTexts = [
+    question?.correct_text,
+    question?.correct_answer,
+    question?.answer,
+    question?.explanation?.answer,
+    question?.explanation_answer,
+  ]
+    .map((value) => normalizeText(value))
+    .filter(Boolean);
+
+  if (fallbackTexts.length === 0) return null;
+  for (let i = 0; i < choices.length; i += 1) {
+    const normalizedChoice = normalizeText(choices[i]);
+    if (fallbackTexts.some((candidate) => candidate === normalizedChoice)) {
+      return i;
+    }
+  }
+  return null;
+}
+
+function resolveExplanationDetails(question, resolvedCorrectChoiceText) {
   const explanation =
     question?.explanation && typeof question.explanation === 'object'
       ? question.explanation
       : null;
   const explanationString = toText(question?.explanation);
-  const choices = Array.isArray(question?.choices) ? question.choices : [];
-  const fallbackChoice =
-    typeof question?.correct_index === 'number' ? toText(choices[question.correct_index]) : '';
 
   const answer =
+    toText(resolvedCorrectChoiceText) ||
     toText(explanation?.answer) ||
     toText(question?.answer) ||
     toText(question?.explanation_answer) ||
-    toText(question?.correct_text) ||
-    fallbackChoice;
+    toText(question?.correct_text);
   const why =
     toText(explanation?.why) ||
     toText(question?.why) ||
@@ -81,9 +147,18 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
-  const explanationDetails = useMemo(
-    () => resolveExplanationDetails(current),
+  const resolvedCorrectIndex = useMemo(
+    () => resolveCorrectChoiceIndex(current),
     [current]
+  );
+  const resolvedCorrectChoiceText = useMemo(() => {
+    if (!current || !Array.isArray(current.choices)) return '';
+    if (typeof resolvedCorrectIndex !== 'number' || resolvedCorrectIndex < 0) return '';
+    return toText(current.choices[resolvedCorrectIndex]);
+  }, [current, resolvedCorrectIndex]);
+  const explanationDetails = useMemo(
+    () => resolveExplanationDetails(current, resolvedCorrectChoiceText),
+    [current, resolvedCorrectChoiceText]
   );
   const isDone = index >= questions.length;
 
@@ -94,7 +169,8 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       setSelectedIndex(choiceIndex);
       setSubmitted(true);
 
-      const isCorrect = choiceIndex === current.correct_index;
+      const isCorrect =
+        typeof resolvedCorrectIndex === 'number' && choiceIndex === resolvedCorrectIndex;
       if (isCorrect) setScore((prev) => prev + 1);
       setResults((prev) => [
         ...prev,
@@ -133,7 +209,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
         console.debug(`[SESSION] runner persist success title=${title} q=${current.id}`);
       }
     },
-    [confidence, current, submitted, title, user?.id]
+    [confidence, current, resolvedCorrectIndex, submitted, title, user?.id]
   );
 
   const goNext = useCallback(() => {
@@ -154,7 +230,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       if (['1', '2', '3', '4'].includes(key)) {
         event.preventDefault();
         const nextChoice = Number(key) - 1;
-        if (nextChoice < current.choices.length) {
+        if (Array.isArray(current.choices) && nextChoice < current.choices.length) {
           submitAnswer(nextChoice);
         }
         return;
@@ -219,9 +295,12 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       <p className="runner-prompt">{current.prompt}</p>
 
       <div className="choice-list">
-        {current.choices.map((choice, choiceIndex) => {
+        {(Array.isArray(current.choices) ? current.choices : []).map((choice, choiceIndex) => {
           const isSelected = selectedIndex === choiceIndex;
-          const isCorrect = submitted && choiceIndex === current.correct_index;
+          const isCorrect =
+            submitted &&
+            typeof resolvedCorrectIndex === 'number' &&
+            choiceIndex === resolvedCorrectIndex;
           const isWrongSelected = submitted && isSelected && !isCorrect;
           return (
             <button

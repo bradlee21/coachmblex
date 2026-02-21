@@ -15,6 +15,7 @@ const appShellSource = read('app/AppShell.js');
 const authProviderSource = read('src/providers/AuthProvider.js');
 const todaySource = read('app/today/page.js');
 const adminQuestionsSource = read('app/admin/questions/page.js');
+const questionRunnerSource = read('app/_components/QuestionRunner.js');
 
 assertMatch(
   appShellSource,
@@ -80,6 +81,36 @@ assertMatch(
   todaySource,
   /<h1>Today<\/h1>/,
   'Expected Today page to expose a stable heading for protected-route smoke checks.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /function\s+resolveCorrectChoiceIndex\s*\(/,
+  'Expected QuestionRunner to include a resolved correct-choice helper.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /question\?\.(correct_choice|answer_key|correct_option)/,
+  'Expected QuestionRunner correct-choice resolver to support letter/key variants.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /question\?\.(correct_index|correctIndex)/,
+  'Expected QuestionRunner correct-choice resolver to support numeric index variants.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /resolveExplanationDetails\(current,\s*resolvedCorrectChoiceText\)/,
+  'Expected Answer line resolver to prefer resolved correct option text.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /choiceIndex === resolvedCorrectIndex/,
+  'Expected QuestionRunner UI highlight to compare against resolvedCorrectIndex.'
 );
 
 console.log('Auth loading regression checks passed.');
