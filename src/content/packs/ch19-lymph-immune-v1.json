@@ -1,0 +1,3019 @@
+{
+  "pack_id": "ch19-lymph-immune-v1",
+  "packId": "ch19-lymph-immune-v1",
+  "title": "Lymphatic and Immune System Content Pack V1",
+  "chapter": "19",
+  "topic": "Lymphatic and Immune System",
+  "version": "v1",
+  "source": "Chapter 19 Lymphatic and Immune System (breadth mode class pack)",
+  "counts": {
+    "total": 100,
+    "by_type": {
+      "mcq": 60,
+      "reverse": 25,
+      "fill": 15
+    },
+    "by_domain": {
+      "physiology": 70,
+      "applied": 30
+    }
+  },
+  "notes": "Breadth mode v1 pack with canonical blueprint-coded lymphatic/immune coverage and scope-safe applied massage considerations.",
+  "questions": [
+    {
+      "id": "ch19-lymph-immune-v1-001",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: small blind-ended vessel that collects excess interstitial fluid?",
+      "choices": {
+        "A": "lymphatic vessel",
+        "B": "lymphatic capillary",
+        "C": "lymph node",
+        "D": "afferent lymphatic vessel"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lymphatic capillary is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphatic capillary."
+      },
+      "why": "lymphatic capillary is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphatic capillary.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic capillary."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-002",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: channel that transports lymph toward central circulation?",
+      "choices": {
+        "A": "lymph node",
+        "B": "afferent lymphatic vessel",
+        "C": "lymphatic vessel",
+        "D": "efferent lymphatic vessel"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "lymphatic vessel is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphatic vessel."
+      },
+      "why": "lymphatic vessel is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphatic vessel.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic vessel."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-003",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: filtering structure where immune surveillance occurs?",
+      "choices": {
+        "A": "afferent lymphatic vessel",
+        "B": "efferent lymphatic vessel",
+        "C": "thoracic duct",
+        "D": "lymph node"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "lymph node is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymph node."
+      },
+      "why": "lymph node is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymph node.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymph node."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-004",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: vessel carrying lymph into a lymph node?",
+      "choices": {
+        "A": "afferent lymphatic vessel",
+        "B": "efferent lymphatic vessel",
+        "C": "thoracic duct",
+        "D": "right lymphatic duct"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "afferent lymphatic vessel is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: afferent lymphatic vessel."
+      },
+      "why": "afferent lymphatic vessel is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: afferent lymphatic vessel.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "afferent lymphatic vessel."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-005",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: vessel carrying lymph out of a lymph node?",
+      "choices": {
+        "A": "thoracic duct",
+        "B": "efferent lymphatic vessel",
+        "C": "right lymphatic duct",
+        "D": "cisterna chyli"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "efferent lymphatic vessel is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: efferent lymphatic vessel."
+      },
+      "why": "efferent lymphatic vessel is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: efferent lymphatic vessel.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "efferent lymphatic vessel."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-006",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: major duct draining most of the body lymphatic return?",
+      "choices": {
+        "A": "right lymphatic duct",
+        "B": "cisterna chyli",
+        "C": "thoracic duct",
+        "D": "venous angle return"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "thoracic duct is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: thoracic duct."
+      },
+      "why": "thoracic duct is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: thoracic duct.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "ducts",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thoracic duct."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-007",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: duct draining the right upper quadrant of body?",
+      "choices": {
+        "A": "cisterna chyli",
+        "B": "venous angle return",
+        "C": "interstitial fluid",
+        "D": "right lymphatic duct"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "right lymphatic duct is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: right lymphatic duct."
+      },
+      "why": "right lymphatic duct is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: right lymphatic duct.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "ducts",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "right lymphatic duct."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-008",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: dilated sac-like structure receiving abdominal lymph before thoracic duct flow?",
+      "choices": {
+        "A": "cisterna chyli",
+        "B": "venous angle return",
+        "C": "interstitial fluid",
+        "D": "lymph formation concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "cisterna chyli is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: cisterna chyli."
+      },
+      "why": "cisterna chyli is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: cisterna chyli.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "ducts",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "cisterna chyli."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-009",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: junction where lymph returns to venous circulation near subclavian/jugular region?",
+      "choices": {
+        "A": "interstitial fluid",
+        "B": "venous angle return",
+        "C": "lymph formation concept",
+        "D": "lymph return concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "venous angle return is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: venous angle return."
+      },
+      "why": "venous angle return is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: venous angle return.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "venous angle return."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-010",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: fluid around cells that can enter lymphatic capillaries?",
+      "choices": {
+        "A": "lymph formation concept",
+        "B": "lymph return concept",
+        "C": "interstitial fluid",
+        "D": "lymphatic valve concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "interstitial fluid is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: interstitial fluid."
+      },
+      "why": "interstitial fluid is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: interstitial fluid.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "interstitial fluid."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-011",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level concept of fluid entering lymphatic system from interstitial spaces?",
+      "choices": {
+        "A": "lymph return concept",
+        "B": "lymphatic valve concept",
+        "C": "skeletal muscle pump support",
+        "D": "lymph formation concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "lymph formation concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymph formation concept."
+      },
+      "why": "lymph formation concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymph formation concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymph formation concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-012",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: high-level concept of lymph moving back to bloodstream?",
+      "choices": {
+        "A": "lymph return concept",
+        "B": "lymphatic valve concept",
+        "C": "skeletal muscle pump support",
+        "D": "respiratory pump support"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lymph return concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymph return concept."
+      },
+      "why": "lymph return concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymph return concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymph return concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-013",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: one-way valve concept supporting directional lymph flow?",
+      "choices": {
+        "A": "skeletal muscle pump support",
+        "B": "lymphatic valve concept",
+        "C": "respiratory pump support",
+        "D": "lacteal"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lymphatic valve concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphatic valve concept."
+      },
+      "why": "lymphatic valve concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphatic valve concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic valve concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-014",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: muscle contraction support of lymph movement?",
+      "choices": {
+        "A": "respiratory pump support",
+        "B": "lacteal",
+        "C": "skeletal muscle pump support",
+        "D": "chyle concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "skeletal muscle pump support is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: skeletal muscle pump support."
+      },
+      "why": "skeletal muscle pump support is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: skeletal muscle pump support.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "skeletal muscle pump support."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-015",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: breathing-related pressure change support of lymph movement?",
+      "choices": {
+        "A": "lacteal",
+        "B": "chyle concept",
+        "C": "spleen",
+        "D": "respiratory pump support"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "respiratory pump support is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: respiratory pump support."
+      },
+      "why": "respiratory pump support is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: respiratory pump support.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "respiratory pump support."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-016",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: intestinal lymphatic capillary involved in lipid transport?",
+      "choices": {
+        "A": "lacteal",
+        "B": "chyle concept",
+        "C": "spleen",
+        "D": "thymus"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lacteal is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lacteal."
+      },
+      "why": "lacteal is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lacteal.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lacteal."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-017",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: lipid-rich intestinal lymph transported after fat absorption?",
+      "choices": {
+        "A": "spleen",
+        "B": "chyle concept",
+        "C": "thymus",
+        "D": "tonsils"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "chyle concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: chyle concept."
+      },
+      "why": "chyle concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: chyle concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "chyle concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-018",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: lymphoid organ involved in blood filtration and immune activity?",
+      "choices": {
+        "A": "thymus",
+        "B": "tonsils",
+        "C": "spleen",
+        "D": "bone marrow immune role"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "spleen is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: spleen."
+      },
+      "why": "spleen is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: spleen.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "spleen."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-019",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: primary lymphoid organ associated with T-cell maturation?",
+      "choices": {
+        "A": "tonsils",
+        "B": "bone marrow immune role",
+        "C": "innate immunity",
+        "D": "thymus"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "thymus is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: thymus."
+      },
+      "why": "thymus is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: thymus.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thymus."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-020",
+      "blueprint_code": "1.A.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: lymphoid tissue structures at upper airway entry points?",
+      "choices": {
+        "A": "tonsils",
+        "B": "bone marrow immune role",
+        "C": "innate immunity",
+        "D": "adaptive immunity"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "tonsils is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: tonsils."
+      },
+      "why": "tonsils is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: tonsils.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "tonsils."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-021",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: primary lymphoid tissue role in immune cell development?",
+      "choices": {
+        "A": "innate immunity",
+        "B": "bone marrow immune role",
+        "C": "adaptive immunity",
+        "D": "physical barrier defense"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "bone marrow immune role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: bone marrow immune role."
+      },
+      "why": "bone marrow immune role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: bone marrow immune role.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "bone marrow immune role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-022",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: rapid non-specific immune defense category?",
+      "choices": {
+        "A": "adaptive immunity",
+        "B": "physical barrier defense",
+        "C": "innate immunity",
+        "D": "chemical barrier defense"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "innate immunity is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: innate immunity."
+      },
+      "why": "innate immunity is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: innate immunity.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "innate immunity."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-023",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: specific learned immune defense category?",
+      "choices": {
+        "A": "physical barrier defense",
+        "B": "chemical barrier defense",
+        "C": "macrophage role",
+        "D": "adaptive immunity"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "adaptive immunity is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: adaptive immunity."
+      },
+      "why": "adaptive immunity is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: adaptive immunity.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "adaptive immunity."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-024",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: first-line defense concept using skin and mucosal barriers?",
+      "choices": {
+        "A": "physical barrier defense",
+        "B": "chemical barrier defense",
+        "C": "macrophage role",
+        "D": "neutrophil role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "physical barrier defense is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: physical barrier defense."
+      },
+      "why": "physical barrier defense is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: physical barrier defense.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "physical barrier defense."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-025",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: first-line defense concept using antimicrobial secretions?",
+      "choices": {
+        "A": "macrophage role",
+        "B": "chemical barrier defense",
+        "C": "neutrophil role",
+        "D": "dendritic cell concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "chemical barrier defense is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: chemical barrier defense."
+      },
+      "why": "chemical barrier defense is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: chemical barrier defense.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "chemical barrier defense."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-026",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: phagocytic immune cell role in pathogen clearance and signaling?",
+      "choices": {
+        "A": "neutrophil role",
+        "B": "dendritic cell concept",
+        "C": "macrophage role",
+        "D": "natural killer cell concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "macrophage role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: macrophage role."
+      },
+      "why": "macrophage role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: macrophage role.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "macrophage role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-027",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: innate immune cell role in early response to pathogens?",
+      "choices": {
+        "A": "dendritic cell concept",
+        "B": "natural killer cell concept",
+        "C": "B lymphocyte role",
+        "D": "neutrophil role"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "neutrophil role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: neutrophil role."
+      },
+      "why": "neutrophil role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: neutrophil role.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "neutrophil role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-028",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: antigen-presenting cell concept linking innate and adaptive responses?",
+      "choices": {
+        "A": "dendritic cell concept",
+        "B": "natural killer cell concept",
+        "C": "B lymphocyte role",
+        "D": "T lymphocyte role"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "dendritic cell concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: dendritic cell concept."
+      },
+      "why": "dendritic cell concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: dendritic cell concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "dendritic cell concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-029",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: innate lymphocyte concept targeting abnormal cells?",
+      "choices": {
+        "A": "B lymphocyte role",
+        "B": "natural killer cell concept",
+        "C": "T lymphocyte role",
+        "D": "plasma cell concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "natural killer cell concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: natural killer cell concept."
+      },
+      "why": "natural killer cell concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: natural killer cell concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "natural killer cell concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-030",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: adaptive immune cell role in antibody-related responses?",
+      "choices": {
+        "A": "T lymphocyte role",
+        "B": "plasma cell concept",
+        "C": "B lymphocyte role",
+        "D": "memory cell concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "B lymphocyte role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: B lymphocyte role."
+      },
+      "why": "B lymphocyte role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: B lymphocyte role.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "B lymphocyte role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-031",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: adaptive immune cell role in cell-mediated immune responses?",
+      "choices": {
+        "A": "plasma cell concept",
+        "B": "memory cell concept",
+        "C": "antigen concept",
+        "D": "T lymphocyte role"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "T lymphocyte role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: T lymphocyte role."
+      },
+      "why": "T lymphocyte role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: T lymphocyte role.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "T lymphocyte role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-032",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: antibody-secreting cell concept derived from B cells?",
+      "choices": {
+        "A": "plasma cell concept",
+        "B": "memory cell concept",
+        "C": "antigen concept",
+        "D": "antibody concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "plasma cell concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: plasma cell concept."
+      },
+      "why": "plasma cell concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: plasma cell concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "plasma cell concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-033",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: adaptive immunity concept of faster secondary response after exposure?",
+      "choices": {
+        "A": "antigen concept",
+        "B": "memory cell concept",
+        "C": "antibody concept",
+        "D": "complement system concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "memory cell concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: memory cell concept."
+      },
+      "why": "memory cell concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: memory cell concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "memory cell concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-034",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: substance concept recognized by immune system?",
+      "choices": {
+        "A": "antibody concept",
+        "B": "complement system concept",
+        "C": "antigen concept",
+        "D": "cytokine signaling concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "antigen concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: antigen concept."
+      },
+      "why": "antigen concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: antigen concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "antigen concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-035",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: protein concept that binds specific antigens?",
+      "choices": {
+        "A": "complement system concept",
+        "B": "cytokine signaling concept",
+        "C": "inflammation overview",
+        "D": "antibody concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "antibody concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: antibody concept."
+      },
+      "why": "antibody concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: antibody concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "antibody concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-036",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: protein cascade concept supporting pathogen clearance?",
+      "choices": {
+        "A": "complement system concept",
+        "B": "cytokine signaling concept",
+        "C": "inflammation overview",
+        "D": "rubor sign"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "complement system concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: complement system concept."
+      },
+      "why": "complement system concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: complement system concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "complement system concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-037",
+      "blueprint_code": "1.B.5",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: cell-signaling concept coordinating immune responses?",
+      "choices": {
+        "A": "inflammation overview",
+        "B": "cytokine signaling concept",
+        "C": "rubor sign",
+        "D": "calor sign"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "cytokine signaling concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: cytokine signaling concept."
+      },
+      "why": "cytokine signaling concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: cytokine signaling concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "cytokine signaling concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-038",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: protective response concept involving vascular and cellular changes?",
+      "choices": {
+        "A": "rubor sign",
+        "B": "calor sign",
+        "C": "inflammation overview",
+        "D": "tumor sign"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "inflammation overview is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: inflammation overview."
+      },
+      "why": "inflammation overview is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: inflammation overview.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "inflammation overview."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-039",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inflammation sign concept of redness?",
+      "choices": {
+        "A": "calor sign",
+        "B": "tumor sign",
+        "C": "dolor sign",
+        "D": "rubor sign"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "rubor sign is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: rubor sign."
+      },
+      "why": "rubor sign is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: rubor sign.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "rubor sign."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-040",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inflammation sign concept of heat?",
+      "choices": {
+        "A": "calor sign",
+        "B": "tumor sign",
+        "C": "dolor sign",
+        "D": "functio laesa concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "calor sign is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: calor sign."
+      },
+      "why": "calor sign is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: calor sign.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "calor sign."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-041",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inflammation sign concept of swelling?",
+      "choices": {
+        "A": "dolor sign",
+        "B": "tumor sign",
+        "C": "functio laesa concept",
+        "D": "acute inflammation phase concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "tumor sign is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: tumor sign."
+      },
+      "why": "tumor sign is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: tumor sign.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "tumor sign."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-042",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inflammation sign concept of pain?",
+      "choices": {
+        "A": "functio laesa concept",
+        "B": "acute inflammation phase concept",
+        "C": "dolor sign",
+        "D": "resolution phase concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "dolor sign is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: dolor sign."
+      },
+      "why": "dolor sign is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: dolor sign.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "dolor sign."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-043",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: inflammation sign concept of reduced function?",
+      "choices": {
+        "A": "acute inflammation phase concept",
+        "B": "resolution phase concept",
+        "C": "lymphadenopathy concept",
+        "D": "functio laesa concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "functio laesa concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: functio laesa concept."
+      },
+      "why": "functio laesa concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: functio laesa concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "functio laesa concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-044",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: early inflammation phase concept with rapid response features?",
+      "choices": {
+        "A": "acute inflammation phase concept",
+        "B": "resolution phase concept",
+        "C": "lymphadenopathy concept",
+        "D": "edema concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "acute inflammation phase concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: acute inflammation phase concept."
+      },
+      "why": "acute inflammation phase concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: acute inflammation phase concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "acute inflammation phase concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-045",
+      "blueprint_code": "1.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: post-inflammation phase concept restoring tissue homeostasis?",
+      "choices": {
+        "A": "lymphadenopathy concept",
+        "B": "resolution phase concept",
+        "C": "edema concept",
+        "D": "oncotic pressure concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "resolution phase concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: resolution phase concept."
+      },
+      "why": "resolution phase concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: resolution phase concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "resolution phase concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-046",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: positioning strategy to support comfort in swollen regions?",
+      "choices": {
+        "A": "elevation support concept",
+        "B": "gentle pressure approach in swelling",
+        "C": "edema comfort positioning",
+        "D": "unexplained severe swelling referral language"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "edema comfort positioning is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: edema comfort positioning."
+      },
+      "why": "edema comfort positioning is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: edema comfort positioning.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "edema",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "edema comfort positioning."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-047",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: general comfort concept of positioning swollen limb with support?",
+      "choices": {
+        "A": "gentle pressure approach in swelling",
+        "B": "unexplained severe swelling referral language",
+        "C": "fever-related session deferral",
+        "D": "elevation support concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "elevation support concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: elevation support concept."
+      },
+      "why": "elevation support concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: elevation support concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "edema",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "elevation support concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-048",
+      "blueprint_code": "3.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: pressure moderation strategy when swelling is present?",
+      "choices": {
+        "A": "gentle pressure approach in swelling",
+        "B": "unexplained severe swelling referral language",
+        "C": "fever-related session deferral",
+        "D": "active infection caution"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "gentle pressure approach in swelling is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: gentle pressure approach in swelling."
+      },
+      "why": "gentle pressure approach in swelling is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: gentle pressure approach in swelling.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "edema",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "gentle pressure approach in swelling."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-049",
+      "blueprint_code": "3.B.2",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: calm recommendation for evaluation when swelling is unexplained or severe?",
+      "choices": {
+        "A": "fever-related session deferral",
+        "B": "unexplained severe swelling referral language",
+        "C": "active infection caution",
+        "D": "calm referral wording for infection concerns"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "unexplained severe swelling referral language is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: unexplained severe swelling referral language."
+      },
+      "why": "unexplained severe swelling referral language is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: unexplained severe swelling referral language.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "referral",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "unexplained severe swelling referral language."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-050",
+      "blueprint_code": "3.B.2",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: general safety decision to defer during active fever?",
+      "choices": {
+        "A": "active infection caution",
+        "B": "calm referral wording for infection concerns",
+        "C": "fever-related session deferral",
+        "D": "hygiene before and after treatment"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "fever-related session deferral is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fever-related session deferral."
+      },
+      "why": "fever-related session deferral is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fever-related session deferral.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "infection",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "fever-related session deferral."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-051",
+      "blueprint_code": "3.B.2",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: general caution to defer or modify when active infection signs are present?",
+      "choices": {
+        "A": "calm referral wording for infection concerns",
+        "B": "hygiene before and after treatment",
+        "C": "surface sanitation between clients",
+        "D": "active infection caution"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "active infection caution is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: active infection caution."
+      },
+      "why": "active infection caution is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: active infection caution.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "infection",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "active infection caution."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-052",
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: non-alarming communication for recommending medical follow-up?",
+      "choices": {
+        "A": "calm referral wording for infection concerns",
+        "B": "hygiene before and after treatment",
+        "C": "surface sanitation between clients",
+        "D": "fresh linens each client"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "calm referral wording for infection concerns is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: calm referral wording for infection concerns."
+      },
+      "why": "calm referral wording for infection concerns is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: calm referral wording for infection concerns.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "communication",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "calm referral wording for infection concerns."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-053",
+      "blueprint_code": "7.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: standard hand hygiene behavior around client contact?",
+      "choices": {
+        "A": "surface sanitation between clients",
+        "B": "hygiene before and after treatment",
+        "C": "fresh linens each client",
+        "D": "intake question for swelling history"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "hygiene before and after treatment is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: hygiene before and after treatment."
+      },
+      "why": "hygiene before and after treatment is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: hygiene before and after treatment.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "hygiene",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "hygiene before and after treatment."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-054",
+      "blueprint_code": "7.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: cleaning protocol for tables and high-touch surfaces?",
+      "choices": {
+        "A": "fresh linens each client",
+        "B": "intake question for swelling history",
+        "C": "surface sanitation between clients",
+        "D": "intake question for recent fever or illness"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "surface sanitation between clients is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: surface sanitation between clients."
+      },
+      "why": "surface sanitation between clients is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: surface sanitation between clients.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "hygiene",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "surface sanitation between clients."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-055",
+      "blueprint_code": "7.C",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: infection-control practice using clean linens each session?",
+      "choices": {
+        "A": "intake question for swelling history",
+        "B": "intake question for recent fever or illness",
+        "C": "document client-reported immune conditions",
+        "D": "fresh linens each client"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "fresh linens each client is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: fresh linens each client."
+      },
+      "why": "fresh linens each client is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: fresh linens each client.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "hygiene",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "fresh linens each client."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-056",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: intake step asking about baseline and recent swelling changes?",
+      "choices": {
+        "A": "intake question for swelling history",
+        "B": "intake question for recent fever or illness",
+        "C": "document client-reported immune conditions",
+        "D": "observe-not-diagnose boundary"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "intake question for swelling history is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: intake question for swelling history."
+      },
+      "why": "intake question for swelling history is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: intake question for swelling history.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "intake",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "intake question for swelling history."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-057",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: intake step asking about recent illness symptoms?",
+      "choices": {
+        "A": "document client-reported immune conditions",
+        "B": "intake question for recent fever or illness",
+        "C": "observe-not-diagnose boundary",
+        "D": "cancer history caution language"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "intake question for recent fever or illness is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: intake question for recent fever or illness."
+      },
+      "why": "intake question for recent fever or illness is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: intake question for recent fever or illness.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "intake",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "intake question for recent fever or illness."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-058",
+      "blueprint_code": "5.B.1",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: objective note-taking of reported immune/lymphatic history?",
+      "choices": {
+        "A": "observe-not-diagnose boundary",
+        "B": "cancer history caution language",
+        "C": "document client-reported immune conditions",
+        "D": "active cancer treatment caution language"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "document client-reported immune conditions is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: document client-reported immune conditions."
+      },
+      "why": "document client-reported immune conditions is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: document client-reported immune conditions.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "documentation",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "document client-reported immune conditions."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-059",
+      "blueprint_code": "6.H",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: scope boundary emphasizing observation and documentation only?",
+      "choices": {
+        "A": "cancer history caution language",
+        "B": "active cancer treatment caution language",
+        "C": "pause if swelling discomfort escalates",
+        "D": "observe-not-diagnose boundary"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "observe-not-diagnose boundary is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: observe-not-diagnose boundary."
+      },
+      "why": "observe-not-diagnose boundary is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: observe-not-diagnose boundary.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "scope",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "observe-not-diagnose boundary."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-060",
+      "blueprint_code": "3.D",
+      "type": "mcq",
+      "question_type": "mcq",
+      "prompt": "Which term best matches: scope-safe communication around prior cancer history without medical advice?",
+      "choices": {
+        "A": "cancer history caution language",
+        "B": "active cancer treatment caution language",
+        "C": "pause if swelling discomfort escalates",
+        "D": "client-led comfort check-ins"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "cancer history caution language is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: cancer history caution language."
+      },
+      "why": "cancer history caution language is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: cancer history caution language.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "special-populations",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "cancer history caution language."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-061",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept of enlarged lymph nodes?",
+      "choices": {
+        "A": "edema concept",
+        "B": "lymphadenopathy concept",
+        "C": "oncotic pressure concept",
+        "D": "hydrostatic pressure concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lymphadenopathy concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphadenopathy concept."
+      },
+      "why": "lymphadenopathy concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphadenopathy concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "clinical-terms",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphadenopathy concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-062",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept of excess interstitial fluid accumulation?",
+      "choices": {
+        "A": "oncotic pressure concept",
+        "B": "hydrostatic pressure concept",
+        "C": "edema concept",
+        "D": "lymphatic filtration role"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "edema concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: edema concept."
+      },
+      "why": "edema concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: edema concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "clinical-terms",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "edema concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-063",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: fluid-balance concept helping retain fluid in vasculature?",
+      "choices": {
+        "A": "hydrostatic pressure concept",
+        "B": "lymphatic filtration role",
+        "C": "immune surveillance concept",
+        "D": "oncotic pressure concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "oncotic pressure concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: oncotic pressure concept."
+      },
+      "why": "oncotic pressure concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: oncotic pressure concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "fluid-balance",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "oncotic pressure concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-064",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: fluid-balance concept promoting filtration from capillaries?",
+      "choices": {
+        "A": "hydrostatic pressure concept",
+        "B": "lymphatic filtration role",
+        "C": "immune surveillance concept",
+        "D": "mucosa-associated lymphoid tissue concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "hydrostatic pressure concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: hydrostatic pressure concept."
+      },
+      "why": "hydrostatic pressure concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: hydrostatic pressure concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "fluid-balance",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "hydrostatic pressure concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-065",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: node-level role in filtering lymphatic fluid?",
+      "choices": {
+        "A": "immune surveillance concept",
+        "B": "lymphatic filtration role",
+        "C": "mucosa-associated lymphoid tissue concept",
+        "D": "Peyer patch concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "lymphatic filtration role is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphatic filtration role."
+      },
+      "why": "lymphatic filtration role is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphatic filtration role.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic filtration role."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-066",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: ongoing immune monitoring concept across tissues and nodes?",
+      "choices": {
+        "A": "mucosa-associated lymphoid tissue concept",
+        "B": "Peyer patch concept",
+        "C": "immune surveillance concept",
+        "D": "thymic involution concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "immune surveillance concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: immune surveillance concept."
+      },
+      "why": "immune surveillance concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: immune surveillance concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "immune surveillance concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-067",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: lymphoid tissue concept associated with mucosal defense?",
+      "choices": {
+        "A": "Peyer patch concept",
+        "B": "thymic involution concept",
+        "C": "lymphocyte recirculation concept",
+        "D": "mucosa-associated lymphoid tissue concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "mucosa-associated lymphoid tissue concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: mucosa-associated lymphoid tissue concept."
+      },
+      "why": "mucosa-associated lymphoid tissue concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: mucosa-associated lymphoid tissue concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "mucosa-associated lymphoid tissue concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-068",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: small-intestinal lymphoid aggregate concept?",
+      "choices": {
+        "A": "Peyer patch concept",
+        "B": "thymic involution concept",
+        "C": "lymphocyte recirculation concept",
+        "D": "afferent-efferent node flow concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Peyer patch concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: Peyer patch concept."
+      },
+      "why": "Peyer patch concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: Peyer patch concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "Peyer patch concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-069",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: age-related concept of thymus size/function reduction?",
+      "choices": {
+        "A": "lymphocyte recirculation concept",
+        "B": "thymic involution concept",
+        "C": "afferent-efferent node flow concept",
+        "D": "lymphatic drainage territory concept"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "thymic involution concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: thymic involution concept."
+      },
+      "why": "thymic involution concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: thymic involution concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thymic involution concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-070",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: concept of immune cell movement between blood lymph and tissues?",
+      "choices": {
+        "A": "afferent-efferent node flow concept",
+        "B": "lymphatic drainage territory concept",
+        "C": "lymphocyte recirculation concept",
+        "D": "local versus systemic inflammation concept"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "lymphocyte recirculation concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphocyte recirculation concept."
+      },
+      "why": "lymphocyte recirculation concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphocyte recirculation concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphocyte recirculation concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-071",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: node flow concept from afferent entry to efferent exit?",
+      "choices": {
+        "A": "lymphatic drainage territory concept",
+        "B": "local versus systemic inflammation concept",
+        "C": "innate-adaptive coordination concept",
+        "D": "afferent-efferent node flow concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "afferent-efferent node flow concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: afferent-efferent node flow concept."
+      },
+      "why": "afferent-efferent node flow concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: afferent-efferent node flow concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "anatomy",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "afferent-efferent node flow concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-072",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: regional concept of tissue drainage toward specific node groups?",
+      "choices": {
+        "A": "lymphatic drainage territory concept",
+        "B": "local versus systemic inflammation concept",
+        "C": "innate-adaptive coordination concept",
+        "D": "immune tolerance concept"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "lymphatic drainage territory concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: lymphatic drainage territory concept."
+      },
+      "why": "lymphatic drainage territory concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: lymphatic drainage territory concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "circulation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic drainage territory concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-073",
+      "blueprint_code": "1.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept distinguishing local and body-wide response patterns?",
+      "choices": {
+        "A": "innate-adaptive coordination concept",
+        "B": "local versus systemic inflammation concept",
+        "C": "immune tolerance concept",
+        "D": "lymphatic capillary"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "local versus systemic inflammation concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: local versus systemic inflammation concept."
+      },
+      "why": "local versus systemic inflammation concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: local versus systemic inflammation concept.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "local versus systemic inflammation concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-074",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept of cooperation between immune branches?",
+      "choices": {
+        "A": "immune tolerance concept",
+        "B": "lymphatic capillary",
+        "C": "innate-adaptive coordination concept",
+        "D": "lymphatic vessel"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "innate-adaptive coordination concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: innate-adaptive coordination concept."
+      },
+      "why": "innate-adaptive coordination concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: innate-adaptive coordination concept.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "innate-adaptive coordination concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-075",
+      "blueprint_code": "1.B.5",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: high-level concept reducing inappropriate self-reactive responses?",
+      "choices": {
+        "A": "lymphatic capillary",
+        "B": "lymphatic vessel",
+        "C": "lymph node",
+        "D": "immune tolerance concept"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "immune tolerance concept is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: immune tolerance concept."
+      },
+      "why": "immune tolerance concept is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: immune tolerance concept.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "immune tolerance concept."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-076",
+      "blueprint_code": "3.D",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: scope-safe caution and referral communication during active treatment context?",
+      "choices": {
+        "A": "active cancer treatment caution language",
+        "B": "pause if swelling discomfort escalates",
+        "C": "client-led comfort check-ins",
+        "D": "avoid aggressive friction over fragile tissue"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "active cancer treatment caution language is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: active cancer treatment caution language."
+      },
+      "why": "active cancer treatment caution language is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: active cancer treatment caution language.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "special-populations",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "active cancer treatment caution language."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-077",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: safety action to stop and reassess when discomfort rises?",
+      "choices": {
+        "A": "client-led comfort check-ins",
+        "B": "pause if swelling discomfort escalates",
+        "C": "avoid aggressive friction over fragile tissue",
+        "D": "defer with systemic illness symptoms"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "pause if swelling discomfort escalates is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: pause if swelling discomfort escalates."
+      },
+      "why": "pause if swelling discomfort escalates is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: pause if swelling discomfort escalates.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "safety",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "pause if swelling discomfort escalates."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-078",
+      "blueprint_code": "5.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: frequent communication strategy during sensitive sessions?",
+      "choices": {
+        "A": "avoid aggressive friction over fragile tissue",
+        "B": "defer with systemic illness symptoms",
+        "C": "client-led comfort check-ins",
+        "D": "scope-safe explanation for referral"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "client-led comfort check-ins is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: client-led comfort check-ins."
+      },
+      "why": "client-led comfort check-ins is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: client-led comfort check-ins.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "communication",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "client-led comfort check-ins."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-079",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: technique moderation in fragile or irritated regions?",
+      "choices": {
+        "A": "defer with systemic illness symptoms",
+        "B": "scope-safe explanation for referral",
+        "C": "position change for lymphatic comfort",
+        "D": "avoid aggressive friction over fragile tissue"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "avoid aggressive friction over fragile tissue is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: avoid aggressive friction over fragile tissue."
+      },
+      "why": "avoid aggressive friction over fragile tissue is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: avoid aggressive friction over fragile tissue.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "caution",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "avoid aggressive friction over fragile tissue."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-080",
+      "blueprint_code": "3.B.2",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: safety-first deferral when systemic illness signs are present?",
+      "choices": {
+        "A": "defer with systemic illness symptoms",
+        "B": "scope-safe explanation for referral",
+        "C": "position change for lymphatic comfort",
+        "D": "screen for recent unexplained node enlargement report"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "defer with systemic illness symptoms is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: defer with systemic illness symptoms."
+      },
+      "why": "defer with systemic illness symptoms is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: defer with systemic illness symptoms.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "infection",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "defer with systemic illness symptoms."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-081",
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: clear professional explanation when recommending referral?",
+      "choices": {
+        "A": "position change for lymphatic comfort",
+        "B": "scope-safe explanation for referral",
+        "C": "screen for recent unexplained node enlargement report",
+        "D": "no medical treatment claims boundary"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "scope-safe explanation for referral is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: scope-safe explanation for referral."
+      },
+      "why": "scope-safe explanation for referral is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: scope-safe explanation for referral.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "communication",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "scope-safe explanation for referral."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-082",
+      "blueprint_code": "3.C",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: repositioning strategy when current position is uncomfortable?",
+      "choices": {
+        "A": "screen for recent unexplained node enlargement report",
+        "B": "no medical treatment claims boundary",
+        "C": "position change for lymphatic comfort",
+        "D": "protective glove context awareness"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "position change for lymphatic comfort is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: position change for lymphatic comfort."
+      },
+      "why": "position change for lymphatic comfort is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: position change for lymphatic comfort.",
+      "difficulty": 2,
+      "tags": [
+        "lymph-immune",
+        "positioning",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "position change for lymphatic comfort."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-083",
+      "blueprint_code": "5.B.1",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: intake screening concept for reported unexplained lymph node changes?",
+      "choices": {
+        "A": "no medical treatment claims boundary",
+        "B": "protective glove context awareness",
+        "C": "professional draping for sensitive areas",
+        "D": "screen for recent unexplained node enlargement report"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "screen for recent unexplained node enlargement report is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: screen for recent unexplained node enlargement report."
+      },
+      "why": "screen for recent unexplained node enlargement report is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: screen for recent unexplained node enlargement report.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "intake",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "screen for recent unexplained node enlargement report."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-084",
+      "blueprint_code": "6.H",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: boundary concept avoiding cure/treatment claims outside scope?",
+      "choices": {
+        "A": "no medical treatment claims boundary",
+        "B": "protective glove context awareness",
+        "C": "professional draping for sensitive areas",
+        "D": "post-session self-monitoring reminder"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "no medical treatment claims boundary is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: no medical treatment claims boundary."
+      },
+      "why": "no medical treatment claims boundary is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: no medical treatment claims boundary.",
+      "difficulty": 3,
+      "tags": [
+        "lymph-immune",
+        "scope",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "no medical treatment claims boundary."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-085",
+      "blueprint_code": "7.E.2",
+      "type": "reverse",
+      "question_type": "reverse",
+      "prompt": "Which term best matches: general barrier-use awareness when indicated by safety context?",
+      "choices": {
+        "A": "professional draping for sensitive areas",
+        "B": "protective glove context awareness",
+        "C": "post-session self-monitoring reminder",
+        "D": "calm response to client concern about swelling"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "protective glove context awareness is the best match for this lymphatic/immune concept.",
+        "trap": "Distractors are related terms but are not the most precise match.",
+        "hook": "Cue: protective glove context awareness."
+      },
+      "why": "protective glove context awareness is the best match for this lymphatic/immune concept.",
+      "trap": "Distractors are related terms but are not the most precise match.",
+      "hook": "Cue: protective glove context awareness.",
+      "difficulty": 1,
+      "tags": [
+        "lymph-immune",
+        "hygiene",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "protective glove context awareness."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-086",
+      "blueprint_code": "1.A.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The largest lymphatic vessel draining most of the body is the ____ duct.",
+      "correct_text": "thoracic",
+      "explanation": {
+        "why": "The correct fill term is thoracic.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: thoracic."
+      },
+      "why": "The correct fill term is thoracic.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: thoracic.",
+      "difficulty": 2,
+      "tags": [
+        "ducts",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thoracic."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-087",
+      "blueprint_code": "1.A.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The duct draining the right upper body quadrant is the right ____ duct.",
+      "correct_text": "lymphatic",
+      "explanation": {
+        "why": "The correct fill term is lymphatic.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: lymphatic."
+      },
+      "why": "The correct fill term is lymphatic.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: lymphatic.",
+      "difficulty": 3,
+      "tags": [
+        "ducts",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphatic."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-088",
+      "blueprint_code": "1.A.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The organ that stores and filters blood while supporting immune function is the ____.",
+      "correct_text": "spleen",
+      "explanation": {
+        "why": "The correct fill term is spleen.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: spleen."
+      },
+      "why": "The correct fill term is spleen.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: spleen.",
+      "difficulty": 2,
+      "tags": [
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "spleen."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-089",
+      "blueprint_code": "1.A.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "The primary organ for T-cell maturation is the ____.",
+      "correct_text": "thymus",
+      "explanation": {
+        "why": "The correct fill term is thymus.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: thymus."
+      },
+      "why": "The correct fill term is thymus.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: thymus.",
+      "difficulty": 1,
+      "tags": [
+        "organs",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "thymus."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-090",
+      "blueprint_code": "1.B.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Rapid non-specific defense is called ____ immunity.",
+      "correct_text": "innate",
+      "explanation": {
+        "why": "The correct fill term is innate.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: innate."
+      },
+      "why": "The correct fill term is innate.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: innate.",
+      "difficulty": 3,
+      "tags": [
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "innate."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-091",
+      "blueprint_code": "1.B.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Specific learned defense is called ____ immunity.",
+      "correct_text": "adaptive",
+      "explanation": {
+        "why": "The correct fill term is adaptive.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: adaptive."
+      },
+      "why": "The correct fill term is adaptive.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: adaptive.",
+      "difficulty": 1,
+      "tags": [
+        "immunity",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "adaptive."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-092",
+      "blueprint_code": "1.B.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "A major phagocytic immune cell is a ____.",
+      "correct_text": "macrophage",
+      "explanation": {
+        "why": "The correct fill term is macrophage.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: macrophage."
+      },
+      "why": "The correct fill term is macrophage.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: macrophage.",
+      "difficulty": 2,
+      "tags": [
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "macrophage."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-093",
+      "blueprint_code": "1.B.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "A key adaptive immune cell group is the ____.",
+      "correct_text": "lymphocyte",
+      "explanation": {
+        "why": "The correct fill term is lymphocyte.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: lymphocyte."
+      },
+      "why": "The correct fill term is lymphocyte.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: lymphocyte.",
+      "difficulty": 3,
+      "tags": [
+        "immune-cells",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "lymphocyte."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-094",
+      "blueprint_code": "1.C",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Inflammation sign associated with redness is ____.",
+      "correct_text": "rubor",
+      "explanation": {
+        "why": "The correct fill term is rubor.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: rubor."
+      },
+      "why": "The correct fill term is rubor.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: rubor.",
+      "difficulty": 2,
+      "tags": [
+        "inflammation",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "rubor."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-095",
+      "blueprint_code": "1.B.5",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Fluid accumulation in interstitial tissue is termed ____.",
+      "correct_text": "edema",
+      "explanation": {
+        "why": "The correct fill term is edema.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: edema."
+      },
+      "why": "The correct fill term is edema.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: edema.",
+      "difficulty": 1,
+      "tags": [
+        "clinical-terms",
+        "lymph-immune-v1",
+        "physiology"
+      ],
+      "domain": "physiology",
+      "answer": "edema."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-096",
+      "blueprint_code": "6.H",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Massage professionals should observe and document, not ____.",
+      "correct_text": "diagnose",
+      "explanation": {
+        "why": "The correct fill term is diagnose.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: diagnose."
+      },
+      "why": "The correct fill term is diagnose.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: diagnose.",
+      "difficulty": 3,
+      "tags": [
+        "scope",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "diagnose."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-097",
+      "blueprint_code": "3.B.2",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "For unexplained severe swelling, defer and ____.",
+      "correct_text": "refer",
+      "explanation": {
+        "why": "The correct fill term is refer.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: refer."
+      },
+      "why": "The correct fill term is refer.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: refer.",
+      "difficulty": 1,
+      "tags": [
+        "referral",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "refer."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-098",
+      "blueprint_code": "7.B",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Before and after sessions, perform hand ____.",
+      "correct_text": "hygiene",
+      "explanation": {
+        "why": "The correct fill term is hygiene.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: hygiene."
+      },
+      "why": "The correct fill term is hygiene.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: hygiene.",
+      "difficulty": 2,
+      "tags": [
+        "hygiene",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "hygiene."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-099",
+      "blueprint_code": "5.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Use frequent comfort ____ during sensitive sessions.",
+      "correct_text": "check-ins",
+      "explanation": {
+        "why": "The correct fill term is check-ins.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: check-ins."
+      },
+      "why": "The correct fill term is check-ins.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: check-ins.",
+      "difficulty": 3,
+      "tags": [
+        "communication",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "check-ins."
+    },
+    {
+      "id": "ch19-lymph-immune-v1-100",
+      "blueprint_code": "5.B.1",
+      "type": "fill",
+      "question_type": "fill",
+      "prompt": "Client-reported conditions should be included in session ____.",
+      "correct_text": "documentation",
+      "explanation": {
+        "why": "The correct fill term is documentation.",
+        "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+        "hook": "Recall: documentation."
+      },
+      "why": "The correct fill term is documentation.",
+      "trap": "Use the exact lymphatic/immune term expected by the prompt.",
+      "hook": "Recall: documentation.",
+      "difficulty": 2,
+      "tags": [
+        "documentation",
+        "lymph-immune-v1",
+        "applied"
+      ],
+      "domain": "applied",
+      "answer": "documentation."
+    }
+  ]
+}
