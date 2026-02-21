@@ -16,6 +16,126 @@ a {
   text-decoration: none;
 }
 
+.calm-bg {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.calm-bg__base,
+.calm-bg__blob,
+.calm-bg__noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.calm-bg__base {
+  background: var(--calm-gradient);
+}
+
+.calm-bg__blob {
+  filter: blur(70px);
+  opacity: var(--calm-blob-opacity, 0.35);
+}
+
+.calm-bg__blob--a {
+  inset: -22% auto auto -14%;
+  width: 52vw;
+  height: 52vw;
+  max-width: 640px;
+  max-height: 640px;
+  border-radius: 999px;
+  background: var(--calm-blob-a);
+}
+
+.calm-bg__blob--b {
+  inset: auto -10% -24% auto;
+  width: 48vw;
+  height: 48vw;
+  max-width: 620px;
+  max-height: 620px;
+  border-radius: 999px;
+  background: var(--calm-blob-b);
+}
+
+.calm-bg__noise {
+  opacity: 0.05;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.14) 0.35px, transparent 0.35px);
+  background-size: 3px 3px;
+  mix-blend-mode: soft-light;
+}
+
+.calm-bg__content {
+  position: relative;
+  z-index: 1;
+}
+
+.calm-bg--mist {
+  --calm-gradient: linear-gradient(160deg, #f6fbff 0%, #edf4fb 42%, #f6f8fb 100%);
+  --calm-blob-a: rgba(156, 210, 255, 0.42);
+  --calm-blob-b: rgba(208, 225, 255, 0.36);
+  --calm-blob-opacity: 0.28;
+}
+
+.calm-bg--dawn {
+  --calm-gradient: linear-gradient(160deg, #fffaf3 0%, #f6efe8 44%, #f8f4f0 100%);
+  --calm-blob-a: rgba(252, 200, 170, 0.35);
+  --calm-blob-b: rgba(245, 219, 191, 0.3);
+  --calm-blob-opacity: 0.24;
+}
+
+.calm-bg--ocean {
+  --calm-gradient: linear-gradient(165deg, #f1f8fb 0%, #e8f2f7 46%, #edf4f8 100%);
+  --calm-blob-a: rgba(128, 202, 224, 0.33);
+  --calm-blob-b: rgba(170, 220, 230, 0.28);
+  --calm-blob-opacity: 0.25;
+}
+
+.calm-bg--slate {
+  --calm-gradient: linear-gradient(165deg, #f4f6f8 0%, #e9edf1 48%, #f1f4f7 100%);
+  --calm-blob-a: rgba(176, 186, 201, 0.28);
+  --calm-blob-b: rgba(196, 205, 217, 0.22);
+  --calm-blob-opacity: 0.22;
+}
+
+@media (prefers-color-scheme: dark) {
+  .calm-bg--mist {
+    --calm-gradient: linear-gradient(160deg, #0d1725 0%, #101b2b 44%, #111c2d 100%);
+    --calm-blob-a: rgba(86, 132, 181, 0.34);
+    --calm-blob-b: rgba(56, 89, 131, 0.32);
+    --calm-blob-opacity: 0.2;
+  }
+
+  .calm-bg--dawn {
+    --calm-gradient: linear-gradient(160deg, #1d1715 0%, #251d1a 44%, #201b18 100%);
+    --calm-blob-a: rgba(155, 102, 83, 0.26);
+    --calm-blob-b: rgba(125, 86, 72, 0.24);
+    --calm-blob-opacity: 0.18;
+  }
+
+  .calm-bg--ocean {
+    --calm-gradient: linear-gradient(165deg, #0f1c24 0%, #12222c 46%, #13222d 100%);
+    --calm-blob-a: rgba(66, 132, 151, 0.3);
+    --calm-blob-b: rgba(56, 108, 126, 0.26);
+    --calm-blob-opacity: 0.2;
+  }
+
+  .calm-bg--slate {
+    --calm-gradient: linear-gradient(165deg, #151923 0%, #1a202c 48%, #171d28 100%);
+    --calm-blob-a: rgba(100, 114, 136, 0.24);
+    --calm-blob-b: rgba(81, 95, 115, 0.2);
+    --calm-blob-opacity: 0.16;
+  }
+
+  .calm-bg__noise {
+    opacity: 0.07;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.18) 0.35px, transparent 0.35px);
+    mix-blend-mode: soft-light;
+  }
+}
+
 .app-shell {
   display: grid;
   grid-template-columns: 240px 1fr;
