@@ -164,6 +164,7 @@ function resolveExplanationDetails(question, resolvedCorrectAnswerText) {
 export default function QuestionRunner({ title, questions, onComplete }) {
   const { user } = useAuth();
   const mountedRef = useRef(true);
+  const fibInputRef = useRef(null);
   const [index, setIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [userInput, setUserInput] = useState('');
@@ -218,6 +219,13 @@ export default function QuestionRunner({ title, questions, onComplete }) {
     [current, resolvedCorrectAnswerText]
   );
   const isDone = index >= questions.length;
+  const fibIsCorrect = useMemo(() => {
+    if (questionMode !== 'fib' || !submitted) return null;
+    return (
+      normalizeFreeText(userInput) !== '' &&
+      normalizeFreeText(userInput) === normalizeFreeText(resolvedCorrectAnswerText)
+    );
+  }, [questionMode, submitted, userInput, resolvedCorrectAnswerText]);
 
   const submitAnswer = useCallback(
     async (payload = {}) => {
@@ -331,6 +339,17 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [current, goNext, isDone, questionMode, submitAnswer, visibleChoices]);
 
   useEffect(() => {
+    if (questionMode !== 'fib' || submitted) return;
+    const input = fibInputRef.current;
+    if (!input) return;
+    try {
+      input.focus({ preventScroll: true });
+    } catch {
+      input.focus();
+    }
+  }, [current?.id, questionMode, submitted]);
+
+  useEffect(() => {
     if (!isDone || completionSent) return;
     if (typeof onComplete !== 'function') return;
     onComplete({
@@ -407,6 +426,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
           </label>
           <input
             id="fib-answer"
+            ref={fibInputRef}
             type="text"
             className="choice-btn"
             value={userInput}
@@ -463,12 +483,20 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       </div>
 
       {submitted ? (
+        <>
+          {questionMode === 'fib' ? (
+            <p className={`status ${fibIsCorrect ? 'success' : 'error'}`}>
+              {fibIsCorrect ? 'Correct' : 'Incorrect'}
+              {!fibIsCorrect ? ` Correct answer: ${explanationDetails.answer}` : ''}
+            </p>
+          ) : null}
         <div className="explanation-box">
           <p>Answer: {explanationDetails.answer}</p>
           <p>Why: {explanationDetails.why}</p>
           <p>Trap: {explanationDetails.trap}</p>
           <p>Hook: {explanationDetails.hook}</p>
         </div>
+        </>
       ) : null}
 
       <button type="button" onClick={goNext} disabled={!submitted}>
