@@ -769,85 +769,84 @@
       "blueprint_code": "6.H",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"scope of practice\"?",
+      "prompt": "A client asks you to identify whether their numbness is from a pinched nerve. Which response stays within scope of practice?",
       "choices": {
-        "A": "services the practitioner is legally and ethically trained to perform",
-        "B": "medical diagnosis and prescribing",
-        "C": "billing insurance without records",
-        "D": "sharing confidential files freely"
+        "A": "Provide a diagnosis and home medical plan.",
+        "B": "Explain you can assess muscle tension but diagnosis requires a licensed medical provider.",
+        "C": "Prescribe anti-inflammatory medication and massage.",
+        "D": "Assure them it is definitely not serious."
       },
-      "correct_choice": "A",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches scope of practice in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: scope of practice."
+        "why": "Scope includes massage assessment and referral, not medical diagnosis.",
+        "trap": "Giving definitive medical conclusions exceeds massage scope.",
+        "hook": "Assess, communicate, refer when diagnosis is requested."
       },
-      "why": "This matches scope of practice in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: scope of practice.",
-      "answer": "services the practitioner is legally and ethically trained to perform.",
+      "why": "Scope includes massage assessment and referral, not medical diagnosis.",
+      "trap": "Giving definitive medical conclusions exceeds massage scope.",
+      "hook": "Assess, communicate, refer when diagnosis is requested.",
       "difficulty": 2,
       "tags": [
         "ethics-scope-v1",
         "scope",
-        "ethics",
+        "referral",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Explain you can assess muscle tension but diagnosis requires a licensed medical provider."
     },
     {
       "id": "ch20-ethics-scope-v1-026",
       "blueprint_code": "6.A",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"informed consent\"?",
+      "prompt": "Which statement best reflects informed consent as an ongoing process?",
       "choices": {
-        "A": "implied permission from silence only",
-        "B": "permanent permission for all future sessions",
-        "C": "consent from a friend instead of the client",
-        "D": "client agreement after clear explanation of plan, options, and boundaries"
+        "A": "One signature at intake covers any technique in all future visits.",
+        "B": "Consent is only needed for invasive medical procedures.",
+        "C": "Consent should be reconfirmed when techniques, regions, or comfort levels change.",
+        "D": "Silence means automatic approval for deeper pressure."
       },
-      "correct_choice": "D",
+      "correct_choice": "C",
       "explanation": {
-        "why": "This matches informed consent in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: informed consent."
+        "why": "Good consent is active and updated as session details change.",
+        "trap": "Assuming blanket permission can violate boundaries and trust.",
+        "hook": "New plan = new consent check."
       },
-      "why": "This matches informed consent in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: informed consent.",
-      "answer": "client agreement after clear explanation of plan, options, and boundaries.",
+      "why": "Good consent is active and updated as session details change.",
+      "trap": "Assuming blanket permission can violate boundaries and trust.",
+      "hook": "New plan = new consent check.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
         "consent",
-        "ethics",
+        "communication",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Consent should be reconfirmed when techniques, regions, or comfort levels change."
     },
     {
       "id": "ch20-ethics-scope-v1-027",
       "blueprint_code": "6.J",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"confidentiality\"?",
+      "prompt": "Which action best protects client confidentiality in a shared clinic setting?",
       "choices": {
-        "A": "sharing details for marketing without permission",
-        "B": "discussing cases in public waiting areas",
-        "C": "protecting private client information and sharing only with proper authorization",
-        "D": "posting case details publicly"
+        "A": "Discuss client details quietly in the hallway between sessions.",
+        "B": "Store records securely and share information only with proper authorization.",
+        "C": "Text case notes to coworkers for learning purposes.",
+        "D": "Use full client names in public scheduling chats."
       },
-      "correct_choice": "C",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches confidentiality in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: confidentiality."
+        "why": "Confidentiality requires secure handling and authorized information sharing.",
+        "trap": "Informal discussion or messaging can still be privacy breaches.",
+        "hook": "Secure records, limited sharing, authorized access."
       },
-      "why": "This matches confidentiality in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: confidentiality.",
-      "answer": "protecting private client information and sharing only with proper authorization.",
+      "why": "Confidentiality requires secure handling and authorized information sharing.",
+      "trap": "Informal discussion or messaging can still be privacy breaches.",
+      "hook": "Secure records, limited sharing, authorized access.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
@@ -855,123 +854,123 @@
         "privacy",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Store records securely and share information only with proper authorization."
     },
     {
       "id": "ch20-ethics-scope-v1-028",
       "blueprint_code": "7.G.6.a",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"client documentation\"?",
+      "prompt": "What is the strongest example of professional client documentation?",
       "choices": {
-        "A": "records that omit client responses",
-        "B": "accurate session records supporting continuity, safety, and legal clarity",
-        "C": "optional notes only when problems occur",
-        "D": "memory-based charting days later"
+        "A": "A dated note with objective observations, techniques used, and client response.",
+        "B": "A brief memory summary written weeks later.",
+        "C": "Only recording sessions that had complaints.",
+        "D": "Copying prior notes without checking updates."
       },
-      "correct_choice": "B",
+      "correct_choice": "A",
       "explanation": {
-        "why": "This matches client documentation in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: client documentation."
+        "why": "Timely, objective, and complete charting supports continuity and risk management.",
+        "trap": "Delayed or selective notes reduce accuracy and safety.",
+        "hook": "Document what happened, when, and how the client responded."
       },
-      "why": "This matches client documentation in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: client documentation.",
-      "answer": "accurate session records supporting continuity, safety, and legal clarity.",
-      "difficulty": 1,
+      "why": "Timely, objective, and complete charting supports continuity and risk management.",
+      "trap": "Delayed or selective notes reduce accuracy and safety.",
+      "hook": "Document what happened, when, and how the client responded.",
+      "difficulty": 2,
       "tags": [
         "ethics-scope-v1",
         "documentation",
         "records",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "A dated note with objective observations, techniques used, and client response."
     },
     {
       "id": "ch20-ethics-scope-v1-029",
       "blueprint_code": "6.B",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"professional boundaries\"?",
+      "prompt": "Which behavior best demonstrates professional boundaries during treatment?",
       "choices": {
-        "A": "clear therapeutic limits that protect client and practitioner safety",
-        "B": "friend-level disclosure as default",
-        "C": "ignoring discomfort cues",
-        "D": "touching areas without explanation"
+        "A": "Matching the client personal oversharing to build closeness.",
+        "B": "Maintaining session-focused dialogue and checking comfort before contact changes.",
+        "C": "Ignoring awkward comments to avoid conflict.",
+        "D": "Giving personal financial advice during bodywork."
       },
-      "correct_choice": "A",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches professional boundaries in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: professional boundaries."
+        "why": "Boundaries are maintained through professional focus and explicit comfort checks.",
+        "trap": "Personal role drift can blur the therapeutic relationship.",
+        "hook": "Keep it therapeutic, clear, and client-centered."
       },
-      "why": "This matches professional boundaries in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: professional boundaries.",
-      "answer": "clear therapeutic limits that protect client and practitioner safety.",
-      "difficulty": 2,
+      "why": "Boundaries are maintained through professional focus and explicit comfort checks.",
+      "trap": "Personal role drift can blur the therapeutic relationship.",
+      "hook": "Keep it therapeutic, clear, and client-centered.",
+      "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
         "boundaries",
         "professionalism",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Maintaining session-focused dialogue and checking comfort before contact changes."
     },
     {
       "id": "ch20-ethics-scope-v1-030",
       "blueprint_code": "6.E",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"dual relationship\"?",
+      "prompt": "Why are dual relationships considered an ethical risk in massage practice?",
       "choices": {
-        "A": "all referrals from providers",
-        "B": "all repeated clients",
-        "C": "any signed intake",
-        "D": "a second non-therapeutic relationship that can impair clinical judgment"
+        "A": "They can reduce objectivity and pressure the client or practitioner.",
+        "B": "They automatically improve treatment adherence.",
+        "C": "They are required for client retention.",
+        "D": "They replace the need for consent discussions."
       },
-      "correct_choice": "D",
+      "correct_choice": "A",
       "explanation": {
-        "why": "This matches dual relationship in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: dual relationship."
+        "why": "A second role can create conflicts of interest and impaired judgment.",
+        "trap": "Dual relationships are not automatically prohibited in all contexts, but risk must be managed.",
+        "hook": "Second role can cloud first duty to therapeutic care."
       },
-      "why": "This matches dual relationship in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: dual relationship.",
-      "answer": "a second non-therapeutic relationship that can impair clinical judgment.",
-      "difficulty": 1,
+      "why": "A second role can create conflicts of interest and impaired judgment.",
+      "trap": "Dual relationships are not automatically prohibited in all contexts, but risk must be managed.",
+      "hook": "Second role can cloud first duty to therapeutic care.",
+      "difficulty": 2,
       "tags": [
         "ethics-scope-v1",
-        "boundaries",
         "dual-relationships",
+        "ethics",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "They can reduce objectivity and pressure the client or practitioner."
     },
     {
       "id": "ch20-ethics-scope-v1-031",
       "blueprint_code": "6.F",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"sexual misconduct\"?",
+      "prompt": "Which statement correctly describes sexual misconduct in therapeutic massage?",
       "choices": {
-        "A": "obtaining consent for pressure changes",
-        "B": "professional treatment planning",
-        "C": "any sexualized behavior in therapeutic care that violates ethics and safety",
-        "D": "clear draping communication"
+        "A": "It includes sexualized comments or behavior in the therapeutic setting.",
+        "B": "It only applies if physical contact occurred.",
+        "C": "It is acceptable if the client jokes first.",
+        "D": "It is resolved by avoiding documentation."
       },
-      "correct_choice": "C",
+      "correct_choice": "A",
       "explanation": {
-        "why": "This matches sexual misconduct in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: sexual misconduct."
+        "why": "Sexualized behavior of any kind can violate ethics and client safety.",
+        "trap": "Consent and professional context do not permit sexual misconduct.",
+        "hook": "Therapeutic space must remain professional and safe."
       },
-      "why": "This matches sexual misconduct in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: sexual misconduct.",
-      "answer": "any sexualized behavior in therapeutic care that violates ethics and safety.",
+      "why": "Sexualized behavior of any kind can violate ethics and client safety.",
+      "trap": "Consent and professional context do not permit sexual misconduct.",
+      "hook": "Therapeutic space must remain professional and safe.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
@@ -979,162 +978,163 @@
         "boundaries",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "It includes sexualized comments or behavior in the therapeutic setting."
     },
     {
       "id": "ch20-ethics-scope-v1-032",
       "blueprint_code": "6.K",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"autonomy\"?",
+      "prompt": "In ethical practice, autonomy is most directly upheld by:",
       "choices": {
-        "A": "ignoring refusal",
-        "B": "respecting the client right to make informed choices about care",
-        "C": "forcing a treatment choice",
-        "D": "withholding options"
+        "A": "Choosing treatment goals for the client to save time.",
+        "B": "Respecting informed client choices, including refusal of techniques.",
+        "C": "Using pressure the practitioner prefers regardless of feedback.",
+        "D": "Avoiding discussion of options to reduce confusion."
       },
       "correct_choice": "B",
       "explanation": {
-        "why": "This matches autonomy in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: autonomy."
+        "why": "Autonomy means clients direct decisions about their own care after clear information.",
+        "trap": "Efficiency does not replace informed choice.",
+        "hook": "Client choice remains central."
       },
-      "why": "This matches autonomy in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: autonomy.",
-      "answer": "respecting the client right to make informed choices about care.",
+      "why": "Autonomy means clients direct decisions about their own care after clear information.",
+      "trap": "Efficiency does not replace informed choice.",
+      "hook": "Client choice remains central.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
-        "ethics-principles",
         "autonomy",
+        "ethics-principles",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Respecting informed client choices, including refusal of techniques."
     },
     {
       "id": "ch20-ethics-scope-v1-033",
       "blueprint_code": "6.K",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"nonmaleficence\"?",
+      "prompt": "Which clinical choice best reflects nonmaleficence?",
       "choices": {
-        "A": "avoiding harm by selecting safe pressure, positioning, and pacing",
-        "B": "using maximal pressure always",
-        "C": "continuing despite sharp pain",
-        "D": "ignoring symptom changes"
+        "A": "Maintaining intense pressure despite bruising concerns.",
+        "B": "Adjusting pressure and positioning to reduce potential harm.",
+        "C": "Ignoring dizziness because the session is nearly done.",
+        "D": "Skipping intake updates to keep schedule."
       },
-      "correct_choice": "A",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches nonmaleficence in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: nonmaleficence."
+        "why": "Nonmaleficence emphasizes preventing harm through safer clinical decisions.",
+        "trap": "Pushing through warning signs conflicts with safety.",
+        "hook": "First, do no harm in pressure and pacing."
       },
-      "why": "This matches nonmaleficence in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: nonmaleficence.",
-      "answer": "avoiding harm by selecting safe pressure, positioning, and pacing.",
+      "why": "Nonmaleficence emphasizes preventing harm through safer clinical decisions.",
+      "trap": "Pushing through warning signs conflicts with safety.",
+      "hook": "First, do no harm in pressure and pacing.",
       "difficulty": 2,
       "tags": [
         "ethics-scope-v1",
-        "ethics-principles",
+        "nonmaleficence",
         "safety",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Adjusting pressure and positioning to reduce potential harm."
     },
     {
       "id": "ch20-ethics-scope-v1-034",
       "blueprint_code": "6.K",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"beneficence\"?",
+      "prompt": "Beneficence in massage is best shown when the practitioner:",
       "choices": {
-        "A": "prioritizing sales over care",
-        "B": "ignoring contraindications",
-        "C": "using one routine for all clients",
-        "D": "acting in the client best interest with safe, appropriate care"
+        "A": "Follows a fixed routine regardless of client goals.",
+        "B": "Selects techniques that support the client best interest and comfort.",
+        "C": "Focuses on upselling before reassessment.",
+        "D": "Avoids referral conversations even when indicated."
       },
-      "correct_choice": "D",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches beneficence in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: beneficence."
+        "why": "Beneficence means actively pursuing client welfare through appropriate care planning.",
+        "trap": "Standardized routines may ignore individual needs and safety.",
+        "hook": "Do what benefits this client in this moment."
       },
-      "why": "This matches beneficence in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: beneficence.",
-      "answer": "acting in the client best interest with safe, appropriate care.",
+      "why": "Beneficence means actively pursuing client welfare through appropriate care planning.",
+      "trap": "Standardized routines may ignore individual needs and safety.",
+      "hook": "Do what benefits this client in this moment.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
-        "ethics-principles",
-        "care",
+        "beneficence",
+        "treatment-plan",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Selects techniques that support the client best interest and comfort."
     },
     {
       "id": "ch20-ethics-scope-v1-035",
       "blueprint_code": "6.I",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"professional communication\"?",
+      "prompt": "Which communication style is most professional during pressure adjustment?",
       "choices": {
-        "A": "pressure changes without notice",
-        "B": "dismissive responses to questions",
-        "C": "clear, respectful language about goals, consent, and session changes",
-        "D": "vague explanations only"
+        "A": "Assume silence means pressure is fine.",
+        "B": "Use clear check-ins and invite real-time feedback without judgment.",
+        "C": "Tell the client discomfort is required for results.",
+        "D": "Wait until checkout to discuss tolerance."
       },
-      "correct_choice": "C",
+      "correct_choice": "B",
       "explanation": {
-        "why": "This matches professional communication in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: professional communication."
+        "why": "Professional communication is clear, respectful, and responsive to client input.",
+        "trap": "Delayed or dismissive communication increases risk and reduces trust.",
+        "hook": "Ask early, listen clearly, adjust promptly."
       },
-      "why": "This matches professional communication in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: professional communication.",
-      "answer": "clear, respectful language about goals, consent, and session changes.",
+      "why": "Professional communication is clear, respectful, and responsive to client input.",
+      "trap": "Delayed or dismissive communication increases risk and reduces trust.",
+      "hook": "Ask early, listen clearly, adjust promptly.",
       "difficulty": 1,
       "tags": [
         "ethics-scope-v1",
         "communication",
-        "professionalism",
+        "client-centered",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Use clear check-ins and invite real-time feedback without judgment."
     },
     {
       "id": "ch20-ethics-scope-v1-036",
       "blueprint_code": "6.G",
       "type": "mcq",
       "question_type": "mcq",
-      "prompt": "Which definition best matches \"laws and regulations awareness\"?",
+      "prompt": "What is the safest professional approach to changing massage regulations?",
       "choices": {
-        "A": "ignoring required updates",
-        "B": "following current legal requirements and licensure rules for practice",
-        "C": "assuming old rules still apply",
-        "D": "copying another state requirements"
+        "A": "Follow habits from your training year unless audited.",
+        "B": "Rely on coworker advice without checking official sources.",
+        "C": "Monitor official updates and align practice with current requirements.",
+        "D": "Apply rules from another state if they seem stricter."
       },
-      "correct_choice": "B",
+      "correct_choice": "C",
       "explanation": {
-        "why": "This matches laws and regulations awareness in professional massage practice.",
-        "trap": "The other options are related but less accurate or unsafe interpretations.",
-        "hook": "Anchor: laws and regulations awareness."
+        "why": "Legal compliance depends on current authoritative requirements in your practice setting.",
+        "trap": "Outdated or unofficial guidance can lead to violations.",
+        "hook": "Check official sources, then update practice."
       },
-      "why": "This matches laws and regulations awareness in professional massage practice.",
-      "trap": "The other options are related but less accurate or unsafe interpretations.",
-      "hook": "Anchor: laws and regulations awareness.",
-      "answer": "following current legal requirements and licensure rules for practice.",
-      "difficulty": 1,
+      "why": "Legal compliance depends on current authoritative requirements in your practice setting.",
+      "trap": "Outdated or unofficial guidance can lead to violations.",
+      "hook": "Check official sources, then update practice.",
+      "difficulty": 2,
       "tags": [
         "ethics-scope-v1",
         "laws",
-        "regulations",
+        "compliance",
         "concept"
       ],
-      "domain": "concept"
+      "domain": "concept",
+      "answer": "Monitor official updates and align practice with current requirements."
     },
     {
       "id": "ch20-ethics-scope-v1-037",
