@@ -15,6 +15,44 @@ function isTypingTarget(target) {
   );
 }
 
+function toText(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
+
+function resolveExplanationDetails(question) {
+  const explanation =
+    question?.explanation && typeof question.explanation === 'object'
+      ? question.explanation
+      : null;
+  const explanationString = toText(question?.explanation);
+  const choices = Array.isArray(question?.choices) ? question.choices : [];
+  const fallbackChoice =
+    typeof question?.correct_index === 'number' ? toText(choices[question.correct_index]) : '';
+
+  const answer =
+    toText(explanation?.answer) ||
+    toText(question?.answer) ||
+    toText(question?.explanation_answer) ||
+    toText(question?.correct_text) ||
+    fallbackChoice;
+  const why =
+    toText(explanation?.why) ||
+    toText(question?.why) ||
+    toText(question?.explanation_why) ||
+    explanationString;
+  const trap =
+    toText(explanation?.trap) || toText(question?.trap) || toText(question?.explanation_trap);
+  const hook =
+    toText(explanation?.hook) || toText(question?.hook) || toText(question?.explanation_hook);
+
+  return {
+    answer: answer || '--',
+    why: why || '--',
+    trap: trap || '--',
+    hook: hook || '--',
+  };
+}
+
 export default function QuestionRunner({ title, questions, onComplete }) {
   const { user } = useAuth();
   const mountedRef = useRef(true);
@@ -43,6 +81,10 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
+  const explanationDetails = useMemo(
+    () => resolveExplanationDetails(current),
+    [current]
+  );
   const isDone = index >= questions.length;
 
   const submitAnswer = useCallback(
@@ -227,10 +269,10 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
       {submitted ? (
         <div className="explanation-box">
-          <p>Answer: {current.explanation?.answer || ''}</p>
-          <p>Why: {current.explanation?.why || ''}</p>
-          <p>Trap: {current.explanation?.trap || ''}</p>
-          <p>Hook: {current.explanation?.hook || ''}</p>
+          <p>Answer: {explanationDetails.answer}</p>
+          <p>Why: {explanationDetails.why}</p>
+          <p>Trap: {explanationDetails.trap}</p>
+          <p>Hook: {explanationDetails.hook}</p>
         </div>
       ) : null}
 

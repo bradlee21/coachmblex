@@ -389,9 +389,7 @@ export default function DrillPage() {
 
     const { data, error } = await supabase
       .from('questions')
-      .select(
-        'id,domain,subtopic,blueprint_code,question_type,prompt,choices,correct_index,explanation,difficulty,created_at'
-      )
+      .select('*')
       .in('question_type', types)
       .order('created_at', { ascending: false })
       .limit(1000);
@@ -463,9 +461,7 @@ export default function DrillPage() {
 
     const query = supabase
       .from('questions')
-      .select(
-        'id,domain,subtopic,blueprint_code,question_type,prompt,choices,correct_index,explanation,difficulty,created_at'
-      )
+      .select('*')
       .eq('question_type', questionType)
       .order('created_at', { ascending: false })
       .limit(60);
