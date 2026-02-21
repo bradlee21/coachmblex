@@ -110,4 +110,40 @@ if (questionInsertError) {
   process.exit(1);
 }
 
+const knownExplanationQuestion = questions.find((question) => {
+  const explanation = question?.explanation;
+  return (
+    explanation &&
+    typeof explanation === 'object' &&
+    (String(explanation.why || '').trim() ||
+      String(explanation.trap || '').trim() ||
+      String(explanation.hook || '').trim())
+  );
+});
+
+if (knownExplanationQuestion?.prompt) {
+  const { data: explanationProbe, error: explanationProbeError } = await supabase
+    .from('questions')
+    .select('explanation')
+    .eq('prompt', knownExplanationQuestion.prompt)
+    .limit(1)
+    .maybeSingle();
+
+  if (explanationProbeError) {
+    console.error('Failed to verify seeded explanation fields:', explanationProbeError.message);
+    process.exit(1);
+  }
+
+  const explanation = explanationProbe?.explanation;
+  const why = String(explanation?.why || '').trim();
+  const trap = String(explanation?.trap || '').trim();
+  const hook = String(explanation?.hook || '').trim();
+  if (!why || !trap || !hook) {
+    console.error(
+      'Seed regression check failed: expected non-empty explanation.why/trap/hook on a known seeded question.'
+    );
+    process.exit(1);
+  }
+}
+
 console.log(`Seeded ${questionRows.length} questions and ${conceptRows.length} concepts.`);

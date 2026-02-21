@@ -16,6 +16,7 @@ const authProviderSource = read('src/providers/AuthProvider.js');
 const todaySource = read('app/today/page.js');
 const adminQuestionsSource = read('app/admin/questions/page.js');
 const questionRunnerSource = read('app/_components/QuestionRunner.js');
+const importPackSource = read('scripts/import-pack.mjs');
 
 assertMatch(
   appShellSource,
@@ -111,6 +112,18 @@ assertMatch(
   questionRunnerSource,
   /choiceIndex === resolvedCorrectIndex/,
   'Expected QuestionRunner UI highlight to compare against resolvedCorrectIndex.'
+);
+
+assertMatch(
+  importPackSource,
+  /nestedExplanation[\s\S]*question\?\.explanation[\s\S]*typeof question\.explanation === 'object'/,
+  'Expected pack importer to read nested explanation object fields.'
+);
+
+assertMatch(
+  importPackSource,
+  /why:\s*normalizeText\(question\.why \|\| nestedExplanation\.why/,
+  'Expected pack importer to map explanation.why when top-level why is absent.'
 );
 
 console.log('Auth loading regression checks passed.');

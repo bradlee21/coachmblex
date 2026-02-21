@@ -160,11 +160,15 @@ function getDomainFromBlueprint(blueprintCode) {
 }
 
 function buildExplanation(question, fallbackAnswer = '') {
+  const nestedExplanation =
+    question?.explanation && typeof question.explanation === 'object'
+      ? question.explanation
+      : {};
   return {
-    answer: normalizeText(question.answer || fallbackAnswer),
-    why: normalizeText(question.why),
-    trap: normalizeText(question.trap),
-    hook: normalizeText(question.hook),
+    answer: normalizeText(question.answer || nestedExplanation.answer || fallbackAnswer),
+    why: normalizeText(question.why || nestedExplanation.why || question.explanation_why),
+    trap: normalizeText(question.trap || nestedExplanation.trap || question.explanation_trap),
+    hook: normalizeText(question.hook || nestedExplanation.hook || question.explanation_hook),
   };
 }
 
