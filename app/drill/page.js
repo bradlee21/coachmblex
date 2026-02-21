@@ -5,7 +5,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
-import { studyCollections } from '../../src/content/studyCollections';
 import {
   findNodeByCode,
   listTopLevelDomains,
@@ -56,7 +55,6 @@ function getBlueprintLabel(code) {
 }
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
-const QUICK_PARAM_KEYS = ['quick', 'q', 'qt', 'bc', 'tg', 'cid'];
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -83,18 +81,6 @@ function parseQuickTypes(value) {
   return parsed;
 }
 
-function parseCsv(value) {
-  if (!value) return [];
-  return Array.from(
-    new Set(
-      String(value)
-        .split(',')
-        .map((item) => item.trim())
-        .filter(Boolean)
-    )
-  );
-}
-
 function toCsv(values) {
   return Array.from(new Set((values || []).filter(Boolean))).join(',');
 }
@@ -115,18 +101,6 @@ function matchesQuickSearch(question, term) {
   }
   const haystack = `${prompt} ${tagText} ${choiceText}`.toLowerCase();
   return haystack.includes(term);
-}
-
-function getQuestionTags(question) {
-  if (Array.isArray(question?.tags)) {
-    return question.tags
-      .map((item) => String(item || '').trim().toLowerCase())
-      .filter(Boolean);
-  }
-  if (typeof question?.tags === 'string') {
-    return parseCsv(question.tags).map((item) => item.toLowerCase());
-  }
-  return [];
 }
 
 function parseMaybeObject(value) {
@@ -194,16 +168,9 @@ export default function DrillPage() {
     reverse: true,
     fill: true,
   });
-  const [quickBlueprintCodes, setQuickBlueprintCodes] = useState([]);
-  const [quickTags, setQuickTags] = useState([]);
-  const [selectedCollectionId, setSelectedCollectionId] = useState('');
   const selectedQuickTypes = useMemo(
     () => QUICK_TYPES.filter((type) => quickTypes[type]),
     [quickTypes]
-  );
-  const selectedCollection = useMemo(
-    () => studyCollections.find((collection) => collection.id === selectedCollectionId) || null,
-    [selectedCollectionId]
   );
   const [quickMatches, setQuickMatches] = useState(null);
   const [quickLoading, setQuickLoading] = useState(false);
@@ -264,14 +231,8 @@ export default function DrillPage() {
     const deepLinkType = searchParams.get('type');
     const quickQuery = searchParams.get('q') || '';
     const quickTypeQuery = searchParams.get('qt');
-    const quickBlueprintCodeQuery = searchParams.get('bc');
-    const quickTagQuery = searchParams.get('tg');
-    const quickCollectionIdQuery = searchParams.get('cid') || '';
     setQuickSearch(quickQuery);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
-    setQuickBlueprintCodes(parseCsv(quickBlueprintCodeQuery));
-    setQuickTags(parseCsv(quickTagQuery).map((item) => item.toLowerCase()));
-    setSelectedCollectionId(quickCollectionIdQuery);
     if (deepLinkType === 'reverse') {
       setQuestionType('reverse');
     } else if (deepLinkType === 'fill') {
@@ -443,19 +404,8 @@ export default function DrillPage() {
     }
 
     const term = String(filters.searchTerm || '').trim().toLowerCase();
-    const blueprintCodes = filters.blueprintCodes || [];
-    const tags = (filters.tags || []).map((item) => String(item || '').trim().toLowerCase());
     const filtered = (data || []).filter((question) => {
       if (!types.includes(getQuestionType(question))) return false;
-      if (blueprintCodes.length > 0 && !blueprintCodes.includes(String(question?.blueprint_code || ''))) {
-        return false;
-      }
-      if (tags.length > 0 && Object.prototype.hasOwnProperty.call(question, 'tags')) {
-        const questionTags = getQuestionTags(question);
-        if (!questionTags.some((tag) => tags.includes(tag))) {
-          return false;
-        }
-      }
       return matchesQuickSearch(question, term);
     });
 
@@ -474,8 +424,6 @@ export default function DrillPage() {
     const { matches, error } = await fetchQuickMatches({
       searchTerm: quickSearch,
       types: selectedQuickTypes,
-      blueprintCodes: quickBlueprintCodes,
-      tags: quickTags,
     });
 
     if (requestId !== quickSearchRequestIdRef.current) return;
@@ -497,7 +445,7 @@ export default function DrillPage() {
       setQuickMessage('');
     }
     setQuickLoading(false);
-  }, [fetchQuickMatches, quickSearch, quickBlueprintCodes, quickTags, selectedQuickTypes]);
+  }, [fetchQuickMatches, quickSearch, selectedQuickTypes]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -556,20 +504,13 @@ export default function DrillPage() {
   }
 
   function toggleQuickType(type) {
-    setSelectedCollectionId('');
     setQuickTypes((prev) => ({
       ...prev,
       [type]: !prev[type],
     }));
   }
 
-  function buildQuickUrlParams({
-    searchValue,
-    typesValue,
-    blueprintCodesValue,
-    tagsValue,
-    collectionIdValue,
-  }) {
+  function buildQuickUrlParams({ searchValue, typesValue }) {
     const params = new URLSearchParams(searchParams.toString());
     const trimmedSearch = String(searchValue || '').trim();
     if (trimmedSearch) {
@@ -583,34 +524,14 @@ export default function DrillPage() {
     } else {
       params.delete('qt');
     }
-    const blueprintCsv = toCsv(blueprintCodesValue);
-    if (blueprintCsv) {
-      params.set('bc', blueprintCsv);
-    } else {
-      params.delete('bc');
-    }
-    const tagCsv = toCsv(tagsValue);
-    if (tagCsv) {
-      params.set('tg', tagCsv);
-    } else {
-      params.delete('tg');
-    }
-    if (collectionIdValue) {
-      params.set('cid', collectionIdValue);
-    } else {
-      params.delete('cid');
-    }
+    params.delete('bc');
+    params.delete('tg');
+    params.delete('cid');
     params.set('quick', '1');
     return params;
   }
 
-  async function startQuickDrillWithFilters({
-    searchValue,
-    typesValue,
-    blueprintCodesValue,
-    tagsValue,
-    collectionIdValue,
-  }) {
+  async function startQuickDrillWithFilters({ searchValue, typesValue }) {
     if (!typesValue || typesValue.length === 0) {
       setQuickMessage('Pick at least one type.');
       return;
@@ -619,8 +540,6 @@ export default function DrillPage() {
     const { matches, error } = await fetchQuickMatches({
       searchTerm: searchValue,
       types: typesValue,
-      blueprintCodes: blueprintCodesValue,
-      tags: tagsValue,
     });
     if (error) {
       setQuickMessage(error);
@@ -641,9 +560,6 @@ export default function DrillPage() {
     const params = buildQuickUrlParams({
       searchValue,
       typesValue,
-      blueprintCodesValue,
-      tagsValue,
-      collectionIdValue,
     });
     router.push(`${pathname}?${params.toString()}`);
 
@@ -668,42 +584,6 @@ export default function DrillPage() {
     void startQuickDrillWithFilters({
       searchValue: quickSearch,
       typesValue: selectedQuickTypes,
-      blueprintCodesValue: quickBlueprintCodes,
-      tagsValue: quickTags,
-      collectionIdValue: selectedCollectionId,
-    });
-  }
-
-  function launchCollection(collection) {
-    const nextTypes =
-      Array.isArray(collection.types) && collection.types.length > 0
-        ? collection.types.filter((type) => QUICK_TYPES.includes(type))
-        : QUICK_TYPES;
-    const nextTypesState = {
-      mcq: nextTypes.includes('mcq'),
-      reverse: nextTypes.includes('reverse'),
-      fill: nextTypes.includes('fill'),
-    };
-    const nextQuery = String(collection.query || '');
-    const nextBlueprintCodes = Array.isArray(collection.blueprint_codes)
-      ? collection.blueprint_codes
-      : [];
-    const nextTags = Array.isArray(collection.tags)
-      ? collection.tags.map((tag) => String(tag || '').trim().toLowerCase()).filter(Boolean)
-      : [];
-
-    setQuickSearch(nextQuery);
-    setQuickTypes(nextTypesState);
-    setQuickBlueprintCodes(nextBlueprintCodes);
-    setQuickTags(nextTags);
-    setSelectedCollectionId(collection.id);
-
-    void startQuickDrillWithFilters({
-      searchValue: nextQuery,
-      typesValue: nextTypes,
-      blueprintCodesValue: nextBlueprintCodes,
-      tagsValue: nextTags,
-      collectionIdValue: collection.id,
     });
   }
 
@@ -724,12 +604,8 @@ export default function DrillPage() {
     'h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-slate-900 placeholder-slate-500 shadow-sm outline-none transition focus:border-slate-400 focus:ring-2 focus:ring-slate-300 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100 dark:placeholder-slate-400 dark:focus:border-slate-500 dark:focus:ring-slate-600';
   const buttonClass =
     'inline-flex h-11 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-200 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 dark:focus-visible:ring-slate-500';
-  const chipClass =
-    'rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:bg-slate-700';
   const subtleButtonClass =
     'inline-flex h-10 items-center justify-center rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800';
-  const previewCollections = studyCollections.slice(0, 6);
-  const hasMoreCollections = studyCollections.length > previewCollections.length;
 
   return (
     <section className="mx-auto w-full max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
@@ -752,10 +628,7 @@ export default function DrillPage() {
                 type="text"
                 placeholder="e.g., piriformis, sympathetic, blood flow"
                 value={quickSearch}
-                onChange={(event) => {
-                  setSelectedCollectionId('');
-                  setQuickSearch(event.target.value);
-                }}
+                onChange={(event) => setQuickSearch(event.target.value)}
               />
             </div>
             <div className="space-y-1.5" role="group" aria-label="Quick Drill type filters">
@@ -790,11 +663,6 @@ export default function DrillPage() {
                 </label>
               </div>
             </div>
-            {selectedCollection ? (
-              <p className={helperTextClass}>
-                Collection: <strong className="text-slate-900 dark:text-slate-100">{selectedCollection.title}</strong>
-              </p>
-            ) : null}
             <p className="text-xs text-slate-500 dark:text-slate-400">
               Matches: {quickMatches == null ? '...' : quickMatches}
             </p>
@@ -806,44 +674,6 @@ export default function DrillPage() {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className={cardClass}>
-          <h2 className={sectionTitleClass}>Quick Collections</h2>
-          <p className={`${helperTextClass} mt-1`}>Optional one-click sets for common study targets.</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {previewCollections.map((collection) => (
-              <button
-                key={collection.id}
-                type="button"
-                className={chipClass}
-                onClick={() => launchCollection(collection)}
-                disabled={quickLoading}
-              >
-                {collection.title}
-              </button>
-            ))}
-          </div>
-          {hasMoreCollections ? (
-            <details className="mt-3">
-              <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200">
-                Show all collections
-              </summary>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {studyCollections.map((collection) => (
-                  <button
-                    key={`all-${collection.id}`}
-                    type="button"
-                    className={chipClass}
-                    onClick={() => launchCollection(collection)}
-                    disabled={quickLoading}
-                  >
-                    {collection.title}
-                  </button>
-                ))}
-              </div>
-            </details>
-          ) : null}
         </div>
 
         <details className={cardClass}>
