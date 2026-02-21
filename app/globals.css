@@ -24,7 +24,8 @@ a {
 
 .calm-bg__base,
 .calm-bg__blob,
-.calm-bg__noise {
+.calm-bg__noise,
+.calm-bg__watermark {
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -67,6 +68,34 @@ a {
   mix-blend-mode: soft-light;
 }
 
+.calm-bg__watermark {
+  display: grid;
+  place-content: center;
+  gap: 1.6rem;
+  user-select: none;
+  overflow: hidden;
+}
+
+.calm-bg__watermark span {
+  display: block;
+  font-size: clamp(2.3rem, 9vw, 7rem);
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--calm-watermark-color);
+  opacity: var(--calm-watermark-opacity, 0.08);
+  text-shadow: 0 1px 10px var(--calm-watermark-shadow, rgba(0, 0, 0, 0.08));
+}
+
+.calm-bg__watermark span:first-child {
+  transform: translate(-7vw, -2vh) rotate(-16deg);
+}
+
+.calm-bg__watermark span:last-child {
+  transform: translate(7vw, 4vh) rotate(-16deg);
+}
+
 .calm-bg__content {
   position: relative;
   z-index: 1;
@@ -77,6 +106,9 @@ a {
   --calm-blob-a: rgba(156, 210, 255, 0.42);
   --calm-blob-b: rgba(208, 225, 255, 0.36);
   --calm-blob-opacity: 0.28;
+  --calm-watermark-color: rgba(15, 23, 42, 0.8);
+  --calm-watermark-opacity: 0.08;
+  --calm-watermark-shadow: rgba(148, 163, 184, 0.18);
 }
 
 .calm-bg--dawn {
@@ -84,6 +116,9 @@ a {
   --calm-blob-a: rgba(252, 200, 170, 0.35);
   --calm-blob-b: rgba(245, 219, 191, 0.3);
   --calm-blob-opacity: 0.24;
+  --calm-watermark-color: rgba(41, 31, 28, 0.8);
+  --calm-watermark-opacity: 0.075;
+  --calm-watermark-shadow: rgba(215, 180, 154, 0.18);
 }
 
 .calm-bg--ocean {
@@ -91,6 +126,9 @@ a {
   --calm-blob-a: rgba(128, 202, 224, 0.33);
   --calm-blob-b: rgba(170, 220, 230, 0.28);
   --calm-blob-opacity: 0.25;
+  --calm-watermark-color: rgba(12, 33, 43, 0.82);
+  --calm-watermark-opacity: 0.08;
+  --calm-watermark-shadow: rgba(154, 202, 216, 0.2);
 }
 
 .calm-bg--slate {
@@ -98,6 +136,9 @@ a {
   --calm-blob-a: rgba(176, 186, 201, 0.28);
   --calm-blob-b: rgba(196, 205, 217, 0.22);
   --calm-blob-opacity: 0.22;
+  --calm-watermark-color: rgba(18, 23, 33, 0.8);
+  --calm-watermark-opacity: 0.074;
+  --calm-watermark-shadow: rgba(147, 158, 176, 0.18);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,6 +147,9 @@ a {
     --calm-blob-a: rgba(86, 132, 181, 0.34);
     --calm-blob-b: rgba(56, 89, 131, 0.32);
     --calm-blob-opacity: 0.2;
+    --calm-watermark-color: rgba(242, 248, 255, 0.9);
+    --calm-watermark-opacity: 0.095;
+    --calm-watermark-shadow: rgba(15, 23, 42, 0.34);
   }
 
   .calm-bg--dawn {
@@ -113,6 +157,9 @@ a {
     --calm-blob-a: rgba(155, 102, 83, 0.26);
     --calm-blob-b: rgba(125, 86, 72, 0.24);
     --calm-blob-opacity: 0.18;
+    --calm-watermark-color: rgba(255, 243, 236, 0.92);
+    --calm-watermark-opacity: 0.085;
+    --calm-watermark-shadow: rgba(32, 22, 19, 0.35);
   }
 
   .calm-bg--ocean {
@@ -120,6 +167,9 @@ a {
     --calm-blob-a: rgba(66, 132, 151, 0.3);
     --calm-blob-b: rgba(56, 108, 126, 0.26);
     --calm-blob-opacity: 0.2;
+    --calm-watermark-color: rgba(233, 250, 255, 0.9);
+    --calm-watermark-opacity: 0.09;
+    --calm-watermark-shadow: rgba(11, 29, 39, 0.35);
   }
 
   .calm-bg--slate {
@@ -127,6 +177,9 @@ a {
     --calm-blob-a: rgba(100, 114, 136, 0.24);
     --calm-blob-b: rgba(81, 95, 115, 0.2);
     --calm-blob-opacity: 0.16;
+    --calm-watermark-color: rgba(242, 247, 255, 0.9);
+    --calm-watermark-opacity: 0.088;
+    --calm-watermark-shadow: rgba(17, 24, 39, 0.35);
   }
 
   .calm-bg__noise {

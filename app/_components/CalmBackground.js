@@ -18,6 +18,10 @@ export default function CalmBackground({
         </>
       ) : null}
       {noise ? <div className="calm-bg__noise" aria-hidden="true" /> : null}
+      <div className="calm-bg__watermark" aria-hidden="true">
+        <span>COACH MBLEX</span>
+        <span>COACH MBLEX</span>
+      </div>
       <div className="calm-bg__content">{children}</div>
     </div>
   );
