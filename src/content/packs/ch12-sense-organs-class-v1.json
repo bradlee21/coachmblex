@@ -1,0 +1,1458 @@
+{
+  "pack_id": "ch12-sense-organs-class-v1",
+  "packId": "ch12-sense-organs-class-v1",
+  "title": "Chapter 12 Sense Organs (Class Outline Pack)",
+  "chapter": "12",
+  "topic": "Sense Organs",
+  "version": 1,
+  "source": "School PPT outline (senseorgans.docx)",
+  "counts": {
+    "total": 60,
+    "mcq": 36,
+    "reverse": 16,
+    "fill": 8,
+    "difficulty_1": 30,
+    "difficulty_2": 21,
+    "difficulty_3": 9,
+    "domain_sense-organs": 60
+  },
+  "notes": "MBLEx-style: single-best-answer, parallel distractors (avoid length cues). Schema: mcq/reverse choices are {A,B,C,D}; correct_choice is one of A/B/C/D. Explanations use Why/Trap/Hook.",
+  "questions": [
+    {
+      "id": "ch12-sense-organs-class-v1-001",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Sensory receptors transmit information about stimulus type, location, and:",
+      "choices": {
+        "A": "Intensity",
+        "B": "DNA sequence",
+        "C": "Blood pH",
+        "D": "Cell division rate"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Receptors encode what the stimulus is, where it is, and how strong it is.",
+        "trap": "Extra biology terms can sound relevant but aren’t part of receptor coding basics.",
+        "hook": "Type–Place–Power."
+      },
+      "tags": [
+        "receptors",
+        "coding"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-002",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Mechanoreceptors\nWhich description BEST fits?",
+      "choices": {
+        "A": "Respond to pressure, stretch, or vibration",
+        "B": "Respond to light intensity and color",
+        "C": "Respond to chemical concentration",
+        "D": "Respond to tissue damage pain"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Mechanoreceptors detect mechanical deformation like pressure and stretch.",
+        "trap": "Nociceptors detect noxious stimuli; photoreceptors detect light.",
+        "hook": "Mech = mechanical."
+      },
+      "tags": [
+        "receptor-types",
+        "mechanoreceptor"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-003",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Chemoreceptors\nWhich description BEST fits?",
+      "choices": {
+        "A": "Respond to chemical concentration changes",
+        "B": "Respond to pressure, stretch, or vibration",
+        "C": "Respond to light intensity",
+        "D": "Respond to temperature changes"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Chemoreceptors respond to chemicals (taste, smell, blood gases).",
+        "trap": "Mechanoreceptors are about movement/pressure, not chemistry.",
+        "hook": "Chemo = chemicals."
+      },
+      "tags": [
+        "receptor-types",
+        "chemoreceptor"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-004",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Photoreceptors\nWhich description BEST fits?",
+      "choices": {
+        "A": "Respond to light",
+        "B": "Respond to temperature",
+        "C": "Respond to tissue damage pain",
+        "D": "Respond to joint position"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Photoreceptors in the retina respond to light for vision.",
+        "trap": "Proprioceptors are position sense; nociceptors are pain.",
+        "hook": "Photo = light."
+      },
+      "tags": [
+        "receptor-types",
+        "photoreceptor"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-005",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Proprioceptors\nWhich description BEST fits?",
+      "choices": {
+        "A": "Provide information about body position and movement",
+        "B": "Detect light intensity and color",
+        "C": "Detect chemical concentration changes",
+        "D": "Detect tissue damage pain"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Proprioceptors in muscles/tendons/joints signal position and movement.",
+        "trap": "Photoreceptors and chemoreceptors are special senses, not position sense.",
+        "hook": "Proprio = position."
+      },
+      "tags": [
+        "proprioception",
+        "receptor-types"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-006",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "A special sense is one with receptors concentrated in a specialized __________ (example: eye or inner ear).",
+      "explanation": {
+        "why": "Special senses are localized in specialized organs like the eye and inner ear.",
+        "trap": "General senses are distributed widely in skin and tissues.",
+        "hook": "Special = special organ."
+      },
+      "tags": [
+        "special-senses",
+        "organs"
+      ],
+      "correct_text": "organ"
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-007",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Proprioception is the sense of body __________ in space.",
+      "correct_text": "position",
+      "explanation": {
+        "why": "Proprioception provides awareness of position and movement.",
+        "trap": "Don’t confuse position sense with pain or touch.",
+        "hook": "Proprio = position."
+      },
+      "tags": [
+        "proprioception"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-008",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which layer of the eye contains rods and cones?",
+      "choices": {
+        "A": "Retina",
+        "B": "Sclera",
+        "C": "Choroid",
+        "D": "Cornea"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Rods and cones are photoreceptors located in the retina.",
+        "trap": "Sclera/cornea are protective structures; choroid is vascular/pigmented.",
+        "hook": "Retina = sensors."
+      },
+      "tags": [
+        "eye",
+        "retina"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-009",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which structure contains the organ of Corti?",
+      "choices": {
+        "A": "Cochlea",
+        "B": "Utricle",
+        "C": "Saccule",
+        "D": "Semicircular canals"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "The organ of Corti is within the cochlea and transduces sound vibrations.",
+        "trap": "Utricle/saccule/canals are balance structures, not hearing receptors.",
+        "hook": "Cochlea = hearing."
+      },
+      "tags": [
+        "ear",
+        "cochlea"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-010",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which structure is MOST associated with hearing?",
+      "choices": {
+        "A": "Cochlea",
+        "B": "Semicircular canals",
+        "C": "Utricle",
+        "D": "Saccule"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Hearing receptors are in the cochlea (organ of Corti).",
+        "trap": "Semicircular canals + utricle/saccule relate to balance.",
+        "hook": "Coil = cochlea."
+      },
+      "tags": [
+        "hearing"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-011",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which structure is MOST associated with sensing head rotation (angular acceleration)?",
+      "choices": {
+        "A": "Semicircular canals",
+        "B": "Cochlea",
+        "C": "Eustachian tube",
+        "D": "Ossicles"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Semicircular canals detect rotational movements of the head.",
+        "trap": "Ossicles transmit sound; cochlea transduces sound.",
+        "hook": "Rotate = semicircles."
+      },
+      "tags": [
+        "equilibrium",
+        "semicircular-canals"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-012",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Utricle and saccule\nWhich description BEST fits?",
+      "choices": {
+        "A": "Detect linear acceleration and head position",
+        "B": "Transduce sound waves into nerve impulses",
+        "C": "Amplify sound via tiny bones",
+        "D": "Equalize pressure with the throat"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Utricle/saccule detect linear acceleration and head position (static equilibrium).",
+        "trap": "Cochlea/ossicles are hearing; Eustachian tube equalizes pressure.",
+        "hook": "Utricle/saccule = linear."
+      },
+      "tags": [
+        "equilibrium",
+        "utricle",
+        "saccule"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-013",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which pairing BEST matches receptor type and stimulus?",
+      "choices": {
+        "A": "Thermoreceptors → temperature",
+        "B": "Photoreceptors → pressure",
+        "C": "Mechanoreceptors → chemicals",
+        "D": "Chemoreceptors → vibration"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Thermoreceptors respond to temperature changes.",
+        "trap": "The other pairings mismatch receptor class and stimulus type.",
+        "hook": "Thermo = temperature."
+      },
+      "tags": [
+        "receptor-types"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-014",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which statement BEST describes nociceptors?",
+      "choices": {
+        "A": "They detect noxious stimuli linked to tissue damage",
+        "B": "They detect light for vision",
+        "C": "They detect sound vibrations in the cochlea",
+        "D": "They detect sweet and salty flavors only"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Nociceptors are pain receptors that respond to potentially damaging stimuli.",
+        "trap": "Taste and smell are chemoreception, not nociception.",
+        "hook": "Noci = noxious."
+      },
+      "tags": [
+        "nociception",
+        "pain"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-015",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which general sense is MOST closely tied to mechanoreceptors in the skin?",
+      "choices": {
+        "A": "Touch/pressure",
+        "B": "Color vision",
+        "C": "Taste quality",
+        "D": "Smell intensity"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Touch/pressure are classic mechanoreceptor-driven sensations.",
+        "trap": "Vision/taste/smell use specialized receptors in specific organs.",
+        "hook": "Mech = touch."
+      },
+      "tags": [
+        "mechanoreceptors",
+        "touch"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-016",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "The tough white outer layer of the eyeball is the __________.",
+      "correct_text": "sclera",
+      "explanation": {
+        "why": "The sclera is the fibrous outer coat of the eye.",
+        "trap": "Choroid is vascular; retina is neural.",
+        "hook": "Sclera = shell."
+      },
+      "tags": [
+        "eye",
+        "sclera"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-017",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Choroid\nWhich description BEST fits?",
+      "choices": {
+        "A": "Vascular layer that nourishes eye tissues",
+        "B": "Clear front surface that refracts light",
+        "C": "Neural layer that contains photoreceptors",
+        "D": "Tough white outer layer of the eye"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "The choroid is the vascular, pigmented layer between sclera and retina.",
+        "trap": "Cornea refracts; retina senses; sclera protects.",
+        "hook": "Choroid = vascular coat."
+      },
+      "tags": [
+        "eye",
+        "choroid"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-018",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which eye structure primarily refracts incoming light?",
+      "choices": {
+        "A": "Cornea",
+        "B": "Retina",
+        "C": "Optic chiasm",
+        "D": "Macula"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "The cornea provides most of the eye’s refraction (light bending).",
+        "trap": "Retina detects light; chiasm is brain pathway; macula is retinal region.",
+        "hook": "Cornea bends light."
+      },
+      "tags": [
+        "vision",
+        "cornea"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-019",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Accommodation\nWhich description BEST fits?",
+      "choices": {
+        "A": "Changing lens shape to focus on near objects",
+        "B": "Turning both eyes inward to track a near object",
+        "C": "Bending light through cornea and lens",
+        "D": "Detecting color with cones"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Accommodation is lens-shape change to focus, especially up close.",
+        "trap": "Convergence turns the eyes inward; refraction bends light.",
+        "hook": "Lens adjusts."
+      },
+      "tags": [
+        "vision",
+        "accommodation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-020",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Convergence\nWhich description BEST fits?",
+      "choices": {
+        "A": "Turning both eyes inward to view a near object",
+        "B": "Changing lens shape to focus on near objects",
+        "C": "Bending light at the cornea",
+        "D": "Detecting brightness in low light"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Convergence is the inward turning of both eyes for near vision.",
+        "trap": "Accommodation is lens change; rods handle low-light detection.",
+        "hook": "Eyes in for near."
+      },
+      "tags": [
+        "vision",
+        "convergence"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-021",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Rods are MOST associated with:",
+      "choices": {
+        "A": "Low-light vision",
+        "B": "Color discrimination",
+        "C": "Fine detail in bright light",
+        "D": "Depth perception via both eyes"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Rods are sensitive to low light and support night vision.",
+        "trap": "Cones handle color and sharp detail in good lighting.",
+        "hook": "Rods = dark."
+      },
+      "tags": [
+        "vision",
+        "rods"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-022",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Cones are MOST associated with:",
+      "choices": {
+        "A": "Color vision and sharp detail",
+        "B": "Low-light vision",
+        "C": "Detecting head rotation",
+        "D": "Detecting vibration in skin"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Cones support color perception and high acuity in bright light.",
+        "trap": "Rods are for low-light; semicircular canals are for rotation.",
+        "hook": "Cones = color."
+      },
+      "tags": [
+        "vision",
+        "cones"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-023",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "The bending of light as it passes through the eye is called __________.",
+      "correct_text": "refraction",
+      "explanation": {
+        "why": "Refraction is the bending of light by the cornea and lens.",
+        "trap": "Don’t swap refraction with accommodation (lens shape change).",
+        "hook": "Bend = refraction."
+      },
+      "tags": [
+        "vision",
+        "refraction"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-024",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which choice BEST distinguishes refraction from accommodation?",
+      "choices": {
+        "A": "Refraction bends light; accommodation changes lens shape",
+        "B": "Refraction changes lens shape; accommodation bends light",
+        "C": "Refraction turns eyes inward; accommodation detects light",
+        "D": "Refraction detects color; accommodation detects motion"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Refraction is light bending; accommodation is lens-shape change for focus.",
+        "trap": "Swapping the definitions makes both sound plausible but reverses mechanisms.",
+        "hook": "Bend vs adjust."
+      },
+      "tags": [
+        "vision",
+        "refraction",
+        "accommodation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-025",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which statement BEST fits the term “general senses”?",
+      "choices": {
+        "A": "Receptors widely distributed in skin, muscles, tendons, and joints",
+        "B": "Receptors clustered in specialized organs like eye and inner ear",
+        "C": "Signals carried only by autonomic nerves to glands",
+        "D": "Sensations detected only during tissue damage"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "General senses are distributed widely throughout the body.",
+        "trap": "Special senses are concentrated in specialized organs.",
+        "hook": "General = distributed."
+      },
+      "tags": [
+        "general-senses"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-026",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Special senses\nWhich description BEST fits?",
+      "choices": {
+        "A": "Receptors concentrated in specialized organs",
+        "B": "Receptors spread widely throughout the body",
+        "C": "Receptors that detect only pain",
+        "D": "Receptors that detect only temperature"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Special senses are concentrated in organs (vision, hearing, equilibrium, taste, smell).",
+        "trap": "General senses are widespread in skin and musculoskeletal tissues.",
+        "hook": "Special = specialized organ."
+      },
+      "tags": [
+        "special-senses"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-027",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which option BEST describes why referred pain can confuse the true source of pain?",
+      "choices": {
+        "A": "Different areas can share pathways carrying impulses to the brain",
+        "B": "Deep organs contain no pain fibers at all",
+        "C": "Pain always travels only to the limbic system first",
+        "D": "Nociceptors respond only to temperature changes"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Converging pathways can cause the brain to misattribute the origin.",
+        "trap": "It’s about convergence, not absence of pain fibers.",
+        "hook": "Shared pathway, wrong address."
+      },
+      "tags": [
+        "referred-pain"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-028",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which part of the ear contains three tiny bones (ossicles) that transmit vibrations?",
+      "choices": {
+        "A": "Middle ear",
+        "B": "Inner ear",
+        "C": "External ear",
+        "D": "Cochlea"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The ossicles (malleus, incus, stapes) are in the middle ear and transmit vibrations.",
+        "trap": "Cochlea is inner ear; external ear collects sound waves.",
+        "hook": "Ossicles = middle."
+      },
+      "tags": [
+        "ear",
+        "ossicles"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-029",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Which structure connects the middle ear to the nasopharynx to help equalize pressure?",
+      "choices": {
+        "A": "Eustachian tube",
+        "B": "Semicircular canals",
+        "C": "Organ of Corti",
+        "D": "Oval window"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "The Eustachian tube equalizes pressure between middle ear and throat area.",
+        "trap": "Semicircular canals are for balance; organ of Corti is for hearing.",
+        "hook": "Pressure tube."
+      },
+      "tags": [
+        "ear",
+        "eustachian"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-030",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 1,
+      "prompt": "Term: Thermoreceptors\nWhich description BEST fits?",
+      "choices": {
+        "A": "Receptors that respond to temperature change",
+        "B": "Receptors that respond to light",
+        "C": "Receptors that respond to chemical concentration",
+        "D": "Receptors that respond to pressure"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Thermoreceptors detect changes in temperature.",
+        "trap": "Mechanoreceptors respond to pressure; photoreceptors respond to light.",
+        "hook": "Thermo = temp."
+      },
+      "tags": [
+        "receptor-types",
+        "thermoreceptor"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-031",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "A stimulus becomes a conscious sensation MOST directly when signals reach the:",
+      "choices": {
+        "A": "Cerebral cortex",
+        "B": "Cochlea",
+        "C": "Semicircular canals",
+        "D": "Eustachian tube"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Conscious perception is primarily a cortical function.",
+        "trap": "Mixing up receptor organs with processing centers is a common miss.",
+        "hook": "Conscious = cortex."
+      },
+      "tags": [
+        "perception",
+        "cortex"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-032",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which receptor type BEST matches pain from tissue damage?",
+      "choices": {
+        "A": "Nociceptor",
+        "B": "Photoreceptor",
+        "C": "Chemoreceptor",
+        "D": "Proprioceptor"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Nociceptors respond to noxious stimuli associated with tissue damage.",
+        "trap": "Proprioceptors are position sense; photoreceptors are vision.",
+        "hook": "Noci = pain."
+      },
+      "tags": [
+        "nociception"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-033",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which receptor type BEST matches taste and smell?",
+      "choices": {
+        "A": "Chemoreceptor",
+        "B": "Mechanoreceptor",
+        "C": "Thermoreceptor",
+        "D": "Photoreceptor"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Taste and smell detect chemical molecules, so they use chemoreceptors.",
+        "trap": "Mechanoreceptors detect physical deformation, not chemicals.",
+        "hook": "Taste/smell = chemo."
+      },
+      "tags": [
+        "taste",
+        "smell",
+        "chemoreceptors"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-034",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which pairing BEST matches stimulus and receptor class?",
+      "choices": {
+        "A": "Vibration → mechanoreceptor",
+        "B": "Light → thermoreceptor",
+        "C": "Heat → chemoreceptor",
+        "D": "Pain → photoreceptor"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Vibration is mechanical deformation sensed by mechanoreceptors.",
+        "trap": "Light is photoreception; heat is thermoreception; pain is nociception.",
+        "hook": "Vibration is mechanical."
+      },
+      "tags": [
+        "mechanoreceptors"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-035",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Term: Macula\nWhich description BEST fits?",
+      "choices": {
+        "A": "Retinal region important for sharp central vision",
+        "B": "Middle-ear tube that equalizes pressure",
+        "C": "Inner-ear structure for head rotation",
+        "D": "Small bones that transmit sound"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "The macula (including fovea) supports central, high-acuity vision.",
+        "trap": "Utricle macula exists too; don’t confuse eye macula with ear structures.",
+        "hook": "Macula = central detail."
+      },
+      "tags": [
+        "vision",
+        "macula"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-036",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which statement BEST describes sensory adaptation?",
+      "choices": {
+        "A": "Receptor firing decreases with constant stimulation",
+        "B": "Receptor firing increases with constant stimulation",
+        "C": "Action potentials stop permanently after one stimulus",
+        "D": "Receptors convert all stimuli into the same signal"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "With constant stimulation, receptors often fire less over time (adapt).",
+        "trap": "Adaptation changes responsiveness; it doesn’t make all stimuli identical.",
+        "hook": "Constant = less firing."
+      },
+      "tags": [
+        "adaptation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-037",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "The fluid-filled spiral structure of the inner ear involved in hearing is the __________.",
+      "correct_text": "cochlea",
+      "explanation": {
+        "why": "The cochlea houses hearing receptors (organ of Corti).",
+        "trap": "Balance structures are nearby but distinct (utricle/saccule/canals).",
+        "hook": "Cochlea = coil."
+      },
+      "tags": [
+        "cochlea",
+        "hearing"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-038",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which pathway BEST matches sound transmission in order?",
+      "choices": {
+        "A": "Tympanic membrane → ossicles → oval window → cochlea",
+        "B": "Ossicles → cochlea → tympanic membrane → semicircular canals",
+        "C": "Cochlea → Eustachian tube → ossicles → tympanic membrane",
+        "D": "Oval window → tympanic membrane → cochlea → ossicles"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Sound vibrates the tympanic membrane, then ossicles, then oval window, then cochlea.",
+        "trap": "Mixing pressure-equalization (Eustachian tube) into the pathway is a common distractor.",
+        "hook": "Drum → bones → window → cochlea."
+      },
+      "tags": [
+        "hearing",
+        "pathway"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-039",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Term: Semicircular canals\nWhich description BEST fits?",
+      "choices": {
+        "A": "Detect angular acceleration (head rotation)",
+        "B": "Detect linear acceleration (head position)",
+        "C": "Transduce sound into nerve impulses",
+        "D": "Equalize middle-ear pressure"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Semicircular canals detect rotational movements of the head.",
+        "trap": "Utricle/saccule detect linear acceleration; cochlea is hearing.",
+        "hook": "Rotate = canals."
+      },
+      "tags": [
+        "equilibrium"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-040",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which statement BEST matches the role of the lens in vision?",
+      "choices": {
+        "A": "Fine-tunes focus by changing shape",
+        "B": "Detects light using rods and cones",
+        "C": "Provides most of the eye’s refraction",
+        "D": "Carries signals to the visual cortex"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "The lens changes shape to focus (accommodation), fine-tuning refraction.",
+        "trap": "Cornea provides most refraction; retina detects; optic nerve carries signals.",
+        "hook": "Lens fine-tunes focus."
+      },
+      "tags": [
+        "lens",
+        "accommodation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-041",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which option BEST matches the function of the iris?",
+      "choices": {
+        "A": "Controls pupil size to regulate light entry",
+        "B": "Provides primary refraction of the eye",
+        "C": "Contains rods and cones for vision",
+        "D": "Houses the optic disc"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The iris adjusts pupil size, controlling how much light enters.",
+        "trap": "Cornea refracts; retina contains rods/cones; optic disc is retinal feature.",
+        "hook": "Iris = aperture."
+      },
+      "tags": [
+        "iris",
+        "pupil"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-042",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "The inward turning of both eyes to view a near object is called __________.",
+      "correct_text": "convergence",
+      "explanation": {
+        "why": "Convergence is the inward turning of both eyes for near viewing.",
+        "trap": "Accommodation is lens-shape change, not eye turning.",
+        "hook": "Eyes in = converge."
+      },
+      "tags": [
+        "convergence"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-043",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which option BEST matches the role of the optic nerve?",
+      "choices": {
+        "A": "Carries visual signals from retina to the brain",
+        "B": "Bends light to focus on retina",
+        "C": "Controls pupil size",
+        "D": "Transmits sound vibrations"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "The optic nerve carries neural signals from the retina to brain visual pathways.",
+        "trap": "Cornea/lens bend light; iris controls pupil.",
+        "hook": "Optic = output wire."
+      },
+      "tags": [
+        "optic-nerve"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-044",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Term: Refraction\nWhich description BEST fits?",
+      "choices": {
+        "A": "Bending of light as it passes through eye structures",
+        "B": "Changing lens shape for near focus",
+        "C": "Turning both eyes inward for near vision",
+        "D": "Detecting brightness in low light"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Refraction is light bending; accommodation is lens-shape change.",
+        "trap": "Convergence is eye turning; rods relate to low-light vision.",
+        "hook": "Refraction = bending."
+      },
+      "tags": [
+        "refraction"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-045",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which statement BEST describes the fovea’s role?",
+      "choices": {
+        "A": "Region of highest visual acuity",
+        "B": "Area where optic nerve exits the eye",
+        "C": "Structure that equalizes ear pressure",
+        "D": "Structure that detects head rotation"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "The fovea is the area of highest acuity for sharp central vision.",
+        "trap": "Optic disc is the exit point (blind spot), not highest acuity.",
+        "hook": "Fovea = fine detail."
+      },
+      "tags": [
+        "fovea",
+        "acuity"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-046",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "The three tiny middle-ear bones are called the __________.",
+      "correct_text": "ossicles",
+      "explanation": {
+        "why": "Malleus, incus, and stapes are the ossicles of the middle ear.",
+        "trap": "Don’t confuse ossicles with semicircular canals (balance).",
+        "hook": "Ossicles = tiny bones."
+      },
+      "tags": [
+        "ossicles"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-047",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which option BEST describes why cones support better detail than rods in bright light?",
+      "choices": {
+        "A": "They provide higher acuity and color discrimination",
+        "B": "They are more sensitive to dim light",
+        "C": "They detect head position changes",
+        "D": "They are pressure receptors in skin"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Cones support color and fine detail (high acuity), especially in bright light.",
+        "trap": "Rods are more light-sensitive for dim conditions.",
+        "hook": "Cones = color + detail."
+      },
+      "tags": [
+        "cones",
+        "acuity"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-048",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Term: Nociception\nWhich description BEST fits?",
+      "choices": {
+        "A": "Detection and transmission of noxious stimuli as pain signals",
+        "B": "Detection of light intensity and color",
+        "C": "Detection of chemical molecules as smell",
+        "D": "Detection of body position and movement"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Nociception is the process of detecting potentially harmful stimuli and signaling pain.",
+        "trap": "Photoreception and chemoreception are different receptor processes.",
+        "hook": "Noci = noxious."
+      },
+      "tags": [
+        "nociception"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-049",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which option BEST matches the term “sensory receptor”?",
+      "choices": {
+        "A": "Specialized cell that converts stimulus to nerve impulses",
+        "B": "Motor neuron that commands skeletal muscle",
+        "C": "Glial cell that forms myelin",
+        "D": "Blood vessel that nourishes tissue"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Receptors transduce stimuli into neural signals (nerve impulses).",
+        "trap": "Motor neurons send commands; glia support and insulate.",
+        "hook": "Receptor = transducer."
+      },
+      "tags": [
+        "receptors",
+        "transduction"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-050",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which structure is MOST directly involved in taste?",
+      "choices": {
+        "A": "Taste buds",
+        "B": "Rods",
+        "C": "Semicircular canals",
+        "D": "Ossicles"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Taste buds contain chemoreceptors for taste.",
+        "trap": "Rods are vision; semicircular canals are balance; ossicles are hearing.",
+        "hook": "Taste buds = taste."
+      },
+      "tags": [
+        "taste",
+        "taste-buds"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-051",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 2,
+      "prompt": "Which structure is MOST directly involved in smell?",
+      "choices": {
+        "A": "Olfactory epithelium",
+        "B": "Macula of retina",
+        "C": "Organ of Corti",
+        "D": "Eustachian tube"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Olfactory epithelium contains chemoreceptors for smell.",
+        "trap": "Macula is retinal; organ of Corti is hearing; tube equalizes pressure.",
+        "hook": "Olfactory = odor."
+      },
+      "tags": [
+        "smell",
+        "olfactory"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-052",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "A client reports sharp pain felt in a distant area from the tissue injury. Which concept BEST explains this pattern?",
+      "choices": {
+        "A": "Convergence of sensory pathways in the CNS",
+        "B": "Increased myelin production at the injury",
+        "C": "Failure of photoreceptors to adapt",
+        "D": "Reduced refraction by the cornea"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Converging sensory inputs can lead the brain to mislocalize the source of pain (referred pain).",
+        "trap": "Myelin and refraction aren’t the mechanism for pain mislocalization.",
+        "hook": "Converge → confuse."
+      },
+      "tags": [
+        "referred-pain",
+        "convergence"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-053",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "Which option BEST distinguishes adaptation from damage in sensation?",
+      "choices": {
+        "A": "Adaptation reduces response to constant stimulus without injury",
+        "B": "Adaptation permanently stops receptor firing after one stimulus",
+        "C": "Adaptation occurs only with tissue damage pain",
+        "D": "Adaptation increases firing as stimulus stays constant"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Adaptation is a normal decrease in receptor response with constant stimulation, not tissue injury.",
+        "trap": "People confuse “less sensation” with “damage,” but adaptation is normal physiology.",
+        "hook": "Adaptation ≠ injury."
+      },
+      "tags": [
+        "adaptation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-054",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "Term: Sensory transduction\nWhich description BEST fits?",
+      "choices": {
+        "A": "Conversion of a stimulus into an electrical signal",
+        "B": "Bending of light through cornea and lens",
+        "C": "Turning both eyes inward for near vision",
+        "D": "Jumping of action potentials between nodes"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Transduction is converting a stimulus (light, pressure, chemicals) into a neural signal.",
+        "trap": "Refraction and convergence are vision mechanics, not general transduction definition.",
+        "hook": "Stimulus → signal."
+      },
+      "tags": [
+        "transduction"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-055",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "A patient has vertigo when turning the head quickly. Which structure is MOST involved?",
+      "choices": {
+        "A": "Semicircular canals",
+        "B": "Cochlea",
+        "C": "Taste buds",
+        "D": "Macula of retina"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Semicircular canals detect angular acceleration (head rotation), a common vertigo trigger.",
+        "trap": "Cochlea is hearing; retina is vision; taste buds are gustation.",
+        "hook": "Spin = semicircles."
+      },
+      "tags": [
+        "equilibrium",
+        "vertigo"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-056",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "Which option BEST explains why the cornea contributes more to refraction than the lens?",
+      "choices": {
+        "A": "It has a greater refractive power at the air–cornea interface",
+        "B": "It contains rods and cones that amplify light",
+        "C": "It changes shape more than the lens for focus",
+        "D": "It directly carries signals to the visual cortex"
+      },
+      "correct_choice": "B",
+      "explanation": {
+        "why": "Most refraction occurs at the air–cornea boundary due to the large index difference.",
+        "trap": "Rods/cones are retinal; lens changes shape for accommodation, not primary refraction amount.",
+        "hook": "Cornea does the heavy bending."
+      },
+      "tags": [
+        "refraction",
+        "cornea"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-057",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "The area of the retina with the highest concentration of cones for sharp vision is the __________.",
+      "correct_text": "fovea",
+      "explanation": {
+        "why": "The fovea supports highest acuity due to dense cones.",
+        "trap": "Optic disc is the exit point (blind spot), not high acuity.",
+        "hook": "Fovea = fine focus."
+      },
+      "tags": [
+        "fovea"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-058",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "Term: Sensory adaptation\nWhich description BEST fits?",
+      "choices": {
+        "A": "Decreased receptor response during constant stimulation",
+        "B": "Increased receptor response during constant stimulation",
+        "C": "Permanent loss of receptor function after injury",
+        "D": "Conversion of sound into nerve impulses"
+      },
+      "correct_choice": "C",
+      "explanation": {
+        "why": "Adaptation is a normal drop in firing with constant stimulation.",
+        "trap": "Transduction converts stimuli; adaptation changes responsiveness over time.",
+        "hook": "Constant → less firing."
+      },
+      "tags": [
+        "adaptation"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-059",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "Which option BEST distinguishes rods from cones in a single statement?",
+      "choices": {
+        "A": "Rods: low light; cones: color and detail",
+        "B": "Rods: color; cones: low light",
+        "C": "Rods: taste; cones: smell",
+        "D": "Rods: balance; cones: hearing"
+      },
+      "correct_choice": "D",
+      "explanation": {
+        "why": "Rods support low-light vision; cones support color and sharp detail.",
+        "trap": "Swapping rods and cones is the classic vision trap.",
+        "hook": "Rods dark; cones color."
+      },
+      "tags": [
+        "rods",
+        "cones"
+      ]
+    },
+    {
+      "id": "ch12-sense-organs-class-v1-060",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "sense-organs",
+      "difficulty": 3,
+      "prompt": "A patient’s “blind spot” is MOST directly due to which feature?",
+      "choices": {
+        "A": "Optic disc where no photoreceptors are present",
+        "B": "Macula region with dense cones",
+        "C": "Lens that changes shape for focus",
+        "D": "Cornea that bends light strongly"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The optic disc lacks rods and cones where the optic nerve exits the eye.",
+        "trap": "Macula/fovea increase acuity; lens/cornea relate to focusing and refraction.",
+        "hook": "Disc = no receptors."
+      },
+      "tags": [
+        "blind-spot",
+        "optic-disc"
+      ]
+    }
+  ]
+}
