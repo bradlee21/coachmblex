@@ -1,0 +1,1468 @@
+{
+  "pack_id": "ch11-nervous-system-class-v1",
+  "packId": "ch11-nervous-system-class-v1",
+  "title": "Chapter 11 Nervous System (Class Outline Pack)",
+  "chapter": "11",
+  "topic": "Nervous System",
+  "version": 1,
+  "source": "School PPT outline (nervoussystem.docx)",
+  "counts": {
+    "total": 60,
+    "mcq": 36,
+    "reverse": 16,
+    "fill": 8,
+    "difficulty_1": 30,
+    "difficulty_2": 21,
+    "difficulty_3": 9,
+    "domain_nervous": 60
+  },
+  "notes": "MBLEx-style: single-best-answer, parallel distractors (avoid length cues), OIA not included, no sense organs. Explanations are Why/Trap/Hook. Schema: mcq/reverse choices are {A,B,C,D}; correct_choice is one of A/B/C/D.",
+  "questions": [
+    {
+      "id": "ch11-nervous-system-class-v1-001",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which option best matches the three main roles of the nervous system?",
+      "choices": {
+        "A": "Sensing, integrating, responding",
+        "B": "Absorbing, filtering, storing",
+        "C": "Protecting, insulating, supporting",
+        "D": "Pumping, circulating, exchanging"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The nervous system detects changes, processes information, and triggers responses.",
+        "trap": "Other body systems have different core roles that sound scientific but don’t fit.",
+        "hook": "Sense → Sort → Send."
+      },
+      "tags": [
+        "overview",
+        "roles"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-002",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which structures make up the central nervous system (CNS)?",
+      "choices": {
+        "A": "Brain and spinal cord",
+        "B": "Brain and peripheral nerves",
+        "C": "Spinal cord and ganglia",
+        "D": "Cranial nerves and spinal nerves"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "CNS refers specifically to brain + spinal cord; nerves/ganglia are PNS.",
+        "trap": "Cranial and spinal nerves feel “central” but they’re peripheral.",
+        "hook": "CNS = brain + cord."
+      },
+      "tags": [
+        "cns",
+        "pns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-003",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "A neuron that carries information from a receptor toward the CNS is a(n):",
+      "choices": {
+        "A": "Afferent neuron",
+        "B": "Efferent neuron",
+        "C": "Interneuron",
+        "D": "Motor end plate"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Afferent (sensory) neurons bring signals into the CNS.",
+        "trap": "Efferent neurons go out to effectors, not in from receptors.",
+        "hook": "Afferent arrives."
+      },
+      "tags": [
+        "afferent",
+        "sensory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-004",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "A neuron that carries commands from the CNS to a muscle is a(n):",
+      "choices": {
+        "A": "Efferent neuron",
+        "B": "Afferent neuron",
+        "C": "Interneuron",
+        "D": "Glial cell"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Efferent (motor) neurons carry signals from CNS to muscles or glands.",
+        "trap": "Afferent is sensory input; efferent is motor output.",
+        "hook": "Efferent exits."
+      },
+      "tags": [
+        "efferent",
+        "motor"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-005",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Neuroglia\nWhich description BEST fits?",
+      "choices": {
+        "A": "Support and protect neurons",
+        "B": "Conduct action potentials",
+        "C": "Form skeletal muscle fibers",
+        "D": "Store oxygen in blood"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Neuroglia are support cells that protect and assist neurons.",
+        "trap": "Neurons conduct signals; glia support the environment.",
+        "hook": "Glia = glue/support."
+      },
+      "tags": [
+        "neuroglia",
+        "support"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-006",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Ependymal cells\nWhich description BEST fits?",
+      "choices": {
+        "A": "Line ventricles and help move cerebrospinal fluid",
+        "B": "Form myelin in the peripheral nervous system",
+        "C": "Perform phagocytosis in CNS tissue",
+        "D": "Form the blood–brain barrier around capillaries"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Ependymal cells line ventricles and contribute to CSF movement/production.",
+        "trap": "Astrocytes relate to BBB; Schwann relates to PNS myelin.",
+        "hook": "Ependyma = ventricle lining."
+      },
+      "tags": [
+        "ependymal",
+        "csf"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-007",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "The resting electrical charge difference across a neuron’s membrane is the __________ potential.",
+      "correct_text": "resting",
+      "explanation": {
+        "why": "The resting potential is the baseline membrane charge difference.",
+        "trap": "Don’t confuse resting potential with action potential phases.",
+        "hook": "Resting = baseline."
+      },
+      "tags": [
+        "resting-potential"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-008",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "During depolarization, which ion moves into the neuron through voltage-gated channels?",
+      "choices": {
+        "A": "Sodium (Na+)",
+        "B": "Potassium (K+)",
+        "C": "Chloride (Cl-)",
+        "D": "Calcium (Ca2+)"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Na+ influx makes the inside less negative, initiating depolarization.",
+        "trap": "K+ is mainly tied to repolarization, not the initial depolarization.",
+        "hook": "Depolarize = Na+ in."
+      },
+      "tags": [
+        "action-potential",
+        "depolarization"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-009",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Repolarization is MOST directly associated with:",
+      "choices": {
+        "A": "Potassium (K+) leaving the neuron",
+        "B": "Sodium (Na+) entering the neuron",
+        "C": "Chloride (Cl-) entering the neuron",
+        "D": "Calcium (Ca2+) leaving the neuron"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "K+ efflux returns the membrane toward its resting state.",
+        "trap": "Na+ influx is the classic depolarization driver.",
+        "hook": "Repolarize = K+ out."
+      },
+      "tags": [
+        "action-potential",
+        "repolarization"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-010",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "The brief time when a neuron cannot fire another action potential is the __________ period.",
+      "correct_text": "absolute refractory",
+      "explanation": {
+        "why": "In the absolute refractory period, the neuron cannot fire regardless of stimulus strength.",
+        "trap": "Refractory isn’t “resting”; it’s a firing limitation window.",
+        "hook": "Absolute = cannot."
+      },
+      "tags": [
+        "refractory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-011",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which term describes a collection of neuron cell bodies in the PNS?",
+      "choices": {
+        "A": "Ganglion",
+        "B": "Tract",
+        "C": "Fascicle",
+        "D": "Cortex"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "In the PNS, cell bodies cluster in ganglia; in CNS they form nuclei/gray matter.",
+        "trap": "Tracts/fascicles are bundles of axons, not cell bodies.",
+        "hook": "Ganglion = bodies (PNS)."
+      },
+      "tags": [
+        "ganglion",
+        "pns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-012",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "How many pairs of spinal nerves are typically described in basic anatomy?",
+      "choices": {
+        "A": "31 pairs",
+        "B": "12 pairs",
+        "C": "24 pairs",
+        "D": "8 pairs"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "A standard count is 31 pairs of spinal nerves.",
+        "trap": "12 pairs is the classic cranial nerve count.",
+        "hook": "Spinal = 31."
+      },
+      "tags": [
+        "spinal-nerves",
+        "count"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-013",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Dermatome\nWhich description BEST fits?",
+      "choices": {
+        "A": "Skin region supplied by sensory fibers from a spinal nerve",
+        "B": "Muscle group supplied by a spinal nerve motor root",
+        "C": "Bone region supplied by a named artery",
+        "D": "Joint capsule supplied by a ligament"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Dermatomes map skin sensation regions to spinal nerves.",
+        "trap": "Myotomes relate to muscle action patterns, not skin.",
+        "hook": "Dermatome = skin map."
+      },
+      "tags": [
+        "dermatome",
+        "sensory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-014",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which brain region includes the midbrain, pons, and medulla oblongata?",
+      "choices": {
+        "A": "Brainstem",
+        "B": "Diencephalon",
+        "C": "Cerebellum",
+        "D": "Cerebrum"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Brainstem = midbrain + pons + medulla oblongata.",
+        "trap": "Diencephalon includes thalamus/hypothalamus, not pons/medulla.",
+        "hook": "Stem = mid–pons–med."
+      },
+      "tags": [
+        "brainstem",
+        "anatomy"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-015",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Cerebellum\nWhich description BEST fits?",
+      "choices": {
+        "A": "Coordinates movement and balance",
+        "B": "Relays all sensory input to cortex",
+        "C": "Controls endocrine glands directly",
+        "D": "Generates cerebrospinal fluid"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The cerebellum helps coordinate movement, posture, and balance.",
+        "trap": "Thalamus is the classic sensory relay, not cerebellum.",
+        "hook": "Cerebellum = coordination."
+      },
+      "tags": [
+        "cerebellum",
+        "balance"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-016",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which division of the nervous system most directly controls voluntary skeletal muscle?",
+      "choices": {
+        "A": "Somatic nervous system",
+        "B": "Autonomic nervous system",
+        "C": "Enteric nervous system",
+        "D": "Endocrine system"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Somatic motor control is voluntary control of skeletal muscle.",
+        "trap": "Autonomic targets smooth/cardiac muscle and glands.",
+        "hook": "Somatic = skeletal."
+      },
+      "tags": [
+        "somatic",
+        "voluntary"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-017",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which pairing BEST matches division and typical target?",
+      "choices": {
+        "A": "Autonomic → glands and smooth/cardiac muscle",
+        "B": "Autonomic → skeletal muscle only",
+        "C": "Somatic → glands and smooth muscle",
+        "D": "Somatic → heart muscle only"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "ANS output targets smooth muscle, cardiac muscle, and glands.",
+        "trap": "Somatic output is skeletal muscle control.",
+        "hook": "Auto = organs; soma = skeletal."
+      },
+      "tags": [
+        "ans",
+        "targets"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-018",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Sympathetic division\nWhich description BEST fits?",
+      "choices": {
+        "A": "Prepares body for activity (fight-or-flight)",
+        "B": "Promotes digestion and rest (rest-and-digest)",
+        "C": "Controls voluntary movement only",
+        "D": "Carries sensation from skin to CNS"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Sympathetic activation supports readiness and mobilization.",
+        "trap": "Parasympathetic is the classic rest-and-digest partner.",
+        "hook": "Sympathetic = stimulate."
+      },
+      "tags": [
+        "ans",
+        "sympathetic"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-019",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Parasympathetic division\nWhich description BEST fits?",
+      "choices": {
+        "A": "Promotes digestion and rest (rest-and-digest)",
+        "B": "Prepares body for activity (fight-or-flight)",
+        "C": "Drives voluntary skeletal muscle movement",
+        "D": "Transmits pain from tissue injury"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Parasympathetic activation supports restoration and digestion.",
+        "trap": "Sympathetic is the classic fight-or-flight partner.",
+        "hook": "Para = preserve."
+      },
+      "tags": [
+        "ans",
+        "parasympathetic"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-020",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which statement is MOST accurate about a neurotransmitter’s effect on a target organ?",
+      "choices": {
+        "A": "Receptor type on the target tissue shapes the response",
+        "B": "A neurotransmitter always produces one fixed response",
+        "C": "Only the CNS can change neurotransmitter effects",
+        "D": "Targets respond only if myelin is present"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The same neurotransmitter can produce different effects depending on receptor type.",
+        "trap": "Assuming one transmitter = one effect ignores receptor specificity.",
+        "hook": "Receptors decide."
+      },
+      "tags": [
+        "receptors",
+        "ans"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-021",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "A bundle of axons in the CNS is called a __________.",
+      "correct_text": "tract",
+      "explanation": {
+        "why": "In the CNS, axon bundles are tracts; in the PNS they’re nerves.",
+        "trap": "Calling everything a “nerve” blurs CNS vs PNS terms.",
+        "hook": "CNS = tract."
+      },
+      "tags": [
+        "tract",
+        "cns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-022",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "A bundle of axons in the PNS is called a:",
+      "choices": {
+        "A": "Nerve",
+        "B": "Tract",
+        "C": "Nucleus",
+        "D": "Cortex"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "In the PNS, bundles of axons are nerves.",
+        "trap": "Tracts are the CNS term for axon bundles.",
+        "hook": "PNS bundle = nerve."
+      },
+      "tags": [
+        "nerve",
+        "pns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-023",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Gray matter\nWhich description BEST fits?",
+      "choices": {
+        "A": "Region rich in neuron cell bodies and synapses",
+        "B": "Region rich in myelinated axons",
+        "C": "A PNS-only structure around nerves",
+        "D": "A protective layer around the brain"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Gray matter contains many cell bodies, dendrites, and synapses.",
+        "trap": "White matter is the classic myelinated-axon region.",
+        "hook": "Gray = bodies."
+      },
+      "tags": [
+        "gray-matter",
+        "cns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-024",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: White matter\nWhich description BEST fits?",
+      "choices": {
+        "A": "Region rich in myelinated axons",
+        "B": "Region rich in neuron cell bodies and synapses",
+        "C": "A fluid space inside ventricles",
+        "D": "A cluster of PNS cell bodies"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "White matter contains many myelinated axons, giving it a lighter appearance.",
+        "trap": "Gray matter is where many cell bodies and synapses are.",
+        "hook": "White = wires."
+      },
+      "tags": [
+        "white-matter",
+        "myelin"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-025",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which description BEST fits an interneuron?",
+      "choices": {
+        "A": "Neuron that connects neurons within the CNS",
+        "B": "Neuron that carries sensory input into CNS",
+        "C": "Neuron that carries motor output to muscle",
+        "D": "Cell that forms PNS myelin"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Interneurons link neurons and integrate signals, largely within the CNS.",
+        "trap": "Afferent/efferent describe direction of information, not integration role.",
+        "hook": "Interneuron = inside link."
+      },
+      "tags": [
+        "interneuron",
+        "integration"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-026",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "A postsynaptic potential is MOST directly influenced by:",
+      "choices": {
+        "A": "Neurotransmitter binding to receptors",
+        "B": "Myelin thickness around the axon",
+        "C": "Bone markings near the nerve",
+        "D": "Red blood cell count in plasma"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Synaptic signaling depends on transmitter binding to postsynaptic receptors.",
+        "trap": "Myelin changes conduction speed, not receptor binding events.",
+        "hook": "Synapse = receptor binding."
+      },
+      "tags": [
+        "synapse",
+        "receptors"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-027",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which term best describes the electrical state when the inside of a neuron is more negative than the outside?",
+      "choices": {
+        "A": "Polarized",
+        "B": "Depolarized",
+        "C": "Hypercalcemic",
+        "D": "Ischemic"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "A resting neuron is polarized with a negative interior relative to exterior.",
+        "trap": "Depolarization reduces that charge difference.",
+        "hook": "Polarized = negative inside."
+      },
+      "tags": [
+        "membrane",
+        "resting"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-028",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Term: Thalamus\nWhich description BEST fits?",
+      "choices": {
+        "A": "Major relay for sensory information to the cortex",
+        "B": "Primary coordinator of balance and posture",
+        "C": "Main producer of cerebrospinal fluid",
+        "D": "Center for voluntary motor commands"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The thalamus is a key relay station for many sensory pathways to cortex.",
+        "trap": "Cerebellum coordinates movement; thalamus relays inputs.",
+        "hook": "Thalamus = relay."
+      },
+      "tags": [
+        "thalamus",
+        "relay"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-029",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which term refers to a rapid, predictable response to a stimulus?",
+      "choices": {
+        "A": "Reflex",
+        "B": "Emotion",
+        "C": "Secretion",
+        "D": "Accommodation"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "A reflex is a rapid, automatic response to a stimulus.",
+        "trap": "Accommodation is a vision term, not a rapid motor response.",
+        "hook": "Reflex = fast loop."
+      },
+      "tags": [
+        "reflex"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-030",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "The nervous system division that regulates smooth muscle, cardiac muscle, and glands is the __________ nervous system.",
+      "correct_text": "autonomic",
+      "explanation": {
+        "why": "The autonomic nervous system regulates involuntary targets like glands and smooth/cardiac muscle.",
+        "trap": "Somatic controls skeletal muscle, not glands.",
+        "hook": "Auto = automatic."
+      },
+      "tags": [
+        "ans",
+        "autonomic"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-031",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 1,
+      "prompt": "Which term describes the largest part of the brain responsible for higher thought and voluntary action?",
+      "choices": {
+        "A": "Cerebrum",
+        "B": "Cerebellum",
+        "C": "Medulla oblongata",
+        "D": "Pons"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The cerebrum supports higher cognition, perception, and voluntary motor control.",
+        "trap": "Cerebellum is coordination; brainstem handles basic life functions.",
+        "hook": "Cerebrum = big thinker."
+      },
+      "tags": [
+        "cerebrum",
+        "cortex"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-032",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "A client’s stimulus is detected by receptors and sent toward the CNS. Which pathway term BEST fits that direction?",
+      "choices": {
+        "A": "Afferent pathway",
+        "B": "Efferent pathway",
+        "C": "Somatic output",
+        "D": "Motor end plate"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Afferent describes signals traveling from receptors toward the CNS.",
+        "trap": "Efferent is the outward motor pathway to effectors.",
+        "hook": "Afferent arrives."
+      },
+      "tags": [
+        "afferent",
+        "pathway"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-033",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Myelin primarily increases nerve signal speed by:",
+      "choices": {
+        "A": "Reducing ion leakage and enabling saltatory conduction",
+        "B": "Increasing synapse size for faster diffusion",
+        "C": "Making dendrites longer for better reception",
+        "D": "Adding more cell bodies to the nerve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Myelin insulates the axon and supports saltatory conduction between nodes.",
+        "trap": "Synapse size is not the main driver of along-axon conduction speed.",
+        "hook": "Myelin = fast jumps."
+      },
+      "tags": [
+        "myelin",
+        "saltatory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-034",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which option BEST describes an action potential threshold?",
+      "choices": {
+        "A": "Membrane voltage that triggers rapid depolarization",
+        "B": "Time it takes for K+ to leave the neuron",
+        "C": "Maximum firing rate of a motor neuron",
+        "D": "Number of synapses in a pathway"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Threshold is the membrane voltage that initiates the all-or-none action potential.",
+        "trap": "Refractory timing and ion movement are related but not the definition of threshold.",
+        "hook": "Threshold = trigger point."
+      },
+      "tags": [
+        "threshold",
+        "action-potential"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-035",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which statement BEST describes the absolute refractory period?",
+      "choices": {
+        "A": "A time when the neuron cannot fire another action potential",
+        "B": "A time when the neuron fires repeatedly without stimulus",
+        "C": "A time when the neuron is more sensitive to stimulation",
+        "D": "A time when neurotransmitters cannot be released"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "During absolute refractory, voltage-gated Na+ channels cannot reset fast enough to fire again.",
+        "trap": "Relative refractory is when firing is harder, not impossible.",
+        "hook": "Absolute = no second spike."
+      },
+      "tags": [
+        "refractory",
+        "absolute"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-036",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Term: Oligodendrocytes\nWhich description BEST fits?",
+      "choices": {
+        "A": "Form myelin in the central nervous system",
+        "B": "Form myelin in the peripheral nervous system",
+        "C": "Line ventricles and move cerebrospinal fluid",
+        "D": "Perform phagocytosis in CNS tissue"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Oligodendrocytes myelinate CNS axons; Schwann cells myelinate PNS axons.",
+        "trap": "Swapping Schwann and oligodendrocyte roles is a common mix-up.",
+        "hook": "Oligo = CNS myelin."
+      },
+      "tags": [
+        "oligodendrocyte",
+        "myelin"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-037",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Term: Microglia\nWhich description BEST fits?",
+      "choices": {
+        "A": "Immune-like cells that perform phagocytosis in CNS",
+        "B": "Cells that line ventricles and move CSF",
+        "C": "Cells that form BBB around capillaries",
+        "D": "Cells that form PNS myelin"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Microglia act like macrophages in CNS tissue for cleanup and defense.",
+        "trap": "Astrocytes relate to BBB, not primary phagocytosis role.",
+        "hook": "Microglia = CNS cleanup."
+      },
+      "tags": [
+        "microglia",
+        "phagocytosis"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-038",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which pairing BEST matches structure with its primary function?",
+      "choices": {
+        "A": "Dendrite → receives input",
+        "B": "Axon → receives input",
+        "C": "Myelin → releases neurotransmitter",
+        "D": "Synapse → generates myelin"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Dendrites typically receive signals; axons carry signals away from the soma.",
+        "trap": "Axons send; dendrites receive—don’t swap the directions.",
+        "hook": "Dendrites = receive."
+      },
+      "tags": [
+        "neuron",
+        "structure"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-039",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "In a reflex arc, which component usually carries signals from the CNS to the effector?",
+      "choices": {
+        "A": "Motor (efferent) neuron",
+        "B": "Sensory (afferent) neuron",
+        "C": "Receptor",
+        "D": "Interneuron only"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Efferent motor neurons carry the output from CNS to muscles or glands.",
+        "trap": "Afferent neurons carry input from receptors into the CNS.",
+        "hook": "Output rides efferent."
+      },
+      "tags": [
+        "reflex-arc",
+        "efferent"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-040",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which term BEST describes a bundle of axons inside a peripheral nerve?",
+      "choices": {
+        "A": "Fascicle",
+        "B": "Ganglion",
+        "C": "Nucleus",
+        "D": "Cortex"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "A fascicle is a bundle of axons within a nerve, wrapped by connective tissue layers.",
+        "trap": "Ganglion refers to cell bodies, not bundled axons.",
+        "hook": "Fascicle = fiber bundle."
+      },
+      "tags": [
+        "fascicle",
+        "nerve"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-041",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which pairing BEST matches term and location?",
+      "choices": {
+        "A": "Nucleus → CNS cell body cluster",
+        "B": "Ganglion → CNS cell body cluster",
+        "C": "Tract → PNS axon bundle",
+        "D": "Nerve → CNS axon bundle"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "In the CNS, clusters of cell bodies are nuclei; in the PNS they’re ganglia.",
+        "trap": "Nerve is PNS; tract is CNS—don’t swap them.",
+        "hook": "Nucleus = CNS bodies."
+      },
+      "tags": [
+        "nucleus",
+        "ganglion",
+        "cns",
+        "pns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-042",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which statement BEST describes saltatory conduction?",
+      "choices": {
+        "A": "Action potentials “jump” between nodes of Ranvier",
+        "B": "Action potentials travel only through dendrites",
+        "C": "Neurotransmitters diffuse faster across synapses",
+        "D": "Axons conduct only when muscles contract"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Myelinated axons conduct by jumping between nodes, increasing speed.",
+        "trap": "Saltatory conduction is along the axon, not across synapses.",
+        "hook": "Jump the nodes."
+      },
+      "tags": [
+        "saltatory",
+        "nodes"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-043",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "The rapid rise and fall of membrane voltage that travels along an axon is an __________ potential.",
+      "correct_text": "action",
+      "explanation": {
+        "why": "An action potential is the rapid electrical signal that propagates along an axon.",
+        "trap": "Don’t confuse action potential with resting potential or threshold.",
+        "hook": "Action = spike."
+      },
+      "tags": [
+        "action-potential"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-044",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which option BEST distinguishes afferent from efferent pathways?",
+      "choices": {
+        "A": "Afferent brings input; efferent sends output",
+        "B": "Afferent sends output; efferent brings input",
+        "C": "Afferent controls glands; efferent controls skin",
+        "D": "Afferent is CNS only; efferent is PNS only"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Afferent = sensory input toward CNS; efferent = motor output to effectors.",
+        "trap": "Swapping directions is the classic test trap.",
+        "hook": "In vs out."
+      },
+      "tags": [
+        "afferent",
+        "efferent"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-045",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Term: Refractory period\nWhich description BEST fits?",
+      "choices": {
+        "A": "Time after an action potential when firing is limited",
+        "B": "Time when neuron stores neurotransmitter",
+        "C": "Time when myelin is produced",
+        "D": "Time when dendrites grow longer"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Refractory periods limit immediate re-firing as channels reset.",
+        "trap": "Refractory is about firing readiness, not neurotransmitter storage.",
+        "hook": "Refractory = recovery window."
+      },
+      "tags": [
+        "refractory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-046",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which brain region BEST fits: thalamus + hypothalamus + epithalamus?",
+      "choices": {
+        "A": "Diencephalon",
+        "B": "Brainstem",
+        "C": "Cerebellum",
+        "D": "Cerebral cortex"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "The diencephalon includes thalamus, hypothalamus, and epithalamus.",
+        "trap": "Brainstem is midbrain/pons/medulla, not thalamus/hypothalamus.",
+        "hook": "Di = thalamus zone."
+      },
+      "tags": [
+        "diencephalon"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-047",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which statement BEST describes sympathetic vs parasympathetic organization?",
+      "choices": {
+        "A": "They are divisions of the autonomic nervous system",
+        "B": "They are divisions of the somatic nervous system",
+        "C": "They are parts of the cerebellum",
+        "D": "They are types of sensory receptors"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Sympathetic and parasympathetic are the two main ANS divisions in basic anatomy.",
+        "trap": "Somatic is voluntary skeletal control, not these divisions.",
+        "hook": "ANS has two gears."
+      },
+      "tags": [
+        "ans",
+        "divisions"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-048",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which option BEST describes why myelinated axons conduct faster than unmyelinated axons?",
+      "choices": {
+        "A": "Myelin reduces membrane capacitance and ion leakage",
+        "B": "Myelin increases neurotransmitter release at synapses",
+        "C": "Myelin increases dendrite branching for reception",
+        "D": "Myelin increases the number of cell bodies in a nerve"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Insulation reduces current loss and supports node-to-node conduction.",
+        "trap": "Speed differences are primarily about axon conduction properties, not synapse release.",
+        "hook": "Insulate to accelerate."
+      },
+      "tags": [
+        "myelin",
+        "conduction"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-049",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Term: Interneuron\nWhich description BEST fits?",
+      "choices": {
+        "A": "Neuron that links neurons and integrates signals in CNS",
+        "B": "Neuron that carries sensory input from skin to CNS",
+        "C": "Neuron that carries commands from CNS to muscle",
+        "D": "Cell that forms BBB around capillaries"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Interneurons connect neurons and support integration within CNS circuits.",
+        "trap": "Astrocytes relate to BBB; interneurons are neurons, not glia.",
+        "hook": "Inter = between neurons."
+      },
+      "tags": [
+        "interneuron"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-050",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "A cluster of neuron cell bodies in the CNS is called a __________.",
+      "correct_text": "nucleus",
+      "explanation": {
+        "why": "In the CNS, cell bodies cluster as nuclei; in the PNS they form ganglia.",
+        "trap": "Ganglion is the PNS term, not the CNS term.",
+        "hook": "CNS bodies = nucleus."
+      },
+      "tags": [
+        "nucleus",
+        "cns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-051",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 2,
+      "prompt": "Which pairing BEST matches a pathway and its destination?",
+      "choices": {
+        "A": "Afferent → CNS; efferent → effector",
+        "B": "Afferent → effector; efferent → CNS",
+        "C": "Afferent → gland only; efferent → skin only",
+        "D": "Afferent → cerebellum only; efferent → cortex only"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Afferent signals go to CNS; efferent signals go to muscles or glands.",
+        "trap": "Swapping destinations is the high-frequency confusion.",
+        "hook": "To CNS vs to muscle."
+      },
+      "tags": [
+        "pathways"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-052",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "A neuron is at -55 mV and reaches threshold. Which event sequence BEST matches the start of an action potential?",
+      "choices": {
+        "A": "Voltage-gated Na+ opens → Na+ enters → rapid depolarization",
+        "B": "Voltage-gated K+ opens → K+ enters → rapid depolarization",
+        "C": "Ligand-gated Cl- opens → Cl- exits → rapid depolarization",
+        "D": "Na+/K+ pump stops → Na+ exits → depolarization"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Threshold triggers voltage-gated Na+ channels to open, driving depolarization.",
+        "trap": "K+ opening is later for repolarization; pumps don’t create the spike sequence directly.",
+        "hook": "Threshold opens Na+."
+      },
+      "tags": [
+        "threshold",
+        "sequence"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-053",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "A nerve fiber is cut. Which factor MOST limits regeneration in the CNS compared with the PNS?",
+      "choices": {
+        "A": "Lack of neurilemma support for regrowth",
+        "B": "Lack of any glial cells in CNS tissue",
+        "C": "Lack of sodium channels in CNS axons",
+        "D": "Lack of blood supply to CNS tissue"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "CNS lacks a neurilemma pathway that supports axon regrowth like in PNS.",
+        "trap": "CNS has glia and sodium channels; the regrowth environment differs.",
+        "hook": "CNS lacks regrowth guide."
+      },
+      "tags": [
+        "regeneration",
+        "cns",
+        "pns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-054",
+      "blueprint_code": "1.B",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "Which option BEST explains why a stronger stimulus may be needed during the relative refractory period?",
+      "choices": {
+        "A": "Some Na+ channels have not fully reset, so depolarization is harder",
+        "B": "All Na+ channels are permanently closed after firing",
+        "C": "K+ channels are absent, so repolarization cannot occur",
+        "D": "Myelin dissolves briefly after each action potential"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Relative refractory means firing is possible but requires a stronger stimulus as channels recover.",
+        "trap": "Absolute refractory is “cannot fire”; relative refractory is “harder to fire.”",
+        "hook": "Relative = harder."
+      },
+      "tags": [
+        "refractory",
+        "relative"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-055",
+      "blueprint_code": "1.A",
+      "type": "mcq",
+      "question_type": "mcq",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "Which pairing BEST distinguishes tract vs nerve vs fascicle vs ganglion?",
+      "choices": {
+        "A": "Tract: CNS axons; nerve: PNS axons; fascicle: bundle within nerve; ganglion: PNS cell bodies",
+        "B": "Tract: PNS axons; nerve: CNS axons; fascicle: CNS cell bodies; ganglion: CNS axons",
+        "C": "Tract: CNS cell bodies; nerve: PNS cell bodies; fascicle: synapse region; ganglion: CSF space",
+        "D": "Tract: skin receptors; nerve: muscle fibers; fascicle: bone bundle; ganglion: cartilage node"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "These terms differ by location and what they contain (axons vs cell bodies).",
+        "trap": "Mixing “axon bundle” terms with “cell body cluster” terms is the common confusion.",
+        "hook": "Axons vs bodies, CNS vs PNS."
+      },
+      "tags": [
+        "tract",
+        "nerve",
+        "fascicle",
+        "ganglion"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-056",
+      "blueprint_code": "1.A",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "Term: Blood–brain barrier (BBB)\nWhich description BEST fits?",
+      "choices": {
+        "A": "A barrier that restricts many substances from leaving capillaries into CNS tissue",
+        "B": "A membrane that carries action potentials down an axon",
+        "C": "A structure that produces cerebrospinal fluid in ventricles",
+        "D": "A sheath that wraps PNS axons to speed conduction"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "BBB limits many substances from entering CNS tissue from the bloodstream.",
+        "trap": "Myelin speeds conduction; BBB controls exchange at capillaries.",
+        "hook": "BBB = controlled entry."
+      },
+      "tags": [
+        "bbb",
+        "cns"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-057",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "Term: Saltatory conduction\nWhich description BEST fits?",
+      "choices": {
+        "A": "Conduction that jumps between nodes on a myelinated axon",
+        "B": "Conduction that diffuses neurotransmitter across a synapse",
+        "C": "Conduction that moves only along dendrites",
+        "D": "Conduction that occurs only in unmyelinated fibers"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Saltatory conduction is node-to-node jumping on myelinated axons.",
+        "trap": "Synaptic diffusion is a different process than along-axon conduction.",
+        "hook": "Jump the nodes."
+      },
+      "tags": [
+        "saltatory",
+        "myelin"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-058",
+      "blueprint_code": "1.B",
+      "type": "reverse",
+      "question_type": "reverse",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "Term: Absolute refractory period\nWhich description BEST fits?",
+      "choices": {
+        "A": "Time when a neuron cannot fire another action potential",
+        "B": "Time when a stronger stimulus is needed to fire",
+        "C": "Time when neurotransmitter is released repeatedly",
+        "D": "Time when myelin is rebuilt after firing"
+      },
+      "correct_choice": "A",
+      "explanation": {
+        "why": "Absolute refractory is a no-fire window as Na+ channels reset.",
+        "trap": "Relative refractory is “harder,” not “impossible.”",
+        "hook": "Absolute = no spike."
+      },
+      "tags": [
+        "absolute-refractory"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-059",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "The voltage at which an action potential is triggered is the __________.",
+      "correct_text": "threshold",
+      "explanation": {
+        "why": "Threshold is the trigger voltage that initiates the all-or-none spike.",
+        "trap": "Refractory and resting are different concepts than threshold.",
+        "hook": "Threshold = trigger."
+      },
+      "tags": [
+        "threshold"
+      ]
+    },
+    {
+      "id": "ch11-nervous-system-class-v1-060",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "difficulty": 3,
+      "prompt": "In saltatory conduction, action potentials propagate between nodes of __________.",
+      "correct_text": "Ranvier",
+      "explanation": {
+        "why": "Nodes of Ranvier are the gaps in myelin where the signal “jumps.”",
+        "trap": "Don’t confuse nodes with ganglia (cell bodies).",
+        "hook": "Nodes = Ranvier."
+      },
+      "tags": [
+        "nodes-of-ranvier"
+      ]
+    }
+  ]
+}
