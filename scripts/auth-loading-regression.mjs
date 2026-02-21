@@ -104,13 +104,43 @@ assertMatch(
 
 assertMatch(
   questionRunnerSource,
-  /resolveExplanationDetails\(current,\s*resolvedCorrectChoiceText\)/,
-  'Expected Answer line resolver to prefer resolved correct option text.'
+  /resolveExplanationDetails\(current,\s*resolvedCorrectAnswerText\)/,
+  'Expected Answer line resolver to prefer resolved correct answer text.'
 );
 
 assertMatch(
   questionRunnerSource,
-  /choiceIndex === resolvedCorrectIndex/,
+  /function\s+resolveQuestionMode\s*\(/,
+  'Expected QuestionRunner to include a question mode resolver for MCQ vs fill.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /if\s*\(\s*questionType\s*===\s*'fill'\s*\)\s*return\s*'fib';/,
+  'Expected fill question_type to map to fib mode.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /questionMode === 'mcq' && \['1', '2', '3', '4'\]\.includes\(key\)/,
+  'Expected numeric answer hotkeys to be gated to MCQ mode.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /id="fib-answer"/,
+  'Expected QuestionRunner fib mode to render a text input.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /submitAnswer\(\{\s*inputText:\s*userInput\s*}\)/,
+  'Expected fib mode submit flow to grade typed input.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /(rawIndex|choiceIndex) === resolvedCorrectIndex/,
   'Expected QuestionRunner UI highlight to compare against resolvedCorrectIndex.'
 );
 

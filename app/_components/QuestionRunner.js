@@ -23,11 +23,25 @@ function normalizeText(value) {
   return toText(value).toLowerCase().replace(/\s+/g, ' ');
 }
 
+function normalizeFreeText(value) {
+  return normalizeText(value).replace(/[.,!?;:]+$/g, '');
+}
+
 function toIndexFromLetter(value) {
   const letter = toText(value).toUpperCase();
   if (letter.length !== 1) return null;
   if (letter < 'A' || letter > 'Z') return null;
   return letter.charCodeAt(0) - 65;
+}
+
+function getChoiceList(question) {
+  if (Array.isArray(question?.choices)) return question.choices;
+  if (question?.choices && typeof question.choices === 'object') {
+    return ['A', 'B', 'C', 'D']
+      .map((key) => question.choices[key])
+      .filter((value) => value != null);
+  }
+  return [];
 }
 
 function toIndexFromNumber(value, choiceCount) {
@@ -45,7 +59,7 @@ function toIndexFromNumber(value, choiceCount) {
 }
 
 function resolveCorrectChoiceIndex(question) {
-  const choices = Array.isArray(question?.choices) ? question.choices : [];
+  const choices = getChoiceList(question);
   if (choices.length === 0) return null;
 
   const explicitChoiceKeys = [
@@ -88,7 +102,35 @@ function resolveCorrectChoiceIndex(question) {
   return null;
 }
 
-function resolveExplanationDetails(question, resolvedCorrectChoiceText) {
+function resolveCorrectAnswerText(question, resolvedCorrectChoiceText) {
+  return (
+    toText(resolvedCorrectChoiceText) ||
+    toText(question?.correct_text) ||
+    toText(question?.correct_answer) ||
+    toText(question?.answer) ||
+    toText(question?.explanation?.answer) ||
+    toText(question?.explanation_answer)
+  );
+}
+
+function hasPromptBlank(prompt) {
+  return /_{2,}|\bblank\b/i.test(String(prompt || ''));
+}
+
+function resolveQuestionMode(question) {
+  const questionType = toText(question?.question_type || question?.type).toLowerCase();
+  const choices = getChoiceList(question);
+  const viableChoiceCount = choices.filter((choice) => toText(choice).length > 0).length;
+  const hasCorrectText = toText(question?.correct_text).length > 0;
+
+  if (questionType === 'fill') return 'fib';
+  if (hasPromptBlank(question?.prompt)) return 'fib';
+  if (hasCorrectText && viableChoiceCount < 2) return 'fib';
+  if (viableChoiceCount >= 2) return 'mcq';
+  return 'fib';
+}
+
+function resolveExplanationDetails(question, resolvedCorrectAnswerText) {
   const explanation =
     question?.explanation && typeof question.explanation === 'object'
       ? question.explanation
@@ -96,7 +138,7 @@ function resolveExplanationDetails(question, resolvedCorrectChoiceText) {
   const explanationString = toText(question?.explanation);
 
   const answer =
-    toText(resolvedCorrectChoiceText) ||
+    toText(resolvedCorrectAnswerText) ||
     toText(explanation?.answer) ||
     toText(question?.answer) ||
     toText(question?.explanation_answer) ||
@@ -124,6 +166,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   const mountedRef = useRef(true);
   const [index, setIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [userInput, setUserInput] = useState('');
   const [confidence, setConfidence] = useState('kinda');
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
@@ -135,6 +178,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
     mountedRef.current = true;
     setIndex(0);
     setSelectedIndex(null);
+    setUserInput('');
     setConfidence('kinda');
     setSubmitted(false);
     setScore(0);
@@ -147,30 +191,53 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
+  const questionMode = useMemo(() => resolveQuestionMode(current), [current]);
+  const currentChoices = useMemo(() => getChoiceList(current), [current]);
+  const visibleChoices = useMemo(
+    () =>
+      currentChoices
+        .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
+        .filter((item) => item.choice.length > 0),
+    [currentChoices]
+  );
   const resolvedCorrectIndex = useMemo(
     () => resolveCorrectChoiceIndex(current),
     [current]
   );
   const resolvedCorrectChoiceText = useMemo(() => {
-    if (!current || !Array.isArray(current.choices)) return '';
+    if (!current || currentChoices.length === 0) return '';
     if (typeof resolvedCorrectIndex !== 'number' || resolvedCorrectIndex < 0) return '';
-    return toText(current.choices[resolvedCorrectIndex]);
-  }, [current, resolvedCorrectIndex]);
-  const explanationDetails = useMemo(
-    () => resolveExplanationDetails(current, resolvedCorrectChoiceText),
+    return toText(currentChoices[resolvedCorrectIndex]);
+  }, [current, currentChoices, resolvedCorrectIndex]);
+  const resolvedCorrectAnswerText = useMemo(
+    () => resolveCorrectAnswerText(current, resolvedCorrectChoiceText),
     [current, resolvedCorrectChoiceText]
+  );
+  const explanationDetails = useMemo(
+    () => resolveExplanationDetails(current, resolvedCorrectAnswerText),
+    [current, resolvedCorrectAnswerText]
   );
   const isDone = index >= questions.length;
 
   const submitAnswer = useCallback(
-    async (choiceIndex) => {
+    async (payload = {}) => {
       if (!current || submitted) return;
+      const answerChoiceIndex =
+        typeof payload.choiceIndex === 'number' ? payload.choiceIndex : null;
+      const answerText = toText(payload.inputText ?? userInput);
+      const isFib = questionMode === 'fib';
 
-      setSelectedIndex(choiceIndex);
+      if (isFib) {
+        setUserInput(answerText);
+      } else if (answerChoiceIndex != null) {
+        setSelectedIndex(answerChoiceIndex);
+      }
       setSubmitted(true);
 
-      const isCorrect =
-        typeof resolvedCorrectIndex === 'number' && choiceIndex === resolvedCorrectIndex;
+      const isCorrect = isFib
+        ? normalizeFreeText(answerText) !== '' &&
+          normalizeFreeText(answerText) === normalizeFreeText(resolvedCorrectAnswerText)
+        : typeof resolvedCorrectIndex === 'number' && answerChoiceIndex === resolvedCorrectIndex;
       if (isCorrect) setScore((prev) => prev + 1);
       setResults((prev) => [
         ...prev,
@@ -209,13 +276,24 @@ export default function QuestionRunner({ title, questions, onComplete }) {
         console.debug(`[SESSION] runner persist success title=${title} q=${current.id}`);
       }
     },
-    [confidence, current, resolvedCorrectIndex, submitted, title, user?.id]
+    [
+      confidence,
+      current,
+      questionMode,
+      resolvedCorrectAnswerText,
+      resolvedCorrectIndex,
+      submitted,
+      title,
+      user?.id,
+      userInput,
+    ]
   );
 
   const goNext = useCallback(() => {
     if (!submitted) return;
     setIndex((prev) => prev + 1);
     setSelectedIndex(null);
+    setUserInput('');
     setConfidence('kinda');
     setSubmitted(false);
   }, [submitted]);
@@ -227,11 +305,11 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
       const key = event.key.toLowerCase();
 
-      if (['1', '2', '3', '4'].includes(key)) {
+      if (questionMode === 'mcq' && ['1', '2', '3', '4'].includes(key)) {
         event.preventDefault();
         const nextChoice = Number(key) - 1;
-        if (Array.isArray(current.choices) && nextChoice < current.choices.length) {
-          submitAnswer(nextChoice);
+        if (nextChoice < visibleChoices.length) {
+          submitAnswer({ choiceIndex: visibleChoices[nextChoice].rawIndex });
         }
         return;
       }
@@ -250,7 +328,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [current, goNext, isDone, submitAnswer]);
+  }, [current, goNext, isDone, questionMode, submitAnswer, visibleChoices]);
 
   useEffect(() => {
     if (!isDone || completionSent) return;
@@ -289,34 +367,72 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       </p>
       <p>
         <span className="qtype-badge">
-          {current.question_type === 'reverse' ? 'Reverse' : 'MCQ'}
+          {questionMode === 'fib'
+            ? 'Fill'
+            : current.question_type === 'reverse'
+              ? 'Reverse'
+              : 'MCQ'}
         </span>
       </p>
       <p className="runner-prompt">{current.prompt}</p>
 
-      <div className="choice-list">
-        {(Array.isArray(current.choices) ? current.choices : []).map((choice, choiceIndex) => {
-          const isSelected = selectedIndex === choiceIndex;
-          const isCorrect =
-            submitted &&
-            typeof resolvedCorrectIndex === 'number' &&
-            choiceIndex === resolvedCorrectIndex;
-          const isWrongSelected = submitted && isSelected && !isCorrect;
-          return (
-            <button
-              key={choice}
-              type="button"
-              className={`choice-btn${isSelected ? ' selected' : ''}${isCorrect ? ' correct' : ''}${
-                isWrongSelected ? ' wrong' : ''
-              }`}
-              onClick={() => submitAnswer(choiceIndex)}
-              disabled={submitted}
-            >
-              {choiceIndex + 1}. {choice}
-            </button>
-          );
-        })}
-      </div>
+      {questionMode === 'mcq' ? (
+        <div className="choice-list">
+          {visibleChoices.map(({ choice, rawIndex }, choicePosition) => {
+            const isSelected = selectedIndex === rawIndex;
+            const isCorrect =
+              submitted &&
+              typeof resolvedCorrectIndex === 'number' &&
+              rawIndex === resolvedCorrectIndex;
+            const isWrongSelected = submitted && isSelected && !isCorrect;
+            return (
+              <button
+                key={`${rawIndex}-${choice}`}
+                type="button"
+                className={`choice-btn${isSelected ? ' selected' : ''}${isCorrect ? ' correct' : ''}${
+                  isWrongSelected ? ' wrong' : ''
+                }`}
+                onClick={() => submitAnswer({ choiceIndex: rawIndex })}
+                disabled={submitted}
+              >
+                {choicePosition + 1}. {choice}
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="choice-list">
+          <label htmlFor="fib-answer" className="muted">
+            Enter your answer:
+          </label>
+          <input
+            id="fib-answer"
+            type="text"
+            className="choice-btn"
+            value={userInput}
+            onChange={(event) => setUserInput(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key !== 'Enter') return;
+              event.preventDefault();
+              if (submitted) {
+                goNext();
+              } else {
+                submitAnswer({ inputText: userInput });
+              }
+            }}
+            disabled={submitted}
+            autoFocus
+          />
+          <button
+            type="button"
+            className="choice-btn"
+            onClick={() => submitAnswer({ inputText: userInput })}
+            disabled={submitted || normalizeFreeText(userInput) === ''}
+          >
+            Submit
+          </button>
+        </div>
+      )}
 
       <div className="confidence-row">
         <span>Confidence:</span>
@@ -358,7 +474,11 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       <button type="button" onClick={goNext} disabled={!submitted}>
         Next (Enter)
       </button>
-      <p className="muted">Hotkeys: 1-4 answer, S/K/G confidence, Enter next.</p>
+      <p className="muted">
+        {questionMode === 'fib'
+          ? 'Hotkeys: S/K/G confidence, Enter submit or next.'
+          : 'Hotkeys: 1-4 answer, S/K/G confidence, Enter next.'}
+      </p>
       {status ? <p className="status error">{status}</p> : null}
     </section>
   );
