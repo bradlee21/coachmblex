@@ -728,6 +728,8 @@ export default function DrillPage() {
     'rounded-full border border-slate-300 bg-slate-50 px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-slate-400 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-slate-500 dark:hover:bg-slate-700';
   const subtleButtonClass =
     'inline-flex h-10 items-center justify-center rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800';
+  const previewCollections = studyCollections.slice(0, 6);
+  const hasMoreCollections = studyCollections.length > previewCollections.length;
 
   return (
     <section className="mx-auto w-full max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
@@ -736,28 +738,10 @@ export default function DrillPage() {
         <p className={helperTextClass}>Pick a blueprint topic and start a 10-question drill.</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4">
         <div className={cardClass}>
-          <h2 className={sectionTitleClass}>Quick Collections</h2>
-          <p className={`${helperTextClass} mt-1`}>Curated one-click sets for fast study starts.</p>
-          <div className="mt-4 flex flex-wrap gap-2.5">
-            {studyCollections.map((collection) => (
-              <button
-                key={collection.id}
-                type="button"
-                className={chipClass}
-                onClick={() => launchCollection(collection)}
-                disabled={quickLoading}
-              >
-                {collection.title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className={cardClass}>
-          <h2 className={sectionTitleClass}>Quick Drill</h2>
-          <div className="mt-4 space-y-4">
+          <h2 className={sectionTitleClass}>Start a drill</h2>
+          <div className="mt-3 space-y-3">
             <div className="space-y-1.5">
               <label className={labelClass} htmlFor="drill-quick-search">
                 Search content
@@ -808,10 +792,12 @@ export default function DrillPage() {
             </div>
             {selectedCollection ? (
               <p className={helperTextClass}>
-                Selected collection: <strong className="text-slate-900 dark:text-slate-100">{selectedCollection.title}</strong>
+                Collection: <strong className="text-slate-900 dark:text-slate-100">{selectedCollection.title}</strong>
               </p>
             ) : null}
-            <p className={helperTextClass}>Matches: {quickMatches == null ? '...' : quickMatches}</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              Matches: {quickMatches == null ? '...' : quickMatches}
+            </p>
             {quickLoading ? <p className={helperTextClass}>Checking matches...</p> : null}
             {quickMessage ? <p className="status error">{quickMessage}</p> : null}
             <div>
@@ -823,160 +809,202 @@ export default function DrillPage() {
         </div>
 
         <div className={cardClass}>
-          <h2 className={sectionTitleClass}>Blueprint Drill</h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="space-y-1.5">
-              <label className={labelClass} htmlFor="drill-section">
-                Section
-              </label>
-              <select
-                id="drill-section"
-                className={inputClass}
-                value={sectionCode}
-                onChange={(event) => onSelectSection(event.target.value)}
+          <h2 className={sectionTitleClass}>Quick Collections</h2>
+          <p className={`${helperTextClass} mt-1`}>Optional one-click sets for common study targets.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {previewCollections.map((collection) => (
+              <button
+                key={collection.id}
+                type="button"
+                className={chipClass}
+                onClick={() => launchCollection(collection)}
+                disabled={quickLoading}
               >
-                {topLevel.map((section) => (
-                  <option key={section.code} value={section.code}>
-                    {section.code}. {section.title}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className={labelClass} htmlFor="drill-subsection">
-                Subsection
-              </label>
-              <select
-                id="drill-subsection"
-                className={inputClass}
-                value={subsectionCode}
-                onChange={(event) => onSelectSubsection(event.target.value)}
-              >
-                {subsectionOptions.map((node) => (
-                  <option key={node.code} value={node.code}>
-                    {node.code} {node.title}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className={labelClass} htmlFor="drill-type">
-                Question type
-              </label>
-              <select
-                id="drill-type"
-                className={inputClass}
-                value={questionType}
-                onChange={(event) => setQuestionType(event.target.value)}
-              >
-                <option value="mcq">MCQ</option>
-                <option value="reverse">Reverse</option>
-                <option value="fill">Fill</option>
-              </select>
-            </div>
-
-            <div className="space-y-1.5">
-              <label className={labelClass} htmlFor="drill-leaf">
-                Leaf (optional)
-              </label>
-              <select
-                id="drill-leaf"
-                className={inputClass}
-                value={leafCode}
-                onChange={(event) => setLeafCode(event.target.value)}
-              >
-                <option value="">Use subsection ({subsectionCode})</option>
-                {leafOptions.map((node) => (
-                  <option key={node.code} value={node.code}>
-                    {node.code} {node.title}
-                  </option>
-                ))}
-              </select>
-            </div>
+                {collection.title}
+              </button>
+            ))}
           </div>
-
-          <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800/50">
-            <p className="text-slate-700 dark:text-slate-200">
-              Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
-            </p>
-            <p className="text-slate-700 dark:text-slate-200">
-              Section: <strong>{sectionLabel}</strong>
-            </p>
-            <p className="text-slate-700 dark:text-slate-200">
-              Subsection: <strong>{subsectionLabel}</strong>
-            </p>
-            <p className="text-slate-700 dark:text-slate-200">
-              Leaf: <strong>{leafLabel}</strong>
-            </p>
-            <p className="text-slate-700 dark:text-slate-200">Selected topic: {selectedTopicLabel}</p>
-            <p className={`${helperTextClass} mt-1`}>
-              Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
-            </p>
-          </div>
-
-          <div className="mt-4">
-            <button className={buttonClass} type="button" onClick={startDrill} disabled={loading || !selectedCode}>
-              {loading ? 'Loading...' : 'Start Drill'}
-            </button>
-          </div>
+          {hasMoreCollections ? (
+            <details className="mt-3">
+              <summary className="cursor-pointer text-sm font-medium text-slate-700 dark:text-slate-200">
+                Show all collections
+              </summary>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {studyCollections.map((collection) => (
+                  <button
+                    key={`all-${collection.id}`}
+                    type="button"
+                    className={chipClass}
+                    onClick={() => launchCollection(collection)}
+                    disabled={quickLoading}
+                  >
+                    {collection.title}
+                  </button>
+                ))}
+              </div>
+            </details>
+          ) : null}
         </div>
 
         <details className={cardClass}>
           <summary className="cursor-pointer text-base font-semibold text-slate-900 dark:text-slate-100">
-            Diagnostics
+            Advanced: Blueprint drill
           </summary>
-          <div className="mt-3 space-y-2 text-sm text-slate-700 dark:text-slate-200">
-            <p>
-              Connected Supabase hostname: <strong>{supabaseHostname}</strong>
-            </p>
-            <p>
-              Total questions in DB:{' '}
-              <strong>{diagnosticTotal == null ? '...' : String(diagnosticTotal)}</strong>
-            </p>
-            <p>
-              Sample row keys: <strong>{diagnosticSampleKeys || '...'}</strong>
-            </p>
-            <p>
-              Counts grouped by <strong>pack</strong>
-            </p>
-            <p>
-              Pack totals sum: <strong>{diagnosticPackTotalSum}</strong>
-            </p>
-            {diagnosticPackGroups.length > 0 ? (
-              <ul className="list-disc pl-5">
-                {diagnosticPackGroups.map((item) => (
-                  <li key={`pack-${item.value}-${item.count}`}>
-                    {item.value}: {item.count}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            <p>
-              Counts grouped by <strong>blueprint subsection</strong>
-            </p>
-            {diagnosticBlueprintGroups.length > 0 ? (
-              <ul className="list-disc pl-5">
-                {diagnosticBlueprintGroups.map((item) => (
-                  <li key={`blueprint-${item.value}-${item.count}`}>
-                    {item.value}: {item.count}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            {diagnosticError ? <p className="status error">{diagnosticError}</p> : null}
-            {diagnosticLoading ? <p className={helperTextClass}>Loading diagnostics...</p> : null}
+          <div className="mt-3 space-y-4">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="space-y-1.5">
+                <label className={labelClass} htmlFor="drill-section">
+                  Section
+                </label>
+                <select
+                  id="drill-section"
+                  className={inputClass}
+                  value={sectionCode}
+                  onChange={(event) => onSelectSection(event.target.value)}
+                >
+                  {topLevel.map((section) => (
+                    <option key={section.code} value={section.code}>
+                      {section.code}. {section.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className={labelClass} htmlFor="drill-subsection">
+                  Subsection
+                </label>
+                <select
+                  id="drill-subsection"
+                  className={inputClass}
+                  value={subsectionCode}
+                  onChange={(event) => onSelectSubsection(event.target.value)}
+                >
+                  {subsectionOptions.map((node) => (
+                    <option key={node.code} value={node.code}>
+                      {node.code} {node.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className={labelClass} htmlFor="drill-type">
+                  Question type
+                </label>
+                <select
+                  id="drill-type"
+                  className={inputClass}
+                  value={questionType}
+                  onChange={(event) => setQuestionType(event.target.value)}
+                >
+                  <option value="mcq">MCQ</option>
+                  <option value="reverse">Reverse</option>
+                  <option value="fill">Fill</option>
+                </select>
+              </div>
+
+              <div className="space-y-1.5">
+                <label className={labelClass} htmlFor="drill-leaf">
+                  Leaf (optional)
+                </label>
+                <select
+                  id="drill-leaf"
+                  className={inputClass}
+                  value={leafCode}
+                  onChange={(event) => setLeafCode(event.target.value)}
+                >
+                  <option value="">Use subsection ({subsectionCode})</option>
+                  {leafOptions.map((node) => (
+                    <option key={node.code} value={node.code}>
+                      {node.code} {node.title}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800/50">
+              <p className="text-slate-700 dark:text-slate-200">
+                Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
+              </p>
+              <p className="text-slate-700 dark:text-slate-200">
+                Section: <strong>{sectionLabel}</strong>
+              </p>
+              <p className="text-slate-700 dark:text-slate-200">
+                Subsection: <strong>{subsectionLabel}</strong>
+              </p>
+              <p className="text-slate-700 dark:text-slate-200">
+                Leaf: <strong>{leafLabel}</strong>
+              </p>
+              <p className="text-slate-700 dark:text-slate-200">Selected topic: {selectedTopicLabel}</p>
+              <p className={`${helperTextClass} mt-1`}>
+                Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
+              </p>
+            </div>
+
             <div>
-              <button
-                className={subtleButtonClass}
-                type="button"
-                onClick={() => void loadDiagnostics()}
-                disabled={diagnosticLoading}
-              >
-                Refresh diagnostics
+              <button className={buttonClass} type="button" onClick={startDrill} disabled={loading || !selectedCode}>
+                {loading ? 'Loading...' : 'Start Drill'}
               </button>
             </div>
+
+            <details className="rounded-lg border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
+              <summary className="cursor-pointer text-sm font-semibold text-slate-800 dark:text-slate-100">
+                Diagnostics
+              </summary>
+              <div className="mt-3 space-y-2 text-sm text-slate-700 dark:text-slate-200">
+                <p>
+                  Connected Supabase hostname: <strong>{supabaseHostname}</strong>
+                </p>
+                <p>
+                  Total questions in DB:{' '}
+                  <strong>{diagnosticTotal == null ? '...' : String(diagnosticTotal)}</strong>
+                </p>
+                <p>
+                  Sample row keys: <strong>{diagnosticSampleKeys || '...'}</strong>
+                </p>
+                <p>
+                  Counts grouped by <strong>pack</strong>
+                </p>
+                <p>
+                  Pack totals sum: <strong>{diagnosticPackTotalSum}</strong>
+                </p>
+                {diagnosticPackGroups.length > 0 ? (
+                  <ul className="list-disc pl-5">
+                    {diagnosticPackGroups.map((item) => (
+                      <li key={`pack-${item.value}-${item.count}`}>
+                        {item.value}: {item.count}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                <p>
+                  Counts grouped by <strong>blueprint subsection</strong>
+                </p>
+                {diagnosticBlueprintGroups.length > 0 ? (
+                  <ul className="list-disc pl-5">
+                    {diagnosticBlueprintGroups.map((item) => (
+                      <li key={`blueprint-${item.value}-${item.count}`}>
+                        {item.value}: {item.count}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {diagnosticError ? <p className="status error">{diagnosticError}</p> : null}
+                {diagnosticLoading ? <p className={helperTextClass}>Loading diagnostics...</p> : null}
+                <div>
+                  <button
+                    className={subtleButtonClass}
+                    type="button"
+                    onClick={() => void loadDiagnostics()}
+                    disabled={diagnosticLoading}
+                  >
+                    Refresh diagnostics
+                  </button>
+                </div>
+              </div>
+            </details>
           </div>
         </details>
       </div>
