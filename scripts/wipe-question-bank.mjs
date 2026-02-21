@@ -87,7 +87,35 @@ async function getTableCount(supabase, table) {
 }
 
 async function deleteAllRows(supabase, table) {
-  const { error } = await supabase.from(table).delete();
+  const { data: sampleRow, error: sampleError } = await supabase
+    .from(table)
+    .select('*')
+    .limit(1)
+    .maybeSingle();
+
+  if (sampleError) {
+    if (isMissingTableError(sampleError)) {
+      return { table, exists: false, deleted: false };
+    }
+    throw new Error(
+      `${table} sample probe failed: ${sampleError.message || 'unknown error'}`
+    );
+  }
+
+  if (!sampleRow || typeof sampleRow !== 'object') {
+    return { table, exists: true, deleted: true };
+  }
+
+  const candidateColumns = ['id', 'room_id', 'session_id', 'question_id', 'user_id'];
+  const probeColumn =
+    candidateColumns.find((col) => Object.prototype.hasOwnProperty.call(sampleRow, col)) ||
+    Object.keys(sampleRow)[0];
+
+  if (!probeColumn) {
+    return { table, exists: true, deleted: true };
+  }
+
+  const { error } = await supabase.from(table).delete().not(probeColumn, 'is', null);
   if (error) {
     if (isMissingTableError(error)) {
       return { table, exists: false, deleted: false };
