@@ -224,8 +224,10 @@ export default function TodayPage() {
 
   return (
     <section>
-      <h1>Today</h1>
-      <p>Daily run: 8 questions with extra anatomy and kinesiology coverage.</p>
+      <h1 className="text-slate-900 dark:text-slate-100">Today</h1>
+      <p className="text-slate-700 dark:text-slate-300">
+        Daily run: 8 questions with extra anatomy and kinesiology coverage.
+      </p>
       {!onboardingLoading && onboardingVisible ? (
         <div className="runner" data-testid="today-onboarding">
           <h2>Quick setup</h2>

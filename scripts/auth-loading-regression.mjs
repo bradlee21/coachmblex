@@ -80,7 +80,7 @@ assertMatch(
 
 assertMatch(
   todaySource,
-  /<h1>Today<\/h1>/,
+  /<h1(?:\s+[^>]*)?>Today<\/h1>/,
   'Expected Today page to expose a stable heading for protected-route smoke checks.'
 );
 
