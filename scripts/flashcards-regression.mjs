@@ -84,6 +84,24 @@ assert(details.answer === 'C5-T1', 'Expected flashcard answer to resolve from ex
 assert(details.why.includes('lateral and medial cords'), 'Expected flashcard why detail.');
 assert(details.trap.includes('Ulnar'), 'Expected flashcard trap detail.');
 assert(details.hook.includes('Median = middle'), 'Expected flashcard hook detail.');
+assert(details.why !== '--', 'Expected nested explanation.why to render a non-empty flashcard detail.');
+assert(details.trap !== '--', 'Expected nested explanation.trap to render a non-empty flashcard detail.');
+assert(details.hook !== '--', 'Expected nested explanation.hook to render a non-empty flashcard detail.');
+
+const flatFixtureQuestion = {
+  id: 'flashcard-regression-2',
+  prompt: 'Which cranial nerve is responsible for smell?',
+  correct_text: 'Olfactory nerve (CN I)',
+  why: 'CN I carries special sensory fibers for olfaction.',
+  trap: 'Optic nerve (CN II) is vision, not smell.',
+  hook: '1 = nose run; CN I = smell.',
+};
+
+const flatDetails = resolveFlashcardBackDetails(flatFixtureQuestion);
+assert(flatDetails.answer.includes('CN I'), 'Expected flashcard answer to resolve from flat correct_text.');
+assert(flatDetails.why.includes('olfaction'), 'Expected flashcard why to resolve from flat why.');
+assert(flatDetails.trap.includes('vision'), 'Expected flashcard trap to resolve from flat trap.');
+assert(flatDetails.hook.includes('smell'), 'Expected flashcard hook to resolve from flat hook.');
 
 let isFlipped = false;
 const flipAction = resolveFlashcardHotkeyAction({ key: ' ', isFlipped });

@@ -9,6 +9,7 @@ import {
   normalizeFreeText,
   normalizeText,
   resolveAnswerHotkeyChoicePosition,
+  resolveExplanationParts,
   resolveFibFeedbackState,
   resolveFibInputEnterIntent,
   resolveQuestionMode as resolveQuestionModeFromLogic,
@@ -110,27 +111,11 @@ function resolveQuestionMode(question) {
 }
 
 function resolveExplanationDetails(question, resolvedCorrectAnswerText) {
-  const explanation =
-    question?.explanation && typeof question.explanation === 'object'
-      ? question.explanation
-      : null;
-  const explanationString = toText(question?.explanation);
-
-  const answer =
-    toText(resolvedCorrectAnswerText) ||
-    toText(explanation?.answer) ||
-    toText(question?.answer) ||
-    toText(question?.explanation_answer) ||
-    toText(question?.correct_text);
-  const why =
-    toText(explanation?.why) ||
-    toText(question?.why) ||
-    toText(question?.explanation_why) ||
-    explanationString;
-  const trap =
-    toText(explanation?.trap) || toText(question?.trap) || toText(question?.explanation_trap);
-  const hook =
-    toText(explanation?.hook) || toText(question?.hook) || toText(question?.explanation_hook);
+  const parts = resolveExplanationParts(question);
+  const answer = toText(resolvedCorrectAnswerText) || parts.answer;
+  const why = parts.why;
+  const trap = parts.trap;
+  const hook = parts.hook;
 
   return {
     answer: answer || '--',

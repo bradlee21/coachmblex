@@ -2,6 +2,20 @@ function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
+function parseMaybeObject(value) {
+  if (!value) return null;
+  if (typeof value === 'object' && !Array.isArray(value)) return value;
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) return null;
+  try {
+    const parsed = JSON.parse(trimmed);
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 export function normalizeText(value) {
   return toText(value).toLowerCase().replace(/\s+/g, ' ');
 }
@@ -22,6 +36,33 @@ export function getChoiceList(question) {
       .filter((value) => value != null);
   }
   return [];
+}
+
+export function resolveExplanationParts(question) {
+  const explanation = parseMaybeObject(question?.explanation);
+  const explanationString = toText(question?.explanation);
+  const answer =
+    toText(question?.correct_text) ||
+    toText(question?.correct_answer) ||
+    toText(question?.answer) ||
+    toText(explanation?.answer) ||
+    toText(question?.explanation_answer);
+  const why =
+    toText(explanation?.why) ||
+    toText(question?.why) ||
+    toText(question?.explanation_why) ||
+    explanationString;
+  const trap =
+    toText(explanation?.trap) || toText(question?.trap) || toText(question?.explanation_trap);
+  const hook =
+    toText(explanation?.hook) || toText(question?.hook) || toText(question?.explanation_hook);
+
+  return {
+    answer,
+    why,
+    trap,
+    hook,
+  };
 }
 
 export function resolveQuestionMode(question) {

@@ -103,7 +103,7 @@ export default function FlashcardsPage() {
       }
 
       const selectFields =
-        'id,prompt,choices,correct_index,explanation,question_type,blueprint_code,created_at';
+        'id,prompt,choices,correct_index,correct_text,correct_answer,answer,explanation,explanation_answer,why,trap,hook,explanation_why,explanation_trap,explanation_hook,question_type,blueprint_code,created_at';
 
       try {
         const { data, error: queryError } = await supabase

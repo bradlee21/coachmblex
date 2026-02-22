@@ -1,3 +1,5 @@
+import { resolveExplanationParts } from '../_components/questionRunnerLogic.mjs';
+
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
@@ -7,20 +9,6 @@ function normalizeTimeMs(value) {
   if (typeof value === 'number' && Number.isFinite(value)) return value;
   const parsed = Date.parse(String(value));
   return Number.isFinite(parsed) ? parsed : 0;
-}
-
-function parseMaybeObject(value) {
-  if (!value) return null;
-  if (typeof value === 'object' && !Array.isArray(value)) return value;
-  if (typeof value !== 'string') return null;
-  const trimmed = value.trim();
-  if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) return null;
-  try {
-    const parsed = JSON.parse(trimmed);
-    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
-  } catch {
-    return null;
-  }
 }
 
 function toIndexFromNumber(value, choiceCount) {
@@ -55,29 +43,16 @@ export function getChoiceList(question) {
 }
 
 export function resolveFlashcardBackDetails(question) {
-  const explanation = parseMaybeObject(question?.explanation);
-  const explanationString = toText(question?.explanation);
   const choices = getChoiceList(question);
   const correctChoiceIndex = toIndexFromNumber(question?.correct_index, choices.length);
   const choiceAnswer =
     typeof correctChoiceIndex === 'number' ? toText(choices[correctChoiceIndex]) : '';
+  const parts = resolveExplanationParts(question);
 
-  const answer =
-    toText(question?.correct_text) ||
-    toText(question?.correct_answer) ||
-    toText(question?.answer) ||
-    toText(explanation?.answer) ||
-    toText(question?.explanation_answer) ||
-    choiceAnswer;
-  const why =
-    toText(explanation?.why) ||
-    toText(question?.why) ||
-    toText(question?.explanation_why) ||
-    explanationString;
-  const trap =
-    toText(explanation?.trap) || toText(question?.trap) || toText(question?.explanation_trap);
-  const hook =
-    toText(explanation?.hook) || toText(question?.hook) || toText(question?.explanation_hook);
+  const answer = parts.answer || choiceAnswer;
+  const why = parts.why;
+  const trap = parts.trap;
+  const hook = parts.hook;
 
   return {
     answer: answer || '--',
