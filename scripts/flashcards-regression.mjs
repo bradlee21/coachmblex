@@ -1,0 +1,113 @@
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import {
+  FLASHCARD_RATINGS,
+  applyFlashcardOutcome,
+  rankFlashcardQuestions,
+  resolveFlashcardBackDetails,
+  resolveFlashcardHotkeyAction,
+  toggleFlashcardSide,
+} from '../app/flashcards/flashcardLogic.mjs';
+
+function read(path) {
+  return readFileSync(resolve(process.cwd(), path), 'utf8');
+}
+
+function assert(condition, message) {
+  if (!condition) {
+    throw new Error(message);
+  }
+}
+
+function assertMatch(source, pattern, message) {
+  assert(pattern.test(source), message);
+}
+
+const flashcardsPageSource = read('app/flashcards/page.js');
+
+assertMatch(
+  flashcardsPageSource,
+  /<h1>Flashcards<\/h1>/,
+  'Expected /flashcards page to expose a stable Flashcards heading.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /data-testid="flashcard-card"/,
+  'Expected /flashcards page to render a stable flashcard card container.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /Flip \(Space\)/,
+  'Expected /flashcards page to render an explicit flip control label.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /resolveFlashcardHotkeyAction\(/,
+  'Expected /flashcards page to route keyboard handling through resolver helper.'
+);
+
+const fixtureQuestion = {
+  id: 'flashcard-regression-1',
+  prompt: 'Which nerve roots contribute to the median nerve?',
+  explanation: {
+    answer: 'C5-T1',
+    why: 'Median nerve fibers arise from lateral and medial cords.',
+    trap: 'Ulnar is C8-T1 only, not the full median pattern.',
+    hook: 'Median = middle blend from both cords.',
+  },
+  created_at: '2026-02-10T00:00:00.000Z',
+};
+
+const details = resolveFlashcardBackDetails(fixtureQuestion);
+assert(details.answer === 'C5-T1', 'Expected flashcard answer to resolve from explanation.answer.');
+assert(details.why.includes('lateral and medial cords'), 'Expected flashcard why detail.');
+assert(details.trap.includes('Ulnar'), 'Expected flashcard trap detail.');
+assert(details.hook.includes('Median = middle'), 'Expected flashcard hook detail.');
+
+let isFlipped = false;
+const flipAction = resolveFlashcardHotkeyAction({ key: ' ', isFlipped });
+assert(flipAction?.type === 'flip', 'Expected Space to trigger flip action.');
+isFlipped = toggleFlashcardSide(isFlipped);
+assert(isFlipped === true, 'Expected flip helper to toggle to back side.');
+
+const blockedRate = resolveFlashcardHotkeyAction({ key: '2', isFlipped: false });
+assert(blockedRate == null, 'Expected rating hotkeys to be gated until card is flipped.');
+
+const rateAction = resolveFlashcardHotkeyAction({ key: '1', isFlipped });
+assert(rateAction?.type === 'rate', 'Expected numeric hotkeys to trigger a rating action.');
+assert(rateAction?.rating === 'again', 'Expected key 1 to map to Again rating.');
+assert(FLASHCARD_RATINGS.length === 4, 'Expected four MVP rating tiers.');
+
+const updatedOutcomes = applyFlashcardOutcome({}, fixtureQuestion.id, rateAction.rating, 1700000000000);
+assert(
+  updatedOutcomes[fixtureQuestion.id]?.lastRating === 'again',
+  'Expected rating persistence helper to store lastRating.'
+);
+assert(
+  updatedOutcomes[fixtureQuestion.id]?.lastSeenAt === 1700000000000,
+  'Expected rating persistence helper to store lastSeenAt timestamp.'
+);
+
+const ranked = rankFlashcardQuestions(
+  [
+    { id: 'seen-recent', created_at: '2026-02-20T00:00:00.000Z' },
+    { id: 'unseen', created_at: '2026-02-19T00:00:00.000Z' },
+    { id: 'seen-older', created_at: '2026-02-18T00:00:00.000Z' },
+  ],
+  {
+    'seen-recent': { lastRating: 'good', lastSeenAt: 2000 },
+    'seen-older': { lastRating: 'hard', lastSeenAt: 1000 },
+  },
+  3
+);
+
+assert(ranked[0]?.id === 'unseen', 'Expected unseen flashcards to be prioritized first.');
+assert(
+  ranked[1]?.id === 'seen-older',
+  'Expected older seen flashcards to be prioritized before recently seen cards.'
+);
+
+console.log('Flashcards regression checks passed.');

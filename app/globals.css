@@ -435,12 +435,13 @@ a {
 }
 
 @media (min-width: 1024px) {
-  .content--today {
+  .content--practice {
     max-width: none;
     width: 100%;
   }
 
-  .today-page {
+  .today-page,
+  .flashcards-page {
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
@@ -612,6 +613,36 @@ a {
 
 .runner-prompt {
   font-weight: 700;
+}
+
+.flashcard-card .flashcard-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.flashcard-back details {
+  margin-top: 10px;
+}
+
+.flashcard-back details summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.flashcard-answer {
+  font-weight: 700;
+}
+
+.flashcard-ratings {
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.flashcard-ratings button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
 .qtype-badge {

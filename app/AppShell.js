@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { href: '/today', label: 'Today', key: 't' },
   { href: '/review', label: 'Review', key: 'r' },
   { href: '/drill', label: 'Drill', key: 'd' },
+  { href: '/flashcards', label: 'Flashcards', key: 'f' },
   { href: '/game/study-night', label: 'Study Night', key: 'n' },
   { href: '/anatomy', label: 'Anatomy', key: 'a' },
   {
@@ -29,6 +30,7 @@ const NAV_TEST_IDS = {
   '/today': 'nav-today',
   '/review': 'nav-review',
   '/drill': 'nav-drill',
+  '/flashcards': 'nav-flashcards',
   '/game/study-night': 'nav-study-night',
   '/anatomy': 'nav-anatomy',
   '/progress': 'nav-progress',
@@ -153,6 +155,7 @@ export default function AppShell({ children }) {
   const isPublicRoute = isAuthRoute || isRootRoute;
   const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
+  const isCenteredPracticeRoute = pathname === '/today' || pathname === '/flashcards';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
@@ -167,7 +170,10 @@ export default function AppShell({ children }) {
 
       const key = event.key.toLowerCase();
       const sessionPage =
-        pathname === '/today' || pathname === '/drill' || pathname === '/review';
+        pathname === '/today' ||
+        pathname === '/drill' ||
+        pathname === '/review' ||
+        pathname === '/flashcards';
       if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {
         return;
       }
@@ -392,7 +398,7 @@ export default function AppShell({ children }) {
         ) : null}
       </aside>
 
-      <main className={`content${pathname === '/today' ? ' content--today' : ''}`}>
+      <main className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}`}>
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">
             <p className="muted">
