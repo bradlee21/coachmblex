@@ -19,6 +19,8 @@ const PACK_FILTER_STRATEGIES = [
   { key: 'source_json_packId', kind: 'json', path: 'source->>packId', label: 'source->>packId' },
   { key: 'metadata_json_pack_id', kind: 'json', path: 'metadata->>pack_id', label: 'metadata->>pack_id' },
   { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
+  // Fallback for older imports that did not persist pack ids onto questions rows.
+  { key: 'domain', kind: 'column', path: 'domain', label: 'domain' },
 ];
 
 function toText(value) {
@@ -103,7 +105,8 @@ function resolveQuestionPackInfo(question) {
     toText(sourceObject?.pack_id) ||
     toText(sourceObject?.packId) ||
     toText(metadataObject?.pack_id) ||
-    toText(metadataObject?.packId);
+    toText(metadataObject?.packId) ||
+    toText(question?.domain);
 
   const packLabel =
     toText(question?.pack_title) ||
