@@ -408,7 +408,7 @@ export function AuthProvider({ children }) {
         setWarningSafe('', `auth-change/${event}`);
         clearAuthTimeout();
 
-        if (event === 'SIGNED_IN') {
+        if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED' || event === 'INITIAL_SESSION') {
           void syncProfileAndRole(userId, `auth-change/${event}`, {
             eventType: event,
             nonBlockingTimeout: true,

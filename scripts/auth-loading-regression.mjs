@@ -39,6 +39,12 @@ assertMatch(
 
 assertMatch(
   authProviderSource,
+  /if\s*\(\s*event === 'SIGNED_IN'\s*\|\|\s*event === 'TOKEN_REFRESHED'\s*\|\|\s*event === 'INITIAL_SESSION'\s*\)\s*{\s*void syncProfileAndRole\([\s\S]*nonBlockingTimeout:\s*true/s,
+  'Expected SIGNED_IN, TOKEN_REFRESHED, and INITIAL_SESSION auth-change events to use non-blocking profile sync timeouts.'
+);
+
+assertMatch(
+  authProviderSource,
   /setLoadingSafe\(false,\s*`auth-change\/\$\{event\}\/done`\);/,
   'Expected auth state change path to clear loading after role/profile sync.'
 );
