@@ -56,6 +56,7 @@ function getBlueprintLabel(code) {
 }
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
+const DRILL_MATCH_COUNT = 10;
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -138,6 +139,7 @@ export default function DrillPage() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const quickSearchRequestIdRef = useRef(0);
+  const questionCardRef = useRef(null);
   const topLevel = listTopLevelDomains();
   const [sectionCode, setSectionCode] = useState(topLevel[0]?.code || '');
 
@@ -179,6 +181,7 @@ export default function DrillPage() {
   const [quickQuestions, setQuickQuestions] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [started, setStarted] = useState(false);
+  const [isStartCollapsed, setIsStartCollapsed] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [activeSessionMeta, setActiveSessionMeta] = useState({ codePrefix: '', type: 'mcq' });
@@ -371,6 +374,16 @@ export default function DrillPage() {
     void loadDiagnostics();
   }, [loadDiagnostics]);
 
+  useEffect(() => {
+    if (!started || questions.length === 0) return;
+    const nextFrame = requestAnimationFrame(() => {
+      const element = questionCardRef.current;
+      if (!element || typeof element.scrollIntoView !== 'function') return;
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    return () => cancelAnimationFrame(nextFrame);
+  }, [questions, started]);
+
   const fetchQuickMatches = useCallback(async (filters) => {
     const supabase = getSupabaseClient();
     if (!supabase) {
@@ -485,16 +498,17 @@ export default function DrillPage() {
       return;
     }
 
-    const picked = shuffleArray(data || []).slice(0, 10);
+    const picked = shuffleArray(data || []).slice(0, DRILL_MATCH_COUNT);
     const codePrefix = getCodePrefix(selectedCode);
     const type = ['mcq', 'reverse', 'fill'].includes(questionType) ? questionType : 'mcq';
     setActiveSessionMeta({ codePrefix, type });
     setQuestions(picked);
     setStarted(true);
+    setIsStartCollapsed(true);
     void trackEvent('drill_start', { codePrefix, type });
-    if (picked.length < 10) {
+    if (picked.length < DRILL_MATCH_COUNT) {
       setMessage(
-        `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedTopicLabel}. Add more tagged content to reach 10.`
+        `Only ${picked.length} ${questionType.toUpperCase()} question(s) found for ${selectedTopicLabel}. Add more tagged content to reach ${DRILL_MATCH_COUNT}.`
       );
     }
     setLoading(false);
@@ -560,14 +574,15 @@ export default function DrillPage() {
     });
     router.push(`${pathname}?${params.toString()}`);
 
-    const picked = shuffleArray(filtered).slice(0, 10);
+    const picked = shuffleArray(filtered).slice(0, DRILL_MATCH_COUNT);
     const quickType = typesValue.length === 1 ? typesValue[0] : 'any';
     const quickPrefix = searchValue?.trim() ? `search:${searchValue.trim()}` : 'quick';
     setActiveSessionMeta({ codePrefix: quickPrefix, type: quickType });
     setQuestions(picked);
     setStarted(true);
+    setIsStartCollapsed(true);
     void trackEvent('drill_start', { codePrefix: quickPrefix, type: quickType });
-    if (picked.length < 10) {
+    if (picked.length < DRILL_MATCH_COUNT) {
       setMessage(
         `Only ${picked.length} question(s) match this quick drill filter. Try a broader term or more types.`
       );
@@ -605,179 +620,244 @@ export default function DrillPage() {
     'inline-flex h-10 items-center justify-center rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800';
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
+    <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <div className="mb-6 space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Drill</h1>
-        <p className={helperTextClass}>Pick a blueprint topic and start a 10-question drill.</p>
+        <p className={helperTextClass}>Pick a blueprint topic and start a focused {DRILL_MATCH_COUNT}-question drill.</p>
       </div>
 
-      <div className="space-y-4">
-        <div className={cardClass}>
-          <h2 className={sectionTitleClass}>Start a drill</h2>
-          <div className="mt-3 space-y-3">
-            <div className="space-y-1.5">
-              <label className={labelClass} htmlFor="drill-quick-search">
-                Search content
-              </label>
-              <input
-                id="drill-quick-search"
-                className={inputClass}
-                type="text"
-                placeholder="e.g., piriformis, sympathetic, blood flow"
-                value={quickSearch}
-                onChange={(event) => setQuickSearch(event.target.value)}
-              />
-            </div>
-            <div className="space-y-1.5" role="group" aria-label="Quick Drill type filters">
-              <span className={labelClass}>Types</span>
-              <div className="flex flex-wrap gap-3">
-                <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-                  <input
-                    type="checkbox"
-                    className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
-                    checked={quickTypes.mcq}
-                    onChange={() => toggleQuickType('mcq')}
-                  />
-                  MCQ
-                </label>
-                <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-                  <input
-                    type="checkbox"
-                    className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
-                    checked={quickTypes.reverse}
-                    onChange={() => toggleQuickType('reverse')}
-                  />
-                  Reverse
-                </label>
-                <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-                  <input
-                    type="checkbox"
-                    className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
-                    checked={quickTypes.fill}
-                    onChange={() => toggleQuickType('fill')}
-                  />
-                  Fill
-                </label>
-              </div>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Matches: {quickMatches == null ? '...' : quickMatches}
-            </p>
-            {quickLoading ? <p className={helperTextClass}>Checking matches...</p> : null}
-            {quickMessage ? <p className="status error">{quickMessage}</p> : null}
+      <div className="mx-auto w-full max-w-4xl space-y-4">
+        {started && isStartCollapsed ? (
+          <div className={`${cardClass} flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between`}>
             <div>
-              <button className={buttonClass} type="button" onClick={startQuickDrill} disabled={quickLoading}>
-                Start Quick Drill
-              </button>
+              <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+                Drill in progress
+              </p>
+              <p className={helperTextClass}>
+                {selectedTopicLabel} | {(activeSessionMeta.type || questionType).toUpperCase()} | {questions.length || DRILL_MATCH_COUNT}/{DRILL_MATCH_COUNT} questions
+              </p>
             </div>
+            <button
+              type="button"
+              className={subtleButtonClass}
+              onClick={() => setIsStartCollapsed(false)}
+            >
+              Change settings
+            </button>
           </div>
-        </div>
-
-        <details className={cardClass}>
-          <summary className="cursor-pointer text-base font-semibold text-slate-900 dark:text-slate-100">
-            Advanced: Blueprint drill
-          </summary>
-          <div className="mt-3 space-y-4">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-section">
-                  Section
-                </label>
-                <select
-                  id="drill-section"
-                  className={inputClass}
-                  value={sectionCode}
-                  onChange={(event) => onSelectSection(event.target.value)}
-                >
-                  {topLevel.map((section) => (
-                    <option key={section.code} value={section.code}>
-                      {section.code}. {section.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-subsection">
-                  Subsection
-                </label>
-                <select
-                  id="drill-subsection"
-                  className={inputClass}
-                  value={subsectionCode}
-                  onChange={(event) => onSelectSubsection(event.target.value)}
-                >
-                  {subsectionOptions.map((node) => (
-                    <option key={node.code} value={node.code}>
-                      {node.code} {node.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-type">
-                  Question type
-                </label>
-                <select
-                  id="drill-type"
-                  className={inputClass}
-                  value={questionType}
-                  onChange={(event) => setQuestionType(event.target.value)}
-                >
-                  <option value="mcq">MCQ</option>
-                  <option value="reverse">Reverse</option>
-                  <option value="fill">Fill</option>
-                </select>
-              </div>
-
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-leaf">
-                  Leaf (optional)
-                </label>
-                <select
-                  id="drill-leaf"
-                  className={inputClass}
-                  value={leafCode}
-                  onChange={(event) => setLeafCode(event.target.value)}
-                >
-                  <option value="">Use subsection ({subsectionCode})</option>
-                  {leafOptions.map((node) => (
-                    <option key={node.code} value={node.code}>
-                      {node.code} {node.title}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800/50">
-              <p className="text-slate-700 dark:text-slate-200">
-                Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
-              </p>
-              <p className="text-slate-700 dark:text-slate-200">
-                Section: <strong>{sectionLabel}</strong>
-              </p>
-              <p className="text-slate-700 dark:text-slate-200">
-                Subsection: <strong>{subsectionLabel}</strong>
-              </p>
-              <p className="text-slate-700 dark:text-slate-200">
-                Leaf: <strong>{leafLabel}</strong>
-              </p>
-              <p className="text-slate-700 dark:text-slate-200">Selected topic: {selectedTopicLabel}</p>
+        ) : (
+          <>
+            <div className={cardClass}>
+              <h2 className={sectionTitleClass}>Start Drill</h2>
               <p className={`${helperTextClass} mt-1`}>
-                Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
+                Simple gauntlet: pick a topic, choose one question type, and begin.
+              </p>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="space-y-1.5">
+                  <label className={labelClass} htmlFor="drill-section">
+                    Section
+                  </label>
+                  <select
+                    id="drill-section"
+                    className={inputClass}
+                    value={sectionCode}
+                    onChange={(event) => onSelectSection(event.target.value)}
+                  >
+                    {topLevel.map((section) => (
+                      <option key={section.code} value={section.code}>
+                        {section.code}. {section.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className={labelClass} htmlFor="drill-subsection">
+                    Subsection
+                  </label>
+                  <select
+                    id="drill-subsection"
+                    className={inputClass}
+                    value={subsectionCode}
+                    onChange={(event) => onSelectSubsection(event.target.value)}
+                  >
+                    {subsectionOptions.map((node) => (
+                      <option key={node.code} value={node.code}>
+                        {node.code} {node.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1.5 sm:col-span-2">
+                  <label className={labelClass} htmlFor="drill-leaf">
+                    Leaf (optional)
+                  </label>
+                  <select
+                    id="drill-leaf"
+                    className={inputClass}
+                    value={leafCode}
+                    onChange={(event) => setLeafCode(event.target.value)}
+                  >
+                    <option value="">Use subsection ({subsectionCode})</option>
+                    {leafOptions.map((node) => (
+                      <option key={node.code} value={node.code}>
+                        {node.code} {node.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="mt-4 space-y-2">
+                <span className={labelClass}>Question type</span>
+                <div className="flex flex-wrap gap-2" role="radiogroup" aria-label="Question type">
+                  {['mcq', 'reverse', 'fill'].map((type) => {
+                    const selected = questionType === type;
+                    return (
+                      <button
+                        key={type}
+                        type="button"
+                        role="radio"
+                        aria-checked={selected}
+                        className={
+                          selected
+                            ? `${subtleButtonClass} border-slate-800 bg-slate-100 text-slate-900 dark:border-slate-300 dark:bg-slate-800 dark:text-slate-100`
+                            : subtleButtonClass
+                        }
+                        onClick={() => setQuestionType(type)}
+                      >
+                        {type === 'mcq' ? 'MCQ' : type === 'reverse' ? 'Reverse' : 'Fill'}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className="mt-4 grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-end">
+                <div className="space-y-1.5">
+                  <label className={labelClass} htmlFor="drill-match-count">
+                    Match count
+                  </label>
+                  <input
+                    id="drill-match-count"
+                    className={inputClass}
+                    type="text"
+                    value={`${DRILL_MATCH_COUNT} questions`}
+                    readOnly
+                    aria-readonly="true"
+                  />
+                </div>
+                <button
+                  className={buttonClass}
+                  type="button"
+                  onClick={startDrill}
+                  disabled={loading || !selectedCode}
+                >
+                  {loading ? 'Loading...' : 'Start Drill'}
+                </button>
+              </div>
+
+              <p className="mt-3 text-sm text-slate-700 dark:text-slate-200">
+                Topic: <strong>{selectedTopicLabel}</strong>
               </p>
             </div>
 
-            <div>
-              <button className={buttonClass} type="button" onClick={startDrill} disabled={loading || !selectedCode}>
-                {loading ? 'Loading...' : 'Start Drill'}
-              </button>
-            </div>
+            <details className={cardClass}>
+              <summary className="cursor-pointer text-base font-semibold text-slate-900 dark:text-slate-100">
+                Advanced: Quick search drill
+              </summary>
+              <div className="mt-3 space-y-3">
+                <div className="space-y-1.5">
+                  <label className={labelClass} htmlFor="drill-quick-search">
+                    Search content
+                  </label>
+                  <input
+                    id="drill-quick-search"
+                    className={inputClass}
+                    type="text"
+                    placeholder="e.g., piriformis, sympathetic, blood flow"
+                    value={quickSearch}
+                    onChange={(event) => setQuickSearch(event.target.value)}
+                  />
+                </div>
+                <div className="space-y-1.5" role="group" aria-label="Quick Drill type filters">
+                  <span className={labelClass}>Types</span>
+                  <div className="flex flex-wrap gap-3">
+                    <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
+                        checked={quickTypes.mcq}
+                        onChange={() => toggleQuickType('mcq')}
+                      />
+                      MCQ
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
+                        checked={quickTypes.reverse}
+                        onChange={() => toggleQuickType('reverse')}
+                      />
+                      Reverse
+                    </label>
+                    <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
+                      <input
+                        type="checkbox"
+                        className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
+                        checked={quickTypes.fill}
+                        onChange={() => toggleQuickType('fill')}
+                      />
+                      Fill
+                    </label>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Matches: {quickMatches == null ? '...' : quickMatches}
+                </p>
+                {quickLoading ? <p className={helperTextClass}>Checking matches...</p> : null}
+                {quickMessage ? <p className="status error">{quickMessage}</p> : null}
+                <div>
+                  <button
+                    className={buttonClass}
+                    type="button"
+                    onClick={startQuickDrill}
+                    disabled={quickLoading}
+                  >
+                    Start Quick Drill
+                  </button>
+                </div>
+              </div>
+            </details>
 
-            <details className="rounded-lg border border-slate-200 bg-white p-3 dark:border-slate-700 dark:bg-slate-900">
-              <summary className="cursor-pointer text-sm font-semibold text-slate-800 dark:text-slate-100">
+            <details className={cardClass}>
+              <summary className="cursor-pointer text-base font-semibold text-slate-900 dark:text-slate-100">
+                Advanced: Blueprint drill details
+              </summary>
+              <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-sm dark:border-slate-700 dark:bg-slate-800/50">
+                <p className="text-slate-700 dark:text-slate-200">
+                  Selected blueprint code: <strong>{selectedCode || 'none'}</strong>
+                </p>
+                <p className="text-slate-700 dark:text-slate-200">
+                  Section: <strong>{sectionLabel}</strong>
+                </p>
+                <p className="text-slate-700 dark:text-slate-200">
+                  Subsection: <strong>{subsectionLabel}</strong>
+                </p>
+                <p className="text-slate-700 dark:text-slate-200">
+                  Leaf: <strong>{leafLabel}</strong>
+                </p>
+                <p className="text-slate-700 dark:text-slate-200">Selected topic: {selectedTopicLabel}</p>
+                <p className={`${helperTextClass} mt-1`}>
+                  Drill filters by blueprint code: leaf exact match, subsection prefix, section prefix.
+                </p>
+              </div>
+            </details>
+
+            <details className={cardClass}>
+              <summary className="cursor-pointer text-base font-semibold text-slate-900 dark:text-slate-100">
                 Diagnostics
               </summary>
               <div className="mt-3 space-y-2 text-sm text-slate-700 dark:text-slate-200">
@@ -832,13 +912,13 @@ export default function DrillPage() {
                 </div>
               </div>
             </details>
-          </div>
-        </details>
+          </>
+        )}
       </div>
 
       {message ? <p className="status error mt-4">{message}</p> : null}
       {started ? (
-        <div className="mt-6">
+        <div ref={questionCardRef} className="mx-auto mt-6 w-full max-w-5xl scroll-mt-6">
           <QuestionRunner
             title={`Drill ${selectedTopicLabel}`}
             questions={questions}
@@ -849,3 +929,4 @@ export default function DrillPage() {
     </section>
   );
 }
+

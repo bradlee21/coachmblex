@@ -54,6 +54,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   const { user } = useAuth();
   const mountedRef = useRef(true);
   const fibInputRef = useRef(null);
+  const firstChoiceButtonRef = useRef(null);
   const [index, setIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [userInput, setUserInput] = useState('');
@@ -241,6 +242,17 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [current?.id, questionMode, submitted]);
 
   useEffect(() => {
+    if (questionMode !== 'mcq' || submitted) return;
+    const button = firstChoiceButtonRef.current;
+    if (!button) return;
+    try {
+      button.focus({ preventScroll: true });
+    } catch {
+      button.focus();
+    }
+  }, [current?.id, questionMode, submitted]);
+
+  useEffect(() => {
     if (!isDone || completionSent) return;
     if (typeof onComplete !== 'function') return;
     onComplete({
@@ -298,6 +310,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
             return (
               <button
                 key={`${rawIndex}-${choice}`}
+                ref={choicePosition === 0 ? firstChoiceButtonRef : null}
                 type="button"
                 className={`choice-btn${isSelected ? ' selected' : ''}${isCorrect ? ' correct' : ''}${
                   isWrongSelected ? ' wrong' : ''
