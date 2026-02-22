@@ -26,12 +26,18 @@ function isTypingTarget(target) {
   );
 }
 
+function hasFlashcardDetailText(value) {
+  const text = typeof value === 'string' ? value.trim() : '';
+  return text !== '' && text !== '--';
+}
+
 export default function FlashcardsPage() {
   const { user } = useAuth();
   const [cards, setCards] = useState([]);
   const [outcomes, setOutcomes] = useState({});
   const [index, setIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
+  const [showExplanation, setShowExplanation] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -52,10 +58,22 @@ export default function FlashcardsPage() {
     [storageKey]
   );
 
+  const explanationLines = useMemo(
+    () =>
+      [
+        { label: 'Why', value: details.why },
+        { label: 'Trap', value: details.trap },
+        { label: 'Hook', value: details.hook },
+      ].filter((item) => hasFlashcardDetailText(item.value)),
+    [details]
+  );
+
   const handleFlip = useCallback(() => {
     if (!currentCard) return;
-    setIsFlipped((prev) => toggleFlashcardSide(prev));
-  }, [currentCard]);
+    const nextIsFlipped = toggleFlashcardSide(isFlipped);
+    setIsFlipped(nextIsFlipped);
+    setShowExplanation(nextIsFlipped);
+  }, [currentCard, isFlipped]);
 
   const handleRate = useCallback(
     (rating) => {
@@ -67,6 +85,7 @@ export default function FlashcardsPage() {
       });
       setIndex((prev) => prev + 1);
       setIsFlipped(false);
+      setShowExplanation(false);
     },
     [currentCard, isFlipped, saveOutcomes]
   );
@@ -79,6 +98,7 @@ export default function FlashcardsPage() {
       setError('');
       setIndex(0);
       setIsFlipped(false);
+      setShowExplanation(false);
 
       let storedOutcomes = {};
       if (typeof window !== 'undefined') {
@@ -151,7 +171,7 @@ export default function FlashcardsPage() {
 
       event.preventDefault();
       if (action.type === 'flip') {
-        setIsFlipped((prev) => toggleFlashcardSide(prev));
+        handleFlip();
         return;
       }
       if (action.type === 'rate') {
@@ -161,11 +181,12 @@ export default function FlashcardsPage() {
 
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
-  }, [currentCard, error, handleRate, isFlipped, loading]);
+  }, [currentCard, error, handleFlip, handleRate, isFlipped, loading]);
 
   function resetDeck() {
     setIndex(0);
     setIsFlipped(false);
+    setShowExplanation(false);
     setCards((prev) => rankFlashcardQuestions(prev, outcomes, 20));
   }
 
@@ -199,12 +220,28 @@ export default function FlashcardsPage() {
           ) : (
             <div className="flashcard-back">
               <p className="flashcard-answer">Answer: {details.answer}</p>
-              <details>
-                <summary>Why / Trap / Hook</summary>
-                <p>Why: {details.why}</p>
-                <p>Trap: {details.trap}</p>
-                <p>Hook: {details.hook}</p>
-              </details>
+              <button
+                type="button"
+                className="flashcard-explanation-toggle"
+                onClick={() => setShowExplanation((prev) => !prev)}
+              >
+                {showExplanation ? 'Hide explanation' : 'Show explanation'}
+              </button>
+              {showExplanation ? (
+                explanationLines.length > 0 ? (
+                  <div className="flashcard-explanation">
+                    {explanationLines.map((item) => (
+                      <p key={item.label}>
+                        <strong>{item.label}:</strong> {item.value}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="muted">Explanation not available.</p>
+                )
+              ) : (
+                <p className="muted">Explanation (Why/Trap/Hook).</p>
+              )}
             </div>
           )}
 

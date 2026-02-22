@@ -45,8 +45,14 @@ assertMatch(
 
 assertMatch(
   flashcardsPageSource,
-  /setIndex\(\(prev\) => prev \+ 1\);\s*setIsFlipped\(false\);/,
-  'Expected advancing to the next flashcard to reset to the front side.'
+  /const \[showExplanation, setShowExplanation\] = useState\(false\);/,
+  'Expected /flashcards page to track explanation visibility separately from card flip state.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /setIndex\(\(prev\) => prev \+ 1\);\s*setIsFlipped\(false\);\s*setShowExplanation\(false\);/,
+  'Expected advancing to the next flashcard to reset front side and explanation visibility.'
 );
 
 assertMatch(
@@ -57,8 +63,32 @@ assertMatch(
 
 assertMatch(
   flashcardsPageSource,
-  /!isFlipped \?[\s\S]*runner-prompt[\s\S]*: \([\s\S]*flashcard-answer[\s\S]*<details>[\s\S]*Why \/ Trap \/ Hook/,
-  'Expected prompt on front and answer/details only on the back side.'
+  /!isFlipped \?[\s\S]*runner-prompt[\s\S]*: \([\s\S]*flashcard-answer[\s\S]*Hide explanation[\s\S]*Show explanation/,
+  'Expected prompt on front and answer/explanation controls only on the back side.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /const nextIsFlipped = toggleFlashcardSide\(isFlipped\);\s*setIsFlipped\(nextIsFlipped\);\s*setShowExplanation\(nextIsFlipped\);/,
+  'Expected flipping to back to show explanation by default and flipping to front to hide it.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /onClick=\{\(\) => setShowExplanation\(\(prev\) => !prev\)\}\s*>\s*\{showExplanation \? 'Hide explanation' : 'Show explanation'\}/,
+  'Expected a dedicated explanation hide/show toggle that does not change flip state.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /<p className="muted">Explanation \(Why\/Trap\/Hook\)\.<\/p>/,
+  'Expected a one-line explanation hint when details are hidden.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /filter\(\(item\) => hasFlashcardDetailText\(item\.value\)\)/,
+  'Expected blank Why\/Trap\/Hook lines to be omitted.'
 );
 
 assertMatch(

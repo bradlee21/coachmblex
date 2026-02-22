@@ -622,17 +622,31 @@ a {
   gap: 8px;
 }
 
-.flashcard-back details {
+.flashcard-answer {
+  font-weight: 700;
+}
+
+.flashcard-explanation-toggle {
+  margin-top: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: #f9fafb;
+  cursor: pointer;
+  font: inherit;
+}
+
+.flashcard-explanation-toggle:hover,
+.flashcard-explanation-toggle:focus-visible {
+  background: #f3f4f6;
+}
+
+.flashcard-explanation {
   margin-top: 10px;
 }
 
-.flashcard-back details summary {
-  cursor: pointer;
-  font-weight: 700;
-}
-
-.flashcard-answer {
-  font-weight: 700;
+.flashcard-explanation p {
+  margin: 6px 0;
 }
 
 .flashcard-ratings {
