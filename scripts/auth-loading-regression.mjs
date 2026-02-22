@@ -86,21 +86,27 @@ assertMatch(
 );
 
 assertMatch(
-  questionRunnerSource,
-  /function\s+resolveCorrectChoiceIndex\s*\(/,
-  'Expected QuestionRunner to include a resolved correct-choice helper.'
+  questionRunnerLogicSource,
+  /export function\s+resolveCorrectChoiceIndex\s*\(/,
+  'Expected questionRunnerLogic to include a resolved correct-choice helper.'
 );
 
 assertMatch(
-  questionRunnerSource,
+  questionRunnerLogicSource,
   /question\?\.(correct_choice|answer_key|correct_option)/,
-  'Expected QuestionRunner correct-choice resolver to support letter/key variants.'
+  'Expected correct-choice resolver to support letter/key variants.'
+);
+
+assertMatch(
+  questionRunnerLogicSource,
+  /question\?\.(correct_index|correctIndex)/,
+  'Expected correct-choice resolver to support numeric index variants.'
 );
 
 assertMatch(
   questionRunnerSource,
-  /question\?\.(correct_index|correctIndex)/,
-  'Expected QuestionRunner correct-choice resolver to support numeric index variants.'
+  /resolveCorrectChoiceIndex\(current\)/,
+  'Expected QuestionRunner to use shared resolveCorrectChoiceIndex helper.'
 );
 
 assertMatch(

@@ -28,6 +28,27 @@ function hasPromptBlank(prompt) {
   return /_{2,}|\bblank\b/i.test(String(prompt || ''));
 }
 
+function toIndexFromLetter(value) {
+  const letter = toText(value).toUpperCase();
+  if (letter.length !== 1) return null;
+  if (letter < 'A' || letter > 'Z') return null;
+  return letter.charCodeAt(0) - 65;
+}
+
+function toIndexFromNumber(value, choiceCount) {
+  if (typeof value === 'number' && Number.isInteger(value)) {
+    if (value >= 0 && value < choiceCount) return value;
+    if (value >= 1 && value <= choiceCount) return value - 1;
+  }
+  const asText = toText(value);
+  if (!/^-?\d+$/.test(asText)) return null;
+  const parsed = Number(asText);
+  if (!Number.isInteger(parsed)) return null;
+  if (parsed >= 0 && parsed < choiceCount) return parsed;
+  if (parsed >= 1 && parsed <= choiceCount) return parsed - 1;
+  return null;
+}
+
 export function getChoiceList(question) {
   if (Array.isArray(question?.choices)) return question.choices;
   if (question?.choices && typeof question.choices === 'object') {
@@ -63,6 +84,57 @@ export function resolveExplanationParts(question) {
     trap,
     hook,
   };
+}
+
+export function resolveCorrectChoiceIndex(question) {
+  const choices = getChoiceList(question);
+  if (choices.length === 0) return null;
+
+  const explicitChoiceKeys = [question?.correct_choice, question?.answer_key, question?.correct_option];
+  for (const key of explicitChoiceKeys) {
+    const byLetter = toIndexFromLetter(key);
+    if (byLetter != null && byLetter >= 0 && byLetter < choices.length) {
+      return byLetter;
+    }
+    const byNumber = toIndexFromNumber(key, choices.length);
+    if (byNumber != null) return byNumber;
+  }
+
+  const explicitIndices = [question?.correct_index, question?.correctIndex];
+  for (const value of explicitIndices) {
+    const parsed = toIndexFromNumber(value, choices.length);
+    if (parsed != null) return parsed;
+  }
+
+  const fallbackTexts = [
+    question?.correct_text,
+    question?.correct_answer,
+    question?.answer,
+    question?.explanation?.answer,
+    question?.explanation_answer,
+  ]
+    .map((value) => normalizeText(value))
+    .filter(Boolean);
+
+  if (fallbackTexts.length === 0) return null;
+  for (let i = 0; i < choices.length; i += 1) {
+    const normalizedChoice = normalizeText(choices[i]);
+    if (fallbackTexts.some((candidate) => candidate === normalizedChoice)) {
+      return i;
+    }
+  }
+  return null;
+}
+
+export function resolveCorrectAnswerText(question, resolvedCorrectChoiceText) {
+  return (
+    toText(resolvedCorrectChoiceText) ||
+    toText(question?.correct_text) ||
+    toText(question?.correct_answer) ||
+    toText(question?.answer) ||
+    toText(question?.explanation?.answer) ||
+    toText(question?.explanation_answer)
+  );
 }
 
 export function resolveQuestionMode(question) {

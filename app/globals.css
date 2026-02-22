@@ -441,7 +441,8 @@ a {
   }
 
   .today-page,
-  .flashcards-page {
+  .flashcards-page,
+  .sprint-page {
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
