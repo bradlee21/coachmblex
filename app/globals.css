@@ -444,9 +444,14 @@ a {
   .flashcards-page,
   .sprint-page,
   .boss-fight-page,
-  .streak-page,
-  .memory-page {
+  .streak-page {
     max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .memory-page {
+    max-width: min(80rem, calc(100vw - 3rem));
     margin-left: auto;
     margin-right: auto;
   }
@@ -747,6 +752,45 @@ a {
   font-size: 1.4rem;
   font-weight: 700;
   color: #6b7280;
+}
+
+@media (min-width: 1024px) {
+  .memory-board-panel {
+    min-height: calc(100vh - 15rem);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .memory-board-panel .memory-grid {
+    flex: 1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    align-content: stretch;
+    min-height: 0;
+  }
+
+  .memory-board-panel .memory-card {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .memory-board-panel .memory-card-text {
+    font-size: 1rem;
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
+    padding-top: 4px;
+  }
+
+  .memory-board-panel .memory-badge {
+    top: 8px;
+    left: 8px;
+  }
+
+  .memory-board-panel .memory-card-placeholder {
+    font-size: 1.7rem;
+  }
 }
 
 .qtype-badge {

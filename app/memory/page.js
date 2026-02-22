@@ -211,7 +211,7 @@ export default function MemoryPage() {
       ) : null}
 
       {phase === 'playing' ? (
-        <section className="runner" data-testid="memory-match-board">
+        <section className="runner memory-board-panel" data-testid="memory-match-board">
           <div className="memory-status">
             <p className="muted" style={{ margin: 0 }}>
               Pairs: {matchedPairs}/{totalPairs}
