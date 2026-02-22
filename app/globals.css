@@ -684,6 +684,7 @@ a {
   border-radius: 8px;
   background: #ffffff;
   padding: 8px;
+  position: relative;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -711,14 +712,22 @@ a {
   cursor: default;
 }
 
-.memory-card-label {
-  display: block;
-  font-size: 0.75rem;
+.memory-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: rgba(255, 255, 255, 0.92);
+  color: #4b5563;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #6b7280;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  line-height: 1;
 }
 
 .memory-card-text {
@@ -726,6 +735,12 @@ a {
   font-size: 0.9rem;
   line-height: 1.25;
   word-break: break-word;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  padding-top: 2px;
 }
 
 .memory-card-placeholder {
@@ -1062,9 +1077,14 @@ a {
     color: #d1fae5;
   }
 
-  .memory-card-label,
+  .memory-badge,
   .memory-card-placeholder {
     color: #cbd5e1;
+  }
+
+  .memory-badge {
+    border-color: #475569;
+    background: rgba(15, 23, 42, 0.88);
   }
 }
 

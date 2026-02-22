@@ -248,7 +248,7 @@ export default function MemoryPage() {
                 >
                   {isVisible ? (
                     <>
-                      <span className="memory-card-label">{card.kind === 'prompt' ? 'Prompt' : 'Answer'}</span>
+                      <span className="memory-badge">{card.kind === 'prompt' ? 'Q' : 'A'}</span>
                       <span className="memory-card-text">{card.text}</span>
                     </>
                   ) : (
