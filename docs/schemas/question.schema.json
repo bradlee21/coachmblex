@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://coachmblex.local/schemas/question.schema.json",
+  "title": "CoachMBLEx Canonical Question",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["prompt", "type", "correct"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "prompt": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "enum": ["mcq", "fib"]
+    },
+    "choices": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "correct": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index": { "type": "integer", "minimum": 0 },
+        "text": { "type": "string", "minLength": 1 }
+      }
+    },
+    "explanation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "answer": { "type": "string" },
+        "why": { "type": "string" },
+        "trap": { "type": "string" },
+        "hook": { "type": "string" }
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "blueprintCodes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "sourcePack": { "type": "string" },
+    "packId": { "type": "string" }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "type": { "const": "mcq" } },
+        "required": ["type"]
+      },
+      "then": {
+        "required": ["choices", "correct"],
+        "properties": {
+          "choices": {
+            "type": "array",
+            "minItems": 2,
+            "items": { "type": "string" }
+          },
+          "correct": {
+            "type": "object",
+            "required": ["index"],
+            "not": { "required": ["text"] },
+            "properties": {
+              "index": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "type": { "const": "fib" } },
+        "required": ["type"]
+      },
+      "then": {
+        "required": ["correct"],
+        "properties": {
+          "choices": {
+            "type": "array",
+            "maxItems": 0
+          },
+          "correct": {
+            "type": "object",
+            "required": ["text"],
+            "not": { "required": ["index"] },
+            "properties": {
+              "text": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$comment": "JSON Schema enforces shape/type constraints. Range check for correct.index vs choices length is enforced by scripts/validate-pack.mjs."
+}

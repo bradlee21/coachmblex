@@ -19,7 +19,8 @@
     "import:all-packs": "node scripts/import-all-packs.mjs",
     "wipe:question-bank": "node scripts/wipe-question-bank.mjs",
     "dedupe:questions": "node scripts/dedupe-questions.mjs",
-    "coverage:gen": "node scripts/generateCoverageTargets.mjs"
+    "coverage:gen": "node scripts/generateCoverageTargets.mjs",
+    "validate:pack": "node scripts/validate-pack.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",
