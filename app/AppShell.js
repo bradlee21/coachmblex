@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { href: '/review', label: 'Review', key: 'r' },
   { href: '/drill', label: 'Drill', key: 'd' },
   { href: '/boss-fight', label: 'Boss Fight', key: 'b' },
+  { href: '/streak', label: 'Streak Ladder', key: 'l' },
   { href: '/sprint', label: 'Sprint', key: 'x' },
   { href: '/flashcards', label: 'Flashcards', key: 'f' },
   { href: '/game/study-night', label: 'Study Night', key: 'n' },
@@ -33,6 +34,7 @@ const NAV_TEST_IDS = {
   '/review': 'nav-review',
   '/drill': 'nav-drill',
   '/boss-fight': 'nav-boss-fight',
+  '/streak': 'nav-streak',
   '/sprint': 'nav-sprint',
   '/flashcards': 'nav-flashcards',
   '/game/study-night': 'nav-study-night',
@@ -163,7 +165,8 @@ export default function AppShell({ children }) {
     pathname === '/today' ||
     pathname === '/flashcards' ||
     pathname === '/sprint' ||
-    pathname === '/boss-fight';
+    pathname === '/boss-fight' ||
+    pathname === '/streak';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
@@ -181,6 +184,7 @@ export default function AppShell({ children }) {
         pathname === '/today' ||
         pathname === '/drill' ||
         pathname === '/boss-fight' ||
+        pathname === '/streak' ||
         pathname === '/sprint' ||
         pathname === '/review' ||
         pathname === '/flashcards';

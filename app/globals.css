@@ -443,7 +443,8 @@ a {
   .today-page,
   .flashcards-page,
   .sprint-page,
-  .boss-fight-page {
+  .boss-fight-page,
+  .streak-page {
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
