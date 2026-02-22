@@ -9,7 +9,17 @@ import { trackEvent } from '../../src/lib/trackEvent';
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const DRILL_MATCH_COUNT = 10;
-const DRILL_POOL_LIMIT = 2000;
+const DRILL_PACK_LIST_LIMIT = 2000;
+const DRILL_START_FETCH_LIMIT = 200;
+
+const PACK_FILTER_STRATEGIES = [
+  { key: 'pack_id', kind: 'column', path: 'pack_id', label: 'pack_id' },
+  { key: 'source_pack', kind: 'column', path: 'source_pack', label: 'source_pack' },
+  { key: 'source_json_pack_id', kind: 'json', path: 'source->>pack_id', label: 'source->>pack_id' },
+  { key: 'source_json_packId', kind: 'json', path: 'source->>packId', label: 'source->>packId' },
+  { key: 'metadata_json_pack_id', kind: 'json', path: 'metadata->>pack_id', label: 'metadata->>pack_id' },
+  { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
+];
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -123,9 +133,60 @@ function formatTypesLabel(typesValue) {
     .join(', ');
 }
 
-function buildSessionLabel(packLabel) {
-  const trimmed = toText(packLabel);
-  return trimmed ? `Subject: ${trimmed}` : 'Subject drill';
+function buildSessionLabel(packLabel, searchText) {
+  const subject = toText(packLabel) || 'Subject';
+  const q = toText(searchText);
+  return q ? `Subject: ${subject} (${q})` : `Subject: ${subject}`;
+}
+
+function sanitizeSearchTerm(value) {
+  return toText(value)
+    .replace(/[,%()_'"]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildTextSearchOrClause(searchTerm) {
+  const safe = sanitizeSearchTerm(searchTerm);
+  if (!safe) return '';
+  const pattern = `%${safe}%`;
+  return [
+    `prompt.ilike.${pattern}`,
+    `explanation.ilike.${pattern}`,
+    `domain.ilike.${pattern}`,
+    `subtopic.ilike.${pattern}`,
+  ].join(',');
+}
+
+function applyPackFilter(query, strategy, packId) {
+  if (!strategy || !toText(packId)) return query;
+  return query.filter(strategy.path, 'eq', toText(packId));
+}
+
+function applyDrillFilters(query, { packStrategy, packId, types, searchText }) {
+  let next = applyPackFilter(query, packStrategy, packId);
+  if (Array.isArray(types) && types.length > 0) {
+    next = next.in('question_type', types);
+  }
+  const orClause = buildTextSearchOrClause(searchText);
+  if (orClause) {
+    next = next.or(orClause);
+  }
+  return next;
+}
+
+async function detectPackFilterStrategy(supabase) {
+  for (const strategy of PACK_FILTER_STRATEGIES) {
+    const { error } = await applyPackFilter(
+      supabase.from('questions').select('id', { head: true, count: 'exact' }),
+      strategy,
+      '__pack_probe__'
+    ).limit(1);
+    if (!error) {
+      return strategy;
+    }
+  }
+  return null;
 }
 
 export default function DrillPage() {
@@ -134,11 +195,12 @@ export default function DrillPage() {
   const searchParams = useSearchParams();
   const questionCardRef = useRef(null);
 
-  const [poolEntries, setPoolEntries] = useState([]);
   const [packs, setPacks] = useState([]);
   const [packsLoading, setPacksLoading] = useState(false);
   const [packsError, setPacksError] = useState('');
+  const [packFilterStrategy, setPackFilterStrategy] = useState(null);
   const [selectedPackId, setSelectedPackId] = useState('');
+  const [subjectSearch, setSubjectSearch] = useState('');
 
   const [quickTypes, setQuickTypes] = useState({
     mcq: true,
@@ -149,6 +211,10 @@ export default function DrillPage() {
     () => QUICK_TYPES.filter((type) => quickTypes[type]),
     [quickTypes]
   );
+
+  const [availableCount, setAvailableCount] = useState(0);
+  const [countLoading, setCountLoading] = useState(false);
+  const [countMessage, setCountMessage] = useState('');
 
   const [questions, setQuestions] = useState([]);
   const [started, setStarted] = useState(false);
@@ -167,15 +233,6 @@ export default function DrillPage() {
     [packs, selectedPackId]
   );
 
-  const availableCount = useMemo(() => {
-    if (!selectedPackId) return 0;
-    return poolEntries.filter(
-      (entry) =>
-        entry.packId === selectedPackId &&
-        selectedQuickTypes.includes(entry.questionType)
-    ).length;
-  }, [poolEntries, selectedPackId, selectedQuickTypes]);
-
   const handleDrillComplete = useCallback(
     ({ score, total }) => {
       void trackEvent('drill_complete', {
@@ -191,7 +248,9 @@ export default function DrillPage() {
   useEffect(() => {
     const packQuery = searchParams.get('pk') || '';
     const quickTypeQuery = searchParams.get('qt');
+    const q = searchParams.get('q') || '';
     setSelectedPackId(packQuery);
+    setSubjectSearch(q);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
   }, [searchParams]);
 
@@ -200,49 +259,48 @@ export default function DrillPage() {
     if (!supabase) {
       setPacksError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
       setPacks([]);
-      setPoolEntries([]);
+      setPackFilterStrategy(null);
       return;
     }
 
     let cancelled = false;
 
-    async function loadPackPool() {
+    async function loadSubjects() {
       setPacksLoading(true);
       setPacksError('');
 
+      const strategy = await detectPackFilterStrategy(supabase);
+      if (cancelled) return;
+      setPackFilterStrategy(strategy);
+      if (!strategy) {
+        setPacks([]);
+        setPacksError('No supported pack field found on questions table.');
+        setPacksLoading(false);
+        return;
+      }
+
+      // Pack picker still derives labels from existing row payloads; count/start use server filtering.
       const { data, error } = await supabase
         .from('questions')
         .select('*')
         .order('created_at', { ascending: false })
-        .limit(DRILL_POOL_LIMIT);
+        .limit(DRILL_PACK_LIST_LIMIT);
 
       if (cancelled) return;
 
       if (error) {
         setPacksError(`Failed to load subjects: ${error.message}`);
         setPacks([]);
-        setPoolEntries([]);
         setPacksLoading(false);
         return;
       }
 
-      const nextEntries = [];
       const packMap = new Map();
-
       for (const question of data || []) {
         const questionType = getQuestionType(question);
         if (!QUICK_TYPES.includes(questionType)) continue;
-
         const { packId, packLabel } = resolveQuestionPackInfo(question);
         if (!packId) continue;
-
-        nextEntries.push({
-          question,
-          packId,
-          packLabel,
-          questionType,
-        });
-
         const existing = packMap.get(packId);
         if (existing) {
           existing.total += 1;
@@ -259,13 +317,11 @@ export default function DrillPage() {
       const nextPacks = Array.from(packMap.values()).sort(
         (a, b) => a.label.localeCompare(b.label) || a.id.localeCompare(b.id)
       );
-
-      setPoolEntries(nextEntries);
       setPacks(nextPacks);
       setPacksLoading(false);
     }
 
-    void loadPackPool();
+    void loadSubjects();
 
     return () => {
       cancelled = true;
@@ -282,6 +338,59 @@ export default function DrillPage() {
     return () => cancelAnimationFrame(nextFrame);
   }, [questions, started]);
 
+  const refreshAvailableCount = useCallback(async () => {
+    if (!selectedPackId) {
+      setAvailableCount(0);
+      setCountMessage('');
+      setCountLoading(false);
+      return;
+    }
+    if (!packFilterStrategy) {
+      setAvailableCount(0);
+      setCountMessage(packsError ? '' : 'Pack filtering is unavailable.');
+      setCountLoading(false);
+      return;
+    }
+
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setAvailableCount(0);
+      setCountMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+      setCountLoading(false);
+      return;
+    }
+
+    setCountLoading(true);
+    setCountMessage('');
+
+    const { count, error } = await applyDrillFilters(
+      supabase.from('questions').select('id', { head: true, count: 'exact' }),
+      {
+        packStrategy: packFilterStrategy,
+        packId: selectedPackId,
+        types: selectedQuickTypes,
+        searchText: subjectSearch,
+      }
+    );
+
+    if (error) {
+      setAvailableCount(0);
+      setCountMessage(`Failed to load available count: ${error.message}`);
+      setCountLoading(false);
+      return;
+    }
+
+    setAvailableCount(count ?? 0);
+    setCountLoading(false);
+  }, [packFilterStrategy, packsError, selectedPackId, selectedQuickTypes, subjectSearch]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      void refreshAvailableCount();
+    }, 200);
+    return () => clearTimeout(timer);
+  }, [refreshAvailableCount]);
+
   function toggleQuickType(type) {
     setQuickTypes((prev) => ({
       ...prev,
@@ -289,11 +398,15 @@ export default function DrillPage() {
     }));
   }
 
-  function buildDrillUrlParams({ packId, typesValue }) {
+  function buildDrillUrlParams({ packId, searchValue, typesValue }) {
     const params = new URLSearchParams();
     const normalizedPackId = toText(packId);
     if (normalizedPackId) {
       params.set('pk', normalizedPackId);
+    }
+    const trimmedSearch = toText(searchValue);
+    if (trimmedSearch) {
+      params.set('q', trimmedSearch);
     }
     const typesCsv = toCsv(typesValue);
     if (typesCsv) {
@@ -311,40 +424,62 @@ export default function DrillPage() {
       setMessage('Pick at least one type.');
       return;
     }
+    if (!packFilterStrategy) {
+      setMessage('Pack filtering is unavailable for this questions schema.');
+      return;
+    }
+
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+      return;
+    }
 
     setLoading(true);
     setMessage('');
 
-    const filteredEntries = poolEntries.filter(
-      (entry) =>
-        entry.packId === selectedPackId &&
-        selectedQuickTypes.includes(entry.questionType)
-    );
-
     const params = buildDrillUrlParams({
       packId: selectedPackId,
+      searchValue: subjectSearch,
       typesValue: selectedQuickTypes,
     });
     const nextUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
     router.push(nextUrl);
 
-    if (filteredEntries.length === 0) {
-      setMessage('No questions available for this subject and type filter yet.');
+    const { data, error } = await applyDrillFilters(
+      supabase
+        .from('questions')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(DRILL_START_FETCH_LIMIT),
+      {
+        packStrategy: packFilterStrategy,
+        packId: selectedPackId,
+        types: selectedQuickTypes,
+        searchText: subjectSearch,
+      }
+    );
+
+    if (error) {
+      setMessage(`Failed to load drill questions: ${error.message}`);
       setLoading(false);
       return;
     }
 
-    const picked = shuffleArray(filteredEntries.map((entry) => entry.question)).slice(
-      0,
-      DRILL_MATCH_COUNT
-    );
+    const picked = shuffleArray(data || []).slice(0, DRILL_MATCH_COUNT);
+    if (picked.length === 0) {
+      setMessage('No questions available for this subject and filter.');
+      setLoading(false);
+      return;
+    }
+
     const quickType = selectedQuickTypes.length === 1 ? selectedQuickTypes[0] : 'any';
     const label = selectedPack?.label || humanizePackId(selectedPackId) || selectedPackId;
 
     setActiveSessionMeta({
       codePrefix: `pack:${selectedPackId}`,
       type: quickType,
-      label: buildSessionLabel(label),
+      label: buildSessionLabel(label, subjectSearch),
       packId: selectedPackId,
     });
     setQuestions(picked);
@@ -354,9 +489,7 @@ export default function DrillPage() {
     void trackEvent('drill_start', { codePrefix: `pack:${selectedPackId}`, type: quickType });
 
     if (picked.length < DRILL_MATCH_COUNT) {
-      setMessage(
-        `Only ${picked.length} question(s) available for ${label} with this type filter.`
-      );
+      setMessage(`Only ${picked.length} question(s) available for ${label} with this filter.`);
     }
 
     setLoading(false);
@@ -402,7 +535,9 @@ export default function DrillPage() {
         ) : (
           <div className={cardClass}>
             <h2 className={sectionTitleClass}>Start Drill</h2>
-            <p className={`${helperTextClass} mt-1`}>Choose a subject, set types, and start.</p>
+            <p className={`${helperTextClass} mt-1`}>
+              Choose a subject, optionally search within it, then start.
+            </p>
 
             <div className="mt-4 space-y-3">
               <div className="space-y-1.5">
@@ -425,6 +560,21 @@ export default function DrillPage() {
                 </select>
                 {packsLoading ? <p className={helperTextClass}>Loading subjects...</p> : null}
                 {packsError ? <p className="status error">{packsError}</p> : null}
+              </div>
+
+              <div className="space-y-1.5">
+                <label className={labelClass} htmlFor="drill-pack-search">
+                  Search within subject
+                </label>
+                <input
+                  id="drill-pack-search"
+                  className={inputClass}
+                  type="text"
+                  placeholder="e.g., trigger points, contraindications, lymph flow"
+                  value={subjectSearch}
+                  onChange={(event) => setSubjectSearch(event.target.value)}
+                  disabled={!selectedPackId}
+                />
               </div>
 
               <div className="space-y-1.5" role="group" aria-label="Drill type filters">
@@ -468,6 +618,9 @@ export default function DrillPage() {
                   Count: <strong>{DRILL_MATCH_COUNT}</strong>
                 </p>
               </div>
+
+              {countLoading ? <p className={helperTextClass}>Checking available questions...</p> : null}
+              {countMessage ? <p className="status error">{countMessage}</p> : null}
 
               <div>
                 <button
