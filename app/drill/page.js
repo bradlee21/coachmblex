@@ -3,7 +3,11 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
-import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
+import {
+  getChoiceList,
+  resolveExplanationParts,
+  shuffleArray,
+} from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
 
@@ -43,17 +47,86 @@ function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
 }
 
+function parseMaybeJson(value) {
+  if (typeof value !== 'string') return null;
+  const trimmed = value.trim();
+  if (!trimmed) return null;
+  if (!trimmed.startsWith('{') && !trimmed.startsWith('[')) return null;
+  try {
+    return JSON.parse(trimmed);
+  } catch {
+    return null;
+  }
+}
+
+function collectText(value, bucket, depth = 0) {
+  if (value == null || depth > 3) return;
+  if (typeof value === 'string') {
+    const parsed = parseMaybeJson(value);
+    if (parsed != null) {
+      collectText(parsed, bucket, depth + 1);
+      return;
+    }
+    const trimmed = value.trim();
+    if (trimmed) bucket.push(trimmed);
+    return;
+  }
+  if (typeof value === 'number' || typeof value === 'boolean') {
+    return;
+  }
+  if (Array.isArray(value)) {
+    for (const item of value) collectText(item, bucket, depth + 1);
+    return;
+  }
+  if (typeof value === 'object') {
+    for (const [key, item] of Object.entries(value)) {
+      const normalizedKey = String(key || '').toLowerCase();
+      if (
+        normalizedKey.includes('blueprint') ||
+        normalizedKey === 'id' ||
+        normalizedKey.endsWith('_id') ||
+        normalizedKey.endsWith('id')
+      ) {
+        continue;
+      }
+      collectText(item, bucket, depth + 1);
+    }
+  }
+}
+
+function buildSubjectSearchHaystack(question) {
+  const explanation = resolveExplanationParts(question);
+  const bucket = [];
+  collectText(question?.prompt, bucket);
+  collectText(getChoiceList(question), bucket);
+  collectText(question?.tags, bucket);
+  collectText(question?.keywords, bucket);
+  collectText(question?.keyword, bucket);
+  collectText(question?.concepts, bucket);
+  collectText(question?.concept_names, bucket);
+  collectText(question?.conceptNames, bucket);
+  collectText(question?.linked_concepts, bucket);
+  collectText(question?.linkedConcepts, bucket);
+  collectText(question?.metadata, bucket);
+  collectText(question?.source, bucket);
+  collectText(question?.answer, bucket);
+  collectText(question?.correct_text, bucket);
+  collectText(question?.correct_answer, bucket);
+  collectText(question?.explanation_answer, bucket);
+  collectText(question?.why, bucket);
+  collectText(question?.trap, bucket);
+  collectText(question?.hook, bucket);
+  collectText(question?.explanation_why, bucket);
+  collectText(question?.explanation_trap, bucket);
+  collectText(question?.explanation_hook, bucket);
+  collectText(question?.explanation, bucket);
+  collectText(explanation, bucket);
+  return bucket.join(' ').toLowerCase();
+}
+
 function matchesQuickSearch(question, term) {
   if (!term) return true;
-  const prompt = String(question?.prompt || '');
-  const tagText = Array.isArray(question?.tags) ? question.tags.join(' ') : '';
-  let choiceText = '';
-  if (Array.isArray(question?.choices)) {
-    choiceText = question.choices.join(' ');
-  } else if (question?.choices && typeof question.choices === 'object') {
-    choiceText = Object.values(question.choices).join(' ');
-  }
-  const haystack = `${prompt} ${tagText} ${choiceText}`.toLowerCase();
+  const haystack = buildSubjectSearchHaystack(question);
   return haystack.includes(term);
 }
 
@@ -309,9 +382,7 @@ export default function DrillPage() {
     <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <div className="mb-6 space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Drill</h1>
-        <p className={helperTextClass}>
-          Search a broad topic, see the match count, and start a {DRILL_MATCH_COUNT}-question drill.
-        </p>
+        <p className={helperTextClass}>Type a topic and start a {DRILL_MATCH_COUNT}-question drill.</p>
       </div>
 
       <div className="mx-auto w-full max-w-4xl space-y-4">
@@ -336,19 +407,19 @@ export default function DrillPage() {
           <div className={cardClass}>
             <h2 className={sectionTitleClass}>Start Drill</h2>
             <p className={`${helperTextClass} mt-1`}>
-              Quick search only. Pick one or more question types, then start.
+              Type a subject, choose question types, and start.
             </p>
 
             <div className="mt-4 space-y-3">
               <div className="space-y-1.5">
                 <label className={labelClass} htmlFor="drill-quick-search">
-                  Search content
+                  Subject search
                 </label>
                 <input
                   id="drill-quick-search"
                   className={inputClass}
                   type="text"
-                  placeholder="e.g., piriformis, sympathetic, blood flow"
+                  placeholder="e.g., integumentary, lymphatic, trigger points, contraindications"
                   value={quickSearch}
                   onChange={(event) => setQuickSearch(event.target.value)}
                 />
@@ -389,7 +460,7 @@ export default function DrillPage() {
 
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800/50">
                 <p className="text-slate-700 dark:text-slate-200">
-                  Matches: <strong>{quickMatches == null ? '...' : quickMatches}</strong>
+                  Available questions: <strong>{quickMatches == null ? '...' : quickMatches}</strong>
                 </p>
                 <p className="text-slate-600 dark:text-slate-300">
                   Count: <strong>{DRILL_MATCH_COUNT}</strong>
