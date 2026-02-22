@@ -53,6 +53,7 @@ runNodeScript('scripts/flashcards-regression.mjs');
 runNodeScript('scripts/sprint-regression.mjs');
 runNodeScript('scripts/boss-fight-regression.mjs');
 runNodeScript('scripts/streak-regression.mjs');
+runNodeScript('scripts/memory-regression.mjs');
 runNodeScript('scripts/rls-sanity.mjs');
 
 if (isCritical) {

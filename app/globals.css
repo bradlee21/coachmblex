@@ -444,7 +444,8 @@ a {
   .flashcards-page,
   .sprint-page,
   .boss-fight-page,
-  .streak-page {
+  .streak-page,
+  .memory-page {
     max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
@@ -660,6 +661,77 @@ a {
 .flashcard-ratings button:disabled {
   cursor: not-allowed;
   opacity: 0.7;
+}
+
+.memory-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.memory-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.memory-card {
+  min-height: 110px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font: inherit;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.memory-card:hover,
+.memory-card:focus-visible {
+  background: #f9fafb;
+}
+
+.memory-card.is-face-up {
+  background: #f8fafc;
+}
+
+.memory-card.is-matched {
+  border-color: #10b981;
+  background: #ecfdf5;
+}
+
+.memory-card:disabled {
+  cursor: default;
+}
+
+.memory-card-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.memory-card-text {
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+.memory-card-placeholder {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #6b7280;
 }
 
 .qtype-badge {
@@ -970,6 +1042,39 @@ a {
     background: #111827;
     border-color: #4b5563;
     color: #e5e7eb;
+  }
+
+  .memory-card {
+    border-color: #475569;
+    background: #111827;
+    color: #e5e7eb;
+  }
+
+  .memory-card:hover,
+  .memory-card:focus-visible,
+  .memory-card.is-face-up {
+    background: #0f172a;
+  }
+
+  .memory-card.is-matched {
+    border-color: #10b981;
+    background: #064e3b;
+    color: #d1fae5;
+  }
+
+  .memory-card-label,
+  .memory-card-placeholder {
+    color: #cbd5e1;
+  }
+}
+
+@media (max-width: 720px) {
+  .memory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .memory-card {
+    min-height: 96px;
   }
 }
 

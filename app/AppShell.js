@@ -15,6 +15,7 @@ const NAV_ITEMS = [
   { href: '/boss-fight', label: 'Boss Fight', key: 'b' },
   { href: '/streak', label: 'Streak Ladder', key: 'l' },
   { href: '/sprint', label: 'Sprint', key: 'x' },
+  { href: '/memory', label: 'Memory Match', key: 'm' },
   { href: '/flashcards', label: 'Flashcards', key: 'f' },
   { href: '/game/study-night', label: 'Study Night', key: 'n' },
   { href: '/anatomy', label: 'Anatomy', key: 'a' },
@@ -36,6 +37,7 @@ const NAV_TEST_IDS = {
   '/boss-fight': 'nav-boss-fight',
   '/streak': 'nav-streak',
   '/sprint': 'nav-sprint',
+  '/memory': 'nav-memory',
   '/flashcards': 'nav-flashcards',
   '/game/study-night': 'nav-study-night',
   '/anatomy': 'nav-anatomy',
@@ -166,7 +168,8 @@ export default function AppShell({ children }) {
     pathname === '/flashcards' ||
     pathname === '/sprint' ||
     pathname === '/boss-fight' ||
-    pathname === '/streak';
+    pathname === '/streak' ||
+    pathname === '/memory';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
@@ -186,6 +189,7 @@ export default function AppShell({ children }) {
         pathname === '/boss-fight' ||
         pathname === '/streak' ||
         pathname === '/sprint' ||
+        pathname === '/memory' ||
         pathname === '/review' ||
         pathname === '/flashcards';
       if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {
