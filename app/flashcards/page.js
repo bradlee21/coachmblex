@@ -211,7 +211,7 @@ export default function FlashcardsPage() {
 
           <div className="button-row flashcard-actions">
             <button type="button" onClick={handleFlip}>
-              {isFlipped ? 'Show Prompt (Space)' : 'Flip (Space)'}
+              {isFlipped ? 'Show Prompt (Space)' : 'Show Answer (Space)'}
             </button>
           </div>
 

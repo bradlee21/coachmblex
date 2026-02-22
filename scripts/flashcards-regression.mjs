@@ -39,8 +39,26 @@ assertMatch(
 
 assertMatch(
   flashcardsPageSource,
-  /Flip \(Space\)/,
-  'Expected /flashcards page to render an explicit flip control label.'
+  /const \[isFlipped, setIsFlipped\] = useState\(false\);/,
+  'Expected /flashcards page to default the card to the front side.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /setIndex\(\(prev\) => prev \+ 1\);\s*setIsFlipped\(false\);/,
+  'Expected advancing to the next flashcard to reset to the front side.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /isFlipped \? 'Show Prompt \(Space\)' : 'Show Answer \(Space\)'/,
+  'Expected flip control label to reflect the current card side.'
+);
+
+assertMatch(
+  flashcardsPageSource,
+  /!isFlipped \?[\s\S]*runner-prompt[\s\S]*: \([\s\S]*flashcard-answer[\s\S]*<details>[\s\S]*Why \/ Trap \/ Hook/,
+  'Expected prompt on front and answer/details only on the back side.'
 );
 
 assertMatch(
