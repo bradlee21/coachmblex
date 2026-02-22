@@ -9,6 +9,7 @@ import { postgrestFetch } from '../src/lib/postgrestFetch';
 import { useAuth } from '../src/providers/AuthProvider';
 
 const NAV_ITEMS = [
+  { href: '/practice', label: 'Practice', key: 'h' },
   { href: '/today', label: 'Today', key: 't' },
   { href: '/review', label: 'Review', key: 'r' },
   { href: '/drill', label: 'Drill', key: 'd' },
@@ -31,6 +32,7 @@ const NAV_ITEMS = [
 const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
 const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
+  '/practice': 'nav-practice',
   '/today': 'nav-today',
   '/review': 'nav-review',
   '/drill': 'nav-drill',
