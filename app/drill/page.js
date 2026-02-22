@@ -3,16 +3,17 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
-import {
-  getChoiceList,
-  resolveExplanationParts,
-  shuffleArray,
-} from '../_components/questionRunnerLogic.mjs';
+import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
 
 const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const DRILL_MATCH_COUNT = 10;
+const DRILL_POOL_LIMIT = 2000;
+
+function toText(value) {
+  return typeof value === 'string' ? value.trim() : '';
+}
 
 function parseQuickTypes(value) {
   const parsed = {
@@ -47,109 +48,98 @@ function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
 }
 
-function parseMaybeJson(value) {
+function parseMaybeObject(value) {
+  if (!value) return null;
+  if (typeof value === 'object' && !Array.isArray(value)) return value;
   if (typeof value !== 'string') return null;
   const trimmed = value.trim();
-  if (!trimmed) return null;
-  if (!trimmed.startsWith('{') && !trimmed.startsWith('[')) return null;
+  if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) return null;
   try {
-    return JSON.parse(trimmed);
+    const parsed = JSON.parse(trimmed);
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
   } catch {
     return null;
   }
 }
 
-function collectText(value, bucket, depth = 0) {
-  if (value == null || depth > 3) return;
-  if (typeof value === 'string') {
-    const parsed = parseMaybeJson(value);
-    if (parsed != null) {
-      collectText(parsed, bucket, depth + 1);
-      return;
-    }
-    const trimmed = value.trim();
-    if (trimmed) bucket.push(trimmed);
-    return;
-  }
-  if (typeof value === 'number' || typeof value === 'boolean') {
-    return;
-  }
-  if (Array.isArray(value)) {
-    for (const item of value) collectText(item, bucket, depth + 1);
-    return;
-  }
-  if (typeof value === 'object') {
-    for (const [key, item] of Object.entries(value)) {
-      const normalizedKey = String(key || '').toLowerCase();
-      if (
-        normalizedKey.includes('blueprint') ||
-        normalizedKey === 'id' ||
-        normalizedKey.endsWith('_id') ||
-        normalizedKey.endsWith('id')
-      ) {
-        continue;
-      }
-      collectText(item, bucket, depth + 1);
-    }
-  }
+function titleCaseWords(value) {
+  return String(value || '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
-function buildSubjectSearchHaystack(question) {
-  const explanation = resolveExplanationParts(question);
-  const bucket = [];
-  collectText(question?.prompt, bucket);
-  collectText(getChoiceList(question), bucket);
-  collectText(question?.tags, bucket);
-  collectText(question?.keywords, bucket);
-  collectText(question?.keyword, bucket);
-  collectText(question?.concepts, bucket);
-  collectText(question?.concept_names, bucket);
-  collectText(question?.conceptNames, bucket);
-  collectText(question?.linked_concepts, bucket);
-  collectText(question?.linkedConcepts, bucket);
-  collectText(question?.metadata, bucket);
-  collectText(question?.source, bucket);
-  collectText(question?.answer, bucket);
-  collectText(question?.correct_text, bucket);
-  collectText(question?.correct_answer, bucket);
-  collectText(question?.explanation_answer, bucket);
-  collectText(question?.why, bucket);
-  collectText(question?.trap, bucket);
-  collectText(question?.hook, bucket);
-  collectText(question?.explanation_why, bucket);
-  collectText(question?.explanation_trap, bucket);
-  collectText(question?.explanation_hook, bucket);
-  collectText(question?.explanation, bucket);
-  collectText(explanation, bucket);
-  return bucket.join(' ').toLowerCase();
+function humanizePackId(packId) {
+  const raw = toText(packId);
+  if (!raw) return '';
+  let label = raw.replace(/^ch\d+-/i, '');
+  label = label.replace(/-class-v\d+$/i, '');
+  label = label.replace(/-v\d+$/i, '');
+  label = label.replace(/[-_]+/g, ' ');
+  label = label.replace(/\bpack\b/gi, '').replace(/\s{2,}/g, ' ').trim();
+  return titleCaseWords(label || raw.replace(/[-_]+/g, ' '));
 }
 
-function matchesQuickSearch(question, term) {
-  if (!term) return true;
-  const haystack = buildSubjectSearchHaystack(question);
-  return haystack.includes(term);
+function resolveQuestionPackInfo(question) {
+  const sourceObject = parseMaybeObject(question?.source);
+  const metadataObject = parseMaybeObject(question?.metadata);
+
+  const packId =
+    toText(question?.pack_id) ||
+    toText(question?.packId) ||
+    toText(question?.source_pack) ||
+    toText(question?.sourcePack) ||
+    toText(sourceObject?.pack_id) ||
+    toText(sourceObject?.packId) ||
+    toText(metadataObject?.pack_id) ||
+    toText(metadataObject?.packId);
+
+  const packLabel =
+    toText(question?.pack_title) ||
+    toText(question?.packTitle) ||
+    toText(question?.source_pack_title) ||
+    toText(question?.sourcePackTitle) ||
+    toText(sourceObject?.pack_title) ||
+    toText(sourceObject?.packTitle) ||
+    toText(sourceObject?.title) ||
+    toText(metadataObject?.pack_title) ||
+    toText(metadataObject?.packTitle) ||
+    toText(metadataObject?.title) ||
+    humanizePackId(packId);
+
+  return {
+    packId,
+    packLabel: packLabel || packId,
+  };
 }
 
 function formatTypesLabel(typesValue) {
   const values = (typesValue || []).filter(Boolean);
   if (values.length === 0) return 'None';
   if (values.length === QUICK_TYPES.length) return 'All types';
-  return values.map((type) => (type === 'mcq' ? 'MCQ' : type === 'reverse' ? 'Reverse' : 'Fill')).join(', ');
+  return values
+    .map((type) => (type === 'mcq' ? 'MCQ' : type === 'reverse' ? 'Reverse' : 'Fill'))
+    .join(', ');
 }
 
-function buildSessionLabel(searchValue) {
-  const trimmed = String(searchValue || '').trim();
-  return trimmed ? `Search: ${trimmed}` : 'Broad search';
+function buildSessionLabel(packLabel) {
+  const trimmed = toText(packLabel);
+  return trimmed ? `Subject: ${trimmed}` : 'Subject drill';
 }
 
 export default function DrillPage() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const quickSearchRequestIdRef = useRef(0);
   const questionCardRef = useRef(null);
 
-  const [quickSearch, setQuickSearch] = useState('');
+  const [poolEntries, setPoolEntries] = useState([]);
+  const [packs, setPacks] = useState([]);
+  const [packsLoading, setPacksLoading] = useState(false);
+  const [packsError, setPacksError] = useState('');
+  const [selectedPackId, setSelectedPackId] = useState('');
+
   const [quickTypes, setQuickTypes] = useState({
     mcq: true,
     reverse: true,
@@ -159,23 +149,37 @@ export default function DrillPage() {
     () => QUICK_TYPES.filter((type) => quickTypes[type]),
     [quickTypes]
   );
-  const [quickMatches, setQuickMatches] = useState(null);
-  const [quickLoading, setQuickLoading] = useState(false);
-  const [quickMessage, setQuickMessage] = useState('');
+
   const [questions, setQuestions] = useState([]);
   const [started, setStarted] = useState(false);
   const [isStartCollapsed, setIsStartCollapsed] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [activeSessionMeta, setActiveSessionMeta] = useState({
-    codePrefix: 'quick',
+    codePrefix: 'pack',
     type: 'any',
-    label: 'Broad search',
+    label: 'Subject drill',
+    packId: '',
   });
+
+  const selectedPack = useMemo(
+    () => packs.find((pack) => pack.id === selectedPackId) || null,
+    [packs, selectedPackId]
+  );
+
+  const availableCount = useMemo(() => {
+    if (!selectedPackId) return 0;
+    return poolEntries.filter(
+      (entry) =>
+        entry.packId === selectedPackId &&
+        selectedQuickTypes.includes(entry.questionType)
+    ).length;
+  }, [poolEntries, selectedPackId, selectedQuickTypes]);
 
   const handleDrillComplete = useCallback(
     ({ score, total }) => {
       void trackEvent('drill_complete', {
-        codePrefix: activeSessionMeta.codePrefix || 'quick',
+        codePrefix: activeSessionMeta.codePrefix || 'pack',
         type: activeSessionMeta.type || 'any',
         correct: Number(score) || 0,
         total: Number(total) || 0,
@@ -185,11 +189,88 @@ export default function DrillPage() {
   );
 
   useEffect(() => {
-    const quickQuery = searchParams.get('q') || '';
+    const packQuery = searchParams.get('pk') || '';
     const quickTypeQuery = searchParams.get('qt');
-    setQuickSearch(quickQuery);
+    setSelectedPackId(packQuery);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
   }, [searchParams]);
+
+  useEffect(() => {
+    const supabase = getSupabaseClient();
+    if (!supabase) {
+      setPacksError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+      setPacks([]);
+      setPoolEntries([]);
+      return;
+    }
+
+    let cancelled = false;
+
+    async function loadPackPool() {
+      setPacksLoading(true);
+      setPacksError('');
+
+      const { data, error } = await supabase
+        .from('questions')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(DRILL_POOL_LIMIT);
+
+      if (cancelled) return;
+
+      if (error) {
+        setPacksError(`Failed to load subjects: ${error.message}`);
+        setPacks([]);
+        setPoolEntries([]);
+        setPacksLoading(false);
+        return;
+      }
+
+      const nextEntries = [];
+      const packMap = new Map();
+
+      for (const question of data || []) {
+        const questionType = getQuestionType(question);
+        if (!QUICK_TYPES.includes(questionType)) continue;
+
+        const { packId, packLabel } = resolveQuestionPackInfo(question);
+        if (!packId) continue;
+
+        nextEntries.push({
+          question,
+          packId,
+          packLabel,
+          questionType,
+        });
+
+        const existing = packMap.get(packId);
+        if (existing) {
+          existing.total += 1;
+          if (!existing.label && packLabel) existing.label = packLabel;
+        } else {
+          packMap.set(packId, {
+            id: packId,
+            label: packLabel || humanizePackId(packId) || packId,
+            total: 1,
+          });
+        }
+      }
+
+      const nextPacks = Array.from(packMap.values()).sort(
+        (a, b) => a.label.localeCompare(b.label) || a.id.localeCompare(b.id)
+      );
+
+      setPoolEntries(nextEntries);
+      setPacks(nextPacks);
+      setPacksLoading(false);
+    }
+
+    void loadPackPool();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (!started || questions.length === 0) return;
@@ -201,82 +282,6 @@ export default function DrillPage() {
     return () => cancelAnimationFrame(nextFrame);
   }, [questions, started]);
 
-  const fetchQuickMatches = useCallback(async (filters) => {
-    const supabase = getSupabaseClient();
-    if (!supabase) {
-      return {
-        matches: [],
-        error: 'Supabase is not configured. Check NEXT_PUBLIC_* environment values.',
-      };
-    }
-
-    const types = filters.types || [];
-    if (types.length === 0) {
-      return {
-        matches: [],
-        error: 'Pick at least one type.',
-      };
-    }
-
-    const { data, error } = await supabase
-      .from('questions')
-      .select('*')
-      .in('question_type', types)
-      .order('created_at', { ascending: false })
-      .limit(1000);
-
-    if (error) {
-      return {
-        matches: [],
-        error: `Failed to load drill matches: ${error.message}`,
-      };
-    }
-
-    const term = String(filters.searchTerm || '').trim().toLowerCase();
-    const filtered = (data || []).filter((question) => {
-      if (!types.includes(getQuestionType(question))) return false;
-      return matchesQuickSearch(question, term);
-    });
-
-    return {
-      matches: filtered,
-      error: '',
-    };
-  }, []);
-
-  const refreshQuickMatches = useCallback(async () => {
-    const requestId = quickSearchRequestIdRef.current + 1;
-    quickSearchRequestIdRef.current = requestId;
-    setQuickLoading(true);
-    setQuickMessage('');
-
-    const { matches, error } = await fetchQuickMatches({
-      searchTerm: quickSearch,
-      types: selectedQuickTypes,
-    });
-
-    if (requestId !== quickSearchRequestIdRef.current) return;
-
-    if (error) {
-      setQuickMatches(0);
-      setQuickMessage(error);
-      setQuickLoading(false);
-      return;
-    }
-
-    const filtered = matches || [];
-    setQuickMatches(filtered.length);
-    setQuickMessage(filtered.length === 0 ? 'No matches. Try a broader term.' : '');
-    setQuickLoading(false);
-  }, [fetchQuickMatches, quickSearch, selectedQuickTypes]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      void refreshQuickMatches();
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [refreshQuickMatches]);
-
   function toggleQuickType(type) {
     setQuickTypes((prev) => ({
       ...prev,
@@ -284,11 +289,11 @@ export default function DrillPage() {
     }));
   }
 
-  function buildQuickUrlParams({ searchValue, typesValue }) {
+  function buildDrillUrlParams({ packId, typesValue }) {
     const params = new URLSearchParams();
-    const trimmedSearch = String(searchValue || '').trim();
-    if (trimmedSearch) {
-      params.set('q', trimmedSearch);
+    const normalizedPackId = toText(packId);
+    if (normalizedPackId) {
+      params.set('pk', normalizedPackId);
     }
     const typesCsv = toCsv(typesValue);
     if (typesCsv) {
@@ -297,73 +302,64 @@ export default function DrillPage() {
     return params;
   }
 
-  async function startQuickDrillWithFilters({ searchValue, typesValue }) {
-    if (!typesValue || typesValue.length === 0) {
-      setQuickMessage('Pick at least one type.');
+  async function startPackDrill() {
+    if (!selectedPackId) {
+      setMessage('Choose a subject to start.');
+      return;
+    }
+    if (selectedQuickTypes.length === 0) {
+      setMessage('Pick at least one type.');
       return;
     }
 
-    setQuickLoading(true);
+    setLoading(true);
     setMessage('');
 
-    const { matches, error } = await fetchQuickMatches({
-      searchTerm: searchValue,
-      types: typesValue,
-    });
+    const filteredEntries = poolEntries.filter(
+      (entry) =>
+        entry.packId === selectedPackId &&
+        selectedQuickTypes.includes(entry.questionType)
+    );
 
-    if (error) {
-      setQuickMessage(error);
-      setQuickMatches(0);
-      setQuickLoading(false);
-      return;
-    }
-
-    const filtered = matches || [];
-    setQuickMatches(filtered.length);
-    if (filtered.length === 0) {
-      setQuickMessage('No matches. Try a broader term.');
-      setQuickLoading(false);
-      return;
-    }
-
-    const params = buildQuickUrlParams({
-      searchValue,
-      typesValue,
+    const params = buildDrillUrlParams({
+      packId: selectedPackId,
+      typesValue: selectedQuickTypes,
     });
     const nextUrl = params.toString() ? `${pathname}?${params.toString()}` : pathname;
     router.push(nextUrl);
 
-    const picked = shuffleArray(filtered).slice(0, DRILL_MATCH_COUNT);
-    const quickType = typesValue.length === 1 ? typesValue[0] : 'any';
-    const trimmedSearch = String(searchValue || '').trim();
-    const quickPrefix = trimmedSearch ? `search:${trimmedSearch}` : 'quick';
+    if (filteredEntries.length === 0) {
+      setMessage('No questions available for this subject and type filter yet.');
+      setLoading(false);
+      return;
+    }
+
+    const picked = shuffleArray(filteredEntries.map((entry) => entry.question)).slice(
+      0,
+      DRILL_MATCH_COUNT
+    );
+    const quickType = selectedQuickTypes.length === 1 ? selectedQuickTypes[0] : 'any';
+    const label = selectedPack?.label || humanizePackId(selectedPackId) || selectedPackId;
 
     setActiveSessionMeta({
-      codePrefix: quickPrefix,
+      codePrefix: `pack:${selectedPackId}`,
       type: quickType,
-      label: buildSessionLabel(trimmedSearch),
+      label: buildSessionLabel(label),
+      packId: selectedPackId,
     });
     setQuestions(picked);
     setStarted(true);
     setIsStartCollapsed(true);
 
-    void trackEvent('drill_start', { codePrefix: quickPrefix, type: quickType });
+    void trackEvent('drill_start', { codePrefix: `pack:${selectedPackId}`, type: quickType });
 
     if (picked.length < DRILL_MATCH_COUNT) {
       setMessage(
-        `Only ${picked.length} question(s) match this filter. Try a broader term or more types.`
+        `Only ${picked.length} question(s) available for ${label} with this type filter.`
       );
     }
 
-    setQuickMessage('');
-    setQuickLoading(false);
-  }
-
-  function startQuickDrill() {
-    void startQuickDrillWithFilters({
-      searchValue: quickSearch,
-      typesValue: selectedQuickTypes,
-    });
+    setLoading(false);
   }
 
   const cardClass =
@@ -382,7 +378,7 @@ export default function DrillPage() {
     <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <div className="mb-6 space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Drill</h1>
-        <p className={helperTextClass}>Type a topic and start a {DRILL_MATCH_COUNT}-question drill.</p>
+        <p className={helperTextClass}>Pick a subject and start a {DRILL_MATCH_COUNT}-question drill.</p>
       </div>
 
       <div className="mx-auto w-full max-w-4xl space-y-4">
@@ -391,7 +387,7 @@ export default function DrillPage() {
             <div>
               <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">Drill in progress</p>
               <p className={helperTextClass}>
-                {activeSessionMeta.label || 'Broad search'} | {formatTypesLabel(selectedQuickTypes)} |{' '}
+                {activeSessionMeta.label || 'Subject drill'} | {formatTypesLabel(selectedQuickTypes)} |{' '}
                 {questions.length || DRILL_MATCH_COUNT}/{DRILL_MATCH_COUNT} questions
               </p>
             </div>
@@ -406,23 +402,29 @@ export default function DrillPage() {
         ) : (
           <div className={cardClass}>
             <h2 className={sectionTitleClass}>Start Drill</h2>
-            <p className={`${helperTextClass} mt-1`}>
-              Type a subject, choose question types, and start.
-            </p>
+            <p className={`${helperTextClass} mt-1`}>Choose a subject, set types, and start.</p>
 
             <div className="mt-4 space-y-3">
               <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-quick-search">
-                  Subject search
+                <label className={labelClass} htmlFor="drill-pack-select">
+                  Subject
                 </label>
-                <input
-                  id="drill-quick-search"
+                <select
+                  id="drill-pack-select"
                   className={inputClass}
-                  type="text"
-                  placeholder="e.g., integumentary, lymphatic, trigger points, contraindications"
-                  value={quickSearch}
-                  onChange={(event) => setQuickSearch(event.target.value)}
-                />
+                  value={selectedPackId}
+                  onChange={(event) => setSelectedPackId(event.target.value)}
+                  disabled={packsLoading || packs.length === 0}
+                >
+                  <option value="">Choose a subject...</option>
+                  {packs.map((pack) => (
+                    <option key={pack.id} value={pack.id}>
+                      {pack.label}
+                    </option>
+                  ))}
+                </select>
+                {packsLoading ? <p className={helperTextClass}>Loading subjects...</p> : null}
+                {packsError ? <p className="status error">{packsError}</p> : null}
               </div>
 
               <div className="space-y-1.5" role="group" aria-label="Drill type filters">
@@ -460,24 +462,21 @@ export default function DrillPage() {
 
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800/50">
                 <p className="text-slate-700 dark:text-slate-200">
-                  Available questions: <strong>{quickMatches == null ? '...' : quickMatches}</strong>
+                  Available questions: <strong>{selectedPackId ? availableCount : 0}</strong>
                 </p>
                 <p className="text-slate-600 dark:text-slate-300">
                   Count: <strong>{DRILL_MATCH_COUNT}</strong>
                 </p>
               </div>
 
-              {quickLoading ? <p className={helperTextClass}>Checking matches...</p> : null}
-              {quickMessage ? <p className="status error">{quickMessage}</p> : null}
-
               <div>
                 <button
                   className={buttonClass}
                   type="button"
-                  onClick={startQuickDrill}
-                  disabled={quickLoading}
+                  onClick={() => void startPackDrill()}
+                  disabled={loading || packsLoading || !selectedPackId}
                 >
-                  Start Drill
+                  {loading ? 'Loading...' : 'Start Drill'}
                 </button>
               </div>
             </div>
@@ -490,7 +489,7 @@ export default function DrillPage() {
       {started ? (
         <div ref={questionCardRef} className="mx-auto mt-6 w-full max-w-5xl scroll-mt-6">
           <QuestionRunner
-            title={`Drill ${activeSessionMeta.label || 'Broad search'}`}
+            title={`Drill ${activeSessionMeta.label || 'Subject drill'}`}
             questions={questions}
             onComplete={handleDrillComplete}
           />
