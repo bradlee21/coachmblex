@@ -16,6 +16,7 @@ const authProviderSource = read('src/providers/AuthProvider.js');
 const todaySource = read('app/today/page.js');
 const adminQuestionsSource = read('app/admin/questions/page.js');
 const questionRunnerSource = read('app/_components/QuestionRunner.js');
+const questionRunnerLogicSource = read('app/_components/questionRunnerLogic.mjs');
 const importPackSource = read('scripts/import-pack.mjs');
 
 assertMatch(
@@ -115,15 +116,27 @@ assertMatch(
 );
 
 assertMatch(
-  questionRunnerSource,
+  questionRunnerLogicSource,
   /if\s*\(\s*questionType\s*===\s*'fill'\s*\)\s*return\s*'fib';/,
   'Expected fill question_type to map to fib mode.'
 );
 
 assertMatch(
   questionRunnerSource,
-  /questionMode === 'mcq' && \['1', '2', '3', '4'\]\.includes\(key\)/,
+  /resolveAnswerHotkeyChoicePosition\(\s*\{\s*questionMode,\s*key,\s*visibleChoiceCount:\s*visibleChoices\.length/s,
+  'Expected QuestionRunner to route numeric hotkeys through resolver helper.'
+);
+
+assertMatch(
+  questionRunnerLogicSource,
+  /if\s*\(\s*questionMode\s*!==\s*'mcq'\s*\)\s*return\s*null;/,
   'Expected numeric answer hotkeys to be gated to MCQ mode.'
+);
+
+assertMatch(
+  questionRunnerSource,
+  /resolveFibInputEnterIntent\(\s*\{\s*key:\s*event\.key,\s*submitted,\s*}\s*\)/,
+  'Expected fib input Enter handling to route through deterministic resolver helper.'
 );
 
 assertMatch(

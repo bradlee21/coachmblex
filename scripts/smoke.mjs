@@ -48,6 +48,7 @@ function runNodeScript(path) {
 
 runNodeScript('scripts/study-night-smoke.mjs');
 runNodeScript('scripts/auth-loading-regression.mjs');
+runNodeScript('scripts/question-runner-fib-regression.mjs');
 runNodeScript('scripts/rls-sanity.mjs');
 
 if (isCritical) {

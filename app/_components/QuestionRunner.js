@@ -3,6 +3,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
+import {
+  getChoiceList,
+  isFibAnswerCorrect,
+  normalizeFreeText,
+  normalizeText,
+  resolveAnswerHotkeyChoicePosition,
+  resolveFibFeedbackState,
+  resolveFibInputEnterIntent,
+  resolveQuestionMode as resolveQuestionModeFromLogic,
+} from './questionRunnerLogic.mjs';
 
 function isTypingTarget(target) {
   if (!target) return false;
@@ -19,29 +29,11 @@ function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
 
-function normalizeText(value) {
-  return toText(value).toLowerCase().replace(/\s+/g, ' ');
-}
-
-function normalizeFreeText(value) {
-  return normalizeText(value).replace(/[.,!?;:]+$/g, '');
-}
-
 function toIndexFromLetter(value) {
   const letter = toText(value).toUpperCase();
   if (letter.length !== 1) return null;
   if (letter < 'A' || letter > 'Z') return null;
   return letter.charCodeAt(0) - 65;
-}
-
-function getChoiceList(question) {
-  if (Array.isArray(question?.choices)) return question.choices;
-  if (question?.choices && typeof question.choices === 'object') {
-    return ['A', 'B', 'C', 'D']
-      .map((key) => question.choices[key])
-      .filter((value) => value != null);
-  }
-  return [];
 }
 
 function toIndexFromNumber(value, choiceCount) {
@@ -113,21 +105,8 @@ function resolveCorrectAnswerText(question, resolvedCorrectChoiceText) {
   );
 }
 
-function hasPromptBlank(prompt) {
-  return /_{2,}|\bblank\b/i.test(String(prompt || ''));
-}
-
 function resolveQuestionMode(question) {
-  const questionType = toText(question?.question_type || question?.type).toLowerCase();
-  const choices = getChoiceList(question);
-  const viableChoiceCount = choices.filter((choice) => toText(choice).length > 0).length;
-  const hasCorrectText = toText(question?.correct_text).length > 0;
-
-  if (questionType === 'fill') return 'fib';
-  if (hasPromptBlank(question?.prompt)) return 'fib';
-  if (hasCorrectText && viableChoiceCount < 2) return 'fib';
-  if (viableChoiceCount >= 2) return 'mcq';
-  return 'fib';
+  return resolveQuestionModeFromLogic(question);
 }
 
 function resolveExplanationDetails(question, resolvedCorrectAnswerText) {
@@ -219,12 +198,13 @@ export default function QuestionRunner({ title, questions, onComplete }) {
     [current, resolvedCorrectAnswerText]
   );
   const isDone = index >= questions.length;
-  const fibIsCorrect = useMemo(() => {
-    if (questionMode !== 'fib' || !submitted) return null;
-    return (
-      normalizeFreeText(userInput) !== '' &&
-      normalizeFreeText(userInput) === normalizeFreeText(resolvedCorrectAnswerText)
-    );
+  const fibFeedback = useMemo(() => {
+    return resolveFibFeedbackState({
+      questionMode,
+      submitted,
+      userInput,
+      resolvedCorrectAnswerText,
+    });
   }, [questionMode, submitted, userInput, resolvedCorrectAnswerText]);
 
   const submitAnswer = useCallback(
@@ -243,8 +223,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       setSubmitted(true);
 
       const isCorrect = isFib
-        ? normalizeFreeText(answerText) !== '' &&
-          normalizeFreeText(answerText) === normalizeFreeText(resolvedCorrectAnswerText)
+        ? isFibAnswerCorrect(answerText, resolvedCorrectAnswerText)
         : typeof resolvedCorrectIndex === 'number' && answerChoiceIndex === resolvedCorrectIndex;
       if (isCorrect) setScore((prev) => prev + 1);
       setResults((prev) => [
@@ -313,12 +292,14 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
       const key = event.key.toLowerCase();
 
-      if (questionMode === 'mcq' && ['1', '2', '3', '4'].includes(key)) {
+      const hotkeyChoicePosition = resolveAnswerHotkeyChoicePosition({
+        questionMode,
+        key,
+        visibleChoiceCount: visibleChoices.length,
+      });
+      if (hotkeyChoicePosition != null) {
         event.preventDefault();
-        const nextChoice = Number(key) - 1;
-        if (nextChoice < visibleChoices.length) {
-          submitAnswer({ choiceIndex: visibleChoices[nextChoice].rawIndex });
-        }
+        submitAnswer({ choiceIndex: visibleChoices[hotkeyChoicePosition].rawIndex });
         return;
       }
 
@@ -432,9 +413,13 @@ export default function QuestionRunner({ title, questions, onComplete }) {
             value={userInput}
             onChange={(event) => setUserInput(event.target.value)}
             onKeyDown={(event) => {
-              if (event.key !== 'Enter') return;
+              const fibEnterIntent = resolveFibInputEnterIntent({
+                key: event.key,
+                submitted,
+              });
+              if (!fibEnterIntent) return;
               event.preventDefault();
-              if (submitted) {
+              if (fibEnterIntent === 'next') {
                 goNext();
               } else {
                 submitAnswer({ inputText: userInput });
@@ -485,9 +470,9 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       {submitted ? (
         <>
           {questionMode === 'fib' ? (
-            <p className={`status ${fibIsCorrect ? 'success' : 'error'}`}>
-              {fibIsCorrect ? 'Correct' : 'Incorrect'}
-              {!fibIsCorrect ? ` Correct answer: ${explanationDetails.answer}` : ''}
+            <p className={`status ${fibFeedback?.isCorrect ? 'success' : 'error'}`}>
+              {fibFeedback?.label}
+              {!fibFeedback?.isCorrect ? ` Correct answer: ${explanationDetails.answer}` : ''}
             </p>
           ) : null}
         <div className="explanation-box">
