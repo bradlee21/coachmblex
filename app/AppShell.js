@@ -392,7 +392,7 @@ export default function AppShell({ children }) {
         ) : null}
       </aside>
 
-      <main className="content">
+      <main className={`content${pathname === '/today' ? ' content--today' : ''}`}>
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">
             <p className="muted">

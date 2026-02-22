@@ -434,6 +434,19 @@ a {
   max-width: 980px;
 }
 
+@media (min-width: 1024px) {
+  .content--today {
+    max-width: none;
+    width: 100%;
+  }
+
+  .today-page {
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .content h1 {
   margin-top: 0;
 }
