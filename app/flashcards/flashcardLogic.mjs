@@ -1,4 +1,4 @@
-import { resolveExplanationParts } from '../_components/questionRunnerLogic.mjs';
+import { resolveExplanationParts, shuffleArray } from '../_components/questionRunnerLogic.mjs';
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -127,6 +127,10 @@ export function rankFlashcardQuestions(questions, outcomes, limit = 20) {
       return aKey.localeCompare(bKey);
     })
     .slice(0, limit);
+}
+
+export function buildFlashcardDeck(questions, outcomes, limit = 20, rng = Math.random) {
+  return shuffleArray(rankFlashcardQuestions(questions, outcomes, limit), rng);
 }
 
 export function toggleFlashcardSide(isFlipped) {

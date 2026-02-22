@@ -3,25 +3,28 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
+import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
 import { useAuth } from '../../src/providers/AuthProvider';
 
 function pickTodayQuestions(biasPool, allPool) {
-  const preferred = biasPool.slice(0, 6);
+  const randomizedBiasPool = shuffleArray(biasPool || []);
+  const randomizedAllPool = shuffleArray(allPool || []);
+  const preferred = randomizedBiasPool.slice(0, 6);
   const used = new Set(preferred.map((item) => item.id));
-  const supplemental = allPool.filter((item) => !used.has(item.id)).slice(0, 2);
+  const supplemental = randomizedAllPool.filter((item) => !used.has(item.id)).slice(0, 2);
   const merged = [...preferred, ...supplemental];
 
   if (merged.length < 8) {
     const mergedIds = new Set(merged.map((q) => q.id));
-    const fill = allPool
+    const fill = randomizedAllPool
       .filter((item) => !mergedIds.has(item.id))
       .slice(0, 8 - merged.length);
-    return [...merged, ...fill];
+    return shuffleArray([...merged, ...fill]);
   }
 
-  return merged;
+  return shuffleArray(merged);
 }
 
 export default function TodayPage() {

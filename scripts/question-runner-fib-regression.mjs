@@ -5,6 +5,7 @@ import {
   resolveFibFeedbackState,
   resolveFibInputEnterIntent,
   resolveQuestionMode,
+  shuffleArray,
 } from '../app/_components/questionRunnerLogic.mjs';
 
 function read(path) {
@@ -79,5 +80,23 @@ const feedback = resolveFibFeedbackState({
 
 assert(feedback?.isCorrect === true, 'Expected correct fib submission to evaluate as correct.');
 assert(feedback?.label === 'Correct', 'Expected fib correct submission to surface "Correct".');
+
+const originalOrder = [1, 2, 3, 4];
+const rngValues = [0.1, 0.9, 0.0];
+let rngIndex = 0;
+const shuffled = shuffleArray(originalOrder, () => {
+  const next = rngValues[rngIndex] ?? 0;
+  rngIndex += 1;
+  return next;
+});
+
+assert(
+  JSON.stringify(originalOrder) === JSON.stringify([1, 2, 3, 4]),
+  'Expected shuffleArray to return a new array and not mutate the original input.'
+);
+assert(
+  JSON.stringify(shuffled) === JSON.stringify([2, 4, 3, 1]),
+  `Expected deterministic Fisher-Yates shuffle output, received ${JSON.stringify(shuffled)}.`
+);
 
 console.log('QuestionRunner FIB regression checks passed.');

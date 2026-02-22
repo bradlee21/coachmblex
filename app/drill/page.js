@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
+import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
 import {
@@ -484,7 +485,7 @@ export default function DrillPage() {
       return;
     }
 
-    const picked = (data || []).slice(0, 10);
+    const picked = shuffleArray(data || []).slice(0, 10);
     const codePrefix = getCodePrefix(selectedCode);
     const type = ['mcq', 'reverse', 'fill'].includes(questionType) ? questionType : 'mcq';
     setActiveSessionMeta({ codePrefix, type });
@@ -559,7 +560,7 @@ export default function DrillPage() {
     });
     router.push(`${pathname}?${params.toString()}`);
 
-    const picked = filtered.slice(0, 10);
+    const picked = shuffleArray(filtered).slice(0, 10);
     const quickType = typesValue.length === 1 ? typesValue[0] : 'any';
     const quickPrefix = searchValue?.trim() ? `search:${searchValue.trim()}` : 'quick';
     setActiveSessionMeta({ codePrefix: quickPrefix, type: quickType });

@@ -4,11 +4,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
 import {
+  buildFlashcardDeck,
   FLASHCARD_RATINGS,
   applyFlashcardOutcome,
   getFlashcardStorageKey,
   parseFlashcardOutcomes,
-  rankFlashcardQuestions,
   resolveFlashcardBackDetails,
   resolveFlashcardHotkeyAction,
   serializeFlashcardOutcomes,
@@ -139,7 +139,7 @@ export default function FlashcardsPage() {
           return;
         }
 
-        setCards(rankFlashcardQuestions(data || [], storedOutcomes, 20));
+        setCards(buildFlashcardDeck(data || [], storedOutcomes, 20));
       } catch (loadError) {
         if (isCancelled) return;
         const message = loadError instanceof Error ? loadError.message : 'Failed to load flashcards.';
@@ -187,7 +187,7 @@ export default function FlashcardsPage() {
     setIndex(0);
     setIsFlipped(false);
     setShowExplanation(false);
-    setCards((prev) => rankFlashcardQuestions(prev, outcomes, 20));
+    setCards((prev) => buildFlashcardDeck(prev, outcomes, 20));
   }
 
   return (

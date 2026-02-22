@@ -5,6 +5,7 @@ import {
   resolveCorrectAnswerText,
   resolveCorrectChoiceIndex,
   resolveQuestionMode,
+  shuffleArray,
 } from '../_components/questionRunnerLogic.mjs';
 
 function toText(value) {
@@ -76,15 +77,15 @@ export function resolveSprintTimerIntent({ phase, timer, nowMs = Date.now() }) {
   return getSprintTimerSnapshot(timer, nowMs).isExpired ? 'finish' : 'continue';
 }
 
-export function buildSprintDeck(questions, limit = SPRINT_DECK_SIZE) {
+export function buildSprintDeck(questions, limit = SPRINT_DECK_SIZE, rng = Math.random) {
   const safeLimit = Math.max(1, Number(limit) || SPRINT_DECK_SIZE);
-  return (questions || [])
+  const eligible = (questions || [])
     .filter((question) => question && toText(question.prompt))
     .filter((question) => {
       const mode = resolveQuestionMode(question);
       return mode === 'mcq' || mode === 'fib';
-    })
-    .slice(0, safeLimit);
+    });
+  return shuffleArray(eligible, rng).slice(0, safeLimit);
 }
 
 export function resolveSprintQuestionState(question) {
