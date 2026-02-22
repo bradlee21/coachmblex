@@ -51,6 +51,7 @@ runNodeScript('scripts/auth-loading-regression.mjs');
 runNodeScript('scripts/question-runner-fib-regression.mjs');
 runNodeScript('scripts/flashcards-regression.mjs');
 runNodeScript('scripts/sprint-regression.mjs');
+runNodeScript('scripts/boss-fight-regression.mjs');
 runNodeScript('scripts/rls-sanity.mjs');
 
 if (isCritical) {
