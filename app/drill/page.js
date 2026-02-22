@@ -158,9 +158,31 @@ function buildTextSearchOrClause(searchTerm) {
   ].join(',');
 }
 
+function isJsonOperatorPath(path) {
+  return typeof path === 'string' && (path.includes('->>') || path.includes('->'));
+}
+
+function resolveStrategyProbeValueFromRow(row, strategy) {
+  if (!row || !strategy) return '';
+  if (strategy.kind === 'column') {
+    return toText(row?.[strategy.path]);
+  }
+
+  const [root, jsonKey] = String(strategy.path).split('->>').map((part) => part?.trim());
+  if (!root || !jsonKey) return '';
+  const parsed = parseMaybeObject(row?.[root]);
+  return toText(parsed?.[jsonKey]);
+}
+
 function applyPackFilter(query, strategy, packId) {
   if (!strategy || !toText(packId)) return query;
-  return query.filter(strategy.path, 'eq', toText(packId));
+  const value = toText(packId);
+  // Supabase/PostgREST JSON operator paths (e.g. source->>pack_id) must use .filter(path, 'eq', value).
+  // Direct columns should use .eq(column, value).
+  if (isJsonOperatorPath(strategy.path)) {
+    return query.filter(strategy.path, 'eq', value);
+  }
+  return query.eq(strategy.path, value);
 }
 
 function applyDrillFilters(query, { packStrategy, packId, types, searchText }) {
@@ -176,12 +198,20 @@ function applyDrillFilters(query, { packStrategy, packId, types, searchText }) {
 }
 
 async function detectPackFilterStrategy(supabase) {
+  const { data: sampleRow } = await supabase
+    .from('questions')
+    .select('*')
+    .limit(1)
+    .maybeSingle();
+
   for (const strategy of PACK_FILTER_STRATEGIES) {
+    const sampleValue = resolveStrategyProbeValueFromRow(sampleRow, strategy);
+    const probeValue = sampleValue || '__pack_probe__';
     const { error } = await applyPackFilter(
-      supabase.from('questions').select('id', { head: true, count: 'exact' }),
+      supabase.from('questions').select('id').limit(1),
       strategy,
-      '__pack_probe__'
-    ).limit(1);
+      probeValue
+    );
     if (!error) {
       return strategy;
     }
