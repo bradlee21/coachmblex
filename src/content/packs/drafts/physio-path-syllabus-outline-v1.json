@@ -1,0 +1,5301 @@
+{
+  "pack_id": "physio-path-syllabus-outline-v1",
+  "packId": "physio-path-syllabus-outline-v1",
+  "title": "Physiology & Pathology Syllabus Outline Draft (FT Day) v1",
+  "topic": "Physiology and Pathology Syllabus Outline",
+  "version": 1,
+  "source": "HACC Physiology and Pathology syllabus (FT Day), Schedule of Activities table",
+  "notes": "Draft syllabus-aligned outline pack with placeholder fill rows only. Topics map to weekly schedule systems/subtopics for later authoring. Importer-compatible shape (questions[]). Replace TODO prompts/answers/explanations before import.",
+  "counts": {
+    "total": 170,
+    "mcq": 0,
+    "reverse": 0,
+    "fill": 170,
+    "domain_cardiovascular": 19,
+    "domain_cells-tissues": 12,
+    "domain_course-review": 4,
+    "domain_digestive-nutrition": 18,
+    "domain_endocrine": 12,
+    "domain_foundations": 10,
+    "domain_integumentary": 10,
+    "domain_lymphatic-immune": 11,
+    "domain_muscular": 12,
+    "domain_nervous": 12,
+    "domain_respiratory": 12,
+    "domain_sense-organs": 9,
+    "domain_skeletal": 18,
+    "domain_urinary": 11
+  },
+  "questions": [
+    {
+      "id": "physio-path-syllabus-outline-v1-001",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Introduction to the body (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Introduction to the body",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "introduction-to-the-body",
+        "core-concept"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "core-concept"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-002",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Body systems overview (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Body systems overview",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "body-systems-overview",
+        "core-concept"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "core-concept"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-003",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Body regions terminology (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Body regions terminology",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "body-regions-terminology",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-004",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Abdominal regions (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Abdominal regions",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "abdominal-regions",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-005",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Types of chemical bonds (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Types of chemical bonds",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "types-of-chemical-bonds",
+        "core-concept"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "core-concept"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-006",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Mixtures and solutions (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Mixtures and solutions",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "mixtures-and-solutions",
+        "core-concept"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "core-concept"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-007",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Acids, bases, and pH (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Acids, bases, and pH",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "acids-bases-and-ph",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-008",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Carbohydrates, lipids, and proteins (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Carbohydrates, lipids, and proteins",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "carbohydrates-lipids-and-proteins",
+        "core-concept"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "core-concept"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-009",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for ATP and cellular energy (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for ATP and cellular energy",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "atp-and-cellular-energy",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-010",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "foundations",
+      "subtopic": "foundations",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Body systems scavenger-hunt review (Body & Chemistry Foundations)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Body systems scavenger-hunt review",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-1",
+        "foundations",
+        "body-and-chemistry-foundations",
+        "body-systems-scavenger-hunt-review",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 1,
+        "subject": "Body & Chemistry Foundations",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-011",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Cell structure and organelles (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Cell structure and organelles",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "cell-structure-and-organelles",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-012",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Movement through the cell membrane (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Movement through the cell membrane",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "movement-through-the-cell-membrane",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-013",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Cell cycle (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Cell cycle",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "cell-cycle",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-014",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Mitosis (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Mitosis",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "mitosis",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-015",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Cancer basics (cell-cycle disorders) (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Cancer basics (cell-cycle disorders)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "cancer-basics-cell-cycle-disorders",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-016",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Epithelial tissue (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Epithelial tissue",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "epithelial-tissue",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-017",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Endocrine vs exocrine glands (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Endocrine vs exocrine glands",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "endocrine-vs-exocrine-glands",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-018",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Connective tissue types (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Connective tissue types",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "connective-tissue-types",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-019",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nervous tissue (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nervous tissue",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "nervous-tissue",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-020",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Muscle tissue (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Muscle tissue",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "muscle-tissue",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-021",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Tissue repair: regeneration and fibrosis (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Tissue repair: regeneration and fibrosis",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "tissue-repair-regeneration-and-fibrosis",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-022",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cells-tissues",
+      "subtopic": "cells-tissues",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Body membranes (Cells & Tissues)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Body membranes",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-2",
+        "cells-tissues",
+        "cells-and-tissues",
+        "body-membranes",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 2,
+        "subject": "Cells & Tissues",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-023",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Structure of the skin (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Structure of the skin",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "structure-of-the-skin",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-024",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Skin color and abnormal skin-color changes (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Skin color and abnormal skin-color changes",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "skin-color-and-abnormal-skin-color-changes",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-025",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Functions of the skin (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Functions of the skin",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "functions-of-the-skin",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-026",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Appendages of the skin (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Appendages of the skin",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "appendages-of-the-skin",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-027",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Skin glands (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Skin glands",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "skin-glands",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-028",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Burns (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Burns",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "burns",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-029",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Skin cancer and ABCDE mole assessment (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Skin cancer and ABCDE mole assessment",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "skin-cancer-and-abcde-mole-assessment",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-030",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the integumentary system (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the integumentary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "disorders-of-the-integumentary-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-031",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the integumentary system (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the integumentary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "effects-of-massage-on-the-integumentary-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-032",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "integumentary",
+      "subtopic": "integumentary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Integumentary system review / test-your-knowledge (Integumentary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Integumentary system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-3",
+        "integumentary",
+        "integumentary-system",
+        "integumentary-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 3,
+        "subject": "Integumentary System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-033",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Functions of bone (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Functions of bone",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "functions-of-bone",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-034",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Classification of bones (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Classification of bones",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "classification-of-bones",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-035",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Parts of a long bone (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Parts of a long bone",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "parts-of-a-long-bone",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-036",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Bone tissue (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Bone tissue",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "bone-tissue",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-037",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Bone marrow (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Bone marrow",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "bone-marrow",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-038",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Bone development and remodeling (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Bone development and remodeling",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "bone-development-and-remodeling",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-039",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Fractures and fracture repair (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Fractures and fracture repair",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "fractures-and-fracture-repair",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-040",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the skeletal system (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the skeletal system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "overview-of-the-skeletal-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-041",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Bone surface markings (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Bone surface markings",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "bone-surface-markings",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-042",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Bones of the skeleton review (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Bones of the skeleton review",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "bones-of-the-skeleton-review",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-043",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Male and female skeletal differences (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Male and female skeletal differences",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "male-and-female-skeletal-differences",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-044",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Arches of the foot (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Arches of the foot",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "arches-of-the-foot",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-045",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Skeletal system disorders (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Skeletal system disorders",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "skeletal-system-disorders",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-046",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Classification of joints (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Classification of joints",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "classification-of-joints",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-047",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Types of synovial joints (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Types of synovial joints",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "types-of-synovial-joints",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-048",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Movements at synovial joints (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Movements at synovial joints",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "movements-at-synovial-joints",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-049",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of joints (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of joints",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "disorders-of-joints",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-050",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "skeletal",
+      "subtopic": "skeletal",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the skeletal system (Skeletal System (Bones + Joints))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the skeletal system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-4",
+        "skeletal",
+        "skeletal-system-bones-joints",
+        "effects-of-massage-on-the-skeletal-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 4,
+        "subject": "Skeletal System (Bones + Joints)",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-051",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Types of muscle tissue (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Types of muscle tissue",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "types-of-muscle-tissue",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-052",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Skeletal muscle structure (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Skeletal muscle structure",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "skeletal-muscle-structure",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-053",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Muscle contraction and relaxation (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Muscle contraction and relaxation",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "muscle-contraction-and-relaxation",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-054",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders at the neuromuscular junction (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders at the neuromuscular junction",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "disorders-at-the-neuromuscular-junction",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-055",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Muscle tone (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Muscle tone",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "muscle-tone",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-056",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Isometric vs isotonic contraction (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Isometric vs isotonic contraction",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "isometric-vs-isotonic-contraction",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-057",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Energy sources for muscle contraction (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Energy sources for muscle contraction",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "energy-sources-for-muscle-contraction",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-058",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Exercise and muscle conditioning (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Exercise and muscle conditioning",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "exercise-and-muscle-conditioning",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-059",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Review muscles of the body (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Review muscles of the body",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "review-muscles-of-the-body",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-060",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the muscular system (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the muscular system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "disorders-of-the-muscular-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-061",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the muscular system (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the muscular system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "effects-of-massage-on-the-muscular-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-062",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "muscular",
+      "subtopic": "muscular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Muscular system review / test-your-knowledge (Muscular System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Muscular system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-5",
+        "muscular",
+        "muscular-system",
+        "muscular-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 5,
+        "subject": "Muscular System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-063",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the nervous system (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the nervous system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "overview-of-the-nervous-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-064",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Divisions of the nervous system (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Divisions of the nervous system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "divisions-of-the-nervous-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-065",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nervous system cells and blood-brain barrier (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nervous system cells and blood-brain barrier",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "nervous-system-cells-and-blood-brain-barrier",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-066",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Neurons: structure and function (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Neurons: structure and function",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "neurons-structure-and-function",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-067",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Impulse conduction (unmyelinated vs myelinated fibers) (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Impulse conduction (unmyelinated vs myelinated fibers)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "impulse-conduction-unmyelinated-vs-myelinated-fibers",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-068",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Synapses (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Synapses",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "synapses",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-069",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Spinal cord and reflexes (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Spinal cord and reflexes",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "spinal-cord-and-reflexes",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-070",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Brain and cranial nerves (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Brain and cranial nerves",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "brain-and-cranial-nerves",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-071",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Autonomic nervous system (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Autonomic nervous system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "autonomic-nervous-system",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-072",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the nervous system (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the nervous system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "disorders-of-the-nervous-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-073",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the nervous system (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the nervous system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "effects-of-massage-on-the-nervous-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-074",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "nervous",
+      "subtopic": "nervous",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nervous system review / test-your-knowledge (Nervous System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nervous system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "nervous",
+        "nervous-system",
+        "nervous-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Nervous System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-075",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Sensory receptors (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Sensory receptors",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "sensory-receptors",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-076",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for General senses (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for General senses",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "general-senses",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-077",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Special senses overview (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Special senses overview",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "special-senses-overview",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-078",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Taste (gustation) (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Taste (gustation)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "taste-gustation",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-079",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Hearing (audition) (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Hearing (audition)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "hearing-audition",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-080",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Balance (equilibrium) (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Balance (equilibrium)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "balance-equilibrium",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-081",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Vision (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Vision",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "vision",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-082",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the sense organs (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the sense organs",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "disorders-of-the-sense-organs",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-083",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "sense-organs",
+      "subtopic": "sense-organs",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Sense organs review / test-your-knowledge (Sense Organs)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Sense organs review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-6",
+        "sense-organs",
+        "sense-organs",
+        "sense-organs-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 6,
+        "subject": "Sense Organs",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-084",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "study-skills",
+      "subtopic": "course-review",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Midterm exam review worksheets (Midterm Review & Exam Prep)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Midterm exam review worksheets",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-7",
+        "course-review",
+        "midterm-review-and-exam-prep",
+        "midterm-exam-review-worksheets",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 7,
+        "subject": "Midterm Review & Exam Prep",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-085",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "study-skills",
+      "subtopic": "course-review",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Physiology jeopardy / review game stations / flashcards (Midterm Review & Exam Prep)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Physiology jeopardy / review game stations / flashcards",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-7",
+        "course-review",
+        "midterm-review-and-exam-prep",
+        "physiology-jeopardy-review-game-stations-flashcards",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 7,
+        "subject": "Midterm Review & Exam Prep",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-086",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the endocrine system (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the endocrine system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "overview-of-the-endocrine-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-087",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Hormones (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Hormones",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "hormones",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-088",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pituitary gland and hypothalamus (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pituitary gland and hypothalamus",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "pituitary-gland-and-hypothalamus",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-089",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Adrenal glands (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Adrenal glands",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "adrenal-glands",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-090",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pineal gland (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pineal gland",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "pineal-gland",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-091",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Thyroid gland (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Thyroid gland",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "thyroid-gland",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-092",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Thymus (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Thymus",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "thymus",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-093",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Parathyroids (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Parathyroids",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "parathyroids",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-094",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pancreas and regulation of blood glucose (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pancreas and regulation of blood glucose",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "pancreas-and-regulation-of-blood-glucose",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-095",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Other endocrine cells and chemicals (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Other endocrine cells and chemicals",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "other-endocrine-cells-and-chemicals",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-096",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the endocrine glands (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the endocrine glands",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "disorders-of-the-endocrine-glands",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-097",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "endocrine",
+      "subtopic": "endocrine",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Endocrine system review / test-your-knowledge (Endocrine System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Endocrine system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-8",
+        "endocrine",
+        "endocrine-system",
+        "endocrine-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 8,
+        "subject": "Endocrine System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-098",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Components of blood (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Components of blood",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "components-of-blood",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-099",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood cell formation (hematopoiesis) (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood cell formation (hematopoiesis)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-cell-formation-hematopoiesis",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-100",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Red blood cells (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Red blood cells",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "red-blood-cells",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-101",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for White blood cells (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for White blood cells",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "white-blood-cells",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-102",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Thrombocytes / platelets and control of bleeding (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Thrombocytes / platelets and control of bleeding",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "thrombocytes-platelets-and-control-of-bleeding",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-103",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood types (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood types",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-types",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-104",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood disorders (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood disorders",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-disorders",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-105",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Structure of the heart (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Structure of the heart",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "structure-of-the-heart",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-106",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood flow through the heart (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood flow through the heart",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-flow-through-the-heart",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-107",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Coronary circulation (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Coronary circulation",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "coronary-circulation",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-108",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Cardiac conduction (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Cardiac conduction",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "cardiac-conduction",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-109",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Factors that affect heart rate (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Factors that affect heart rate",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "factors-that-affect-heart-rate",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-110",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the heart (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the heart",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "disorders-of-the-heart",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-111",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood vessel structure (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood vessel structure",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-vessel-structure",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-112",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Arteries, veins, and capillaries / capillary exchange (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Arteries, veins, and capillaries / capillary exchange",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "arteries-veins-and-capillaries-capillary-exchange",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-113",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Circulatory routes and hepatic portal circulation (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Circulatory routes and hepatic portal circulation",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "circulatory-routes-and-hepatic-portal-circulation",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-114",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Blood pressure and hormonal regulation of blood pressure (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Blood pressure and hormonal regulation of blood pressure",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "blood-pressure-and-hormonal-regulation-of-blood-pressure",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-115",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the vascular system (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the vascular system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "disorders-of-the-vascular-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-116",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "cardiovascular",
+      "subtopic": "cardiovascular",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the cardiovascular system (Cardiovascular System (Blood + Heart + Vessels))",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the cardiovascular system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-9",
+        "cardiovascular",
+        "cardiovascular-system-blood-heart-vessels",
+        "effects-of-massage-on-the-cardiovascular-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 9,
+        "subject": "Cardiovascular System (Blood + Heart + Vessels)",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-117",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the lymphatic system (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the lymphatic system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "overview-of-the-lymphatic-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-118",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Lymph vessels (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Lymph vessels",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "lymph-vessels",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-119",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Lymphatic tissues (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Lymphatic tissues",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "lymphatic-tissues",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-120",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Lymphatic organs (thymus, lymph nodes, spleen) (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Lymphatic organs (thymus, lymph nodes, spleen)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "lymphatic-organs-thymus-lymph-nodes-spleen",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-121",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the immune system (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the immune system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "overview-of-the-immune-system",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-122",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nonspecific immunity (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nonspecific immunity",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "nonspecific-immunity",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-123",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Specific immunity (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Specific immunity",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "specific-immunity",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-124",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Active vs passive immunity (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Active vs passive immunity",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "active-vs-passive-immunity",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-125",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Immune system disorders (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Immune system disorders",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "immune-system-disorders",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-126",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the lymphatic and immune systems (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the lymphatic and immune systems",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "effects-of-massage-on-the-lymphatic-and-immune-systems",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-127",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "lymphatic-immune",
+      "subtopic": "lymphatic-immune",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Lymphatic/immune system review / test-your-knowledge (Lymphatic & Immune Systems)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Lymphatic/immune system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-10",
+        "lymphatic-immune",
+        "lymphatic-and-immune-systems",
+        "lymphatic-immune-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 10,
+        "subject": "Lymphatic & Immune Systems",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-128",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the respiratory system (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the respiratory system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "overview-of-the-respiratory-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-129",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Upper respiratory tract (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Upper respiratory tract",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "upper-respiratory-tract",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-130",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Lower respiratory tract (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Lower respiratory tract",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "lower-respiratory-tract",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-131",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Gas exchange (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Gas exchange",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "gas-exchange",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-132",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pulmonary ventilation and muscles of respiration (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pulmonary ventilation and muscles of respiration",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "pulmonary-ventilation-and-muscles-of-respiration",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-133",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Neural control of breathing (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Neural control of breathing",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "neural-control-of-breathing",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-134",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pressure and airflow (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pressure and airflow",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "pressure-and-airflow",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-135",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Measurements of ventilation (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Measurements of ventilation",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "measurements-of-ventilation",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-136",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Variations in respiratory rhythm (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Variations in respiratory rhythm",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "variations-in-respiratory-rhythm",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-137",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the respiratory system (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the respiratory system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "disorders-of-the-respiratory-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-138",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the respiratory system (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the respiratory system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "effects-of-massage-on-the-respiratory-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-139",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "respiratory",
+      "subtopic": "respiratory",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Respiratory system review / test-your-knowledge (Respiratory System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Respiratory system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-11",
+        "respiratory",
+        "respiratory-system",
+        "respiratory-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 11,
+        "subject": "Respiratory System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-140",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the urinary system (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the urinary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "overview-of-the-urinary-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-141",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Functions of the urinary system (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Functions of the urinary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "functions-of-the-urinary-system",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-142",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Kidneys (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Kidneys",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "kidneys",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-143",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nephrons (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nephrons",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "nephrons",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-144",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Urine formation (step-by-step) (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Urine formation (step-by-step)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "urine-formation-step-by-step",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-145",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Hormones affecting the urinary system (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Hormones affecting the urinary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "hormones-affecting-the-urinary-system",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-146",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Composition of urine (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Composition of urine",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "composition-of-urine",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-147",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Storage and elimination of urine (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Storage and elimination of urine",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "storage-and-elimination-of-urine",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-148",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the urinary system (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the urinary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "disorders-of-the-urinary-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-149",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the urinary system (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the urinary system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "effects-of-massage-on-the-urinary-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-150",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "urinary",
+      "subtopic": "urinary",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Urinary system review / test-your-knowledge (Urinary System)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Urinary system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-12",
+        "urinary",
+        "urinary-system",
+        "urinary-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 12,
+        "subject": "Urinary System",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-151",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Overview of the digestive system (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Overview of the digestive system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "overview-of-the-digestive-system",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-152",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Peritoneum (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Peritoneum",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "peritoneum",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-153",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Mouth (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Mouth",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "mouth",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-154",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Pharynx (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Pharynx",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "pharynx",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-155",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Esophagus (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Esophagus",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "esophagus",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-156",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Stomach (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Stomach",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "stomach",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-157",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Small intestine (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Small intestine",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "small-intestine",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-158",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Large intestine (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Large intestine",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "large-intestine",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-159",
+      "blueprint_code": "1.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Accessory organs of digestion (liver, gallbladder, pancreas) (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Accessory organs of digestion (liver, gallbladder, pancreas)",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "accessory-organs-of-digestion-liver-gallbladder-pancreas",
+        "anatomy-structure"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "anatomy-structure"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-160",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Chemical digestion and absorption (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Chemical digestion and absorption",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "chemical-digestion-and-absorption",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-161",
+      "blueprint_code": "3.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Disorders of the digestive system (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Disorders of the digestive system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "disorders-of-the-digestive-system",
+        "pathology-disorder"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "pathology-disorder"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-162",
+      "blueprint_code": "4.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Effects of massage on the digestive system (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Effects of massage on the digestive system",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "effects-of-massage-on-the-digestive-system",
+        "massage-effects"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "massage-effects"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-163",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Units of energy (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Units of energy",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "units-of-energy",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-164",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Hunger and satiety (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Hunger and satiety",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "hunger-and-satiety",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-165",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Nutrients: carbohydrates, proteins, lipids, vitamins, minerals (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Nutrients: carbohydrates, proteins, lipids, vitamins, minerals",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "nutrients-carbohydrates-proteins-lipids-vitamins-minerals",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-166",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Metabolism (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Metabolism",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "metabolism",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-167",
+      "blueprint_code": "1.B",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Thermoregulation (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Thermoregulation",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "thermoregulation",
+        "physiology-function"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "physiology-function"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-168",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "digestive-nutrition",
+      "subtopic": "digestive-nutrition",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Digestive / nutrition system review / test-your-knowledge (Digestive System + Nutrition & Metabolism)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Digestive / nutrition system review / test-your-knowledge",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-13",
+        "digestive-nutrition",
+        "digestive-system-nutrition-and-metabolism",
+        "digestive-nutrition-system-review-test-your-knowledge",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 13,
+        "subject": "Digestive System + Nutrition & Metabolism",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-169",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "study-skills",
+      "subtopic": "course-review",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Final exam review worksheets (Final Review & Exam Prep)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Final exam review worksheets",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-14",
+        "course-review",
+        "final-review-and-exam-prep",
+        "final-exam-review-worksheets",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 14,
+        "subject": "Final Review & Exam Prep",
+        "topic_kind": "study-review"
+      }
+    },
+    {
+      "id": "physio-path-syllabus-outline-v1-170",
+      "blueprint_code": "7.A",
+      "type": "fill",
+      "question_type": "fill",
+      "domain": "study-skills",
+      "subtopic": "course-review",
+      "difficulty": 1,
+      "prompt": "TODO: write question for Physiology jeopardy II / review game stations / flashcards (Final Review & Exam Prep)",
+      "correct_text": "TODO",
+      "explanation": {
+        "answer": "TODO: add key answer for Physiology jeopardy II / review game stations / flashcards",
+        "why": "TODO: add definition from class notes/textbook",
+        "trap": "TODO: add common misconception or contraindication trap",
+        "hook": "TODO: add memory hook / mnemonic"
+      },
+      "tags": [
+        "syllabus-outline",
+        "week-14",
+        "course-review",
+        "final-review-and-exam-prep",
+        "physiology-jeopardy-ii-review-game-stations-flashcards",
+        "study-review"
+      ],
+      "meta": {
+        "outline_source": "physio-path-syllabus-schedule",
+        "week": 14,
+        "subject": "Final Review & Exam Prep",
+        "topic_kind": "study-review"
+      }
+    }
+  ]
+}

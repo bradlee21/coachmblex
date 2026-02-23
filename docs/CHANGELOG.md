@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-02-23
+- Added draft syllabus-aligned Physiology/Pathology content-pack outline at `src/content/packs/drafts/physio-path-syllabus-outline-v1.json` with placeholder importer-compatible rows mapped to weekly schedule topics.
+- Added companion authoring/import guidance in `docs/physio-path-syllabus-outline.md`.
+
 ## 2026-02-20
 - Questions: added strict duplicate prevention on import plus a DB-level no-duplicates SQL migration in `docs/sql/run-these-queries/2026-02-20-questions-no-duplicates.sql`.
 - Added one-time cleanup script `npm run dedupe:questions` to remove existing strict duplicates while keeping earliest-created rows.
