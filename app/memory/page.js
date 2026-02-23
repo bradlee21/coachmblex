@@ -14,6 +14,8 @@ import {
 
 const MEMORY_FETCH_LIMIT = 200;
 const MISMATCH_DELAY_MS = 800;
+const MEMORY_MOBILE_PAIR_COUNT = 4;
+const MEMORY_MOBILE_MEDIA_QUERY = '(max-width: 899px)';
 
 function createMemoryGameState(cards = []) {
   return {
@@ -44,6 +46,7 @@ export default function MemoryPage() {
   const [error, setError] = useState('');
   const [nowMs, setNowMs] = useState(() => Date.now());
   const [resultElapsedMs, setResultElapsedMs] = useState(0);
+  const [pairCount, setPairCount] = useState(MEMORY_DEFAULT_PAIR_COUNT);
 
   useEffect(() => {
     gameStateRef.current = gameState;
@@ -56,6 +59,23 @@ export default function MemoryPage() {
         mismatchTimeoutRef.current = null;
       }
     };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
+    const mediaQuery = window.matchMedia(MEMORY_MOBILE_MEDIA_QUERY);
+    const syncPairCount = () => {
+      setPairCount(
+        mediaQuery.matches ? MEMORY_MOBILE_PAIR_COUNT : MEMORY_DEFAULT_PAIR_COUNT
+      );
+    };
+    syncPairCount();
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', syncPairCount);
+      return () => mediaQuery.removeEventListener('change', syncPairCount);
+    }
+    mediaQuery.addListener(syncPairCount);
+    return () => mediaQuery.removeListener(syncPairCount);
   }, []);
 
   useEffect(() => {
@@ -109,7 +129,7 @@ export default function MemoryPage() {
         return;
       }
 
-      const cards = buildMemoryDeck(data || [], MEMORY_DEFAULT_PAIR_COUNT);
+      const cards = buildMemoryDeck(data || [], pairCount);
       if (cards.length < 2) {
         setError('Not enough questions available for Memory Match yet.');
         setPhase('idle');
@@ -124,7 +144,7 @@ export default function MemoryPage() {
       setError(message);
       setPhase('idle');
     }
-  }, []);
+  }, [pairCount]);
 
   const finishGame = useCallback((nextState, resolvedAtMs = Date.now()) => {
     const startedAtMs = Number(nextState?.startedAtMs);
@@ -192,8 +212,7 @@ export default function MemoryPage() {
         <section className="runner">
           <h2>Start Memory Match</h2>
           <p>
-            Builds a shuffled board with {MEMORY_DEFAULT_PAIR_COUNT} prompt/answer pairs ({MEMORY_DEFAULT_PAIR_COUNT * 2}{' '}
-            cards).
+            Builds a shuffled board with {pairCount} prompt/answer pairs ({pairCount * 2} cards).
           </p>
           <div className="button-row">
             <button type="button" onClick={() => void startMemoryMatch()}>
