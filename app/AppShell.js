@@ -452,7 +452,7 @@ export default function AppShell({ children }) {
 
   return (
     <div
-      className={`app-shell${isMemoryRoute ? ' app-shell--memory-route' : ''}${
+      className={`app-shell coach-bg${isMemoryRoute ? ' app-shell--memory-route' : ''}${
         isTestRunRoute ? ' app-shell--test-run-route' : ''
       }`}
     >

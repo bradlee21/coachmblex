@@ -11,6 +11,7 @@
 
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -23,6 +24,17 @@ body {
   background-attachment: fixed;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+.coach-bg {
+  background-image:
+    linear-gradient(rgba(3, 8, 20, 0.82), rgba(3, 8, 20, 0.9)),
+    url('/backgrounds/coachmblex-spa-room.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: transparent;
 }
 
 a {
@@ -364,6 +376,10 @@ video {
 @media (max-width: 900px) {
   html,
   body {
+    background-attachment: scroll;
+  }
+
+  .coach-bg {
     background-attachment: scroll;
   }
 }
