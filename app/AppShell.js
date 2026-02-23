@@ -32,7 +32,7 @@ const NAV_ITEMS = [
   { href: '/progress', label: 'Progress', key: 'p' },
   { href: '/settings', label: 'Settings', key: 's' },
 ];
-const PROTECTED_ROUTES = new Set([...NAV_ITEMS.map((item) => item.href), '/test']);
+const PROTECTED_ROUTES = new Set([...NAV_ITEMS.map((item) => item.href), '/test', '/test/run']);
 const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
   '/learn': 'nav-learn',
@@ -177,7 +177,8 @@ export default function AppShell({ children }) {
     pathname === '/sprint' ||
     pathname === '/boss-fight' ||
     pathname === '/streak' ||
-    pathname === '/memory';
+    pathname === '/memory' ||
+    pathname === '/test/run';
   const isMemoryRoute = pathname === '/memory';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
@@ -199,6 +200,7 @@ export default function AppShell({ children }) {
         pathname === '/streak' ||
         pathname === '/sprint' ||
         pathname === '/memory' ||
+        pathname === '/test/run' ||
         pathname === '/review' ||
         pathname === '/flashcards';
       if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {

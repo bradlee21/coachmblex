@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const MIN_QUESTIONS = 5;
 const MAX_QUESTIONS = 150;
@@ -39,6 +39,7 @@ function clampQuestionCount(value) {
 
 export default function TestCenterClient({ packs }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [questionCountInput, setQuestionCountInput] = useState(String(DEFAULT_QUESTIONS));
   const [selectedPackIds, setSelectedPackIds] = useState(() => new Set((packs || []).map((pack) => pack.id)));
 
@@ -69,12 +70,15 @@ export default function TestCenterClient({ packs }) {
   function startTest() {
     if (selectedCount === 0) return;
     const params = new URLSearchParams();
+    const existingQt = searchParams.get('qt');
     params.set('mode', 'test');
     params.set('n', String(clampQuestionCount(questionCountInput)));
     params.set('packs', orderedSelectedPackIds.join(','));
     params.set('random', '1');
-    params.set('autostart', '1');
-    router.push(`/drill?${params.toString()}`);
+    if (existingQt) {
+      params.set('qt', existingQt);
+    }
+    router.push(`/test/run?${params.toString()}`);
   }
 
   return (
