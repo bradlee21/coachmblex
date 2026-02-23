@@ -5,8 +5,8 @@ import {
   resolveCorrectAnswerText,
   resolveCorrectChoiceIndex,
   resolveQuestionMode,
-  shuffleArray,
 } from '../_components/questionRunnerLogic.mjs';
+import { shuffleArray } from '../_utils/shuffleArray.mjs';
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';

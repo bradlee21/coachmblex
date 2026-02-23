@@ -5,8 +5,8 @@ import {
   resolveFibFeedbackState,
   resolveFibInputEnterIntent,
   resolveQuestionMode,
-  shuffleArray,
 } from '../app/_components/questionRunnerLogic.mjs';
+import { shuffleArray } from '../app/_utils/shuffleArray.mjs';
 
 function read(path) {
   return readFileSync(resolve(process.cwd(), path), 'utf8');

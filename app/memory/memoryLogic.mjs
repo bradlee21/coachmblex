@@ -1,4 +1,4 @@
-import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
+import { shuffleArray } from '../_utils/shuffleArray.mjs';
 import { buildSprintDeck, resolveSprintQuestionState } from '../sprint/sprintLogic.mjs';
 
 function toText(value) {

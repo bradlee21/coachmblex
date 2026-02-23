@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
+import { shuffleArray } from '../_utils/shuffleArray.mjs';
 import {
   getChoiceList,
   isFibAnswerCorrect,
