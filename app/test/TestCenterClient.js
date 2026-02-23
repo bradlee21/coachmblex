@@ -1,11 +1,35 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const MIN_QUESTIONS = 5;
 const MAX_QUESTIONS = 150;
 const DEFAULT_QUESTIONS = 50;
+const TESTING_ENGINE_CARDS = [
+  {
+    title: 'Testing Center Setup',
+    description: 'Choose question count and packs before starting a custom test.',
+    href: '#testing-center-setup',
+    cta: 'Open Setup',
+    disabled: false,
+  },
+  {
+    title: 'Start Test',
+    description: 'Direct one-tap start flow is reserved for future slices.',
+    href: '',
+    cta: 'Coming soon',
+    disabled: true,
+  },
+  {
+    title: 'Progress / Reports',
+    description: 'Review performance and reporting screens.',
+    href: '/progress',
+    cta: 'Open Progress',
+    disabled: false,
+  },
+];
 
 function clampQuestionCount(value) {
   const parsed = Number.parseInt(String(value || ''), 10);
@@ -62,7 +86,33 @@ export default function TestCenterClient({ packs }) {
         </p>
       </header>
 
-      <section className="runner" style={{ marginTop: 0 }}>
+      <section className="game-grid" style={{ marginBottom: 16 }}>
+        {TESTING_ENGINE_CARDS.map((card) => (
+          <article key={card.title} className="game-card">
+            <h2>{card.title}</h2>
+            <p className="muted" style={{ marginTop: 0 }}>
+              {card.description}
+            </p>
+            <div className="button-row">
+              {card.disabled ? (
+                <button type="button" className="choice-btn" disabled aria-disabled="true">
+                  {card.cta}
+                </button>
+              ) : (
+                <Link
+                  href={card.href}
+                  className="choice-btn"
+                  style={{ display: 'inline-block', minWidth: 140 }}
+                >
+                  {card.cta}
+                </Link>
+              )}
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section id="testing-center-setup" className="runner" style={{ marginTop: 0 }}>
         <div style={{ display: 'grid', gap: 14 }}>
           <div>
             <label htmlFor="test-question-count" style={{ display: 'block', fontWeight: 600, marginBottom: 6 }}>
