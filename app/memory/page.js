@@ -196,7 +196,7 @@ export default function MemoryPage() {
   );
 
   return (
-    <section className="memory-page">
+    <section className={`memory-page${phase === 'playing' ? ' memory-page--playing' : ''}`}>
       <div className="button-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
         <h1 style={{ marginBottom: 0 }}>Memory Match</h1>
         <Link href="/today">Back to Practice</Link>
