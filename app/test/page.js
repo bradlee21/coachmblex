@@ -12,6 +12,16 @@ function humanizePackId(packId) {
     .replace(/\b\w/g, (match) => match.toUpperCase());
 }
 
+function resolvePackId(pack, filename) {
+  return (
+    toText(pack?.pack_id) ||
+    toText(pack?.packId) ||
+    toText(pack?.id) ||
+    toText(pack?.meta?.id) ||
+    filename.replace(/\.json$/i, '')
+  );
+}
+
 async function loadPackOptions() {
   const packsDir = path.join(process.cwd(), 'src', 'content', 'packs');
   let entries = [];
@@ -32,10 +42,7 @@ async function loadPackOptions() {
       try {
         const raw = await readFile(filePath, 'utf8');
         const pack = JSON.parse(raw);
-        const id =
-          toText(pack?.pack_id) ||
-          toText(pack?.packId) ||
-          filename.replace(/\.json$/i, '');
+        const id = resolvePackId(pack, filename);
         if (!id) return null;
         const title =
           toText(pack?.title) ||

@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { basename, resolve } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 const BATCH_SIZE = 50;
@@ -216,7 +216,17 @@ function buildExplanation(question, fallbackAnswer = '') {
   };
 }
 
-function validateAndMapQuestion(question, index) {
+function resolvePackId(pack, filePath) {
+  return (
+    normalizeText(pack?.pack_id) ||
+    normalizeText(pack?.packId) ||
+    normalizeText(pack?.id) ||
+    normalizeText(pack?.meta?.id) ||
+    normalizeText(filePath ? basename(filePath, '.json') : '')
+  );
+}
+
+function validateAndMapQuestion(question, index, packId) {
   const rowNo = index + 1;
   const errors = [];
   const blueprintCode = normalizeText(question?.blueprint_code);
@@ -246,6 +256,7 @@ function validateAndMapQuestion(question, index) {
       ok: true,
       rowNo,
       row: {
+        pack_id: packId,
         domain,
         subtopic,
         blueprint_code: blueprintCode,
@@ -289,6 +300,7 @@ function validateAndMapQuestion(question, index) {
     ok: true,
     rowNo,
     row: {
+      pack_id: packId,
       domain,
       subtopic,
       blueprint_code: blueprintCode,
@@ -408,6 +420,12 @@ async function main() {
     process.exit(1);
   }
 
+  const canonicalPackId = resolvePackId(pack, filePath);
+  if (!canonicalPackId) {
+    console.error('Pack must include a pack id (pack_id/packId/id) or have a valid JSON filename.');
+    process.exit(1);
+  }
+
   const supabase = createClient(supabaseUrl, serviceRoleKey, {
     auth: { persistSession: false },
   });
@@ -447,7 +465,7 @@ async function main() {
   }
 
   for (let i = 0; i < pack.questions.length; i += 1) {
-    const result = validateAndMapQuestion(pack.questions[i], i);
+    const result = validateAndMapQuestion(pack.questions[i], i, canonicalPackId);
     if (!result.ok) {
       failures.push({ rowNo: result.rowNo, reasons: result.errors });
       continue;
@@ -518,7 +536,7 @@ async function main() {
   }
 
   const invalidCount = failures.length;
-  console.log(`Pack: ${normalizeText(pack.packId) || '(no packId)'}`);
+  console.log(`Pack: ${canonicalPackId}`);
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
   console.log(`Updated: ${updatedCount}`);

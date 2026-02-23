@@ -14,6 +14,7 @@ const DRILL_START_FETCH_LIMIT = 200;
 const TEST_MATCH_COUNT_DEFAULT = 50;
 const TEST_MATCH_COUNT_MIN = 5;
 const TEST_MATCH_COUNT_MAX = 150;
+const TEST_PACK_ID_COLUMN = 'pack_id';
 
 const PACK_FILTER_STRATEGIES = [
   // Prefer student-facing subject grouping from question.domain when present.
@@ -26,10 +27,6 @@ const PACK_FILTER_STRATEGIES = [
   { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
   // Fallback pack identifiers for questions rows that do not have a subject domain label.
 ];
-
-const TEST_PACK_FILTER_STRATEGIES = PACK_FILTER_STRATEGIES.filter(
-  (strategy) => strategy.key !== 'domain'
-);
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -251,6 +248,19 @@ function applyDrillFilters(query, { packStrategy, packId, packIds, types, search
   return next;
 }
 
+function applyTestPackIdFilters(query, { packIds, types }) {
+  const normalizedPackIds = Array.from(new Set((packIds || []).map((id) => toText(id)).filter(Boolean)));
+  let next = query;
+  if (normalizedPackIds.length > 0) {
+    // Testing Center uses canonical questions.pack_id; this avoids subject/domain fallback ambiguity.
+    next = next.in(TEST_PACK_ID_COLUMN, normalizedPackIds);
+  }
+  if (Array.isArray(types) && types.length > 0) {
+    next = next.in('question_type', types);
+  }
+  return next;
+}
+
 async function detectFilterStrategy(supabase, strategies = PACK_FILTER_STRATEGIES) {
   const { data: sampleRow } = await supabase
     .from('questions')
@@ -273,6 +283,11 @@ async function detectFilterStrategy(supabase, strategies = PACK_FILTER_STRATEGIE
   return null;
 }
 
+async function detectPackIdColumnAvailability(supabase) {
+  const { error } = await supabase.from('questions').select(TEST_PACK_ID_COLUMN).limit(1);
+  return !error;
+}
+
 export default function DrillPage() {
   const router = useRouter();
   const pathname = usePathname();
@@ -283,7 +298,7 @@ export default function DrillPage() {
   const [packsLoading, setPacksLoading] = useState(false);
   const [packsError, setPacksError] = useState('');
   const [packFilterStrategy, setPackFilterStrategy] = useState(null);
-  const [testPackFilterStrategy, setTestPackFilterStrategy] = useState(null);
+  const [testPackIdColumnAvailable, setTestPackIdColumnAvailable] = useState(true);
   const [knownDbPackIds, setKnownDbPackIds] = useState([]);
   const [selectedPackId, setSelectedPackId] = useState('');
   const [subjectSearch, setSubjectSearch] = useState('');
@@ -367,6 +382,7 @@ export default function DrillPage() {
       setPacksError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
       setPacks([]);
       setPackFilterStrategy(null);
+      setTestPackIdColumnAvailable(false);
       return;
     }
 
@@ -376,11 +392,13 @@ export default function DrillPage() {
       setPacksLoading(true);
       setPacksError('');
 
-      const strategy = await detectFilterStrategy(supabase, PACK_FILTER_STRATEGIES);
-      const testStrategy = await detectFilterStrategy(supabase, TEST_PACK_FILTER_STRATEGIES);
+      const [strategy, packIdAvailable] = await Promise.all([
+        detectFilterStrategy(supabase, PACK_FILTER_STRATEGIES),
+        detectPackIdColumnAvailability(supabase),
+      ]);
       if (cancelled) return;
       setPackFilterStrategy(strategy);
-      setTestPackFilterStrategy(testStrategy);
+      setTestPackIdColumnAvailable(packIdAvailable);
       if (!strategy) {
         setPacks([]);
         setPacksError('No supported pack field found on questions table.');
@@ -409,17 +427,7 @@ export default function DrillPage() {
       for (const question of data || []) {
         const questionType = getQuestionType(question);
         if (!QUICK_TYPES.includes(questionType)) continue;
-        const sourceObject = parseMaybeObject(question?.source);
-        const metadataObject = parseMaybeObject(question?.metadata);
-        const dbPackId =
-          toText(question?.pack_id) ||
-          toText(question?.packId) ||
-          toText(question?.source_pack) ||
-          toText(question?.sourcePack) ||
-          toText(sourceObject?.pack_id) ||
-          toText(sourceObject?.packId) ||
-          toText(metadataObject?.pack_id) ||
-          toText(metadataObject?.packId);
+        const dbPackId = toText(question?.pack_id);
         if (dbPackId) dbPackIds.add(dbPackId);
         const { packId, packLabel } = resolveQuestionPackInfo(question);
         if (!packId) continue;
@@ -463,9 +471,19 @@ export default function DrillPage() {
 
   const refreshAvailableCount = useCallback(async () => {
     if (isTestMode) {
-      if (!testPackFilterStrategy) {
+      if (!testPackIdColumnAvailable) {
         setAvailableCount(0);
-        setCountMessage('Custom test pack filtering is unavailable for this questions schema.');
+        setCountMessage(
+          'Custom test pack filtering requires questions.pack_id. Run the pack_id SQL migration/backfill and re-import packs.'
+        );
+        setCountLoading(false);
+        return;
+      }
+      if (knownDbPackIds.length === 0) {
+        setAvailableCount(0);
+        setCountMessage(
+          'No questions.pack_id values found yet. Run the pack_id backfill SQL or re-import packs before using Testing Center.'
+        );
         setCountLoading(false);
         return;
       }
@@ -487,13 +505,11 @@ export default function DrillPage() {
       setCountLoading(true);
       setCountMessage('');
 
-      const { count, error } = await applyDrillFilters(
+      const { count, error } = await applyTestPackIdFilters(
         supabase.from('questions').select('id', { head: true, count: 'exact' }),
         {
-          packStrategy: testPackFilterStrategy,
           packIds: validTestPackIds,
           types: selectedQuickTypes,
-          searchText: '',
         }
       );
 
@@ -559,7 +575,8 @@ export default function DrillPage() {
     selectedPackId,
     selectedQuickTypes,
     subjectSearch,
-    testPackFilterStrategy,
+    testPackIdColumnAvailable,
+    knownDbPackIds,
     validTestPackIds,
   ]);
 
@@ -602,8 +619,16 @@ export default function DrillPage() {
         setMessage('Pick at least one type.');
         return;
       }
-      if (!testPackFilterStrategy) {
-        setMessage('Custom test pack filtering is unavailable for this questions schema.');
+      if (!testPackIdColumnAvailable) {
+        setMessage(
+          'Custom test pack filtering requires questions.pack_id. Run the pack_id SQL migration/backfill and re-import packs.'
+        );
+        return;
+      }
+      if (knownDbPackIds.length === 0) {
+        setMessage(
+          'No questions.pack_id values found yet. Run the pack_id backfill SQL or re-import packs before using Testing Center.'
+        );
         return;
       }
       if (validTestPackIds.length === 0) {
@@ -633,17 +658,15 @@ export default function DrillPage() {
       router.push(`${pathname}?${params.toString()}`);
 
       const fetchLimit = Math.max(DRILL_START_FETCH_LIMIT, requestedCount);
-      const { data, error } = await applyDrillFilters(
+      const { data, error } = await applyTestPackIdFilters(
         supabase
           .from('questions')
           .select('*')
           .order('created_at', { ascending: false })
           .limit(fetchLimit),
         {
-          packStrategy: testPackFilterStrategy,
           packIds: validTestPackIds,
           types: selectedQuickTypes,
-          searchText: '',
         }
       );
 
@@ -924,7 +947,10 @@ export default function DrillPage() {
                     loading ||
                     packsLoading ||
                     (!isTestMode && !selectedPackId) ||
-                    (isTestMode && validTestPackIds.length === 0)
+                    (isTestMode &&
+                      (!testPackIdColumnAvailable ||
+                        knownDbPackIds.length === 0 ||
+                        validTestPackIds.length === 0))
                   }
                 >
                   {loading ? 'Loading...' : isTestMode ? 'Start Test' : 'Start Drill'}
