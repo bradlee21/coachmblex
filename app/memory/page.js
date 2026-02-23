@@ -47,6 +47,8 @@ export default function MemoryPage() {
   const [nowMs, setNowMs] = useState(() => Date.now());
   const [resultElapsedMs, setResultElapsedMs] = useState(0);
   const [pairCount, setPairCount] = useState(MEMORY_DEFAULT_PAIR_COUNT);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [previewCard, setPreviewCard] = useState(null);
 
   useEffect(() => {
     gameStateRef.current = gameState;
@@ -65,6 +67,7 @@ export default function MemoryPage() {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') return;
     const mediaQuery = window.matchMedia(MEMORY_MOBILE_MEDIA_QUERY);
     const syncPairCount = () => {
+      setIsMobileViewport(mediaQuery.matches);
       setPairCount(
         mediaQuery.matches ? MEMORY_MOBILE_PAIR_COUNT : MEMORY_DEFAULT_PAIR_COUNT
       );
@@ -77,6 +80,12 @@ export default function MemoryPage() {
     mediaQuery.addListener(syncPairCount);
     return () => mediaQuery.removeListener(syncPairCount);
   }, []);
+
+  useEffect(() => {
+    if (phase !== 'playing') {
+      setPreviewCard(null);
+    }
+  }, [phase]);
 
   useEffect(() => {
     if (phase !== 'playing' || gameState.startedAtMs == null) return;
@@ -195,13 +204,37 @@ export default function MemoryPage() {
     [finishGame, interactionLocked, phase]
   );
 
+  const handleMemoryCardPress = useCallback(
+    (card) => {
+      if (!card) return;
+      if (interactionLocked) return;
+      const isVisible = card.faceUp || card.matched;
+      if (isMobileViewport && isVisible) {
+        setPreviewCard({
+          kind: card.kind,
+          text: card.text,
+        });
+        return;
+      }
+      handleCardClick(card.id);
+    },
+    [handleCardClick, interactionLocked, isMobileViewport]
+  );
+
   return (
-    <section className={`memory-page${phase === 'playing' ? ' memory-page--playing' : ''}`}>
-      <div className="button-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+    <section
+      className={`memory-page memory-match-page${phase === 'playing' ? ' memory-page--playing' : ''}`}
+    >
+      <div
+        className="button-row memory-page-header"
+        style={{ justifyContent: 'space-between', alignItems: 'center' }}
+      >
         <h1 style={{ marginBottom: 0 }}>Memory Match</h1>
-        <Link href="/today">Back to Practice</Link>
+        <Link className="memory-page-back-link" href="/today">
+          Back to Practice
+        </Link>
       </div>
-      <p className="muted">
+      <p className="muted memory-page-description">
         Match each prompt card to its answer card. Flip two cards at a time. Moves count per pair
         attempt; time starts on your first flip.
       </p>
@@ -260,8 +293,10 @@ export default function MemoryPage() {
                   key={card.id}
                   type="button"
                   className={cardClassName}
-                  onClick={() => handleCardClick(card.id)}
-                  disabled={interactionLocked || card.matched || card.faceUp}
+                  onClick={() => handleMemoryCardPress(card)}
+                  disabled={
+                    interactionLocked || (!isMobileViewport && (card.matched || card.faceUp))
+                  }
                   aria-pressed={isVisible}
                   data-kind={card.kind}
                 >
@@ -294,6 +329,32 @@ export default function MemoryPage() {
             <Link href="/today">Back to Practice</Link>
           </div>
         </section>
+      ) : null}
+
+      {previewCard ? (
+        <div
+          className="feedback-overlay memory-card-preview-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="memory-card-preview-title"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setPreviewCard(null);
+            }
+          }}
+        >
+          <section className="feedback-modal memory-card-preview">
+            <div className="drawer-header">
+              <h2 id="memory-card-preview-title" style={{ margin: 0 }}>
+                {previewCard.kind === 'prompt' ? 'Question card' : 'Answer card'}
+              </h2>
+              <button type="button" onClick={() => setPreviewCard(null)}>
+                Close
+              </button>
+            </div>
+            <p className="memory-card-preview-text">{previewCard.text}</p>
+          </section>
+        </div>
       ) : null}
     </section>
   );

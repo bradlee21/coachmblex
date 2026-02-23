@@ -172,6 +172,7 @@ export default function AppShell({ children }) {
     pathname === '/boss-fight' ||
     pathname === '/streak' ||
     pathname === '/memory';
+  const isMemoryRoute = pathname === '/memory';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
@@ -379,8 +380,8 @@ export default function AppShell({ children }) {
   }
 
   return (
-    <div className="app-shell">
-      <aside className="sidebar">
+    <div className={`app-shell${isMemoryRoute ? ' app-shell--memory-route' : ''}`}>
+      <aside className={`sidebar${isMemoryRoute ? ' sidebar--memory-route' : ''}`}>
         <h1 className="brand">Coach MBLEx</h1>
         <nav aria-label="Primary">
           <ul className="nav-list">
@@ -418,7 +419,9 @@ export default function AppShell({ children }) {
         ) : null}
       </aside>
 
-      <main className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}`}>
+      <main
+        className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}${isMemoryRoute ? ' content--memory-route' : ''}`}
+      >
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">
             <p className="muted">
