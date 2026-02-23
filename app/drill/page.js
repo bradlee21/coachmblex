@@ -13,14 +13,15 @@ const DRILL_PACK_LIST_LIMIT = 2000;
 const DRILL_START_FETCH_LIMIT = 200;
 
 const PACK_FILTER_STRATEGIES = [
+  // Prefer student-facing subject grouping from question.domain when present.
+  { key: 'domain', kind: 'column', path: 'domain', label: 'domain' },
   { key: 'pack_id', kind: 'column', path: 'pack_id', label: 'pack_id' },
   { key: 'source_pack', kind: 'column', path: 'source_pack', label: 'source_pack' },
   { key: 'source_json_pack_id', kind: 'json', path: 'source->>pack_id', label: 'source->>pack_id' },
   { key: 'source_json_packId', kind: 'json', path: 'source->>packId', label: 'source->>packId' },
   { key: 'metadata_json_pack_id', kind: 'json', path: 'metadata->>pack_id', label: 'metadata->>pack_id' },
   { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
-  // Fallback for older imports that did not persist pack ids onto questions rows.
-  { key: 'domain', kind: 'column', path: 'domain', label: 'domain' },
+  // Fallback pack identifiers for questions rows that do not have a subject domain label.
 ];
 
 function toText(value) {
@@ -96,8 +97,10 @@ function humanizePackId(packId) {
 function resolveQuestionPackInfo(question) {
   const sourceObject = parseMaybeObject(question?.source);
   const metadataObject = parseMaybeObject(question?.metadata);
+  const explicitDomain = toText(question?.domain);
 
   const packId =
+    explicitDomain ||
     toText(question?.pack_id) ||
     toText(question?.packId) ||
     toText(question?.source_pack) ||
@@ -105,10 +108,11 @@ function resolveQuestionPackInfo(question) {
     toText(sourceObject?.pack_id) ||
     toText(sourceObject?.packId) ||
     toText(metadataObject?.pack_id) ||
-    toText(metadataObject?.packId) ||
-    toText(question?.domain);
+    toText(metadataObject?.packId);
 
+  // Subject dropdown should use the student-facing domain label when present, then fall back.
   const packLabel =
+    explicitDomain ||
     toText(question?.pack_title) ||
     toText(question?.packTitle) ||
     toText(question?.source_pack_title) ||

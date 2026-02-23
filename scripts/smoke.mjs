@@ -54,6 +54,7 @@ runNodeScript('scripts/sprint-regression.mjs');
 runNodeScript('scripts/boss-fight-regression.mjs');
 runNodeScript('scripts/streak-regression.mjs');
 runNodeScript('scripts/memory-regression.mjs');
+runNodeScript('scripts/drill-subject-regression.mjs');
 runNodeScript('scripts/practice-hub-regression.mjs');
 runNodeScript('scripts/rls-sanity.mjs');
 
