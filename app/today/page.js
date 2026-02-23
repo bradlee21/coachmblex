@@ -81,7 +81,7 @@ export default function TodayPage() {
             .from('questions')
             .select(selectFields)
             .eq('question_type', 'mcq')
-            .or('blueprint_code.like.1.%,blueprint_code.like.2.%')
+            .or('blueprint_code.like.1.*,blueprint_code.like.2.*')
             .order('created_at', { ascending: false })
             .limit(40),
           supabase
@@ -156,7 +156,8 @@ export default function TodayPage() {
       try {
         const { data: profileData, error: profileError } = await supabase
           .from('profiles')
-          .select('coach_mode,onboarding_complete')
+          // Use schema-tolerant select to avoid 400s on environments missing newer optional profile columns.
+          .select('*')
           .eq('id', user.id)
           .maybeSingle();
 
