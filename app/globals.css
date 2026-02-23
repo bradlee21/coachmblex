@@ -372,6 +372,35 @@ video {
   font-size: 1.25rem;
 }
 
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand-link:hover,
+.brand-link:focus-visible {
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: none;
+}
+
+.brand-lockup {
+  display: block;
+  width: 152px;
+  height: auto;
+  max-width: 100%;
+}
+
 .nav-list {
   list-style: none;
   margin: 0;
@@ -1256,6 +1285,14 @@ video {
   .brand {
     font-size: 1.05rem;
     margin-right: auto;
+  }
+
+  .brand-lockup {
+    display: none;
+  }
+
+  .brand-mark {
+    display: block;
   }
 
   .sidebar nav {

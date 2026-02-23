@@ -461,7 +461,10 @@ export default function AppShell({ children }) {
           isTestRunRoute ? ' sidebar--test-run-route' : ''
         }`}
       >
-        <h1 className="brand">Coach MBLEx</h1>
+        <Link href="/today" className="brand brand-link" aria-label="Coach MBLEx">
+          <img src="/brand/logo-mark.png" alt="Coach MBLEx" className="brand-mark" />
+          <img src="/brand/logo-lockup.png" alt="Coach MBLEx" className="brand-lockup" />
+        </Link>
         <nav aria-label="Primary">
           <ul className="nav-list">
             {visibleNavSections.map((section) => {
