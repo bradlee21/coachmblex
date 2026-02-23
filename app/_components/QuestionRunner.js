@@ -82,14 +82,20 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
+  const questionInstanceKey = useMemo(
+    () => `${toText(current?.id) || 'question'}:${index}`,
+    [current?.id, index]
+  );
   const questionMode = useMemo(() => resolveQuestionMode(current), [current]);
   const currentChoices = useMemo(() => getChoiceList(current), [current]);
   const visibleChoices = useMemo(
     () =>
-      currentChoices
-        .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
-        .filter((item) => item.choice.length > 0),
-    [currentChoices]
+      shuffleArray(
+        currentChoices
+          .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
+          .filter((item) => item.choice.length > 0)
+      ),
+    [currentChoices, questionInstanceKey]
   );
   const resolvedCorrectIndex = useMemo(
     () => resolveCorrectChoiceIndex(current),

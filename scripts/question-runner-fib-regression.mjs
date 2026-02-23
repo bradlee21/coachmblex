@@ -44,6 +44,11 @@ assertMatch(
   /id="fib-answer"/,
   'Expected QuestionRunner fib mode to render a text input.'
 );
+assertMatch(
+  questionRunnerSource,
+  /const visibleChoices = useMemo\([\s\S]*shuffleArray\(/,
+  'Expected QuestionRunner visibleChoices to use shuffleArray for per-question choice order.'
+);
 
 let selectedChoicePosition = null;
 let submitted = false;
@@ -97,6 +102,30 @@ assert(
 assert(
   JSON.stringify(shuffled) === JSON.stringify([2, 4, 3, 1]),
   `Expected deterministic Fisher-Yates shuffle output, received ${JSON.stringify(shuffled)}.`
+);
+
+const sourceChoices = ['Correct', 'B', 'C', 'D'];
+const correctIndex = 0;
+const decoratedChoices = sourceChoices.map((choice, rawIndex) => ({ choice, rawIndex }));
+const mcqRngValues = [0.2, 0.2, 0.2];
+let mcqRngIndex = 0;
+const shuffledChoices = shuffleArray(decoratedChoices, () => {
+  const next = mcqRngValues[mcqRngIndex] ?? 0;
+  mcqRngIndex += 1;
+  return next;
+});
+
+assert(
+  shuffledChoices.some((item, position) => item.rawIndex !== position),
+  'Expected shuffled MCQ display order to differ from raw source order for regression fixture.'
+);
+
+const displayedCorrectPosition = shuffledChoices.findIndex((item) => item.rawIndex === correctIndex);
+assert(displayedCorrectPosition >= 0, 'Expected shuffled MCQ fixture to retain the correct choice.');
+const submittedRawIndex = shuffledChoices[displayedCorrectPosition].rawIndex;
+assert(
+  submittedRawIndex === correctIndex,
+  'Expected grading to evaluate correctness using the shuffled choice rawIndex mapping.'
 );
 
 console.log('QuestionRunner FIB regression checks passed.');

@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-23
+- QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.
 - Added draft syllabus-aligned Physiology/Pathology content-pack outline at `src/content/packs/drafts/physio-path-syllabus-outline-v1.json` with placeholder importer-compatible rows mapped to weekly schedule topics.
 - Added companion authoring/import guidance in `docs/physio-path-syllabus-outline.md`.
 
