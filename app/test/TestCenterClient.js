@@ -49,6 +49,7 @@ export default function TestCenterClient({ packs }) {
     params.set('n', String(clampQuestionCount(questionCountInput)));
     params.set('packs', orderedSelectedPackIds.join(','));
     params.set('random', '1');
+    params.set('autostart', '1');
     router.push(`/drill?${params.toString()}`);
   }
 

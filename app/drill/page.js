@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
 import { shuffleArray } from '../_components/questionRunnerLogic.mjs';
@@ -293,6 +294,7 @@ export default function DrillPage() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const questionCardRef = useRef(null);
+  const testAutostartAttemptKeyRef = useRef('');
 
   const [packs, setPacks] = useState([]);
   const [packsLoading, setPacksLoading] = useState(false);
@@ -306,6 +308,7 @@ export default function DrillPage() {
   const [testQuestionCount, setTestQuestionCount] = useState(TEST_MATCH_COUNT_DEFAULT);
   const [testPackIdsFromUrl, setTestPackIdsFromUrl] = useState([]);
   const [testRandom, setTestRandom] = useState(false);
+  const [testAutostart, setTestAutostart] = useState(false);
 
   const [quickTypes, setQuickTypes] = useState({
     mcq: true,
@@ -367,6 +370,7 @@ export default function DrillPage() {
     const testN = searchParams.get('n');
     const testPacks = searchParams.get('packs');
     const testRandomValue = searchParams.get('random');
+    const autostart = searchParams.get('autostart');
     setSelectedPackId(packQuery);
     setSubjectSearch(q);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
@@ -374,6 +378,7 @@ export default function DrillPage() {
     setTestQuestionCount(parseTestQuestionCount(testN));
     setTestPackIdsFromUrl(parseCsvParamList(testPacks));
     setTestRandom(parseBooleanParam(testRandomValue));
+    setTestAutostart(parseBooleanParam(autostart));
   }, [searchParams]);
 
   useEffect(() => {
@@ -468,6 +473,16 @@ export default function DrillPage() {
     });
     return () => cancelAnimationFrame(nextFrame);
   }, [questions, started]);
+
+  const testAutostartAttemptKey = useMemo(() => {
+    if (!isTestMode || !testAutostart) return '';
+    return JSON.stringify({
+      n: testQuestionCount,
+      packs: validTestPackIds,
+      qt: selectedQuickTypes,
+      random: testRandom,
+    });
+  }, [isTestMode, selectedQuickTypes, testAutostart, testQuestionCount, testRandom, validTestPackIds]);
 
   const refreshAvailableCount = useCallback(async () => {
     if (isTestMode) {
@@ -797,6 +812,17 @@ export default function DrillPage() {
     'inline-flex h-11 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 px-4 text-sm font-medium text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-200 dark:bg-slate-100 dark:text-slate-900 dark:hover:bg-slate-200 dark:focus-visible:ring-slate-500';
   const subtleButtonClass =
     'inline-flex h-10 items-center justify-center rounded-lg border border-slate-300 bg-white px-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800';
+  const testAutostartPending = isTestMode && testAutostart && !started;
+
+  useEffect(() => {
+    if (!testAutostartPending) return;
+    if (packsLoading || loading) return;
+    if (!testAutostartAttemptKey) return;
+    if (testAutostartAttemptKeyRef.current === testAutostartAttemptKey) return;
+
+    testAutostartAttemptKeyRef.current = testAutostartAttemptKey;
+    void startPackDrill();
+  }, [loading, packsLoading, startPackDrill, testAutostartAttemptKey, testAutostartPending]);
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
@@ -828,6 +854,24 @@ export default function DrillPage() {
             >
               Change settings
             </button>
+          </div>
+        ) : testAutostartPending ? (
+          <div className={cardClass}>
+            <h2 className={sectionTitleClass}>Starting Custom Test...</h2>
+            <p className={`${helperTextClass} mt-1`}>
+              Preparing {testQuestionCount} question(s) across {validTestPackIds.length || 0} selected pack(s).
+            </p>
+            {loading || packsLoading || countLoading ? (
+              <p className={`${helperTextClass} mt-3`}>Loading questions...</p>
+            ) : null}
+            {message ? (
+              <div className="mt-3 space-y-2">
+                <p className="status error">{message}</p>
+                <Link href="/test" className={subtleButtonClass}>
+                  Back to Testing Center
+                </Link>
+              </div>
+            ) : null}
           </div>
         ) : (
           <div className={cardClass}>
@@ -961,7 +1005,7 @@ export default function DrillPage() {
         )}
       </div>
 
-      {message ? <p className="status error mt-4">{message}</p> : null}
+      {message && !testAutostartPending ? <p className="status error mt-4">{message}</p> : null}
 
       {started ? (
         <div ref={questionCardRef} className="mx-auto mt-6 w-full max-w-5xl scroll-mt-6">
