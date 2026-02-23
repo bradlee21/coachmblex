@@ -29,7 +29,7 @@ const NAV_ITEMS = [
   { href: '/progress', label: 'Progress', key: 'p' },
   { href: '/settings', label: 'Settings', key: 's' },
 ];
-const PROTECTED_ROUTES = new Set(NAV_ITEMS.map((item) => item.href));
+const PROTECTED_ROUTES = new Set([...NAV_ITEMS.map((item) => item.href), '/test']);
 const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
   '/practice': 'nav-practice',
