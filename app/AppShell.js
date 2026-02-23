@@ -8,30 +8,61 @@ import { devLog } from '../src/lib/devLog';
 import { postgrestFetch } from '../src/lib/postgrestFetch';
 import { useAuth } from '../src/providers/AuthProvider';
 
-const NAV_ITEMS = [
-  { href: '/learn', label: 'Learn', key: 'e' },
-  { href: '/test', label: 'Test', key: 'y' },
-  { href: '/coach', label: 'Coach', key: 'c' },
-  { href: '/practice', label: 'Practice', key: 'h' },
-  { href: '/today', label: 'Today', key: 't' },
-  { href: '/review', label: 'Review', key: 'r' },
-  { href: '/drill', label: 'Drill', key: 'd' },
-  { href: '/boss-fight', label: 'Boss Fight', key: 'b' },
-  { href: '/streak', label: 'Streak Ladder', key: 'l' },
-  { href: '/sprint', label: 'Sprint', key: 'x' },
-  { href: '/memory', label: 'Memory Match', key: 'm' },
-  { href: '/flashcards', label: 'Flashcards', key: 'f' },
-  { href: '/game/study-night', label: 'Study Night', key: 'n' },
-  { href: '/anatomy', label: 'Anatomy', key: 'a' },
+const NAV_SECTIONS = [
   {
-    href: '/admin/questions',
-    label: 'Questions',
-    key: 'q',
-    roles: ['admin', 'questions_editor'],
+    id: 'learn',
+    label: 'Learn',
+    items: [
+      { href: '/learn', label: 'Learn', key: 'e' },
+      { href: '/practice', label: 'Practice', key: 'h' },
+      { href: '/today', label: 'Today', key: 't' },
+      { href: '/flashcards', label: 'Flashcards', key: 'f' },
+      { href: '/anatomy', label: 'Anatomy', key: 'a' },
+    ],
   },
-  { href: '/progress', label: 'Progress', key: 'p' },
-  { href: '/settings', label: 'Settings', key: 's' },
+  {
+    id: 'test',
+    label: 'Test',
+    items: [
+      { href: '/test', label: 'Test', key: 'y' },
+      { href: '/review', label: 'Review', key: 'r' },
+      { href: '/drill', label: 'Drill', key: 'd' },
+      { href: '/progress', label: 'Progress', key: 'p' },
+    ],
+  },
+  {
+    id: 'coach',
+    label: 'Coach',
+    items: [
+      { href: '/coach', label: 'Coach', key: 'c' },
+      { href: '/game/study-night', label: 'Study Night', key: 'n' },
+    ],
+  },
+  {
+    id: 'games',
+    label: 'Games',
+    items: [
+      { href: '/boss-fight', label: 'Boss Fight', key: 'b' },
+      { href: '/streak', label: 'Streak Ladder', key: 'l' },
+      { href: '/sprint', label: 'Sprint', key: 'x' },
+      { href: '/memory', label: 'Memory Match', key: 'm' },
+    ],
+  },
+  {
+    id: 'admin',
+    label: 'Admin',
+    items: [
+      {
+        href: '/admin/questions',
+        label: 'Questions',
+        key: 'q',
+        roles: ['admin', 'questions_editor'],
+      },
+      { href: '/settings', label: 'Settings', key: 's' },
+    ],
+  },
 ];
+const NAV_ITEMS = NAV_SECTIONS.flatMap((section) => section.items);
 const PROTECTED_ROUTES = new Set([...NAV_ITEMS.map((item) => item.href), '/test', '/test/run']);
 const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
@@ -73,6 +104,19 @@ function canAccessAdminRoute(pathname, role) {
     return pathname === '/admin/questions' || pathname.startsWith('/admin/questions/');
   }
   return false;
+}
+
+function isNavHrefActive(pathname, href) {
+  if (!pathname || !href) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function findActiveNavSectionId(pathname, sections) {
+  if (!pathname || !Array.isArray(sections)) return '';
+  const activeSection = sections.find((section) =>
+    section.items.some((item) => isNavHrefActive(pathname, item.href))
+  );
+  return activeSection?.id || '';
 }
 
 function isTypingTarget(target) {
@@ -166,6 +210,7 @@ export default function AppShell({ children }) {
   const [feedbackStatus, setFeedbackStatus] = useState({ type: '', message: '' });
   const [feedbackContextToCopy, setFeedbackContextToCopy] = useState(null);
   const [showBetaBanner, setShowBetaBanner] = useState(false);
+  const [openNavSections, setOpenNavSections] = useState({});
   const isAuthRoute = pathname.startsWith('/auth');
   const isRootRoute = pathname === '/';
   const isPublicRoute = isAuthRoute || isRootRoute;
@@ -184,9 +229,17 @@ export default function AppShell({ children }) {
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
-  const visibleNavItems = useMemo(
-    () => NAV_ITEMS.filter((item) => canAccessNavItem(item, role)),
+  const visibleNavSections = useMemo(
+    () =>
+      NAV_SECTIONS.map((section) => ({
+        ...section,
+        items: section.items.filter((item) => canAccessNavItem(item, role)),
+      })).filter((section) => section.items.length > 0),
     [role]
+  );
+  const visibleNavItems = useMemo(
+    () => visibleNavSections.flatMap((section) => section.items),
+    [visibleNavSections]
   );
 
   useEffect(() => {
@@ -254,6 +307,15 @@ export default function AppShell({ children }) {
     const dismissed = window.localStorage.getItem(BETA_BANNER_DISMISSED_KEY) === 'true';
     setShowBetaBanner(!dismissed);
   }, [isAuthRoute, user]);
+
+  useEffect(() => {
+    const activeSectionId = findActiveNavSectionId(pathname, visibleNavSections);
+    if (!activeSectionId) return;
+    setOpenNavSections((prev) => {
+      if (prev[activeSectionId]) return prev;
+      return { ...prev, [activeSectionId]: true };
+    });
+  }, [pathname, visibleNavSections]);
 
   async function handleSignOut() {
     setIsReviewOpen(false);
@@ -402,17 +464,47 @@ export default function AppShell({ children }) {
         <h1 className="brand">Coach MBLEx</h1>
         <nav aria-label="Primary">
           <ul className="nav-list">
-            {visibleNavItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  className={`nav-link${pathname === item.href ? ' active' : ''}`}
-                  href={item.href}
-                  data-testid={NAV_TEST_IDS[item.href]}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
+            {visibleNavSections.map((section) => {
+              const isOpen = Boolean(openNavSections[section.id]);
+              const isSectionActive = section.items.some((item) => isNavHrefActive(pathname, item.href));
+              return (
+                <li key={section.id} className="nav-section">
+                  <button
+                    type="button"
+                    className={`nav-section-toggle${isSectionActive ? ' active' : ''}`}
+                    aria-expanded={isOpen}
+                    onClick={() =>
+                      setOpenNavSections((prev) => ({
+                        ...prev,
+                        [section.id]: !prev[section.id],
+                      }))
+                    }
+                  >
+                    <span>{section.label}</span>
+                    <span className="nav-section-chevron" aria-hidden="true">
+                      {isOpen ? 'v' : '>'}
+                    </span>
+                  </button>
+                  {isOpen ? (
+                    <ul className="nav-sublist">
+                      {section.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            className={`nav-link nav-link--child${
+                              isNavHrefActive(pathname, item.href) ? ' active' : ''
+                            }`}
+                            href={item.href}
+                            data-testid={NAV_TEST_IDS[item.href]}
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
         </nav>
         <button
