@@ -164,6 +164,7 @@ export default function TestRunPage() {
       }),
     [parsedConfig]
   );
+  const endHref = settingsHref;
 
   const handleComplete = useCallback(({ score, total }) => {
     void trackEvent('test_run_complete', {
@@ -298,22 +299,28 @@ export default function TestRunPage() {
 
   const summary = `${sessionMeta.n} questions | ${sessionMeta.selectedPackIds.length || 0} pack${
     (sessionMeta.selectedPackIds.length || 0) === 1 ? '' : 's'
-  } | ${sessionMeta.random ? 'Random' : 'Ordered'} | ${formatTypesLabel(sessionMeta.types)}`;
+  } | Random ${sessionMeta.random ? 'On' : 'Off'}`;
 
   return (
-    <section className="mx-auto w-full max-w-5xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
-      <div className="mb-4 space-y-2">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+    <section
+      className="test-run-page mx-auto w-full max-w-5xl px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8"
+      style={{ paddingBottom: 'calc(5.5rem + var(--mobile-nav-h) + env(safe-area-inset-bottom))' }}
+    >
+      <div className="test-run-header mb-3">
+        <div className="test-run-header__row flex flex-wrap items-start justify-between gap-3 rounded-xl border border-slate-200 bg-white/90 p-3 shadow-sm dark:border-slate-700 dark:bg-slate-900/90">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Test</h1>
-            <p className="text-sm text-slate-600 dark:text-slate-300">{summary}</p>
+            <h1 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-3xl">
+              Test
+            </h1>
+            <p className="test-run-summary text-sm text-slate-600 dark:text-slate-300">{summary}</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{formatTypesLabel(sessionMeta.types)}</p>
           </div>
-          <div className="button-row">
+          <div className="button-row test-run-actions">
             <Link href={settingsHref} className="choice-btn">
               Change settings
             </Link>
-            <Link href={settingsHref} className="choice-btn">
-              End Test
+            <Link href={endHref} className="choice-btn">
+              End test
             </Link>
           </div>
         </div>

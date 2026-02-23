@@ -648,6 +648,10 @@ video {
   font-weight: 700;
 }
 
+.runner-progress {
+  font-weight: 600;
+}
+
 .flashcard-card .flashcard-meta {
   display: flex;
   align-items: center;
@@ -1342,6 +1346,53 @@ video {
   .diagram-board,
   .diagram-panel {
     padding: 14px;
+  }
+
+  .app-shell--test-run-route .beta-banner {
+    display: none;
+  }
+
+  .test-run-page {
+    padding-top: 0.75rem !important;
+  }
+
+  .test-run-page .runner {
+    margin-top: 10px;
+  }
+
+  .test-run-page .runner-progress {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+  }
+
+  .test-run-page .choice-list {
+    gap: 10px;
+    margin: 10px 0 12px;
+  }
+
+  .test-run-page .choice-btn {
+    padding: 12px;
+  }
+
+  .test-run-page .confidence-row {
+    gap: 10px;
+    row-gap: 8px;
+    margin-bottom: 14px;
+  }
+
+  .test-run-page .test-run-header__row {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .test-run-page .test-run-actions {
+    width: 100%;
+  }
+
+  .test-run-page .test-run-actions .choice-btn {
+    flex: 1 1 0;
+    text-align: center;
   }
 
   .diagram-layout {

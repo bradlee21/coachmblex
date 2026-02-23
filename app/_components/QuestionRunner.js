@@ -284,7 +284,7 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   return (
     <section className="runner">
       <h2>{title}</h2>
-      <p>
+      <p className="runner-progress">
         Question {index + 1} of {questions.length}
       </p>
       <p>

@@ -171,6 +171,7 @@ export default function AppShell({ children }) {
   const isPublicRoute = isAuthRoute || isRootRoute;
   const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
+  const isTestRunRoute = pathname === '/test/run';
   const isCenteredPracticeRoute =
     pathname === '/today' ||
     pathname === '/flashcards' ||
@@ -388,8 +389,16 @@ export default function AppShell({ children }) {
   }
 
   return (
-    <div className={`app-shell${isMemoryRoute ? ' app-shell--memory-route' : ''}`}>
-      <aside className={`sidebar${isMemoryRoute ? ' sidebar--memory-route' : ''}`}>
+    <div
+      className={`app-shell${isMemoryRoute ? ' app-shell--memory-route' : ''}${
+        isTestRunRoute ? ' app-shell--test-run-route' : ''
+      }`}
+    >
+      <aside
+        className={`sidebar${isMemoryRoute ? ' sidebar--memory-route' : ''}${
+          isTestRunRoute ? ' sidebar--test-run-route' : ''
+        }`}
+      >
         <h1 className="brand">Coach MBLEx</h1>
         <nav aria-label="Primary">
           <ul className="nav-list">
@@ -428,7 +437,9 @@ export default function AppShell({ children }) {
       </aside>
 
       <main
-        className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}${isMemoryRoute ? ' content--memory-route' : ''}`}
+        className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}${
+          isMemoryRoute ? ' content--memory-route' : ''
+        }${isTestRunRoute ? ' content--test-run-route' : ''}`}
       >
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">
