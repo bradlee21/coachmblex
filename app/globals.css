@@ -4,6 +4,9 @@
 
 :root {
   --mobile-nav-h: 72px;
+  --site-bg-overlay:
+    linear-gradient(rgba(3, 8, 20, 0.84), rgba(3, 8, 20, 0.9)),
+    url('/backgrounds/coachmblex-spa-room.png');
 }
 
 html,
@@ -12,7 +15,12 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   color: #111827;
-  background: #f9fafb;
+  background-color: #0b1220;
+  background-image: var(--site-bg-overlay);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -158,7 +166,8 @@ video {
   html,
   body {
     color: #e5e7eb;
-    background: #0b1220;
+    background-color: #0b1220;
+    background-image: var(--site-bg-overlay);
   }
 
   .app-shell,
@@ -349,6 +358,13 @@ video {
     opacity: 0.07;
     background-image: radial-gradient(rgba(255, 255, 255, 0.18) 0.35px, transparent 0.35px);
     mix-blend-mode: soft-light;
+  }
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    background-attachment: scroll;
   }
 }
 
