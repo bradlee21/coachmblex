@@ -7,7 +7,7 @@ const MOBILE_NAV_ITEMS = [
   { href: '/today', label: 'Today' },
   { href: '/practice', label: 'Practice' },
   { href: '/drill', label: 'Drill' },
-  { href: '/progress', label: 'Progress' },
+  { href: '/test', label: 'Test' },
 ];
 
 export default function MobileBottomNav() {
