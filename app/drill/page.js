@@ -11,6 +11,9 @@ const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
 const DRILL_MATCH_COUNT = 10;
 const DRILL_PACK_LIST_LIMIT = 2000;
 const DRILL_START_FETCH_LIMIT = 200;
+const TEST_MATCH_COUNT_DEFAULT = 50;
+const TEST_MATCH_COUNT_MIN = 5;
+const TEST_MATCH_COUNT_MAX = 150;
 
 const PACK_FILTER_STRATEGIES = [
   // Prefer student-facing subject grouping from question.domain when present.
@@ -23,6 +26,10 @@ const PACK_FILTER_STRATEGIES = [
   { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
   // Fallback pack identifiers for questions rows that do not have a subject domain label.
 ];
+
+const TEST_PACK_FILTER_STRATEGIES = PACK_FILTER_STRATEGIES.filter(
+  (strategy) => strategy.key !== 'domain'
+);
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -51,6 +58,31 @@ function parseQuickTypes(value) {
     };
   }
   return parsed;
+}
+
+function parseBooleanParam(value) {
+  const normalized = String(value || '')
+    .trim()
+    .toLowerCase();
+  return normalized === '1' || normalized === 'true';
+}
+
+function parseTestQuestionCount(value) {
+  const parsed = Number.parseInt(String(value || ''), 10);
+  if (!Number.isFinite(parsed)) return TEST_MATCH_COUNT_DEFAULT;
+  return Math.min(TEST_MATCH_COUNT_MAX, Math.max(TEST_MATCH_COUNT_MIN, parsed));
+}
+
+function parseCsvParamList(value) {
+  if (!value) return [];
+  return Array.from(
+    new Set(
+      String(value)
+        .split(',')
+        .map((item) => item.trim())
+        .filter(Boolean)
+    )
+  );
 }
 
 function toCsv(values) {
@@ -192,8 +224,23 @@ function applyPackFilter(query, strategy, packId) {
   return query.eq(strategy.path, value);
 }
 
-function applyDrillFilters(query, { packStrategy, packId, types, searchText }) {
-  let next = applyPackFilter(query, packStrategy, packId);
+function applyPackFilters(query, strategy, packIds) {
+  const values = Array.from(new Set((packIds || []).map((item) => toText(item)).filter(Boolean)));
+  if (!strategy || values.length === 0) return query;
+  if (values.length === 1) {
+    return applyPackFilter(query, strategy, values[0]);
+  }
+  if (isJsonOperatorPath(strategy.path)) {
+    return query.or(values.map((value) => `${strategy.path}.eq.${value}`).join(','));
+  }
+  return query.in(strategy.path, values);
+}
+
+function applyDrillFilters(query, { packStrategy, packId, packIds, types, searchText }) {
+  let next =
+    Array.isArray(packIds) && packIds.length > 0
+      ? applyPackFilters(query, packStrategy, packIds)
+      : applyPackFilter(query, packStrategy, packId);
   if (Array.isArray(types) && types.length > 0) {
     next = next.in('question_type', types);
   }
@@ -204,14 +251,14 @@ function applyDrillFilters(query, { packStrategy, packId, types, searchText }) {
   return next;
 }
 
-async function detectPackFilterStrategy(supabase) {
+async function detectFilterStrategy(supabase, strategies = PACK_FILTER_STRATEGIES) {
   const { data: sampleRow } = await supabase
     .from('questions')
     .select('*')
     .limit(1)
     .maybeSingle();
 
-  for (const strategy of PACK_FILTER_STRATEGIES) {
+  for (const strategy of strategies) {
     const sampleValue = resolveStrategyProbeValueFromRow(sampleRow, strategy);
     const probeValue = sampleValue || '__pack_probe__';
     const { error } = await applyPackFilter(
@@ -236,8 +283,14 @@ export default function DrillPage() {
   const [packsLoading, setPacksLoading] = useState(false);
   const [packsError, setPacksError] = useState('');
   const [packFilterStrategy, setPackFilterStrategy] = useState(null);
+  const [testPackFilterStrategy, setTestPackFilterStrategy] = useState(null);
+  const [knownDbPackIds, setKnownDbPackIds] = useState([]);
   const [selectedPackId, setSelectedPackId] = useState('');
   const [subjectSearch, setSubjectSearch] = useState('');
+  const [drillMode, setDrillMode] = useState('');
+  const [testQuestionCount, setTestQuestionCount] = useState(TEST_MATCH_COUNT_DEFAULT);
+  const [testPackIdsFromUrl, setTestPackIdsFromUrl] = useState([]);
+  const [testRandom, setTestRandom] = useState(false);
 
   const [quickTypes, setQuickTypes] = useState({
     mcq: true,
@@ -269,6 +322,15 @@ export default function DrillPage() {
     () => packs.find((pack) => pack.id === selectedPackId) || null,
     [packs, selectedPackId]
   );
+  const isTestMode = drillMode === 'test';
+  const validTestPackIds = useMemo(() => {
+    const known = new Set((knownDbPackIds || []).map((id) => toText(id)).filter(Boolean));
+    const requested = (testPackIdsFromUrl || []).map((id) => toText(id)).filter(Boolean);
+    if (known.size === 0) return Array.from(new Set(requested));
+    const filtered = requested.filter((id) => known.has(id));
+    if (filtered.length > 0) return Array.from(new Set(filtered));
+    return Array.from(known);
+  }, [knownDbPackIds, testPackIdsFromUrl]);
 
   const handleDrillComplete = useCallback(
     ({ score, total }) => {
@@ -286,9 +348,17 @@ export default function DrillPage() {
     const packQuery = searchParams.get('pk') || '';
     const quickTypeQuery = searchParams.get('qt');
     const q = searchParams.get('q') || '';
+    const mode = toText(searchParams.get('mode')).toLowerCase();
+    const testN = searchParams.get('n');
+    const testPacks = searchParams.get('packs');
+    const testRandomValue = searchParams.get('random');
     setSelectedPackId(packQuery);
     setSubjectSearch(q);
     setQuickTypes(parseQuickTypes(quickTypeQuery));
+    setDrillMode(mode);
+    setTestQuestionCount(parseTestQuestionCount(testN));
+    setTestPackIdsFromUrl(parseCsvParamList(testPacks));
+    setTestRandom(parseBooleanParam(testRandomValue));
   }, [searchParams]);
 
   useEffect(() => {
@@ -306,9 +376,11 @@ export default function DrillPage() {
       setPacksLoading(true);
       setPacksError('');
 
-      const strategy = await detectPackFilterStrategy(supabase);
+      const strategy = await detectFilterStrategy(supabase, PACK_FILTER_STRATEGIES);
+      const testStrategy = await detectFilterStrategy(supabase, TEST_PACK_FILTER_STRATEGIES);
       if (cancelled) return;
       setPackFilterStrategy(strategy);
+      setTestPackFilterStrategy(testStrategy);
       if (!strategy) {
         setPacks([]);
         setPacksError('No supported pack field found on questions table.');
@@ -333,9 +405,22 @@ export default function DrillPage() {
       }
 
       const packMap = new Map();
+      const dbPackIds = new Set();
       for (const question of data || []) {
         const questionType = getQuestionType(question);
         if (!QUICK_TYPES.includes(questionType)) continue;
+        const sourceObject = parseMaybeObject(question?.source);
+        const metadataObject = parseMaybeObject(question?.metadata);
+        const dbPackId =
+          toText(question?.pack_id) ||
+          toText(question?.packId) ||
+          toText(question?.source_pack) ||
+          toText(question?.sourcePack) ||
+          toText(sourceObject?.pack_id) ||
+          toText(sourceObject?.packId) ||
+          toText(metadataObject?.pack_id) ||
+          toText(metadataObject?.packId);
+        if (dbPackId) dbPackIds.add(dbPackId);
         const { packId, packLabel } = resolveQuestionPackInfo(question);
         if (!packId) continue;
         const existing = packMap.get(packId);
@@ -355,6 +440,7 @@ export default function DrillPage() {
         (a, b) => a.label.localeCompare(b.label) || a.id.localeCompare(b.id)
       );
       setPacks(nextPacks);
+      setKnownDbPackIds(Array.from(dbPackIds).sort((a, b) => a.localeCompare(b)));
       setPacksLoading(false);
     }
 
@@ -376,6 +462,53 @@ export default function DrillPage() {
   }, [questions, started]);
 
   const refreshAvailableCount = useCallback(async () => {
+    if (isTestMode) {
+      if (!testPackFilterStrategy) {
+        setAvailableCount(0);
+        setCountMessage('Custom test pack filtering is unavailable for this questions schema.');
+        setCountLoading(false);
+        return;
+      }
+      if (validTestPackIds.length === 0) {
+        setAvailableCount(0);
+        setCountMessage('No valid test packs selected. Return to Testing Center and select packs.');
+        setCountLoading(false);
+        return;
+      }
+
+      const supabase = getSupabaseClient();
+      if (!supabase) {
+        setAvailableCount(0);
+        setCountMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+        setCountLoading(false);
+        return;
+      }
+
+      setCountLoading(true);
+      setCountMessage('');
+
+      const { count, error } = await applyDrillFilters(
+        supabase.from('questions').select('id', { head: true, count: 'exact' }),
+        {
+          packStrategy: testPackFilterStrategy,
+          packIds: validTestPackIds,
+          types: selectedQuickTypes,
+          searchText: '',
+        }
+      );
+
+      if (error) {
+        setAvailableCount(0);
+        setCountMessage(`Failed to load available count: ${error.message}`);
+        setCountLoading(false);
+        return;
+      }
+
+      setAvailableCount(count ?? 0);
+      setCountLoading(false);
+      return;
+    }
+
     if (!selectedPackId) {
       setAvailableCount(0);
       setCountMessage('');
@@ -419,7 +552,16 @@ export default function DrillPage() {
 
     setAvailableCount(count ?? 0);
     setCountLoading(false);
-  }, [packFilterStrategy, packsError, selectedPackId, selectedQuickTypes, subjectSearch]);
+  }, [
+    isTestMode,
+    packFilterStrategy,
+    packsError,
+    selectedPackId,
+    selectedQuickTypes,
+    subjectSearch,
+    testPackFilterStrategy,
+    validTestPackIds,
+  ]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -453,6 +595,95 @@ export default function DrillPage() {
   }
 
   async function startPackDrill() {
+    const requestedCount = isTestMode ? testQuestionCount : DRILL_MATCH_COUNT;
+
+    if (isTestMode) {
+      if (selectedQuickTypes.length === 0) {
+        setMessage('Pick at least one type.');
+        return;
+      }
+      if (!testPackFilterStrategy) {
+        setMessage('Custom test pack filtering is unavailable for this questions schema.');
+        return;
+      }
+      if (validTestPackIds.length === 0) {
+        setMessage('No valid test packs selected. Return to Testing Center and choose packs.');
+        return;
+      }
+
+      const supabase = getSupabaseClient();
+      if (!supabase) {
+        setMessage('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
+        return;
+      }
+
+      setLoading(true);
+      setMessage('');
+
+      const params = new URLSearchParams();
+      params.set('mode', 'test');
+      params.set('n', String(testQuestionCount));
+      params.set('packs', validTestPackIds.join(','));
+      if (selectedQuickTypes.length !== QUICK_TYPES.length) {
+        params.set('qt', toCsv(selectedQuickTypes));
+      }
+      if (testRandom) {
+        params.set('random', '1');
+      }
+      router.push(`${pathname}?${params.toString()}`);
+
+      const fetchLimit = Math.max(DRILL_START_FETCH_LIMIT, requestedCount);
+      const { data, error } = await applyDrillFilters(
+        supabase
+          .from('questions')
+          .select('*')
+          .order('created_at', { ascending: false })
+          .limit(fetchLimit),
+        {
+          packStrategy: testPackFilterStrategy,
+          packIds: validTestPackIds,
+          types: selectedQuickTypes,
+          searchText: '',
+        }
+      );
+
+      if (error) {
+        setMessage(`Failed to load drill questions: ${error.message}`);
+        setLoading(false);
+        return;
+      }
+
+      const pool = Array.isArray(data) ? data : [];
+      const picked = (testRandom ? shuffleArray(pool) : pool).slice(0, requestedCount);
+      if (picked.length === 0) {
+        setMessage('No questions available for the selected test packs.');
+        setLoading(false);
+        return;
+      }
+
+      const quickType = selectedQuickTypes.length === 1 ? selectedQuickTypes[0] : 'any';
+      setActiveSessionMeta({
+        codePrefix: 'test',
+        type: quickType,
+        label: `Custom Test (${validTestPackIds.length} pack${validTestPackIds.length === 1 ? '' : 's'})`,
+        packId: validTestPackIds.join(','),
+      });
+      setQuestions(picked);
+      setStarted(true);
+      setIsStartCollapsed(true);
+
+      void trackEvent('drill_start', { codePrefix: 'test', type: quickType });
+
+      if (picked.length < requestedCount) {
+        setMessage(
+          `Only ${picked.length} question(s) available across ${validTestPackIds.length} selected pack(s).`
+        );
+      }
+
+      setLoading(false);
+      return;
+    }
+
     if (!selectedPackId) {
       setMessage('Choose a subject to start.');
       return;
@@ -548,7 +779,11 @@ export default function DrillPage() {
     <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <div className="mb-6 space-y-2">
         <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Drill</h1>
-        <p className={helperTextClass}>Pick a subject and start a {DRILL_MATCH_COUNT}-question drill.</p>
+        <p className={helperTextClass}>
+          {isTestMode
+            ? `Custom Test: ${testQuestionCount} question(s) across ${validTestPackIds.length || 0} selected pack(s).`
+            : `Pick a subject and start a ${DRILL_MATCH_COUNT}-question drill.`}
+        </p>
       </div>
 
       <div className="mx-auto w-full max-w-4xl space-y-4">
@@ -557,8 +792,10 @@ export default function DrillPage() {
             <div>
               <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">Drill in progress</p>
               <p className={helperTextClass}>
-                {activeSessionMeta.label || 'Subject drill'} | {formatTypesLabel(selectedQuickTypes)} |{' '}
-                {questions.length || DRILL_MATCH_COUNT}/{DRILL_MATCH_COUNT} questions
+                {activeSessionMeta.label || (isTestMode ? 'Custom Test' : 'Subject drill')} |{' '}
+                {formatTypesLabel(selectedQuickTypes)} |{' '}
+                {questions.length || (isTestMode ? testQuestionCount : DRILL_MATCH_COUNT)}/
+                {isTestMode ? testQuestionCount : DRILL_MATCH_COUNT} questions
               </p>
             </div>
             <button
@@ -573,46 +810,64 @@ export default function DrillPage() {
           <div className={cardClass}>
             <h2 className={sectionTitleClass}>Start Drill</h2>
             <p className={`${helperTextClass} mt-1`}>
-              Choose a subject, optionally search within it, then start.
+              {isTestMode
+                ? `Custom Test mode from Testing Center (${testQuestionCount} questions, ${validTestPackIds.length || 0} pack(s)).`
+                : 'Choose a subject, optionally search within it, then start.'}
             </p>
 
             <div className="mt-4 space-y-3">
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-pack-select">
-                  Subject
-                </label>
-                <select
-                  id="drill-pack-select"
-                  className={inputClass}
-                  value={selectedPackId}
-                  onChange={(event) => setSelectedPackId(event.target.value)}
-                  disabled={packsLoading || packs.length === 0}
-                >
-                  <option value="">Choose a subject...</option>
-                  {packs.map((pack) => (
-                    <option key={pack.id} value={pack.id}>
-                      {pack.label}
-                    </option>
-                  ))}
-                </select>
-                {packsLoading ? <p className={helperTextClass}>Loading subjects...</p> : null}
-                {packsError ? <p className="status error">{packsError}</p> : null}
-              </div>
+              {!isTestMode ? (
+                <>
+                  <div className="space-y-1.5">
+                    <label className={labelClass} htmlFor="drill-pack-select">
+                      Subject
+                    </label>
+                    <select
+                      id="drill-pack-select"
+                      className={inputClass}
+                      value={selectedPackId}
+                      onChange={(event) => setSelectedPackId(event.target.value)}
+                      disabled={packsLoading || packs.length === 0}
+                    >
+                      <option value="">Choose a subject...</option>
+                      {packs.map((pack) => (
+                        <option key={pack.id} value={pack.id}>
+                          {pack.label}
+                        </option>
+                      ))}
+                    </select>
+                    {packsLoading ? <p className={helperTextClass}>Loading subjects...</p> : null}
+                    {packsError ? <p className="status error">{packsError}</p> : null}
+                  </div>
 
-              <div className="space-y-1.5">
-                <label className={labelClass} htmlFor="drill-pack-search">
-                  Search within subject
-                </label>
-                <input
-                  id="drill-pack-search"
-                  className={inputClass}
-                  type="text"
-                  placeholder="e.g., trigger points, contraindications, lymph flow"
-                  value={subjectSearch}
-                  onChange={(event) => setSubjectSearch(event.target.value)}
-                  disabled={!selectedPackId}
-                />
-              </div>
+                  <div className="space-y-1.5">
+                    <label className={labelClass} htmlFor="drill-pack-search">
+                      Search within subject
+                    </label>
+                    <input
+                      id="drill-pack-search"
+                      className={inputClass}
+                      type="text"
+                      placeholder="e.g., trigger points, contraindications, lymph flow"
+                      value={subjectSearch}
+                      onChange={(event) => setSubjectSearch(event.target.value)}
+                      disabled={!selectedPackId}
+                    />
+                  </div>
+                </>
+              ) : (
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800/50">
+                  <p className="text-slate-700 dark:text-slate-200">
+                    Selected packs: <strong>{validTestPackIds.length || 0}</strong>
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Target count: <strong>{testQuestionCount}</strong>
+                  </p>
+                  <p className="text-slate-600 dark:text-slate-300">
+                    Random: <strong>{testRandom ? 'On' : 'Off'}</strong>
+                  </p>
+                </div>
+              )}
 
               <div className="space-y-1.5" role="group" aria-label="Drill type filters">
                 <span className={labelClass}>Types</span>
@@ -649,10 +904,11 @@ export default function DrillPage() {
 
               <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-800/50">
                 <p className="text-slate-700 dark:text-slate-200">
-                  Available questions: <strong>{selectedPackId ? availableCount : 0}</strong>
+                  Available questions:{' '}
+                  <strong>{isTestMode ? availableCount : selectedPackId ? availableCount : 0}</strong>
                 </p>
                 <p className="text-slate-600 dark:text-slate-300">
-                  Count: <strong>{DRILL_MATCH_COUNT}</strong>
+                  Count: <strong>{isTestMode ? testQuestionCount : DRILL_MATCH_COUNT}</strong>
                 </p>
               </div>
 
@@ -664,9 +920,14 @@ export default function DrillPage() {
                   className={buttonClass}
                   type="button"
                   onClick={() => void startPackDrill()}
-                  disabled={loading || packsLoading || !selectedPackId}
+                  disabled={
+                    loading ||
+                    packsLoading ||
+                    (!isTestMode && !selectedPackId) ||
+                    (isTestMode && validTestPackIds.length === 0)
+                  }
                 >
-                  {loading ? 'Loading...' : 'Start Drill'}
+                  {loading ? 'Loading...' : isTestMode ? 'Start Test' : 'Start Drill'}
                 </button>
               </div>
             </div>
