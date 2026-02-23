@@ -1,36 +1,11 @@
 'use client';
 
-import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 const MIN_QUESTIONS = 5;
 const MAX_QUESTIONS = 150;
 const DEFAULT_QUESTIONS = 50;
-const TESTING_ENGINE_CARDS = [
-  {
-    title: 'Testing Center Setup',
-    description: 'Choose question count and packs before starting a custom test.',
-    href: '#testing-center-setup',
-    cta: 'Open Setup',
-    disabled: false,
-  },
-  {
-    title: 'Start Test',
-    description: 'Direct one-tap start flow is reserved for future slices.',
-    href: '',
-    cta: 'Coming soon',
-    disabled: true,
-  },
-  {
-    title: 'Progress / Reports',
-    description: 'Review performance and reporting screens.',
-    href: '/progress',
-    cta: 'Open Progress',
-    disabled: false,
-  },
-];
-
 function clampQuestionCount(value) {
   const parsed = Number.parseInt(String(value || ''), 10);
   if (!Number.isFinite(parsed)) return DEFAULT_QUESTIONS;
@@ -41,6 +16,7 @@ export default function TestCenterClient({ packs }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [questionCountInput, setQuestionCountInput] = useState(String(DEFAULT_QUESTIONS));
+  const [packFilter, setPackFilter] = useState('');
   const [selectedPackIds, setSelectedPackIds] = useState(() => new Set((packs || []).map((pack) => pack.id)));
 
   const orderedSelectedPackIds = useMemo(() => {
@@ -49,6 +25,15 @@ export default function TestCenterClient({ packs }) {
   }, [packs, selectedPackIds]);
 
   const selectedCount = orderedSelectedPackIds.length;
+  const normalizedPackFilter = packFilter.trim().toLowerCase();
+  const filteredPacks = useMemo(() => {
+    if (!normalizedPackFilter) return packs || [];
+    return (packs || []).filter((pack) => {
+      const title = String(pack.title || '').toLowerCase();
+      const id = String(pack.id || '').toLowerCase();
+      return title.includes(normalizedPackFilter) || id.includes(normalizedPackFilter);
+    });
+  }, [packs, normalizedPackFilter]);
 
   function togglePack(id) {
     setSelectedPackIds((prev) => {
@@ -90,32 +75,6 @@ export default function TestCenterClient({ packs }) {
         </p>
       </header>
 
-      <section className="game-grid" style={{ marginBottom: 16 }}>
-        {TESTING_ENGINE_CARDS.map((card) => (
-          <article key={card.title} className="game-card">
-            <h2>{card.title}</h2>
-            <p className="muted" style={{ marginTop: 0 }}>
-              {card.description}
-            </p>
-            <div className="button-row">
-              {card.disabled ? (
-                <button type="button" className="choice-btn" disabled aria-disabled="true">
-                  {card.cta}
-                </button>
-              ) : (
-                <Link
-                  href={card.href}
-                  className="choice-btn"
-                  style={{ display: 'inline-block', minWidth: 140 }}
-                >
-                  {card.cta}
-                </Link>
-              )}
-            </div>
-          </article>
-        ))}
-      </section>
-
       <section id="testing-center-setup" className="runner" style={{ marginTop: 0 }}>
         <div style={{ display: 'grid', gap: 14 }}>
           <div>
@@ -156,18 +115,39 @@ export default function TestCenterClient({ packs }) {
                 </button>
               </div>
             </div>
+            <div style={{ marginBottom: 8 }}>
+              <label htmlFor="test-pack-filter" className="muted" style={{ display: 'block', marginBottom: 4 }}>
+                Filter packs
+              </label>
+              <input
+                id="test-pack-filter"
+                type="search"
+                value={packFilter}
+                onChange={(event) => setPackFilter(event.target.value)}
+                className="choice-btn"
+                style={{ width: '100%' }}
+                placeholder="Search by pack title or id"
+              />
+              <p className="muted" style={{ marginBottom: 0 }}>
+                Showing {filteredPacks.length} of {(packs || []).length} packs
+              </p>
+            </div>
 
             {(packs || []).length === 0 ? (
               <p className="muted" style={{ marginTop: 0 }}>
                 No pack files found in `src/content/packs`.
+              </p>
+            ) : filteredPacks.length === 0 ? (
+              <p className="muted" style={{ marginTop: 0 }}>
+                No packs match that filter.
               </p>
             ) : (
               <div
                 className="coverage-table-wrap"
                 style={{ maxHeight: 420, border: '1px solid #e5e7eb', borderRadius: 8, padding: 8 }}
               >
-                <div style={{ display: 'grid', gap: 8 }}>
-                  {packs.map((pack) => (
+                <div style={{ display: 'grid', gap: 6 }}>
+                  {filteredPacks.map((pack) => (
                     <label
                       key={pack.id}
                       className="choice-btn"
@@ -176,7 +156,9 @@ export default function TestCenterClient({ packs }) {
                         alignItems: 'center',
                         gap: 10,
                         cursor: 'pointer',
-                        minHeight: 48,
+                        minHeight: 44,
+                        paddingTop: 8,
+                        paddingBottom: 8,
                       }}
                     >
                       <input
@@ -200,14 +182,16 @@ export default function TestCenterClient({ packs }) {
             )}
           </div>
 
-          <div className="button-row">
+          <div className="button-row" style={{ justifyContent: 'flex-end', marginTop: 4 }}>
             <button
               type="button"
               onClick={startTest}
               disabled={selectedCount === 0}
               className="choice-btn"
               style={{
-                minWidth: 160,
+                width: '100%',
+                maxWidth: 280,
+                minHeight: 48,
                 textAlign: 'center',
                 fontWeight: 700,
                 background: selectedCount === 0 ? undefined : '#111827',
