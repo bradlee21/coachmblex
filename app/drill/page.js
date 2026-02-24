@@ -8,7 +8,7 @@ import { shuffleArray } from '../_utils/shuffleArray.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
 
-const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
+const QUICK_TYPES = ['mcq', 'reverse'];
 const DRILL_MATCH_COUNT = 10;
 const DRILL_PACK_LIST_LIMIT = 2000;
 const DRILL_START_FETCH_LIMIT = 200;
@@ -25,7 +25,6 @@ function parseQuickTypes(value) {
   const parsed = {
     mcq: true,
     reverse: true,
-    fill: true,
   };
   if (!value) return parsed;
   const values = String(value)
@@ -35,12 +34,10 @@ function parseQuickTypes(value) {
   if (values.length === 0) return parsed;
   parsed.mcq = values.includes('mcq');
   parsed.reverse = values.includes('reverse');
-  parsed.fill = values.includes('fill');
-  if (!parsed.mcq && !parsed.reverse && !parsed.fill) {
+  if (!parsed.mcq && !parsed.reverse) {
     return {
       mcq: true,
       reverse: true,
-      fill: true,
     };
   }
   return parsed;
@@ -170,9 +167,8 @@ function buildTextSearchOrClause(searchTerm) {
 
 function applyDrillFilters(query, { packId, types, searchText }) {
   let next = query.eq(TEST_PACK_ID_COLUMN, toText(packId));
-  if (Array.isArray(types) && types.length > 0) {
-    next = next.in('question_type', types);
-  }
+  const allowedTypes = (types || []).filter((type) => QUICK_TYPES.includes(type));
+  next = next.in('question_type', allowedTypes.length > 0 ? allowedTypes : QUICK_TYPES);
   const orClause = buildTextSearchOrClause(searchText);
   if (orClause) {
     next = next.or(orClause);
@@ -187,9 +183,8 @@ function applyTestPackIdFilters(query, { packIds, types }) {
     // Testing Center uses canonical questions.pack_id; this avoids subject/domain fallback ambiguity.
     next = next.in(TEST_PACK_ID_COLUMN, normalizedPackIds);
   }
-  if (Array.isArray(types) && types.length > 0) {
-    next = next.in('question_type', types);
-  }
+  const allowedTypes = (types || []).filter((type) => QUICK_TYPES.includes(type));
+  next = next.in('question_type', allowedTypes.length > 0 ? allowedTypes : QUICK_TYPES);
   return next;
 }
 
@@ -221,7 +216,6 @@ export default function DrillPage() {
   const [quickTypes, setQuickTypes] = useState({
     mcq: true,
     reverse: true,
-    fill: true,
   });
   const selectedQuickTypes = useMemo(
     () => QUICK_TYPES.filter((type) => quickTypes[type]),
@@ -860,15 +854,6 @@ export default function DrillPage() {
                       onChange={() => toggleQuickType('reverse')}
                     />
                     Reverse
-                  </label>
-                  <label className="inline-flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">
-                    <input
-                      type="checkbox"
-                      className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-400 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200 dark:focus:ring-slate-500"
-                      checked={quickTypes.fill}
-                      onChange={() => toggleQuickType('fill')}
-                    />
-                    Fill
                   </label>
                 </div>
               </div>
