@@ -316,7 +316,7 @@ function validateAndMapQuestion(question, index, packId) {
   };
 }
 
-async function insertBatch(supabase, rows, rowNumbers, failures, stats) {
+async function insertBatch(supabase, rows, rowNumbers, writeFailures, stats) {
   if (rows.length === 0) return 0;
 
   const { data, error } = await supabase
@@ -334,13 +334,9 @@ async function insertBatch(supabase, rows, rowNumbers, failures, stats) {
     if (rowError) {
       if (isUniqueViolation(rowError)) {
         stats.duplicateSkippedCount += 1;
-        failures.push({
-          rowNo: rowNumbers[i],
-          reasons: ['duplicate question blocked by DB unique guard'],
-        });
         continue;
       }
-      failures.push({
+      writeFailures.push({
         rowNo: rowNumbers[i],
         reasons: [`insert failed: ${rowError.message}`],
       });
@@ -352,7 +348,7 @@ async function insertBatch(supabase, rows, rowNumbers, failures, stats) {
   return inserted;
 }
 
-async function updateBatch(supabase, updates, failures, stats) {
+async function updateBatch(supabase, updates, writeFailures, stats) {
   if (updates.length === 0) return 0;
   let updated = 0;
 
@@ -365,13 +361,9 @@ async function updateBatch(supabase, updates, failures, stats) {
     if (error) {
       if (isUniqueViolation(error)) {
         stats.duplicateSkippedCount += 1;
-        failures.push({
-          rowNo: item.rowNo,
-          reasons: ['duplicate question blocked by DB unique guard on update'],
-        });
         continue;
       }
-      failures.push({
+      writeFailures.push({
         rowNo: item.rowNo,
         reasons: [`update failed: ${error.message}`],
       });
@@ -452,7 +444,8 @@ async function main() {
     );
   }
 
-  const failures = [];
+  const validationFailures = [];
+  const writeFailures = [];
   const rowsToInsert = [];
   const rowNumbersToInsert = [];
   const rowsToUpdate = [];
@@ -481,7 +474,7 @@ async function main() {
   for (let i = 0; i < pack.questions.length; i += 1) {
     const result = validateAndMapQuestion(pack.questions[i], i, canonicalPackId);
     if (!result.ok) {
-      failures.push({ rowNo: result.rowNo, reasons: result.errors });
+      validationFailures.push({ rowNo: result.rowNo, reasons: result.errors });
       continue;
     }
 
@@ -500,10 +493,6 @@ async function main() {
         taggedExistingIds.add(existingStrictRow.id);
       }
       stats.duplicateSkippedCount += 1;
-      failures.push({
-        rowNo: result.rowNo,
-        reasons: ['duplicate question detected (strict signature)'],
-      });
       continue;
     }
 
@@ -512,10 +501,6 @@ async function main() {
     if (existingCandidates.length > 0) {
       if (processedBaseSignatures.has(baseSignature)) {
         stats.duplicateSkippedCount += 1;
-        failures.push({
-          rowNo: result.rowNo,
-          reasons: ['duplicate question detected (base signature)'],
-        });
         continue;
       }
 
@@ -543,13 +528,13 @@ async function main() {
   updatedCount = await updateBatch(
     supabase,
     rowsToUpdate,
-    failures,
+    writeFailures,
     stats
   );
   taggedCount = await updateBatch(
     supabase,
     rowsToTag,
-    failures,
+    writeFailures,
     stats
   );
 
@@ -562,13 +547,14 @@ async function main() {
       supabase,
       batchRows,
       batchNumbers,
-      failures,
+      writeFailures,
       stats
     );
     insertedCount += inserted;
   }
 
-  const invalidCount = failures.length;
+  const invalidCount = validationFailures.length;
+  const writeFailureCount = writeFailures.length;
   console.log(`Pack: ${canonicalPackId}`);
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
@@ -577,6 +563,9 @@ async function main() {
   console.log(`Inserted: ${insertedCount}`);
   console.log(`Skipped duplicates: ${stats.duplicateSkippedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
+  if (writeFailureCount > 0) {
+    console.log(`Failed writes: ${writeFailureCount}`);
+  }
   try {
     const afterCount = await getQuestionCount(supabase);
     console.log(`Questions in DB after import: ${afterCount}`);
@@ -588,7 +577,13 @@ async function main() {
 
   if (invalidCount > 0) {
     console.log('Invalid rows:');
-    for (const failure of failures) {
+    for (const failure of validationFailures) {
+      console.log(`- row ${failure.rowNo}: ${failure.reasons.join('; ')}`);
+    }
+  }
+  if (writeFailureCount > 0) {
+    console.log('Write failures:');
+    for (const failure of writeFailures) {
       console.log(`- row ${failure.rowNo}: ${failure.reasons.join('; ')}`);
     }
   }
