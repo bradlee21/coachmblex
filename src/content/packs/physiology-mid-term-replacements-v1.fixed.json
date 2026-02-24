@@ -1,0 +1,139 @@
+{
+  "packId": "physiology-mid-term",
+  "source": "midterm-review-replacements",
+  "questions": [
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-12",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "Which sequence best describes the pain pathway (from stimulus to conscious awareness)?",
+      "choices": {
+        "A": "Nociceptor activation → sensory (afferent) neuron → spinal cord (dorsal horn) → ascending tract → thalamus/cortex",
+        "B": "Motor neuron activation → spinal cord (ventral horn) → peripheral nerve → nociceptor → cortex",
+        "C": "Thalamus activation → spinal cord → nociceptor → afferent neuron → cortex",
+        "D": "Peripheral nerve activation → motor neuron → spinal cord → nociceptor → cortex"
+      },
+      "difficulty": "medium",
+      "correct_choice": "A",
+      "answer": "Nociceptor activation → sensory (afferent) neuron → spinal cord (dorsal horn) → ascending tract → thalamus/cortex",
+      "why": "Pain begins at nociceptors, travels via afferent neurons into the spinal cord, then ascends to higher brain centers for perception.",
+      "trap": "Choices that start with motor pathways or reverse the order confuse sensory vs. motor routes and CNS processing order.",
+      "hook": "Pain = nociceptor → afferent → spinal cord → up → brain."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-12",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "Which list contains the five basic tastes?",
+      "choices": {
+        "A": "Sweet, sour, salty, bitter, umami",
+        "B": "Sweet, spicy, salty, bitter, umami",
+        "C": "Sweet, sour, salty, savory, metallic",
+        "D": "Sweet, sour, salty, bitter, pungent"
+      },
+      "difficulty": "easy",
+      "correct_choice": "A",
+      "answer": "Sweet, sour, salty, bitter, umami",
+      "why": "The widely accepted five basic tastes are sweet, sour, salty, bitter, and umami (savory).",
+      "trap": "‘Spicy/pungent’ are trigeminal sensations, not basic tastes; ‘metallic’ isn’t part of the basic five.",
+      "hook": "SSSBU = Sweet Sour Salty Bitter Umami."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-10",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "Starting at the neuromuscular junction, which sequence best describes skeletal muscle contraction?",
+      "choices": {
+        "A": "ACh release → sarcolemma depolarizes → Ca2+ released from SR → actin-myosin cross-bridges → Ca2+ pumped back into SR",
+        "B": "Ca2+ released from SR → ACh release → cross-bridges → depolarization → Ca2+ pumped into SR",
+        "C": "ACh release → Ca2+ pumped into SR → depolarization → cross-bridges → Ca2+ released from SR",
+        "D": "Depolarization → ACh release → Ca2+ pumped into SR → Ca2+ released from SR → cross-bridges"
+      },
+      "difficulty": "medium",
+      "correct_choice": "A",
+      "answer": "ACh release → sarcolemma depolarizes → Ca2+ released from SR → actin-myosin cross-bridges → Ca2+ pumped back into SR",
+      "why": "ACh triggers an action potential, which releases Ca2+ to enable cross-bridging; relaxation occurs when Ca2+ is returned to the SR.",
+      "trap": "Many distractors scramble Ca2+ release vs reuptake or place cross-bridges before Ca2+ release.",
+      "hook": "ACh → AP → Ca → cross-bridge → Ca back."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-8",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "What are the three arches of the foot?",
+      "choices": {
+        "A": "Medial longitudinal, lateral longitudinal, transverse",
+        "B": "Anterior longitudinal, posterior longitudinal, transverse",
+        "C": "Medial transverse, lateral transverse, longitudinal",
+        "D": "Plantar, dorsal, transverse"
+      },
+      "difficulty": "easy",
+      "correct_choice": "A",
+      "answer": "Medial longitudinal, lateral longitudinal, transverse",
+      "why": "The foot’s arches are classically described as two longitudinal arches (medial and lateral) and one transverse arch.",
+      "trap": "Terms like anterior/posterior or plantar/dorsal are not the standard arch names.",
+      "hook": "2 long (medial/lateral) + 1 transverse."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-10",
+      "blueprint_code": "2.D",
+      "question_type": "reverse",
+      "prompt": "Striated, voluntary, and attached to bones describes which muscle type?",
+      "choices": {
+        "A": "Skeletal muscle",
+        "B": "Cardiac muscle",
+        "C": "Smooth muscle",
+        "D": "Visceral muscle (a separate type)"
+      },
+      "difficulty": "easy",
+      "correct_choice": "A",
+      "answer": "Skeletal muscle",
+      "why": "Skeletal muscle is striated and voluntary, producing movement by pulling on bones via tendons.",
+      "trap": "Cardiac is striated but involuntary; smooth is involuntary and nonstriated. ‘Visceral’ typically refers to smooth, not a separate third category.",
+      "hook": "Skeletal = striated + voluntary."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-6",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "What role does melanin play in the skin?",
+      "choices": {
+        "A": "It absorbs UV radiation to help protect deeper tissues and DNA from damage",
+        "B": "It produces sweat to cool the body",
+        "C": "It secretes sebum to lubricate hair and skin",
+        "D": "It forms collagen fibers that provide skin strength"
+      },
+      "difficulty": "easy",
+      "correct_choice": "A",
+      "answer": "It absorbs UV radiation to help protect deeper tissues and DNA from damage",
+      "why": "Melanin is a pigment produced by melanocytes that helps shield cells from UV exposure.",
+      "trap": "Sweat (eccrine glands), sebum (sebaceous glands), and collagen (dermis) are different structures/functions.",
+      "hook": "Melanin = UV shield."
+    },
+    {
+      "domain": "anatomy",
+      "subtopic": "chapter-6",
+      "blueprint_code": "2.D",
+      "question_type": "mcq",
+      "prompt": "Which option lists five major functions of the skin?",
+      "choices": {
+        "A": "Protection, temperature regulation, sensation, vitamin D synthesis, excretion",
+        "B": "Protection, digestion, respiration, filtration, hormone production",
+        "C": "Movement, protection, nutrient absorption, memory, oxygen transport",
+        "D": "Temperature regulation, digestion, circulation, reproduction, hearing"
+      },
+      "difficulty": "medium",
+      "correct_choice": "A",
+      "answer": "Protection, temperature regulation, sensation, vitamin D synthesis, excretion",
+      "why": "Key skin functions commonly include barrier protection, thermoregulation, sensory reception, vitamin D production, and limited excretion via sweat.",
+      "trap": "Many distractors list functions of other systems (digestive, respiratory, nervous, etc.).",
+      "hook": "Skin = barrier + thermostat + sensors + D + sweat."
+    }
+  ]
+}
