@@ -28,6 +28,33 @@ export function normalizeFreeText(value) {
 
 export { shuffleArray };
 
+export function shuffleSessionQuestionChoices(question, rng = Math.random) {
+  const questionType = toText(question?.question_type || question?.type).toLowerCase();
+  if (!question || !['mcq', 'reverse'].includes(questionType)) return question;
+
+  const choices = Array.isArray(question?.choices) ? question.choices : [];
+  const correctIndex = Number.isInteger(question?.correct_index)
+    ? question.correct_index
+    : Number(question?.correct_index);
+  if (choices.length !== 4) return question;
+  if (!Number.isInteger(correctIndex) || correctIndex < 0 || correctIndex >= choices.length) {
+    return question;
+  }
+
+  const shuffled = shuffleArray(
+    choices.map((choice, originalIndex) => ({ choice, originalIndex })),
+    rng
+  );
+  const shuffledCorrectIndex = shuffled.findIndex((item) => item.originalIndex === correctIndex);
+  if (shuffledCorrectIndex < 0) return question;
+
+  return {
+    ...question,
+    choices: shuffled.map((item) => item.choice),
+    correct_index: shuffledCorrectIndex,
+  };
+}
+
 function hasPromptBlank(prompt) {
   return /_{2,}|\bblank\b/i.test(String(prompt || ''));
 }

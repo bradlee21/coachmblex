@@ -5,6 +5,7 @@ import {
   resolveFibFeedbackState,
   resolveFibInputEnterIntent,
   resolveQuestionMode,
+  shuffleSessionQuestionChoices,
 } from '../app/_components/questionRunnerLogic.mjs';
 import { shuffleArray } from '../app/_utils/shuffleArray.mjs';
 
@@ -44,10 +45,9 @@ assertMatch(
   /id="fib-answer"/,
   'Expected QuestionRunner fib mode to render a text input.'
 );
-assertMatch(
-  questionRunnerSource,
-  /const visibleChoices = useMemo\([\s\S]*shuffleArray\(/,
-  'Expected QuestionRunner visibleChoices to use shuffleArray for per-question choice order.'
+assert(
+  !/const visibleChoices = useMemo\([\s\S]*shuffleArray\(/.test(questionRunnerSource),
+  'Expected QuestionRunner to render provided choice order without UI-level shuffling.'
 );
 
 let selectedChoicePosition = null;
@@ -126,6 +126,33 @@ const submittedRawIndex = shuffledChoices[displayedCorrectPosition].rawIndex;
 assert(
   submittedRawIndex === correctIndex,
   'Expected grading to evaluate correctness using the shuffled choice rawIndex mapping.'
+);
+
+const shuffledQuestion = shuffleSessionQuestionChoices(
+  {
+    id: 'mcq-shuffle-fixture',
+    question_type: 'mcq',
+    choices: sourceChoices,
+    correct_index: 0,
+  },
+  (() => {
+    const values = [0.2, 0.2, 0.2];
+    let index = 0;
+    return () => values[index++] ?? 0;
+  })()
+);
+
+assert(
+  Array.isArray(shuffledQuestion.choices) && shuffledQuestion.choices.length === 4,
+  'Expected session shuffle helper to preserve 4 choices.'
+);
+assert(
+  shuffledQuestion.correct_index >= 0 && shuffledQuestion.correct_index <= 3,
+  'Expected session shuffle helper to remap correct_index into visible choice order.'
+);
+assert(
+  shuffledQuestion.choices[shuffledQuestion.correct_index] === 'Correct',
+  'Expected session shuffle helper to keep the same correct answer text after shuffling.'
 );
 
 console.log('QuestionRunner FIB regression checks passed.');

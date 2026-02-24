@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
-import { shuffleArray } from '../_utils/shuffleArray.mjs';
 import {
   getChoiceList,
   isFibAnswerCorrect,
@@ -83,23 +82,14 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   }, [questions]);
 
   const current = useMemo(() => questions[index], [index, questions]);
-  const questionInstanceKey = useMemo(
-    () => `${toText(current?.id) || 'question'}:${index}`,
-    [current?.id, index]
-  );
   const questionMode = useMemo(() => resolveQuestionMode(current), [current]);
   const currentChoices = useMemo(() => getChoiceList(current), [current]);
   const visibleChoices = useMemo(
-    () => {
-      const decoratedChoices = currentChoices
+    () =>
+      currentChoices
         .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
-        .filter((item) => item.choice.length > 0);
-      if (current?._choicesShuffledInSession) {
-        return decoratedChoices;
-      }
-      return shuffleArray(decoratedChoices);
-    },
-    [current, currentChoices, questionInstanceKey]
+        .filter((item) => item.choice.length > 0),
+    [currentChoices]
   );
   const resolvedCorrectIndex = useMemo(
     () => resolveCorrectChoiceIndex(current),

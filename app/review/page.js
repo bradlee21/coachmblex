@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
+import { shuffleSessionQuestionChoices } from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
 
@@ -183,7 +184,7 @@ export default function ReviewPage() {
       return;
     }
 
-    setSessionQuestions(questionsResult);
+    setSessionQuestions(questionsResult.map(shuffleSessionQuestionChoices));
     setPhase('running');
   }
 

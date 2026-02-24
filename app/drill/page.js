@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import QuestionRunner from '../_components/QuestionRunner';
+import { shuffleSessionQuestionChoices } from '../_components/questionRunnerLogic.mjs';
 import { shuffleArray } from '../_utils/shuffleArray.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { trackEvent } from '../../src/lib/trackEvent';
@@ -74,31 +75,6 @@ function toCsv(values) {
 
 function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
-}
-
-function shuffleSessionQuestionChoices(question) {
-  if (!question || getQuestionType(question) === 'fill') return question;
-  const choices = Array.isArray(question.choices) ? question.choices : [];
-  const correctIndex = Number.isInteger(question.correct_index)
-    ? question.correct_index
-    : Number(question.correct_index);
-  if (choices.length !== 4) return question;
-  if (!Number.isInteger(correctIndex) || correctIndex < 0 || correctIndex >= choices.length) {
-    return question;
-  }
-
-  const shuffled = shuffleArray(
-    choices.map((choice, originalIndex) => ({ choice, originalIndex }))
-  );
-  const shuffledCorrectIndex = shuffled.findIndex((item) => item.originalIndex === correctIndex);
-  if (shuffledCorrectIndex < 0) return question;
-
-  return {
-    ...question,
-    choices: shuffled.map((item) => item.choice),
-    correct_index: shuffledCorrectIndex,
-    _choicesShuffledInSession: true,
-  };
 }
 
 function titleCaseWords(value) {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import QuestionRunner from '../../_components/QuestionRunner';
+import { shuffleSessionQuestionChoices } from '../../_components/questionRunnerLogic.mjs';
 import { shuffleArray } from '../../_utils/shuffleArray.mjs';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { trackEvent } from '../../../src/lib/trackEvent';
@@ -255,8 +256,9 @@ export default function TestRunPage() {
 
       const pool = Array.isArray(data) ? data : [];
       const picked = (parsedConfig.random ? shuffleArray(pool) : pool).slice(0, parsedConfig.n);
+      const sessionQuestions = picked.map(shuffleSessionQuestionChoices);
 
-      if (picked.length === 0) {
+      if (sessionQuestions.length === 0) {
         setMessage('No questions available for the selected test packs and types.');
         setLoading(false);
         return;
@@ -268,11 +270,11 @@ export default function TestRunPage() {
         random: parsedConfig.random,
         types: parsedConfig.types,
       });
-      setQuestions(picked);
+      setQuestions(sessionQuestions);
 
-      if (picked.length < parsedConfig.n) {
+      if (sessionQuestions.length < parsedConfig.n) {
         setNotice(
-          `Only ${picked.length} question(s) available across ${selectedPackIds.length} selected pack(s).`
+          `Only ${sessionQuestions.length} question(s) available across ${selectedPackIds.length} selected pack(s).`
         );
       } else if (requested.length > 0 && validPackIds.length < requested.length) {
         setNotice(
@@ -282,7 +284,7 @@ export default function TestRunPage() {
 
       void trackEvent('test_run_start', {
         requested: parsedConfig.n,
-        loaded: picked.length,
+        loaded: sessionQuestions.length,
         packCount: selectedPackIds.length,
         random: parsedConfig.random,
       });
