@@ -17,18 +17,6 @@ const TEST_MATCH_COUNT_MIN = 5;
 const TEST_MATCH_COUNT_MAX = 150;
 const TEST_PACK_ID_COLUMN = 'pack_id';
 
-const PACK_FILTER_STRATEGIES = [
-  // Prefer student-facing subject grouping from question.domain when present.
-  { key: 'domain', kind: 'column', path: 'domain', label: 'domain' },
-  { key: 'pack_id', kind: 'column', path: 'pack_id', label: 'pack_id' },
-  { key: 'source_pack', kind: 'column', path: 'source_pack', label: 'source_pack' },
-  { key: 'source_json_pack_id', kind: 'json', path: 'source->>pack_id', label: 'source->>pack_id' },
-  { key: 'source_json_packId', kind: 'json', path: 'source->>packId', label: 'source->>packId' },
-  { key: 'metadata_json_pack_id', kind: 'json', path: 'metadata->>pack_id', label: 'metadata->>pack_id' },
-  { key: 'metadata_json_packId', kind: 'json', path: 'metadata->>packId', label: 'metadata->>packId' },
-  // Fallback pack identifiers for questions rows that do not have a subject domain label.
-];
-
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
@@ -91,20 +79,6 @@ function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
 }
 
-function parseMaybeObject(value) {
-  if (!value) return null;
-  if (typeof value === 'object' && !Array.isArray(value)) return value;
-  if (typeof value !== 'string') return null;
-  const trimmed = value.trim();
-  if (!trimmed.startsWith('{') || !trimmed.endsWith('}')) return null;
-  try {
-    const parsed = JSON.parse(trimmed);
-    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : null;
-  } catch {
-    return null;
-  }
-}
-
 function titleCaseWords(value) {
   return String(value || '')
     .split(/\s+/)
@@ -125,35 +99,9 @@ function humanizePackId(packId) {
 }
 
 function resolveQuestionPackInfo(question) {
-  const sourceObject = parseMaybeObject(question?.source);
-  const metadataObject = parseMaybeObject(question?.metadata);
+  const packId = toText(question?.pack_id);
   const explicitDomain = toText(question?.domain);
-
-  const packId =
-    explicitDomain ||
-    toText(question?.pack_id) ||
-    toText(question?.packId) ||
-    toText(question?.source_pack) ||
-    toText(question?.sourcePack) ||
-    toText(sourceObject?.pack_id) ||
-    toText(sourceObject?.packId) ||
-    toText(metadataObject?.pack_id) ||
-    toText(metadataObject?.packId);
-
-  // Subject dropdown should use the student-facing domain label when present, then fall back.
-  const packLabel =
-    explicitDomain ||
-    toText(question?.pack_title) ||
-    toText(question?.packTitle) ||
-    toText(question?.source_pack_title) ||
-    toText(question?.sourcePackTitle) ||
-    toText(sourceObject?.pack_title) ||
-    toText(sourceObject?.packTitle) ||
-    toText(sourceObject?.title) ||
-    toText(metadataObject?.pack_title) ||
-    toText(metadataObject?.packTitle) ||
-    toText(metadataObject?.title) ||
-    humanizePackId(packId);
+  const packLabel = explicitDomain || humanizePackId(packId);
 
   return {
     packId,
@@ -195,50 +143,8 @@ function buildTextSearchOrClause(searchTerm) {
   ].join(',');
 }
 
-function isJsonOperatorPath(path) {
-  return typeof path === 'string' && (path.includes('->>') || path.includes('->'));
-}
-
-function resolveStrategyProbeValueFromRow(row, strategy) {
-  if (!row || !strategy) return '';
-  if (strategy.kind === 'column') {
-    return toText(row?.[strategy.path]);
-  }
-
-  const [root, jsonKey] = String(strategy.path).split('->>').map((part) => part?.trim());
-  if (!root || !jsonKey) return '';
-  const parsed = parseMaybeObject(row?.[root]);
-  return toText(parsed?.[jsonKey]);
-}
-
-function applyPackFilter(query, strategy, packId) {
-  if (!strategy || !toText(packId)) return query;
-  const value = toText(packId);
-  // Supabase/PostgREST JSON operator paths (e.g. source->>pack_id) must use .filter(path, 'eq', value).
-  // Direct columns should use .eq(column, value).
-  if (isJsonOperatorPath(strategy.path)) {
-    return query.filter(strategy.path, 'eq', value);
-  }
-  return query.eq(strategy.path, value);
-}
-
-function applyPackFilters(query, strategy, packIds) {
-  const values = Array.from(new Set((packIds || []).map((item) => toText(item)).filter(Boolean)));
-  if (!strategy || values.length === 0) return query;
-  if (values.length === 1) {
-    return applyPackFilter(query, strategy, values[0]);
-  }
-  if (isJsonOperatorPath(strategy.path)) {
-    return query.or(values.map((value) => `${strategy.path}.eq.${value}`).join(','));
-  }
-  return query.in(strategy.path, values);
-}
-
-function applyDrillFilters(query, { packStrategy, packId, packIds, types, searchText }) {
-  let next =
-    Array.isArray(packIds) && packIds.length > 0
-      ? applyPackFilters(query, packStrategy, packIds)
-      : applyPackFilter(query, packStrategy, packId);
+function applyDrillFilters(query, { packId, types, searchText }) {
+  let next = query.eq(TEST_PACK_ID_COLUMN, toText(packId));
   if (Array.isArray(types) && types.length > 0) {
     next = next.in('question_type', types);
   }
@@ -262,28 +168,6 @@ function applyTestPackIdFilters(query, { packIds, types }) {
   return next;
 }
 
-async function detectFilterStrategy(supabase, strategies = PACK_FILTER_STRATEGIES) {
-  const { data: sampleRow } = await supabase
-    .from('questions')
-    .select('*')
-    .limit(1)
-    .maybeSingle();
-
-  for (const strategy of strategies) {
-    const sampleValue = resolveStrategyProbeValueFromRow(sampleRow, strategy);
-    const probeValue = sampleValue || '__pack_probe__';
-    const { error } = await applyPackFilter(
-      supabase.from('questions').select('id').limit(1),
-      strategy,
-      probeValue
-    );
-    if (!error) {
-      return strategy;
-    }
-  }
-  return null;
-}
-
 async function detectPackIdColumnAvailability(supabase) {
   const { error } = await supabase.from('questions').select(TEST_PACK_ID_COLUMN).limit(1);
   return !error;
@@ -299,7 +183,6 @@ export default function DrillPage() {
   const [packs, setPacks] = useState([]);
   const [packsLoading, setPacksLoading] = useState(false);
   const [packsError, setPacksError] = useState('');
-  const [packFilterStrategy, setPackFilterStrategy] = useState(null);
   const [testPackIdColumnAvailable, setTestPackIdColumnAvailable] = useState(true);
   const [knownDbPackIds, setKnownDbPackIds] = useState([]);
   const [selectedPackId, setSelectedPackId] = useState('');
@@ -386,7 +269,6 @@ export default function DrillPage() {
     if (!supabase) {
       setPacksError('Supabase is not configured. Check NEXT_PUBLIC_* environment values.');
       setPacks([]);
-      setPackFilterStrategy(null);
       setTestPackIdColumnAvailable(false);
       return;
     }
@@ -397,24 +279,19 @@ export default function DrillPage() {
       setPacksLoading(true);
       setPacksError('');
 
-      const [strategy, packIdAvailable] = await Promise.all([
-        detectFilterStrategy(supabase, PACK_FILTER_STRATEGIES),
-        detectPackIdColumnAvailability(supabase),
-      ]);
+      const packIdAvailable = await detectPackIdColumnAvailability(supabase);
       if (cancelled) return;
-      setPackFilterStrategy(strategy);
       setTestPackIdColumnAvailable(packIdAvailable);
-      if (!strategy) {
+      if (!packIdAvailable) {
         setPacks([]);
-        setPacksError('No supported pack field found on questions table.');
+        setPacksError('questions.pack_id column is required for Targeted Drill.');
         setPacksLoading(false);
         return;
       }
 
-      // Pack picker still derives labels from existing row payloads; count/start use server filtering.
       const { data, error } = await supabase
         .from('questions')
-        .select('*')
+        .select('pack_id,domain,question_type')
         .order('created_at', { ascending: false })
         .limit(DRILL_PACK_LIST_LIMIT);
 
@@ -546,9 +423,11 @@ export default function DrillPage() {
       setCountLoading(false);
       return;
     }
-    if (!packFilterStrategy) {
+    if (!testPackIdColumnAvailable) {
       setAvailableCount(0);
-      setCountMessage(packsError ? '' : 'Pack filtering is unavailable.');
+      setCountMessage(
+        packsError ? '' : 'Targeted Drill requires questions.pack_id. Run the pack_id SQL migration/backfill and re-import packs.'
+      );
       setCountLoading(false);
       return;
     }
@@ -567,7 +446,6 @@ export default function DrillPage() {
     const { count, error } = await applyDrillFilters(
       supabase.from('questions').select('id', { head: true, count: 'exact' }),
       {
-        packStrategy: packFilterStrategy,
         packId: selectedPackId,
         types: selectedQuickTypes,
         searchText: subjectSearch,
@@ -585,8 +463,6 @@ export default function DrillPage() {
     setCountLoading(false);
   }, [
     isTestMode,
-    packFilterStrategy,
-    packsError,
     selectedPackId,
     selectedQuickTypes,
     subjectSearch,
@@ -730,8 +606,10 @@ export default function DrillPage() {
       setMessage('Pick at least one type.');
       return;
     }
-    if (!packFilterStrategy) {
-      setMessage('Pack filtering is unavailable for this questions schema.');
+    if (!testPackIdColumnAvailable) {
+      setMessage(
+        'Targeted Drill requires questions.pack_id. Run the pack_id SQL migration/backfill and re-import packs.'
+      );
       return;
     }
 
@@ -759,7 +637,6 @@ export default function DrillPage() {
         .order('created_at', { ascending: false })
         .limit(DRILL_START_FETCH_LIMIT),
       {
-        packStrategy: packFilterStrategy,
         packId: selectedPackId,
         types: selectedQuickTypes,
         searchText: subjectSearch,

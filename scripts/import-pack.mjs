@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { basename, resolve } from 'node:path';
+import { resolve } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 
 const BATCH_SIZE = 50;
@@ -216,13 +216,10 @@ function buildExplanation(question, fallbackAnswer = '') {
   };
 }
 
-function resolvePackId(pack, filePath) {
+function resolvePackId(pack) {
   return (
     normalizeText(pack?.pack_id) ||
-    normalizeText(pack?.packId) ||
-    normalizeText(pack?.id) ||
-    normalizeText(pack?.meta?.id) ||
-    normalizeText(filePath ? basename(filePath, '.json') : '')
+    normalizeText(pack?.packId)
   );
 }
 
@@ -420,9 +417,9 @@ async function main() {
     process.exit(1);
   }
 
-  const canonicalPackId = resolvePackId(pack, filePath);
+  const canonicalPackId = resolvePackId(pack);
   if (!canonicalPackId) {
-    console.error('Pack must include a pack id (pack_id/packId/id) or have a valid JSON filename.');
+    console.error('Pack must include a pack-level pack_id or packId.');
     process.exit(1);
   }
 

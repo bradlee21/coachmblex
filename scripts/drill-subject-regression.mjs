@@ -8,27 +8,21 @@ function assert(condition, message) {
   }
 }
 
-const domainStrategyIndex = source.indexOf("{ key: 'domain', kind: 'column', path: 'domain', label: 'domain' }");
-const packIdStrategyIndex = source.indexOf("{ key: 'pack_id', kind: 'column', path: 'pack_id', label: 'pack_id' }");
-
-assert(domainStrategyIndex >= 0, 'Expected domain filter strategy in Drill page');
-assert(packIdStrategyIndex >= 0, 'Expected pack_id filter strategy in Drill page');
 assert(
-  domainStrategyIndex < packIdStrategyIndex,
-  'Expected domain filter strategy to be checked before pack_id'
-);
-
-assert(
-  source.includes('const explicitDomain = toText(question?.domain);'),
-  'Expected explicitDomain helper in resolveQuestionPackInfo'
+  source.includes("let next = query.eq(TEST_PACK_ID_COLUMN, toText(packId));"),
+  'Expected Targeted Drill filtering to use questions.pack_id directly'
 );
 assert(
-  source.includes('const packId =\n    explicitDomain ||'),
-  'Expected Drill subject id to prefer question.domain'
+  source.includes("setPacksError('questions.pack_id column is required for Targeted Drill.')"),
+  'Expected clear pack_id-only error when questions.pack_id is unavailable'
 );
 assert(
-  source.includes('const packLabel =\n    explicitDomain ||'),
-  'Expected Drill subject label to prefer question.domain'
+  source.includes('const packId = toText(question?.pack_id);'),
+  'Expected Drill subject options to key off question.pack_id'
+);
+assert(
+  source.includes("const explicitDomain = toText(question?.domain);"),
+  'Expected Drill subject label to still prefer question.domain when present'
 );
 
 console.log('Drill subject regression checks passed.');
