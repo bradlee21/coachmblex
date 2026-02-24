@@ -217,6 +217,7 @@ export default function AppShell({ children }) {
   const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
   const isTestRunRoute = pathname === '/test/run';
+  const isDrillRoute = pathname === '/drill' || pathname?.startsWith('/drill/');
   const isCenteredPracticeRoute =
     pathname === '/today' ||
     pathname === '/flashcards' ||
@@ -534,7 +535,7 @@ export default function AppShell({ children }) {
       <main
         className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}${
           isMemoryRoute ? ' content--memory-route' : ''
-        }${isTestRunRoute ? ' content--test-run-route' : ''}`}
+        }${isTestRunRoute ? ' content--test-run-route' : ''}${isDrillRoute ? ' route-drill' : ''}`}
       >
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">

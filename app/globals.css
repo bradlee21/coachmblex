@@ -5,7 +5,7 @@
 :root {
   --mobile-nav-h: 72px;
   --site-bg-overlay:
-    linear-gradient(rgba(3, 8, 20, 0.84), rgba(3, 8, 20, 0.9)),
+    linear-gradient(rgba(3, 8, 20, 0.78), rgba(3, 8, 20, 0.86)),
     url('/backgrounds/coachmblex-spa-room.png');
 }
 
@@ -28,7 +28,7 @@ body {
 
 .coach-bg {
   background-image:
-    linear-gradient(rgba(3, 8, 20, 0.82), rgba(3, 8, 20, 0.9)),
+    linear-gradient(rgba(3, 8, 20, 0.76), rgba(3, 8, 20, 0.84)),
     url('/backgrounds/coachmblex-spa-room.png');
   background-size: cover;
   background-position: center;
@@ -205,6 +205,16 @@ video {
     background: rgba(15, 23, 42, 0.82);
     border-right-color: #334155;
     color: #f8fafc;
+  }
+
+  .content.route-drill > section {
+    background: rgba(15, 23, 42, 0.74);
+    border-color: rgba(148, 163, 184, 0.2);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, 0.34);
+  }
+
+  .content.route-drill .muted {
+    color: #dbe4f2;
   }
 
   .nav-link {
@@ -561,6 +571,22 @@ video {
   padding: 24px;
   max-width: 980px;
   min-width: 0;
+}
+
+.content.route-drill {
+  position: relative;
+}
+
+.content.route-drill > section {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(4px);
+}
+
+.content.route-drill .muted {
+  color: #334155;
 }
 
 .mobile-bottom-nav {
