@@ -59,7 +59,7 @@ test('critical path drill start and answer first question', async ({ page }) => 
   const code = encodeURIComponent(E2E_DRILL_CODE);
   const type = encodeURIComponent(E2E_DRILL_TYPE);
   await page.goto(`/drill?code=${code}&type=${type}`, { timeout: STEP_TIMEOUT_MS });
-  await expect(page.getByRole('heading', { name: 'Drill' })).toBeVisible({
+  await expect(page.getByRole('heading', { name: 'Drill', exact: true })).toBeVisible({
     timeout: STEP_TIMEOUT_MS,
   });
 
