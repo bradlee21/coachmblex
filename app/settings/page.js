@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import { useAuth } from '../../src/providers/AuthProvider';
+import ThemeSwitcher from '../_components/ThemeSwitcher';
 
 export default function SettingsPage() {
   const { user } = useAuth();
@@ -81,6 +82,9 @@ export default function SettingsPage() {
     <section data-testid="settings-root">
       <h1>Settings</h1>
       <p>Coach mode controls feedback tone.</p>
+      <div className="settings-row">
+        <ThemeSwitcher />
+      </div>
       <div className="settings-row">
         <span>Coach mode:</span>
         <div className="button-row">

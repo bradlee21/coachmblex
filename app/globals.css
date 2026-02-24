@@ -1594,11 +1594,11 @@ video {
     text-align: center;
   }
 
-  .mobile-bottom-nav a.active {
-    border-color: #d1d5db;
-    background: #f3f4f6;
-    color: #111827;
-  }
+.mobile-bottom-nav a.active {
+  border-color: #d1d5db;
+  background: #f3f4f6;
+  color: #111827;
+}
 
   .memory-page.memory-page--playing {
     display: flex;
@@ -1681,6 +1681,214 @@ video {
     font-size: 0.95rem;
     line-height: 1.35;
   }
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.theme-switcher__select {
+  min-width: 140px;
+  padding: 8px 10px;
+}
+
+/* next-themes class overrides so Light/Dark/System can override OS media preference */
+html.dark body {
+  color: #e5e7eb;
+  background-color: #0b1220;
+}
+
+html.light body {
+  color: #111827;
+  background-color: #0b1220;
+}
+
+html.dark .sidebar {
+  background: rgba(15, 23, 42, 0.82);
+  border-right-color: #334155;
+  color: #f8fafc;
+}
+
+html.light .sidebar {
+  background: rgba(255, 255, 255, 0.9);
+  border-right-color: #e5e7eb;
+  color: #111827;
+}
+
+html.dark .nav-link {
+  color: #e2e8f0;
+}
+
+html.dark .nav-link:hover,
+html.dark .nav-link:focus-visible {
+  background: #1e293b;
+}
+
+html.dark .nav-link.active {
+  background: #334155;
+  color: #f8fafc;
+}
+
+html.light .nav-link {
+  color: #111827;
+}
+
+html.light .nav-link:hover,
+html.light .nav-link:focus-visible {
+  background: #f3f4f6;
+}
+
+html.light .nav-link.active {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+html.dark .content,
+html.dark .content section {
+  color: #e5e7eb;
+}
+
+html.dark .content h1,
+html.dark .content h2,
+html.dark .content h3 {
+  color: #f8fafc;
+}
+
+html.dark .content p,
+html.dark .content li,
+html.dark .content label,
+html.dark .content span {
+  color: #dbe4f2;
+}
+
+html.light .content,
+html.light .content section {
+  color: #111827;
+}
+
+html.light .content h1,
+html.light .content h2,
+html.light .content h3 {
+  color: #111827;
+}
+
+html.light .content p,
+html.light .content li,
+html.light .content label,
+html.light .content span {
+  color: #374151;
+}
+
+html.dark .content.route-drill > section {
+  background: rgba(15, 23, 42, 0.74);
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.34);
+}
+
+html.light .content.route-drill > section {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(148, 163, 184, 0.24);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+html.dark .content.route-drill .muted,
+html.dark #testing-center-setup .muted {
+  color: #dbe4f2;
+}
+
+html.light .content.route-drill .muted,
+html.light #testing-center-setup .muted {
+  color: #4b5563;
+}
+
+html.dark .choice-btn,
+html.dark .drill-controls select,
+html.dark .auth-form input,
+html.dark input,
+html.dark select,
+html.dark textarea {
+  border-color: #475569;
+  background: rgba(15, 23, 42, 0.88);
+  color: #e5e7eb;
+}
+
+html.dark .auth-form input::placeholder,
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8;
+}
+
+html.dark .choice-btn:focus-visible,
+html.dark .drill-controls select:focus-visible,
+html.dark .auth-form input:focus-visible,
+html.dark input:focus-visible,
+html.dark select:focus-visible,
+html.dark textarea:focus-visible {
+  outline: 2px solid #475569;
+  outline-offset: 1px;
+}
+
+html.light .choice-btn,
+html.light .drill-controls select,
+html.light .auth-form input,
+html.light input,
+html.light select,
+html.light textarea {
+  border-color: #d1d5db;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111827;
+}
+
+html.light .auth-form input::placeholder,
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #6b7280;
+}
+
+html.dark .review-pill,
+html.dark .sign-out,
+html.dark .feedback-trigger,
+html.dark .auth-form button,
+html.dark .button-row button {
+  border-color: #475569;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+html.dark .review-pill:hover,
+html.dark .review-pill:focus-visible,
+html.dark .sign-out:hover,
+html.dark .sign-out:focus-visible,
+html.dark .feedback-trigger:hover,
+html.dark .feedback-trigger:focus-visible,
+html.dark .auth-form button:hover,
+html.dark .auth-form button:focus-visible,
+html.dark .button-row button:hover,
+html.dark .button-row button:focus-visible {
+  background: #1e293b;
+}
+
+html.light .review-pill,
+html.light .sign-out,
+html.light .feedback-trigger,
+html.light .auth-form button,
+html.light .button-row button {
+  border-color: #d1d5db;
+  background: #ffffff;
+  color: #111827;
+}
+
+html.dark .beta-banner {
+  border-color: #334155;
+  background: rgba(30, 41, 59, 0.8);
+}
+
+html.light .beta-banner {
+  border-color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.86);
 }
 
 @media (max-width: 640px) {
