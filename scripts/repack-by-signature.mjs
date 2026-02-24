@@ -167,11 +167,11 @@ async function updatePackIds(supabase, ids, nextPackId) {
 
 function parseFlags() {
   const args = new Set(process.argv.slice(2));
-  return { apply: args.has('--apply'), clean: args.has('--clean') };
+  return { apply: args.has('--apply'), clean: args.has('--clean'), allowMulti: args.has('--allow-multi') };
 }
 
 async function main() {
-  const { apply, clean } = parseFlags();
+  const { apply, clean, allowMulti } = parseFlags();
   loadEnvFile(resolve(process.cwd(), '.env.local'));
   loadEnvFile(resolve(process.cwd(), '.env'));
   const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -215,11 +215,20 @@ async function main() {
 
   const matchedRows = [];
   const missing = [];
+  const multiMatches = [];
   for (const [sig, item] of curatedSignatures.entries()) {
     const matches = dbBySignature.get(sig) || [];
     if (matches.length === 0) {
       missing.push({ rowNo: item.rowNo, prompt: normalizeText(item.source?.prompt) });
       continue;
+    }
+    if (matches.length > 1) {
+      multiMatches.push({
+        signature: sig,
+        rowNo: item.rowNo,
+        prompt: normalizeText(item.source?.prompt),
+        ids: matches.map((row) => row.id),
+      });
     }
     for (const row of matches) matchedRows.push(row);
   }
@@ -229,14 +238,27 @@ async function main() {
   const activeRowsToLegacy = activeRows.filter((row) => !curatedSigSet.has(getQuestionSignature(row)));
 
   const matchedIds = [...new Set(matchedRows.map((r) => r.id))];
+  const uniqueMatchCount = curatedSignatures.size - missing.length - multiMatches.length;
+  const duplicatesFoundCount = multiMatches.length;
   const moveToTargetIds = [...new Set(matchedRows.filter((r) => normalizeText(r.pack_id) !== TARGET_PACK_ID).map((r) => r.id))];
   const moveToLegacyIds = [...new Set(activeRowsToLegacy.map((r) => r.id))];
 
   console.log(`Curated pack file: ${PACK_FILE}`);
   console.log(`Curated signatures: ${curatedSignatures.size}`);
+  console.log(`duplicates_found: ${duplicatesFoundCount}`);
+  console.log(`unique_matches: ${uniqueMatchCount}`);
+  console.log(`multi_matches: ${multiMatches.length}`);
   console.log(`Matched rows (global strict signature): ${matchedIds.length}`);
   console.log(`Missing signatures: ${missing.length}`);
   console.log(`Matched row ids: ${matchedIds.join(', ') || '(none)'}`);
+  if (multiMatches.length) {
+    console.log('Ambiguous multi-match signatures:');
+    for (const item of multiMatches) {
+      console.log(`- row ${item.rowNo}: ${item.prompt}`);
+      console.log(`  ids: ${item.ids.join(', ')}`);
+      console.log(`  signature: ${item.signature}`);
+    }
+  }
   if (missing.length) {
     console.log('Missing prompts:');
     for (const m of missing) console.log(`- row ${m.rowNo}: ${m.prompt}`);
@@ -245,6 +267,11 @@ async function main() {
   console.log(`- set pack_id='${TARGET_PACK_ID}' for ${moveToTargetIds.length} matched row(s) not already in target pack`);
   if (clean) {
     console.log(`- set pack_id='${LEGACY_PACK_ID}' for ${moveToLegacyIds.length} active row(s) not in curated signature set`);
+  }
+
+  if (multiMatches.length && !allowMulti) {
+    console.error('Refusing to continue: one or more curated signatures matched multiple rows. Re-run with --allow-multi to permit writes.');
+    process.exit(1);
   }
 
   if (!apply) {
