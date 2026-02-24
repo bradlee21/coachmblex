@@ -1,0 +1,11 @@
+{
+  "exported_at": "2026-02-24T15:50:48.880Z",
+  "scope": {
+    "table": "public.questions",
+    "pack_ids": [
+      "physiology-mid-term"
+    ]
+  },
+  "row_count": 0,
+  "rows": []
+}
