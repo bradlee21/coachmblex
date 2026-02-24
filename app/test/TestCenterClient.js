@@ -6,10 +6,25 @@ import { useRouter, useSearchParams } from 'next/navigation';
 const MIN_QUESTIONS = 5;
 const MAX_QUESTIONS = 150;
 const DEFAULT_QUESTIONS = 50;
+const ALLOWED_TEST_TYPES = ['mcq', 'reverse'];
+
 function clampQuestionCount(value) {
   const parsed = Number.parseInt(String(value || ''), 10);
   if (!Number.isFinite(parsed)) return DEFAULT_QUESTIONS;
   return Math.min(MAX_QUESTIONS, Math.max(MIN_QUESTIONS, parsed));
+}
+
+function sanitizeQtCsv(value) {
+  if (!value) return '';
+  const next = Array.from(
+    new Set(
+      String(value)
+        .split(',')
+        .map((item) => item.trim().toLowerCase())
+        .filter((item) => ALLOWED_TEST_TYPES.includes(item))
+    )
+  );
+  return next.join(',');
 }
 
 export default function TestCenterClient({ packs }) {
@@ -55,7 +70,7 @@ export default function TestCenterClient({ packs }) {
   function startTest() {
     if (selectedCount === 0) return;
     const params = new URLSearchParams();
-    const existingQt = searchParams.get('qt');
+    const existingQt = sanitizeQtCsv(searchParams.get('qt'));
     params.set('mode', 'test');
     params.set('n', String(clampQuestionCount(questionCountInput)));
     params.set('packs', orderedSelectedPackIds.join(','));

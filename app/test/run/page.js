@@ -9,7 +9,7 @@ import { shuffleArray } from '../../_utils/shuffleArray.mjs';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
 import { trackEvent } from '../../../src/lib/trackEvent';
 
-const QUICK_TYPES = ['mcq', 'reverse', 'fill'];
+const QUICK_TYPES = ['mcq', 'reverse'];
 const TEST_MATCH_COUNT_DEFAULT = 50;
 const TEST_MATCH_COUNT_MIN = 5;
 const TEST_MATCH_COUNT_MAX = 150;
@@ -50,7 +50,6 @@ function parseQuickTypes(value) {
   const parsed = {
     mcq: true,
     reverse: true,
-    fill: true,
   };
   if (!value) return parsed;
   const values = String(value)
@@ -60,9 +59,8 @@ function parseQuickTypes(value) {
   if (values.length === 0) return parsed;
   parsed.mcq = values.includes('mcq');
   parsed.reverse = values.includes('reverse');
-  parsed.fill = values.includes('fill');
-  if (!parsed.mcq && !parsed.reverse && !parsed.fill) {
-    return { mcq: true, reverse: true, fill: true };
+  if (!parsed.mcq && !parsed.reverse) {
+    return { mcq: true, reverse: true };
   }
   return parsed;
 }
@@ -75,7 +73,7 @@ function formatTypesLabel(types) {
   if (!Array.isArray(types) || types.length === 0) return 'No types';
   if (types.length === QUICK_TYPES.length) return 'All types';
   return types
-    .map((type) => (type === 'mcq' ? 'MCQ' : type === 'reverse' ? 'Reverse' : 'Fill'))
+    .map((type) => (type === 'mcq' ? 'MCQ' : 'Reverse'))
     .join(', ');
 }
 
@@ -85,9 +83,8 @@ function applyTestPackIdFilters(query, { packIds, types }) {
   if (normalizedPackIds.length > 0) {
     next = next.in(TEST_PACK_ID_COLUMN, normalizedPackIds);
   }
-  if (Array.isArray(types) && types.length > 0) {
-    next = next.in('question_type', types);
-  }
+  const allowedTypes = (types || []).filter((type) => QUICK_TYPES.includes(type));
+  next = next.in('question_type', allowedTypes.length > 0 ? allowedTypes : QUICK_TYPES);
   return next;
 }
 
