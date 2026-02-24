@@ -2201,3 +2201,61 @@ html.light .beta-banner {
     color: #fca5a5;
   }
 }
+
+/* Targeted light-mode contrast fixes for /test and /drill (dark mode unchanged) */
+html.light #testing-center-setup,
+html.light .content.route-drill > section {
+  color: #0f172a !important;
+}
+
+html.light #testing-center-setup p,
+html.light #testing-center-setup label,
+html.light #testing-center-setup span,
+html.light .content.route-drill p,
+html.light .content.route-drill label,
+html.light .content.route-drill span {
+  color: #334155 !important;
+  opacity: 1 !important;
+}
+
+html.light #testing-center-setup h1,
+html.light #testing-center-setup h2,
+html.light #testing-center-setup h3,
+html.light .content.route-drill h1,
+html.light .content.route-drill h2,
+html.light .content.route-drill h3 {
+  color: #0f172a !important;
+}
+
+html.light #testing-center-setup .muted,
+html.light .content.route-drill .muted {
+  color: #334155 !important;
+  opacity: 1 !important;
+}
+
+html.light #testing-center-setup .choice-btn,
+html.light .content.route-drill .choice-btn,
+html.light .content.route-drill .drill-controls select,
+html.light #testing-center-setup input,
+html.light #testing-center-setup select,
+html.light #testing-center-setup textarea,
+html.light .content.route-drill input,
+html.light .content.route-drill select,
+html.light .content.route-drill textarea {
+  color: #0f172a !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+}
+
+html.light #testing-center-setup input::placeholder,
+html.light #testing-center-setup textarea::placeholder,
+html.light .content.route-drill input::placeholder,
+html.light .content.route-drill textarea::placeholder {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
+
+html.light #testing-center-setup .runner,
+html.light .content.route-drill > section .runner {
+  background: rgba(255, 255, 255, 0.96);
+}
