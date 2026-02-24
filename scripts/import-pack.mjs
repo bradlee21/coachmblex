@@ -160,6 +160,7 @@ function pickUpdateTargetByBaseSignature(candidates) {
 
 async function loadExistingQuestionIndex(supabase) {
   const signatures = new Set();
+  const byStrictSignature = new Map();
   const byBaseSignature = new Map();
   const PAGE_SIZE = 1000;
   let from = 0;
@@ -169,7 +170,7 @@ async function loadExistingQuestionIndex(supabase) {
     const { data, error } = await supabase
       .from('questions')
       .select(
-        'id,domain,subtopic,question_type,blueprint_code,prompt,choices,correct_index,explanation,difficulty'
+        'id,pack_id,domain,subtopic,question_type,blueprint_code,prompt,choices,correct_index,explanation,difficulty'
       )
       .range(from, to);
 
@@ -182,7 +183,11 @@ async function loadExistingQuestionIndex(supabase) {
     }
 
     for (const row of data) {
-      signatures.add(getQuestionSignature(row));
+      const strictSignature = getQuestionSignature(row);
+      signatures.add(strictSignature);
+      if (!byStrictSignature.has(strictSignature)) {
+        byStrictSignature.set(strictSignature, row);
+      }
       const baseSignature = getQuestionBaseSignature(row);
       const existing = byBaseSignature.get(baseSignature) || [];
       existing.push(row);
@@ -195,7 +200,7 @@ async function loadExistingQuestionIndex(supabase) {
     from += PAGE_SIZE;
   }
 
-  return { signatures, byBaseSignature };
+  return { signatures, byStrictSignature, byBaseSignature };
 }
 
 function getDomainFromBlueprint(blueprintCode) {
@@ -379,6 +384,14 @@ async function updateBatch(supabase, updates, failures, stats) {
   return updated;
 }
 
+function canTagExistingDuplicate(existingRow, incomingPackId) {
+  return Boolean(
+    existingRow?.id &&
+      normalizeText(incomingPackId) &&
+      !normalizeText(existingRow?.pack_id)
+  );
+}
+
 async function main() {
   loadEnvFile(resolve(process.cwd(), '.env.local'));
   loadEnvFile(resolve(process.cwd(), '.env'));
@@ -443,16 +456,20 @@ async function main() {
   const rowsToInsert = [];
   const rowNumbersToInsert = [];
   const rowsToUpdate = [];
+  const rowsToTag = [];
   const processedBaseSignatures = new Set();
+  const taggedExistingIds = new Set();
   const stats = {
     duplicateSkippedCount: 0,
   };
   let seenSignatures = new Set();
+  let existingRowsByStrict = new Map();
   let existingRowsByBase = new Map();
 
   try {
     const existingIndex = await loadExistingQuestionIndex(supabase);
     seenSignatures = existingIndex.signatures;
+    existingRowsByStrict = existingIndex.byStrictSignature;
     existingRowsByBase = existingIndex.byBaseSignature;
     console.log(`Existing strict signatures loaded: ${seenSignatures.size}`);
   } catch (error) {
@@ -470,6 +487,18 @@ async function main() {
 
     const signature = getQuestionSignature(result.row);
     if (seenSignatures.has(signature)) {
+      const existingStrictRow = existingRowsByStrict.get(signature);
+      if (
+        canTagExistingDuplicate(existingStrictRow, canonicalPackId) &&
+        !taggedExistingIds.has(existingStrictRow.id)
+      ) {
+        rowsToTag.push({
+          id: existingStrictRow.id,
+          rowNo: result.rowNo,
+          row: { pack_id: canonicalPackId },
+        });
+        taggedExistingIds.add(existingStrictRow.id);
+      }
       stats.duplicateSkippedCount += 1;
       failures.push({
         rowNo: result.rowNo,
@@ -510,9 +539,16 @@ async function main() {
   }
 
   let updatedCount = 0;
+  let taggedCount = 0;
   updatedCount = await updateBatch(
     supabase,
     rowsToUpdate,
+    failures,
+    stats
+  );
+  taggedCount = await updateBatch(
+    supabase,
+    rowsToTag,
     failures,
     stats
   );
@@ -537,6 +573,7 @@ async function main() {
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Total rows: ${pack.questions.length}`);
   console.log(`Updated: ${updatedCount}`);
+  console.log(`Tagged: ${taggedCount}`);
   console.log(`Inserted: ${insertedCount}`);
   console.log(`Skipped duplicates: ${stats.duplicateSkippedCount}`);
   console.log(`Skipped/invalid: ${invalidCount}`);
