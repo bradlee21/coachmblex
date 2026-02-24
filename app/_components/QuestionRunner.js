@@ -90,13 +90,16 @@ export default function QuestionRunner({ title, questions, onComplete }) {
   const questionMode = useMemo(() => resolveQuestionMode(current), [current]);
   const currentChoices = useMemo(() => getChoiceList(current), [current]);
   const visibleChoices = useMemo(
-    () =>
-      shuffleArray(
-        currentChoices
-          .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
-          .filter((item) => item.choice.length > 0)
-      ),
-    [currentChoices, questionInstanceKey]
+    () => {
+      const decoratedChoices = currentChoices
+        .map((choice, rawIndex) => ({ choice: toText(choice), rawIndex }))
+        .filter((item) => item.choice.length > 0);
+      if (current?._choicesShuffledInSession) {
+        return decoratedChoices;
+      }
+      return shuffleArray(decoratedChoices);
+    },
+    [current, currentChoices, questionInstanceKey]
   );
   const resolvedCorrectIndex = useMemo(
     () => resolveCorrectChoiceIndex(current),

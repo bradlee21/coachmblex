@@ -79,6 +79,31 @@ function getQuestionType(question) {
   return String(question?.question_type || question?.type || '').toLowerCase();
 }
 
+function shuffleSessionQuestionChoices(question) {
+  if (!question || getQuestionType(question) === 'fill') return question;
+  const choices = Array.isArray(question.choices) ? question.choices : [];
+  const correctIndex = Number.isInteger(question.correct_index)
+    ? question.correct_index
+    : Number(question.correct_index);
+  if (choices.length !== 4) return question;
+  if (!Number.isInteger(correctIndex) || correctIndex < 0 || correctIndex >= choices.length) {
+    return question;
+  }
+
+  const shuffled = shuffleArray(
+    choices.map((choice, originalIndex) => ({ choice, originalIndex }))
+  );
+  const shuffledCorrectIndex = shuffled.findIndex((item) => item.originalIndex === correctIndex);
+  if (shuffledCorrectIndex < 0) return question;
+
+  return {
+    ...question,
+    choices: shuffled.map((item) => item.choice),
+    correct_index: shuffledCorrectIndex,
+    _choicesShuffledInSession: true,
+  };
+}
+
 function titleCaseWords(value) {
   return String(value || '')
     .split(/\s+/)
@@ -569,7 +594,8 @@ export default function DrillPage() {
 
       const pool = Array.isArray(data) ? data : [];
       const picked = (testRandom ? shuffleArray(pool) : pool).slice(0, requestedCount);
-      if (picked.length === 0) {
+      const sessionQuestions = picked.map(shuffleSessionQuestionChoices);
+      if (sessionQuestions.length === 0) {
         setMessage('No questions available for the selected test packs.');
         setLoading(false);
         return;
@@ -582,15 +608,15 @@ export default function DrillPage() {
         label: `Custom Test (${validTestPackIds.length} pack${validTestPackIds.length === 1 ? '' : 's'})`,
         packId: validTestPackIds.join(','),
       });
-      setQuestions(picked);
+      setQuestions(sessionQuestions);
       setStarted(true);
       setIsStartCollapsed(true);
 
       void trackEvent('drill_start', { codePrefix: 'test', type: quickType });
 
-      if (picked.length < requestedCount) {
+      if (sessionQuestions.length < requestedCount) {
         setMessage(
-          `Only ${picked.length} question(s) available across ${validTestPackIds.length} selected pack(s).`
+          `Only ${sessionQuestions.length} question(s) available across ${validTestPackIds.length} selected pack(s).`
         );
       }
 
@@ -650,7 +676,8 @@ export default function DrillPage() {
     }
 
     const picked = shuffleArray(data || []).slice(0, DRILL_MATCH_COUNT);
-    if (picked.length === 0) {
+    const sessionQuestions = picked.map(shuffleSessionQuestionChoices);
+    if (sessionQuestions.length === 0) {
       setMessage('No questions available for this subject and filter.');
       setLoading(false);
       return;
@@ -665,14 +692,14 @@ export default function DrillPage() {
       label: buildSessionLabel(label, subjectSearch),
       packId: selectedPackId,
     });
-    setQuestions(picked);
+    setQuestions(sessionQuestions);
     setStarted(true);
     setIsStartCollapsed(true);
 
     void trackEvent('drill_start', { codePrefix: `pack:${selectedPackId}`, type: quickType });
 
-    if (picked.length < DRILL_MATCH_COUNT) {
-      setMessage(`Only ${picked.length} question(s) available for ${label} with this filter.`);
+    if (sessionQuestions.length < DRILL_MATCH_COUNT) {
+      setMessage(`Only ${sessionQuestions.length} question(s) available for ${label} with this filter.`);
     }
 
     setLoading(false);
