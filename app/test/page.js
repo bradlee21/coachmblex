@@ -44,20 +44,46 @@ async function loadPackOptions() {
         const pack = JSON.parse(raw);
         const id = resolvePackId(pack, filename);
         if (!id) return null;
+        const source = toText(pack?.source);
         const title =
           toText(pack?.title) ||
           toText(pack?.topic) ||
           humanizePackId(id);
-        return { id, title };
+        return { id, title, filename, source };
       } catch {
         return null;
       }
     })
   );
 
-  return loaded
-    .filter(Boolean)
-    .sort((a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id));
+  const visibleCandidates = loaded.filter((pack) => {
+    if (!pack) return false;
+    const filename = toText(pack.filename).toLowerCase();
+    const source = toText(pack.source).toLowerCase();
+    if (filename.includes('replacements') || filename.includes('patch')) return false;
+    if (source.includes('replacements')) return false;
+    return true;
+  });
+
+  const byId = new Map();
+  const duplicateVisiblePackIds = new Set();
+  for (const pack of visibleCandidates) {
+    if (byId.has(pack.id)) {
+      duplicateVisiblePackIds.add(pack.id);
+      continue;
+    }
+    byId.set(pack.id, { id: pack.id, title: pack.title });
+  }
+
+  if (process.env.NODE_ENV !== 'production' && duplicateVisiblePackIds.size > 0) {
+    console.warn(
+      `Testing Center pack list duplicate visible packIds detected: ${Array.from(duplicateVisiblePackIds).join(', ')}`
+    );
+  }
+
+  return Array.from(byId.values()).sort(
+    (a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id)
+  );
 }
 
 export default async function TestPage() {
