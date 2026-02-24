@@ -16,7 +16,7 @@
       },
       "difficulty": "medium",
       "correct_choice": "A",
-      "answer": "Nociceptor activation → sensory (afferent) neuron → spinal cord (dorsal horn) → ascending tract → thalamus/cortex",
+      "answer": "Nociceptors activated -> sensory neuron to dorsal horn of spinal cord -> ascending pathways (e.g., spinothalamic) -> thalamus -> cerebral cortex perception, with modulation from brainstem/endorphins.",
       "why": "Pain begins at nociceptors, travels via afferent neurons into the spinal cord, then ascends to higher brain centers for perception.",
       "trap": "Choices that start with motor pathways or reverse the order confuse sensory vs. motor routes and CNS processing order.",
       "hook": "Pain = nociceptor → afferent → spinal cord → up → brain."
@@ -35,7 +35,7 @@
       },
       "difficulty": "easy",
       "correct_choice": "A",
-      "answer": "Sweet, sour, salty, bitter, umami",
+      "answer": "Sweet; salty; sour; bitter; umami",
       "why": "The widely accepted five basic tastes are sweet, sour, salty, bitter, and umami (savory).",
       "trap": "‘Spicy/pungent’ are trigeminal sensations, not basic tastes; ‘metallic’ isn’t part of the basic five.",
       "hook": "SSSBU = Sweet Sour Salty Bitter Umami."
@@ -54,7 +54,7 @@
       },
       "difficulty": "medium",
       "correct_choice": "A",
-      "answer": "ACh release → sarcolemma depolarizes → Ca2+ released from SR → actin-myosin cross-bridges → Ca2+ pumped back into SR",
+      "answer": "ACh released -> ACh binds receptors -> action potential spreads on sarcolemma/T-tubules -> SR releases Ca2+ -> Ca2+ binds troponin -> tropomyosin shifts -> myosin binds actin -> power stroke -> ATP binds to detach -> ATP hydrolysis re-cocks myosin; Ca2+ pumped back to SR for relaxation.",
       "why": "ACh triggers an action potential, which releases Ca2+ to enable cross-bridging; relaxation occurs when Ca2+ is returned to the SR.",
       "trap": "Many distractors scramble Ca2+ release vs reuptake or place cross-bridges before Ca2+ release.",
       "hook": "ACh → AP → Ca → cross-bridge → Ca back."
@@ -73,7 +73,7 @@
       },
       "difficulty": "easy",
       "correct_choice": "A",
-      "answer": "Medial longitudinal, lateral longitudinal, transverse",
+      "answer": "Medial longitudinal arch; lateral longitudinal arch; transverse arch",
       "why": "The foot’s arches are classically described as two longitudinal arches (medial and lateral) and one transverse arch.",
       "trap": "Terms like anterior/posterior or plantar/dorsal are not the standard arch names.",
       "hook": "2 long (medial/lateral) + 1 transverse."
@@ -92,7 +92,7 @@
       },
       "difficulty": "easy",
       "correct_choice": "A",
-      "answer": "Skeletal muscle",
+      "answer": "Skeletal: striated, voluntary; Cardiac: striated, involuntary, intercalated discs; Smooth: nonstriated, involuntary, in walls of organs/vessels.",
       "why": "Skeletal muscle is striated and voluntary, producing movement by pulling on bones via tendons.",
       "trap": "Cardiac is striated but involuntary; smooth is involuntary and nonstriated. ‘Visceral’ typically refers to smooth, not a separate third category.",
       "hook": "Skeletal = striated + voluntary."
@@ -111,7 +111,7 @@
       },
       "difficulty": "easy",
       "correct_choice": "A",
-      "answer": "It absorbs UV radiation to help protect deeper tissues and DNA from damage",
+      "answer": "It provides pigmentation and helps protect DNA from UV radiation by absorbing UV light.",
       "why": "Melanin is a pigment produced by melanocytes that helps shield cells from UV exposure.",
       "trap": "Sweat (eccrine glands), sebum (sebaceous glands), and collagen (dermis) are different structures/functions.",
       "hook": "Melanin = UV shield."
@@ -130,7 +130,7 @@
       },
       "difficulty": "medium",
       "correct_choice": "A",
-      "answer": "Protection, temperature regulation, sensation, vitamin D synthesis, excretion",
+      "answer": "Protection; temperature regulation; sensation; excretion (sweat); vitamin D production",
       "why": "Key skin functions commonly include barrier protection, thermoregulation, sensory reception, vitamin D production, and limited excretion via sweat.",
       "trap": "Many distractors list functions of other systems (digestive, respiratory, nervous, etc.).",
       "hook": "Skin = barrier + thermostat + sensors + D + sweat."
