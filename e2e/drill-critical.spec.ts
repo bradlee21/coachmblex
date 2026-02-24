@@ -4,7 +4,8 @@ import { requireEnv } from './helpers/requireEnv';
 const envCheck = requireEnv(['E2E_EMAIL', 'E2E_PASSWORD']);
 const E2E_EMAIL = process.env.E2E_EMAIL || '';
 const E2E_PASSWORD = process.env.E2E_PASSWORD || '';
-const E2E_DRILL_TYPE = process.env.E2E_DRILL_TYPE || 'mcq';
+const E2E_PACK_ID = process.env.E2E_PACK_ID || 'physiology-mid-term';
+const E2E_DRILL_QT = process.env.E2E_DRILL_QT || 'mcq';
 
 const STEP_TIMEOUT_MS = 15000;
 
@@ -55,8 +56,9 @@ test('critical path drill start and answer first question', async ({ page }) => 
 
   await login(page);
 
-  const type = encodeURIComponent(E2E_DRILL_TYPE);
-  await page.goto(`/drill?qt=${type}`, { timeout: STEP_TIMEOUT_MS });
+  const pk = encodeURIComponent(E2E_PACK_ID);
+  const qt = encodeURIComponent(E2E_DRILL_QT);
+  await page.goto(`/drill?pk=${pk}&qt=${qt}`, { timeout: STEP_TIMEOUT_MS });
   await expect(page.getByRole('heading', { name: 'Drill', exact: true })).toBeVisible({
     timeout: STEP_TIMEOUT_MS,
   });
@@ -80,7 +82,7 @@ test('critical path drill start and answer first question', async ({ page }) => 
     .catch(() => false);
   test.skip(
     noQuestionsVisible,
-    `Skipping drill e2e: no questions found for selected subject type=${E2E_DRILL_TYPE}.`
+    `Skipping drill e2e: no questions found for pk=${E2E_PACK_ID} qt=${E2E_DRILL_QT}.`
   );
 
   const firstChoiceButton = page.getByRole('button', { name: /^1\.\s/ }).first();
