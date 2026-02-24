@@ -4,7 +4,6 @@ import { requireEnv } from './helpers/requireEnv';
 const envCheck = requireEnv(['E2E_EMAIL', 'E2E_PASSWORD']);
 const E2E_EMAIL = process.env.E2E_EMAIL || '';
 const E2E_PASSWORD = process.env.E2E_PASSWORD || '';
-const E2E_DRILL_CODE = process.env.E2E_DRILL_CODE || '2.D';
 const E2E_DRILL_TYPE = process.env.E2E_DRILL_TYPE || 'mcq';
 
 const STEP_TIMEOUT_MS = 15000;
@@ -56,12 +55,22 @@ test('critical path drill start and answer first question', async ({ page }) => 
 
   await login(page);
 
-  const code = encodeURIComponent(E2E_DRILL_CODE);
   const type = encodeURIComponent(E2E_DRILL_TYPE);
-  await page.goto(`/drill?code=${code}&type=${type}`, { timeout: STEP_TIMEOUT_MS });
+  await page.goto(`/drill?qt=${type}`, { timeout: STEP_TIMEOUT_MS });
   await expect(page.getByRole('heading', { name: 'Drill', exact: true })).toBeVisible({
     timeout: STEP_TIMEOUT_MS,
   });
+
+  const subjectSelect = page.getByLabel('Subject', { exact: true });
+  await expect(subjectSelect).toBeVisible({ timeout: STEP_TIMEOUT_MS });
+  await expect(subjectSelect).toBeEnabled({ timeout: STEP_TIMEOUT_MS });
+  const subjectOptions = await page.locator('#drill-pack-select option').evaluateAll((options) =>
+    options
+      .map((option) => ({ value: option.getAttribute('value') || '' }))
+      .filter((option) => option.value)
+  );
+  test.skip(subjectOptions.length === 0, 'Skipping drill e2e: no drill subjects available.');
+  await subjectSelect.selectOption(subjectOptions[0].value, { timeout: STEP_TIMEOUT_MS });
 
   await page.getByRole('button', { name: /Start Drill/i }).click({ timeout: STEP_TIMEOUT_MS });
 
@@ -71,7 +80,7 @@ test('critical path drill start and answer first question', async ({ page }) => 
     .catch(() => false);
   test.skip(
     noQuestionsVisible,
-    `Skipping drill e2e: no questions found for code=${E2E_DRILL_CODE} type=${E2E_DRILL_TYPE}.`
+    `Skipping drill e2e: no questions found for selected subject type=${E2E_DRILL_TYPE}.`
   );
 
   const firstChoiceButton = page.getByRole('button', { name: /^1\.\s/ }).first();
