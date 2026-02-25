@@ -2433,6 +2433,34 @@ html.light .sidebar .nav-section-toggle {
   opacity: 1 !important;
 }
 
+html.dark .sidebar a span,
+html.dark .sidebar button span,
+html.dark .sidebar .nav-label,
+html.dark .sidebar .label {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+}
+
+html.light .sidebar a span,
+html.light .sidebar button span,
+html.light .sidebar .nav-label,
+html.light .sidebar .label {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+}
+
+html.dark .sidebar .nav-link,
+html.dark .sidebar .nav-section-toggle,
+html.dark .sidebar li {
+  opacity: 1 !important;
+}
+
+html.light .sidebar .nav-link,
+html.light .sidebar .nav-section-toggle,
+html.light .sidebar li {
+  opacity: 1 !important;
+}
+
 html.dark .sidebar .muted,
 html.dark .sidebar .subtle,
 html.dark .sidebar .nav-section-chevron {
