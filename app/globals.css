@@ -2567,3 +2567,116 @@ html.dark .sidebar button,
 html.dark .sidebar span {
   opacity: 1 !important;
 }
+
+/* Flattened modern sidebar nav: text-first rows, subtle hover/active */
+html.dark .sidebar {
+  --sb-fg: rgba(255, 255, 255, 0.92);
+  --sb-fg-muted: rgba(255, 255, 255, 0.72);
+  --sb-hover: rgba(255, 255, 255, 0.06);
+  --sb-active: rgba(255, 255, 255, 0.1);
+  --sb-accent: rgba(127, 191, 168, 0.95);
+}
+
+html.light .sidebar {
+  --sb-fg: #0f172a;
+  --sb-fg-muted: #334155;
+  --sb-hover: rgba(15, 23, 42, 0.05);
+  --sb-active: rgba(15, 23, 42, 0.08);
+  --sb-accent: rgba(11, 59, 138, 0.9);
+}
+
+html.light .sidebar .nav-list {
+  gap: 6px;
+}
+
+html.dark .sidebar .nav-list {
+  gap: 6px;
+}
+
+html.light .sidebar .nav-section,
+html.dark .sidebar .nav-section {
+  gap: 4px;
+}
+
+html.light .sidebar .nav-section + .nav-section,
+html.dark .sidebar .nav-section + .nav-section {
+  margin-top: 8px;
+}
+
+html.light .sidebar .nav-sublist,
+html.dark .sidebar .nav-sublist {
+  gap: 4px;
+  padding-left: 6px;
+}
+
+html.light .sidebar .sb-item,
+html.dark .sidebar .sb-item {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  position: relative;
+}
+
+html.light .sidebar .sb-item .sb-label,
+html.dark .sidebar .sb-item .sb-label {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+html.light .sidebar .sb-item .sb-chevron,
+html.dark .sidebar .sb-item .sb-chevron {
+  color: var(--sb-fg-muted) !important;
+  opacity: 1 !important;
+}
+
+html.light .sidebar .nav-section-toggle.sb-item .sb-label,
+html.dark .sidebar .nav-section-toggle.sb-item .sb-label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+html.light .sidebar .nav-link.sb-item,
+html.dark .sidebar .nav-link.sb-item {
+  padding-left: 24px !important;
+}
+
+html.light .sidebar .nav-link.sb-item .sb-label,
+html.dark .sidebar .nav-link.sb-item .sb-label {
+  font-weight: 600;
+}
+
+html.light .sidebar .sb-item:hover,
+html.light .sidebar .sb-item:focus-visible,
+html.dark .sidebar .sb-item:hover,
+html.dark .sidebar .sb-item:focus-visible {
+  background: var(--sb-hover) !important;
+}
+
+html.light .sidebar .sb-item.is-active,
+html.dark .sidebar .sb-item.is-active {
+  background: var(--sb-active) !important;
+}
+
+html.light .sidebar .sb-item.is-active::before,
+html.dark .sidebar .sb-item.is-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background: var(--sb-accent);
+  border-radius: 3px;
+}
+
+html.light .sidebar .sb-item.is-disabled,
+html.dark .sidebar .sb-item.is-disabled {
+  color: var(--sb-fg-muted) !important;
+  opacity: 0.75 !important;
+  pointer-events: none;
+}
