@@ -2151,3 +2151,54 @@ html.light #testing-center-setup .runner,
 html.light .content.route-drill > section .runner {
   background: rgba(255, 255, 255, 0.96);
 }
+
+/* LIGHT MODE: make core app surfaces readable without affecting dark mode */
+html.light body {
+  background-color: transparent !important;
+  color: #0f172a !important;
+}
+
+html.light .sidebar {
+  background: rgba(255, 255, 255, 0.93) !important;
+  border-right-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light .sidebar .muted,
+html.light .sidebar .nav-section-chevron {
+  color: #334155 !important;
+  opacity: 1 !important;
+}
+
+html.light .nav-section-toggle {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light .nav-section-toggle:hover,
+html.light .nav-section-toggle:focus-visible {
+  background: rgba(248, 250, 252, 0.98) !important;
+}
+
+html.light .nav-section-toggle.active {
+  background: rgba(241, 245, 249, 0.98) !important;
+}
+
+html.light .review-pill,
+html.light .sign-out,
+html.light .feedback-trigger,
+html.light .beta-banner {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light #testing-center-setup,
+html.light .content.route-drill > section,
+html.light #testing-center-setup .runner,
+html.light .content.route-drill > section .runner {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  color: #0f172a !important;
+}
