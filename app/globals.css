@@ -2233,3 +2233,73 @@ html.light .runner p.muted {
   color: #475569 !important;
   opacity: 1 !important;
 }
+
+/* LIGHT MODE: global readability tokens + shared surfaces/controls (dark mode untouched) */
+html.light {
+  --fg: #0f172a;
+  --fg-muted: #334155;
+  --fg-subtle: #475569;
+  --border: rgba(15, 23, 42, 0.16);
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --input-bg: rgba(255, 255, 255, 0.98);
+}
+
+html.light body {
+  color: var(--fg) !important;
+}
+
+html.light a {
+  color: #1d4ed8;
+}
+
+html.light .brand-link,
+html.light .nav-link,
+html.light .choice-btn,
+html.light .review-pill,
+html.light .sign-out,
+html.light .feedback-trigger {
+  color: var(--fg) !important;
+}
+
+html.light .muted,
+html.light .text-muted,
+html.light .text-muted-foreground,
+html.light .subtle {
+  color: var(--fg-muted) !important;
+  opacity: 1 !important;
+}
+
+html.light .runner,
+html.light .game-card,
+html.light .auth-card,
+html.light .feedback-modal,
+html.light .drawer,
+html.light .explanation-box {
+  background: var(--surface) !important;
+  color: var(--fg) !important;
+  border-color: var(--border) !important;
+}
+
+html.light .runner,
+html.light .auth-card,
+html.light .feedback-modal {
+  background: var(--surface-strong) !important;
+}
+
+html.light input,
+html.light select,
+html.light textarea,
+html.light .choice-btn,
+html.light .auth-form button,
+html.light .button-row button {
+  background: var(--input-bg) !important;
+  color: var(--fg) !important;
+  border-color: var(--border) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: var(--fg-subtle) !important;
+  opacity: 1 !important;
+}
