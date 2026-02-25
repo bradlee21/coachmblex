@@ -4,9 +4,10 @@ import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 export default function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [systemTheme, setSystemTheme] = useState('light');
+  const [htmlClassName, setHtmlClassName] = useState('');
 
   useEffect(() => {
     setMounted(true);
@@ -28,6 +29,18 @@ export default function ThemeSwitcher() {
     return () => media.removeListener(update);
   }, []);
 
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const root = document.documentElement;
+    const update = () => setHtmlClassName(root.className || '');
+    update();
+
+    if (typeof MutationObserver === 'undefined') return;
+    const observer = new MutationObserver(update);
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
   const selectedTheme = mounted ? theme || 'system' : 'system';
 
   return (
@@ -46,6 +59,12 @@ export default function ThemeSwitcher() {
       {selectedTheme === 'system' ? (
         <span className="muted" style={{ fontSize: '0.85rem' }}>
           ({systemTheme === 'dark' ? 'Dark' : 'Light'})
+        </span>
+      ) : null}
+      {process.env.NODE_ENV !== 'production' ? (
+        <span className="muted" style={{ display: 'block', width: '100%', fontSize: '0.8rem' }}>
+          theme={String(theme || 'system')} | resolved={String(resolvedTheme || '')} | html=
+          {htmlClassName || '(none)'}
         </span>
       ) : null}
     </label>
