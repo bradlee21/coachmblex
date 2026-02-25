@@ -2202,3 +2202,18 @@ html.light .content.route-drill > section .runner {
   border-color: rgba(15, 23, 42, 0.14) !important;
   color: #0f172a !important;
 }
+
+/* LIGHT MODE: brighten global spa overlay so theme looks truly light */
+html.light body {
+  background-color: #eef4f8 !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.66)),
+    url('/backgrounds/coachmblex-spa-room.png') !important;
+}
+
+html.light .coach-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.62)),
+    url('/backgrounds/coachmblex-spa-room.png') !important;
+  background-color: transparent !important;
+}
