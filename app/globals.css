@@ -2398,3 +2398,75 @@ html.dark .content.route-drill textarea {
   color: var(--fg) !important;
   border-color: var(--border) !important;
 }
+
+/* Final sidebar nav text contrast pass (theme-aware, surfaces unchanged) */
+html.dark {
+  --sb-fg: rgba(255, 255, 255, 0.92);
+  --sb-muted: rgba(255, 255, 255, 0.72);
+  --sb-hover: rgba(255, 255, 255, 0.08);
+}
+
+html.light {
+  --sb-fg: #0f172a;
+  --sb-muted: #334155;
+  --sb-hover: rgba(15, 23, 42, 0.06);
+}
+
+html.dark .sidebar,
+html.light .sidebar {
+  opacity: 1 !important;
+}
+
+html.dark .sidebar a,
+html.dark .sidebar button,
+html.dark .sidebar .nav-link,
+html.dark .sidebar .nav-section-toggle {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+}
+
+html.light .sidebar a,
+html.light .sidebar button,
+html.light .sidebar .nav-link,
+html.light .sidebar .nav-section-toggle {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+}
+
+html.dark .sidebar .muted,
+html.dark .sidebar .subtle,
+html.dark .sidebar .nav-section-chevron {
+  color: var(--sb-muted) !important;
+  opacity: 1 !important;
+}
+
+html.light .sidebar .muted,
+html.light .sidebar .subtle,
+html.light .sidebar .nav-section-chevron {
+  color: var(--sb-muted) !important;
+  opacity: 1 !important;
+}
+
+html.dark .sidebar .nav-link:hover,
+html.dark .sidebar .nav-link:focus-visible,
+html.dark .sidebar .nav-section-toggle:hover,
+html.dark .sidebar .nav-section-toggle:focus-visible {
+  background: var(--sb-hover) !important;
+}
+
+html.light .sidebar .nav-link:hover,
+html.light .sidebar .nav-link:focus-visible,
+html.light .sidebar .nav-section-toggle:hover,
+html.light .sidebar .nav-section-toggle:focus-visible {
+  background: var(--sb-hover) !important;
+}
+
+html.dark .sidebar .nav-link.active,
+html.dark .sidebar .nav-section-toggle.active {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+html.light .sidebar .nav-link.active,
+html.light .sidebar .nav-section-toggle.active {
+  background: rgba(15, 23, 42, 0.08) !important;
+}
