@@ -475,7 +475,7 @@ export default function AppShell({ children }) {
                 <li key={section.id} className="nav-section">
                   <button
                     type="button"
-                    className={`nav-section-toggle${isSectionActive ? ' active' : ''}`}
+                    className={`nav-section-toggle sb-item${isSectionActive ? ' active is-active' : ''}`}
                     aria-expanded={isOpen}
                     onClick={() =>
                       setOpenNavSections((prev) => ({
@@ -484,8 +484,8 @@ export default function AppShell({ children }) {
                       }))
                     }
                   >
-                    <span>{section.label}</span>
-                    <span className="nav-section-chevron" aria-hidden="true">
+                    <span className="sb-label">{section.label}</span>
+                    <span className="nav-section-chevron sb-chevron" aria-hidden="true">
                       {isOpen ? 'v' : '>'}
                     </span>
                   </button>
@@ -494,13 +494,13 @@ export default function AppShell({ children }) {
                       {section.items.map((item) => (
                         <li key={item.href}>
                           <Link
-                            className={`nav-link nav-link--child${
-                              isNavHrefActive(pathname, item.href) ? ' active' : ''
+                            className={`nav-link nav-link--child sb-item${
+                              isNavHrefActive(pathname, item.href) ? ' active is-active' : ''
                             }`}
                             href={item.href}
                             data-testid={NAV_TEST_IDS[item.href]}
                           >
-                            {item.label}
+                            <span className="sb-label">{item.label}</span>
                           </Link>
                         </li>
                       ))}
@@ -513,21 +513,21 @@ export default function AppShell({ children }) {
         </nav>
         <button
           type="button"
-          className="review-pill"
+          className={`review-pill sb-item${isReviewOpen ? ' is-active' : ''}`}
           onClick={() => setIsReviewOpen((open) => !open)}
           aria-expanded={isReviewOpen}
           aria-controls="review-drawer"
         >
-          Review (0)
+          <span className="sb-label">Review (0)</span>
         </button>
         {user ? (
-          <button type="button" className="sign-out" onClick={handleSignOut}>
-            Sign out
+          <button type="button" className="sign-out sb-item" onClick={handleSignOut}>
+            <span className="sb-label">Sign out</span>
           </button>
         ) : null}
         {user ? (
-          <button type="button" className="feedback-trigger" onClick={openFeedbackModal}>
-            Send feedback
+          <button type="button" className="feedback-trigger sb-item" onClick={openFeedbackModal}>
+            <span className="sb-label">Send feedback</span>
           </button>
         ) : null}
       </aside>

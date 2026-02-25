@@ -2498,3 +2498,72 @@ html.light .sidebar .nav-link.active,
 html.light .sidebar .nav-section-toggle.active {
   background: rgba(15, 23, 42, 0.08) !important;
 }
+
+/* Authoritative sidebar item styles: explicit, theme-aware, no inherited fade */
+html.dark .sidebar {
+  --sb-item-bg: rgba(255, 255, 255, 0.06);
+  --sb-item-bg-hover: rgba(255, 255, 255, 0.1);
+  --sb-item-bg-active: rgba(255, 255, 255, 0.14);
+  --sb-fg: rgba(255, 255, 255, 0.92);
+  --sb-fg-muted: rgba(255, 255, 255, 0.72);
+  --sb-border: rgba(255, 255, 255, 0.16);
+}
+
+html.light .sidebar {
+  --sb-item-bg: rgba(15, 23, 42, 0.05);
+  --sb-item-bg-hover: rgba(15, 23, 42, 0.08);
+  --sb-item-bg-active: rgba(15, 23, 42, 0.1);
+  --sb-fg: #0f172a;
+  --sb-fg-muted: #334155;
+  --sb-border: rgba(15, 23, 42, 0.14);
+}
+
+html.light .sidebar .sb-item,
+html.dark .sidebar .sb-item {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+  background: var(--sb-item-bg) !important;
+  border: 1px solid var(--sb-border) !important;
+  border-radius: 10px !important;
+}
+
+html.light .sidebar .sb-item .sb-label,
+html.dark .sidebar .sb-item .sb-label {
+  color: var(--sb-fg) !important;
+  opacity: 1 !important;
+  font-weight: 600;
+}
+
+html.light .sidebar .sb-item .sb-chevron,
+html.dark .sidebar .sb-item .sb-chevron {
+  color: var(--sb-fg-muted) !important;
+  opacity: 1 !important;
+}
+
+html.light .sidebar .sb-item:hover,
+html.light .sidebar .sb-item:focus-visible,
+html.dark .sidebar .sb-item:hover,
+html.dark .sidebar .sb-item:focus-visible {
+  background: var(--sb-item-bg-hover) !important;
+}
+
+html.light .sidebar .sb-item.is-active,
+html.dark .sidebar .sb-item.is-active {
+  background: var(--sb-item-bg-active) !important;
+}
+
+html.light .sidebar .sb-item.is-disabled,
+html.dark .sidebar .sb-item.is-disabled {
+  color: var(--sb-fg-muted) !important;
+  opacity: 0.75 !important;
+  pointer-events: none;
+}
+
+html.light .sidebar a,
+html.light .sidebar button,
+html.light .sidebar span,
+html.dark .sidebar a,
+html.dark .sidebar button,
+html.dark .sidebar span {
+  opacity: 1 !important;
+}
