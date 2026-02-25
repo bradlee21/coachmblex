@@ -2217,3 +2217,19 @@ html.light .coach-bg {
     url('/backgrounds/coachmblex-spa-room.png') !important;
   background-color: transparent !important;
 }
+
+/* LIGHT MODE: strengthen card text contrast on white surfaces (/practice and similar) */
+html.light .game-card h2,
+html.light .runner h1,
+html.light .runner h2,
+html.light .runner h3 {
+  color: #0f172a !important;
+}
+
+html.light .game-card .muted,
+html.light .runner .muted,
+html.light .game-card p.muted,
+html.light .runner p.muted {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
