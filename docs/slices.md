@@ -11,6 +11,35 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### LANDING-BG-1
+
+- Status: `done`
+- Title: Ensure landing route shows spa-room background by bypassing calm fixed layers
+- Goal: Make the body spa-room background visible on `/` by preventing `CalmBackground` fixed layers from covering it, while keeping all other routes unchanged.
+- In scope:
+- Confirm calm background fixed layers are rendered on `/`
+- Skip calm fixed layers on `/` only
+- Add a landing marker class to root landing page markup
+- Verify landing cards still use `landing-*` classes
+- Out of scope:
+- Dark-mode card styling changes
+- `/app` auth gate behavior changes
+- Acceptance criteria:
+- `/` no longer renders calm fixed overlay layers (`.calm-bg__base/.blob/.noise/.watermark`)
+- Spa-room background is visible behind landing page surfaces
+- Landing page markup uses `.landing-surface` / `.landing-subcard` classes
+- `/app` auth gate continues to route correctly
+- Required validation/tests:
+- `npm run build`
+- `npm run smoke`
+- Files expected to change:
+- `app/_components/CalmBackground.js`
+- `app/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Root cause was route-global `CalmBackground` layers from `app/layout.js` visually covering the body spa-room image on `/`.
+
 ### LANDING-STYLE-2
 
 - Status: `done`

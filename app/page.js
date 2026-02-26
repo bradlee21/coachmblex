@@ -38,7 +38,7 @@ const features = [
 
 export default function LandingPage() {
   return (
-    <main className="landing-page">
+    <main className="landing-page landing-root">
       <section className="landing-hero-grid">
         <div className="landing-surface landing-section landing-hero-copy">
           <div className="landing-kicker">
