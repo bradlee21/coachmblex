@@ -68,14 +68,21 @@ function mergeQuestionIds(...lists) {
   return merged;
 }
 
+function toQuestionIdQueryValues(questionIds) {
+  return mergeQuestionIds(questionIds).map((id) =>
+    /^\d+$/.test(id) ? Number.parseInt(id, 10) : id
+  );
+}
+
 async function selectQuestionsByIds(supabase, questionIds, { limit = 10 } = {}) {
   const orderedIds = mergeQuestionIds(questionIds).slice(0, limit);
   if (orderedIds.length === 0) return [];
+  const queryIds = toQuestionIdQueryValues(orderedIds);
 
   const questionsResult = await supabase
     .from('questions')
     .select(REVIEW_QUESTION_FIELDS)
-    .in('id', orderedIds);
+    .in('id', queryIds);
 
   if (questionsResult.error) {
     throw new Error(questionsResult.error.message);
@@ -85,8 +92,7 @@ async function selectQuestionsByIds(supabase, questionIds, { limit = 10 } = {}) 
   return orderedIds.map((id) => byId.get(String(id))).filter(Boolean);
 }
 
-async function selectReviewQuestions(supabase, userId, { preferredQuestionIds = [] } = {}) {
-  const preferredQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+async function selectReviewQuestions(supabase, userId, { preferredQuestions = [] } = {}) {
   if (preferredQuestions.length >= 10) {
     return preferredQuestions;
   }
@@ -217,10 +223,12 @@ export default function ReviewPage() {
       return;
     }
 
-    const preferredQuestionIds = mergeQuestionIds(
-      loadLocalReviewQueueIds(user?.id),
-      user?.id ? loadLocalReviewQueueIds(null) : []
-    );
+    const userQueueIds = user?.id ? loadLocalReviewQueueIds(user.id) : [];
+    const anonQueueIds = loadLocalReviewQueueIds(null);
+    const preferredQuestionIds = user?.id
+      ? mergeQuestionIds(userQueueIds, anonQueueIds)
+      : mergeQuestionIds(anonQueueIds);
+    const queuedCount = preferredQuestionIds.length;
 
     setError('');
     setSummary(null);
@@ -228,14 +236,32 @@ export default function ReviewPage() {
     try {
       let questionsResult = [];
       let profileResult = null;
+      let queuedQuestions = [];
+
+      if (queuedCount > 0) {
+        queuedQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+        devLog(
+          `[REVIEW] queue queued=${queuedCount} fetched_from_queue=${queuedQuestions.length}`
+        );
+        if (queuedQuestions.length === 0) {
+          setSessionQuestions([]);
+          setPhase('idle');
+          setError(
+            'Queued review items were found locally, but none could be loaded. They may be stale or unavailable. Your local review queue was not changed.'
+          );
+          return;
+        }
+      } else {
+        devLog('[REVIEW] queue queued=0 fetched_from_queue=0');
+      }
 
       if (user?.id) {
         [questionsResult, profileResult] = await Promise.all([
-          selectReviewQuestions(supabase, user.id, { preferredQuestionIds }),
+          selectReviewQuestions(supabase, user.id, { preferredQuestions: queuedQuestions }),
           supabase.from('profiles').select('coach_mode').eq('id', user.id).maybeSingle(),
         ]);
       } else {
-        questionsResult = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+        questionsResult = queuedQuestions;
       }
 
       if (profileResult?.data?.coach_mode) {
@@ -248,41 +274,48 @@ export default function ReviewPage() {
         return;
       }
 
-      const usedSessionQuestionIds = new Set(
-        questionsResult.map((question) => String(question?.id || '')).filter(Boolean)
-      );
-      const userQueueIds = user?.id ? loadLocalReviewQueueIds(user.id) : [];
-      const anonQueueIds = loadLocalReviewQueueIds(null);
-      const userQueueIdSet = new Set(userQueueIds.map((id) => String(id)));
-
-      let consumedUserCount = 0;
-      let consumedAnonCount = 0;
-
-      if (user?.id && userQueueIds.length > 0) {
-        const userIdsToConsume = userQueueIds.filter((id) => usedSessionQuestionIds.has(String(id)));
-        if (userIdsToConsume.length > 0) {
-          const result = removeLocalReviewQueueIds(user.id, userIdsToConsume);
-          consumedUserCount = result.removedCount || 0;
-        }
-      }
-
-      if (anonQueueIds.length > 0) {
-        const anonIdsToConsume = anonQueueIds.filter((id) => {
-          const idKey = String(id);
-          if (!usedSessionQuestionIds.has(idKey)) return false;
-          if (user?.id && userQueueIdSet.has(idKey)) return false;
-          return true;
-        });
-        if (anonIdsToConsume.length > 0) {
-          const result = removeLocalReviewQueueIds(null, anonIdsToConsume);
-          consumedAnonCount = result.removedCount || 0;
-        }
-      }
-
-      if (consumedUserCount > 0 || consumedAnonCount > 0) {
-        devLog(
-          `[REVIEW] consumed local queue ids user=${consumedUserCount} anon=${consumedAnonCount}`
+      if (queuedQuestions.length > 0) {
+        const usedSessionQuestionIds = new Set(
+          questionsResult.map((question) => String(question?.id || '')).filter(Boolean)
         );
+        const fetchedFromQueueIds = new Set(
+          queuedQuestions.map((question) => String(question?.id || '')).filter(Boolean)
+        );
+        const userQueueIdSet = new Set(userQueueIds.map((id) => String(id)));
+
+        let consumedUserCount = 0;
+        let consumedAnonCount = 0;
+
+        if (user?.id && userQueueIds.length > 0) {
+          const userIdsToConsume = userQueueIds.filter((id) => {
+            const idKey = String(id);
+            return fetchedFromQueueIds.has(idKey) && usedSessionQuestionIds.has(idKey);
+          });
+          if (userIdsToConsume.length > 0) {
+            const result = removeLocalReviewQueueIds(user.id, userIdsToConsume);
+            consumedUserCount = result.removedCount || 0;
+          }
+        }
+
+        if (anonQueueIds.length > 0) {
+          const anonIdsToConsume = anonQueueIds.filter((id) => {
+            const idKey = String(id);
+            if (!fetchedFromQueueIds.has(idKey)) return false;
+            if (!usedSessionQuestionIds.has(idKey)) return false;
+            if (user?.id && userQueueIdSet.has(idKey)) return false;
+            return true;
+          });
+          if (anonIdsToConsume.length > 0) {
+            const result = removeLocalReviewQueueIds(null, anonIdsToConsume);
+            consumedAnonCount = result.removedCount || 0;
+          }
+        }
+
+        if (consumedUserCount > 0 || consumedAnonCount > 0) {
+          devLog(
+            `[REVIEW] consumed local queue ids user=${consumedUserCount} anon=${consumedAnonCount}`
+          );
+        }
       }
 
       setSessionQuestions(questionsResult.map(shuffleSessionQuestionChoices));

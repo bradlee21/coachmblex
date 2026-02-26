@@ -1,4 +1,5 @@
 const REVIEW_QUEUE_STORAGE_KEY_PREFIX = 'coachmblex_review_queue_v1';
+export const REVIEW_QUEUE_CHANGED_EVENT = 'coachmblex:review-queue-changed';
 
 function toQueueKey(userId) {
   return `${REVIEW_QUEUE_STORAGE_KEY_PREFIX}:${userId || 'anon'}`;
@@ -29,6 +30,19 @@ function readQueueRaw(userId) {
   }
 }
 
+function emitReviewQueueChanged(userId, count) {
+  if (typeof window === 'undefined' || typeof window.dispatchEvent !== 'function') return;
+  try {
+    window.dispatchEvent(
+      new CustomEvent(REVIEW_QUEUE_CHANGED_EVENT, {
+        detail: { key: toQueueKey(userId), count },
+      })
+    );
+  } catch {
+    // Ignore event dispatch failures; localStorage remains source of truth.
+  }
+}
+
 export function loadLocalReviewQueueIds(userId) {
   return readQueueRaw(userId);
 }
@@ -52,6 +66,9 @@ export function addLocalReviewQueueIds(userId, questionIds) {
   }
 
   window.localStorage.setItem(toQueueKey(userId), JSON.stringify(next));
+  if (addedCount > 0) {
+    emitReviewQueueChanged(userId, next.length);
+  }
   return {
     addedCount,
     totalCount: next.length,
@@ -85,6 +102,9 @@ export function removeLocalReviewQueueIds(userId, questionIds) {
   const next = existing.filter((id) => !targetIds.has(String(id)));
   const removedCount = existing.length - next.length;
   window.localStorage.setItem(toQueueKey(userId), JSON.stringify(next));
+  if (removedCount > 0) {
+    emitReviewQueueChanged(userId, next.length);
+  }
 
   return {
     removedCount,

@@ -6,6 +6,10 @@ import { usePathname, useRouter } from 'next/navigation';
 import { getSupabaseClient } from '../src/lib/supabaseClient';
 import { devLog } from '../src/lib/devLog';
 import { postgrestFetch } from '../src/lib/postgrestFetch';
+import {
+  loadLocalReviewQueueIds,
+  REVIEW_QUEUE_CHANGED_EVENT,
+} from '../src/lib/reviewQueueLocal';
 import { useAuth } from '../src/providers/AuthProvider';
 
 const NAV_SECTIONS = [
@@ -120,6 +124,7 @@ export default function AppShell({ children }) {
   const [feedbackContextToCopy, setFeedbackContextToCopy] = useState(null);
   const [showBetaBanner, setShowBetaBanner] = useState(false);
   const [openNavSections, setOpenNavSections] = useState({});
+  const [reviewQueueCount, setReviewQueueCount] = useState(0);
   const isAuthRoute = pathname.startsWith('/auth');
   const isRootRoute = pathname === '/';
   const isAppGateRoute = pathname === '/app';
@@ -212,6 +217,37 @@ export default function AppShell({ children }) {
       return { ...prev, [activeSectionId]: true };
     });
   }, [pathname, visibleNavSections]);
+
+  useEffect(() => {
+    function refreshReviewQueueCount() {
+      const nextCount = user?.id
+        ? loadLocalReviewQueueIds(user.id).length
+        : loadLocalReviewQueueIds(null).length;
+      setReviewQueueCount(nextCount);
+    }
+
+    refreshReviewQueueCount();
+    if (typeof window === 'undefined') return;
+
+    function handleQueueChanged() {
+      refreshReviewQueueCount();
+    }
+
+    function handleStorage(event) {
+      if (!event?.key || event.key.startsWith('coachmblex_review_queue_v1:')) {
+        refreshReviewQueueCount();
+      }
+    }
+
+    window.addEventListener(REVIEW_QUEUE_CHANGED_EVENT, handleQueueChanged);
+    window.addEventListener('focus', handleQueueChanged);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener(REVIEW_QUEUE_CHANGED_EVENT, handleQueueChanged);
+      window.removeEventListener('focus', handleQueueChanged);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [pathname, user?.id]);
 
   async function handleSignOut() {
     setIsReviewOpen(false);
@@ -409,7 +445,7 @@ export default function AppShell({ children }) {
           aria-expanded={isReviewOpen}
           aria-controls="review-drawer"
         >
-          <span className="sb-label">Review (0)</span>
+          <span className="sb-label">Review ({reviewQueueCount})</span>
         </button>
         {user ? (
           <button type="button" className="sign-out sb-item" onClick={handleSignOut}>
@@ -459,7 +495,11 @@ export default function AppShell({ children }) {
             Close
           </button>
         </div>
-        <p>No review cards queued yet.</p>
+        <p>
+          {reviewQueueCount > 0
+            ? `${reviewQueueCount} review card${reviewQueueCount === 1 ? '' : 's'} queued locally.`
+            : 'No review cards queued yet.'}
+        </p>
       </aside>
 
       {isFeedbackOpen ? (

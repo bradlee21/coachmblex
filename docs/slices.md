@@ -11,6 +11,41 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-E2
+
+- Status: `done`
+- Title: Fix `/review` queued loading and wire local Review count badge
+- Goal: Make `/review` reliably load queued local review IDs (with explicit stale-queue error handling) and replace the sidebar's hardcoded `Review (0)` pill with the live local queue count.
+- In scope:
+- Normalize local queued question IDs for Supabase `questions.id` fetches in `/review`
+- Prevent silent fallback when queued IDs exist but queued fetch returns 0 rows; show explicit on-page error and keep queue intact
+- Consume queued IDs only after successful queued fetch + review session build
+- Add a small dev-only debug log with queued count and fetched-from-queue count
+- Replace hardcoded sidebar `Review (0)` label with local queue count (prefer user queue, fallback anon) using client-safe localStorage reads
+- Out of scope:
+- New review UI surfaces/badges beyond the existing sidebar pill label
+- QuestionRunner changes
+- Server-side review queue persistence
+- Acceptance criteria:
+- `/review` reads authed user queue plus anon fallback and reliably loads queued questions when IDs exist
+- If queued IDs exist but queued fetch returns 0 rows, `/review` shows an explicit error and does not consume queue IDs or silently fall back
+- Queued IDs are consumed only after a review session is successfully built from queued rows
+- Sidebar review pill shows `Review (N)` using local localStorage queue count
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: queue 3 misses, confirm sidebar shows `Review (3)`, open `/review`, confirm queued items load and queue shrinks after start
+- Files expected to change:
+- `app/review/page.js`
+- `app/AppShell.js`
+- `src/lib/reviewQueueLocal.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal follow-up to Slice D/E1 local review queue behavior.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester manual verification pending: queue 3 misses, verify sidebar `Review (3)`, start `/review`, confirm queued items load and queue shrinks by used IDs.
+
 ### SLICE-E1
 
 - Status: `done`
