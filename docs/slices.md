@@ -11,6 +11,37 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-G
+
+- Status: `done`
+- Title: Make `/review` queue-backed sessions queue-only (no padding)
+- Goal: When local queued review IDs exist, `/review` should build a session strictly from queued items (no attempts/random padding) and show the matching start count in the CTA.
+- In scope:
+- Use queued-only questions when local queued IDs exist (user queue preferred, else anon fallback)
+- Prevent padding queued sessions with attempts-based review items
+- Update `/review` Start CTA count to show queued count (capped at default request size of 10)
+- Keep queue consumption behavior unchanged (consume only used queued IDs after success)
+- Out of scope:
+- Changes to queue persistence or consumption rules
+- QuestionRunner changes
+- Sidebar review badge changes
+- Acceptance criteria:
+- With queued IDs present (e.g. 3), `/review` Start CTA shows `Start Review (3)` and session uses exactly queued items without padding
+- With no queued IDs, existing attempts-based behavior remains and CTA shows `Start Review (10)`
+- Queue consumption still happens only for used queued IDs after successful session build
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: queue 3 misses, verify `/review` CTA shows `Start Review (3)`, session uses exactly 3, queue becomes 0 after start
+- Files expected to change:
+- `app/review/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal follow-up to Slice F/E2 review queue UX/behavior.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester manual verification pending: queue 3 misses, verify `/review` CTA shows `Start Review (3)`, session uses exactly 3, and queue becomes 0 after start.
+
 ### SLICE-F
 
 - Status: `done`

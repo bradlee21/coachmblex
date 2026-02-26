@@ -52,6 +52,7 @@ function getFocusCodes(results) {
 
 const REVIEW_QUESTION_FIELDS =
   'id,concept_id,blueprint_code,prompt,choices,correct_index,explanation,difficulty,question_type';
+const REVIEW_SESSION_DEFAULT_COUNT = 10;
 
 function mergeQuestionIds(...lists) {
   const seen = new Set();
@@ -280,7 +281,9 @@ export default function ReviewPage() {
       let queuedQuestions = [];
 
       if (queuedCount > 0) {
-        queuedQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+        queuedQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, {
+          limit: REVIEW_SESSION_DEFAULT_COUNT,
+        });
         setQueuedUsingCount(queuedQuestions.length);
         devLog(
           `[REVIEW] queue queued=${queuedCount} fetched_from_queue=${queuedQuestions.length}`
@@ -298,7 +301,16 @@ export default function ReviewPage() {
         devLog('[REVIEW] queue queued=0 fetched_from_queue=0');
       }
 
-      if (user?.id) {
+      if (queuedQuestions.length > 0) {
+        questionsResult = queuedQuestions;
+        if (user?.id) {
+          profileResult = await supabase
+            .from('profiles')
+            .select('coach_mode')
+            .eq('id', user.id)
+            .maybeSingle();
+        }
+      } else if (user?.id) {
         [questionsResult, profileResult] = await Promise.all([
           selectReviewQuestions(supabase, user.id, { preferredQuestions: queuedQuestions }),
           supabase.from('profiles').select('coach_mode').eq('id', user.id).maybeSingle(),
@@ -408,7 +420,11 @@ export default function ReviewPage() {
 
       {phase === 'idle' ? (
         <button type="button" onClick={startReview} data-testid="review-start">
-          Start Review (10)
+          Start Review (
+          {queuedHeaderCount > 0
+            ? Math.min(queuedHeaderCount, REVIEW_SESSION_DEFAULT_COUNT)
+            : REVIEW_SESSION_DEFAULT_COUNT}
+          )
         </button>
       ) : null}
 
