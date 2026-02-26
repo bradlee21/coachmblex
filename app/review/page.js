@@ -422,7 +422,7 @@ export default function ReviewPage() {
         <button type="button" onClick={startReview} data-testid="review-start">
           Start Review (
           {queuedHeaderCount > 0
-            ? Math.min(queuedHeaderCount, REVIEW_SESSION_DEFAULT_COUNT)
+            ? `${Math.min(queuedHeaderCount, REVIEW_SESSION_DEFAULT_COUNT)} queued`
             : REVIEW_SESSION_DEFAULT_COUNT}
           )
         </button>
