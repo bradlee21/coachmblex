@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-26
+- SLICE-C: Added a minimal `/test/run` exam timer (count-up) in `app/test/run/page.js` with exam-default ON, URL disable support via `timer=0|false`, header display, completion time summary, and `seconds_elapsed` added to `test_run_complete` tracking. `Change settings` now preserves `timer` when present.
 - SLICE-B1: Tightened exam-mode enforcement in `QuestionRunner` so immediate feedback/explanations are suppressed whenever `mode='exam'` or delayed policies are set, while end-of-run Review remains tied to `revealPolicy='end'`. `/test/run` now preserves `mode`/`feedback`/`reveal` params on Change settings links and uses deterministic mode parsing (`practice` else `exam`).
 - SLICE-B: Added `QuestionRunner` exam-simulation UI policies (`feedbackPolicy` / `revealPolicy`) with practice-safe defaults. Test runs can now hide per-question correctness/explanations and show a completion-time `Review` section (prompt, user answer, correct answer, why/trap/hook); `/test/run` now passes exam-mode delayed feedback/reveal from URL params/defaults.
 - SLICE-A: Updated `/test` setup copy to `Exam Simulation` with exam-style subtitle/rules guidance (question count, timer-toggle availability note, review misses after finishing), and updated `/drill` copy to `Practice Drill` with immediate-feedback subtitle. No runner logic changes.

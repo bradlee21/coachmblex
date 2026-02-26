@@ -11,6 +11,39 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-C
+
+- Status: `done`
+- Title: Add exam timer to `/test/run`
+- Goal: Add a minimal exam timer to the test runner page (`/test/run`) with exam-safe defaults, optional URL disable, header display, completion time reporting, and completion event tracking.
+- In scope:
+- Implement timer state/effects in `app/test/run/page.js` (not `QuestionRunner`)
+- Start timer only when exam run is active (not during loading)
+- Stop timer on completion and surface time taken in completion UI/page
+- Add `seconds_elapsed` to `test_run_complete` tracking payload
+- Respect `timer=0` / `timer=false` URL param to disable timer
+- Preserve `timer` param in Change settings URL when present
+- Out of scope:
+- New timer UI in `/test` setup
+- Timer logic inside `QuestionRunner`
+- New dependencies or broader refactors
+- Acceptance criteria:
+- Exam runs default timer ON unless URL explicitly disables it
+- Practice mode timer defaults OFF
+- Timer is visible in `/test/run` header and does not run during loading
+- Timer stops when the test completes and time taken is shown
+- `trackEvent('test_run_complete', ...)` includes `seconds_elapsed`
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/test/run/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal diff follow-up to exam simulation slices.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+
 ### SLICE-B1
 
 - Status: `done`

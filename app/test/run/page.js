@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import QuestionRunner from '../../_components/QuestionRunner';
 import { shuffleSessionQuestionChoices } from '../../_components/questionRunnerLogic.mjs';
@@ -26,6 +26,16 @@ function parseBooleanParam(value) {
     .trim()
     .toLowerCase();
   return normalized === '1' || normalized === 'true';
+}
+
+function parseTimerEnabledParam(value, defaultEnabled) {
+  const normalized = String(value || '')
+    .trim()
+    .toLowerCase();
+  if (!normalized) return defaultEnabled;
+  if (normalized === '0' || normalized === 'false') return false;
+  if (normalized === '1' || normalized === 'true') return true;
+  return defaultEnabled;
 }
 
 function parseTestQuestionCount(value) {
@@ -77,6 +87,13 @@ function formatTypesLabel(types) {
     .join(', ');
 }
 
+function formatElapsedTime(totalSeconds) {
+  const seconds = Math.max(0, Number(totalSeconds) || 0);
+  const minutes = Math.floor(seconds / 60);
+  const remainder = seconds % 60;
+  return `${minutes}:${String(remainder).padStart(2, '0')}`;
+}
+
 function applyTestPackIdFilters(query, { packIds, types }) {
   let next = query;
   const normalizedPackIds = Array.from(new Set((packIds || []).map((id) => toText(id)).filter(Boolean)));
@@ -109,7 +126,7 @@ async function fetchKnownPackIds(supabase) {
   ).sort((a, b) => a.localeCompare(b));
 }
 
-function buildTestSettingsHref({ n, packIds, random, qtCsv, mode, feedback, reveal }) {
+function buildTestSettingsHref({ n, packIds, random, qtCsv, mode, feedback, reveal, timer }) {
   const params = new URLSearchParams();
   params.set('n', String(n));
   if ((packIds || []).length > 0) {
@@ -130,6 +147,9 @@ function buildTestSettingsHref({ n, packIds, random, qtCsv, mode, feedback, reve
   if (reveal) {
     params.set('reveal', reveal);
   }
+  if (timer) {
+    params.set('timer', timer);
+  }
   return `/test?${params.toString()}`;
 }
 
@@ -139,6 +159,8 @@ export default function TestRunPage() {
   const [message, setMessage] = useState('');
   const [notice, setNotice] = useState('');
   const [questions, setQuestions] = useState([]);
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [completedRunMeta, setCompletedRunMeta] = useState(null);
   const [sessionMeta, setSessionMeta] = useState({
     n: TEST_MATCH_COUNT_DEFAULT,
     selectedPackIds: [],
@@ -161,6 +183,7 @@ export default function TestRunPage() {
       mode: searchParams.get('mode') || '',
       feedback: searchParams.get('feedback') || '',
       reveal: searchParams.get('reveal') || '',
+      timer: searchParams.get('timer') || '',
     };
   }, [searchParams]);
   const runnerConfig = useMemo(() => {
@@ -173,12 +196,36 @@ export default function TestRunPage() {
     const revealParam = String(searchParams.get('reveal') || '')
       .trim()
       .toLowerCase();
+    const mode = modeParam === 'practice' ? 'practice' : 'exam';
     return {
-      mode: modeParam === 'practice' ? 'practice' : 'exam',
+      mode,
       feedbackPolicy: feedbackParam === 'immediate' ? 'immediate' : 'end',
       revealPolicy: revealParam === 'immediate' ? 'immediate' : 'end',
+      timerEnabled: parseTimerEnabledParam(searchParams.get('timer'), mode === 'exam'),
     };
   }, [searchParams]);
+  const elapsedSecondsRef = useRef(0);
+
+  useEffect(() => {
+    elapsedSecondsRef.current = elapsedSeconds;
+  }, [elapsedSeconds]);
+
+  useEffect(() => {
+    setElapsedSeconds(0);
+    elapsedSecondsRef.current = 0;
+    setCompletedRunMeta(null);
+  }, [parsedConfig]);
+
+  const isRunnerActive =
+    !loading && !message && Array.isArray(questions) && questions.length > 0 && !completedRunMeta;
+
+  useEffect(() => {
+    if (!runnerConfig.timerEnabled || !isRunnerActive) return;
+    const timerId = setInterval(() => {
+      setElapsedSeconds((prev) => prev + 1);
+    }, 1000);
+    return () => clearInterval(timerId);
+  }, [isRunnerActive, runnerConfig.timerEnabled]);
 
   const settingsHref = useMemo(
     () =>
@@ -190,20 +237,26 @@ export default function TestRunPage() {
         mode: parsedConfig.mode,
         feedback: parsedConfig.feedback,
         reveal: parsedConfig.reveal,
+        timer: parsedConfig.timer,
       }),
     [parsedConfig]
   );
   const endHref = settingsHref;
 
   const handleComplete = useCallback(({ score, total }) => {
+    const secondsElapsed = runnerConfig.timerEnabled ? elapsedSecondsRef.current : 0;
+    setCompletedRunMeta({
+      secondsElapsed,
+    });
     void trackEvent('test_run_complete', {
       correct: Number(score) || 0,
       total: Number(total) || 0,
       requested: parsedConfig.n,
       packCount: sessionMeta.selectedPackIds.length,
       random: sessionMeta.random,
+      seconds_elapsed: secondsElapsed,
     });
-  }, [parsedConfig.n, sessionMeta.random, sessionMeta.selectedPackIds.length]);
+  }, [parsedConfig.n, runnerConfig.timerEnabled, sessionMeta.random, sessionMeta.selectedPackIds.length]);
 
   useEffect(() => {
     let cancelled = false;
@@ -330,6 +383,7 @@ export default function TestRunPage() {
   const summary = `${sessionMeta.n} questions | ${sessionMeta.selectedPackIds.length || 0} pack${
     (sessionMeta.selectedPackIds.length || 0) === 1 ? '' : 's'
   } | Random ${sessionMeta.random ? 'On' : 'Off'}`;
+  const displaySeconds = completedRunMeta?.secondsElapsed ?? elapsedSeconds;
 
   return (
     <section
@@ -344,6 +398,9 @@ export default function TestRunPage() {
             </h1>
             <p className="test-run-summary text-sm text-slate-600 dark:text-slate-300">{summary}</p>
             <p className="text-xs text-slate-500 dark:text-slate-400">{formatTypesLabel(sessionMeta.types)}</p>
+            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+              Timer: {runnerConfig.timerEnabled ? formatElapsedTime(displaySeconds) : 'Off'}
+            </p>
           </div>
           <div className="button-row test-run-actions">
             <Link href={settingsHref} className="choice-btn">
@@ -378,6 +435,9 @@ export default function TestRunPage() {
       {!loading && !message ? (
         <>
           {notice ? <p className="status error">{notice}</p> : null}
+          {completedRunMeta && runnerConfig.timerEnabled ? (
+            <p className="status success">Time taken: {formatElapsedTime(completedRunMeta.secondsElapsed)}</p>
+          ) : null}
           <QuestionRunner
             title="Test"
             questions={questions}
