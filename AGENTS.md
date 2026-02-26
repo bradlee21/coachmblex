@@ -1,101 +1,156 @@
 # AGENTS.md
 
-## Workflow Contract (Brains / Hands / Tester)
+## Purpose
+This repo is built using a strict slice workflow with ChatGPT + Codex CLI + Brad. The goal is fast iteration without regressions: minimal diffs, clear acceptance criteria, deterministic validation, and explicit “Brad actions” for DB/migrations.
 
-This repo is operated collaboratively by:
+---
 
-- `Brains` (ChatGPT): plans slices, clarifies acceptance criteria, reviews scope, keeps docs current.
-- `Hands` (Codex): makes the smallest safe code/doc changes, runs required checks, reports exact results.
-- `Tester` (User): provides intent, validates behavior, approves scope changes, performs final human verification.
+## Roles (Brains / Hands / Tester)
 
-## Core Rules
+### Brains (ChatGPT)
+- Plans slices and acceptance criteria.
+- Produces Codex-ready assignments (scoped, minimal).
+- Reviews outcomes and proposes next slices.
 
+### Hands (Codex CLI)
+- Implements the smallest safe change to satisfy the current slice.
+- Avoids scope creep, refactors, or style churn.
+- Runs required validations **sequentially** and reports exact results.
+
+### Tester (Brad)
+- Provides intent and constraints.
+- Runs human verification on UI/behavior.
+- Runs DB SQL/migrations when explicitly instructed (hands-off otherwise).
+
+---
+
+## Codex Multi-Agent Mode (Main + Sedum + Aster)
+
+Codex CLI has three threads:
+
+### Main (Coordinator / Integrator)
+- Owns integration, conflict resolution, and merge order.
+- Assigns work to Sedum/Aster with strict file boundaries.
+- Runs sequential validation and produces the final slice report.
+- Default owner of `docs/slices.md` and `docs/CHANGELOG.md` updates.
+
+### Sedum (DB / SQL / Migrations Specialist)
+- Owns: schema changes, backfills, constraints/indexes, DB reports, SQL scripts.
+- Allowed changes: `docs/sql/**`, migration files, DB-related docs/templates.
+- Not allowed (unless explicitly assigned): UI/runtime changes in `app/**`.
+
+### Aster (Repo Sweep / Inventory Specialist)
+- Owns: repo-wide search, checklists, risk inventories, migration maps.
+- Default mode: planning-only (no edits).
+- If edits are requested: docs-only unless Main expands scope.
+
+### Multi-agent operating rules
+- One agent = one scoped assignment.
+- Agents must avoid overlapping hot files unless Main explicitly approves.
+- **Never run build/test in parallel across agents** (avoid `.next` race conditions).
+- Merge order for schema work:
+  1) Sedum (DB add/backfill + report)
+  2) Main (app/importer cutover)
+  3) Sedum (drop legacy) only after stability
+
+---
+
+## Core Rules (Non-Negotiable)
 - Ship in small slices.
 - Prefer minimal diffs over broad refactors.
-- Do not expand scope without explicit approval.
-- Every slice must have explicit acceptance criteria.
-- Every slice must name required validation/tests before implementation starts.
+- Do not expand scope without explicit approval (new slice instead).
+- Keep changes localized and readable.
 - Documentation is part of done: update `docs/CHANGELOG.md` (append-only) and `docs/slices.md`.
+
+---
 
 ## Slice-First Process (Required)
 
-1. Define the slice in `docs/slices.md`
-- Add/update a slice entry with:
-- `ID`
-- `Title`
-- `Status` (`planned | in_progress | blocked | done`)
-- `Goal`
-- `In scope`
-- `Out of scope`
-- `Acceptance criteria`
-- `Required validation/tests`
-- `Files expected to change`
+### 1) Define the slice (docs/slices.md)
+Each slice entry must include:
+- ID + Title
+- Status: `planned | in_progress | blocked | done`
+- Goal
+- In scope / Out of scope
+- Acceptance criteria (testable)
+- Required validation/tests
+- Files expected to change (best effort)
 
-2. Brains prepares the handoff
+### 2) Brains prepares the handoff
 - Restate the smallest viable implementation.
-- Call out risks, dependencies, and any assumptions.
-- Confirm test commands and expected outcomes.
+- Call out risks/dependencies/assumptions.
+- Provide agent assignment(s) with file boundaries.
 
-3. Hands implements the slice
+### 3) Hands implements
 - Change only files needed for the slice.
-- Keep diffs narrow and readable.
-- Avoid opportunistic refactors, renames, or style churn.
-- If unexpected issues appear, stop and propose a new slice instead of widening the current one.
+- Avoid opportunistic refactors/renames/reformatting.
+- If unexpected issues appear: stop and propose a new slice.
 
-4. Hands validates and reports
-- Run the agreed validation/tests.
-- Report pass/fail clearly with command names.
-- If a command cannot be run, state why and what remains unverified.
+### 4) Hands validates and reports (sequential)
+- Run required validations **sequentially** (never concurrently).
+- Report pass/fail clearly with command names and exit codes.
+- If a command cannot run, say why and what remains unverified.
 
-5. Brains closes the slice docs
-- Mark slice status in `docs/slices.md`.
-- Append a concise entry to `docs/CHANGELOG.md` (never rewrite prior entries).
-- Summarize changed files and any follow-up slices.
+### 5) Close the slice
+- Update `docs/slices.md` status.
+- Append a concise entry to `docs/CHANGELOG.md` (append-only).
 
-## Definition of Ready (Before Hands Starts)
-
-- Problem statement is concrete.
-- Acceptance criteria are testable.
-- Required validation/tests are listed.
-- Scope boundaries are explicit.
-- Expected changed files are identified (best effort).
-
-## Definition of Done
-
-- Acceptance criteria met.
-- Required validation/tests executed (or explicitly documented as blocked).
-- Diff remains within approved scope.
-- `docs/CHANGELOG.md` updated (append-only).
-- `docs/slices.md` updated with current status and next-step notes.
-
-## Diff Discipline
-
-- Prefer the smallest implementation that satisfies the slice.
-- No unrelated cleanup in the same slice.
-- No dependency additions unless explicitly required by the slice.
-- No hidden behavior changes outside acceptance criteria.
-- If a larger refactor is needed, split it into a separate slice first.
+---
 
 ## Validation / Testing Contract
-
 - Every slice must specify at least one validation method:
-- automated test command(s)
-- build/lint/typecheck command(s)
-- or explicit manual verification steps (when automation is not available)
-- Hands must report exactly what was run and the result.
-- Tester performs final human acceptance when behavior/UI is involved.
+  - `npm run smoke`
+  - `npm run build`
+  - or explicit manual verification steps (when automation isn’t available)
+- Hands must report exactly what ran and results.
+- Tester performs final human acceptance for UI/behavior.
 
-## Documentation Contract
+**Important:** Avoid `.next` races.
+- Do not run smoke/build concurrently.
+- If needed, run sequentially and rerun build after smoke.
 
-- `docs/CHANGELOG.md` is append-only.
-- `docs/slices.md` is the active source of truth for slice planning/status.
-- For each completed slice, add:
-- a changelog note (what changed)
-- a slices status update (done / blocked / next)
+---
 
-## Communication Contract
+## Database / Migrations / Queries Contract (Hands-off Requirement)
 
-- Brains: optimize for clarity, scope control, and acceptance criteria.
-- Hands: optimize for execution speed, correctness, and minimal diffs.
-- Tester: optimize for intent clarity and real-world verification.
-- If any role is unsure, pause and resolve ambiguity before expanding changes.
+Brad is intentionally hands-off on DB work unless explicitly instructed.
+
+### Required reporting (every slice)
+At the end of every slice report, Hands must include one of these blocks:
+
+**A)**
+- `Brad Action Required: none`
+
+**OR B) Brad Action Required**
+- **What to run:** exact SQL file paths / migration names / CLI commands
+- **Where to run it:** Supabase SQL editor, migration runner, etc.
+- **When to run it:** before tests, before deploy, after merge, etc.
+- **Expected outcome:** schema/data changes, counts/outputs expected
+- **Failure signals:** common errors + what output/logs to paste back
+
+### Execution rules
+- Hands must not assume DB steps were run unless Brad confirms.
+- If a slice depends on DB changes being applied, mark it **blocked** until completed.
+- DB-related slices must mention DB actions in acceptance criteria and validations.
+- Hands must never claim a DB-related slice is done without the action block.
+
+---
+
+## Output Format (Hands final report)
+Hands should end every slice with a structured report:
+
+- Summary of changes
+- Files changed
+- Commands run (sequential) + results
+- Manual verification required (if any)
+- Brad Action Required: none / (full block)
+- Follow-ups / next slice suggestions (optional)
+
+---
+
+## Diff Discipline
+- Smallest implementation that satisfies the slice.
+- No unrelated cleanup.
+- No dependency additions unless explicitly required.
+- No hidden behavior changes outside acceptance criteria.
+- If a refactor is needed, split it into a separate slice first.
