@@ -213,7 +213,8 @@ export default function AppShell({ children }) {
   const [openNavSections, setOpenNavSections] = useState({});
   const isAuthRoute = pathname.startsWith('/auth');
   const isRootRoute = pathname === '/';
-  const isPublicRoute = isAuthRoute || isRootRoute;
+  const isAppGateRoute = pathname === '/app';
+  const isPublicRoute = isAuthRoute || isRootRoute || isAppGateRoute;
   const isAdminRoute = pathname?.startsWith('/admin');
   const isGameRoute = pathname?.startsWith('/game');
   const isTestRunRoute = pathname === '/test/run';
@@ -435,7 +436,11 @@ export default function AppShell({ children }) {
     }
   }
 
-  if (isAuthRoute) {
+  if (isRootRoute) {
+    return children;
+  }
+
+  if (isAuthRoute || isAppGateRoute) {
     return <main className="auth-content">{children}</main>;
   }
 

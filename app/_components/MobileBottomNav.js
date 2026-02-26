@@ -15,6 +15,7 @@ export default function MobileBottomNav() {
 
   if (
     pathname === '/' ||
+    pathname === '/app' ||
     pathname.startsWith('/auth') ||
     pathname.startsWith('/game/study-night/room/')
   ) {
