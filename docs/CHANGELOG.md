@@ -8,6 +8,7 @@
 - Fixed a tall-page background seam/restart by moving the global spa-room background image paint to `body` only (instead of both `html` and `body`) while keeping light/dark body overrides intact.
 - De-bloated the sidebar nav to a single V1 `Study` section (`Today`, `Drill`, `Test`, `Review`, `Progress`, `Settings`) while keeping `/test` and admin access checks, and changed `/` back to a server redirect to `/today`.
 - Updated the auth-loading smoke regression to match the V1 sidebar nav shape (asserting `/test` remains) instead of requiring the removed `/admin/questions` sidebar link.
+- Removed non-V1 route folders (`learn`, `practice`, `coach`, `game/study-night`, `boss-fight`, `streak`, `sprint`, `memory`, `flashcards`, `anatomy`), trimmed `scripts/smoke.mjs` to stop running deleted-route regressions, and replaced the mobile `/practice` quick link with `/review`.
 
 ## 2026-02-23
 - QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.

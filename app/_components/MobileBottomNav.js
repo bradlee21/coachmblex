@@ -5,9 +5,9 @@ import { usePathname } from 'next/navigation';
 
 const MOBILE_NAV_ITEMS = [
   { href: '/today', label: 'Today' },
-  { href: '/practice', label: 'Practice' },
   { href: '/drill', label: 'Drill' },
   { href: '/test', label: 'Test' },
+  { href: '/review', label: 'Review' },
 ];
 
 export default function MobileBottomNav() {

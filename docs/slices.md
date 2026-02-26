@@ -11,6 +11,36 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### NAV-V1-2
+
+- Status: `done`
+- Title: Delete non-V1 route folders and trim smoke checks
+- Goal: Remove non-V1 App Router route folders after nav de-bloat, keep V1 routes/admin/auth intact, and update smoke coverage to stop referencing deleted routes.
+- In scope:
+- Delete non-V1 route directories (`learn`, `practice`, `coach`, `game`, `boss-fight`, `streak`, `sprint`, `memory`, `flashcards`, `anatomy`)
+- Keep `today`, `drill`, `test`, `review`, `progress`, `settings`, `auth`, `admin`
+- Update smoke runner to remove deleted-route regression scripts
+- Remove obvious dead user-facing link to `/practice` from mobile nav
+- Out of scope:
+- Further AppShell dead-code cleanup beyond what is needed for functionality/build
+- E2E suite pruning for deleted routes
+- Acceptance criteria:
+- Listed non-V1 route folders are deleted
+- V1 routes and admin/auth remain intact
+- `npm run smoke` passes without deleted-route checks
+- `npm run build` passes after deletions
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/` route folders listed above (deleted)
+- `scripts/smoke.mjs`
+- `app/_components/MobileBottomNav.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Kept admin access checks and hidden-admin-nav behavior unchanged from Slice 1.
+
 ### NAV-V1-1
 
 - Status: `done`
