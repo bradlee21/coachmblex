@@ -11,6 +11,37 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-F
+
+- Status: `done`
+- Title: Show queued review count in `/review` page header
+- Goal: Add a small normal UI header line on `/review` that shows the current local queued count (`Queued: N`) and optionally the queued-backed fetch count (`Using: M`) when a queued session is built.
+- In scope:
+- Add client-only local queue count sync in `/review` using existing local queue helpers
+- Render `Queued: N` near the top/Start Review section
+- Optionally render `Using: M` when queued-backed fetch count is available
+- Keep review behavior unchanged (selection/consume logic intact)
+- Out of scope:
+- Changes to QuestionRunner or sidebar badge behavior
+- New review queue persistence mechanisms
+- Acceptance criteria:
+- `/review` shows `Queued: N` (including `Queued: 0`) based on localStorage queue count
+- `/review` may show `Using: M` after queued-backed fetch/session build when available
+- Client-only localStorage access avoids SSR/window errors
+- No behavior changes to review start/consume flow
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: queue 3 misses, open `/review`, verify `Queued: 3`; start review and confirm count updates after consumption
+- Files expected to change:
+- `app/review/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal UI-only follow-up to Slice E2 queue fixes.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester manual verification pending: queue 3 misses, open `/review`, verify `Queued: 3`, start review, confirm header count updates after consumption.
+
 ### SLICE-E2
 
 - Status: `done`

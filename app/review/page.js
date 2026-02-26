@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { shuffleSessionQuestionChoices } from '../_components/questionRunnerLogic.mjs';
 import { devLog } from '../../src/lib/devLog';
@@ -9,6 +9,7 @@ import { getSupabaseClient } from '../../src/lib/supabaseClient';
 import {
   loadLocalReviewQueueIds,
   removeLocalReviewQueueIds,
+  REVIEW_QUEUE_CHANGED_EVENT,
 } from '../../src/lib/reviewQueueLocal';
 import { useAuth } from '../../src/providers/AuthProvider';
 
@@ -215,6 +216,44 @@ export default function ReviewPage() {
   const [summary, setSummary] = useState(null);
   const [coachMode, setCoachMode] = useState('gentle');
   const [error, setError] = useState('');
+  const [queuedHeaderCount, setQueuedHeaderCount] = useState(0);
+  const [queuedUsingCount, setQueuedUsingCount] = useState(null);
+
+  useEffect(() => {
+    function getQueuedCount() {
+      const userQueueIds = user?.id ? loadLocalReviewQueueIds(user.id) : [];
+      const anonQueueIds = loadLocalReviewQueueIds(null);
+      return user?.id
+        ? mergeQuestionIds(userQueueIds, anonQueueIds).length
+        : mergeQuestionIds(anonQueueIds).length;
+    }
+
+    function refreshQueuedCount() {
+      setQueuedHeaderCount(getQueuedCount());
+    }
+
+    refreshQueuedCount();
+    if (typeof window === 'undefined') return;
+
+    function handleQueueChanged() {
+      refreshQueuedCount();
+    }
+
+    function handleStorage(event) {
+      if (!event?.key || event.key.startsWith('coachmblex_review_queue_v1:')) {
+        refreshQueuedCount();
+      }
+    }
+
+    window.addEventListener(REVIEW_QUEUE_CHANGED_EVENT, handleQueueChanged);
+    window.addEventListener('focus', handleQueueChanged);
+    window.addEventListener('storage', handleStorage);
+    return () => {
+      window.removeEventListener(REVIEW_QUEUE_CHANGED_EVENT, handleQueueChanged);
+      window.removeEventListener('focus', handleQueueChanged);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, [user?.id]);
 
   async function startReview() {
     const supabase = getSupabaseClient();
@@ -229,6 +268,8 @@ export default function ReviewPage() {
       ? mergeQuestionIds(userQueueIds, anonQueueIds)
       : mergeQuestionIds(anonQueueIds);
     const queuedCount = preferredQuestionIds.length;
+    setQueuedHeaderCount(queuedCount);
+    setQueuedUsingCount(null);
 
     setError('');
     setSummary(null);
@@ -240,6 +281,7 @@ export default function ReviewPage() {
 
       if (queuedCount > 0) {
         queuedQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+        setQueuedUsingCount(queuedQuestions.length);
         devLog(
           `[REVIEW] queue queued=${queuedCount} fetched_from_queue=${queuedQuestions.length}`
         );
@@ -252,6 +294,7 @@ export default function ReviewPage() {
           return;
         }
       } else {
+        setQueuedUsingCount(null);
         devLog('[REVIEW] queue queued=0 fetched_from_queue=0');
       }
 
@@ -356,6 +399,12 @@ export default function ReviewPage() {
     <section>
       <h1>Review</h1>
       <p>Global review queue from misses and low-confidence answers.</p>
+      <p className="muted">
+        Queued: {queuedHeaderCount}
+        {typeof queuedUsingCount === 'number' && queuedUsingCount > 0
+          ? ` | Using: ${queuedUsingCount}`
+          : ''}
+      </p>
 
       {phase === 'idle' ? (
         <button type="button" onClick={startReview} data-testid="review-start">
