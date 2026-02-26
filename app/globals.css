@@ -2154,7 +2154,6 @@ html.light .content.route-drill > section .runner {
 
 /* LIGHT MODE: make core app surfaces readable without affecting dark mode */
 html.light body {
-  background-color: transparent !important;
   color: #0f172a !important;
 }
 
@@ -2207,7 +2206,7 @@ html.light .content.route-drill > section .runner {
 html.light body {
   background-color: #eef4f8 !important;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.66)),
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.52)),
     url('/backgrounds/coachmblex-spa-room.png') !important;
 }
 
@@ -2846,6 +2845,23 @@ html.light .landing-page h3 {
 html.light .landing-kicker,
 html.light .landing-label {
   color: rgba(0, 0, 0, 0.55);
+}
+
+html.light .landing-surface {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+html.light .landing-subcard {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+html.light .landing-pill,
+html.light .landing-chip {
+  background: rgba(255, 255, 255, 0.52);
+}
+
+html.light .landing-choice {
+  background: rgba(255, 255, 255, 0.62);
 }
 
 html.light .landing-btn--primary {

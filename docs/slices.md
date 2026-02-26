@@ -11,6 +11,32 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### LANDING-STYLE-2
+
+- Status: `done`
+- Title: Reveal more spa-room background behind light-mode landing surfaces
+- Goal: Reduce light-mode landing surface opacity and soften the light overlay gradient so the global spa-room background is more visible on `/`, without changing dark mode.
+- In scope:
+- Lower alpha for light-mode landing surfaces/chips/choices
+- Reduce `html.light body` overlay gradient alpha
+- Remove conflicting redundant early `html.light body` background-color rule if present
+- Out of scope:
+- Dark mode styling changes
+- Routing/auth gate changes
+- Acceptance criteria:
+- Light-mode landing surfaces are visibly more translucent
+- Spa-room background is more visible on `/` in light mode
+- Dark mode styling remains unchanged
+- Required validation/tests:
+- `npm run build`
+- `npm run smoke`
+- Files expected to change:
+- `app/globals.css`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Targeted only `html.light` landing/background overrides to avoid dark-mode regressions.
+
 ### LANDING-STYLE-1
 
 - Status: `done`
