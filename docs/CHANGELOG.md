@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-26
+- SLICE-B1: Tightened exam-mode enforcement in `QuestionRunner` so immediate feedback/explanations are suppressed whenever `mode='exam'` or delayed policies are set, while end-of-run Review remains tied to `revealPolicy='end'`. `/test/run` now preserves `mode`/`feedback`/`reveal` params on Change settings links and uses deterministic mode parsing (`practice` else `exam`).
 - SLICE-B: Added `QuestionRunner` exam-simulation UI policies (`feedbackPolicy` / `revealPolicy`) with practice-safe defaults. Test runs can now hide per-question correctness/explanations and show a completion-time `Review` section (prompt, user answer, correct answer, why/trap/hook); `/test/run` now passes exam-mode delayed feedback/reveal from URL params/defaults.
 - SLICE-A: Updated `/test` setup copy to `Exam Simulation` with exam-style subtitle/rules guidance (question count, timer-toggle availability note, review misses after finishing), and updated `/drill` copy to `Practice Drill` with immediate-feedback subtitle. No runner logic changes.
 - Added repo-root `AGENTS.md` workflow contract for Brains/Hands/Tester collaboration (small slices, minimal diffs, explicit acceptance criteria, required validation, and required doc updates), and added `docs/slices.md` as the active slice planning/status tracker.

@@ -116,8 +116,10 @@ export default function QuestionRunner({
     [current, resolvedCorrectAnswerText]
   );
   const isDone = index >= questions.length;
-  const showImmediateFeedback = feedbackPolicy !== 'end';
-  const showImmediateReveal = revealPolicy !== 'end';
+  const isExamMode = mode === 'exam' || feedbackPolicy === 'end' || revealPolicy === 'end';
+  const showImmediateFeedback = !isExamMode;
+  const showImmediateReveal = !isExamMode;
+  const showEndReview = revealPolicy === 'end';
   const fibFeedback = useMemo(() => {
     return resolveFibFeedbackState({
       questionMode,
@@ -295,7 +297,7 @@ export default function QuestionRunner({
         <p>
           Score: {score} / {questions.length}
         </p>
-        {!showImmediateReveal ? (
+        {showEndReview ? (
           <div style={{ marginTop: 16 }}>
             <h3>Review</h3>
             <div style={{ display: 'grid', gap: 12 }}>

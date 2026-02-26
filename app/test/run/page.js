@@ -109,7 +109,7 @@ async function fetchKnownPackIds(supabase) {
   ).sort((a, b) => a.localeCompare(b));
 }
 
-function buildTestSettingsHref({ n, packIds, random, qtCsv }) {
+function buildTestSettingsHref({ n, packIds, random, qtCsv, mode, feedback, reveal }) {
   const params = new URLSearchParams();
   params.set('n', String(n));
   if ((packIds || []).length > 0) {
@@ -120,6 +120,15 @@ function buildTestSettingsHref({ n, packIds, random, qtCsv }) {
   }
   if (qtCsv) {
     params.set('qt', qtCsv);
+  }
+  if (mode) {
+    params.set('mode', mode);
+  }
+  if (feedback) {
+    params.set('feedback', feedback);
+  }
+  if (reveal) {
+    params.set('reveal', reveal);
   }
   return `/test?${params.toString()}`;
 }
@@ -149,6 +158,9 @@ export default function TestRunPage() {
       random,
       types: types.length > 0 ? types : [...QUICK_TYPES],
       qtCsv: searchParams.get('qt') || '',
+      mode: searchParams.get('mode') || '',
+      feedback: searchParams.get('feedback') || '',
+      reveal: searchParams.get('reveal') || '',
     };
   }, [searchParams]);
   const runnerConfig = useMemo(() => {
@@ -162,7 +174,7 @@ export default function TestRunPage() {
       .trim()
       .toLowerCase();
     return {
-      mode: modeParam === 'practice' ? 'practice' : modeParam === 'test' ? 'exam' : 'exam',
+      mode: modeParam === 'practice' ? 'practice' : 'exam',
       feedbackPolicy: feedbackParam === 'immediate' ? 'immediate' : 'end',
       revealPolicy: revealParam === 'immediate' ? 'immediate' : 'end',
     };
@@ -175,6 +187,9 @@ export default function TestRunPage() {
         packIds: parsedConfig.requestedPackIds,
         random: parsedConfig.random,
         qtCsv: parsedConfig.qtCsv,
+        mode: parsedConfig.mode,
+        feedback: parsedConfig.feedback,
+        reveal: parsedConfig.reveal,
       }),
     [parsedConfig]
   );

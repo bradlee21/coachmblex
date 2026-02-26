@@ -11,6 +11,36 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-B1
+
+- Status: `done`
+- Title: Tighten exam-mode runner gating and preserve test runner policy params
+- Goal: Enforce exam-session UI gating when mode/policies indicate exam behavior and keep `mode`/`feedback`/`reveal` params on `/test/run` -> `/test` Change settings links.
+- In scope:
+- Gate immediate MCQ/FIB/explanation UI in `QuestionRunner` when `mode='exam'` OR delayed feedback/reveal policies are used
+- Keep end Review rendering tied to `revealPolicy='end'`
+- Make `/test/run` `runnerConfig.mode` parsing deterministic (`practice` else `exam`)
+- Preserve `mode`/`feedback`/`reveal` query params in `buildTestSettingsHref` when present
+- Out of scope:
+- New test runner features or timer changes
+- Drill route behavior changes
+- Acceptance criteria:
+- Exam mode suppresses immediate correctness styling/text/explanations during the session
+- End Review still renders only when `revealPolicy='end'`
+- Drill/practice defaults remain unchanged
+- `/test` Change settings link preserves `mode`/`feedback`/`reveal` params when present
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/_components/QuestionRunner.js`
+- `app/test/run/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Follow-up to `SLICE-B` with minimal diff.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+
 ### SLICE-B
 
 - Status: `done`
