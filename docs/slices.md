@@ -11,6 +11,39 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### NAV-V1-1
+
+- Status: `done`
+- Title: De-bloat AppShell navigation for V1 and restore `/` -> `/today` redirect
+- Goal: Reduce sidebar navigation to a single V1 Study section while keeping `/test`, and make `/` server-redirect to `/today`.
+- In scope:
+- Replace `NAV_SECTIONS` with one `Study` section (`/today`, `/drill`, `/test`, `/review`, `/progress`, `/settings`)
+- Trim `NAV_TEST_IDS` to those routes only
+- Keep those routes protected plus `/test/run` and `/admin`
+- Simplify `isCenteredPracticeRoute`
+- Replace `app/page.js` landing page with `next/navigation` `redirect('/today')`
+- Align smoke regression assertions with the new V1 sidebar nav shape (still verifying `/test` remains)
+- Out of scope:
+- `/app` auth-gate changes
+- Admin access-check logic changes
+- Landing page styling changes
+- Acceptance criteria:
+- Sidebar only shows the V1 Study links listed above
+- `/test` remains present and protected
+- `/admin` access checks continue working
+- Visiting `/` redirects to `/today`
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/AppShell.js`
+- `app/page.js`
+- `scripts/auth-loading-regression.mjs`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- This intentionally replaces the prior marketing landing page at `/` with a server redirect per request.
+
 ### LANDING-BG-2
 
 - Status: `done`

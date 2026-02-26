@@ -6,6 +6,8 @@
 - Light-mode landing surfaces on `/` are now more translucent and the light spa-room overlay gradient is reduced so the global background image is more visible, while dark-mode landing styles remain unchanged.
 - `CalmBackground` now skips its fixed base/blob/noise/watermark layers on `/` (landing route) so the global spa-room body background is actually visible behind landing surfaces; landing root markup also includes a `landing-root` marker class.
 - Fixed a tall-page background seam/restart by moving the global spa-room background image paint to `body` only (instead of both `html` and `body`) while keeping light/dark body overrides intact.
+- De-bloated the sidebar nav to a single V1 `Study` section (`Today`, `Drill`, `Test`, `Review`, `Progress`, `Settings`) while keeping `/test` and admin access checks, and changed `/` back to a server redirect to `/today`.
+- Updated the auth-loading smoke regression to match the V1 sidebar nav shape (asserting `/test` remains) instead of requiring the removed `/admin/questions` sidebar link.
 
 ## 2026-02-23
 - QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.

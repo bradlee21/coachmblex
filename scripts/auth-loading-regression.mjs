@@ -51,8 +51,8 @@ assertMatch(
 
 assertMatch(
   appShellSource,
-  /href:\s*'\/admin\/questions'/,
-  'Expected AppShell nav to include /admin/questions entry.'
+  /href:\s*'\/test',\s*label:\s*'Test',\s*key:\s*'y'/,
+  'Expected AppShell V1 nav to include /test entry.'
 );
 
 assertMatch(
@@ -71,12 +71,6 @@ assertMatch(
   authProviderSource,
   /\.from\('profiles'\)\s*\.select\('role'\)/s,
   'Expected AuthProvider to load profile role for route gating.'
-);
-
-assertMatch(
-  appShellSource,
-  /roles:\s*\['admin',\s*'questions_editor'\]/,
-  'Expected Questions nav item to be visible only to admin and questions_editor roles.'
 );
 
 assertMatch(

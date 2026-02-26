@@ -10,76 +10,30 @@ import { useAuth } from '../src/providers/AuthProvider';
 
 const NAV_SECTIONS = [
   {
-    id: 'learn',
-    label: 'Learn',
+    id: 'study',
+    label: 'Study',
     items: [
-      { href: '/learn', label: 'Learn', key: 'e' },
-      { href: '/practice', label: 'Practice', key: 'h' },
       { href: '/today', label: 'Today', key: 't' },
-      { href: '/flashcards', label: 'Flashcards', key: 'f' },
-      { href: '/anatomy', label: 'Anatomy', key: 'a' },
-    ],
-  },
-  {
-    id: 'test',
-    label: 'Test',
-    items: [
+      { href: '/drill', label: 'Drill', key: 'd' },
       { href: '/test', label: 'Test', key: 'y' },
       { href: '/review', label: 'Review', key: 'r' },
-      { href: '/drill', label: 'Drill', key: 'd' },
       { href: '/progress', label: 'Progress', key: 'p' },
-    ],
-  },
-  {
-    id: 'coach',
-    label: 'Coach',
-    items: [
-      { href: '/coach', label: 'Coach', key: 'c' },
-      { href: '/game/study-night', label: 'Study Night', key: 'n' },
-    ],
-  },
-  {
-    id: 'games',
-    label: 'Games',
-    items: [
-      { href: '/boss-fight', label: 'Boss Fight', key: 'b' },
-      { href: '/streak', label: 'Streak Ladder', key: 'l' },
-      { href: '/sprint', label: 'Sprint', key: 'x' },
-      { href: '/memory', label: 'Memory Match', key: 'm' },
-    ],
-  },
-  {
-    id: 'admin',
-    label: 'Admin',
-    items: [
-      {
-        href: '/admin/questions',
-        label: 'Questions',
-        key: 'q',
-        roles: ['admin', 'questions_editor'],
-      },
       { href: '/settings', label: 'Settings', key: 's' },
     ],
   },
 ];
 const NAV_ITEMS = NAV_SECTIONS.flatMap((section) => section.items);
-const PROTECTED_ROUTES = new Set([...NAV_ITEMS.map((item) => item.href), '/test', '/test/run']);
+const PROTECTED_ROUTES = new Set([
+  ...NAV_ITEMS.map((item) => item.href),
+  '/test/run',
+  '/admin',
+]);
 const BETA_BANNER_DISMISSED_KEY = 'betaBannerDismissed';
 const NAV_TEST_IDS = {
-  '/learn': 'nav-learn',
-  '/test': 'nav-test',
-  '/coach': 'nav-coach',
-  '/practice': 'nav-practice',
   '/today': 'nav-today',
-  '/review': 'nav-review',
   '/drill': 'nav-drill',
-  '/boss-fight': 'nav-boss-fight',
-  '/streak': 'nav-streak',
-  '/sprint': 'nav-sprint',
-  '/memory': 'nav-memory',
-  '/flashcards': 'nav-flashcards',
-  '/game/study-night': 'nav-study-night',
-  '/anatomy': 'nav-anatomy',
+  '/test': 'nav-test',
+  '/review': 'nav-review',
   '/progress': 'nav-progress',
   '/settings': 'nav-settings',
 };
@@ -219,14 +173,7 @@ export default function AppShell({ children }) {
   const isGameRoute = pathname?.startsWith('/game');
   const isTestRunRoute = pathname === '/test/run';
   const isDrillRoute = pathname === '/drill' || pathname?.startsWith('/drill/');
-  const isCenteredPracticeRoute =
-    pathname === '/today' ||
-    pathname === '/flashcards' ||
-    pathname === '/sprint' ||
-    pathname === '/boss-fight' ||
-    pathname === '/streak' ||
-    pathname === '/memory' ||
-    pathname === '/test/run';
+  const isCenteredPracticeRoute = pathname === '/today' || pathname === '/test/run';
   const isMemoryRoute = pathname === '/memory';
   const isProtectedRoute =
     !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
