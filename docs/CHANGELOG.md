@@ -2,6 +2,7 @@
 
 ## 2026-02-26
 - Added repo-root `AGENTS.md` workflow contract for Brains/Hands/Tester collaboration (small slices, minimal diffs, explicit acceptance criteria, required validation, and required doc updates), and added `docs/slices.md` as the active slice planning/status tracker.
+- Restyled the `/` landing page using repo-native CSS (replacing non-functional Tailwind utility classes in a non-Tailwind project) and added explicit `html.light` / `html.dark` landing styles so the root marketing preview respects `next-themes` dark mode while keeping `/app` auth-gate routing unchanged.
 
 ## 2026-02-23
 - QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.

@@ -11,6 +11,35 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### LANDING-STYLE-1
+
+- Status: `done`
+- Title: Polish landing page visuals and dark-mode support on `/`
+- Goal: Make `/` render as a modern in-app preview and respect `next-themes` dark/light mode without changing routing or adding dependencies.
+- In scope:
+- Restyle `app/page.js` landing page with repo-native class names and responsive layout
+- Add landing page styles to `app/globals.css` with explicit `html.light` / `html.dark` support
+- Validate `/` and `/app` route behavior remains unchanged
+- Out of scope:
+- Routing changes (`/` landing and `/app` auth gate stay as-is)
+- `/today` or `/auth/sign-in` route logic changes
+- Adding Tailwind or any new dependency
+- Acceptance criteria:
+- `/` renders as a modern card-based app preview (not default browser-styled HTML)
+- `/` respects dark and light mode when theme class is applied by `next-themes`
+- `/` does not show internal app chrome
+- `/app` auth gate still redirects authed to `/today` and unauthed to `/auth/sign-in`
+- Required validation/tests:
+- `npm run build`
+- `npm run smoke`
+- Files expected to change:
+- `app/page.js`
+- `app/globals.css`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Tailwind utility classes in the prior landing page did not render because this repo does not currently include a Tailwind dependency/config, so the fix uses existing global CSS conventions instead.
+
 ### DOC-WORKFLOW-1
 
 - Status: `done`
