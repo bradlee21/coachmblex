@@ -82,7 +82,7 @@ export default function TodayPage() {
             .from('questions')
             .select(selectFields)
             .eq('question_type', 'mcq')
-            .or('blueprint_code.like.1.*,blueprint_code.like.2.*')
+            .in('domain_code', ['D1', 'D2'])
             .order('created_at', { ascending: false })
             .limit(40),
           supabase

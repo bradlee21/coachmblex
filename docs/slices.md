@@ -11,6 +11,37 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-M1
+
+- Status: `done`
+- Title: Replace `blueprint_code` with `domain_code` (Phase 1: add + backfill)
+- Goal: Add `questions.domain_code` (`D1..D7`) with a backfill from existing `blueprint_code`, keep `blueprint_code` in place for safety, and switch feasible domain-level queries to `domain_code`.
+- In scope:
+- Add a SQL migration to add `questions.domain_code` (text) with a `D1..D7` check constraint
+- Backfill `domain_code` from `blueprint_code` using a CASE mapping in the migration
+- Add an index on `questions.domain_code`
+- Update feasible server/query filters that are domain-level to use `domain_code` without removing `blueprint_code`
+- Out of scope:
+- Dropping `questions.blueprint_code`
+- Broad refactors of question authoring/import/write paths
+- Replacing leaf-level `blueprint_code` usage where leaf granularity is still required
+- Acceptance criteria:
+- SQL migration adds `questions.domain_code`, backfills from `blueprint_code`, enforces `D1..D7` (nullable allowed), and adds an index
+- `blueprint_code` remains present (no drop in this slice)
+- At least one feasible domain-level question query filter switches from `blueprint_code` to `domain_code` with compile/build passing
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `docs/sql/run-these-queries/2026-02-26-slice-m1-questions-domain-code-phase1.sql`
+- `app/today/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Phase 1 keeps `blueprint_code` as the source of truth for leaf-level coverage and legacy write paths; follow-up slice should populate `domain_code` on insert/update paths before broader query migration.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester follow-up: run `docs/sql/run-these-queries/2026-02-26-slice-m1-questions-domain-code-phase1.sql` in Supabase/Postgres before relying on `/today` `domain_code` filtering in production.
+
 ### SLICE-G
 
 - Status: `done`
