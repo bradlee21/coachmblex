@@ -72,7 +72,9 @@ export default function TestCenterClient({ packs }) {
     if (selectedCount === 0) return;
     const params = new URLSearchParams();
     const existingQt = sanitizeQtCsv(searchParams.get('qt'));
-    params.set('mode', 'test');
+    params.set('mode', 'test'); // exam simulation
+    params.set('feedback', 'end'); // no per-question correctness
+    params.set('reveal', 'end'); // explanations at end
     params.set('n', String(clampQuestionCount(questionCountInput)));
     params.set('packs', orderedSelectedPackIds.join(','));
     params.set('random', '1');
