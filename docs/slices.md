@@ -11,6 +11,33 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-M2
+
+- Status: `done`
+- Title: Domain code SQL follow-up with unmapped blueprint_code report
+- Goal: Add an idempotent SQL script that ensures `questions.domain_code` (`D1..D7`) exists/backfilled/indexed and reports any nonblank `blueprint_code` values that do not map to a valid domain code.
+- In scope:
+- Add a copy/paste SQL script in `docs/sql/run-these-queries/` for `domain_code` column/check/index/backfill
+- Include an unmapped-value report query (counts + example row id) for nonblank `blueprint_code` values
+- Keep app code untouched
+- Out of scope:
+- App/query code changes
+- Dropping `blueprint_code`
+- Write-path changes that populate `domain_code` on insert/update
+- Acceptance criteria:
+- SQL script is idempotent for adding `domain_code`, `D1..D7` check constraint, and `domain_code` index
+- Script backfills `domain_code` from existing `blueprint_code`
+- Script ends with a query that reports unmapped nonblank `blueprint_code` values
+- Required validation/tests:
+- Manual SQL review of `docs/sql/run-these-queries/2026-02-26-slice-m2-questions-domain-code-unmapped-report.sql`
+- Run script in Supabase SQL Editor and inspect final result set for unmapped rows (empty result = none unmapped)
+- Files expected to change:
+- `docs/sql/run-these-queries/2026-02-26-slice-m2-questions-domain-code-unmapped-report.sql`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Follow-up to `SLICE-M1` to add explicit unmapped reporting before any stricter domain-code enforcement.
+
 ### SLICE-M1
 
 - Status: `done`

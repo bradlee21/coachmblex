@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-26
+- SLICE-M2: Added DB-only follow-up SQL script `docs/sql/run-these-queries/2026-02-26-slice-m2-questions-domain-code-unmapped-report.sql` to (idempotently) ensure `public.questions.domain_code` exists with `D1..D7` check + index, backfill from existing `blueprint_code`, and report unmapped nonblank `blueprint_code` values (count + example row) for cleanup review. No app code changes.
 - SLICE-M1: Added manual SQL migration `docs/sql/run-these-queries/2026-02-26-slice-m1-questions-domain-code-phase1.sql` to add `public.questions.domain_code` (nullable `D1..D7` with check constraint), backfill it from `blueprint_code` via CASE mapping, and index `domain_code` while keeping `blueprint_code` intact. Updated `/today`'s bias-pool question query to filter by `domain_code` (`D1`/`D2`) instead of `blueprint_code` prefixes.
 - SLICE-G: `/review` now runs queue-only sessions when local queued IDs exist (no attempts-based padding), so queued sessions use exactly the queued items up to the default cap (10). The `/review` Start CTA now reflects the actual queued-backed count (e.g. `Start Review (3)`), while the no-queue path keeps the existing `10` behavior.
 - SLICE-F: Added a `/review` page header summary line showing local queue count (`Queued: N`) with optional queued-backed fetch usage (`Using: M`) after start, using client-only localStorage reads and queue-change/focus/storage listeners so the header updates after queue consumption without changing review behavior.
