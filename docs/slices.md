@@ -11,6 +11,34 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### NAV-V1-3
+
+- Status: `done`
+- Title: Remove dead AppShell route code and redirect removed routes to `/today`
+- Goal: Clean out `AppShell` logic tied to deleted non-V1 routes and add middleware redirects so legacy URLs land on `/today`.
+- In scope:
+- Remove deleted-route code paths/helpers from `app/AppShell.js`
+- Remove `getStudyNightFeedbackContext` and feedback-context study-night diagnostics usage
+- Simplify route flags and session-page keyboard guard list to existing V1 routes
+- Add `middleware.js` redirects for removed route prefixes to `/today`
+- Out of scope:
+- Additional UI refactors in `AppShell`
+- E2E redirect coverage additions
+- Acceptance criteria:
+- `AppShell` no longer contains deleted-route helper/flags for game/study-night/memory/etc.
+- Removed routes (`/learn`, `/practice`, `/coach`, `/game/*`, `/boss-fight`, `/streak`, `/sprint`, `/memory`, `/flashcards`, `/anatomy`) redirect to `/today`
+- Admin access checks remain intact
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/AppShell.js`
+- `middleware.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Redirect middleware preserves query strings by cloning `request.nextUrl` and only changing `pathname`.
+
 ### NAV-V1-2
 
 - Status: `done`

@@ -9,6 +9,7 @@
 - De-bloated the sidebar nav to a single V1 `Study` section (`Today`, `Drill`, `Test`, `Review`, `Progress`, `Settings`) while keeping `/test` and admin access checks, and changed `/` back to a server redirect to `/today`.
 - Updated the auth-loading smoke regression to match the V1 sidebar nav shape (asserting `/test` remains) instead of requiring the removed `/admin/questions` sidebar link.
 - Removed non-V1 route folders (`learn`, `practice`, `coach`, `game/study-night`, `boss-fight`, `streak`, `sprint`, `memory`, `flashcards`, `anatomy`), trimmed `scripts/smoke.mjs` to stop running deleted-route regressions, and replaced the mobile `/practice` quick link with `/review`.
+- Removed dead `AppShell` code tied to deleted routes (including Study Night feedback diagnostics context and memory/game route flags) and added `middleware.js` redirects that send removed route URLs (`/learn`, `/practice`, `/coach`, `/game/*`, `/boss-fight`, `/streak`, `/sprint`, `/memory`, `/flashcards`, `/anatomy`) to `/today`.
 
 ## 2026-02-23
 - QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.

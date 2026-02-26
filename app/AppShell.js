@@ -107,51 +107,6 @@ function getResponseErrorMessage(response, fallback = 'Failed to submit feedback
   return `${status}: ${detail}`;
 }
 
-function getStudyNightFeedbackContext(pathname) {
-  if (typeof window === 'undefined') return null;
-  if (!pathname?.startsWith('/game/study-night/room/')) return null;
-
-  const raw = window.__coachMblexStudyNightDiagnostics;
-  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
-
-  return {
-    realtimeStatus: typeof raw.realtimeStatus === 'string' ? raw.realtimeStatus : '',
-    lastSnapshotAt:
-      typeof raw.lastSnapshotAt === 'number' && Number.isFinite(raw.lastSnapshotAt)
-        ? raw.lastSnapshotAt
-        : null,
-    lastMutation:
-      raw.lastMutation && typeof raw.lastMutation === 'object'
-        ? {
-            name:
-              typeof raw.lastMutation.name === 'string' ? raw.lastMutation.name : '',
-            ok:
-              typeof raw.lastMutation.ok === 'boolean' || raw.lastMutation.ok === null
-                ? raw.lastMutation.ok
-                : null,
-            status:
-              typeof raw.lastMutation.status === 'number' ||
-              typeof raw.lastMutation.status === 'string'
-                ? raw.lastMutation.status
-                : '',
-            message:
-              typeof raw.lastMutation.message === 'string'
-                ? raw.lastMutation.message.slice(0, 240)
-                : '',
-          }
-        : null,
-    phase: typeof raw.phase === 'string' ? raw.phase : '',
-    round_no:
-      typeof raw.round_no === 'number' && Number.isFinite(raw.round_no)
-        ? raw.round_no
-        : null,
-    turn_index:
-      typeof raw.turn_index === 'number' && Number.isFinite(raw.turn_index)
-        ? raw.turn_index
-        : null,
-  };
-}
-
 export default function AppShell({ children }) {
   const pathname = usePathname() || '/';
   const router = useRouter();
@@ -170,13 +125,10 @@ export default function AppShell({ children }) {
   const isAppGateRoute = pathname === '/app';
   const isPublicRoute = isAuthRoute || isRootRoute || isAppGateRoute;
   const isAdminRoute = pathname?.startsWith('/admin');
-  const isGameRoute = pathname?.startsWith('/game');
   const isTestRunRoute = pathname === '/test/run';
   const isDrillRoute = pathname === '/drill' || pathname?.startsWith('/drill/');
   const isCenteredPracticeRoute = pathname === '/today' || pathname === '/test/run';
-  const isMemoryRoute = pathname === '/memory';
-  const isProtectedRoute =
-    !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isGameRoute || isAdminRoute);
+  const isProtectedRoute = !isPublicRoute && (PROTECTED_ROUTES.has(pathname) || isAdminRoute);
   const hasAdminAccess = canAccessAdminRoute(pathname, role);
   const visibleNavSections = useMemo(
     () =>
@@ -199,13 +151,8 @@ export default function AppShell({ children }) {
       const sessionPage =
         pathname === '/today' ||
         pathname === '/drill' ||
-        pathname === '/boss-fight' ||
-        pathname === '/streak' ||
-        pathname === '/sprint' ||
-        pathname === '/memory' ||
         pathname === '/test/run' ||
-        pathname === '/review' ||
-        pathname === '/flashcards';
+        pathname === '/review';
       if (sessionPage && ['1', '2', '3', '4', 's', 'k', 'g', 'enter'].includes(key)) {
         return;
       }
@@ -337,10 +284,6 @@ export default function AppShell({ children }) {
       role: normalizeRole(role),
       submitted_at: new Date().toISOString(),
     };
-    const studyNightContext = getStudyNightFeedbackContext(pathname);
-    if (studyNightContext) {
-      context.study_night = studyNightContext;
-    }
     setFeedbackContextToCopy(context);
     setFeedbackSubmitting(true);
     setFeedbackStatus({ type: '', message: '' });
@@ -405,14 +348,10 @@ export default function AppShell({ children }) {
 
   return (
     <div
-      className={`app-shell coach-bg${isMemoryRoute ? ' app-shell--memory-route' : ''}${
-        isTestRunRoute ? ' app-shell--test-run-route' : ''
-      }`}
+      className={`app-shell coach-bg${isTestRunRoute ? ' app-shell--test-run-route' : ''}`}
     >
       <aside
-        className={`sidebar${isMemoryRoute ? ' sidebar--memory-route' : ''}${
-          isTestRunRoute ? ' sidebar--test-run-route' : ''
-        }`}
+        className={`sidebar${isTestRunRoute ? ' sidebar--test-run-route' : ''}`}
       >
         <Link href="/today" className="brand brand-link" aria-label="Coach MBLEx">
           <img src="/brand/logo-mark.png" alt="Coach MBLEx" className="brand-mark" />
@@ -486,8 +425,8 @@ export default function AppShell({ children }) {
 
       <main
         className={`content${isCenteredPracticeRoute ? ' content--practice' : ''}${
-          isMemoryRoute ? ' content--memory-route' : ''
-        }${isTestRunRoute ? ' content--test-run-route' : ''}${isDrillRoute ? ' route-drill' : ''}`}
+          isTestRunRoute ? ' content--test-run-route' : ''
+        }${isDrillRoute ? ' route-drill' : ''}`}
       >
         {showBetaBanner ? (
           <div className="beta-banner" data-testid="beta-banner">
