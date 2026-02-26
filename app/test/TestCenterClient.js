@@ -40,6 +40,7 @@ export default function TestCenterClient({ packs }) {
   }, [packs, selectedPackIds]);
 
   const selectedCount = orderedSelectedPackIds.length;
+  const selectedQuestionCount = clampQuestionCount(questionCountInput);
   const normalizedPackFilter = packFilter.trim().toLowerCase();
   const filteredPacks = useMemo(() => {
     if (!normalizedPackFilter) return packs || [];
@@ -84,10 +85,15 @@ export default function TestCenterClient({ packs }) {
   return (
     <section className="mx-auto w-full max-w-4xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <header style={{ marginBottom: 16 }}>
-        <h1 style={{ marginBottom: 6 }}>Testing Center</h1>
+        <h1 style={{ marginBottom: 6 }}>Exam Simulation</h1>
         <p className="muted" style={{ marginTop: 0 }}>
-          Build a custom test by question count and included content packs.
+          Timed, exam-like conditions. No hints. Explanations at the end.
         </p>
+        <ul className="muted" style={{ margin: '8px 0 0', paddingLeft: 18 }}>
+          <li>Question count: set before starting ({selectedQuestionCount} selected).</li>
+          <li>Timer toggle: not available on this setup screen.</li>
+          <li>After finishing, review missed questions before your next run.</li>
+        </ul>
       </header>
 
       <section id="testing-center-setup" className="runner" style={{ marginTop: 0 }}>

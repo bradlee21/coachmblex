@@ -11,6 +11,38 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-A
+
+- Status: `done`
+- Title: Clarify `/test` as Exam Simulation and `/drill` as Practice
+- Goal: Update route copy so users can clearly distinguish exam-style testing from practice drills without changing any runner behavior.
+- In scope:
+- Update `/test` heading/subtitle copy to exam-simulation language
+- Add a short `/test` rules list covering question count, timer toggle availability, and post-finish review guidance
+- Update `/drill` heading/subtitle copy to practice language
+- Out of scope:
+- Test/drill runner logic changes
+- Timer behavior or new toggles
+- Route flow/navigation changes
+- Acceptance criteria:
+- `/test` shows title `Exam Simulation`
+- `/test` shows subtitle `Timed, exam-like conditions. No hints. Explanations at the end.`
+- `/test` shows a short rules list mentioning question count, timer toggle availability, and reviewing misses after finishing
+- `/drill` shows title `Practice Drill`
+- `/drill` shows subtitle `Fast practice with immediate feedback.`
+- No behavior changes to starting or running tests/drills
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/test/TestCenterClient.js`
+- `app/drill/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Purely presentational slice; keep diffs minimal.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+
 ### NAV-V1-3
 
 - Status: `done`

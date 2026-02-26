@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-26
+- SLICE-A: Updated `/test` setup copy to `Exam Simulation` with exam-style subtitle/rules guidance (question count, timer-toggle availability note, review misses after finishing), and updated `/drill` copy to `Practice Drill` with immediate-feedback subtitle. No runner logic changes.
 - Added repo-root `AGENTS.md` workflow contract for Brains/Hands/Tester collaboration (small slices, minimal diffs, explicit acceptance criteria, required validation, and required doc updates), and added `docs/slices.md` as the active slice planning/status tracker.
 - Restyled the `/` landing page using repo-native CSS (replacing non-functional Tailwind utility classes in a non-Tailwind project) and added explicit `html.light` / `html.dark` landing styles so the root marketing preview respects `next-themes` dark mode while keeping `/app` auth-gate routing unchanged.
 - Light-mode landing surfaces on `/` are now more translucent and the light spa-room overlay gradient is reduced so the global background image is more visible, while dark-mode landing styles remain unchanged.

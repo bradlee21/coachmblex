@@ -701,11 +701,13 @@ export default function DrillPage() {
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-10 pt-6 sm:px-6 lg:px-8">
       <div className="mb-6 space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Drill</h1>
+        <h1 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          {isTestMode ? 'Custom Test' : 'Practice Drill'}
+        </h1>
         <p className={helperTextClass}>
           {isTestMode
             ? `Custom Test: ${testQuestionCount} question(s) across ${validTestPackIds.length || 0} selected pack(s).`
-            : `Pick a subject and start a ${DRILL_MATCH_COUNT}-question drill.`}
+            : 'Fast practice with immediate feedback.'}
         </p>
       </div>
 
