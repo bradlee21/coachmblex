@@ -11,6 +11,38 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-B
+
+- Status: `done`
+- Title: Add exam-simulation feedback/reveal policies to `QuestionRunner`
+- Goal: Support exam-style delayed feedback/reveal in `QuestionRunner` with minimal diff while preserving existing drill/practice behavior by default.
+- In scope:
+- Add `mode`, `feedbackPolicy`, and `revealPolicy` props to `QuestionRunner` with practice-safe defaults
+- Hide immediate MCQ/FIB correctness feedback when `feedbackPolicy='end'`
+- Hide per-question explanation box when `revealPolicy='end'`
+- Add completion-time `Review` section (prompt, user answer, correct answer, why/trap/hook) when `revealPolicy='end'`
+- Update `/test/run` to pass exam mode/policies from URL params with sane test defaults
+- Out of scope:
+- Timer behavior or timer UI
+- Question selection/scoring logic changes
+- Drill route behavior changes
+- Acceptance criteria:
+- Existing drill/practice flows behave the same when props are omitted
+- `/test/run` passes exam-mode delayed feedback/reveal to `QuestionRunner`
+- In delayed feedback mode, correct/wrong choice classes and FIB correctness status are not shown after submit
+- In delayed reveal mode, explanation box is hidden per question and a completion `Review` section lists prompt, user answer, correct answer, why/trap/hook for each answered question
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/_components/QuestionRunner.js`
+- `app/test/run/page.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Keep diff narrow and avoid runner refactors.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+
 ### SLICE-A
 
 - Status: `done`

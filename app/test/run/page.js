@@ -151,6 +151,22 @@ export default function TestRunPage() {
       qtCsv: searchParams.get('qt') || '',
     };
   }, [searchParams]);
+  const runnerConfig = useMemo(() => {
+    const modeParam = String(searchParams.get('mode') || '')
+      .trim()
+      .toLowerCase();
+    const feedbackParam = String(searchParams.get('feedback') || '')
+      .trim()
+      .toLowerCase();
+    const revealParam = String(searchParams.get('reveal') || '')
+      .trim()
+      .toLowerCase();
+    return {
+      mode: modeParam === 'practice' ? 'practice' : modeParam === 'test' ? 'exam' : 'exam',
+      feedbackPolicy: feedbackParam === 'immediate' ? 'immediate' : 'end',
+      revealPolicy: revealParam === 'immediate' ? 'immediate' : 'end',
+    };
+  }, [searchParams]);
 
   const settingsHref = useMemo(
     () =>
@@ -347,7 +363,14 @@ export default function TestRunPage() {
       {!loading && !message ? (
         <>
           {notice ? <p className="status error">{notice}</p> : null}
-          <QuestionRunner title="Test" questions={questions} onComplete={handleComplete} />
+          <QuestionRunner
+            title="Test"
+            questions={questions}
+            onComplete={handleComplete}
+            mode={runnerConfig.mode}
+            feedbackPolicy={runnerConfig.feedbackPolicy}
+            revealPolicy={runnerConfig.revealPolicy}
+          />
         </>
       ) : null}
     </section>

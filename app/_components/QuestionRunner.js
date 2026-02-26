@@ -50,7 +50,14 @@ function resolveExplanationDetails(question, resolvedCorrectAnswerText) {
   };
 }
 
-export default function QuestionRunner({ title, questions, onComplete }) {
+export default function QuestionRunner({
+  title,
+  questions,
+  onComplete,
+  mode = 'practice',
+  feedbackPolicy = 'immediate',
+  revealPolicy = 'immediate',
+}) {
   const { user } = useAuth();
   const mountedRef = useRef(true);
   const fibInputRef = useRef(null);
@@ -109,6 +116,8 @@ export default function QuestionRunner({ title, questions, onComplete }) {
     [current, resolvedCorrectAnswerText]
   );
   const isDone = index >= questions.length;
+  const showImmediateFeedback = feedbackPolicy !== 'end';
+  const showImmediateReveal = revealPolicy !== 'end';
   const fibFeedback = useMemo(() => {
     return resolveFibFeedbackState({
       questionMode,
@@ -136,12 +145,19 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       const isCorrect = isFib
         ? isFibAnswerCorrect(answerText, resolvedCorrectAnswerText)
         : typeof resolvedCorrectIndex === 'number' && answerChoiceIndex === resolvedCorrectIndex;
+      const userAnswerText = isFib ? answerText : toText(currentChoices[answerChoiceIndex]);
       if (isCorrect) setScore((prev) => prev + 1);
       setResults((prev) => [
         ...prev,
         {
           question_id: current.id,
           blueprint_code: current.blueprint_code || '',
+          prompt: toText(current.prompt) || '--',
+          user_answer: userAnswerText || '--',
+          correct_answer: explanationDetails.answer,
+          why: explanationDetails.why,
+          trap: explanationDetails.trap,
+          hook: explanationDetails.hook,
           correct: isCorrect,
           confidence,
         },
@@ -178,6 +194,8 @@ export default function QuestionRunner({ title, questions, onComplete }) {
       confidence,
       current,
       questionMode,
+      currentChoices,
+      explanationDetails,
       resolvedCorrectAnswerText,
       resolvedCorrectIndex,
       submitted,
@@ -272,17 +290,40 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
   if (isDone) {
     return (
-      <section className="runner">
+      <section className="runner" data-runner-mode={mode}>
         <h2>{title} Complete</h2>
         <p>
           Score: {score} / {questions.length}
         </p>
+        {!showImmediateReveal ? (
+          <div style={{ marginTop: 16 }}>
+            <h3>Review</h3>
+            <div style={{ display: 'grid', gap: 12 }}>
+              {results.map((result, reviewIndex) => (
+                <div
+                  key={`${result.question_id || 'q'}-${reviewIndex}`}
+                  className="explanation-box"
+                  style={{ marginTop: 0 }}
+                >
+                  <p>
+                    <strong>Q{reviewIndex + 1}.</strong> {toText(result.prompt) || '--'}
+                  </p>
+                  <p>Your answer: {toText(result.user_answer) || '--'}</p>
+                  <p>Correct answer: {toText(result.correct_answer) || '--'}</p>
+                  <p>Why: {toText(result.why) || '--'}</p>
+                  <p>Trap: {toText(result.trap) || '--'}</p>
+                  <p>Hook: {toText(result.hook) || '--'}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </section>
     );
   }
 
   return (
-    <section className="runner">
+    <section className="runner" data-runner-mode={mode}>
       <h2>{title}</h2>
       <p className="runner-progress">
         Question {index + 1} of {questions.length}
@@ -303,10 +344,11 @@ export default function QuestionRunner({ title, questions, onComplete }) {
           {visibleChoices.map(({ choice, rawIndex }, choicePosition) => {
             const isSelected = selectedIndex === rawIndex;
             const isCorrect =
+              showImmediateFeedback &&
               submitted &&
               typeof resolvedCorrectIndex === 'number' &&
               rawIndex === resolvedCorrectIndex;
-            const isWrongSelected = submitted && isSelected && !isCorrect;
+            const isWrongSelected = showImmediateFeedback && submitted && isSelected && !isCorrect;
             return (
               <button
                 key={`${rawIndex}-${choice}`}
@@ -392,18 +434,20 @@ export default function QuestionRunner({ title, questions, onComplete }) {
 
       {submitted ? (
         <>
-          {questionMode === 'fib' ? (
+          {questionMode === 'fib' && showImmediateFeedback ? (
             <p className={`status ${fibFeedback?.isCorrect ? 'success' : 'error'}`}>
               {fibFeedback?.label}
               {!fibFeedback?.isCorrect ? ` Correct answer: ${explanationDetails.answer}` : ''}
             </p>
           ) : null}
-        <div className="explanation-box">
-          <p>Answer: {explanationDetails.answer}</p>
-          <p>Why: {explanationDetails.why}</p>
-          <p>Trap: {explanationDetails.trap}</p>
-          <p>Hook: {explanationDetails.hook}</p>
-        </div>
+          {showImmediateReveal ? (
+            <div className="explanation-box">
+              <p>Answer: {explanationDetails.answer}</p>
+              <p>Why: {explanationDetails.why}</p>
+              <p>Trap: {explanationDetails.trap}</p>
+              <p>Hook: {explanationDetails.hook}</p>
+            </div>
+          ) : null}
         </>
       ) : null}
 
