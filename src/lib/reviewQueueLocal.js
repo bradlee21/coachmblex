@@ -59,3 +59,36 @@ export function addLocalReviewQueueIds(userId, questionIds) {
   };
 }
 
+export function removeLocalReviewQueueIds(userId, questionIds) {
+  if (typeof window === 'undefined' || !window.localStorage) {
+    throw new Error('Local storage is not available.');
+  }
+
+  const existing = readQueueRaw(userId);
+  if (existing.length === 0) {
+    return {
+      removedCount: 0,
+      totalCount: 0,
+      key: toQueueKey(userId),
+    };
+  }
+
+  const targetIds = new Set(normalizeQuestionIds(questionIds));
+  if (targetIds.size === 0) {
+    return {
+      removedCount: 0,
+      totalCount: existing.length,
+      key: toQueueKey(userId),
+    };
+  }
+
+  const next = existing.filter((id) => !targetIds.has(String(id)));
+  const removedCount = existing.length - next.length;
+  window.localStorage.setItem(toQueueKey(userId), JSON.stringify(next));
+
+  return {
+    removedCount,
+    totalCount: next.length,
+    key: toQueueKey(userId),
+  };
+}

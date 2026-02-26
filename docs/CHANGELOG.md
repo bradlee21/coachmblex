@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-26
+- SLICE-E1: `/review` now consumes (auto-removes) local queued review IDs that were actually used to start a review session, while leaving unused queued IDs in place. Consumption prefers the authed user queue and only removes from the anon fallback queue for IDs that were used and not already sourced from the user's queue; added a small dev-only review queue consumption log line.
 - SLICE-D: Added an exam-completion `Send missed to Review` CTA in `QuestionRunner` (shown only for end-reveal exam review screens with misses), with disabled/submitting state, success/error status messaging, and a `Go to Review` link after success. Missed question IDs now persist idempotently to localStorage under `coachmblex_review_queue_v1:<userId|anon>`, and `/review` now reads that local queue as a fallback/priority source when building the review session.
 - SLICE-C: Added a minimal `/test/run` exam timer (count-up) in `app/test/run/page.js` with exam-default ON, URL disable support via `timer=0|false`, header display, completion time summary, and `seconds_elapsed` added to `test_run_complete` tracking. `Change settings` now preserves `timer` when present.
 - SLICE-B1: Tightened exam-mode enforcement in `QuestionRunner` so immediate feedback/explanations are suppressed whenever `mode='exam'` or delayed policies are set, while end-of-run Review remains tied to `revealPolicy='end'`. `/test/run` now preserves `mode`/`feedback`/`reveal` params on Change settings links and uses deterministic mode parsing (`practice` else `exam`).

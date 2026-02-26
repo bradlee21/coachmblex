@@ -4,8 +4,12 @@ import Link from 'next/link';
 import { useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { shuffleSessionQuestionChoices } from '../_components/questionRunnerLogic.mjs';
+import { devLog } from '../../src/lib/devLog';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
-import { loadLocalReviewQueueIds } from '../../src/lib/reviewQueueLocal';
+import {
+  loadLocalReviewQueueIds,
+  removeLocalReviewQueueIds,
+} from '../../src/lib/reviewQueueLocal';
 import { useAuth } from '../../src/providers/AuthProvider';
 
 function getBestStreak(results) {
@@ -242,6 +246,43 @@ export default function ReviewPage() {
         setSessionQuestions([]);
         setPhase('empty');
         return;
+      }
+
+      const usedSessionQuestionIds = new Set(
+        questionsResult.map((question) => String(question?.id || '')).filter(Boolean)
+      );
+      const userQueueIds = user?.id ? loadLocalReviewQueueIds(user.id) : [];
+      const anonQueueIds = loadLocalReviewQueueIds(null);
+      const userQueueIdSet = new Set(userQueueIds.map((id) => String(id)));
+
+      let consumedUserCount = 0;
+      let consumedAnonCount = 0;
+
+      if (user?.id && userQueueIds.length > 0) {
+        const userIdsToConsume = userQueueIds.filter((id) => usedSessionQuestionIds.has(String(id)));
+        if (userIdsToConsume.length > 0) {
+          const result = removeLocalReviewQueueIds(user.id, userIdsToConsume);
+          consumedUserCount = result.removedCount || 0;
+        }
+      }
+
+      if (anonQueueIds.length > 0) {
+        const anonIdsToConsume = anonQueueIds.filter((id) => {
+          const idKey = String(id);
+          if (!usedSessionQuestionIds.has(idKey)) return false;
+          if (user?.id && userQueueIdSet.has(idKey)) return false;
+          return true;
+        });
+        if (anonIdsToConsume.length > 0) {
+          const result = removeLocalReviewQueueIds(null, anonIdsToConsume);
+          consumedAnonCount = result.removedCount || 0;
+        }
+      }
+
+      if (consumedUserCount > 0 || consumedAnonCount > 0) {
+        devLog(
+          `[REVIEW] consumed local queue ids user=${consumedUserCount} anon=${consumedAnonCount}`
+        );
       }
 
       setSessionQuestions(questionsResult.map(shuffleSessionQuestionChoices));

@@ -11,6 +11,39 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-E1
+
+- Status: `done`
+- Title: Auto-clear consumed local review queue IDs when starting `/review`
+- Goal: Add consume semantics for the local review queue so queued IDs actually used to start a review session are removed while unused queued IDs remain.
+- In scope:
+- Add local review queue remove/consume helper in `src/lib/reviewQueueLocal.js`
+- Update `/review` start flow to consume only queued IDs actually included in the session
+- Prefer consuming from authed user queue and only consume anon fallback IDs when they were actually sourced from anon queue
+- Add a small dev-only debug log for consumption counts
+- Out of scope:
+- UI changes or queue badge/count display
+- QuestionRunner changes
+- Supabase review queue table work
+- Acceptance criteria:
+- Starting `/review` consumes local queued IDs that are actually included in the started session
+- Unused local queued IDs remain in localStorage
+- Authed users consume from `user.id` queue first; anon queue is consumed only for IDs sourced from anon fallback
+- No new UI added; smoke/build continue passing
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: queue 3 misses, start `/review`, confirm local queue shrinks by used IDs and keeps unused IDs
+- Files expected to change:
+- `app/review/page.js`
+- `src/lib/reviewQueueLocal.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal follow-up to Slice D localStorage queue fallback.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester manual verification pending: queue 3 misses, start `/review`, confirm local queue shrinks by used IDs and leaves unused IDs.
+
 ### SLICE-D
 
 - Status: `done`
