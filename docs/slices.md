@@ -11,6 +11,32 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### LANDING-BG-2
+
+- Status: `done`
+- Title: Prevent spa-room background seam on tall landing pages
+- Goal: Stop the global spa-room background from visually restarting on tall pages by ensuring the background image is painted on `body` only (not both `html` and `body`).
+- In scope:
+- Move `--site-bg-overlay` painting to `body` only in base global styles
+- Set `html` to solid fallback background only
+- Preserve existing `html.light body` / `html.dark body` overrides
+- Out of scope:
+- Landing card styling changes
+- Calm background route gating changes
+- Acceptance criteria:
+- Background image is no longer painted on both `html` and `body`
+- Tall landing pages do not show a repeated/seam-like restart
+- Light/dark body overrides continue to apply
+- Required validation/tests:
+- `npm run build`
+- `npm run smoke`
+- Files expected to change:
+- `app/globals.css`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Also adjusted the early `prefers-color-scheme: dark` fallback block so only `body` owns the background image.
+
 ### LANDING-BG-1
 
 - Status: `done`

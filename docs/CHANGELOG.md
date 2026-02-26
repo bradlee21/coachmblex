@@ -5,6 +5,7 @@
 - Restyled the `/` landing page using repo-native CSS (replacing non-functional Tailwind utility classes in a non-Tailwind project) and added explicit `html.light` / `html.dark` landing styles so the root marketing preview respects `next-themes` dark mode while keeping `/app` auth-gate routing unchanged.
 - Light-mode landing surfaces on `/` are now more translucent and the light spa-room overlay gradient is reduced so the global background image is more visible, while dark-mode landing styles remain unchanged.
 - `CalmBackground` now skips its fixed base/blob/noise/watermark layers on `/` (landing route) so the global spa-room body background is actually visible behind landing surfaces; landing root markup also includes a `landing-root` marker class.
+- Fixed a tall-page background seam/restart by moving the global spa-room background image paint to `body` only (instead of both `html` and `body`) while keeping light/dark body overrides intact.
 
 ## 2026-02-23
 - QuestionRunner MCQ choices now shuffle per question instance (stable while on-screen) so repeated questions do not preserve fixed answer positions; grading/hotkeys still map to the shuffled display order via raw-index tracking.
