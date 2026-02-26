@@ -5,6 +5,7 @@ import { useState } from 'react';
 import QuestionRunner from '../_components/QuestionRunner';
 import { shuffleSessionQuestionChoices } from '../_components/questionRunnerLogic.mjs';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
+import { loadLocalReviewQueueIds } from '../../src/lib/reviewQueueLocal';
 import { useAuth } from '../../src/providers/AuthProvider';
 
 function getBestStreak(results) {
@@ -44,7 +45,48 @@ function getFocusCodes(results) {
     .map(([code, count]) => ({ code, count }));
 }
 
-async function selectReviewQuestions(supabase, userId) {
+const REVIEW_QUESTION_FIELDS =
+  'id,concept_id,blueprint_code,prompt,choices,correct_index,explanation,difficulty,question_type';
+
+function mergeQuestionIds(...lists) {
+  const seen = new Set();
+  const merged = [];
+  for (const list of lists) {
+    if (!Array.isArray(list)) continue;
+    for (const value of list) {
+      if (value === null || value === undefined) continue;
+      const key = String(value).trim();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      merged.push(key);
+    }
+  }
+  return merged;
+}
+
+async function selectQuestionsByIds(supabase, questionIds, { limit = 10 } = {}) {
+  const orderedIds = mergeQuestionIds(questionIds).slice(0, limit);
+  if (orderedIds.length === 0) return [];
+
+  const questionsResult = await supabase
+    .from('questions')
+    .select(REVIEW_QUESTION_FIELDS)
+    .in('id', orderedIds);
+
+  if (questionsResult.error) {
+    throw new Error(questionsResult.error.message);
+  }
+
+  const byId = new Map((questionsResult.data || []).map((row) => [String(row.id), row]));
+  return orderedIds.map((id) => byId.get(String(id))).filter(Boolean);
+}
+
+async function selectReviewQuestions(supabase, userId, { preferredQuestionIds = [] } = {}) {
+  const preferredQuestions = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+  if (preferredQuestions.length >= 10) {
+    return preferredQuestions;
+  }
+
   const attemptsResult = await supabase
     .from('attempts')
     .select('question_id,correct,confidence,created_at')
@@ -77,14 +119,12 @@ async function selectReviewQuestions(supabase, userId) {
 
   const targetIds = [...bucketA, ...bucketB, ...bucketC].slice(0, 10);
   if (targetIds.length === 0) {
-    return [];
+    return preferredQuestions;
   }
 
   const targetQuestionsResult = await supabase
     .from('questions')
-    .select(
-      'id,concept_id,blueprint_code,prompt,choices,correct_index,explanation,difficulty,question_type'
-    )
+    .select(REVIEW_QUESTION_FIELDS)
     .in('id', targetIds)
     // TODO: Add reverse support in review once mixed-type runner modes are enabled.
     .eq('question_type', 'mcq');
@@ -96,7 +136,7 @@ async function selectReviewQuestions(supabase, userId) {
   const byId = new Map((targetQuestionsResult.data || []).map((row) => [row.id, row]));
   const orderedTargets = targetIds.map((id) => byId.get(id)).filter(Boolean);
   if (orderedTargets.length === 0) {
-    return [];
+    return preferredQuestions;
   }
 
   const conceptIds = Array.from(
@@ -128,9 +168,17 @@ async function selectReviewQuestions(supabase, userId) {
     alternativesByConcept[row.concept_id].push(row);
   }
 
-  const usedIds = new Set();
   const finalQuestions = [];
+  const preferredQuestionIdsSet = new Set(preferredQuestions.map((item) => String(item.id)));
+  const usedIds = new Set(preferredQuestions.map((item) => item.id));
+
+  for (const preferred of preferredQuestions) {
+    finalQuestions.push(preferred);
+    if (finalQuestions.length >= 10) return finalQuestions;
+  }
+
   for (const target of orderedTargets) {
+    if (preferredQuestionIdsSet.has(String(target.id))) continue;
     let pick = target;
     if (target.concept_id && alternativesByConcept[target.concept_id]) {
       const alternative = alternativesByConcept[target.concept_id].find(
@@ -160,32 +208,53 @@ export default function ReviewPage() {
 
   async function startReview() {
     const supabase = getSupabaseClient();
-    if (!supabase || !user?.id) {
-      setError('Unable to start review: missing auth/session.');
+    if (!supabase) {
+      setError('Unable to start review: Supabase is not configured.');
       return;
     }
+
+    const preferredQuestionIds = mergeQuestionIds(
+      loadLocalReviewQueueIds(user?.id),
+      user?.id ? loadLocalReviewQueueIds(null) : []
+    );
 
     setError('');
     setSummary(null);
     setPhase('loading');
+    try {
+      let questionsResult = [];
+      let profileResult = null;
 
-    const [questionsResult, profileResult] = await Promise.all([
-      selectReviewQuestions(supabase, user.id),
-      supabase.from('profiles').select('coach_mode').eq('id', user.id).maybeSingle(),
-    ]);
+      if (user?.id) {
+        [questionsResult, profileResult] = await Promise.all([
+          selectReviewQuestions(supabase, user.id, { preferredQuestionIds }),
+          supabase.from('profiles').select('coach_mode').eq('id', user.id).maybeSingle(),
+        ]);
+      } else {
+        questionsResult = await selectQuestionsByIds(supabase, preferredQuestionIds, { limit: 10 });
+      }
 
-    if (profileResult.data?.coach_mode) {
-      setCoachMode(profileResult.data.coach_mode);
-    }
+      if (profileResult?.data?.coach_mode) {
+        setCoachMode(profileResult.data.coach_mode);
+      }
 
-    if (questionsResult.length === 0) {
+      if (questionsResult.length === 0) {
+        setSessionQuestions([]);
+        setPhase('empty');
+        return;
+      }
+
+      setSessionQuestions(questionsResult.map(shuffleSessionQuestionChoices));
+      setPhase('running');
+    } catch (startError) {
       setSessionQuestions([]);
-      setPhase('empty');
-      return;
+      setPhase('idle');
+      setError(
+        startError instanceof Error && startError.message
+          ? `Unable to start review: ${startError.message}`
+          : 'Unable to start review.'
+      );
     }
-
-    setSessionQuestions(questionsResult.map(shuffleSessionQuestionChoices));
-    setPhase('running');
   }
 
   function handleComplete(result) {

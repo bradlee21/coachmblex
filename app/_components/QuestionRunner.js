@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getSupabaseClient } from '../../src/lib/supabaseClient';
+import { addLocalReviewQueueIds } from '../../src/lib/reviewQueueLocal';
 import { useAuth } from '../../src/providers/AuthProvider';
 import {
   getChoiceList,
@@ -71,6 +73,8 @@ export default function QuestionRunner({
   const [results, setResults] = useState([]);
   const [status, setStatus] = useState('');
   const [completionSent, setCompletionSent] = useState(false);
+  const [isSendingMissedToReview, setIsSendingMissedToReview] = useState(false);
+  const [sendMissedStatus, setSendMissedStatus] = useState(null);
 
   useEffect(() => {
     mountedRef.current = true;
@@ -83,6 +87,8 @@ export default function QuestionRunner({
     setResults([]);
     setStatus('');
     setCompletionSent(false);
+    setIsSendingMissedToReview(false);
+    setSendMissedStatus(null);
     return () => {
       mountedRef.current = false;
     };
@@ -120,6 +126,14 @@ export default function QuestionRunner({
   const showImmediateFeedback = !isExamMode;
   const showImmediateReveal = !isExamMode;
   const showEndReview = revealPolicy === 'end';
+  const missedResults = useMemo(
+    () =>
+      results.filter(
+        (result) => result?.correct === false && result?.question_id !== null && result?.question_id !== undefined
+      ),
+    [results]
+  );
+  const canSendMissedToReview = showEndReview && missedResults.length > 0;
   const fibFeedback = useMemo(() => {
     return resolveFibFeedbackState({
       questionMode,
@@ -216,6 +230,34 @@ export default function QuestionRunner({
     setSubmitted(false);
   }, [submitted]);
 
+  const sendMissedToReview = useCallback(async () => {
+    if (isSendingMissedToReview || missedResults.length === 0) return;
+    setIsSendingMissedToReview(true);
+    setSendMissedStatus(null);
+
+    try {
+      const missedIds = missedResults.map((result) => result.question_id);
+      const { addedCount } = addLocalReviewQueueIds(user?.id, missedIds);
+      const savedLocallySuffix = user?.id ? '' : ' Saved locally.';
+      setSendMissedStatus({
+        type: 'success',
+        message: `Added ${addedCount} missed question(s) to Review.${savedLocallySuffix}`,
+      });
+    } catch (error) {
+      setSendMissedStatus({
+        type: 'error',
+        message:
+          error instanceof Error && error.message
+            ? `Failed to add missed questions to Review: ${error.message}`
+            : 'Failed to add missed questions to Review.',
+      });
+    } finally {
+      if (mountedRef.current) {
+        setIsSendingMissedToReview(false);
+      }
+    }
+  }, [isSendingMissedToReview, missedResults, user?.id]);
+
   useEffect(() => {
     function onKeyDown(event) {
       if (isTypingTarget(event.target)) return;
@@ -299,6 +341,34 @@ export default function QuestionRunner({
         </p>
         {showEndReview ? (
           <div style={{ marginTop: 16 }}>
+            {canSendMissedToReview ? (
+              <div style={{ marginBottom: 16 }}>
+                <div className="button-row" style={{ alignItems: 'center' }}>
+                  <button
+                    type="button"
+                    onClick={sendMissedToReview}
+                    disabled={isSendingMissedToReview}
+                  >
+                    {isSendingMissedToReview ? 'Sending...' : 'Send missed to Review'}
+                  </button>
+                  {sendMissedStatus?.type === 'success' ? (
+                    <Link className="nav-link" href="/review">
+                      Go to Review
+                    </Link>
+                  ) : null}
+                </div>
+                {sendMissedStatus ? (
+                  <p
+                    className={`status ${
+                      sendMissedStatus.type === 'error' ? 'error' : 'success'
+                    }`}
+                    style={{ marginTop: 8 }}
+                  >
+                    {sendMissedStatus.message}
+                  </p>
+                ) : null}
+              </div>
+            ) : null}
             <h3>Review</h3>
             <div style={{ display: 'grid', gap: 12 }}>
               {results.map((result, reviewIndex) => (

@@ -11,6 +11,41 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D
+
+- Status: `done`
+- Title: Add "Send missed to Review" at exam simulation completion
+- Goal: Add a completion CTA in exam-style `QuestionRunner` runs that saves missed question IDs into a review queue (localStorage fallback) and lets users jump to `/review`.
+- In scope:
+- Add `Send missed to Review` CTA and completion status UX to `QuestionRunner` end screen when `revealPolicy='end'` and misses exist
+- Persist missed question IDs idempotently in localStorage under `coachmblex_review_queue_v1:<userId|anon>`
+- Update `/review` to read the local queue as a fallback/priority source (including anon queue)
+- Keep drill/practice behavior unchanged
+- Out of scope:
+- New Supabase review queue tables/migrations
+- Refactors to review selection heuristics from `attempts`
+- New dependencies
+- Acceptance criteria:
+- Exam completion screen shows `Send missed to Review` only for `revealPolicy='end'` and at least one missed question
+- Clicking CTA disables the button while saving and shows success/error status
+- Success status includes `Saved locally` when auth/session is missing
+- `/review` can start from locally saved missed question IDs (fallback path) and shows those questions
+- Re-clicking CTA does not duplicate queued IDs in localStorage
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: finish a short `/test/run` with at least one miss, click CTA, open `/review`, confirm items appear
+- Files expected to change:
+- `app/_components/QuestionRunner.js`
+- `app/review/page.js`
+- `src/lib/reviewQueueLocal.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Minimal diff implementation uses localStorage queue because no existing review queue persistence table/path was found in repo code.
+- Validation (2026-02-26): `npm run smoke` pass, `npm run build` pass
+- Tester manual verification pending: finish short `/test/run`, click `Send missed to Review`, confirm `/review` shows queued items.
+
 ### SLICE-C
 
 - Status: `done`
