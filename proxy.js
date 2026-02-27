@@ -13,7 +13,7 @@ const REMOVED_ROUTE_PREFIXES = [
   '/anatomy',
 ];
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl;
   const shouldRedirect = REMOVED_ROUTE_PREFIXES.some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)

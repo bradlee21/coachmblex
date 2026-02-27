@@ -11,6 +11,38 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-NEXT16-PROXY-1
+
+- Status: `done`
+- Title: Migrate Next.js 16 deprecated middleware convention to proxy
+- Goal: Remove Next.js 16 deprecation warning by replacing the deprecated `middleware` file convention with `proxy` while preserving runtime behavior.
+- In scope:
+- Rename `middleware.js` to `proxy.js`
+- Rename exported handler from `middleware` to `proxy`
+- Keep route matcher list and redirect behavior identical
+- Update docs (`docs/CHANGELOG.md`, `docs/slices.md`)
+- Run required validations
+- Out of scope:
+- Redirect/routing logic changes
+- Auth/header/runtime refactors
+- Acceptance criteria:
+- Deprecated middleware warning is removed from build output
+- Legacy route redirects to `/today` behave identically
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `middleware.js` (renamed to `proxy.js`)
+- `proxy.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-DOMAIN-INFER-1
 
 - Status: `done`
