@@ -1,0 +1,857 @@
+{
+  "pack_id": "mblex-d6-ethics-v1",
+  "source": "chatgpt-original",
+  "title": "MBLEx D6 Ethics & Boundaries v1",
+  "questions": [
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During intake, a client says they do not want work on their gluteal area. What is the most appropriate response?",
+      "choices": {
+        "A": "Explain it is required for therapeutic results and proceed anyway.",
+        "B": "Respect the preference, document it, and adjust the plan.",
+        "C": "Ask every 5 minutes until they agree.",
+        "D": "End the session because treatment cannot be effective."
+      },
+      "correct_choice": "B",
+      "answer": "Respect the preference, document it, and adjust the plan.",
+      "why": "Clients have the right to refuse any area or technique. Documenting preferences supports consent and continuity of care.",
+      "trap": "A assumes clinical need overrides consent.",
+      "hook": "Consent beats treatment plans."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to diagnose their low back pain. What is the best response?",
+      "choices": {
+        "A": "Provide your best guess and recommend stretches.",
+        "B": "Explain you cannot diagnose and recommend appropriate medical evaluation if needed.",
+        "C": "Avoid answering and change the subject.",
+        "D": "Tell them to look up symptoms online."
+      },
+      "correct_choice": "B",
+      "answer": "Explain you cannot diagnose and recommend appropriate medical evaluation if needed.",
+      "why": "Diagnosis is outside a massage therapist\u2019s scope; referral for diagnosis protects the client and maintains professional boundaries.",
+      "trap": "A crosses scope-of-practice even if well\u2011intended.",
+      "hook": "No diagnose\u2014refer."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client arrives visibly intoxicated for their appointment. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with lighter pressure to keep them comfortable.",
+        "B": "Reschedule and ensure they have a safe way to leave.",
+        "C": "Offer coffee and continue if they agree.",
+        "D": "Only do stretching to reduce liability."
+      },
+      "correct_choice": "B",
+      "answer": "Reschedule and ensure they have a safe way to leave.",
+      "why": "Intoxication compromises consent and increases risk. Rescheduling and ensuring safety is the ethical, professional choice.",
+      "trap": "A ignores impaired consent and safety concerns.",
+      "hook": "Impaired = reschedule."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "While discussing payment, a client asks you to bill for a service you did not provide. What should you do?",
+      "choices": {
+        "A": "Agree if it helps them afford care.",
+        "B": "Decline and explain billing must be accurate.",
+        "C": "Change the service name slightly to help.",
+        "D": "Agree if they pay you extra in cash."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and explain billing must be accurate.",
+      "why": "Accurate billing is an ethical and legal requirement; falsifying records is misconduct.",
+      "trap": "C is still fraudulent even if it feels minor.",
+      "hook": "Billing must match reality."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to share their health information with their spouse. What is the best next step?",
+      "choices": {
+        "A": "Share because the spouse is family.",
+        "B": "Share only with the client\u2019s explicit authorization.",
+        "C": "Share verbally but not in writing.",
+        "D": "Share if the spouse promises confidentiality."
+      },
+      "correct_choice": "B",
+      "answer": "Share only with the client\u2019s explicit authorization.",
+      "why": "Client information is confidential; disclose only with explicit client authorization per policy and applicable rules.",
+      "trap": "A confuses relationship with permission.",
+      "hook": "Permission before disclosure."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client makes repeated sexual jokes during the session. What should you do first?",
+      "choices": {
+        "A": "Ignore it to avoid awkwardness.",
+        "B": "Set a clear boundary and state the behavior must stop to continue.",
+        "C": "Respond with humor to diffuse tension.",
+        "D": "Continue but shorten the session quietly."
+      },
+      "correct_choice": "B",
+      "answer": "Set a clear boundary and state the behavior must stop to continue.",
+      "why": "Clear, immediate boundary-setting protects safety and professionalism. If behavior continues, ending the session is appropriate.",
+      "trap": "A can enable escalation and undermines boundaries.",
+      "hook": "Name it, stop it."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to work under the drape in a way that violates your draping standards. What is the best response?",
+      "choices": {
+        "A": "Comply because the client requested it.",
+        "B": "Explain proper draping and proceed only with clear consent and appropriate draping.",
+        "C": "Proceed only if you avoid skin contact.",
+        "D": "End the session without explanation."
+      },
+      "correct_choice": "B",
+      "answer": "Explain proper draping and proceed only with clear consent and appropriate draping.",
+      "why": "Appropriate draping and explicit consent are essential boundary safeguards; proceed only within professional standards.",
+      "trap": "A follows a request that creates boundary risk.",
+      "hook": "Drape + consent."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client wants to privately pay you to extend a session beyond the clinic schedule. What is the most appropriate response?",
+      "choices": {
+        "A": "Accept if it is cash.",
+        "B": "Decline and follow clinic scheduling and billing policy.",
+        "C": "Accept but keep it secret.",
+        "D": "Accept and skip documentation."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and follow clinic scheduling and billing policy.",
+      "why": "Side arrangements undermine policy, billing integrity, and professionalism.",
+      "trap": "A seems harmless but creates ethical/policy issues.",
+      "hook": "No side deals."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client posts a public review describing their condition and thanks you. You want to reply. What is most appropriate?",
+      "choices": {
+        "A": "Confirm their condition and thank them.",
+        "B": "Thank them in general terms without confirming they are a client or discussing health details.",
+        "C": "Ask them to message you privately with more details.",
+        "D": "Share the review with their full name on your site."
+      },
+      "correct_choice": "B",
+      "answer": "Thank them in general terms without confirming they are a client or discussing health details.",
+      "why": "Even if a client discloses publicly, the therapist should not confirm the client relationship or discuss health details in public.",
+      "trap": "A confirms protected details and the relationship.",
+      "hook": "Reply generic, protect privacy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client declines abdominal work on the intake form. What should the therapist do?",
+      "choices": {
+        "A": "Proceed anyway if it seems indicated.",
+        "B": "Respect the decision and document the preference.",
+        "C": "Ask again later until they agree.",
+        "D": "End the session because abdominal work is required."
+      },
+      "correct_choice": "B",
+      "answer": "Respect the decision and document the preference.",
+      "why": "Informed consent includes the right to refuse any area. Documenting preferences supports ongoing consent.",
+      "trap": "A violates consent even if well\u2011intended.",
+      "hook": "They can say no."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to become friends on social media to discuss appointments. What is the best response?",
+      "choices": {
+        "A": "Accept; it is convenient.",
+        "B": "Decline and offer professional communication channels.",
+        "C": "Accept but do not respond.",
+        "D": "Accept only if they leave a review."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and offer professional communication channels.",
+      "why": "Social media connections can blur boundaries; use professional channels that protect privacy and professionalism.",
+      "trap": "A increases boundary risk and privacy issues.",
+      "hook": "Keep it professional."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client requests you remove a safety item required by facility policy. What is the best response?",
+      "choices": {
+        "A": "Comply if the client insists.",
+        "B": "Follow policy and explain you must comply with requirements.",
+        "C": "Comply only for part of the session.",
+        "D": "Comply if they sign a waiver."
+      },
+      "correct_choice": "B",
+      "answer": "Follow policy and explain you must comply with requirements.",
+      "why": "Professionalism includes adhering to facility safety policies and communicating boundaries clearly.",
+      "trap": "D doesn\u2019t override policy or duty of care.",
+      "hook": "Policy is policy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to share your coworker\u2019s schedule and contact information. What should you do?",
+      "choices": {
+        "A": "Share it to be helpful.",
+        "B": "Direct the client to the front desk or official scheduling channel.",
+        "C": "Give the coworker\u2019s personal phone number only.",
+        "D": "Share it if the client is a regular."
+      },
+      "correct_choice": "B",
+      "answer": "Direct the client to the front desk or official scheduling channel.",
+      "why": "Use official channels and respect colleagues\u2019 privacy; do not disclose personal information without permission.",
+      "trap": "A seems helpful but violates privacy/protocol.",
+      "hook": "Use official channels."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client requests a technique you are not trained to perform. What is the best next step?",
+      "choices": {
+        "A": "Try it carefully since it is similar to what you know.",
+        "B": "Decline, explain your limits, and offer an appropriate alternative or referral.",
+        "C": "Watch a quick tutorial and attempt it.",
+        "D": "Do it only if they sign a waiver."
+      },
+      "correct_choice": "B",
+      "answer": "Decline, explain your limits, and offer an appropriate alternative or referral.",
+      "why": "Ethical practice requires working within training and competence; offer safe alternatives or refer out.",
+      "trap": "D waivers do not replace competence.",
+      "hook": "Stay in your lane."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks for your opinion about another therapist\u2019s skills in the clinic. What is the best response?",
+      "choices": {
+        "A": "Give your honest ranking of therapists.",
+        "B": "Avoid criticizing colleagues; help the client clarify goals and preferences.",
+        "C": "Tell them the other therapist is unqualified.",
+        "D": "Recommend whoever gives referral bonuses."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid criticizing colleagues; help the client clarify goals and preferences.",
+      "why": "Professionalism includes respecting colleagues; guide the client to choose based on their needs without disparagement.",
+      "trap": "A can become gossip and damages trust.",
+      "hook": "No colleague gossip."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client wants you to discuss their session details with their partner waiting outside. The client did not authorize this. What should you do?",
+      "choices": {
+        "A": "Share general findings without details.",
+        "B": "Do not confirm anything; ask the client privately what they want disclosed.",
+        "C": "Share because the partner is concerned.",
+        "D": "Share if the partner promises confidentiality."
+      },
+      "correct_choice": "B",
+      "answer": "Do not confirm anything; ask the client privately what they want disclosed.",
+      "why": "You should not confirm the client relationship or share details without authorization; ask the client what, if anything, may be shared.",
+      "trap": "A still confirms the relationship and may disclose information.",
+      "hook": "No confirm without consent."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to keep a note-free practice because they dislike paperwork. What is most appropriate?",
+      "choices": {
+        "A": "Agree and keep no records at all.",
+        "B": "Explain you document minimally for care and continuity while protecting confidentiality.",
+        "C": "Document every personal detail to protect yourself.",
+        "D": "Refuse to treat clients who dislike documentation."
+      },
+      "correct_choice": "B",
+      "answer": "Explain you document minimally for care and continuity while protecting confidentiality.",
+      "why": "Minimal, relevant documentation supports care and professionalism; reassure the client about confidentiality and relevance.",
+      "trap": "C over-documents and harms trust.",
+      "hook": "Document the essentials."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to guarantee confidentiality in all circumstances. What is the best response?",
+      "choices": {
+        "A": "Agree; confidentiality is absolute.",
+        "B": "Explain confidentiality is maintained except for limited safety/legal exceptions and authorized releases.",
+        "C": "Say confidentiality does not apply to massage therapy.",
+        "D": "Say confidentiality depends on how they pay."
+      },
+      "correct_choice": "B",
+      "answer": "Explain confidentiality is maintained except for limited safety/legal exceptions and authorized releases.",
+      "why": "Confidentiality is standard practice, but exceptions may exist for legal requirements and safety concerns.",
+      "trap": "A is absolute and inaccurate.",
+      "hook": "Confidentiality has limits."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client requests that you ignore their written boundaries 'just this once.' What is the most appropriate response?",
+      "choices": {
+        "A": "Agree if they insist.",
+        "B": "Maintain the boundary, re-confirm consent, and proceed only within agreed limits.",
+        "C": "Proceed but do not document it.",
+        "D": "End the session immediately without discussion."
+      },
+      "correct_choice": "B",
+      "answer": "Maintain the boundary, re-confirm consent, and proceed only within agreed limits.",
+      "why": "Consent and boundaries must be honored consistently; re-confirm consent and proceed only within limits.",
+      "trap": "A prioritizes pressure over professionalism.",
+      "hook": "Boundaries stay boundaries."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client offers you cash to 'skip the intake questions.' What should you do?",
+      "choices": {
+        "A": "Accept; intake is optional.",
+        "B": "Decline and complete required intake/consent before treatment.",
+        "C": "Accept and do a shorter session.",
+        "D": "Proceed and fill the form later from memory."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and complete required intake/consent before treatment.",
+      "why": "Intake supports informed consent and safety; skipping it undermines standard of care.",
+      "trap": "D leads to incomplete/incorrect documentation.",
+      "hook": "No intake, no treatment."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client gives you an expensive gift and says they will be offended if you refuse. What is the most appropriate response?",
+      "choices": {
+        "A": "Accept it to preserve rapport.",
+        "B": "Decline politely, explain professional boundary policies, and suggest a small alternative (card/feedback).",
+        "C": "Accept it but discount the next session to balance it.",
+        "D": "Accept it and record it as payment in their file."
+      },
+      "correct_choice": "B",
+      "answer": "Decline politely, explain professional boundary policies, and suggest a small alternative (card/feedback).",
+      "why": "Large gifts can create pressure and a dual-relationship dynamic. Clear boundaries maintain professionalism while preserving respect.",
+      "trap": "A prioritizes feelings over boundary integrity.",
+      "hook": "Big gifts need boundaries."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks to record video during the session to post online. What is the best next step?",
+      "choices": {
+        "A": "Allow it since the client requested it.",
+        "B": "Follow policy; discuss privacy/professionalism and decline unless your clinic has a compliant process.",
+        "C": "Allow it if your face is not visible.",
+        "D": "Allow it only if they agree not to show the draping."
+      },
+      "correct_choice": "B",
+      "answer": "Follow policy; discuss privacy/professionalism and decline unless your clinic has a compliant process.",
+      "why": "Recording/video introduces privacy and boundary risks; follow policy and only proceed with a clear, compliant process.",
+      "trap": "C still enables privacy violations and misrepresentation.",
+      "hook": "Recording requires policy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client discloses a trauma history and becomes tense when you approach a new area. What is the best next step?",
+      "choices": {
+        "A": "Continue so they become accustomed to touch.",
+        "B": "Pause, check in, re-confirm consent, and offer options (change area/pressure/stop).",
+        "C": "End the session immediately.",
+        "D": "Tell them they must relax for treatment to work."
+      },
+      "correct_choice": "B",
+      "answer": "Pause, check in, re-confirm consent, and offer options (change area/pressure/stop).",
+      "why": "Trauma\u2011informed care prioritizes client control and consent, using check\u2011ins and options to support safety.",
+      "trap": "A can retraumatize and ignores consent signals.",
+      "hook": "Pause and re-consent."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "You realize you accidentally discussed a client\u2019s appointment details within earshot of others. What should you do next?",
+      "choices": {
+        "A": "Do nothing; it was unintentional.",
+        "B": "Follow your privacy incident procedure: inform appropriate leadership, document, and minimize further disclosure.",
+        "C": "Ask the client not to be upset.",
+        "D": "Post an apology about it online."
+      },
+      "correct_choice": "B",
+      "answer": "Follow your privacy incident procedure: inform appropriate leadership, document, and minimize further disclosure.",
+      "why": "Professional response includes following privacy procedures, documenting the incident, and taking steps to prevent recurrence.",
+      "trap": "A ignores accountability and prevention.",
+      "hook": "Own it, follow policy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks for a discount in exchange for leaving a five-star review. What is the most appropriate action?",
+      "choices": {
+        "A": "Agree; marketing is important.",
+        "B": "Decline and keep reviews voluntary without incentives tied to content.",
+        "C": "Offer a discount if they promise honesty.",
+        "D": "Agree but only for returning clients."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and keep reviews voluntary without incentives tied to content.",
+      "why": "Incentivizing specific review outcomes undermines ethics and professionalism; keep marketing honest and voluntary.",
+      "trap": "C still pressures and can bias feedback.",
+      "hook": "No review-for-discount."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks you to text them from your personal number for scheduling. What is most appropriate?",
+      "choices": {
+        "A": "Use your personal number; it is fastest.",
+        "B": "Use approved professional scheduling/communication channels.",
+        "C": "Text from your personal number but delete messages afterward.",
+        "D": "Use personal number only for preferred clients."
+      },
+      "correct_choice": "B",
+      "answer": "Use approved professional scheduling/communication channels.",
+      "why": "Professional channels protect privacy, boundaries, and recordkeeping. Personal numbers blur boundaries.",
+      "trap": "C is still boundary risk and reduces accountability.",
+      "hook": "Keep comms professional."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client repeatedly tries to extend the session by asking 'just one more thing' after time is up. What is the best response?",
+      "choices": {
+        "A": "Keep going until they are satisfied.",
+        "B": "Set a time boundary, end on schedule, and offer to book another appointment.",
+        "C": "End abruptly without explaining.",
+        "D": "Continue if they tip."
+      },
+      "correct_choice": "B",
+      "answer": "Set a time boundary, end on schedule, and offer to book another appointment.",
+      "why": "Time boundaries are part of professional practice. Offer scheduling options without creating financial pressure or resentment.",
+      "trap": "A undermines scheduling fairness and boundaries.",
+      "hook": "End on time; rebook."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks you to provide a letter stating massage will cure their condition for work accommodations. What is the most appropriate action?",
+      "choices": {
+        "A": "Write it to help them.",
+        "B": "Decline to make cure claims; provide only factual information within scope (e.g., sessions attended) if appropriate.",
+        "C": "Write it but include 'not medical advice' as a disclaimer.",
+        "D": "Write it and ask them to fill in the diagnosis."
+      },
+      "correct_choice": "B",
+      "answer": "Decline to make cure claims; provide only factual information within scope (e.g., sessions attended) if appropriate.",
+      "why": "Making medical cure claims is outside scope and unethical. Provide only factual documentation within competence and policy.",
+      "trap": "C still implies unsupported claims.",
+      "hook": "Facts only, no cures."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During intake, a client reveals they are under a court order that restricts contact with a person you know personally. What is the most appropriate action?",
+      "choices": {
+        "A": "Discuss the order details with your friend.",
+        "B": "Maintain confidentiality; manage any conflict of interest through policy and consider referral if needed.",
+        "C": "End the session immediately and tell the client why.",
+        "D": "Proceed and ask the client for legal documents."
+      },
+      "correct_choice": "B",
+      "answer": "Maintain confidentiality; manage any conflict of interest through policy and consider referral if needed.",
+      "why": "Maintain confidentiality and professional boundaries; address conflicts through policy and referral when objectivity may be affected.",
+      "trap": "A violates confidentiality.",
+      "hook": "Confidentiality first."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client wants you to treat them at home and suggests you keep it 'off the books.' What is the best response?",
+      "choices": {
+        "A": "Agree; it is common in wellness work.",
+        "B": "Decline or follow legal/business requirements (documentation, taxes, policy) and maintain professional standards.",
+        "C": "Agree if they pay in cash only.",
+        "D": "Agree but avoid writing any notes."
+      },
+      "correct_choice": "B",
+      "answer": "Decline or follow legal/business requirements (documentation, taxes, policy) and maintain professional standards.",
+      "why": "Off-the-books arrangements create ethical/legal issues and undermine professional practice. Follow legal and policy requirements.",
+      "trap": "C is still unethical/illegal in many contexts.",
+      "hook": "No off-the-books care."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client requests you date them and says they will stop coming if you refuse. What is the most appropriate response?",
+      "choices": {
+        "A": "Agree to keep the client relationship.",
+        "B": "Decline and maintain boundaries; offer referral if continued care is desired without dual relationship.",
+        "C": "Ignore the request and proceed with treatment.",
+        "D": "Continue treating them and discuss dating later."
+      },
+      "correct_choice": "B",
+      "answer": "Decline and maintain boundaries; offer referral if continued care is desired without dual relationship.",
+      "why": "Dating clients creates a dual relationship and boundary violations. Maintain professional limits and consider referral.",
+      "trap": "D keeps the door open and blurs boundaries.",
+      "hook": "No dating clients."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks you to share your intake forms so they can use them for their new business. What should you do?",
+      "choices": {
+        "A": "Share them freely; forms are public.",
+        "B": "Decline unless you have permission to share proprietary materials; provide general guidance instead.",
+        "C": "Share if they promise not to copy them exactly.",
+        "D": "Share only if they credit you online."
+      },
+      "correct_choice": "B",
+      "answer": "Decline unless you have permission to share proprietary materials; provide general guidance instead.",
+      "why": "Professional materials and clinic forms may be proprietary; sharing could violate policy. Provide general guidance rather than documents.",
+      "trap": "A ignores ownership/policy.",
+      "hook": "Don\u2019t share clinic docs."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new symptom mid-session that could indicate a medical red flag. What is the most appropriate action?",
+      "choices": {
+        "A": "Finish the session and mention it at the end.",
+        "B": "Stop, assess safety, and recommend appropriate medical evaluation; document the change.",
+        "C": "Ignore it unless pain is severe.",
+        "D": "Provide a strong technique to 'break up' the issue."
+      },
+      "correct_choice": "B",
+      "answer": "Stop, assess safety, and recommend appropriate medical evaluation; document the change.",
+      "why": "Potential red flags prioritize safety; stop and refer appropriately while documenting the symptom change.",
+      "trap": "A delays action on a safety concern.",
+      "hook": "Red flag = pause and refer."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks to remove all draping because they are 'more comfortable that way.' What is the best response?",
+      "choices": {
+        "A": "Agree if the client insists.",
+        "B": "Follow professional draping standards; explain boundaries and proceed only with proper draping.",
+        "C": "Agree but avoid sensitive areas.",
+        "D": "Agree only if no one else is in the building."
+      },
+      "correct_choice": "B",
+      "answer": "Follow professional draping standards; explain boundaries and proceed only with proper draping.",
+      "why": "Professional draping standards protect client and therapist; proceed only within ethical and policy boundaries.",
+      "trap": "C still violates boundary safeguards.",
+      "hook": "Draping is non-negotiable."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client requests you prescribe supplements to support recovery. What is most appropriate?",
+      "choices": {
+        "A": "Recommend specific supplements and brands.",
+        "B": "Decline to prescribe; suggest they consult a qualified healthcare provider for supplementation guidance.",
+        "C": "Recommend supplements if you disclose you are not a doctor.",
+        "D": "Provide a list of supplements you personally use."
+      },
+      "correct_choice": "B",
+      "answer": "Decline to prescribe; suggest they consult a qualified healthcare provider for supplementation guidance.",
+      "why": "Prescribing supplements is outside scope; referral to qualified providers maintains ethical practice.",
+      "trap": "C disclaimers don\u2019t change scope.",
+      "hook": "No prescribing\u2014refer."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client tells you they are recording audio without asking. What is the best next step?",
+      "choices": {
+        "A": "Continue; it is their right.",
+        "B": "Pause and address it immediately, following clinic policy; obtain consent or stop recording before proceeding.",
+        "C": "Ignore it as long as no video is taken.",
+        "D": "Ask them to send you the recording later."
+      },
+      "correct_choice": "B",
+      "answer": "Pause and address it immediately, following clinic policy; obtain consent or stop recording before proceeding.",
+      "why": "Recording impacts privacy and boundaries; address immediately per policy and proceed only with clear agreement.",
+      "trap": "A ignores professional boundaries.",
+      "hook": "Stop and clarify recording."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client requests a refund and threatens a negative review if you refuse. What is the most appropriate response?",
+      "choices": {
+        "A": "Give a refund to avoid bad publicity.",
+        "B": "Follow refund policy consistently and communicate calmly; document the interaction.",
+        "C": "Argue to convince them you are right.",
+        "D": "Offer a discount only if they remove the threat."
+      },
+      "correct_choice": "B",
+      "answer": "Follow refund policy consistently and communicate calmly; document the interaction.",
+      "why": "Consistency and professionalism require following policy and documenting coercive interactions; avoid negotiating under threats.",
+      "trap": "A rewards coercion and undermines policy.",
+      "hook": "Policy, calm, document."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks for a copy of their records. What is the best response?",
+      "choices": {
+        "A": "Refuse; records belong to the therapist.",
+        "B": "Follow your records policy and provide access appropriately while protecting third-party information.",
+        "C": "Provide records only if they pay extra.",
+        "D": "Provide records only to family members."
+      },
+      "correct_choice": "B",
+      "answer": "Follow your records policy and provide access appropriately while protecting third-party information.",
+      "why": "Clients generally have rights to access their records under policy/law; provide appropriately and securely.",
+      "trap": "A is often incorrect and damages trust.",
+      "hook": "Records access: follow policy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client insists you keep treating despite your feeling that your objectivity is compromised (strong personal connection). What is best?",
+      "choices": {
+        "A": "Proceed; you can stay objective.",
+        "B": "Discuss boundaries and consider referral to avoid dual-relationship risk.",
+        "C": "Treat them only if they agree to not talk personally.",
+        "D": "Continue but avoid documenting the relationship."
+      },
+      "correct_choice": "B",
+      "answer": "Discuss boundaries and consider referral to avoid dual-relationship risk.",
+      "why": "When objectivity or boundaries are at risk, referral is appropriate to protect client welfare and professional ethics.",
+      "trap": "A underestimates dual-relationship risk.",
+      "hook": "If it blurs, refer."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks you to use a technique that causes pain and says pain proves it is working. What is the most appropriate response?",
+      "choices": {
+        "A": "Apply painful pressure to satisfy the client.",
+        "B": "Educate on safe discomfort vs harm; use clinical judgment and avoid causing injury.",
+        "C": "Proceed and document that the client requested pain.",
+        "D": "Refuse all deep pressure work forever."
+      },
+      "correct_choice": "B",
+      "answer": "Educate on safe discomfort vs harm; use clinical judgment and avoid causing injury.",
+      "why": "Client preference doesn\u2019t justify harmful care; educate and apply safe, clinically appropriate pressure within standard of care.",
+      "trap": "C treats documentation as permission to harm.",
+      "hook": "Pain isn\u2019t proof."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client discloses suicidal thoughts and asks you not to tell anyone. What is the most appropriate action?",
+      "choices": {
+        "A": "Promise confidentiality and proceed.",
+        "B": "Explain limits of confidentiality and follow appropriate safety steps and referral resources per policy.",
+        "C": "Ignore it unless they describe a plan.",
+        "D": "Call the client\u2019s employer immediately."
+      },
+      "correct_choice": "B",
+      "answer": "Explain limits of confidentiality and follow appropriate safety steps and referral resources per policy.",
+      "why": "Safety concerns can require action within confidentiality limits. Provide appropriate resources and escalation per policy and applicable requirements.",
+      "trap": "A assumes confidentiality is absolute and ignores safety duties.",
+      "hook": "Safety overrides secrecy."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client asks you to falsify documentation to support an insurance claim. What is the best response?",
+      "choices": {
+        "A": "Agree if they are struggling financially.",
+        "B": "Decline, explain documentation must be truthful, and document the request per policy if necessary.",
+        "C": "Agree but keep notes vague.",
+        "D": "Delete prior notes to avoid involvement."
+      },
+      "correct_choice": "B",
+      "answer": "Decline, explain documentation must be truthful, and document the request per policy if necessary.",
+      "why": "Truthful documentation is an ethical obligation; participation in fraud is misconduct and creates legal risk.",
+      "trap": "C is still fraudulent and unethical.",
+      "hook": "Notes must be true."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "You receive a subpoena requesting a client\u2019s records. What is the most appropriate response?",
+      "choices": {
+        "A": "Immediately send all records.",
+        "B": "Verify validity and scope, follow legal/policy guidance, and disclose only what is required.",
+        "C": "Destroy records to protect confidentiality.",
+        "D": "Refuse under all circumstances."
+      },
+      "correct_choice": "B",
+      "answer": "Verify validity and scope, follow legal/policy guidance, and disclose only what is required.",
+      "why": "Legal requests require careful compliance while minimizing disclosure; follow policy and disclose only what is required.",
+      "trap": "A may over-disclose without verification.",
+      "hook": "Verify then minimum necessary."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client insists you treat an area you believe is medically unsafe today and threatens to file a complaint if you refuse. What is best?",
+      "choices": {
+        "A": "Treat lightly to satisfy them.",
+        "B": "Refuse unsafe treatment, document the interaction, and recommend appropriate medical evaluation.",
+        "C": "Treat if they sign a waiver.",
+        "D": "Argue to prove you are right."
+      },
+      "correct_choice": "B",
+      "answer": "Refuse unsafe treatment, document the interaction, and recommend appropriate medical evaluation.",
+      "why": "Professional duty is safe care; documentation and referral protect client welfare and standards. Waivers don\u2019t make unsafe care ethical.",
+      "trap": "C is a common trap\u2014waivers don\u2019t replace duty of care.",
+      "hook": "Refuse unsafe; document."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client is also your direct supervisor at work and requests special treatment and confidentiality beyond your normal policy. What is most appropriate?",
+      "choices": {
+        "A": "Provide special treatment to maintain your job security.",
+        "B": "Address the dual-relationship risk and offer referral options to maintain professional boundaries.",
+        "C": "Treat them but do not document sessions.",
+        "D": "Treat them only outside business hours."
+      },
+      "correct_choice": "B",
+      "answer": "Address the dual-relationship risk and offer referral options to maintain professional boundaries.",
+      "why": "Dual relationships can impair objectivity and create coercion. Referral may be appropriate to protect boundaries and client welfare.",
+      "trap": "A allows coercion to shape care.",
+      "hook": "Dual roles = consider referral."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A minor arrives with a signed consent form, but the signature appears questionable. What is the best next step?",
+      "choices": {
+        "A": "Proceed; you have a form.",
+        "B": "Pause and verify authorization using your policy before treating (contact guardian/office).",
+        "C": "Proceed but avoid sensitive areas.",
+        "D": "Proceed only if the minor agrees verbally."
+      },
+      "correct_choice": "B",
+      "answer": "Pause and verify authorization using your policy before treating (contact guardian/office).",
+      "why": "Consent must be valid and verifiable. Verify authorization before treatment to ensure legal/ethical compliance.",
+      "trap": "A relies on paperwork without validation.",
+      "hook": "Verify consent authenticity."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client requests you share information with their physician and provides verbal permission only. What should you do?",
+      "choices": {
+        "A": "Share because it helps care coordination.",
+        "B": "Obtain appropriate written authorization per policy before releasing information.",
+        "C": "Share only the diagnosis you suspect.",
+        "D": "Refuse all communication with physicians."
+      },
+      "correct_choice": "B",
+      "answer": "Obtain appropriate written authorization per policy before releasing information.",
+      "why": "Release of client information requires explicit authorization; written consent is standard for documentation and clarity.",
+      "trap": "A may violate privacy rules/policy.",
+      "hook": "Get it in writing."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client offers you equity in their business in exchange for ongoing free sessions. What is the most appropriate response?",
+      "choices": {
+        "A": "Accept; it is a fair trade.",
+        "B": "Decline due to conflict of interest and boundary concerns; keep business relationships separate from care.",
+        "C": "Accept but reduce pressure during sessions.",
+        "D": "Accept only if they sign a contract."
+      },
+      "correct_choice": "B",
+      "answer": "Decline due to conflict of interest and boundary concerns; keep business relationships separate from care.",
+      "why": "Business entanglements create conflicts of interest and dual relationships that can compromise care and professionalism.",
+      "trap": "D doesn\u2019t remove the ethical conflict.",
+      "hook": "No business entanglements."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client makes a reportable allegation about abuse of a vulnerable person but then retracts it and begs you to forget it. What is the best action?",
+      "choices": {
+        "A": "Do nothing since they retracted it.",
+        "B": "Follow your legal/policy obligations for reporting and document appropriately.",
+        "C": "Confront the alleged abuser yourself.",
+        "D": "Post about it anonymously to get advice."
+      },
+      "correct_choice": "B",
+      "answer": "Follow your legal/policy obligations for reporting and document appropriately.",
+      "why": "Mandatory reporting obligations (where applicable) and safety policies require following established reporting procedures, not informal actions.",
+      "trap": "A ignores potential duty to act.",
+      "hook": "Follow reporting procedure."
+    },
+    {
+      "domain_code": "D6",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client\u2019s partner demands access to the client\u2019s records, claiming legal authority, but provides no documentation. What should you do?",
+      "choices": {
+        "A": "Release the records immediately.",
+        "B": "Decline until proper documentation and client authorization are verified; follow policy.",
+        "C": "Provide a verbal summary only.",
+        "D": "Release records if the partner is upset."
+      },
+      "correct_choice": "B",
+      "answer": "Decline until proper documentation and client authorization are verified; follow policy.",
+      "why": "Verify authority and authorization before disclosure; follow policy and minimize disclosure to protect confidentiality.",
+      "trap": "C still discloses without authorization.",
+      "hook": "Verify authority first."
+    }
+  ]
+}
