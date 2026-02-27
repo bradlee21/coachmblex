@@ -11,6 +11,44 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D2-V2-1
+
+- Status: `done`
+- Title: Rebuild D2 as applied massage-relevant kinesiology pack and archive v1
+- Goal: Create an applied D2 v2 pack (`50` MCQ) with stronger massage decision framing, archive D2 v1, and import v2 in strict sanity mode with zero flags/warnings.
+- In scope:
+- Create `src/content/packs/mblex-d2-kinesiology-v2.json`:
+- `pack_id: mblex-d2-kinesiology-v2`
+- `source: codex-generated`
+- title `MBLEx D2 Kinesiology v2 (applied, massage-relevant best-answer)`
+- `meta.visibility: active`, `meta.domain_code: D2`, `meta.domain_label: Kinesiology`, `meta.generated_at`, `meta.replaces: ["mblex-d2-kinesiology-v1"]`
+- `50` MCQ rows (`12 easy / 26 medium / 12 hard`)
+- Archive `src/content/packs/mblex-d2-kinesiology-v1.json` by setting `meta.visibility: "archived"`
+- Run strict import and required validations
+- Update docs (`docs/CHANGELOG.md`, `docs/slices.md`)
+- Out of scope:
+- DB schema changes
+- Non-D2 feature changes
+- Acceptance criteria:
+- v2 strict import reports `Sanity flagged: 0` and `Linter warnings: 0`
+- v1 is archived and v2 is active
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/mblex-d2-kinesiology-v2.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d2-kinesiology-v2.json`
+- `src/content/packs/mblex-d2-kinesiology-v1.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 50`, `Linter warnings: 0`, `Sanity flagged: 0`, `Inserted: 50`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-D2-V1-1
 
 - Status: `done`

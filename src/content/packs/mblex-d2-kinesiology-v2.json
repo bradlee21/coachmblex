@@ -1,0 +1,866 @@
+{
+  "pack_id": "mblex-d2-kinesiology-v2",
+  "source": "codex-generated",
+  "title": "MBLEx D2 Kinesiology v2 (applied, massage-relevant best-answer)",
+  "meta": {
+    "visibility": "active",
+    "domain_code": "D2",
+    "domain_label": "Kinesiology",
+    "generated_at": "2026-02-27T18:03:46.3475867Z",
+    "replaces": [
+      "mblex-d2-kinesiology-v1"
+    ]
+  },
+  "questions": [
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During massage intake, a client shows forward head and upper cervical compression. Which muscle group is most likely short and needs gentle lengthening?",
+      "choices": {
+        "A": "Suboccipitals",
+        "B": "Sternocleidomastoid",
+        "C": "Lower trapezius",
+        "D": "Longus colli"
+      },
+      "correct_choice": "A",
+      "answer": "Suboccipitals",
+      "why": "Forward-head posture often shortens suboccipitals, increasing upper cervical compression during static sitting.",
+      "trap": "SCM may feel tight too, but suboccipitals are the most direct upper-cervical shortness finding.",
+      "hook": "Forward head, short suboccipitals."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During postural observation, rounded shoulders and protracted scapulae are present. Which muscle is most likely short and overactive?",
+      "choices": {
+        "A": "Posterior deltoid",
+        "B": "Pectoralis minor",
+        "C": "Rhomboid major",
+        "D": "Infraspinatus"
+      },
+      "correct_choice": "B",
+      "answer": "Pectoralis minor",
+      "why": "Short pectoralis minor drives scapular anterior tilt and protraction in common desk-posture patterns.",
+      "trap": "Rhomboids are often lengthened under load here, not the primary short driver.",
+      "hook": "Rounded shoulders, think pec minor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a wall push-up screen, the medial scapular border lifts away from the rib cage. Which muscle is most likely underactive?",
+      "choices": {
+        "A": "Rhomboid major",
+        "B": "Levator scapulae",
+        "C": "Serratus anterior",
+        "D": "Latissimus dorsi"
+      },
+      "correct_choice": "C",
+      "answer": "Serratus anterior",
+      "why": "Serratus anterior helps anchor and protract the scapula against the thorax during pushing.",
+      "trap": "Levator scapulae elevates the scapula but does not prevent classic winging.",
+      "hook": "Winging often means serratus lag."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client demonstrates pelvic drop on the swing side during single-leg stance. Which muscle is most likely weak on the stance side?",
+      "choices": {
+        "A": "Adductor longus",
+        "B": "Rectus femoris",
+        "C": "Tibialis posterior",
+        "D": "Gluteus medius"
+      },
+      "correct_choice": "D",
+      "answer": "Gluteus medius",
+      "why": "Stance-side gluteus medius is essential for frontal-plane pelvic control during single-leg loading.",
+      "trap": "Adductors contribute to hip control but are not the primary anti-drop stabilizers.",
+      "hook": "Hip drop points to glute med."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A clear foot slap appears right after heel strike. Which muscle is most likely underperforming eccentrically?",
+      "choices": {
+        "A": "Tibialis anterior",
+        "B": "Gastrocnemius",
+        "C": "Peroneus longus",
+        "D": "Flexor hallucis longus"
+      },
+      "correct_choice": "A",
+      "answer": "Tibialis anterior",
+      "why": "Tibialis anterior controls plantarflexion after contact to lower the forefoot smoothly.",
+      "trap": "Gastrocnemius contributes to push-off, not controlled forefoot lowering after heel strike.",
+      "hook": "Foot slap means dorsiflexor lag."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client elevates the shoulder early during painful overhead reach. Which muscle is most likely overactive in this compensation?",
+      "choices": {
+        "A": "Lower trapezius",
+        "B": "Upper trapezius",
+        "C": "Serratus anterior",
+        "D": "Infraspinatus"
+      },
+      "correct_choice": "B",
+      "answer": "Upper trapezius",
+      "why": "Excessive early shrugging often reflects upper trapezius dominance over coordinated scapular rotation.",
+      "trap": "Lower trapezius usually needs support in this pattern, not downregulation first.",
+      "hook": "Painful shrug implies upper trap."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "In standing, anterior pelvic tilt is paired with lumbar extension bias. Which muscle is commonly short and overactive?",
+      "choices": {
+        "A": "Gluteus maximus",
+        "B": "Hamstring group",
+        "C": "Iliopsoas",
+        "D": "Rectus abdominis"
+      },
+      "correct_choice": "C",
+      "answer": "Iliopsoas",
+      "why": "Iliopsoas shortness commonly contributes to anterior pelvic pull and extension-biased posture.",
+      "trap": "Gluteus maximus is often lengthened or underactive in this presentation.",
+      "hook": "Anterior tilt, check iliopsoas."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During gait loading response, normal pronation is most useful for which purpose?",
+      "choices": {
+        "A": "Rigid arch locking",
+        "B": "Maximal push-off force",
+        "C": "Knee hyperextension control",
+        "D": "Shock absorption and adaptation"
+      },
+      "correct_choice": "D",
+      "answer": "Shock absorption and adaptation",
+      "why": "Early stance pronation helps absorb load and adapt the foot to the surface.",
+      "trap": "Rigid locking is more relevant later in stance near propulsion.",
+      "hook": "Loading pronation absorbs force."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a bodyweight squat, the primary movement plane at the hips and knees is:",
+      "choices": {
+        "A": "Sagittal plane",
+        "B": "Frontal plane",
+        "C": "Transverse plane",
+        "D": "Oblique plane"
+      },
+      "correct_choice": "A",
+      "answer": "Sagittal plane",
+      "why": "Squatting is dominated by flexion and extension, which occur in the sagittal plane.",
+      "trap": "Other planes contribute stability, but they are not the primary movement planes.",
+      "hook": "Squat equals sagittal flexion."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a jumping jack, shoulder and hip abduction-adduction occur primarily in which plane?",
+      "choices": {
+        "A": "Sagittal plane",
+        "B": "Frontal plane",
+        "C": "Transverse plane",
+        "D": "Oblique plane"
+      },
+      "correct_choice": "B",
+      "answer": "Frontal plane",
+      "why": "Abduction and adduction are classically frontal-plane motions around an anterior-posterior axis.",
+      "trap": "Transverse rotation can occur, but it is not the dominant action here.",
+      "hook": "Jacks live in frontal plane."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A driver rotates the trunk to check a blind spot. This action is primarily in which plane?",
+      "choices": {
+        "A": "Sagittal plane",
+        "B": "Frontal plane",
+        "C": "Transverse plane",
+        "D": "Coronal-oblique plane"
+      },
+      "correct_choice": "C",
+      "answer": "Transverse plane",
+      "why": "Axial trunk rotation is a transverse-plane movement used during blind-spot checking.",
+      "trap": "Extension may accompany turning, but rotation remains the primary movement.",
+      "hook": "Turning is transverse rotation."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "For smooth overhead shoulder motion, which muscle pair most supports scapular upward rotation?",
+      "choices": {
+        "A": "Rhomboids and levator scapulae",
+        "B": "Latissimus dorsi and teres major",
+        "C": "Pectoralis major and upper trapezius",
+        "D": "Serratus anterior and lower trapezius"
+      },
+      "correct_choice": "D",
+      "answer": "Serratus anterior and lower trapezius",
+      "why": "Serratus anterior and lower trapezius form a key force-couple for efficient upward rotation.",
+      "trap": "Downward rotator dominance usually limits comfortable overhead range.",
+      "hook": "Serratus plus lower trap."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During massage assessment of neck pain with elevated scapula, which muscle is a high-value palpation target for overactivity?",
+      "choices": {
+        "A": "Levator scapulae",
+        "B": "Lower trapezius",
+        "C": "Serratus anterior",
+        "D": "Biceps brachii"
+      },
+      "correct_choice": "A",
+      "answer": "Levator scapulae",
+      "why": "Levator scapulae often contributes to elevated scapular posture and cervicoscapular tension patterns.",
+      "trap": "Lower trapezius is typically under-recruited in this presentation, not overactive.",
+      "hook": "Elevated scapula, check levator."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A desk worker shows scapular protraction and anterior tilt. Which muscle should usually be prioritized for relaxation or lengthening?",
+      "choices": {
+        "A": "Middle trapezius",
+        "B": "Pectoralis minor",
+        "C": "Rhomboid major",
+        "D": "Posterior deltoid"
+      },
+      "correct_choice": "B",
+      "answer": "Pectoralis minor",
+      "why": "Pectoralis minor shortness strongly drives anterior tilt and protracted scapular resting position.",
+      "trap": "Rhomboids may ache, but often from lengthened overload rather than short dominance.",
+      "hook": "Protraction often starts at pec minor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client cannot hinge without lumbar extension gripping. Which tissue often benefits from downregulating tone before movement cueing?",
+      "choices": {
+        "A": "Transversus abdominis",
+        "B": "Gluteus medius",
+        "C": "Thoracolumbar erector spinae",
+        "D": "Tibialis anterior"
+      },
+      "correct_choice": "C",
+      "answer": "Thoracolumbar erector spinae",
+      "why": "Overactive thoracolumbar extensors can dominate hinge attempts and limit segmental load sharing.",
+      "trap": "Core cueing helps, but persistent extensor gripping often needs direct tone reduction first.",
+      "hook": "Hinge stuck? soften extensors first."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During squat descent, knees collapse inward repeatedly. Which muscle group is most likely underactive proximally?",
+      "choices": {
+        "A": "Quadriceps group",
+        "B": "Hip adductors",
+        "C": "Gastrocnemius-soleus complex",
+        "D": "Hip abductors and external rotators"
+      },
+      "correct_choice": "D",
+      "answer": "Hip abductors and external rotators",
+      "why": "Weak lateral hip control commonly permits dynamic valgus under descending load.",
+      "trap": "Quadriceps contribute knee control, but they do not primarily stop femoral internal collapse.",
+      "hook": "Valgus control starts at hip."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A persistent toe-out gait is paired with limited hip internal rotation. Which structure is most likely short?",
+      "choices": {
+        "A": "Deep lateral hip rotators",
+        "B": "Adductor longus",
+        "C": "Vastus medialis",
+        "D": "Peroneus longus"
+      },
+      "correct_choice": "A",
+      "answer": "Deep lateral hip rotators",
+      "why": "Restricted hip internal rotation with toe-out often reflects short or dominant lateral rotators.",
+      "trap": "Adductor tension can affect gait, but it is less specific to this rotation pattern.",
+      "hook": "Toe-out often means tight rotators."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Nighttime numbness in thumb-index-middle fingers worsens with sustained wrist flexion. Which structure is most relevant?",
+      "choices": {
+        "A": "Cubital tunnel roof",
+        "B": "Carpal tunnel flexor retinaculum region",
+        "C": "Pronator teres tendon",
+        "D": "Radial tunnel septum"
+      },
+      "correct_choice": "B",
+      "answer": "Carpal tunnel flexor retinaculum region",
+      "why": "Median distribution with wrist-flexion provocation strongly points toward carpal tunnel involvement.",
+      "trap": "Cubital tunnel patterns typically emphasize ring and little finger symptoms.",
+      "hook": "Median night symptoms, think carpal tunnel."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Ring and little finger paresthesia appears during long elbow-flexed phone use. Which site is most relevant?",
+      "choices": {
+        "A": "Carpal tunnel at the wrist",
+        "B": "Radial tunnel near supinator",
+        "C": "Cubital tunnel at the elbow",
+        "D": "Thenar eminence fascia"
+      },
+      "correct_choice": "C",
+      "answer": "Cubital tunnel at the elbow",
+      "why": "Ulnar-distribution paresthesia with prolonged elbow flexion fits cubital tunnel irritation best.",
+      "trap": "Carpal tunnel can cause hand numbness but usually in median nerve digits.",
+      "hook": "Elbow flexion plus ulnar digits."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Painful shoulder elevation is paired with scapular anterior tilt at rest. Which short muscle is most likely involved?",
+      "choices": {
+        "A": "Lower trapezius",
+        "B": "Serratus anterior",
+        "C": "Supraspinatus",
+        "D": "Pectoralis minor"
+      },
+      "correct_choice": "D",
+      "answer": "Pectoralis minor",
+      "why": "Pectoralis minor shortness promotes anterior tilt and can reduce comfortable overhead mechanics.",
+      "trap": "Serratus anterior weakness matters, but short pec minor often drives resting tilt bias.",
+      "hook": "Anterior tilt often means pec minor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A resting downwardly rotated scapula limits overhead comfort. Which overactive pair is most likely contributing?",
+      "choices": {
+        "A": "Levator scapulae and rhomboids",
+        "B": "Lower trapezius and serratus anterior",
+        "C": "Middle trapezius and infraspinatus",
+        "D": "Deltoid and supraspinatus"
+      },
+      "correct_choice": "A",
+      "answer": "Levator scapulae and rhomboids",
+      "why": "Downward rotator dominance commonly comes from levator and rhomboid overactivity.",
+      "trap": "Lower trapezius and serratus are usually the underperforming upward rotators in this pattern.",
+      "hook": "Downward bias: levator plus rhomboid."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client stands with knees locked back into hyperextension. Which muscle group often lacks enough supportive control?",
+      "choices": {
+        "A": "Rectus femoris",
+        "B": "Hamstring group",
+        "C": "Peroneal group",
+        "D": "Upper trapezius"
+      },
+      "correct_choice": "B",
+      "answer": "Hamstring group",
+      "why": "Insufficient hamstring control can allow persistent recurvatum and posterior knee loading.",
+      "trap": "Quadriceps dominance may coexist, but hamstring support is a frequent missing element.",
+      "hook": "Locked knees need hamstring control."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During terminal stance, the foot fails to resupinate and stays collapsed medially. Which muscle is commonly underactive?",
+      "choices": {
+        "A": "Peroneus brevis",
+        "B": "Extensor digitorum longus",
+        "C": "Tibialis posterior",
+        "D": "Vastus lateralis"
+      },
+      "correct_choice": "C",
+      "answer": "Tibialis posterior",
+      "why": "Tibialis posterior helps support medial arch and resupination for efficient propulsion.",
+      "trap": "Peroneals can be active laterally, but they do not restore medial arch control alone.",
+      "hook": "No resupination, suspect tib posterior."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Ankle dorsiflexion is limited with knee straight but improves when knee bends. Which muscle is likely short?",
+      "choices": {
+        "A": "Soleus",
+        "B": "Tibialis anterior",
+        "C": "Popliteus",
+        "D": "Gastrocnemius"
+      },
+      "correct_choice": "D",
+      "answer": "Gastrocnemius",
+      "why": "Knee-flexed improvement suggests a two-joint plantarflexor restriction, pointing to gastrocnemius.",
+      "trap": "Soleus tightness limits dorsiflexion in both knee positions more consistently.",
+      "hook": "Knee bent better means gastroc."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Ankle dorsiflexion remains restricted with both knee-bent and knee-straight testing. Which muscle is most likely short?",
+      "choices": {
+        "A": "Soleus",
+        "B": "Gastrocnemius",
+        "C": "Peroneus tertius",
+        "D": "Tibialis posterior"
+      },
+      "correct_choice": "A",
+      "answer": "Soleus",
+      "why": "Persistent restriction across knee positions suggests soleus contribution to dorsiflexion limitation.",
+      "trap": "Gastrocnemius-driven limits typically improve when the knee is flexed.",
+      "hook": "Both positions limited: think soleus."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Posterior thigh tension appears in straight-leg raise, but neural sensitizers are negative. Most likely source?",
+      "choices": {
+        "A": "Sciatic neural mechanosensitivity",
+        "B": "Hamstring extensibility restriction",
+        "C": "Lumbar disc referral",
+        "D": "Vascular claudication"
+      },
+      "correct_choice": "B",
+      "answer": "Hamstring extensibility restriction",
+      "why": "When neural provocation is clear, muscular extensibility limits are the more likely driver.",
+      "trap": "Symptom location alone can overcall nerve involvement without supportive test behavior.",
+      "hook": "Neural clear, think hamstring length."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A thoracic-kyphotic desk client has neck pain during massage. Which region should be broadly relaxed before detailed neck work?",
+      "choices": {
+        "A": "Plantar fascia",
+        "B": "Distal hamstrings",
+        "C": "Anterior chest pectoral region",
+        "D": "Thenar eminence"
+      },
+      "correct_choice": "C",
+      "answer": "Anterior chest pectoral region",
+      "why": "Anterior chest stiffness reinforces protraction and forward-head mechanics that load the neck.",
+      "trap": "Local neck treatment helps symptoms, but missing chest restriction often limits carryover.",
+      "hook": "Open chest to unload neck."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client overuses upper trapezius during arm elevation. Which muscle often needs support after tone-reduction work?",
+      "choices": {
+        "A": "Latissimus dorsi",
+        "B": "Pectoralis major",
+        "C": "Biceps brachii",
+        "D": "Lower trapezius"
+      },
+      "correct_choice": "D",
+      "answer": "Lower trapezius",
+      "why": "Lower trapezius assists balanced scapular rotation and reduces shrug-dominant compensation.",
+      "trap": "Latissimus dominance can further bias downward rotation and worsen elevation quality.",
+      "hook": "Calm upper trap, support lower trap."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Medial scapular border ache appears after long desk sessions with protraction. Which tissue is often lengthened and overloaded?",
+      "choices": {
+        "A": "Rhomboid major",
+        "B": "Pectoralis minor",
+        "C": "Subscapularis",
+        "D": "Deltoid posterior"
+      },
+      "correct_choice": "A",
+      "answer": "Rhomboid major",
+      "why": "Rhomboids can become irritated from prolonged lengthened load during protracted posture.",
+      "trap": "Pectoralis minor is often short here, but not the lengthened medial-border overload tissue.",
+      "hook": "Protraction can overload rhomboids."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During gait, contralateral pelvic drop in mid-stance most strongly indicates deficit in which muscle group?",
+      "choices": {
+        "A": "Swing-side plantarflexors",
+        "B": "Stance-side hip abductors",
+        "C": "Lumbar flexors",
+        "D": "Toe flexors"
+      },
+      "correct_choice": "B",
+      "answer": "Stance-side hip abductors",
+      "why": "Mid-stance pelvic leveling depends heavily on stance-side abductor control.",
+      "trap": "Plantarflexors influence propulsion timing but do not primarily maintain pelvic level.",
+      "hook": "Mid-stance drop means hip abductors."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has early heel rise with compensatory pronation and tight calves. Which mechanical restriction is most central?",
+      "choices": {
+        "A": "Limited knee extension",
+        "B": "Limited shoulder flexion",
+        "C": "Limited ankle dorsiflexion",
+        "D": "Limited wrist extension"
+      },
+      "correct_choice": "C",
+      "answer": "Limited ankle dorsiflexion",
+      "why": "Insufficient dorsiflexion often forces early heel rise and downstream pronation compensation.",
+      "trap": "Knee extension limits can coexist but are less specific to this combined gait pattern.",
+      "hook": "Early rise often means limited dorsiflexion."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A slumped sitting posture shows posterior pelvic tilt and flattened lumbar curve. Which tissue is commonly short?",
+      "choices": {
+        "A": "Hip flexor complex",
+        "B": "Lumbar extensors",
+        "C": "Deep neck flexors",
+        "D": "Hamstring group"
+      },
+      "correct_choice": "D",
+      "answer": "Hamstring group",
+      "why": "Short hamstrings can pull the pelvis posteriorly and flatten lumbar lordosis in sitting.",
+      "trap": "Hip flexors are often lengthened in this specific slumped position pattern.",
+      "hook": "Slump posture often short hamstrings."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During serratus testing in overhead reach, scapular winging persists. Which palpation location is most relevant?",
+      "choices": {
+        "A": "Lateral rib cage serratus slips",
+        "B": "Posterior calf soleus belly",
+        "C": "Distal triceps tendon",
+        "D": "Medial hamstring tendon"
+      },
+      "correct_choice": "A",
+      "answer": "Lateral rib cage serratus slips",
+      "why": "Serratus fibers along the lateral ribs are key for scapular adherence and upward rotation.",
+      "trap": "Posterior shoulder palpation alone misses the primary scapulothoracic driver here.",
+      "hook": "Winging? assess lateral serratus slips."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Lateral hip tenderness with pelvic drop and internal femoral collapse often reflects overload in which compensator?",
+      "choices": {
+        "A": "Vastus medialis",
+        "B": "Tensor fasciae latae",
+        "C": "Soleus",
+        "D": "Adductor magnus"
+      },
+      "correct_choice": "B",
+      "answer": "Tensor fasciae latae",
+      "why": "TFL often overworks when lateral hip stability strategy is inefficient under single-leg demand.",
+      "trap": "Vastus medialis supports patellar tracking but is not the main lateral hip compensator.",
+      "hook": "Drop plus tenderness: often TFL."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Posterior shoulder stiffness limits internal rotation in an overhead pattern. Which palpation target is most relevant?",
+      "choices": {
+        "A": "Rectus abdominis",
+        "B": "Peroneus brevis",
+        "C": "Infraspinatus posterior cuff region",
+        "D": "Gluteus minimus"
+      },
+      "correct_choice": "C",
+      "answer": "Infraspinatus posterior cuff region",
+      "why": "Posterior cuff stiffness, especially infraspinatus, can limit internal rotation quality overhead.",
+      "trap": "Anterior chest release can help posture, but this specific restriction is posterior cuff dominant.",
+      "hook": "IR loss? assess posterior cuff."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During shoulder abduction in midrange, efficient scapulohumeral rhythm is closest to which ratio?",
+      "choices": {
+        "A": "One to one ratio",
+        "B": "Three to one scapular to glenohumeral",
+        "C": "Four to one glenohumeral only",
+        "D": "Two to one glenohumeral to scapular movement"
+      },
+      "correct_choice": "D",
+      "answer": "Two to one glenohumeral to scapular movement",
+      "why": "A roughly 2:1 glenohumeral-to-scapular contribution supports efficient, less-compensated elevation.",
+      "trap": "Exact values vary, but 1:1 is usually not the expected midrange pattern.",
+      "hook": "Midrange rhythm is about two-to-one."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "In early shoulder abduction around the first 30 degrees, which segment usually contributes most movement?",
+      "choices": {
+        "A": "Glenohumeral joint with minimal scapular motion",
+        "B": "Scapulothoracic joint only",
+        "C": "Thoracolumbar spine extension only",
+        "D": "Acromioclavicular joint only"
+      },
+      "correct_choice": "A",
+      "answer": "Glenohumeral joint with minimal scapular motion",
+      "why": "Early abduction is often glenohumeral-dominant before larger scapular rotation contribution begins.",
+      "trap": "Scapular motion matters early, but not usually as the dominant first contributor.",
+      "hook": "Early abduction starts glenohumerally."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During loading response in gait, pronation should usually be interpreted as which finding?",
+      "choices": {
+        "A": "Always pathological and to be eliminated",
+        "B": "A normal load-management mechanism when controlled",
+        "C": "A sign of immediate plantarflexor rupture",
+        "D": "Proof of fixed tibial torsion"
+      },
+      "correct_choice": "B",
+      "answer": "A normal load-management mechanism when controlled",
+      "why": "Controlled pronation is a normal shock-management strategy during early stance loading.",
+      "trap": "Overpronation can matter clinically, but pronation itself is not automatically pathological.",
+      "hook": "Controlled pronation is often normal."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A massage client presents with forward head, rounded shoulders, and painful overhead arc. Which tissue should often be prioritized first to reduce anterior scapular tilt?",
+      "choices": {
+        "A": "Infraspinatus",
+        "B": "Upper trapezius",
+        "C": "Pectoralis minor",
+        "D": "Latissimus dorsi"
+      },
+      "correct_choice": "C",
+      "answer": "Pectoralis minor",
+      "why": "Pectoralis minor frequently drives anterior tilt and protraction that narrow comfortable overhead mechanics.",
+      "trap": "Upper trapezius may be symptomatic, but pec minor shortness often sets the scapular starting fault.",
+      "hook": "Painful arc? start at pec minor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Step-down shows knee valgus plus contralateral pelvic drop. Which proximal deficit most strongly links both findings?",
+      "choices": {
+        "A": "Vastus lateralis overactivity",
+        "B": "Tibialis anterior tightness",
+        "C": "Rectus femoris trigger points",
+        "D": "Stance-side gluteus medius insufficiency"
+      },
+      "correct_choice": "D",
+      "answer": "Stance-side gluteus medius insufficiency",
+      "why": "Gluteus medius deficit can permit pelvic drop and femoral internal collapse simultaneously.",
+      "trap": "Quadriceps influence knee extension, but they do not primarily control this frontal-plane chain.",
+      "hook": "Drop plus valgus: glute med."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "An overhead worker reports hand paresthesia that eases when the arm drops. Which contributor is most relevant for manual downregulation first?",
+      "choices": {
+        "A": "Pectoralis minor and scalene tension pattern",
+        "B": "Soleus adhesions",
+        "C": "Gluteus maximus inhibition",
+        "D": "Peroneal tendon friction"
+      },
+      "correct_choice": "A",
+      "answer": "Pectoralis minor and scalene tension pattern",
+      "why": "Thoracic-outlet style provocation often involves chest and scalene tension with overhead postures.",
+      "trap": "Distal hand symptoms can distract, but proximal outlet mechanics may be the key driver.",
+      "hook": "Overhead numbness, think outlet tension."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Foot pronation with tibial internal rotation and medial knee strain persists in gait. Which muscle is most strategic to assess for underactivity?",
+      "choices": {
+        "A": "Peroneus longus",
+        "B": "Tibialis posterior",
+        "C": "Vastus lateralis",
+        "D": "Semitendinosus"
+      },
+      "correct_choice": "B",
+      "answer": "Tibialis posterior",
+      "why": "Tibialis posterior supports medial arch control and helps resist excessive collapse patterns.",
+      "trap": "Peroneus longus supports foot mechanics too, but is less central for this medial-control deficit.",
+      "hook": "Medial collapse often needs tib posterior."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client leans trunk over the stance leg during painful gait. The main biomechanical effect is:",
+      "choices": {
+        "A": "Increased dorsiflexor demand in swing",
+        "B": "Increased hamstring length in terminal swing",
+        "C": "Reduced demand on stance-side hip abductors",
+        "D": "Reduced elbow flexor demand"
+      },
+      "correct_choice": "C",
+      "answer": "Reduced demand on stance-side hip abductors",
+      "why": "Lateral trunk lean shifts center of mass to reduce hip abductor moment requirements.",
+      "trap": "This can be protective short term, but often indicates unresolved lateral hip control issues.",
+      "hook": "Trunk lean unloads abductors."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Scapular winging persists during pushing, and neck tension spikes during manual work. Which muscle is commonly overworking as a compensator?",
+      "choices": {
+        "A": "Serratus anterior",
+        "B": "Lower trapezius",
+        "C": "Subscapularis",
+        "D": "Upper trapezius"
+      },
+      "correct_choice": "D",
+      "answer": "Upper trapezius",
+      "why": "When serratus control is poor, upper trapezius often compensates and increases cervicoscapular strain.",
+      "trap": "Lower trapezius usually needs support rather than additional inhibition in this scenario.",
+      "hook": "Winging often drives upper-trap compensation."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Asymmetric lumbar side-bend restriction with ipsilateral flank tone suggests hypertonicity in which muscle?",
+      "choices": {
+        "A": "Quadratus lumborum",
+        "B": "Rectus femoris",
+        "C": "Tibialis posterior",
+        "D": "Biceps brachii"
+      },
+      "correct_choice": "A",
+      "answer": "Quadratus lumborum",
+      "why": "Quadratus lumborum strongly influences side-bending asymmetry and flank tension patterns.",
+      "trap": "Lumbar erectors matter, but focal side-bend asymmetry often implicates quadratus first.",
+      "hook": "Side-bend asymmetry often quadratus."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Posterior hip-to-thigh symptoms worsen with prolonged sitting and hip external rotation, while lumbar repeated motions are clear. Most likely source?",
+      "choices": {
+        "A": "Primary discogenic lumbar referral",
+        "B": "Deep gluteal neural irritation pattern",
+        "C": "Primary plantar fascia referral",
+        "D": "Primary deltoid trigger pattern"
+      },
+      "correct_choice": "B",
+      "answer": "Deep gluteal neural irritation pattern",
+      "why": "Hip-position provocation with clear lumbar repeated motion supports a deep gluteal neural interface source.",
+      "trap": "Location alone can mimic lumbar referral, so movement behavior is the decisive clue.",
+      "hook": "Hip-provoked symptoms suggest deep gluteal."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Painful shoulder abduction occurs with resting scapular downward rotation. Which overactive pair should often be softened before motor retraining?",
+      "choices": {
+        "A": "Lower trapezius and serratus anterior",
+        "B": "Middle trapezius and teres minor",
+        "C": "Levator scapulae and rhomboids",
+        "D": "Deltoid and supraspinatus"
+      },
+      "correct_choice": "C",
+      "answer": "Levator scapulae and rhomboids",
+      "why": "Downward-rotation dominance from levator-rhomboid tone can impair efficient upward rotation during elevation.",
+      "trap": "Lower trapezius and serratus are typically the pair to facilitate, not downregulate first.",
+      "hook": "Downward bias: relax levator-rhomboids."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Foot slap with exaggerated high-stepping in swing is most consistent with which primary deficit?",
+      "choices": {
+        "A": "Hip adductor spasm",
+        "B": "Plantarflexor contracture only",
+        "C": "Thoracic extensor weakness",
+        "D": "Dorsiflexor control insufficiency"
+      },
+      "correct_choice": "D",
+      "answer": "Dorsiflexor control insufficiency",
+      "why": "High stepping often compensates for weak dorsiflexion needed to clear toes during swing.",
+      "trap": "Plantarflexor stiffness can contribute, but this pattern points first to dorsiflexor control.",
+      "hook": "High step plus slap = dorsiflexor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Anterior pelvic tilt and rib flare increase lumbar compression sensitivity during prone work. Which tissue group should often be downregulated first?",
+      "choices": {
+        "A": "Hip flexor complex",
+        "B": "Hamstring group",
+        "C": "Middle trapezius",
+        "D": "Peroneal group"
+      },
+      "correct_choice": "A",
+      "answer": "Hip flexor complex",
+      "why": "Short or dominant hip flexors can reinforce anterior pelvic pull and extension bias.",
+      "trap": "Hamstrings may feel tight, but they are less likely to drive this anterior tilt profile.",
+      "hook": "Rib flare plus tilt: calm hip flexors."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "If shoulder elevation shows excessive early scapular elevation with limited posterior tilt, which muscle is commonly dominant?",
+      "choices": {
+        "A": "Lower trapezius",
+        "B": "Upper trapezius",
+        "C": "Serratus anterior",
+        "D": "Subscapularis"
+      },
+      "correct_choice": "B",
+      "answer": "Upper trapezius",
+      "why": "Early shrug-dominant elevation commonly reflects upper trapezius dominance over coordinated upward rotation.",
+      "trap": "Serratus weakness may coexist, but early elevation dominance itself signals upper-trap overdrive.",
+      "hook": "Early shrug usually upper trap."
+    }
+  ]
+}
