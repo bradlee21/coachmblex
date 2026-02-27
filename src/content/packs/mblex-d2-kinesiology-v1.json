@@ -1,0 +1,1711 @@
+{
+  "pack_id": "mblex-d2-kinesiology-v1",
+  "source": "chatgpt-original",
+  "title": "MBLEx D2 Kinesiology v1",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T01:17:30.401407Z"
+  },
+  "questions": [
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "At a concave-on-convex joint, how does glide relate to roll?",
+      "choices": {
+        "A": "Glide occurs in the same direction as roll.",
+        "B": "Glide occurs opposite the direction of roll.",
+        "C": "Glide occurs opposite the direction of roll.",
+        "D": "Large voluntary motion created by muscles."
+      },
+      "correct_choice": "B",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Large voluntary motion created by muscles. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "To strengthen shoulder external rotators, which movement is most appropriate?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Horizontal adduction of the shoulder.",
+        "C": "External rotation at the shoulder.",
+        "D": "Choose the opposite action to stretch and the same action to strengthen."
+      },
+      "correct_choice": "C",
+      "answer": "External rotation at the shoulder.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Horizontal adduction of the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is the prime mover for elbow flexion in most positions?",
+      "choices": {
+        "A": "Adductor longus.",
+        "B": "Deltoid (middle fibers).",
+        "C": "Triceps brachii.",
+        "D": "Latissimus dorsi."
+      },
+      "correct_choice": "B",
+      "answer": "Deltoid (middle fibers).",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Adductor longus. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle acts as a synergist to shoulder external rotation?",
+      "choices": {
+        "A": "Triceps brachii.",
+        "B": "Subscapularis.",
+        "C": "Biceps brachii.",
+        "D": "Wrist extensors."
+      },
+      "correct_choice": "A",
+      "answer": "Triceps brachii.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Subscapularis. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which muscle group helps stabilize the pelvis during standing?",
+      "choices": {
+        "A": "Serratus anterior.",
+        "B": "Superficial back extensors only.",
+        "C": "Several muscles stabilize, but deep stabilizers often provide primary endurance support.",
+        "D": "Upper trapezius only."
+      },
+      "correct_choice": "A",
+      "answer": "Serratus anterior.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Several muscles stabilize, but deep stabilizers often provide primary endurance support. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle group is most active to prevent pelvis drop during single-leg stance?",
+      "choices": {
+        "A": "Swing phase.",
+        "B": "Scapular upward rotation with posterior tilt.",
+        "C": "Hip extension.",
+        "D": "Scapular downward rotation with anterior tilt."
+      },
+      "correct_choice": "B",
+      "answer": "Scapular upward rotation with posterior tilt.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Swing phase. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To lengthen a tight hip flexor group, which movement is most appropriate to emphasize?",
+      "choices": {
+        "A": "Horizontal abduction of the shoulder.",
+        "B": "Hip flexion.",
+        "C": "Horizontal adduction of the shoulder.",
+        "D": "Plantarflexion."
+      },
+      "correct_choice": "A",
+      "answer": "Horizontal abduction of the shoulder.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which movement occurs at the forearm when the palm turns upward?",
+      "choices": {
+        "A": "Inversion of the foot.",
+        "B": "Extension at the shoulder.",
+        "C": "Eversion of the foot.",
+        "D": "Movement toward the midline."
+      },
+      "correct_choice": "A",
+      "answer": "Inversion of the foot.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Movement toward the midline. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle group helps stabilize the pelvis during standing?",
+      "choices": {
+        "A": "Knee flexors only.",
+        "B": "Superficial back extensors only.",
+        "C": "Deep neck flexors.",
+        "D": "Rhomboids only."
+      },
+      "correct_choice": "C",
+      "answer": "Deep neck flexors.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Rhomboids only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which statement best describes joint play?",
+      "choices": {
+        "A": "Glide occurs in the same direction as roll.",
+        "B": "It makes muscles stronger around the joint.",
+        "C": "It helps maintain joint mechanics and reduces pinching.",
+        "D": "Large voluntary motion created by muscles."
+      },
+      "correct_choice": "C",
+      "answer": "It helps maintain joint mechanics and reduces pinching.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Glide occurs in the same direction as roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "If the insertion is fixed and the origin moves, what is this described as?",
+      "choices": {
+        "A": "The proximal segment is fixed.",
+        "B": "Closed-chain action.",
+        "C": "The proximal segment is moving.",
+        "D": "The distal segment is fixed."
+      },
+      "correct_choice": "D",
+      "answer": "The distal segment is fixed.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "The proximal segment is fixed. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which lever class best describes elbow flexion with the biceps?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Third-class lever.",
+        "C": "First-class lever.",
+        "D": "Second-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Third-class lever.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Second-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which class of lever is most common in the human body during movement?",
+      "choices": {
+        "A": "Decreasing the moment arm (distance) of the load.",
+        "B": "Third-class lever.",
+        "C": "Increasing the moment arm (distance) of the load.",
+        "D": "Second-class lever."
+      },
+      "correct_choice": "C",
+      "answer": "Increasing the moment arm (distance) of the load.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Third-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which joint action occurs primarily in the sagittal plane at the shoulder?",
+      "choices": {
+        "A": "Flexion at the shoulder.",
+        "B": "Eversion of the foot.",
+        "C": "Movement toward the midline.",
+        "D": "Extension at the shoulder."
+      },
+      "correct_choice": "A",
+      "answer": "Flexion at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Movement toward the midline. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "At a concave-on-convex joint, how does glide relate to roll?",
+      "choices": {
+        "A": "Large voluntary motion created by muscles.",
+        "B": "Glide occurs opposite the direction of roll.",
+        "C": "Roll/glide rules depend on concave/convex surfaces and help preserve joint space.",
+        "D": "Glide occurs in the same direction as roll."
+      },
+      "correct_choice": "B",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Glide occurs in the same direction as roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "In closed-chain movement, which end of the segment is typically fixed?",
+      "choices": {
+        "A": "Closed-chain action.",
+        "B": "The proximal segment is moving.",
+        "C": "Closed-chain action.",
+        "D": "Open-chain action."
+      },
+      "correct_choice": "A",
+      "answer": "Closed-chain action.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Closed-chain action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "To stretch the pectoralis major, which joint action is most appropriate?",
+      "choices": {
+        "A": "Choose the opposite action to stretch and the same action to strengthen.",
+        "B": "Hip flexion.",
+        "C": "Internal rotation at the shoulder.",
+        "D": "Dorsiflexion."
+      },
+      "correct_choice": "D",
+      "answer": "Dorsiflexion.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Hip flexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which stabilizer is most associated with maintaining cervical posture against forward head position?",
+      "choices": {
+        "A": "Knee flexors only.",
+        "B": "Superficial back extensors only.",
+        "C": "Upper trapezius only.",
+        "D": "Serratus anterior."
+      },
+      "correct_choice": "D",
+      "answer": "Serratus anterior.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Upper trapezius only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is a prime mover for hip abduction?",
+      "choices": {
+        "A": "Hamstrings.",
+        "B": "Triceps brachii.",
+        "C": "Latissimus dorsi.",
+        "D": "Gluteus medius."
+      },
+      "correct_choice": "D",
+      "answer": "Gluteus medius.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Triceps brachii. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At a concave-on-convex joint, how does glide relate to roll?",
+      "choices": {
+        "A": "It makes muscles stronger around the joint.",
+        "B": "Glide occurs opposite the direction of roll.",
+        "C": "Large voluntary motion created by muscles.",
+        "D": "Glide occurs opposite the direction of roll."
+      },
+      "correct_choice": "B",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "It makes muscles stronger around the joint. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which movement best describes hip abduction?",
+      "choices": {
+        "A": "Extension at the shoulder.",
+        "B": "Pronation of the forearm.",
+        "C": "Inversion of the foot.",
+        "D": "Movement toward the midline."
+      },
+      "correct_choice": "C",
+      "answer": "Inversion of the foot.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Pronation of the forearm. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle commonly assists the gluteus medius during hip abduction?",
+      "choices": {
+        "A": "Wrist extensors.",
+        "B": "Biceps brachii.",
+        "C": "Adductor magnus.",
+        "D": "Wrist flexors."
+      },
+      "correct_choice": "D",
+      "answer": "Wrist flexors.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Wrist extensors. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is an antagonist to wrist extension?",
+      "choices": {
+        "A": "Tensor fasciae latae.",
+        "B": "Adductor magnus.",
+        "C": "Subscapularis.",
+        "D": "Biceps brachii."
+      },
+      "correct_choice": "A",
+      "answer": "Tensor fasciae latae.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Adductor magnus. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle commonly assists the gluteus medius during hip abduction?",
+      "choices": {
+        "A": "Tensor fasciae latae.",
+        "B": "Biceps brachii.",
+        "C": "Adductor magnus.",
+        "D": "Subscapularis."
+      },
+      "correct_choice": "A",
+      "answer": "Tensor fasciae latae.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Subscapularis. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Hip flexion.",
+        "B": "Internal rotation at the shoulder.",
+        "C": "Plantarflexion.",
+        "D": "Dorsiflexion."
+      },
+      "correct_choice": "D",
+      "answer": "Dorsiflexion.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Internal rotation at the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Internal rotation at the shoulder.",
+        "B": "Plantarflexion.",
+        "C": "Dorsiflexion.",
+        "D": "Choose the opposite action to stretch and the same action to strengthen."
+      },
+      "correct_choice": "C",
+      "answer": "Dorsiflexion.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "To stretch the pectoralis major, which joint action is most appropriate?",
+      "choices": {
+        "A": "External rotation at the shoulder.",
+        "B": "Horizontal adduction of the shoulder.",
+        "C": "Choose the opposite action to stretch and the same action to strengthen.",
+        "D": "Plantarflexion."
+      },
+      "correct_choice": "A",
+      "answer": "External rotation at the shoulder.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Horizontal adduction of the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which stabilizer is most associated with maintaining cervical posture against forward head position?",
+      "choices": {
+        "A": "Superficial back extensors only.",
+        "B": "Upper trapezius only.",
+        "C": "Rhomboids only.",
+        "D": "Deep abdominal stabilizers (e.g., transversus abdominis)."
+      },
+      "correct_choice": "D",
+      "answer": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Rhomboids only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At a convex-on-concave joint, which direction does the glide occur relative to bone roll?",
+      "choices": {
+        "A": "Large voluntary motion created by muscles.",
+        "B": "Glide occurs opposite the direction of roll.",
+        "C": "Glide occurs in the same direction as roll.",
+        "D": "It makes muscles stronger around the joint."
+      },
+      "correct_choice": "B",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "It makes muscles stronger around the joint. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which stabilizer is most associated with maintaining cervical posture against forward head position?",
+      "choices": {
+        "A": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+        "B": "Superficial back extensors only.",
+        "C": "Rhomboids only.",
+        "D": "Knee flexors only."
+      },
+      "correct_choice": "A",
+      "answer": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Rhomboids only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "In closed-chain movement, which end of the segment is typically fixed?",
+      "choices": {
+        "A": "The proximal segment is moving.",
+        "B": "Closed-chain action.",
+        "C": "The distal segment is fixed.",
+        "D": "Open-chain action."
+      },
+      "correct_choice": "C",
+      "answer": "The distal segment is fixed.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "The proximal segment is moving. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which pattern best describes scapular upward rotation during overhead reach?",
+      "choices": {
+        "A": "Hip extension.",
+        "B": "Scapular upward rotation with posterior tilt.",
+        "C": "Swing phase.",
+        "D": "Knee extensors (quadriceps)."
+      },
+      "correct_choice": "B",
+      "answer": "Scapular upward rotation with posterior tilt.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hip extension. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which lever class best describes elbow flexion with the biceps?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Third-class lever.",
+        "C": "Decreasing the moment arm (distance) of the load.",
+        "D": "Second-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Third-class lever.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Decreasing the moment arm (distance) of the load. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To strengthen shoulder external rotators, which movement is most appropriate?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Horizontal adduction of the shoulder.",
+        "C": "External rotation at the shoulder.",
+        "D": "Internal rotation at the shoulder."
+      },
+      "correct_choice": "C",
+      "answer": "External rotation at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Internal rotation at the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "When the origin is fixed, what is this type of contraction action called?",
+      "choices": {
+        "A": "Closed-chain action.",
+        "B": "Open-chain action.",
+        "C": "The proximal segment is moving.",
+        "D": "Closed-chain action."
+      },
+      "correct_choice": "A",
+      "answer": "Closed-chain action.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Closed-chain action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At a convex-on-concave joint, which direction does the glide occur relative to bone roll?",
+      "choices": {
+        "A": "It helps maintain joint mechanics and reduces pinching.",
+        "B": "Large voluntary motion created by muscles.",
+        "C": "Glide occurs in the same direction as roll.",
+        "D": "Glide occurs opposite the direction of roll."
+      },
+      "correct_choice": "A",
+      "answer": "It helps maintain joint mechanics and reduces pinching.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Large voluntary motion created by muscles. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is the prime mover for elbow flexion in most positions?",
+      "choices": {
+        "A": "Adductor longus.",
+        "B": "Triceps brachii.",
+        "C": "Latissimus dorsi.",
+        "D": "Gluteus medius."
+      },
+      "correct_choice": "D",
+      "answer": "Gluteus medius.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Triceps brachii. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Hip flexion.",
+        "C": "Horizontal adduction of the shoulder.",
+        "D": "External rotation at the shoulder."
+      },
+      "correct_choice": "D",
+      "answer": "External rotation at the shoulder.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Internal rotation at the shoulder.",
+        "B": "Hip flexion.",
+        "C": "Dorsiflexion.",
+        "D": "Horizontal adduction of the shoulder."
+      },
+      "correct_choice": "C",
+      "answer": "Dorsiflexion.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hip flexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which class of lever is most common in the human body during movement?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Second-class lever.",
+        "C": "Third-class lever.",
+        "D": "Decreasing the moment arm (distance) of the load."
+      },
+      "correct_choice": "A",
+      "answer": "Third-class lever.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Second-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At a convex-on-concave joint, which direction does the glide occur relative to bone roll?",
+      "choices": {
+        "A": "Glide occurs opposite the direction of roll.",
+        "B": "Glide occurs in the same direction as roll.",
+        "C": "Glide occurs opposite the direction of roll.",
+        "D": "Large voluntary motion created by muscles."
+      },
+      "correct_choice": "A",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Glide occurs in the same direction as roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Internal rotation at the shoulder.",
+        "C": "External rotation at the shoulder.",
+        "D": "Hip flexion."
+      },
+      "correct_choice": "C",
+      "answer": "External rotation at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which statement best describes joint play?",
+      "choices": {
+        "A": "Glide occurs opposite the direction of roll.",
+        "B": "It makes muscles stronger around the joint.",
+        "C": "Small, accessory motion available within the joint.",
+        "D": "Large voluntary motion created by muscles."
+      },
+      "correct_choice": "C",
+      "answer": "Small, accessory motion available within the joint.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Glide occurs opposite the direction of roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which pattern best describes scapular upward rotation during overhead reach?",
+      "choices": {
+        "A": "Hip abductors (especially gluteus medius).",
+        "B": "Swing phase.",
+        "C": "Hip extension.",
+        "D": "Knee extensors (quadriceps)."
+      },
+      "correct_choice": "A",
+      "answer": "Hip abductors (especially gluteus medius).",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Swing phase. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which movement occurs at the forearm when the palm turns upward?",
+      "choices": {
+        "A": "Extension at the shoulder.",
+        "B": "Flexion at the shoulder.",
+        "C": "Movement toward the midline.",
+        "D": "Eversion of the foot."
+      },
+      "correct_choice": "B",
+      "answer": "Flexion at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Extension at the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is an antagonist to wrist extension?",
+      "choices": {
+        "A": "Wrist extensors.",
+        "B": "Biceps brachii.",
+        "C": "Adductor magnus.",
+        "D": "Tensor fasciae latae."
+      },
+      "correct_choice": "D",
+      "answer": "Tensor fasciae latae.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Biceps brachii. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which lever class best describes plantarflexion when rising onto the toes?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Decreasing the moment arm (distance) of the load.",
+        "C": "Second-class lever.",
+        "D": "First-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Third-class lever.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "First-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "If the insertion is fixed and the origin moves, what is this described as?",
+      "choices": {
+        "A": "Open-chain action.",
+        "B": "The proximal segment is moving.",
+        "C": "The description depends on which end is fixed and whether the distal segment moves freely.",
+        "D": "Open-chain action."
+      },
+      "correct_choice": "A",
+      "answer": "Open-chain action.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "The proximal segment is moving. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle group primarily stabilizes the trunk to resist excessive lumbar extension?",
+      "choices": {
+        "A": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+        "B": "Knee flexors only.",
+        "C": "Superficial back extensors only.",
+        "D": "Upper trapezius only."
+      },
+      "correct_choice": "A",
+      "answer": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Knee flexors only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To strengthen ankle dorsiflexors, which movement is most appropriate?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Hip extension.",
+        "C": "Hip flexion.",
+        "D": "Internal rotation at the shoulder."
+      },
+      "correct_choice": "B",
+      "answer": "Hip extension.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which concept best explains why joint glide matters for comfortable range of motion?",
+      "choices": {
+        "A": "It makes muscles stronger around the joint.",
+        "B": "It helps maintain joint mechanics and reduces pinching.",
+        "C": "Glide occurs in the same direction as roll.",
+        "D": "Glide occurs opposite the direction of roll."
+      },
+      "correct_choice": "B",
+      "answer": "It helps maintain joint mechanics and reduces pinching.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Glide occurs in the same direction as roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which action is most associated with the ankle moving the sole medially?",
+      "choices": {
+        "A": "Eversion of the foot.",
+        "B": "Movement toward the midline.",
+        "C": "Movement of the limb away from the midline.",
+        "D": "Pronation of the forearm."
+      },
+      "correct_choice": "C",
+      "answer": "Movement of the limb away from the midline.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Eversion of the foot. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which action is most associated with the ankle moving the sole medially?",
+      "choices": {
+        "A": "Pronation of the forearm.",
+        "B": "Movement of the limb away from the midline.",
+        "C": "Eversion of the foot.",
+        "D": "Extension at the shoulder."
+      },
+      "correct_choice": "B",
+      "answer": "Movement of the limb away from the midline.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Extension at the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which muscle group helps stabilize the pelvis during standing?",
+      "choices": {
+        "A": "Deep neck flexors.",
+        "B": "Superficial back extensors only.",
+        "C": "Several muscles stabilize, but deep stabilizers often provide primary endurance support.",
+        "D": "Rhomboids only."
+      },
+      "correct_choice": "A",
+      "answer": "Deep neck flexors.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Several muscles stabilize, but deep stabilizers often provide primary endurance support. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is a primary mover for shoulder abduction (first 15–90 degrees)?",
+      "choices": {
+        "A": "Adductor longus.",
+        "B": "Latissimus dorsi.",
+        "C": "Gluteus medius.",
+        "D": "Hamstrings."
+      },
+      "correct_choice": "C",
+      "answer": "Gluteus medius.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Hamstrings. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which movement occurs at the forearm when the palm turns upward?",
+      "choices": {
+        "A": "Extension at the shoulder.",
+        "B": "Eversion of the foot.",
+        "C": "Flexion at the shoulder.",
+        "D": "Pronation of the forearm."
+      },
+      "correct_choice": "C",
+      "answer": "Flexion at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Pronation of the forearm. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle acts as a synergist to shoulder external rotation?",
+      "choices": {
+        "A": "Adductor magnus.",
+        "B": "Subscapularis.",
+        "C": "Infraspinatus.",
+        "D": "Biceps brachii."
+      },
+      "correct_choice": "C",
+      "answer": "Infraspinatus.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Subscapularis. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is a prime mover for knee extension?",
+      "choices": {
+        "A": "Adductor longus.",
+        "B": "Latissimus dorsi.",
+        "C": "Hamstrings.",
+        "D": "Deltoid (middle fibers)."
+      },
+      "correct_choice": "D",
+      "answer": "Deltoid (middle fibers).",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hamstrings. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which muscle is a prime mover for hip abduction?",
+      "choices": {
+        "A": "Gluteus medius.",
+        "B": "Several muscles assist, but the prime mover is the primary contributor for that action.",
+        "C": "Adductor longus.",
+        "D": "Hamstrings."
+      },
+      "correct_choice": "A",
+      "answer": "Gluteus medius.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Several muscles assist, but the prime mover is the primary contributor for that action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which phase of gait includes heel strike and weight acceptance?",
+      "choices": {
+        "A": "Hip extension.",
+        "B": "Scapular downward rotation with anterior tilt.",
+        "C": "Scapular upward rotation with posterior tilt.",
+        "D": "Knee extensors (quadriceps)."
+      },
+      "correct_choice": "C",
+      "answer": "Scapular upward rotation with posterior tilt.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Scapular downward rotation with anterior tilt. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is commonly involved in scapular stabilization during arm elevation?",
+      "choices": {
+        "A": "Upper trapezius only.",
+        "B": "Deep neck flexors.",
+        "C": "Superficial back extensors only.",
+        "D": "Rhomboids only."
+      },
+      "correct_choice": "B",
+      "answer": "Deep neck flexors.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Upper trapezius only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which stabilizer is most associated with maintaining cervical posture against forward head position?",
+      "choices": {
+        "A": "Several muscles stabilize, but deep stabilizers often provide primary endurance support.",
+        "B": "Rhomboids only.",
+        "C": "Hip abductors and external rotators.",
+        "D": "Upper trapezius only."
+      },
+      "correct_choice": "C",
+      "answer": "Hip abductors and external rotators.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Several muscles stabilize, but deep stabilizers often provide primary endurance support. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which movement best describes hip abduction?",
+      "choices": {
+        "A": "Movement may look similar, but the correct term depends on direction relative to midline and plane.",
+        "B": "Extension at the shoulder.",
+        "C": "Supination of the forearm.",
+        "D": "Pronation of the forearm."
+      },
+      "correct_choice": "C",
+      "answer": "Supination of the forearm.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Pronation of the forearm. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To lengthen a tight hip flexor group, which movement is most appropriate to emphasize?",
+      "choices": {
+        "A": "Plantarflexion.",
+        "B": "Hip flexion.",
+        "C": "Horizontal adduction of the shoulder.",
+        "D": "External rotation at the shoulder."
+      },
+      "correct_choice": "D",
+      "answer": "External rotation at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Horizontal adduction of the shoulder. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which class of lever is most common in the human body during movement?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Decreasing the moment arm (distance) of the load.",
+        "C": "Third-class lever.",
+        "D": "First-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Third-class lever.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Third-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which lever class best describes plantarflexion when rising onto the toes?",
+      "choices": {
+        "A": "Second-class lever.",
+        "B": "Decreasing the moment arm (distance) of the load.",
+        "C": "Third-class lever.",
+        "D": "First-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Second-class lever.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Decreasing the moment arm (distance) of the load. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To stretch the pectoralis major, which joint action is most appropriate?",
+      "choices": {
+        "A": "Internal rotation at the shoulder.",
+        "B": "Hip flexion.",
+        "C": "Plantarflexion.",
+        "D": "Dorsiflexion."
+      },
+      "correct_choice": "D",
+      "answer": "Dorsiflexion.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hip flexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which lever class best describes plantarflexion when rising onto the toes?",
+      "choices": {
+        "A": "Third-class lever.",
+        "B": "Second-class lever.",
+        "C": "Lever class depends on the relative position of fulcrum, load, and effort.",
+        "D": "Decreasing the moment arm (distance) of the load."
+      },
+      "correct_choice": "B",
+      "answer": "Second-class lever.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Third-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which lever class best describes plantarflexion when rising onto the toes?",
+      "choices": {
+        "A": "Second-class lever.",
+        "B": "Lever class depends on the relative position of fulcrum, load, and effort.",
+        "C": "Second-class lever.",
+        "D": "Third-class lever."
+      },
+      "correct_choice": "A",
+      "answer": "Second-class lever.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Second-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "When the origin is fixed, what is this type of contraction action called?",
+      "choices": {
+        "A": "Open-chain action.",
+        "B": "Open-chain action.",
+        "C": "Closed-chain action.",
+        "D": "The proximal segment is fixed."
+      },
+      "correct_choice": "A",
+      "answer": "Open-chain action.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Closed-chain action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is a primary mover for shoulder abduction (first 15–90 degrees)?",
+      "choices": {
+        "A": "Hamstrings.",
+        "B": "Triceps brachii.",
+        "C": "Deltoid (middle fibers).",
+        "D": "Latissimus dorsi."
+      },
+      "correct_choice": "C",
+      "answer": "Deltoid (middle fibers).",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Triceps brachii. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle is an antagonist to wrist extension?",
+      "choices": {
+        "A": "Tensor fasciae latae.",
+        "B": "Subscapularis.",
+        "C": "Wrist extensors.",
+        "D": "Biceps brachii."
+      },
+      "correct_choice": "A",
+      "answer": "Tensor fasciae latae.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Subscapularis. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "In open-chain movement, which end of the segment is typically moving?",
+      "choices": {
+        "A": "Open-chain action.",
+        "B": "Closed-chain action.",
+        "C": "Closed-chain action.",
+        "D": "The proximal segment is moving."
+      },
+      "correct_choice": "B",
+      "answer": "Closed-chain action.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Open-chain action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Plane + direction."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which movement occurs at the forearm when the palm turns upward?",
+      "choices": {
+        "A": "Extension at the shoulder.",
+        "B": "Movement toward the midline.",
+        "C": "Eversion of the foot.",
+        "D": "Flexion at the shoulder."
+      },
+      "correct_choice": "D",
+      "answer": "Flexion at the shoulder.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Eversion of the foot. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which class of lever is most common in the human body during movement?",
+      "choices": {
+        "A": "First-class lever.",
+        "B": "Third-class lever.",
+        "C": "Second-class lever.",
+        "D": "Third-class lever."
+      },
+      "correct_choice": "B",
+      "answer": "Third-class lever.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Third-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "At a convex-on-concave joint, which direction does the glide occur relative to bone roll?",
+      "choices": {
+        "A": "Small, accessory motion available within the joint.",
+        "B": "It makes muscles stronger around the joint.",
+        "C": "Large voluntary motion created by muscles.",
+        "D": "Glide occurs opposite the direction of roll."
+      },
+      "correct_choice": "A",
+      "answer": "Small, accessory motion available within the joint.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Large voluntary motion created by muscles. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which muscle group primarily stabilizes the trunk to resist excessive lumbar extension?",
+      "choices": {
+        "A": "Hip abductors and external rotators.",
+        "B": "Several muscles stabilize, but deep stabilizers often provide primary endurance support.",
+        "C": "Knee flexors only.",
+        "D": "Superficial back extensors only."
+      },
+      "correct_choice": "A",
+      "answer": "Hip abductors and external rotators.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Knee flexors only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which pattern best describes scapular upward rotation during overhead reach?",
+      "choices": {
+        "A": "Scapular upward rotation with posterior tilt.",
+        "B": "Knee extensors (quadriceps).",
+        "C": "Swing phase.",
+        "D": "Hip extension."
+      },
+      "correct_choice": "A",
+      "answer": "Scapular upward rotation with posterior tilt.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Swing phase. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which action is most associated with the ankle moving the sole medially?",
+      "choices": {
+        "A": "Movement toward the midline.",
+        "B": "Movement of the limb away from the midline.",
+        "C": "Eversion of the foot.",
+        "D": "Extension at the shoulder."
+      },
+      "correct_choice": "B",
+      "answer": "Movement of the limb away from the midline.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Eversion of the foot. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "If the insertion is fixed and the origin moves, what is this described as?",
+      "choices": {
+        "A": "Open-chain action.",
+        "B": "The proximal segment is moving.",
+        "C": "Closed-chain action.",
+        "D": "The distal segment is moving."
+      },
+      "correct_choice": "D",
+      "answer": "The distal segment is moving.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Open-chain action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle group is most active to prevent pelvis drop during single-leg stance?",
+      "choices": {
+        "A": "Hip abductors (especially gluteus medius).",
+        "B": "Knee extensors (quadriceps).",
+        "C": "Hip extension.",
+        "D": "Scapular downward rotation with anterior tilt."
+      },
+      "correct_choice": "A",
+      "answer": "Hip abductors (especially gluteus medius).",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Scapular downward rotation with anterior tilt. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which muscle group primarily stabilizes the trunk to resist excessive lumbar extension?",
+      "choices": {
+        "A": "Upper trapezius only.",
+        "B": "Rhomboids only.",
+        "C": "Deep neck flexors.",
+        "D": "Superficial back extensors only."
+      },
+      "correct_choice": "C",
+      "answer": "Deep neck flexors.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Rhomboids only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is an antagonist to wrist extension?",
+      "choices": {
+        "A": "Subscapularis.",
+        "B": "Infraspinatus.",
+        "C": "Wrist extensors.",
+        "D": "Biceps brachii."
+      },
+      "correct_choice": "B",
+      "answer": "Infraspinatus.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Wrist extensors. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which action is most associated with the ankle moving the sole medially?",
+      "choices": {
+        "A": "Movement may look similar, but the correct term depends on direction relative to midline and plane.",
+        "B": "Movement toward the midline.",
+        "C": "Eversion of the foot.",
+        "D": "Supination of the forearm."
+      },
+      "correct_choice": "D",
+      "answer": "Supination of the forearm.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Movement toward the midline. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which factor most increases torque demand at a joint?",
+      "choices": {
+        "A": "First-class lever.",
+        "B": "Second-class lever.",
+        "C": "Second-class lever.",
+        "D": "Lever class depends on the relative position of fulcrum, load, and effort."
+      },
+      "correct_choice": "B",
+      "answer": "Second-class lever.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Second-class lever. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stabilizers prevent drop."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "At a concave-on-convex joint, how does glide relate to roll?",
+      "choices": {
+        "A": "Roll/glide rules depend on concave/convex surfaces and help preserve joint space.",
+        "B": "Glide occurs opposite the direction of roll.",
+        "C": "Large voluntary motion created by muscles.",
+        "D": "Glide occurs opposite the direction of roll."
+      },
+      "correct_choice": "B",
+      "answer": "Glide occurs opposite the direction of roll.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Large voluntary motion created by muscles. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Prime mover = main."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle group helps stabilize the pelvis during standing?",
+      "choices": {
+        "A": "Upper trapezius only.",
+        "B": "Serratus anterior.",
+        "C": "Superficial back extensors only.",
+        "D": "Knee flexors only."
+      },
+      "correct_choice": "B",
+      "answer": "Serratus anterior.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Superficial back extensors only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Third-class common."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which muscle is a prime mover for knee extension?",
+      "choices": {
+        "A": "Brachialis.",
+        "B": "Latissimus dorsi.",
+        "C": "Several muscles assist, but the prime mover is the primary contributor for that action.",
+        "D": "Hamstrings."
+      },
+      "correct_choice": "A",
+      "answer": "Brachialis.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Several muscles assist, but the prime mover is the primary contributor for that action. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which pattern best describes scapular upward rotation during overhead reach?",
+      "choices": {
+        "A": "Hip extension.",
+        "B": "Swing phase.",
+        "C": "Scapular downward rotation with anterior tilt.",
+        "D": "Hip abductors (especially gluteus medius)."
+      },
+      "correct_choice": "D",
+      "answer": "Hip abductors (especially gluteus medius).",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Swing phase. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To lengthen a tight hip flexor group, which movement is most appropriate to emphasize?",
+      "choices": {
+        "A": "Hip flexion.",
+        "B": "Hip extension.",
+        "C": "Horizontal adduction of the shoulder.",
+        "D": "Plantarflexion."
+      },
+      "correct_choice": "B",
+      "answer": "Hip extension.",
+      "why": "This option best matches the described movement pattern, muscle role, or mechanical principle in applied kinesiology.",
+      "trap": "Hip flexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which factor most increases torque demand at a joint?",
+      "choices": {
+        "A": "Decreasing the moment arm (distance) of the load.",
+        "B": "Lever class depends on the relative position of fulcrum, load, and effort.",
+        "C": "Third-class lever.",
+        "D": "Second-class lever."
+      },
+      "correct_choice": "D",
+      "answer": "Second-class lever.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Decreasing the moment arm (distance) of the load. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is a primary mover for shoulder abduction (first 15–90 degrees)?",
+      "choices": {
+        "A": "Hamstrings.",
+        "B": "Latissimus dorsi.",
+        "C": "Triceps brachii.",
+        "D": "Brachialis."
+      },
+      "correct_choice": "D",
+      "answer": "Brachialis.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Latissimus dorsi. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is commonly involved in scapular stabilization during arm elevation?",
+      "choices": {
+        "A": "Rhomboids only.",
+        "B": "Knee flexors only.",
+        "C": "Superficial back extensors only.",
+        "D": "Deep abdominal stabilizers (e.g., transversus abdominis)."
+      },
+      "correct_choice": "D",
+      "answer": "Deep abdominal stabilizers (e.g., transversus abdominis).",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Superficial back extensors only. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "If the insertion is fixed and the origin moves, what is this described as?",
+      "choices": {
+        "A": "The proximal segment is fixed.",
+        "B": "Open-chain action.",
+        "C": "Closed-chain action.",
+        "D": "Closed-chain action."
+      },
+      "correct_choice": "C",
+      "answer": "Closed-chain action.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "The proximal segment is fixed. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Torque = moment arm."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle group is most active to prevent pelvis drop during single-leg stance?",
+      "choices": {
+        "A": "Loading response.",
+        "B": "Scapular downward rotation with anterior tilt.",
+        "C": "Hip extension.",
+        "D": "Swing phase."
+      },
+      "correct_choice": "A",
+      "answer": "Loading response.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hip extension. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "At a convex-on-concave joint, which direction does the glide occur relative to bone roll?",
+      "choices": {
+        "A": "Large voluntary motion created by muscles.",
+        "B": "Roll/glide rules depend on concave/convex surfaces and help preserve joint space.",
+        "C": "Glide occurs opposite the direction of roll.",
+        "D": "It helps maintain joint mechanics and reduces pinching."
+      },
+      "correct_choice": "D",
+      "answer": "It helps maintain joint mechanics and reduces pinching.",
+      "why": "Among plausible options, this answer is most consistent with correct action terminology, mechanics, and movement context.",
+      "trap": "Glide occurs opposite the direction of roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Stretch opposite action."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "To lengthen a tight hip flexor group, which movement is most appropriate to emphasize?",
+      "choices": {
+        "A": "External rotation at the shoulder.",
+        "B": "Internal rotation at the shoulder.",
+        "C": "Plantarflexion.",
+        "D": "Horizontal adduction of the shoulder."
+      },
+      "correct_choice": "A",
+      "answer": "External rotation at the shoulder.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Plantarflexion. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "OIA vs AIA."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which phase of gait includes heel strike and weight acceptance?",
+      "choices": {
+        "A": "Knee extensors (quadriceps).",
+        "B": "Scapular downward rotation with anterior tilt.",
+        "C": "Swing phase.",
+        "D": "Scapular upward rotation with posterior tilt."
+      },
+      "correct_choice": "D",
+      "answer": "Scapular upward rotation with posterior tilt.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Knee extensors (quadriceps). is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Roll vs glide."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which concept best explains why joint glide matters for comfortable range of motion?",
+      "choices": {
+        "A": "Glide occurs in the same direction as roll.",
+        "B": "Glide occurs in the same direction as roll.",
+        "C": "Glide occurs opposite the direction of roll.",
+        "D": "Large voluntary motion created by muscles."
+      },
+      "correct_choice": "A",
+      "answer": "Glide occurs in the same direction as roll.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Glide occurs in the same direction as roll. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Action terms matter."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is the prime mover for elbow flexion in most positions?",
+      "choices": {
+        "A": "Triceps brachii.",
+        "B": "Gluteus medius.",
+        "C": "Hamstrings.",
+        "D": "Latissimus dorsi."
+      },
+      "correct_choice": "B",
+      "answer": "Gluteus medius.",
+      "why": "This choice correctly identifies the joint action or primary muscle role using standard kinesiology terminology.",
+      "trap": "Hamstrings. is tempting, but it mixes up terminology, roles, or mechanics.",
+      "hook": "Antagonist opposes."
+    }
+  ]
+}
