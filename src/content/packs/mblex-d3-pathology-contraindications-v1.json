@@ -1,0 +1,1711 @@
+{
+  "pack_id": "mblex-d3-pathology-contraindications-v1",
+  "source": "chatgpt-original",
+  "title": "MBLEx D3 Pathology, Contraindications & Special Populations v1",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T01:04:26.129464Z"
+  },
+  "questions": [
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has pitting edema in both ankles. What is the most appropriate response?",
+      "choices": {
+        "A": "Avoid vigorous work; consider referral and screen for underlying causes.",
+        "B": "Proceed normally because massage lowers blood pressure.",
+        "C": "Recommend changing medications and continue.",
+        "D": "Ignore dizziness if it resolves after a few seconds."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid vigorous work; consider referral and screen for underlying causes.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Recommend changing medications and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a known seizure disorder and reports missed medication today. What is the most appropriate action?",
+      "choices": {
+        "A": "Reschedule if seizure risk is elevated and follow safety policy.",
+        "B": "Proceed with deep work to release the nerve.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "A",
+      "answer": "Reschedule if seizure risk is elevated and follow safety policy.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Continue and reassess at the next appointment. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Use friction over infected-looking skin to increase circulation.",
+        "B": "Scrape deeply over varicose veins to break them up.",
+        "C": "Proceed with lotion over all areas regardless of skin condition.",
+        "D": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated."
+      },
+      "correct_choice": "D",
+      "answer": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Proceed with lotion over all areas regardless of skin condition. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is taking anticoagulant medication and requests very deep pressure. What is the best next step?",
+      "choices": {
+        "A": "Ignore the issue if the client reports mild discomfort only.",
+        "B": "Proceed as requested because the client consented.",
+        "C": "Use deep pressure to break up tissue restriction directly over the area.",
+        "D": "Avoid the affected area and adjust positioning or techniques to prevent further irritation."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client is taking anticoagulant medication and requests very deep pressure. What is the best next step?",
+      "choices": {
+        "A": "Use lighter pressure and avoid techniques that increase bruising risk.",
+        "B": "Use deep pressure to break up tissue restriction directly over the area.",
+        "C": "Ignore the issue if the client reports mild discomfort only.",
+        "D": "Increase intensity to reduce inflammation quickly."
+      },
+      "correct_choice": "A",
+      "answer": "Use lighter pressure and avoid techniques that increase bruising risk.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with osteoporosis requests aggressive deep tissue over the spine. What is the best next step?",
+      "choices": {
+        "A": "Proceed with strong pressure since the client requested it.",
+        "B": "Use prone positioning throughout for best access.",
+        "C": "Use side-lying or supported positioning to avoid supine hypotension.",
+        "D": "Use aggressive stripping over bony areas for faster results."
+      },
+      "correct_choice": "C",
+      "answer": "Use side-lying or supported positioning to avoid supine hypotension.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Proceed with strong pressure since the client requested it. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client discloses recent vomiting/diarrhea and feels weak. What is the most appropriate action?",
+      "choices": {
+        "A": "Reschedule and follow policy, but ensure the client is stable and knows when to seek medical care.",
+        "B": "Proceed with treatment to help the client relax.",
+        "C": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+        "D": "Ask the client to wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "C",
+      "answer": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Proceed with treatment to help the client relax. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports severe headache with neck stiffness and fever. What is the most appropriate action?",
+      "choices": {
+        "A": "End the session and advise appropriate emergency resources.",
+        "B": "Proceed with light massage to reduce stress.",
+        "C": "Continue as long as the client feels okay.",
+        "D": "Recommend an over-the-counter supplement and continue."
+      },
+      "correct_choice": "A",
+      "answer": "End the session and advise appropriate emergency resources.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Recommend an over-the-counter supplement and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a recent sunburn over the back. What is the most appropriate modification?",
+      "choices": {
+        "A": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+        "B": "Proceed as requested because the client consented.",
+        "C": "Use deep pressure to break up tissue restriction directly over the area.",
+        "D": "Increase intensity to reduce inflammation quickly."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has uncontrolled high blood pressure today and feels lightheaded. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed normally because massage lowers blood pressure.",
+        "B": "Ignore dizziness if it resolves after a few seconds.",
+        "C": "Recommend changing medications and continue.",
+        "D": "Do not treat; refer for medical evaluation due to potential cardiac risk."
+      },
+      "correct_choice": "D",
+      "answer": "Do not treat; refer for medical evaluation due to potential cardiac risk.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Recommend changing medications and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with diabetes reports they have not eaten today and feel shaky. What is the best next step?",
+      "choices": {
+        "A": "Continue the session and tell the client to eat after.",
+        "B": "Stop and refer for medical evaluation due to concerning systemic symptoms.",
+        "C": "Give medication advice and continue treatment.",
+        "D": "Pause and provide basic assistance, but escalate if symptoms suggest an emergency."
+      },
+      "correct_choice": "B",
+      "answer": "Stop and refer for medical evaluation due to concerning systemic symptoms.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Give medication advice and continue treatment. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with autoimmune flare symptoms requests intense work. What is the best approach?",
+      "choices": {
+        "A": "Use intense techniques to break up adhesions regardless of treatment status.",
+        "B": "Use gentle care and verify precautions, but avoid techniques that increase risk with low immunity.",
+        "C": "Use gentle, comfort-focused care with medical clearance when needed.",
+        "D": "Perform vigorous work on swelling to push fluid out."
+      },
+      "correct_choice": "C",
+      "answer": "Use gentle, comfort-focused care with medical clearance when needed.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Perform vigorous work on swelling to push fluid out. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has an implanted medical device and requests work directly over the site. What is the best next step?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Perform vigorous work on swelling to push fluid out.",
+        "C": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+        "D": "Apply direct pressure over implanted sites to reduce discomfort."
+      },
+      "correct_choice": "C",
+      "answer": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Perform vigorous work on swelling to push fluid out. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has uncontrolled high blood pressure today and feels lightheaded. What is the most appropriate action?",
+      "choices": {
+        "A": "Recommend changing medications and continue.",
+        "B": "Do not proceed; refer for medical evaluation and prioritize safety.",
+        "C": "Ignore dizziness if it resolves after a few seconds.",
+        "D": "Use vigorous techniques to improve circulation."
+      },
+      "correct_choice": "B",
+      "answer": "Do not proceed; refer for medical evaluation and prioritize safety.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Recommend changing medications and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client discloses recent vomiting/diarrhea and feels weak. What is the most appropriate action?",
+      "choices": {
+        "A": "Do not treat until cleared; reschedule due to contagious risk.",
+        "B": "Treat only the back and avoid the symptomatic area.",
+        "C": "Ask the client to wear a mask and continue regardless of fever.",
+        "D": "Reschedule and follow policy, but ensure the client is stable and knows when to seek medical care."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat until cleared; reschedule due to contagious risk.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Treat only the back and avoid the symptomatic area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a large area of redness and heat suggesting infection. What is the best next step?",
+      "choices": {
+        "A": "Scrape deeply over varicose veins to break them up.",
+        "B": "Work directly over the wound to speed healing.",
+        "C": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+        "D": "Use friction over infected-looking skin to increase circulation."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has acute inflammation in a joint today. What is the most appropriate plan?",
+      "choices": {
+        "A": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+        "B": "Proceed as requested because the client consented.",
+        "C": "Increase intensity to reduce inflammation quickly.",
+        "D": "Use deep pressure to break up tissue restriction directly over the area."
+      },
+      "correct_choice": "A",
+      "answer": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has an implanted medical device and requests work directly over the site. What is the best next step?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "C": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+        "D": "Use gentle care and verify precautions, but avoid techniques that increase risk with low immunity."
+      },
+      "correct_choice": "C",
+      "answer": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Use gentle care and verify precautions, but avoid techniques that increase risk with low immunity. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Use friction over infected-looking skin to increase circulation.",
+        "B": "Avoid deep work over varicose veins; use gentle techniques and modify.",
+        "C": "Avoid compromised areas and modify, but ensure hygiene and referral when infection is suspected.",
+        "D": "Work directly over the wound to speed healing."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid deep work over varicose veins; use gentle techniques and modify.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client in active cancer treatment reports extreme fatigue and low immunity. What is the best approach?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "C": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+        "D": "Perform vigorous work on swelling to push fluid out."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Apply direct pressure over implanted sites to reduce discomfort. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "An older adult client has fragile skin and bruises easily. What is the most appropriate approach?",
+      "choices": {
+        "A": "Use aggressive stripping over bony areas for faster results.",
+        "B": "Avoid modifying because the pregnancy is uncomplicated.",
+        "C": "Use prone positioning throughout for best access.",
+        "D": "Avoid abdominal work unless specifically indicated and consented; prioritize comfort and safety."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid abdominal work unless specifically indicated and consented; prioritize comfort and safety.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Avoid modifying because the pregnancy is uncomplicated. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports sudden, unexplained shortness of breath and chest tightness. What is the most appropriate action?",
+      "choices": {
+        "A": "Do not treat; refer for urgent medical evaluation based on possible serious condition.",
+        "B": "Perform deep work to improve circulation.",
+        "C": "Recommend an over-the-counter supplement and continue.",
+        "D": "Proceed with light massage to reduce stress."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat; refer for urgent medical evaluation based on possible serious condition.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Perform deep work to improve circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "During intake, a client reports unexplained weight loss and night sweats. What is the best next step?",
+      "choices": {
+        "A": "Continue as long as the client feels okay.",
+        "B": "Pause the session and encourage medical evaluation soon, but urgent symptoms may require immediate action.",
+        "C": "Do not treat; refer for urgent medical evaluation based on possible serious condition.",
+        "D": "Recommend an over-the-counter supplement and continue."
+      },
+      "correct_choice": "C",
+      "answer": "Do not treat; refer for urgent medical evaluation based on possible serious condition.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Recommend an over-the-counter supplement and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a contagious skin rash that is not covered by clothing. What is the best next step?",
+      "choices": {
+        "A": "Proceed with treatment to help the client relax.",
+        "B": "Treat only the back and avoid the symptomatic area.",
+        "C": "Reschedule and follow infection-control policy to protect the client and others.",
+        "D": "Continue if the client promises to notify you if symptoms worsen."
+      },
+      "correct_choice": "C",
+      "answer": "Reschedule and follow infection-control policy to protect the client and others.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Treat only the back and avoid the symptomatic area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Increase intensity to wake the client up.",
+        "B": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+        "C": "Continue the session and tell the client to eat after.",
+        "D": "Give medication advice and continue treatment."
+      },
+      "correct_choice": "B",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Increase intensity to wake the client up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports radiating pain down one leg with bowel/bladder changes. What is the best next step?",
+      "choices": {
+        "A": "Diagnose the condition and provide a specific treatment plan.",
+        "B": "Treat as a medical red flag and recommend urgent evaluation.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Proceed with deep work to release the nerve."
+      },
+      "correct_choice": "B",
+      "answer": "Treat as a medical red flag and recommend urgent evaluation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed with deep work to release the nerve. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports they are currently on antibiotics for a bacterial infection and feel fatigued. What is the best approach?",
+      "choices": {
+        "A": "Continue if the client promises to notify you if symptoms worsen.",
+        "B": "Treat only the back and avoid the symptomatic area.",
+        "C": "Reschedule and encourage rest/hydration; refer to medical care as appropriate.",
+        "D": "Ask the client to wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "C",
+      "answer": "Reschedule and encourage rest/hydration; refer to medical care as appropriate.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ask the client to wear a mask and continue regardless of fever. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Continue the session and tell the client to eat after.",
+        "B": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+        "C": "Increase intensity to wake the client up.",
+        "D": "Pause and provide basic assistance, but escalate if symptoms suggest an emergency."
+      },
+      "correct_choice": "B",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Continue the session and tell the client to eat after. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client in active cancer treatment reports extreme fatigue and low immunity. What is the best approach?",
+      "choices": {
+        "A": "Use intense techniques to break up adhesions regardless of treatment status.",
+        "B": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "C": "Do not perform vigorous work on the swollen limb; refer to appropriate care.",
+        "D": "Perform vigorous work on swelling to push fluid out."
+      },
+      "correct_choice": "C",
+      "answer": "Do not perform vigorous work on the swollen limb; refer to appropriate care.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use intense techniques to break up adhesions regardless of treatment status. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has pitting edema in both ankles. What is the most appropriate response?",
+      "choices": {
+        "A": "Recommend changing medications and continue.",
+        "B": "Use vigorous techniques to improve circulation.",
+        "C": "Proceed normally because massage lowers blood pressure.",
+        "D": "Do not proceed; refer for medical evaluation and prioritize safety."
+      },
+      "correct_choice": "D",
+      "answer": "Do not proceed; refer for medical evaluation and prioritize safety.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Proceed normally because massage lowers blood pressure. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "An older adult client has fragile skin and bruises easily. What is the most appropriate approach?",
+      "choices": {
+        "A": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+        "B": "Avoid modifying because the pregnancy is uncomplicated.",
+        "C": "Use aggressive stripping over bony areas for faster results.",
+        "D": "Proceed with strong pressure since the client requested it."
+      },
+      "correct_choice": "A",
+      "answer": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use aggressive stripping over bony areas for faster results. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client is pregnant and reports dizziness when supine. What is the best modification?",
+      "choices": {
+        "A": "Decline aggressive work and use safe modifications; consider referral if needed.",
+        "B": "Avoid modifying because the pregnancy is uncomplicated.",
+        "C": "Use supportive positioning and gentle work, but verify comfort and contraindications first.",
+        "D": "Proceed with strong pressure since the client requested it."
+      },
+      "correct_choice": "A",
+      "answer": "Decline aggressive work and use safe modifications; consider referral if needed.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Proceed with strong pressure since the client requested it. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has an open wound covered with a dressing. What is the most appropriate action?",
+      "choices": {
+        "A": "Work directly over the wound to speed healing.",
+        "B": "Proceed with lotion over all areas regardless of skin condition.",
+        "C": "Do not treat over suspected infection; refer for medical evaluation.",
+        "D": "Use friction over infected-looking skin to increase circulation."
+      },
+      "correct_choice": "C",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A pregnant client in the first trimester requests abdominal work. What is the most appropriate response?",
+      "choices": {
+        "A": "Use aggressive stripping over bony areas for faster results.",
+        "B": "Proceed with strong pressure since the client requested it.",
+        "C": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+        "D": "Avoid modifying because the pregnancy is uncomplicated."
+      },
+      "correct_choice": "C",
+      "answer": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed with strong pressure since the client requested it. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a fresh bruise and requests deep work directly over it. What is the most appropriate response?",
+      "choices": {
+        "A": "Proceed as requested because the client consented.",
+        "B": "Ignore the issue if the client reports mild discomfort only.",
+        "C": "Increase intensity to reduce inflammation quickly.",
+        "D": "Avoid the affected area and adjust positioning or techniques to prevent further irritation."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Ignore the issue if the client reports mild discomfort only. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has a large area of redness and heat suggesting infection. What is the best next step?",
+      "choices": {
+        "A": "Avoid compromised areas and modify, but ensure hygiene and referral when infection is suspected.",
+        "B": "Use friction over infected-looking skin to increase circulation.",
+        "C": "Scrape deeply over varicose veins to break them up.",
+        "D": "Avoid deep work over varicose veins; use gentle techniques and modify."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid deep work over varicose veins; use gentle techniques and modify.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Use friction over infected-looking skin to increase circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Use gentle pressure and frequent checks due to reduced sensation.",
+        "B": "Reduce intensity and reassess, but new weakness should prompt referral.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "A",
+      "answer": "Use gentle pressure and frequent checks due to reduced sensation.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Ignore new weakness and focus on relaxation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a contagious skin rash that is not covered by clothing. What is the best next step?",
+      "choices": {
+        "A": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+        "B": "Continue if the client promises to notify you if symptoms worsen.",
+        "C": "Reschedule and follow policy, but ensure the client is stable and knows when to seek medical care.",
+        "D": "Ask the client to wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "A",
+      "answer": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Reschedule and follow policy, but ensure the client is stable and knows when to seek medical care. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has thyroid disease and reports heat intolerance and rapid heartbeat. What is the most appropriate action?",
+      "choices": {
+        "A": "Avoid direct work on compromised areas and use gentle techniques with frequent checks.",
+        "B": "Continue the session and tell the client to eat after.",
+        "C": "Give medication advice and continue treatment.",
+        "D": "Assume symptoms are anxiety and proceed."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid direct work on compromised areas and use gentle techniques with frequent checks.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Assume symptoms are anxiety and proceed. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Do not treat over suspected infection; refer for medical evaluation.",
+        "B": "Proceed with lotion over all areas regardless of skin condition.",
+        "C": "Use friction over infected-looking skin to increase circulation.",
+        "D": "Work directly over the wound to speed healing."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed with lotion over all areas regardless of skin condition. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client in active cancer treatment reports extreme fatigue and low immunity. What is the best approach?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+        "C": "Perform vigorous work on swelling to push fluid out.",
+        "D": "Use intense techniques to break up adhesions regardless of treatment status."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Perform vigorous work on swelling to push fluid out. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A pregnant client in the first trimester requests abdominal work. What is the most appropriate response?",
+      "choices": {
+        "A": "Use aggressive stripping over bony areas for faster results.",
+        "B": "Use prone positioning throughout for best access.",
+        "C": "Decline aggressive work and use safe modifications; consider referral if needed.",
+        "D": "Proceed with strong pressure since the client requested it."
+      },
+      "correct_choice": "C",
+      "answer": "Decline aggressive work and use safe modifications; consider referral if needed.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use aggressive stripping over bony areas for faster results. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with autoimmune flare symptoms requests intense work. What is the best approach?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+        "C": "Use intense techniques to break up adhesions regardless of treatment status.",
+        "D": "Apply direct pressure over implanted sites to reduce discomfort."
+      },
+      "correct_choice": "B",
+      "answer": "Reduce intensity and focus on comfort; reschedule if flare is severe.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Ignore fatigue and proceed with a full deep tissue session. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A pregnant client in the first trimester requests abdominal work. What is the most appropriate response?",
+      "choices": {
+        "A": "Use aggressive stripping over bony areas for faster results.",
+        "B": "Use prone positioning throughout for best access.",
+        "C": "Use side-lying or supported positioning to avoid supine hypotension.",
+        "D": "Avoid modifying because the pregnancy is uncomplicated."
+      },
+      "correct_choice": "C",
+      "answer": "Use side-lying or supported positioning to avoid supine hypotension.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use prone positioning throughout for best access. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client is taking anticoagulant medication and requests very deep pressure. What is the best next step?",
+      "choices": {
+        "A": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+        "B": "Use deep pressure to break up tissue restriction directly over the area.",
+        "C": "Ignore the issue if the client reports mild discomfort only.",
+        "D": "Proceed as requested because the client consented."
+      },
+      "correct_choice": "A",
+      "answer": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed as requested because the client consented. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with lymphedema requests vigorous work on the swollen limb. What is the most appropriate response?",
+      "choices": {
+        "A": "Use intense techniques to break up adhesions regardless of treatment status.",
+        "B": "Perform vigorous work on swelling to push fluid out.",
+        "C": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "D": "Use gentle, comfort-focused care with medical clearance when needed."
+      },
+      "correct_choice": "D",
+      "answer": "Use gentle, comfort-focused care with medical clearance when needed.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Perform vigorous work on swelling to push fluid out. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "An older adult client has fragile skin and bruises easily. What is the most appropriate approach?",
+      "choices": {
+        "A": "Avoid modifying because the pregnancy is uncomplicated.",
+        "B": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+        "C": "Use aggressive stripping over bony areas for faster results.",
+        "D": "Use prone positioning throughout for best access."
+      },
+      "correct_choice": "B",
+      "answer": "Use gentler techniques, reduce pressure, and monitor skin/tissue response.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Avoid modifying because the pregnancy is uncomplicated. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives with a fever and productive cough. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+        "B": "Treat only the back and avoid the symptomatic area.",
+        "C": "Continue if the client promises to notify you if symptoms worsen.",
+        "D": "Ask the client to wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "A",
+      "answer": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Continue if the client promises to notify you if symptoms worsen. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Continue and reassess at the next appointment.",
+        "B": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+        "C": "Proceed with deep work to release the nerve.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "B",
+      "answer": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Ignore new weakness and focus on relaxation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client is using topical steroids and has fragile skin. What is the best approach?",
+      "choices": {
+        "A": "Use lighter pressure and monitor, but also document and refer when unusual bruising is reported.",
+        "B": "Rely on the client’s medication to protect them from pain.",
+        "C": "Refer for medical evaluation and document the report of unusual bruising.",
+        "D": "Proceed with aggressive techniques and document a waiver."
+      },
+      "correct_choice": "C",
+      "answer": "Refer for medical evaluation and document the report of unusual bruising.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Rely on the client’s medication to protect them from pain. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has a known seizure disorder and reports missed medication today. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with deep work to release the nerve.",
+        "B": "Continue and reassess at the next appointment.",
+        "C": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+        "D": "Reduce intensity and reassess, but new weakness should prompt referral."
+      },
+      "correct_choice": "C",
+      "answer": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Continue and reassess at the next appointment. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a contagious skin rash that is not covered by clothing. What is the best next step?",
+      "choices": {
+        "A": "Reschedule and encourage rest/hydration; refer to medical care as appropriate.",
+        "B": "Continue if the client promises to notify you if symptoms worsen.",
+        "C": "Treat only the back and avoid the symptomatic area.",
+        "D": "Proceed with treatment to help the client relax."
+      },
+      "correct_choice": "A",
+      "answer": "Reschedule and encourage rest/hydration; refer to medical care as appropriate.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Treat only the back and avoid the symptomatic area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has a large area of redness and heat suggesting infection. What is the best next step?",
+      "choices": {
+        "A": "Work directly over the wound to speed healing.",
+        "B": "Do not treat over suspected infection; refer for medical evaluation.",
+        "C": "Use friction over infected-looking skin to increase circulation.",
+        "D": "Avoid compromised areas and modify, but ensure hygiene and referral when infection is suspected."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports radiating pain down one leg with bowel/bladder changes. What is the best next step?",
+      "choices": {
+        "A": "Continue and reassess at the next appointment.",
+        "B": "Use gentle pressure and frequent checks due to reduced sensation.",
+        "C": "Diagnose the condition and provide a specific treatment plan.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "B",
+      "answer": "Use gentle pressure and frequent checks due to reduced sensation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ignore new weakness and focus on relaxation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a contagious skin rash that is not covered by clothing. What is the best next step?",
+      "choices": {
+        "A": "Proceed with treatment to help the client relax.",
+        "B": "Continue if the client promises to notify you if symptoms worsen.",
+        "C": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+        "D": "Ask the client to wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "C",
+      "answer": "Proceed only if the client is stable and non-contagious, using conservative comfort-focused techniques.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Proceed with treatment to help the client relax. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Give medication advice and continue treatment.",
+        "B": "Continue the session and tell the client to eat after.",
+        "C": "Stop and refer for medical evaluation due to concerning systemic symptoms.",
+        "D": "Increase intensity to wake the client up."
+      },
+      "correct_choice": "C",
+      "answer": "Stop and refer for medical evaluation due to concerning systemic symptoms.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Give medication advice and continue treatment. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client is using topical steroids and has fragile skin. What is the best approach?",
+      "choices": {
+        "A": "Recommend stopping the medication before the next session.",
+        "B": "Proceed with aggressive techniques and document a waiver.",
+        "C": "Use lighter pressure and monitor, but also document and refer when unusual bruising is reported.",
+        "D": "Use gentle techniques and avoid friction that could damage fragile skin."
+      },
+      "correct_choice": "D",
+      "answer": "Use gentle techniques and avoid friction that could damage fragile skin.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Use lighter pressure and monitor, but also document and refer when unusual bruising is reported. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a history of heart disease and becomes dizzy when lying supine. What is the best next step?",
+      "choices": {
+        "A": "Do not treat; refer for medical evaluation due to potential cardiac risk.",
+        "B": "Use vigorous techniques to improve circulation.",
+        "C": "Recommend changing medications and continue.",
+        "D": "Proceed normally because massage lowers blood pressure."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat; refer for medical evaluation due to potential cardiac risk.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Recommend changing medications and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has pitting edema in both ankles. What is the most appropriate response?",
+      "choices": {
+        "A": "Ignore dizziness if it resolves after a few seconds.",
+        "B": "Proceed normally because massage lowers blood pressure.",
+        "C": "Do not treat; refer for medical evaluation due to potential cardiac risk.",
+        "D": "Recommend changing medications and continue."
+      },
+      "correct_choice": "C",
+      "answer": "Do not treat; refer for medical evaluation due to potential cardiac risk.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed normally because massage lowers blood pressure. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives with a fever and productive cough. What is the most appropriate action?",
+      "choices": {
+        "A": "Ask the client to wear a mask and continue regardless of fever.",
+        "B": "Do not treat until cleared; reschedule due to contagious risk.",
+        "C": "Continue if the client promises to notify you if symptoms worsen.",
+        "D": "Treat only the back and avoid the symptomatic area."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat until cleared; reschedule due to contagious risk.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Continue if the client promises to notify you if symptoms worsen. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports radiating pain down one leg with bowel/bladder changes. What is the best next step?",
+      "choices": {
+        "A": "Treat as a medical red flag and recommend urgent evaluation.",
+        "B": "Proceed with deep work to release the nerve.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "A",
+      "answer": "Treat as a medical red flag and recommend urgent evaluation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed with deep work to release the nerve. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client is taking anticoagulant medication and requests very deep pressure. What is the best next step?",
+      "choices": {
+        "A": "Ignore the issue if the client reports mild discomfort only.",
+        "B": "Increase intensity to reduce inflammation quickly.",
+        "C": "Proceed as requested because the client consented.",
+        "D": "Use lighter pressure and avoid techniques that increase bruising risk."
+      },
+      "correct_choice": "D",
+      "answer": "Use lighter pressure and avoid techniques that increase bruising risk.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed as requested because the client consented. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Continue the session and tell the client to eat after.",
+        "B": "Assume symptoms are anxiety and proceed.",
+        "C": "Give medication advice and continue treatment.",
+        "D": "Treat as a potential emergency; stop and follow appropriate assistance steps."
+      },
+      "correct_choice": "D",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Continue the session and tell the client to eat after. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes reports they have not eaten today and feel shaky. What is the best next step?",
+      "choices": {
+        "A": "Give medication advice and continue treatment.",
+        "B": "Increase intensity to wake the client up.",
+        "C": "Assume symptoms are anxiety and proceed.",
+        "D": "Avoid direct work on compromised areas and use gentle techniques with frequent checks."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid direct work on compromised areas and use gentle techniques with frequent checks.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Increase intensity to wake the client up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a recent sunburn over the back. What is the most appropriate modification?",
+      "choices": {
+        "A": "Proceed as requested because the client consented.",
+        "B": "Increase intensity to reduce inflammation quickly.",
+        "C": "Ignore the issue if the client reports mild discomfort only.",
+        "D": "Avoid direct work over the area and modify techniques to protect tissue."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid direct work over the area and modify techniques to protect tissue.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ignore the issue if the client reports mild discomfort only. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has acute inflammation in a joint today. What is the most appropriate plan?",
+      "choices": {
+        "A": "Use lighter pressure and avoid techniques that increase bruising risk.",
+        "B": "Increase intensity to reduce inflammation quickly.",
+        "C": "Use deep pressure to break up tissue restriction directly over the area.",
+        "D": "Proceed as requested because the client consented."
+      },
+      "correct_choice": "A",
+      "answer": "Use lighter pressure and avoid techniques that increase bruising risk.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with lymphedema requests vigorous work on the swollen limb. What is the most appropriate response?",
+      "choices": {
+        "A": "Perform vigorous work on swelling to push fluid out.",
+        "B": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+        "C": "Use intense techniques to break up adhesions regardless of treatment status.",
+        "D": "Use gentle care and verify precautions, but avoid techniques that increase risk with low immunity."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid direct pressure over the device site and confirm precautions/clearance.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Use intense techniques to break up adhesions regardless of treatment status. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a recent sunburn over the back. What is the most appropriate modification?",
+      "choices": {
+        "A": "Increase intensity to reduce inflammation quickly.",
+        "B": "Ignore the issue if the client reports mild discomfort only.",
+        "C": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+        "D": "Use deep pressure to break up tissue restriction directly over the area."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid the affected area and adjust positioning or techniques to prevent further irritation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use deep pressure to break up tissue restriction directly over the area. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a recent surgical incision with healing scar tissue. What is the best approach?",
+      "choices": {
+        "A": "Scrape deeply over varicose veins to break them up.",
+        "B": "Do not treat over suspected infection; refer for medical evaluation.",
+        "C": "Use friction over infected-looking skin to increase circulation.",
+        "D": "Work directly over the wound to speed healing."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a large area of redness and heat suggesting infection. What is the best next step?",
+      "choices": {
+        "A": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+        "B": "Work directly over the wound to speed healing.",
+        "C": "Proceed with lotion over all areas regardless of skin condition.",
+        "D": "Use friction over infected-looking skin to increase circulation."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use friction over infected-looking skin to increase circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with autoimmune flare symptoms requests intense work. What is the best approach?",
+      "choices": {
+        "A": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "B": "Perform vigorous work on swelling to push fluid out.",
+        "C": "Use gentle, comfort-focused care with medical clearance when needed.",
+        "D": "Use intense techniques to break up adhesions regardless of treatment status."
+      },
+      "correct_choice": "C",
+      "answer": "Use gentle, comfort-focused care with medical clearance when needed.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use intense techniques to break up adhesions regardless of treatment status. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Ignore new weakness and focus on relaxation.",
+        "B": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+        "C": "Diagnose the condition and provide a specific treatment plan.",
+        "D": "Proceed with deep work to release the nerve."
+      },
+      "correct_choice": "B",
+      "answer": "Stop and refer for medical evaluation, especially with new weakness or severe symptoms.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Diagnose the condition and provide a specific treatment plan. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has an open wound covered with a dressing. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with lotion over all areas regardless of skin condition.",
+        "B": "Work directly over the wound to speed healing.",
+        "C": "Scrape deeply over varicose veins to break them up.",
+        "D": "Do not treat over suspected infection; refer for medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Work directly over the wound to speed healing. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports severe headache with neck stiffness and fever. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with light massage to reduce stress.",
+        "B": "Stop the session and recommend immediate medical evaluation or emergency services.",
+        "C": "Continue as long as the client feels okay.",
+        "D": "Pause the session and encourage medical evaluation soon, but urgent symptoms may require immediate action."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and recommend immediate medical evaluation or emergency services.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Continue as long as the client feels okay. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Work directly over the wound to speed healing.",
+        "B": "Scrape deeply over varicose veins to break them up.",
+        "C": "Do not treat over suspected infection; refer for medical evaluation.",
+        "D": "Avoid compromised areas and modify, but ensure hygiene and referral when infection is suspected."
+      },
+      "correct_choice": "C",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Scrape deeply over varicose veins to break them up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has an open wound covered with a dressing. What is the most appropriate action?",
+      "choices": {
+        "A": "Use friction over infected-looking skin to increase circulation.",
+        "B": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated.",
+        "C": "Work directly over the wound to speed healing.",
+        "D": "Scrape deeply over varicose veins to break them up."
+      },
+      "correct_choice": "B",
+      "answer": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use friction over infected-looking skin to increase circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has an implanted medical device and requests work directly over the site. What is the best next step?",
+      "choices": {
+        "A": "Ignore fatigue and proceed with a full deep tissue session.",
+        "B": "Apply direct pressure over implanted sites to reduce discomfort.",
+        "C": "Do not perform vigorous work on the swollen limb; refer to appropriate care.",
+        "D": "Use intense techniques to break up adhesions regardless of treatment status."
+      },
+      "correct_choice": "C",
+      "answer": "Do not perform vigorous work on the swollen limb; refer to appropriate care.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Apply direct pressure over implanted sites to reduce discomfort. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports recent chest pain with exertion. What is the best next step?",
+      "choices": {
+        "A": "Ignore dizziness if it resolves after a few seconds.",
+        "B": "Proceed normally because massage lowers blood pressure.",
+        "C": "Use vigorous techniques to improve circulation.",
+        "D": "Modify positioning and monitor symptoms; stop if dizziness persists."
+      },
+      "correct_choice": "D",
+      "answer": "Modify positioning and monitor symptoms; stop if dizziness persists.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed normally because massage lowers blood pressure. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Give medication advice and continue treatment.",
+        "B": "Increase intensity to wake the client up.",
+        "C": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+        "D": "Continue the session and tell the client to eat after."
+      },
+      "correct_choice": "C",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Continue the session and tell the client to eat after. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Treat as a medical red flag and recommend urgent evaluation.",
+        "B": "Ignore new weakness and focus on relaxation.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Proceed with deep work to release the nerve."
+      },
+      "correct_choice": "A",
+      "answer": "Treat as a medical red flag and recommend urgent evaluation.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Ignore new weakness and focus on relaxation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports recent chest pain with exertion. What is the best next step?",
+      "choices": {
+        "A": "Proceed normally because massage lowers blood pressure.",
+        "B": "Ignore dizziness if it resolves after a few seconds.",
+        "C": "Modify positioning and monitor symptoms; stop if dizziness persists.",
+        "D": "Recommend changing medications and continue."
+      },
+      "correct_choice": "C",
+      "answer": "Modify positioning and monitor symptoms; stop if dizziness persists.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Recommend changing medications and continue. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports new numbness and tingling in the hand with weakness. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with deep work to release the nerve.",
+        "B": "Ignore new weakness and focus on relaxation.",
+        "C": "Diagnose the condition and provide a specific treatment plan.",
+        "D": "Reschedule if seizure risk is elevated and follow safety policy."
+      },
+      "correct_choice": "D",
+      "answer": "Reschedule if seizure risk is elevated and follow safety policy.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Diagnose the condition and provide a specific treatment plan. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with osteoporosis requests aggressive deep tissue over the spine. What is the best next step?",
+      "choices": {
+        "A": "Avoid abdominal work unless specifically indicated and consented; prioritize comfort and safety.",
+        "B": "Use aggressive stripping over bony areas for faster results.",
+        "C": "Use prone positioning throughout for best access.",
+        "D": "Avoid modifying because the pregnancy is uncomplicated."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid abdominal work unless specifically indicated and consented; prioritize comfort and safety.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Use prone positioning throughout for best access. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports starting a new medication and experiencing unusual bruising. What is the most appropriate action?",
+      "choices": {
+        "A": "Recommend stopping the medication before the next session.",
+        "B": "Use maximum pressure since bruising is harmless.",
+        "C": "Rely on the client’s medication to protect them from pain.",
+        "D": "Refer for medical evaluation and document the report of unusual bruising."
+      },
+      "correct_choice": "D",
+      "answer": "Refer for medical evaluation and document the report of unusual bruising.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Recommend stopping the medication before the next session. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a known seizure disorder and reports missed medication today. What is the most appropriate action?",
+      "choices": {
+        "A": "Proceed with deep work to release the nerve.",
+        "B": "Use gentle pressure and frequent checks due to reduced sensation.",
+        "C": "Continue and reassess at the next appointment.",
+        "D": "Diagnose the condition and provide a specific treatment plan."
+      },
+      "correct_choice": "B",
+      "answer": "Use gentle pressure and frequent checks due to reduced sensation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Continue and reassess at the next appointment. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Contagious? reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a recent surgical incision with healing scar tissue. What is the best approach?",
+      "choices": {
+        "A": "Do not treat over suspected infection; refer for medical evaluation.",
+        "B": "Scrape deeply over varicose veins to break them up.",
+        "C": "Use friction over infected-looking skin to increase circulation.",
+        "D": "Proceed with lotion over all areas regardless of skin condition."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat over suspected infection; refer for medical evaluation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Use friction over infected-looking skin to increase circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Avoid direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Scrape deeply over varicose veins to break them up.",
+        "B": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+        "C": "Proceed with lotion over all areas regardless of skin condition.",
+        "D": "Work directly over the wound to speed healing."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid the wound area and maintain hygiene; modify to protect tissue integrity.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Proceed with lotion over all areas regardless of skin condition. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetes reports they have not eaten today and feel shaky. What is the best next step?",
+      "choices": {
+        "A": "Assume symptoms are anxiety and proceed.",
+        "B": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+        "C": "Continue the session and tell the client to eat after.",
+        "D": "Give medication advice and continue treatment."
+      },
+      "correct_choice": "B",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Assume symptoms are anxiety and proceed. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has varicose veins and requests deep stripping over them. What is the most appropriate response?",
+      "choices": {
+        "A": "Work directly over the wound to speed healing.",
+        "B": "Scrape deeply over varicose veins to break them up.",
+        "C": "Use friction over infected-looking skin to increase circulation.",
+        "D": "Avoid deep work over varicose veins; use gentle techniques and modify."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid deep work over varicose veins; use gentle techniques and modify.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Scrape deeply over varicose veins to break them up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is pregnant and reports dizziness when supine. What is the best modification?",
+      "choices": {
+        "A": "Avoid modifying because the pregnancy is uncomplicated.",
+        "B": "Use aggressive stripping over bony areas for faster results.",
+        "C": "Proceed with strong pressure since the client requested it.",
+        "D": "Decline aggressive work and use safe modifications; consider referral if needed."
+      },
+      "correct_choice": "D",
+      "answer": "Decline aggressive work and use safe modifications; consider referral if needed.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Avoid modifying because the pregnancy is uncomplicated. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports starting a new medication and experiencing unusual bruising. What is the most appropriate action?",
+      "choices": {
+        "A": "Rely on the client’s medication to protect them from pain.",
+        "B": "Use maximum pressure since bruising is harmless.",
+        "C": "Refer for medical evaluation and document the report of unusual bruising.",
+        "D": "Proceed with aggressive techniques and document a waiver."
+      },
+      "correct_choice": "C",
+      "answer": "Refer for medical evaluation and document the report of unusual bruising.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Rely on the client’s medication to protect them from pain. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports recent chest pain with exertion. What is the best next step?",
+      "choices": {
+        "A": "Ignore dizziness if it resolves after a few seconds.",
+        "B": "Use vigorous techniques to improve circulation.",
+        "C": "Recommend changing medications and continue.",
+        "D": "Do not proceed; refer for medical evaluation and prioritize safety."
+      },
+      "correct_choice": "D",
+      "answer": "Do not proceed; refer for medical evaluation and prioritize safety.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ignore dizziness if it resolves after a few seconds. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Protect compromised tissue."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports sudden, unexplained shortness of breath and chest tightness. What is the most appropriate action?",
+      "choices": {
+        "A": "Stop the session and recommend immediate medical evaluation or emergency services.",
+        "B": "Perform deep work to improve circulation.",
+        "C": "Recommend an over-the-counter supplement and continue.",
+        "D": "Proceed with light massage to reduce stress."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and recommend immediate medical evaluation or emergency services.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Perform deep work to improve circulation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "When in doubt, refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports recent chest pain with exertion. What is the best next step?",
+      "choices": {
+        "A": "Use vigorous techniques to improve circulation.",
+        "B": "Ignore dizziness if it resolves after a few seconds.",
+        "C": "Avoid vigorous work; consider referral and screen for underlying causes.",
+        "D": "Proceed normally because massage lowers blood pressure."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid vigorous work; consider referral and screen for underlying causes.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Proceed normally because massage lowers blood pressure. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Gentle for special pops."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a recent sunburn over the back. What is the most appropriate modification?",
+      "choices": {
+        "A": "Ignore the issue if the client reports mild discomfort only.",
+        "B": "Use deep pressure to break up tissue restriction directly over the area.",
+        "C": "Use lighter pressure and avoid techniques that increase bruising risk.",
+        "D": "Proceed as requested because the client consented."
+      },
+      "correct_choice": "C",
+      "answer": "Use lighter pressure and avoid techniques that increase bruising risk.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Ignore the issue if the client reports mild discomfort only. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Safety first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with diabetes has a slow-healing foot sore. What is the best modification?",
+      "choices": {
+        "A": "Increase intensity to wake the client up.",
+        "B": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+        "C": "Assume symptoms are anxiety and proceed.",
+        "D": "Pause and provide basic assistance, but escalate if symptoms suggest an emergency."
+      },
+      "correct_choice": "B",
+      "answer": "Treat as a potential emergency; stop and follow appropriate assistance steps.",
+      "why": "Among plausible options, this best manages risk, respects contraindications, and uses referral when indicated.",
+      "trap": "Increase intensity to wake the client up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "No deep on anticoags."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a large area of redness and heat suggesting infection. What is the best next step?",
+      "choices": {
+        "A": "Scrape deeply over varicose veins to break them up.",
+        "B": "Work directly over the wound to speed healing.",
+        "C": "Proceed with lotion over all areas regardless of skin condition.",
+        "D": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated."
+      },
+      "correct_choice": "D",
+      "answer": "Wait for appropriate healing/clearance; use gentle scar-safe approaches when indicated.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Scrape deeply over varicose veins to break them up. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is taking anticoagulant medication and requests very deep pressure. What is the best next step?",
+      "choices": {
+        "A": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+        "B": "Ignore the issue if the client reports mild discomfort only.",
+        "C": "Use deep pressure to break up tissue restriction directly over the area.",
+        "D": "Proceed as requested because the client consented."
+      },
+      "correct_choice": "A",
+      "answer": "Defer aggressive work and focus on gentle, non-irritating techniques or reschedule.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ignore the issue if the client reports mild discomfort only. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Assess, then treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Use gentle pressure and frequent checks due to reduced sensation.",
+        "B": "Continue and reassess at the next appointment.",
+        "C": "Proceed with deep work to release the nerve.",
+        "D": "Ignore new weakness and focus on relaxation."
+      },
+      "correct_choice": "A",
+      "answer": "Use gentle pressure and frequent checks due to reduced sensation.",
+      "why": "This option best balances safety with appropriate modification based on contraindications and presentation.",
+      "trap": "Ignore new weakness and focus on relaxation. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Red flag = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the best modification?",
+      "choices": {
+        "A": "Diagnose the condition and provide a specific treatment plan.",
+        "B": "Reschedule if seizure risk is elevated and follow safety policy.",
+        "C": "Ignore new weakness and focus on relaxation.",
+        "D": "Continue and reassess at the next appointment."
+      },
+      "correct_choice": "B",
+      "answer": "Reschedule if seizure risk is elevated and follow safety policy.",
+      "why": "This choice prioritizes client safety and appropriate screening or referral when risk is present.",
+      "trap": "Diagnose the condition and provide a specific treatment plan. sounds helpful, but it ignores contraindications, scope, or safety risk.",
+      "hook": "Modify or reschedule."
+    }
+  ]
+}
