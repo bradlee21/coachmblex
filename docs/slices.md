@@ -11,6 +11,40 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-H
+
+- Status: `done`
+- Title: Hide legacy packs from Test Center using pack visibility metadata
+- Goal: Add optional `meta.visibility` pack metadata and update `/test` pack loading to show only active packs while hiding legacy/draft (including untagged packs by default).
+- In scope:
+- Add `meta.visibility` support in `app/test/page.js` pack loader
+- Filter Test Center pack options to show only packs with `meta.visibility: "active"`
+- Treat missing/invalid visibility as `legacy` (hidden)
+- Update `docs/content-packs.md` with `meta.visibility` field and behavior
+- Mark `src/content/packs/mblex-d6-ethics-v1.json` as `meta.visibility: "active"`
+- Out of scope:
+- Deleting legacy pack files
+- Changing `/test/run` `pack_id` query/filter behavior
+- Importer behavior changes
+- Acceptance criteria:
+- `/test` pack list excludes legacy/draft packs and excludes untagged packs by default
+- `mblex-d6-ethics-v1` remains visible via `meta.visibility: "active"`
+- `/test/run` continues to use `questions.pack_id` unchanged
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `app/test/page.js`
+- `src/content/packs/mblex-d6-ethics-v1.json`
+- `docs/content-packs.md`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Chosen visibility policy: explicit `active` only; default for missing/invalid visibility is `legacy`.
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-M3
 
 - Status: `done`

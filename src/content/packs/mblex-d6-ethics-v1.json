@@ -2,6 +2,9 @@
   "pack_id": "mblex-d6-ethics-v1",
   "source": "chatgpt-original",
   "title": "MBLEx D6 Ethics & Boundaries v1",
+  "meta": {
+    "visibility": "active"
+  },
   "questions": [
     {
       "domain_code": "D6",

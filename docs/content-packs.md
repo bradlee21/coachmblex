@@ -18,6 +18,9 @@ Required env vars for import:
 {
   "pack_id": "example-pack-001",
   "source": "internal-beta",
+  "meta": {
+    "visibility": "active"
+  },
   "questions": [
     {
       "domain_code": "D2",
@@ -45,6 +48,7 @@ Required env vars for import:
 Top-level:
 - `pack_id` string (preferred) or `packId` string or `meta.id` string
 - `source` string
+- `meta.visibility` string (optional): `active` | `legacy` | `draft`
 - `questions` array
 
 Per-question required:
@@ -65,6 +69,12 @@ Per-question optional:
 - `blueprint_code` string (legacy fallback only; importer maps `1..7` roots to `D1..D7` when `domain_code` is missing)
 - `domain`, `subtopic` strings (if omitted, importer derives domain text from `domain_code` and uses `subtopic='import'`)
 - extra fields like `tags`/`meta` are ignored by importer
+
+## Test Center Visibility
+
+- `/test` only shows packs with `meta.visibility: "active"`.
+- Packs with `meta.visibility: "legacy"` or `meta.visibility: "draft"` are hidden.
+- Packs with missing or invalid `meta.visibility` are treated as `legacy` (hidden by default).
 
 ## Validation and Insert Behavior
 

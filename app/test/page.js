@@ -2,6 +2,8 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import TestCenterClient from './TestCenterClient';
 
+const ALLOWED_VISIBILITY = new Set(['active', 'legacy', 'draft']);
+
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
 }
@@ -20,6 +22,11 @@ function resolvePackId(pack, filename) {
     toText(pack?.meta?.id) ||
     filename.replace(/\.json$/i, '')
   );
+}
+
+function resolveVisibility(pack) {
+  const raw = toText(pack?.meta?.visibility).toLowerCase();
+  return ALLOWED_VISIBILITY.has(raw) ? raw : '';
 }
 
 async function loadPackOptions() {
@@ -45,11 +52,12 @@ async function loadPackOptions() {
         const id = resolvePackId(pack, filename);
         if (!id) return null;
         const source = toText(pack?.source);
+        const visibility = resolveVisibility(pack);
         const title =
           toText(pack?.title) ||
           toText(pack?.topic) ||
           humanizePackId(id);
-        return { id, title, filename, source };
+        return { id, title, filename, source, visibility };
       } catch {
         return null;
       }
@@ -60,6 +68,8 @@ async function loadPackOptions() {
     if (!pack) return false;
     const filename = toText(pack.filename).toLowerCase();
     const source = toText(pack.source).toLowerCase();
+    const visibility = toText(pack.visibility).toLowerCase() || 'legacy';
+    if (visibility !== 'active') return false;
     if (filename.includes('replacements') || filename.includes('patch')) return false;
     if (source.includes('replacements')) return false;
     return true;
