@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-27
+- SLICE-I: Standardized MBLEx pack authoring workflow in `docs/content-packs.md` with a 100-question target (`40 easy / 40 medium / 20 hard`), required per-question `domain_code`, and required `meta.visibility: "active"` for Test Center-visible MBLEx packs. Documented that importer behavior tolerates extra pack/question metadata fields (including `meta`) without DB schema changes.
 - SLICE-H: Added Test Center pack visibility gating in `app/test/page.js` using optional `meta.visibility` (`active | legacy | draft`) from pack JSON. `/test` now shows only packs explicitly marked `active`; packs marked `legacy`/`draft` and packs with missing/invalid visibility are treated as legacy and hidden. Updated `docs/content-packs.md` with visibility metadata docs and marked `src/content/packs/mblex-d6-ethics-v1.json` as `meta.visibility: "active"`.
 - SLICE-M3: Updated `scripts/import-pack.mjs` to support domain-code taxonomy: `domain_code` (`D1..D7`) is now required for imports (with legacy fallback mapping from `blueprint_code` when `domain_code` is missing), `blueprint_code` is now optional, imported rows now write `domain_code`, and pack id resolution now accepts `pack_id`, `packId`, or `meta.id` (in that order). Updated `docs/content-packs.md` to reflect the new pack shape/validation expectations.
 

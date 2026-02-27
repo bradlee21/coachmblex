@@ -11,6 +11,37 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-I
+
+- Status: `done`
+- Title: Standardize 100-question MBLEx pack workflow
+- Goal: Document a consistent 100-question MBLEx pack authoring standard and confirm importer behavior tolerates pack metadata/meta fields without DB changes.
+- In scope:
+- Update `docs/content-packs.md` with MBLEx 100-question standard:
+- Difficulty mix: `40 easy / 40 medium / 20 hard`
+- `domain_code` required per question
+- `meta.visibility: "active"` required for packs intended for Test Center visibility
+- Clarify importer metadata behavior (tolerates extra `meta`/pack-level metadata fields)
+- Out of scope:
+- DB schema/migration changes
+- `/test/run` behavior changes
+- Importer write-path schema changes
+- Acceptance criteria:
+- `docs/content-packs.md` clearly documents 100-question MBLEx standard and required metadata fields
+- Importer behavior is documented as metadata-tolerant (no DB changes needed)
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `docs/content-packs.md`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Workflow standardization slice only.
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-H
 
 - Status: `done`

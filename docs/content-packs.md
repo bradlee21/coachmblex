@@ -76,12 +76,31 @@ Per-question optional:
 - Packs with `meta.visibility: "legacy"` or `meta.visibility: "draft"` are hidden.
 - Packs with missing or invalid `meta.visibility` are treated as `legacy` (hidden by default).
 
+## MBLEx 100-Question Standard
+
+Use this standard for new production MBLEx packs:
+
+- Total questions: `100`
+- Difficulty mix:
+- `40` `easy`
+- `40` `medium`
+- `20` `hard`
+- `domain_code` is required on every question (`D1..D7`)
+- Top-level `meta.visibility` should be `"active"` for packs intended to appear in Test Center
+
+Recommended top-level metadata for MBLEx packs:
+- `pack_id`
+- `source`
+- `title`
+- `meta` (for example: `visibility`, authoring metadata, version notes)
+
 ## Validation and Insert Behavior
 
 - Importer validates each row before insert.
 - Invalid rows are skipped and reported with row numbers + reasons.
 - Valid rows insert in batches of 50.
 - On batch failure, importer retries row-by-row for that batch to isolate failures.
+- Importer tolerates extra top-level metadata (`meta`, `title`, `notes`, etc.) and extra per-question metadata fields; these fields do not require DB schema changes.
 
 ## Output
 
