@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2026-02-27
+- SLICE-TEST-PACK-LATEST-2: Verified `/test` latest-only behavior is active and default ON with family-based parsing (`pack_id` minus trailing `-vN`, missing suffix treated as `v0`) and latest-per-family selection applied after visibility filtering (`active` by default, `active + archived` when enabled). No additional app code changes were required for this request.
 - SLICE-TEST-PACK-ARCHIVE-1: Archived non-current pack files for Test Center selection by setting `meta.visibility: "archived"` on `mblex-d3-advanced-v1`, `mblex-d3-pathology-contraindications-v3`, and `mblex-d3-pathology-contraindications-v4`. Kept `mblex-d1-anatomy-physiology-v3` and `mblex-d3-advanced-v2` as active. No question content changes.
 - SLICE-TEST-PACK-LATEST-1: Added `/test` pack selector `Latest only` toggle (default ON). When enabled, the selector keeps only the highest `-vN` pack per family (family = `pack_id` without trailing `-vN`, non-versioned IDs treated as `v0`) after applying visibility filtering. `Show archived packs` still controls visibility first, and search continues to run within the currently visible set.
 - SLICE-TEST-PACK-VIS-1: Updated `/test` pack visibility behavior to show only `meta.visibility: "active"` packs by default, with a new `Show archived packs` toggle (default off) that includes `meta.visibility: "archived"` packs. Missing/invalid `meta.visibility` now defaults to `active` for older pack files. Pack search/filter behavior remains unchanged within the currently visible set.

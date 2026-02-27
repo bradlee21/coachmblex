@@ -11,6 +11,36 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-PACK-LATEST-2
+
+- Status: `done`
+- Title: Verify latest-only family filtering in `/test` (default ON)
+- Goal: Ensure `/test` applies latest-per-family filtering after visibility filtering with a default-on `Latest only` toggle.
+- In scope:
+- Confirm family/version parsing (`family = pack_id without trailing -vN`, missing suffix => `v0`)
+- Confirm filter order: visibility first, latest-only second
+- Confirm `Latest only` toggle default is ON
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Run required validations
+- Out of scope:
+- New UI/logic refactors beyond existing implementation
+- Pack content changes
+- Acceptance criteria:
+- `/test` latest-only behavior matches requested definition
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Existing implementation already matched requested behavior in `app/test/TestCenterClient.js`; this slice records verification and validation.
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-PACK-ARCHIVE-1
 
 - Status: `done`
