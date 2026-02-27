@@ -2,7 +2,7 @@ import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import TestCenterClient from './TestCenterClient';
 
-const ALLOWED_VISIBILITY = new Set(['active', 'legacy', 'draft']);
+const ALLOWED_VISIBILITY = new Set(['active', 'archived', 'legacy', 'draft']);
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -26,7 +26,8 @@ function resolvePackId(pack, filename) {
 
 function resolveVisibility(pack) {
   const raw = toText(pack?.meta?.visibility).toLowerCase();
-  return ALLOWED_VISIBILITY.has(raw) ? raw : '';
+  if (!raw) return 'active';
+  return ALLOWED_VISIBILITY.has(raw) ? raw : 'active';
 }
 
 async function loadPackOptions() {
@@ -68,8 +69,8 @@ async function loadPackOptions() {
     if (!pack) return false;
     const filename = toText(pack.filename).toLowerCase();
     const source = toText(pack.source).toLowerCase();
-    const visibility = toText(pack.visibility).toLowerCase() || 'legacy';
-    if (visibility !== 'active') return false;
+    const visibility = toText(pack.visibility).toLowerCase() || 'active';
+    if (visibility !== 'active' && visibility !== 'archived') return false;
     if (filename.includes('replacements') || filename.includes('patch')) return false;
     if (source.includes('replacements')) return false;
     return true;
@@ -82,7 +83,7 @@ async function loadPackOptions() {
       duplicateVisiblePackIds.add(pack.id);
       continue;
     }
-    byId.set(pack.id, { id: pack.id, title: pack.title });
+    byId.set(pack.id, { id: pack.id, title: pack.title, visibility: pack.visibility });
   }
 
   if (process.env.NODE_ENV !== 'production' && duplicateVisiblePackIds.size > 0) {

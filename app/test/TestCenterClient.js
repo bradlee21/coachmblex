@@ -8,6 +8,16 @@ const MAX_QUESTIONS = 150;
 const DEFAULT_QUESTIONS = 50;
 const ALLOWED_TEST_TYPES = ['mcq', 'reverse'];
 
+function getVisiblePacks(packs, showArchived) {
+  return (packs || []).filter((pack) => {
+    const visibility = String(pack?.visibility || 'active').toLowerCase();
+    if (showArchived) {
+      return visibility === 'active' || visibility === 'archived';
+    }
+    return visibility === 'active';
+  });
+}
+
 function clampQuestionCount(value) {
   const parsed = Number.parseInt(String(value || ''), 10);
   if (!Number.isFinite(parsed)) return DEFAULT_QUESTIONS;
@@ -32,24 +42,29 @@ export default function TestCenterClient({ packs }) {
   const searchParams = useSearchParams();
   const [questionCountInput, setQuestionCountInput] = useState(String(DEFAULT_QUESTIONS));
   const [packFilter, setPackFilter] = useState('');
-  const [selectedPackIds, setSelectedPackIds] = useState(() => new Set((packs || []).map((pack) => pack.id)));
+  const [showArchived, setShowArchived] = useState(false);
+  const [selectedPackIds, setSelectedPackIds] = useState(
+    () => new Set(getVisiblePacks(packs, false).map((pack) => pack.id))
+  );
+
+  const visiblePacks = useMemo(() => getVisiblePacks(packs, showArchived), [packs, showArchived]);
 
   const orderedSelectedPackIds = useMemo(() => {
     const selected = selectedPackIds;
-    return (packs || []).map((pack) => pack.id).filter((id) => selected.has(id));
-  }, [packs, selectedPackIds]);
+    return visiblePacks.map((pack) => pack.id).filter((id) => selected.has(id));
+  }, [visiblePacks, selectedPackIds]);
 
   const selectedCount = orderedSelectedPackIds.length;
   const selectedQuestionCount = clampQuestionCount(questionCountInput);
   const normalizedPackFilter = packFilter.trim().toLowerCase();
   const filteredPacks = useMemo(() => {
-    if (!normalizedPackFilter) return packs || [];
-    return (packs || []).filter((pack) => {
+    if (!normalizedPackFilter) return visiblePacks;
+    return visiblePacks.filter((pack) => {
       const title = String(pack.title || '').toLowerCase();
       const id = String(pack.id || '').toLowerCase();
       return title.includes(normalizedPackFilter) || id.includes(normalizedPackFilter);
     });
-  }, [packs, normalizedPackFilter]);
+  }, [visiblePacks, normalizedPackFilter]);
 
   function togglePack(id) {
     setSelectedPackIds((prev) => {
@@ -61,7 +76,7 @@ export default function TestCenterClient({ packs }) {
   }
 
   function selectAll() {
-    setSelectedPackIds(new Set((packs || []).map((pack) => pack.id)));
+    setSelectedPackIds(new Set(visiblePacks.map((pack) => pack.id)));
   }
 
   function clearAll() {
@@ -126,10 +141,19 @@ export default function TestCenterClient({ packs }) {
               <div>
                 <p style={{ margin: 0, fontWeight: 600 }}>Packs</p>
                 <p className="muted" style={{ margin: 0 }}>
-                  {selectedCount} of {(packs || []).length} selected
+                  {selectedCount} of {visiblePacks.length} selected
                 </p>
               </div>
               <div className="button-row">
+                <label className="choice-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                  <input
+                    type="checkbox"
+                    checked={showArchived}
+                    onChange={(event) => setShowArchived(event.target.checked)}
+                    style={{ width: 16, height: 16 }}
+                  />
+                  <span>Show archived packs</span>
+                </label>
                 <button type="button" className="choice-btn" onClick={selectAll}>
                   Select all
                 </button>
@@ -152,13 +176,13 @@ export default function TestCenterClient({ packs }) {
                 placeholder="Search by pack title or id"
               />
               <p className="muted" style={{ marginBottom: 0 }}>
-                Showing {filteredPacks.length} of {(packs || []).length} packs
+                Showing {filteredPacks.length} of {visiblePacks.length} packs
               </p>
             </div>
 
-            {(packs || []).length === 0 ? (
+            {visiblePacks.length === 0 ? (
               <p className="muted" style={{ marginTop: 0 }}>
-                No pack files found in `src/content/packs`.
+                No active packs found in `src/content/packs`.
               </p>
             ) : filteredPacks.length === 0 ? (
               <p className="muted" style={{ marginTop: 0 }}>

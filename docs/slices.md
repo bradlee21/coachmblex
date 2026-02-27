@@ -11,6 +11,41 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-PACK-VIS-1
+
+- Status: `done`
+- Title: Show only current `/test` packs by default with archived toggle
+- Goal: Make the Test Center pack selector visibility-aware: default to active packs only, with an optional toggle to include archived packs.
+- In scope:
+- Update `/test` pack loading to retain active + archived metadata for selector use
+- Default missing `meta.visibility` to `active` for older packs
+- Add `Show archived packs` toggle in `/test` (default off)
+- Keep search/filter behavior intact while applying visibility filter first
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- Changes to `/test/run` query behavior
+- Pack content edits
+- Broad Test Center UI redesign
+- Acceptance criteria:
+- `/test` initially shows only packs with visibility `active`
+- Toggle off: includes only `active`
+- Toggle on: includes `active` + `archived`
+- Missing/invalid `meta.visibility` values are treated as `active`
+- Pack filter input still searches within the currently visible pack set
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: verify `/test` default list excludes archived and toggle reveals archived packs
+- Files expected to change:
+- `app/test/page.js`
+- `app/test/TestCenterClient.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-D3-ADV-2
 
 - Status: `done`
