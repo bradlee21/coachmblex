@@ -1,0 +1,1715 @@
+{
+  "pack_id": "mblex-d1-anatomy-physiology-v3",
+  "source": "chatgpt-original",
+  "title": "MBLEx D1 Anatomy & Physiology v3 (clear stems + aligned distractors)",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T02:53:32.993370Z",
+    "replaces": [
+      "mblex-d1-anatomy-physiology-v1",
+      "mblex-d1-anatomy-physiology-v2"
+    ]
+  },
+  "questions": [
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure is commonly called the windpipe?",
+      "choices": {
+        "A": "Esophagus",
+        "B": "Trachea",
+        "C": "Diaphragm",
+        "D": "Pharynx"
+      },
+      "correct_choice": "B",
+      "answer": "Trachea",
+      "why": "The trachea carries air from the larynx toward the bronchi.",
+      "trap": "The esophagus carries food, not air.",
+      "hook": "Trachea = windpipe."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following structure is commonly called the windpipe?",
+      "choices": {
+        "A": "Bronchioles",
+        "B": "Diaphragm",
+        "C": "Trachea",
+        "D": "Alveoli"
+      },
+      "correct_choice": "C",
+      "answer": "Trachea",
+      "why": "The trachea carries air from the larynx toward the bronchi. This links structure and function using standard physiology.",
+      "trap": "The esophagus carries food, not air.",
+      "hook": "Trachea = windpipe."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure carries urine from the kidneys to the bladder?",
+      "choices": {
+        "A": "Esophagus",
+        "B": "Aorta",
+        "C": "Trachea",
+        "D": "Ureters"
+      },
+      "correct_choice": "D",
+      "answer": "Ureters",
+      "why": "Ureters transport urine from kidneys to bladder.",
+      "trap": "Urethra is the exit tube, not the kidney-to-bladder tube.",
+      "hook": "Ureters to bladder."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following structure carries urine from the kidneys to the bladder?",
+      "choices": {
+        "A": "Ureters",
+        "B": "Urethra",
+        "C": "Esophagus",
+        "D": "Aorta"
+      },
+      "correct_choice": "A",
+      "answer": "Ureters",
+      "why": "Ureters transport urine from kidneys to bladder. This links structure and function using standard physiology.",
+      "trap": "Urethra is the exit tube, not the kidney-to-bladder tube.",
+      "hook": "Ureters to bladder."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Thyroid hormones (T3/T4) primarily:",
+      "choices": {
+        "A": "Filter blood",
+        "B": "Regulate metabolic rate",
+        "C": "Increase oxygen diffusion",
+        "D": "Lower blood sugar"
+      },
+      "correct_choice": "B",
+      "answer": "Regulate metabolic rate",
+      "why": "Thyroid hormones broadly influence metabolic activity and energy use in tissues. This links structure and function using standard physiology.",
+      "trap": "Blood sugar is insulin/glucagon; clotting is platelets/factors.",
+      "hook": "Thyroid = metabolism."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Thyroid hormones (T3/T4) primarily: (choose the best answer)",
+      "choices": {
+        "A": "Digest proteins",
+        "B": "Increase oxygen diffusion",
+        "C": "Filter blood",
+        "D": "Regulate metabolic rate"
+      },
+      "correct_choice": "D",
+      "answer": "Regulate metabolic rate",
+      "why": "Thyroid hormones broadly influence metabolic activity and energy use in tissues. This links structure and function using standard physiology.",
+      "trap": "Blood sugar is insulin/glucagon; clotting is platelets/factors.",
+      "hook": "Thyroid = metabolism."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What is the main functional unit of the kidney?",
+      "choices": {
+        "A": "Alveolus",
+        "B": "Nephron",
+        "C": "Osteon",
+        "D": "Lymph node"
+      },
+      "correct_choice": "B",
+      "answer": "Nephron",
+      "why": "Nephrons filter blood and form urine through filtration, reabsorption, and secretion. This links structure and function using standard physiology.",
+      "trap": "Alveoli exchange gases; they are not kidney units.",
+      "hook": "Nephron filters."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "What is the main functional unit of the kidney? (choose the best answer)",
+      "choices": {
+        "A": "Neuron",
+        "B": "Nephron",
+        "C": "Alveolus",
+        "D": "Sarcomere"
+      },
+      "correct_choice": "B",
+      "answer": "Nephron",
+      "why": "Nephrons filter blood and form urine through filtration, reabsorption, and secretion. This distinguishes close but incorrect system/structure options.",
+      "trap": "Alveoli exchange gases; they are not kidney units.",
+      "hook": "Nephron filters."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which vessel carries oxygenated blood from the lungs back to the heart?",
+      "choices": {
+        "A": "Pulmonary arteries",
+        "B": "Inferior vena cava",
+        "C": "Pulmonary veins",
+        "D": "Coronary arteries"
+      },
+      "correct_choice": "C",
+      "answer": "Pulmonary veins",
+      "why": "Pulmonary veins return oxygenated blood from lungs to the left atrium.",
+      "trap": "Pulmonary arteries carry deoxygenated blood to the lungs.",
+      "hook": "Pulmonary veins return O2."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following vessel carries oxygenated blood from the lungs back to the heart?",
+      "choices": {
+        "A": "Pulmonary veins",
+        "B": "Coronary arteries",
+        "C": "Pulmonary arteries",
+        "D": "Inferior vena cava"
+      },
+      "correct_choice": "A",
+      "answer": "Pulmonary veins",
+      "why": "Pulmonary veins return oxygenated blood from lungs to the left atrium. This links structure and function using standard physiology.",
+      "trap": "Pulmonary arteries carry deoxygenated blood to the lungs.",
+      "hook": "Pulmonary veins return O2."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What is the primary function of mitochondria in most cells?",
+      "choices": {
+        "A": "Selective barrier (cell membrane)",
+        "B": "Protein synthesis (ribosomes)",
+        "C": "Break down waste (lysosome)",
+        "D": "ATP production (cellular energy)"
+      },
+      "correct_choice": "D",
+      "answer": "ATP production (cellular energy)",
+      "why": "Mitochondria produce ATP through aerobic metabolism to power cellular work. This links structure and function using standard physiology.",
+      "trap": "Ribosomes build proteins; they do not generate ATP.",
+      "hook": "Mito = ATP."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What is the main function of mitochondria in most cells?",
+      "choices": {
+        "A": "Selective barrier (cell membrane)",
+        "B": "ATP production (cellular energy)",
+        "C": "Packaging/secretion (Golgi apparatus)",
+        "D": "Break down waste (lysosome)"
+      },
+      "correct_choice": "B",
+      "answer": "ATP production (cellular energy)",
+      "why": "Mitochondria produce ATP through aerobic metabolism to power cellular work. This links structure and function using standard physiology.",
+      "trap": "Ribosomes build proteins; they do not generate ATP.",
+      "hook": "Mito = ATP."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which gland is often called the 'master gland' because it regulates many endocrine functions?",
+      "choices": {
+        "A": "Pancreas",
+        "B": "Spleen",
+        "C": "Adrenal medulla",
+        "D": "Pituitary gland"
+      },
+      "correct_choice": "D",
+      "answer": "Pituitary gland",
+      "why": "Pituitary hormones influence multiple glands and body processes.",
+      "trap": "The thymus supports immune cell maturation, not endocrine regulation.",
+      "hook": "Pituitary leads."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following gland is often called the 'master gland' because it regulates many endocrine functions?",
+      "choices": {
+        "A": "Pineal gland",
+        "B": "Adrenal medulla",
+        "C": "Pancreas",
+        "D": "Pituitary gland"
+      },
+      "correct_choice": "D",
+      "answer": "Pituitary gland",
+      "why": "Pituitary hormones influence multiple glands and body processes.",
+      "trap": "The thymus supports immune cell maturation, not endocrine regulation.",
+      "hook": "Pituitary leads."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Where does most nutrient absorption occur?",
+      "choices": {
+        "A": "Gallbladder",
+        "B": "Pancreas",
+        "C": "Small intestine",
+        "D": "Large intestine"
+      },
+      "correct_choice": "C",
+      "answer": "Small intestine",
+      "why": "Most nutrient absorption occurs in the small intestine due to villi. This links structure and function using standard physiology.",
+      "trap": "The large intestine primarily absorbs water.",
+      "hook": "Small intestine absorbs."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Where does most nutrient absorption occur? (choose the best answer)",
+      "choices": {
+        "A": "Esophagus",
+        "B": "Gallbladder",
+        "C": "Small intestine",
+        "D": "Large intestine"
+      },
+      "correct_choice": "C",
+      "answer": "Small intestine",
+      "why": "Most nutrient absorption occurs in the small intestine due to villi. This distinguishes close but incorrect system/structure options.",
+      "trap": "The large intestine primarily absorbs water.",
+      "hook": "Small intestine absorbs."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Insulin’s primary effect is to:",
+      "choices": {
+        "A": "Increase bone resorption",
+        "B": "Raise blood glucose",
+        "C": "Increase heart rate",
+        "D": "Lower blood glucose by promoting cellular uptake"
+      },
+      "correct_choice": "D",
+      "answer": "Lower blood glucose by promoting cellular uptake",
+      "why": "Insulin facilitates glucose uptake and storage, lowering blood glucose levels. This distinguishes close but incorrect system/structure options.",
+      "trap": "Glucagon raises blood glucose; insulin lowers it.",
+      "hook": "Insulin lowers sugar."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Insulin’s main effect is to:",
+      "choices": {
+        "A": "Increase blood clotting",
+        "B": "Increase bone resorption",
+        "C": "Lower blood glucose by promoting cellular uptake",
+        "D": "Dilate pupils"
+      },
+      "correct_choice": "C",
+      "answer": "Lower blood glucose by promoting cellular uptake",
+      "why": "Insulin facilitates glucose uptake and storage, lowering blood glucose levels. This links structure and function using standard physiology.",
+      "trap": "Glucagon raises blood glucose; insulin lowers it.",
+      "hook": "Insulin lowers sugar."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which skin layer contains most blood vessels and many sensory receptors?",
+      "choices": {
+        "A": "Nail plate",
+        "B": "Hair shaft",
+        "C": "Epidermis",
+        "D": "Dermis"
+      },
+      "correct_choice": "D",
+      "answer": "Dermis",
+      "why": "The dermis contains vessels, nerves, and connective tissue supporting skin function.",
+      "trap": "The epidermis is avascular; it relies on diffusion from dermis.",
+      "hook": "Dermis has vessels."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following skin layer contains most blood vessels and many sensory receptors?",
+      "choices": {
+        "A": "Nail plate",
+        "B": "Hair shaft",
+        "C": "Peritoneum",
+        "D": "Dermis"
+      },
+      "correct_choice": "D",
+      "answer": "Dermis",
+      "why": "The dermis contains vessels, nerves, and connective tissue supporting skin function.",
+      "trap": "The epidermis is avascular; it relies on diffusion from dermis.",
+      "hook": "Dermis has vessels."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which division of the autonomic nervous system is most associated with rest-and-digest?",
+      "choices": {
+        "A": "Central nervous system",
+        "B": "Parasympathetic division",
+        "C": "Somatic system",
+        "D": "Sympathetic division"
+      },
+      "correct_choice": "B",
+      "answer": "Parasympathetic division",
+      "why": "Parasympathetic activation supports digestion, recovery, and energy conservation.",
+      "trap": "Sympathetic activation supports fight-or-flight.",
+      "hook": "Para = rest."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following division of the autonomic nervous system is most associated with rest-and-digest?",
+      "choices": {
+        "A": "Central nervous system",
+        "B": "Parasympathetic division",
+        "C": "Motor cortex",
+        "D": "Somatic system"
+      },
+      "correct_choice": "B",
+      "answer": "Parasympathetic division",
+      "why": "Parasympathetic activation supports digestion, recovery, and energy conservation. This distinguishes close but incorrect system/structure options.",
+      "trap": "Sympathetic activation supports fight-or-flight.",
+      "hook": "Para = rest."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Melatonin is primarily involved in:",
+      "choices": {
+        "A": "Sleep-wake cycle regulation",
+        "B": "Oxygen transport",
+        "C": "Urine formation",
+        "D": "Protein digestion"
+      },
+      "correct_choice": "A",
+      "answer": "Sleep-wake cycle regulation",
+      "why": "Melatonin supports circadian rhythm regulation. This distinguishes close but incorrect system/structure options.",
+      "trap": "Oxygen transport is hemoglobin; clotting is platelets/factors.",
+      "hook": "Melatonin = sleep."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Melatonin is primarily involved in: (choose the best answer)",
+      "choices": {
+        "A": "Sleep-wake cycle regulation",
+        "B": "Oxygen transport",
+        "C": "Bone formation",
+        "D": "Protein digestion"
+      },
+      "correct_choice": "A",
+      "answer": "Sleep-wake cycle regulation",
+      "why": "Melatonin supports circadian rhythm regulation. This links structure and function using standard physiology.",
+      "trap": "Oxygen transport is hemoglobin; clotting is platelets/factors.",
+      "hook": "Melatonin = sleep."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which organ is commonly associated with filtering blood and immune surveillance?",
+      "choices": {
+        "A": "Spleen",
+        "B": "Gallbladder",
+        "C": "Trachea",
+        "D": "Pancreas"
+      },
+      "correct_choice": "A",
+      "answer": "Spleen",
+      "why": "The spleen filters blood and supports immune functions. This distinguishes close but incorrect system/structure options.",
+      "trap": "Gallbladder stores bile; it does not filter blood.",
+      "hook": "Spleen filters blood."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following organ is commonly associated with filtering blood and immune surveillance?",
+      "choices": {
+        "A": "Appendix",
+        "B": "Trachea",
+        "C": "Pancreas",
+        "D": "Spleen"
+      },
+      "correct_choice": "D",
+      "answer": "Spleen",
+      "why": "The spleen filters blood and supports immune functions.",
+      "trap": "Gallbladder stores bile; it does not filter blood.",
+      "hook": "Spleen filters blood."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which ion directly triggers actin-myosin interaction by exposing binding sites?",
+      "choices": {
+        "A": "Iron (Fe)",
+        "B": "Calcium (Ca2+)",
+        "C": "Iodide (I-)",
+        "D": "Potassium (K+)"
+      },
+      "correct_choice": "B",
+      "answer": "Calcium (Ca2+)",
+      "why": "Calcium binding to troponin exposes actin binding sites, enabling cross-bridge formation. This links structure and function using standard physiology.",
+      "trap": "Sodium/potassium create action potentials but do not expose binding sites on actin.",
+      "hook": "Ca exposes sites."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following ion directly triggers actin-myosin interaction by exposing binding sites?",
+      "choices": {
+        "A": "Iron (Fe)",
+        "B": "Iodide (I-)",
+        "C": "Calcium (Ca2+)",
+        "D": "Sodium (Na+)"
+      },
+      "correct_choice": "C",
+      "answer": "Calcium (Ca2+)",
+      "why": "Calcium binding to troponin exposes actin binding sites, enabling cross-bridge formation.",
+      "trap": "Sodium/potassium create action potentials but do not expose binding sites on actin.",
+      "hook": "Ca exposes sites."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Where is calcium stored in a skeletal muscle cell prior to contraction?",
+      "choices": {
+        "A": "Sarcoplasmic reticulum",
+        "B": "Golgi apparatus",
+        "C": "Lysosome",
+        "D": "Nucleus"
+      },
+      "correct_choice": "A",
+      "answer": "Sarcoplasmic reticulum",
+      "why": "The sarcoplasmic reticulum stores calcium and releases it to enable contraction.",
+      "trap": "Mitochondria make ATP; they are not the primary contraction calcium store.",
+      "hook": "SR stores Ca."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Where is calcium stored in a skeletal muscle cell prior to contraction? (choose the best answer)",
+      "choices": {
+        "A": "Sarcoplasmic reticulum",
+        "B": "Sarcolemma",
+        "C": "Mitochondria",
+        "D": "Lysosome"
+      },
+      "correct_choice": "A",
+      "answer": "Sarcoplasmic reticulum",
+      "why": "The sarcoplasmic reticulum stores calcium and releases it to enable contraction. This distinguishes close but incorrect system/structure options.",
+      "trap": "Mitochondria make ATP; they are not the primary contraction calcium store.",
+      "hook": "SR stores Ca."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which valve is located between the right atrium and right ventricle?",
+      "choices": {
+        "A": "Semilunar valve",
+        "B": "Pulmonary valve",
+        "C": "Tricuspid valve",
+        "D": "Epiglottis"
+      },
+      "correct_choice": "C",
+      "answer": "Tricuspid valve",
+      "why": "The tricuspid valve is the right AV valve.",
+      "trap": "Mitral is the left AV valve.",
+      "hook": "Tricuspid = right AV."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following valve is located between the right atrium and right ventricle?",
+      "choices": {
+        "A": "Mitral valve",
+        "B": "Aortic valve",
+        "C": "Pulmonary valve",
+        "D": "Tricuspid valve"
+      },
+      "correct_choice": "D",
+      "answer": "Tricuspid valve",
+      "why": "The tricuspid valve is the right AV valve. This links structure and function using standard physiology.",
+      "trap": "Mitral is the left AV valve.",
+      "hook": "Tricuspid = right AV."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure connects the brain to the spinal cord and helps regulate basic life functions?",
+      "choices": {
+        "A": "Hippocampus",
+        "B": "Corpus callosum",
+        "C": "Brainstem",
+        "D": "Cerebellum"
+      },
+      "correct_choice": "C",
+      "answer": "Brainstem",
+      "why": "The brainstem regulates vital functions such as breathing and heart rate.",
+      "trap": "The cerebellum coordinates movement but doesn’t control vital centers.",
+      "hook": "Brainstem = vital."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following structure connects the brain to the spinal cord and helps regulate basic life functions?",
+      "choices": {
+        "A": "Brainstem",
+        "B": "Corpus callosum",
+        "C": "Hippocampus",
+        "D": "Thalamus"
+      },
+      "correct_choice": "A",
+      "answer": "Brainstem",
+      "why": "The brainstem regulates vital functions such as breathing and heart rate.",
+      "trap": "The cerebellum coordinates movement but doesn’t control vital centers.",
+      "hook": "Brainstem = vital."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What causes a skeletal muscle fiber to relax after contraction?",
+      "choices": {
+        "A": "Myosin disappears",
+        "B": "Calcium is pumped back into the sarcoplasmic reticulum",
+        "C": "Oxygen binds to actin",
+        "D": "ATP is pumped into the SR"
+      },
+      "correct_choice": "B",
+      "answer": "Calcium is pumped back into the sarcoplasmic reticulum",
+      "why": "Relaxation occurs when calcium is removed from the cytosol and cross-bridge cycling stops. This links structure and function using standard physiology.",
+      "trap": "ATP is required, but relaxation depends on calcium reuptake into the SR.",
+      "hook": "Relax = Ca back."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What causes a skeletal muscle fiber to relax after contraction? (choose the best answer)",
+      "choices": {
+        "A": "Oxygen binds to actin",
+        "B": "Actin detaches permanently",
+        "C": "Blood pressure increases",
+        "D": "Calcium is pumped back into the sarcoplasmic reticulum"
+      },
+      "correct_choice": "D",
+      "answer": "Calcium is pumped back into the sarcoplasmic reticulum",
+      "why": "Relaxation occurs when calcium is removed from the cytosol and cross-bridge cycling stops. This links structure and function using standard physiology.",
+      "trap": "ATP is required, but relaxation depends on calcium reuptake into the SR.",
+      "hook": "Relax = Ca back."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which process moves oxygen from alveoli into pulmonary capillaries?",
+      "choices": {
+        "A": "Diffusion",
+        "B": "Active transport",
+        "C": "Osmosis",
+        "D": "Filtration"
+      },
+      "correct_choice": "A",
+      "answer": "Diffusion",
+      "why": "Oxygen moves down its partial pressure gradient by diffusion. This links structure and function using standard physiology.",
+      "trap": "Osmosis is water movement, not oxygen movement.",
+      "hook": "O2 diffuses."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following process moves oxygen from alveoli into pulmonary capillaries?",
+      "choices": {
+        "A": "Peristalsis",
+        "B": "Filtration",
+        "C": "Osmosis",
+        "D": "Diffusion"
+      },
+      "correct_choice": "D",
+      "answer": "Diffusion",
+      "why": "Oxygen moves down its partial pressure gradient by diffusion. This distinguishes close but incorrect system/structure options.",
+      "trap": "Osmosis is water movement, not oxygen movement.",
+      "hook": "O2 diffuses."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which glial cell forms myelin in the peripheral nervous system?",
+      "choices": {
+        "A": "Astrocyte",
+        "B": "Microglia",
+        "C": "Schwann cell",
+        "D": "Neuron"
+      },
+      "correct_choice": "C",
+      "answer": "Schwann cell",
+      "why": "Schwann cells myelinate axons in the PNS; oligodendrocytes myelinate CNS axons. This distinguishes close but incorrect system/structure options.",
+      "trap": "Oligodendrocytes are CNS myelin, not PNS.",
+      "hook": "Schwann = PNS myelin."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following glial cell forms myelin in the peripheral nervous system?",
+      "choices": {
+        "A": "Schwann cell",
+        "B": "Microglia",
+        "C": "Astrocyte",
+        "D": "Neuron"
+      },
+      "correct_choice": "A",
+      "answer": "Schwann cell",
+      "why": "Schwann cells myelinate axons in the PNS; oligodendrocytes myelinate CNS axons.",
+      "trap": "Oligodendrocytes are CNS myelin, not PNS.",
+      "hook": "Schwann = PNS myelin."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Glucagon primarily acts to:",
+      "choices": {
+        "A": "Raise blood glucose",
+        "B": "Decrease heart rate",
+        "C": "Reduce digestion",
+        "D": "Lower blood glucose"
+      },
+      "correct_choice": "A",
+      "answer": "Raise blood glucose",
+      "why": "Glucagon raises blood glucose by promoting glycogen breakdown and glucose release.",
+      "trap": "Insulin lowers blood glucose; glucagon raises it.",
+      "hook": "Glucagon raises sugar."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Glucagon primarily acts to: (choose the best answer)",
+      "choices": {
+        "A": "Decrease heart rate",
+        "B": "Reduce digestion",
+        "C": "Increase blood clotting",
+        "D": "Raise blood glucose"
+      },
+      "correct_choice": "D",
+      "answer": "Raise blood glucose",
+      "why": "Glucagon raises blood glucose by promoting glycogen breakdown and glucose release. This links structure and function using standard physiology.",
+      "trap": "Insulin lowers blood glucose; glucagon raises it.",
+      "hook": "Glucagon raises sugar."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Osmosis is best defined as:",
+      "choices": {
+        "A": "Movement of food by peristalsis",
+        "B": "Movement of water across a membrane toward higher solute concentration",
+        "C": "Movement of oxygen across alveoli",
+        "D": "Movement of proteins via ribosomes"
+      },
+      "correct_choice": "B",
+      "answer": "Movement of water across a membrane toward higher solute concentration",
+      "why": "Osmosis describes water movement across a semipermeable membrane driven by solute concentration.",
+      "trap": "Diffusion can involve many molecules; osmosis is specifically water movement.",
+      "hook": "Osmosis = water."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Osmosis is best defined as: (choose the best answer)",
+      "choices": {
+        "A": "Movement of food by peristalsis",
+        "B": "Movement of proteins via ribosomes",
+        "C": "Movement of water across a membrane toward higher solute concentration",
+        "D": "Movement of oxygen across alveoli"
+      },
+      "correct_choice": "C",
+      "answer": "Movement of water across a membrane toward higher solute concentration",
+      "why": "Osmosis describes water movement across a semipermeable membrane driven by solute concentration.",
+      "trap": "Diffusion can involve many molecules; osmosis is specifically water movement.",
+      "hook": "Osmosis = water."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which part of the nervous system controls voluntary skeletal muscle movement?",
+      "choices": {
+        "A": "Autonomic nervous system",
+        "B": "Parasympathetic division",
+        "C": "Somatic nervous system",
+        "D": "Endocrine system"
+      },
+      "correct_choice": "C",
+      "answer": "Somatic nervous system",
+      "why": "Somatic nerves control voluntary movement by innervating skeletal muscles.",
+      "trap": "Autonomic divisions regulate involuntary functions.",
+      "hook": "Somatic = voluntary."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following part of the nervous system controls voluntary skeletal muscle movement?",
+      "choices": {
+        "A": "Endocrine system",
+        "B": "Somatic nervous system",
+        "C": "Autonomic nervous system",
+        "D": "Sympathetic division"
+      },
+      "correct_choice": "B",
+      "answer": "Somatic nervous system",
+      "why": "Somatic nerves control voluntary movement by innervating skeletal muscles. This distinguishes close but incorrect system/structure options.",
+      "trap": "Autonomic divisions regulate involuntary functions.",
+      "hook": "Somatic = voluntary."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which cells are primarily responsible for producing antibodies?",
+      "choices": {
+        "A": "B cells (plasma cells)",
+        "B": "Platelets",
+        "C": "Osteocytes",
+        "D": "Neurons"
+      },
+      "correct_choice": "A",
+      "answer": "B cells (plasma cells)",
+      "why": "B cells differentiate into plasma cells that produce antibodies.",
+      "trap": "Red blood cells transport oxygen; they do not produce antibodies.",
+      "hook": "B cells = antibodies."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following cells are primarily responsible for producing antibodies?",
+      "choices": {
+        "A": "Platelets",
+        "B": "Neurons",
+        "C": "Red blood cells",
+        "D": "B cells (plasma cells)"
+      },
+      "correct_choice": "D",
+      "answer": "B cells (plasma cells)",
+      "why": "B cells differentiate into plasma cells that produce antibodies.",
+      "trap": "Red blood cells transport oxygen; they do not produce antibodies.",
+      "hook": "B cells = antibodies."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure contains the vocal folds?",
+      "choices": {
+        "A": "Bronchi",
+        "B": "Pharynx",
+        "C": "Pleura",
+        "D": "Larynx"
+      },
+      "correct_choice": "D",
+      "answer": "Larynx",
+      "why": "The larynx houses vocal folds used for phonation.",
+      "trap": "The trachea conducts air but doesn’t contain vocal folds.",
+      "hook": "Larynx = voice box."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following structure contains the vocal folds?",
+      "choices": {
+        "A": "Larynx",
+        "B": "Pharynx",
+        "C": "Pleura",
+        "D": "Bronchi"
+      },
+      "correct_choice": "A",
+      "answer": "Larynx",
+      "why": "The larynx houses vocal folds used for phonation. This distinguishes close but incorrect system/structure options.",
+      "trap": "The trachea conducts air but doesn’t contain vocal folds.",
+      "hook": "Larynx = voice box."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which term describes the movement of air into and out of the lungs?",
+      "choices": {
+        "A": "Ventilation",
+        "B": "Perfusion",
+        "C": "Osmosis",
+        "D": "Coagulation"
+      },
+      "correct_choice": "A",
+      "answer": "Ventilation",
+      "why": "Ventilation is airflow; diffusion is gas exchange. This distinguishes close but incorrect system/structure options.",
+      "trap": "Perfusion is blood flow, not airflow.",
+      "hook": "Ventilation = airflow."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following term describes the movement of air into and out of the lungs?",
+      "choices": {
+        "A": "Coagulation",
+        "B": "Ventilation",
+        "C": "Perfusion",
+        "D": "Osmosis"
+      },
+      "correct_choice": "B",
+      "answer": "Ventilation",
+      "why": "Ventilation is airflow; diffusion is gas exchange. This links structure and function using standard physiology.",
+      "trap": "Perfusion is blood flow, not airflow.",
+      "hook": "Ventilation = airflow."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure stores and concentrates bile?",
+      "choices": {
+        "A": "Pancreas",
+        "B": "Gallbladder",
+        "C": "Small intestine",
+        "D": "Appendix"
+      },
+      "correct_choice": "B",
+      "answer": "Gallbladder",
+      "why": "The gallbladder stores and concentrates bile produced by the liver.",
+      "trap": "The liver produces bile; it doesn't primarily store it.",
+      "hook": "Gallbladder stores bile."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following structure stores and concentrates bile?",
+      "choices": {
+        "A": "Gallbladder",
+        "B": "Kidney",
+        "C": "Pancreas",
+        "D": "Appendix"
+      },
+      "correct_choice": "A",
+      "answer": "Gallbladder",
+      "why": "The gallbladder stores and concentrates bile produced by the liver.",
+      "trap": "The liver produces bile; it doesn't primarily store it.",
+      "hook": "Gallbladder stores bile."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which neurotransmitter is released at the neuromuscular junction to trigger muscle fiber depolarization?",
+      "choices": {
+        "A": "Epinephrine",
+        "B": "Acetylcholine",
+        "C": "GABA",
+        "D": "Dopamine"
+      },
+      "correct_choice": "B",
+      "answer": "Acetylcholine",
+      "why": "Acetylcholine binds receptors at the motor end plate to initiate depolarization. This links structure and function using standard physiology.",
+      "trap": "Epinephrine is not the primary NMJ transmitter.",
+      "hook": "ACh at NMJ."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following neurotransmitter is released at the neuromuscular junction to trigger muscle fiber depolarization?",
+      "choices": {
+        "A": "Histamine",
+        "B": "Dopamine",
+        "C": "Acetylcholine",
+        "D": "GABA"
+      },
+      "correct_choice": "C",
+      "answer": "Acetylcholine",
+      "why": "Acetylcholine binds receptors at the motor end plate to initiate depolarization. This links structure and function using standard physiology.",
+      "trap": "Epinephrine is not the primary NMJ transmitter.",
+      "hook": "ACh at NMJ."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Most carbon dioxide is transported in the blood primarily as:",
+      "choices": {
+        "A": "Bicarbonate (HCO3-)",
+        "B": "Dissolved CO2 only",
+        "C": "Platelets",
+        "D": "Lymph"
+      },
+      "correct_choice": "A",
+      "answer": "Bicarbonate (HCO3-)",
+      "why": "CO2 is largely converted to bicarbonate for transport in plasma. This links structure and function using standard physiology.",
+      "trap": "Hemoglobin-bound oxygen is O2 transport, not CO2 transport.",
+      "hook": "CO2 → bicarbonate."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Most carbon dioxide is transported in the blood primarily as: (choose the best answer)",
+      "choices": {
+        "A": "Bicarbonate (HCO3-)",
+        "B": "Glucose",
+        "C": "Platelets",
+        "D": "Hemoglobin-bound oxygen"
+      },
+      "correct_choice": "A",
+      "answer": "Bicarbonate (HCO3-)",
+      "why": "CO2 is largely converted to bicarbonate for transport in plasma.",
+      "trap": "Hemoglobin-bound oxygen is O2 transport, not CO2 transport.",
+      "hook": "CO2 → bicarbonate."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A normal heart rhythm is initiated by which structure?",
+      "choices": {
+        "A": "Atrioventricular (AV) node",
+        "B": "Mitral valve",
+        "C": "Vagus nerve",
+        "D": "Sinoatrial (SA) node"
+      },
+      "correct_choice": "D",
+      "answer": "Sinoatrial (SA) node",
+      "why": "The SA node is the primary pacemaker of the heart. This links structure and function using standard physiology.",
+      "trap": "The AV node relays signals but is not the primary pacemaker.",
+      "hook": "SA starts beat."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A normal heart rhythm is initiated by which structure? (choose the best answer)",
+      "choices": {
+        "A": "Atrioventricular (AV) node",
+        "B": "Sinoatrial (SA) node",
+        "C": "Vagus nerve",
+        "D": "Mitral valve"
+      },
+      "correct_choice": "B",
+      "answer": "Sinoatrial (SA) node",
+      "why": "The SA node is the primary pacemaker of the heart. This links structure and function using standard physiology.",
+      "trap": "The AV node relays signals but is not the primary pacemaker.",
+      "hook": "SA starts beat."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Cortisol is primarily produced by the:",
+      "choices": {
+        "A": "Thyroid gland",
+        "B": "Adrenal cortex",
+        "C": "Thymus",
+        "D": "Pineal gland"
+      },
+      "correct_choice": "B",
+      "answer": "Adrenal cortex",
+      "why": "The adrenal cortex produces cortisol, involved in stress response and metabolism regulation.",
+      "trap": "The adrenal medulla produces catecholamines.",
+      "hook": "Cortex = cortisol."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Cortisol is primarily produced by the: (choose the best answer)",
+      "choices": {
+        "A": "Thyroid gland",
+        "B": "Adrenal medulla",
+        "C": "Thymus",
+        "D": "Adrenal cortex"
+      },
+      "correct_choice": "D",
+      "answer": "Adrenal cortex",
+      "why": "The adrenal cortex produces cortisol, involved in stress response and metabolism regulation. This distinguishes close but incorrect system/structure options.",
+      "trap": "The adrenal medulla produces catecholamines.",
+      "hook": "Cortex = cortisol."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What is the primary function of myelin?",
+      "choices": {
+        "A": "Stores calcium",
+        "B": "Generates ATP",
+        "C": "Creates bile",
+        "D": "Increases conduction speed along the nerve fiber"
+      },
+      "correct_choice": "D",
+      "answer": "Increases conduction speed along the nerve fiber",
+      "why": "Myelin insulates axons and enables faster nerve impulse conduction. This links structure and function using standard physiology.",
+      "trap": "ATP generation is mitochondria’s role, not myelin’s role.",
+      "hook": "Myelin speeds signals."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "What is the main function of myelin?",
+      "choices": {
+        "A": "Produces antibodies",
+        "B": "Forms blood clots",
+        "C": "Generates ATP",
+        "D": "Increases conduction speed along the nerve fiber"
+      },
+      "correct_choice": "D",
+      "answer": "Increases conduction speed along the nerve fiber",
+      "why": "Myelin insulates axons and enables faster nerve impulse conduction. This links structure and function using standard physiology.",
+      "trap": "ATP generation is mitochondria’s role, not myelin’s role.",
+      "hook": "Myelin speeds signals."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which hormone is most closely associated with an acute fight-or-flight response?",
+      "choices": {
+        "A": "Thyroxine (T4)",
+        "B": "Insulin",
+        "C": "Oxytocin",
+        "D": "Epinephrine"
+      },
+      "correct_choice": "D",
+      "answer": "Epinephrine",
+      "why": "Epinephrine increases heart rate and alertness during acute stress. This distinguishes close but incorrect system/structure options.",
+      "trap": "Thyroxine affects baseline metabolism, not acute fight-or-flight.",
+      "hook": "Epi = fight/flight."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following hormone is most closely associated with an acute fight-or-flight response?",
+      "choices": {
+        "A": "Epinephrine",
+        "B": "Oxytocin",
+        "C": "Thyroxine (T4)",
+        "D": "Parathyroid hormone"
+      },
+      "correct_choice": "A",
+      "answer": "Epinephrine",
+      "why": "Epinephrine increases heart rate and alertness during acute stress. This links structure and function using standard physiology.",
+      "trap": "Thyroxine affects baseline metabolism, not acute fight-or-flight.",
+      "hook": "Epi = fight/flight."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which type of vessel is the primary site of exchange of gases and nutrients?",
+      "choices": {
+        "A": "Venules",
+        "B": "Capillaries",
+        "C": "Veins",
+        "D": "Arteries"
+      },
+      "correct_choice": "B",
+      "answer": "Capillaries",
+      "why": "Capillaries have thin walls for diffusion of gases and nutrients. This distinguishes close but incorrect system/structure options.",
+      "trap": "Arterioles regulate flow but are not primary exchange sites.",
+      "hook": "Capillaries exchange."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following type of vessel is the primary site of exchange of gases and nutrients?",
+      "choices": {
+        "A": "Arterioles",
+        "B": "Veins",
+        "C": "Lymphatic vessels",
+        "D": "Capillaries"
+      },
+      "correct_choice": "D",
+      "answer": "Capillaries",
+      "why": "Capillaries have thin walls for diffusion of gases and nutrients. This distinguishes close but incorrect system/structure options.",
+      "trap": "Arterioles regulate flow but are not primary exchange sites.",
+      "hook": "Capillaries exchange."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which structure acts as the selectively permeable boundary that controls what enters and exits the cell?",
+      "choices": {
+        "A": "Golgi apparatus",
+        "B": "Cell membrane",
+        "C": "Nucleus",
+        "D": "Mitochondria"
+      },
+      "correct_choice": "B",
+      "answer": "Cell membrane",
+      "why": "The cell membrane regulates transport in and out of the cell.",
+      "trap": "The nucleus stores DNA but is not the cell’s boundary gatekeeper.",
+      "hook": "Membrane = gate."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following structure acts as the selectively permeable boundary that controls what enters and exits the cell?",
+      "choices": {
+        "A": "Golgi apparatus",
+        "B": "Ribosomes",
+        "C": "Cell membrane",
+        "D": "Nucleus"
+      },
+      "correct_choice": "C",
+      "answer": "Cell membrane",
+      "why": "The cell membrane regulates transport in and out of the cell. This distinguishes close but incorrect system/structure options.",
+      "trap": "The nucleus stores DNA but is not the cell’s boundary gatekeeper.",
+      "hook": "Membrane = gate."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A primary function of the lymphatic system is to:",
+      "choices": {
+        "A": "Return interstitial fluid to the bloodstream and support immune function",
+        "B": "Pump blood",
+        "C": "Produce digestive enzymes",
+        "D": "Conduct air to lungs"
+      },
+      "correct_choice": "A",
+      "answer": "Return interstitial fluid to the bloodstream and support immune function",
+      "why": "The lymphatic system returns tissue fluid to circulation and supports immune surveillance.",
+      "trap": "Pumping blood is cardiovascular; not lymphatic.",
+      "hook": "Lymph returns fluid."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A main function of the lymphatic system is to:",
+      "choices": {
+        "A": "Store bile",
+        "B": "Return interstitial fluid to the bloodstream and support immune function",
+        "C": "Produce digestive enzymes",
+        "D": "Pump blood"
+      },
+      "correct_choice": "B",
+      "answer": "Return interstitial fluid to the bloodstream and support immune function",
+      "why": "The lymphatic system returns tissue fluid to circulation and supports immune surveillance. This links structure and function using standard physiology.",
+      "trap": "Pumping blood is cardiovascular; not lymphatic.",
+      "hook": "Lymph returns fluid."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which organelle contains enzymes that break down cellular waste and worn-out components?",
+      "choices": {
+        "A": "Nucleus",
+        "B": "Golgi apparatus",
+        "C": "Mitochondria",
+        "D": "Lysosome"
+      },
+      "correct_choice": "D",
+      "answer": "Lysosome",
+      "why": "Lysosomes digest waste and damaged organelles using enzymes. This links structure and function using standard physiology.",
+      "trap": "Mitochondria generate ATP; they do not primarily digest debris.",
+      "hook": "Lysosome = digest."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following organelle contains enzymes that break down cellular waste and worn-out components?",
+      "choices": {
+        "A": "Lysosome",
+        "B": "Mitochondria",
+        "C": "Cell membrane",
+        "D": "Golgi apparatus"
+      },
+      "correct_choice": "A",
+      "answer": "Lysosome",
+      "why": "Lysosomes digest waste and damaged organelles using enzymes.",
+      "trap": "Mitochondria generate ATP; they do not primarily digest debris.",
+      "hook": "Lysosome = digest."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which organelle is primarily responsible for protein synthesis?",
+      "choices": {
+        "A": "Mitochondria",
+        "B": "Ribosomes",
+        "C": "Lysosomes",
+        "D": "Golgi apparatus"
+      },
+      "correct_choice": "B",
+      "answer": "Ribosomes",
+      "why": "Ribosomes translate mRNA into polypeptides, forming proteins.",
+      "trap": "Golgi modifies/packages proteins but does not synthesize them.",
+      "hook": "Ribosomes build proteins."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following organelle is primarily responsible for protein synthesis?",
+      "choices": {
+        "A": "Nucleus",
+        "B": "Ribosomes",
+        "C": "Smooth endoplasmic reticulum",
+        "D": "Golgi apparatus"
+      },
+      "correct_choice": "B",
+      "answer": "Ribosomes",
+      "why": "Ribosomes translate mRNA into polypeptides, forming proteins. This distinguishes close but incorrect system/structure options.",
+      "trap": "Golgi modifies/packages proteins but does not synthesize them.",
+      "hook": "Ribosomes build proteins."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Where does gas exchange between air and blood primarily occur in the lungs?",
+      "choices": {
+        "A": "Bronchi",
+        "B": "Larynx",
+        "C": "Alveoli",
+        "D": "Diaphragm"
+      },
+      "correct_choice": "C",
+      "answer": "Alveoli",
+      "why": "Alveoli provide the surface where oxygen and carbon dioxide diffuse. This links structure and function using standard physiology.",
+      "trap": "Bronchi conduct air; gas exchange happens in alveoli.",
+      "hook": "Alveoli exchange gas."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Where does gas exchange between air and blood primarily occur in the lungs? (choose the best answer)",
+      "choices": {
+        "A": "Larynx",
+        "B": "Diaphragm",
+        "C": "Pleura",
+        "D": "Alveoli"
+      },
+      "correct_choice": "D",
+      "answer": "Alveoli",
+      "why": "Alveoli provide the surface where oxygen and carbon dioxide diffuse. This links structure and function using standard physiology.",
+      "trap": "Bronchi conduct air; gas exchange happens in alveoli.",
+      "hook": "Alveoli exchange gas."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which heart chamber primarily pumps oxygenated blood into the systemic circulation?",
+      "choices": {
+        "A": "Left ventricle",
+        "B": "Pulmonary artery",
+        "C": "Aorta",
+        "D": "Right ventricle"
+      },
+      "correct_choice": "A",
+      "answer": "Left ventricle",
+      "why": "The left ventricle generates the force needed to send oxygenated blood through systemic circulation. This links structure and function using standard physiology.",
+      "trap": "Aorta is a vessel, not a chamber.",
+      "hook": "LV = systemic pump."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following heart chamber primarily pumps oxygenated blood into the systemic circulation?",
+      "choices": {
+        "A": "Right ventricle",
+        "B": "Left ventricle",
+        "C": "Right atrium",
+        "D": "Pulmonary artery"
+      },
+      "correct_choice": "B",
+      "answer": "Left ventricle",
+      "why": "The left ventricle generates the force needed to send oxygenated blood through systemic circulation.",
+      "trap": "Aorta is a vessel, not a chamber.",
+      "hook": "LV = systemic pump."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "The adrenal medulla primarily secretes:",
+      "choices": {
+        "A": "Cortisol and aldosterone",
+        "B": "Estrogen and progesterone",
+        "C": "Epinephrine and norepinephrine",
+        "D": "ADH and oxytocin"
+      },
+      "correct_choice": "C",
+      "answer": "Epinephrine and norepinephrine",
+      "why": "The adrenal medulla releases catecholamines for acute stress responses. This links structure and function using standard physiology.",
+      "trap": "Cortisol/aldosterone are adrenal cortex hormones.",
+      "hook": "Medulla = catecholamines."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The adrenal medulla primarily secretes: (choose the best answer)",
+      "choices": {
+        "A": "Cortisol and aldosterone",
+        "B": "Thyroxine and calcitonin",
+        "C": "Epinephrine and norepinephrine",
+        "D": "ADH and oxytocin"
+      },
+      "correct_choice": "C",
+      "answer": "Epinephrine and norepinephrine",
+      "why": "The adrenal medulla releases catecholamines for acute stress responses.",
+      "trap": "Cortisol/aldosterone are adrenal cortex hormones.",
+      "hook": "Medulla = catecholamines."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which component of blood is primarily responsible for clotting?",
+      "choices": {
+        "A": "Hemoglobin",
+        "B": "Platelets",
+        "C": "Lymph",
+        "D": "Plasma"
+      },
+      "correct_choice": "B",
+      "answer": "Platelets",
+      "why": "Platelets aggregate to form plugs and support clot formation.",
+      "trap": "White blood cells fight infection; they do not form clots.",
+      "hook": "Platelets plug."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following component of blood is primarily responsible for clotting?",
+      "choices": {
+        "A": "White blood cells",
+        "B": "Hemoglobin",
+        "C": "Plasma",
+        "D": "Platelets"
+      },
+      "correct_choice": "D",
+      "answer": "Platelets",
+      "why": "Platelets aggregate to form plugs and support clot formation. This distinguishes close but incorrect system/structure options.",
+      "trap": "White blood cells fight infection; they do not form clots.",
+      "hook": "Platelets plug."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which process describes movement of molecules from high concentration to low concentration?",
+      "choices": {
+        "A": "Coagulation",
+        "B": "Filtration",
+        "C": "Diffusion",
+        "D": "Mitosis"
+      },
+      "correct_choice": "C",
+      "answer": "Diffusion",
+      "why": "Diffusion is passive movement down a concentration gradient.",
+      "trap": "Ventilation is airflow; filtration is pressure-driven separation.",
+      "hook": "Diffusion = down gradient."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following process describes movement of molecules from high concentration to low concentration?",
+      "choices": {
+        "A": "Peristalsis",
+        "B": "Filtration",
+        "C": "Ventilation",
+        "D": "Diffusion"
+      },
+      "correct_choice": "D",
+      "answer": "Diffusion",
+      "why": "Diffusion is passive movement down a concentration gradient.",
+      "trap": "Ventilation is airflow; filtration is pressure-driven separation.",
+      "hook": "Diffusion = down gradient."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which process describes cell division for growth and tissue repair?",
+      "choices": {
+        "A": "Osmosis",
+        "B": "Mitosis",
+        "C": "Meiosis",
+        "D": "Diffusion"
+      },
+      "correct_choice": "B",
+      "answer": "Mitosis",
+      "why": "Mitosis produces genetically identical cells used for growth and repair. This links structure and function using standard physiology.",
+      "trap": "Meiosis produces gametes, not typical tissue repair.",
+      "hook": "Mitosis = growth."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following process describes cell division for growth and tissue repair?",
+      "choices": {
+        "A": "Filtration",
+        "B": "Mitosis",
+        "C": "Meiosis",
+        "D": "Osmosis"
+      },
+      "correct_choice": "B",
+      "answer": "Mitosis",
+      "why": "Mitosis produces genetically identical cells used for growth and repair. This links structure and function using standard physiology.",
+      "trap": "Meiosis produces gametes, not typical tissue repair.",
+      "hook": "Mitosis = growth."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "The sympathetic nervous system is most associated with:",
+      "choices": {
+        "A": "Rest-and-digest activity",
+        "B": "Bone growth",
+        "C": "Fight-or-flight responses",
+        "D": "Bile storage"
+      },
+      "correct_choice": "C",
+      "answer": "Fight-or-flight responses",
+      "why": "Sympathetic activation prepares the body for acute stress responses. This links structure and function using standard physiology.",
+      "trap": "Rest-and-digest is parasympathetic, not sympathetic.",
+      "hook": "Sympathetic = stress."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The sympathetic nervous system is most associated with: (choose the best answer)",
+      "choices": {
+        "A": "Bone growth",
+        "B": "Bile storage",
+        "C": "Rest-and-digest activity",
+        "D": "Fight-or-flight responses"
+      },
+      "correct_choice": "D",
+      "answer": "Fight-or-flight responses",
+      "why": "Sympathetic activation prepares the body for acute stress responses.",
+      "trap": "Rest-and-digest is parasympathetic, not sympathetic.",
+      "hook": "Sympathetic = stress."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which organ produces insulin?",
+      "choices": {
+        "A": "Parathyroid glands",
+        "B": "Adrenal cortex",
+        "C": "Pancreas",
+        "D": "Thyroid gland"
+      },
+      "correct_choice": "C",
+      "answer": "Pancreas",
+      "why": "Insulin is produced by beta cells in the pancreas to regulate blood glucose.",
+      "trap": "Adrenal cortex produces cortisol, not insulin.",
+      "hook": "Pancreas makes insulin."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following organ produces insulin?",
+      "choices": {
+        "A": "Adrenal cortex",
+        "B": "Pituitary gland",
+        "C": "Thyroid gland",
+        "D": "Pancreas"
+      },
+      "correct_choice": "D",
+      "answer": "Pancreas",
+      "why": "Insulin is produced by beta cells in the pancreas to regulate blood glucose.",
+      "trap": "Adrenal cortex produces cortisol, not insulin.",
+      "hook": "Pancreas makes insulin."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which event occurs during ventricular systole?",
+      "choices": {
+        "A": "Atria relax and fill",
+        "B": "Blood enters pulmonary veins",
+        "C": "Blood is ejected from the ventricles",
+        "D": "Blood enters the vena cava"
+      },
+      "correct_choice": "C",
+      "answer": "Blood is ejected from the ventricles",
+      "why": "Systole is contraction; ventricular contraction ejects blood into arteries. This links structure and function using standard physiology.",
+      "trap": "Ventricular filling occurs in diastole.",
+      "hook": "Systole = squeeze."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which of the following event occurs during ventricular systole?",
+      "choices": {
+        "A": "Blood enters the vena cava",
+        "B": "Atria relax and fill",
+        "C": "Blood enters pulmonary veins",
+        "D": "Blood is ejected from the ventricles"
+      },
+      "correct_choice": "D",
+      "answer": "Blood is ejected from the ventricles",
+      "why": "Systole is contraction; ventricular contraction ejects blood into arteries. This links structure and function using standard physiology.",
+      "trap": "Ventricular filling occurs in diastole.",
+      "hook": "Systole = squeeze."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Which organelle modifies, sorts, and packages proteins for transport or secretion?",
+      "choices": {
+        "A": "Lysosome",
+        "B": "Ribosomes",
+        "C": "Cell membrane",
+        "D": "Golgi apparatus"
+      },
+      "correct_choice": "D",
+      "answer": "Golgi apparatus",
+      "why": "The Golgi apparatus processes proteins/lipids and packages them into vesicles. This links structure and function using standard physiology.",
+      "trap": "Ribosomes make proteins, but packaging/sorting are Golgi functions.",
+      "hook": "Golgi ships proteins."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Which of the following organelle modifies, sorts, and packages proteins for transport or secretion?",
+      "choices": {
+        "A": "Golgi apparatus",
+        "B": "Lysosome",
+        "C": "Mitochondria",
+        "D": "Ribosomes"
+      },
+      "correct_choice": "A",
+      "answer": "Golgi apparatus",
+      "why": "The Golgi apparatus processes proteins/lipids and packages them into vesicles. This distinguishes close but incorrect system/structure options.",
+      "trap": "Ribosomes make proteins, but packaging/sorting are Golgi functions.",
+      "hook": "Golgi ships proteins."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle is the primary driver of quiet inhalation?",
+      "choices": {
+        "A": "Internal intercostals",
+        "B": "External obliques",
+        "C": "Diaphragm",
+        "D": "Upper trapezius"
+      },
+      "correct_choice": "C",
+      "answer": "Diaphragm",
+      "why": "The diaphragm contracts to increase thoracic volume and draw air into the lungs.",
+      "trap": "Internal intercostals assist forced exhalation, not quiet inhalation.",
+      "hook": "Diaphragm draws air."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which of the following muscle is the primary driver of quiet inhalation?",
+      "choices": {
+        "A": "Rectus abdominis",
+        "B": "Diaphragm",
+        "C": "External obliques",
+        "D": "Internal intercostals"
+      },
+      "correct_choice": "B",
+      "answer": "Diaphragm",
+      "why": "The diaphragm contracts to increase thoracic volume and draw air into the lungs.",
+      "trap": "Internal intercostals assist forced exhalation, not quiet inhalation.",
+      "hook": "Diaphragm draws air."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "The primary role of the large intestine is to:",
+      "choices": {
+        "A": "Absorb water and form stool",
+        "B": "Exchange gases",
+        "C": "Secrete bile",
+        "D": "Pump blood"
+      },
+      "correct_choice": "A",
+      "answer": "Absorb water and form stool",
+      "why": "The large intestine reabsorbs water and compacts waste into stool. This links structure and function using standard physiology.",
+      "trap": "Bile is produced by liver; insulin by pancreas.",
+      "hook": "Colon saves water."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "The main role of the large intestine is to:",
+      "choices": {
+        "A": "Produce ATP",
+        "B": "Exchange gases",
+        "C": "Absorb water and form stool",
+        "D": "Pump blood"
+      },
+      "correct_choice": "C",
+      "answer": "Absorb water and form stool",
+      "why": "The large intestine reabsorbs water and compacts waste into stool. This links structure and function using standard physiology.",
+      "trap": "Bile is produced by liver; insulin by pancreas.",
+      "hook": "Colon saves water."
+    }
+  ]
+}
