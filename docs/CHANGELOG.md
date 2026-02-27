@@ -1,5 +1,8 @@
 # Changelog
 
+## 2026-02-27
+- SLICE-M3: Updated `scripts/import-pack.mjs` to support domain-code taxonomy: `domain_code` (`D1..D7`) is now required for imports (with legacy fallback mapping from `blueprint_code` when `domain_code` is missing), `blueprint_code` is now optional, imported rows now write `domain_code`, and pack id resolution now accepts `pack_id`, `packId`, or `meta.id` (in that order). Updated `docs/content-packs.md` to reflect the new pack shape/validation expectations.
+
 ## 2026-02-26
 - SLICE-M2: Added DB-only follow-up SQL script `docs/sql/run-these-queries/2026-02-26-slice-m2-questions-domain-code-unmapped-report.sql` to (idempotently) ensure `public.questions.domain_code` exists with `D1..D7` check + index, backfill from existing `blueprint_code`, and report unmapped nonblank `blueprint_code` values (count + example row) for cleanup review. No app code changes.
 - SLICE-M1: Added manual SQL migration `docs/sql/run-these-queries/2026-02-26-slice-m1-questions-domain-code-phase1.sql` to add `public.questions.domain_code` (nullable `D1..D7` with check constraint), backfill it from `blueprint_code` via CASE mapping, and index `domain_code` while keeping `blueprint_code` intact. Updated `/today`'s bias-pool question query to filter by `domain_code` (`D1`/`D2`) instead of `blueprint_code` prefixes.

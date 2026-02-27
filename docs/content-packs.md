@@ -16,11 +16,11 @@ Required env vars for import:
 
 ```json
 {
-  "packId": "example-pack-001",
+  "pack_id": "example-pack-001",
   "source": "internal-beta",
   "questions": [
     {
-      "blueprint_code": "2.D",
+      "domain_code": "D2",
       "question_type": "mcq",
       "prompt": "Which muscle primarily abducts the hip?",
       "choices": {
@@ -43,12 +43,12 @@ Required env vars for import:
 ## Fields
 
 Top-level:
-- `packId` string
+- `pack_id` string (preferred) or `packId` string or `meta.id` string
 - `source` string
 - `questions` array
 
 Per-question required:
-- `blueprint_code` string
+- `domain_code` string: `D1` | `D2` | `D3` | `D4` | `D5` | `D6` | `D7`
 - `question_type` string: `mcq` | `reverse` | `fill`
 - `prompt` string
 
@@ -62,7 +62,8 @@ Per-question required for `fill`:
 Per-question optional:
 - `answer`, `why`, `trap`, `hook` strings
 - `difficulty` string (defaults to `medium`)
-- `domain`, `subtopic` strings (if omitted, importer derives domain from `blueprint_code` and uses `subtopic='import'`)
+- `blueprint_code` string (legacy fallback only; importer maps `1..7` roots to `D1..D7` when `domain_code` is missing)
+- `domain`, `subtopic` strings (if omitted, importer derives domain text from `domain_code` and uses `subtopic='import'`)
 - extra fields like `tags`/`meta` are ignored by importer
 
 ## Validation and Insert Behavior

@@ -11,6 +11,45 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-M3
+
+- Status: `done`
+- Title: Support domain_code-only pack imports (blueprint_code legacy optional)
+- Goal: Update pack import validation/mapping to require `domain_code` (`D1..D7`) while treating `blueprint_code` as optional legacy input, and keep pack-id + `pack_id` write behavior stable for `/test` pack filtering.
+- In scope:
+- Update `scripts/import-pack.mjs` question validation to require valid `domain_code` (`D1..D7`)
+- Allow legacy fallback mapping from `blueprint_code` to `domain_code` when `domain_code` is missing
+- Keep `blueprint_code` optional (no longer required)
+- Ensure importer writes `questions.domain_code`
+- Expand pack id resolver to accept `pack_id` or `packId` or `meta.id` (priority order)
+- Keep writing `pack_id` on imported rows
+- Update relevant pack-shape docs/schema validation notes for the new requirement
+- Out of scope:
+- Changes to `/test/run` pack filter behavior
+- Dropping `questions.blueprint_code` from DB
+- Broad refactors across unrelated scripts
+- Acceptance criteria:
+- Importer accepts `domain_code`-only packs and imports valid rows without requiring `blueprint_code`
+- If `domain_code` is missing and `blueprint_code` maps to section 1..7, importer derives `domain_code`
+- Invalid/missing `domain_code` rows are reported as validation failures
+- Pack-level id resolves from `pack_id`, then `packId`, then `meta.id`
+- Imported rows still include `pack_id` and `/test/run` behavior remains unchanged
+- Required validation/tests:
+- `npm run import:pack -- src/content/packs/mblex-d6-ethics-v1.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `scripts/import-pack.mjs`
+- `docs/content-packs.md`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Follow-up to SLICE-M1/M2 taxonomy transition.
+- Validation (2026-02-27):
+- `npm run import:pack -- src/content/packs/mblex-d6-ethics-v1.json` pass (`Inserted: 50`, `Updated: 0`, `Tagged: 0`, `Skipped duplicates: 0`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-M2
 
 - Status: `done`

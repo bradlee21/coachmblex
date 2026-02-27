@@ -5,6 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 const BATCH_SIZE = 50;
 const ALLOWED_TYPES = new Set(['mcq', 'reverse', 'fill']);
 const CHOICE_KEYS = ['A', 'B', 'C', 'D'];
+const ALLOWED_DOMAIN_CODES = new Set(['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7']);
 const DOMAIN_BY_SECTION_CODE = {
   '1': 'anatomy',
   '2': 'kinesiology',
@@ -13,6 +14,15 @@ const DOMAIN_BY_SECTION_CODE = {
   '5': 'assessment',
   '6': 'ethics',
   '7': 'practice',
+};
+const DOMAIN_BY_DOMAIN_CODE = {
+  D1: 'anatomy',
+  D2: 'kinesiology',
+  D3: 'pathology',
+  D4: 'benefits-effects',
+  D5: 'assessment',
+  D6: 'ethics',
+  D7: 'practice',
 };
 
 function loadEnvFile(filePath) {
@@ -98,10 +108,30 @@ function normalizeSignatureText(value) {
   return normalizeText(value).toLowerCase();
 }
 
+function normalizeDomainCode(value) {
+  const normalized = normalizeText(value).toUpperCase();
+  return ALLOWED_DOMAIN_CODES.has(normalized) ? normalized : '';
+}
+
+function getDomainCodeFromBlueprint(blueprintCode) {
+  const root = normalizeText(blueprintCode).toUpperCase().split('.')[0];
+  if (/^[1-7]$/.test(root)) return `D${root}`;
+  const domainMatch = root.match(/^D([1-7])$/);
+  if (domainMatch) return `D${domainMatch[1]}`;
+  return '';
+}
+
+function getCanonicalDomainCode(question) {
+  return (
+    normalizeDomainCode(question?.domain_code || question?.domainCode) ||
+    getDomainCodeFromBlueprint(question?.blueprint_code)
+  );
+}
+
 function getQuestionSignature(question) {
   return JSON.stringify({
     question_type: normalizeSignatureText(question?.question_type),
-    blueprint_code: normalizeSignatureText(question?.blueprint_code),
+    domain_code: normalizeSignatureText(getCanonicalDomainCode(question)),
     prompt: normalizeSignatureText(question?.prompt),
     choices: Array.isArray(question?.choices)
       ? question.choices.map((choice) => normalizeSignatureText(choice))
@@ -122,7 +152,7 @@ function getQuestionSignature(question) {
 function getQuestionBaseSignature(question) {
   return JSON.stringify({
     question_type: normalizeSignatureText(question?.question_type),
-    blueprint_code: normalizeSignatureText(question?.blueprint_code),
+    domain_code: normalizeSignatureText(getCanonicalDomainCode(question)),
     prompt: normalizeSignatureText(question?.prompt),
     choices: Array.isArray(question?.choices)
       ? question.choices.map((choice) => normalizeSignatureText(choice))
@@ -170,7 +200,7 @@ async function loadExistingQuestionIndex(supabase) {
     const { data, error } = await supabase
       .from('questions')
       .select(
-        'id,pack_id,domain,subtopic,question_type,blueprint_code,prompt,choices,correct_index,explanation,difficulty'
+        'id,pack_id,domain,subtopic,question_type,domain_code,blueprint_code,prompt,choices,correct_index,explanation,difficulty'
       )
       .range(from, to);
 
@@ -208,6 +238,10 @@ function getDomainFromBlueprint(blueprintCode) {
   return DOMAIN_BY_SECTION_CODE[root] || 'general';
 }
 
+function getDomainFromDomainCode(domainCode) {
+  return DOMAIN_BY_DOMAIN_CODE[String(domainCode || '').toUpperCase()] || 'general';
+}
+
 function buildExplanation(question, fallbackAnswer = '') {
   const nestedExplanation =
     question?.explanation && typeof question.explanation === 'object'
@@ -224,7 +258,8 @@ function buildExplanation(question, fallbackAnswer = '') {
 function resolvePackId(pack) {
   return (
     normalizeText(pack?.pack_id) ||
-    normalizeText(pack?.packId)
+    normalizeText(pack?.packId) ||
+    normalizeText(pack?.meta?.id)
   );
 }
 
@@ -232,16 +267,27 @@ function validateAndMapQuestion(question, index, packId) {
   const rowNo = index + 1;
   const errors = [];
   const blueprintCode = normalizeText(question?.blueprint_code);
+  const rawDomainCode = normalizeText(question?.domain_code || question?.domainCode);
+  const normalizedDomainCode = normalizeDomainCode(rawDomainCode);
+  const mappedDomainCode = normalizedDomainCode || getDomainCodeFromBlueprint(blueprintCode);
   const questionType = normalizeText(question?.question_type).toLowerCase();
   const prompt = normalizeText(question?.prompt);
 
-  if (!blueprintCode) errors.push('blueprint_code is required');
+  if (rawDomainCode && !normalizedDomainCode) {
+    errors.push('domain_code must be one of D1..D7');
+  }
+  if (!mappedDomainCode) {
+    errors.push('domain_code is required (or provide legacy blueprint_code mappable to D1..D7)');
+  }
   if (!ALLOWED_TYPES.has(questionType)) {
     errors.push('question_type must be one of: mcq, reverse, fill');
   }
   if (!prompt) errors.push('prompt is required');
 
-  const domain = normalizeText(question?.domain) || getDomainFromBlueprint(blueprintCode);
+  const domain =
+    normalizeText(question?.domain) ||
+    getDomainFromDomainCode(mappedDomainCode) ||
+    getDomainFromBlueprint(blueprintCode);
   const subtopic = normalizeText(question?.subtopic) || 'import';
 
   if (questionType === 'fill') {
@@ -260,8 +306,9 @@ function validateAndMapQuestion(question, index, packId) {
       row: {
         pack_id: packId,
         domain,
+        domain_code: mappedDomainCode,
         subtopic,
-        blueprint_code: blueprintCode,
+        ...(blueprintCode ? { blueprint_code: blueprintCode } : {}),
         question_type: 'fill',
         prompt,
         choices,
@@ -304,8 +351,9 @@ function validateAndMapQuestion(question, index, packId) {
     row: {
       pack_id: packId,
       domain,
+      domain_code: mappedDomainCode,
       subtopic,
-      blueprint_code: blueprintCode,
+      ...(blueprintCode ? { blueprint_code: blueprintCode } : {}),
       question_type: questionType,
       prompt,
       choices: orderedChoices,
@@ -424,7 +472,7 @@ async function main() {
 
   const canonicalPackId = resolvePackId(pack);
   if (!canonicalPackId) {
-    console.error('Pack must include a pack-level pack_id or packId.');
+    console.error('Pack must include a pack-level pack_id, packId, or meta.id.');
     process.exit(1);
   }
 
