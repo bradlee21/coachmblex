@@ -18,6 +18,38 @@ function getVisiblePacks(packs, showArchived) {
   });
 }
 
+function parseFamilyAndVersion(packId) {
+  const id = String(packId || '').trim();
+  const match = id.match(/^(.*)-v(\d+)$/i);
+  if (!match) {
+    return { family: id, version: 0 };
+  }
+  return {
+    family: String(match[1] || '').trim(),
+    version: Number.parseInt(match[2], 10) || 0,
+  };
+}
+
+function getLatestPacksByFamily(packs) {
+  const bestByFamily = new Map();
+  for (const pack of packs || []) {
+    const { family, version } = parseFamilyAndVersion(pack?.id);
+    const existing = bestByFamily.get(family);
+    if (
+      !existing ||
+      version > existing.version ||
+      (version === existing.version && String(pack?.id || '').localeCompare(String(existing.pack?.id || '')) > 0)
+    ) {
+      bestByFamily.set(family, { pack, version });
+    }
+  }
+
+  return (packs || []).filter((pack) => {
+    const { family } = parseFamilyAndVersion(pack?.id);
+    return bestByFamily.get(family)?.pack?.id === pack?.id;
+  });
+}
+
 function clampQuestionCount(value) {
   const parsed = Number.parseInt(String(value || ''), 10);
   if (!Number.isFinite(parsed)) return DEFAULT_QUESTIONS;
@@ -43,11 +75,16 @@ export default function TestCenterClient({ packs }) {
   const [questionCountInput, setQuestionCountInput] = useState(String(DEFAULT_QUESTIONS));
   const [packFilter, setPackFilter] = useState('');
   const [showArchived, setShowArchived] = useState(false);
+  const [latestOnly, setLatestOnly] = useState(true);
   const [selectedPackIds, setSelectedPackIds] = useState(
-    () => new Set(getVisiblePacks(packs, false).map((pack) => pack.id))
+    () => new Set(getLatestPacksByFamily(getVisiblePacks(packs, false)).map((pack) => pack.id))
   );
 
-  const visiblePacks = useMemo(() => getVisiblePacks(packs, showArchived), [packs, showArchived]);
+  const visibilityFilteredPacks = useMemo(() => getVisiblePacks(packs, showArchived), [packs, showArchived]);
+  const visiblePacks = useMemo(() => {
+    if (!latestOnly) return visibilityFilteredPacks;
+    return getLatestPacksByFamily(visibilityFilteredPacks);
+  }, [latestOnly, visibilityFilteredPacks]);
 
   const orderedSelectedPackIds = useMemo(() => {
     const selected = selectedPackIds;
@@ -153,6 +190,15 @@ export default function TestCenterClient({ packs }) {
                     style={{ width: 16, height: 16 }}
                   />
                   <span>Show archived packs</span>
+                </label>
+                <label className="choice-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                  <input
+                    type="checkbox"
+                    checked={latestOnly}
+                    onChange={(event) => setLatestOnly(event.target.checked)}
+                    style={{ width: 16, height: 16 }}
+                  />
+                  <span>Latest only</span>
                 </label>
                 <button type="button" className="choice-btn" onClick={selectAll}>
                   Select all

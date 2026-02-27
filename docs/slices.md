@@ -11,6 +11,37 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-PACK-LATEST-1
+
+- Status: `done`
+- Title: Add `/test` latest-only pack mode by family
+- Goal: Add a `Latest only` toggle (default on) in `/test` so the selector shows only the latest `-vN` pack per family after visibility filtering.
+- In scope:
+- Add client-side family/version parsing for pack IDs (`family = id without trailing -vN`, `version = N`, default `v0` when missing)
+- Add `Latest only` toggle with default ON
+- Apply latest-only filtering after visibility filtering (`active` by default, `active + archived` when Show archived enabled)
+- Preserve pack search/filter behavior within currently visible set
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- `/test/run` query behavior changes
+- Pack metadata/content edits
+- Acceptance criteria:
+- Default `/test` view shows latest pack per family only
+- Turning `Latest only` off shows all packs allowed by visibility filter
+- Search continues to filter within the currently visible set
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: verify latest-only ON/OFF behavior with archived toggle interaction
+- Files expected to change:
+- `app/test/TestCenterClient.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-PACK-VIS-1
 
 - Status: `done`
