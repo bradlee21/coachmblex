@@ -2,6 +2,10 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 import { validateQuestion } from './lib/questionSanityCheck.mjs';
+import {
+  DOMAIN_LABEL_BY_CODE,
+  inferPackDomainCode,
+} from '../src/lib/packDomainMeta.mjs';
 
 const BATCH_SIZE = 50;
 const SANITY_REPORT_LIMIT = 10;
@@ -639,6 +643,17 @@ async function main() {
   if (!canonicalPackId) {
     console.error('Pack must include a pack-level pack_id, packId, or meta.id.');
     process.exit(1);
+  }
+
+  const explicitDomainLabel = normalizeText(pack?.meta?.domain_label);
+  if (!explicitDomainLabel) {
+    const inferredPackDomainCode = inferPackDomainCode(pack, canonicalPackId);
+    const inferredPackDomainLabel = DOMAIN_LABEL_BY_CODE[inferredPackDomainCode] || '';
+    if (inferredPackDomainCode && inferredPackDomainLabel) {
+      console.warn(
+        `Pack missing meta.domain_label; inferred '${inferredPackDomainLabel}' from domain_code '${inferredPackDomainCode}'. Consider adding meta.domain_label.`
+      );
+    }
   }
 
   const supabase = createClient(supabaseUrl, serviceRoleKey, {

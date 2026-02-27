@@ -1,6 +1,10 @@
 import { readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import TestCenterClient from './TestCenterClient';
+import {
+  inferPackDomainCode,
+  resolvePackDomainLabel,
+} from '../../src/lib/packDomainMeta.mjs';
 
 const ALLOWED_VISIBILITY = new Set(['active', 'archived', 'legacy', 'draft']);
 
@@ -58,8 +62,20 @@ async function loadPackOptions() {
           toText(pack?.title) ||
           toText(pack?.topic) ||
           humanizePackId(id);
-        const domainLabel = toText(pack?.meta?.domain_label) || title;
-        return { id, title, domainLabel, filename, source, visibility };
+        const domainCode = inferPackDomainCode(pack, id);
+        const domainLabel = resolvePackDomainLabel(pack, domainCode, title) || title;
+        if (process.env.NODE_ENV !== 'production' && domainCode && !toText(domainLabel)) {
+          console.warn(`Testing Center pack domainLabel is empty for ${id} (${domainCode})`);
+        }
+        return {
+          id,
+          title,
+          domainCode,
+          domainLabel,
+          filename,
+          source,
+          visibility,
+        };
       } catch {
         return null;
       }
@@ -87,6 +103,7 @@ async function loadPackOptions() {
     byId.set(pack.id, {
       id: pack.id,
       title: pack.title,
+      domainCode: pack.domainCode || '',
       domainLabel: pack.domainLabel || pack.title || pack.id,
       visibility: pack.visibility,
     });

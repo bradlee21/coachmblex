@@ -98,10 +98,12 @@ export default function TestCenterClient({ packs }) {
     if (!normalizedPackFilter) return visiblePacks;
     return visiblePacks.filter((pack) => {
       const domainLabel = String(pack.domainLabel || '').toLowerCase();
+      const domainCode = String(pack.domainCode || '').toLowerCase();
       const title = String(pack.title || '').toLowerCase();
       const id = String(pack.id || '').toLowerCase();
       return (
         domainLabel.includes(normalizedPackFilter) ||
+        domainCode.includes(normalizedPackFilter) ||
         title.includes(normalizedPackFilter) ||
         id.includes(normalizedPackFilter)
       );
@@ -224,7 +226,7 @@ export default function TestCenterClient({ packs }) {
                 onChange={(event) => setPackFilter(event.target.value)}
                 className="choice-btn"
                 style={{ width: '100%' }}
-                placeholder="Search by pack title or id"
+                placeholder="Search by domain, title, or id"
               />
               <p className="muted" style={{ marginBottom: 0 }}>
                 Showing {filteredPacks.length} of {visiblePacks.length} packs

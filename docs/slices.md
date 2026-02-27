@@ -11,6 +11,50 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-DOMAIN-INFER-1
+
+- Status: `done`
+- Title: Auto-infer `/test` domain labels/codes for packs missing metadata
+- Goal: Future-proof `/test` pack naming by deterministically inferring `domainCode` and `domainLabel` when pack metadata is missing or empty.
+- In scope:
+- Add one shared authoritative `domain_code -> domain_label` mapping for `D1..D7`
+- Infer pack `domainCode` in `/test` load path using precedence:
+- `pack.meta.domain_code`
+- `pack.questions?.[0]?.domain_code`
+- `pack_id` prefix (`mblex-d<digit>-`)
+- Resolve `domainLabel` in `/test` with precedence:
+- non-empty `pack.meta.domain_label`
+- mapped label from inferred `domainCode`
+- fallback to pack title
+- Pass `domainCode` and `domainLabel` to `TestCenterClient`
+- Extend `/test` search to match `domainLabel`, `domainCode`, title, and pack id
+- Add import warning when `meta.domain_label` is missing but inferable from domain code
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- DB schema/migration changes
+- Pack content rewrites
+- Acceptance criteria:
+- `/test` displays non-empty domain label for packs where domain code can be inferred
+- `/test` search matches domain code text in addition to existing fields
+- Importer prints warning:
+- `Pack missing meta.domain_label; inferred '<label>' from domain_code '<code>'. Consider adding meta.domain_label.`
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/lib/packDomainMeta.mjs`
+- `app/test/page.js`
+- `app/test/TestCenterClient.js`
+- `scripts/import-pack.mjs`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-DOMAIN-LABEL-1
 
 - Status: `done`
