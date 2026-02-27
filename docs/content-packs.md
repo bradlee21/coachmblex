@@ -80,6 +80,10 @@ Per-question optional:
 
 Use this standard for new production MBLEx packs:
 
+- Versioning baseline:
+- Legacy `-v1` MBLEx packs are removed from the repo.
+- Author/import only `-v2` MBLEx packs going forward.
+- v2 packs are expected to be prompt-locked with aligned distractors.
 - Total questions: `100`
 - Difficulty mix:
 - `40` `easy`

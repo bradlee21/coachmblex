@@ -11,6 +11,44 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-PACK-V2
+
+- Status: `done`
+- Title: Remove MBLEx v1 packs and keep v2-only packs
+- Goal: Hard-delete legacy MBLEx `-v1` pack files from `src/content/packs` and keep only v2 packs in-repo for MBLEx pack imports.
+- In scope:
+- Delete listed MBLEx v1 pack JSON files from `src/content/packs`
+- Keep `src/content/packs/mblex-d1-anatomy-physiology-v2.json`
+- Update `docs/content-packs.md` to state v1 removal and v2 prompt-lock/aligned-distractor standard
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- SQL/database changes
+- Importer logic changes
+- Non-MBLEx pack cleanup/refactors
+- Acceptance criteria:
+- Listed MBLEx v1 files are deleted from repo
+- `mblex-d1-anatomy-physiology-v2.json` remains present
+- Docs explicitly state v1 packs removed and v2 quality standard
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d1-anatomy-physiology-v1.json` (delete)
+- `src/content/packs/mblex-d2-kinesiology-v1.json` (delete)
+- `src/content/packs/mblex-d3-pathology-contraindications-v1.json` (delete)
+- `src/content/packs/mblex-d4-benefits-effects-v1.json` (delete)
+- `src/content/packs/mblex-d5-assessment-planning-v1.json` (delete)
+- `src/content/packs/mblex-d6-ethics-v1.json` (delete)
+- `src/content/packs/mblex-d7-professional-practice-v1.json` (delete)
+- `docs/content-packs.md`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Repo cleanup slice only; no DB migration required.
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-1
 
 - Status: `done`
