@@ -58,7 +58,8 @@ async function loadPackOptions() {
           toText(pack?.title) ||
           toText(pack?.topic) ||
           humanizePackId(id);
-        return { id, title, filename, source, visibility };
+        const domainLabel = toText(pack?.meta?.domain_label) || title;
+        return { id, title, domainLabel, filename, source, visibility };
       } catch {
         return null;
       }
@@ -83,7 +84,12 @@ async function loadPackOptions() {
       duplicateVisiblePackIds.add(pack.id);
       continue;
     }
-    byId.set(pack.id, { id: pack.id, title: pack.title, visibility: pack.visibility });
+    byId.set(pack.id, {
+      id: pack.id,
+      title: pack.title,
+      domainLabel: pack.domainLabel || pack.title || pack.id,
+      visibility: pack.visibility,
+    });
   }
 
   if (process.env.NODE_ENV !== 'production' && duplicateVisiblePackIds.size > 0) {
@@ -93,7 +99,10 @@ async function loadPackOptions() {
   }
 
   return Array.from(byId.values()).sort(
-    (a, b) => a.title.localeCompare(b.title) || a.id.localeCompare(b.id)
+    (a, b) =>
+      String(a.domainLabel || '').localeCompare(String(b.domainLabel || '')) ||
+      a.title.localeCompare(b.title) ||
+      a.id.localeCompare(b.id)
   );
 }
 

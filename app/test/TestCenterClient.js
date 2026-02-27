@@ -97,9 +97,14 @@ export default function TestCenterClient({ packs }) {
   const filteredPacks = useMemo(() => {
     if (!normalizedPackFilter) return visiblePacks;
     return visiblePacks.filter((pack) => {
+      const domainLabel = String(pack.domainLabel || '').toLowerCase();
       const title = String(pack.title || '').toLowerCase();
       const id = String(pack.id || '').toLowerCase();
-      return title.includes(normalizedPackFilter) || id.includes(normalizedPackFilter);
+      return (
+        domainLabel.includes(normalizedPackFilter) ||
+        title.includes(normalizedPackFilter) ||
+        id.includes(normalizedPackFilter)
+      );
     });
   }, [visiblePacks, normalizedPackFilter]);
 
@@ -261,12 +266,12 @@ export default function TestCenterClient({ packs }) {
                         style={{ width: 18, height: 18, flexShrink: 0 }}
                       />
                       <span style={{ display: 'grid', gap: 2 }}>
-                        <span style={{ fontWeight: 600 }}>{pack.title || pack.id}</span>
-                        {pack.title && pack.title !== pack.id ? (
-                          <span className="muted" style={{ fontSize: '0.85rem' }}>
-                            {pack.id}
-                          </span>
-                        ) : null}
+                        <span style={{ fontWeight: 700, fontSize: '1rem' }}>
+                          {pack.domainLabel || pack.title || pack.id}
+                        </span>
+                        <span className="muted" style={{ fontSize: '0.85rem' }}>
+                          {pack.title || pack.id}
+                        </span>
                       </span>
                     </label>
                   ))}

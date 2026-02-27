@@ -4,6 +4,7 @@
   "title": "MBLEx D3 Advanced Pathology, Contraindications & Special Populations v2 (polish-constrained)",
   "meta": {
     "visibility": "active",
+    "domain_label": "Pathology / Contraindications / Special Populations",
     "generated_at": "2026-02-27T13:34:56.3168011Z",
     "replaces": [
       "mblex-d3-advanced-v1"

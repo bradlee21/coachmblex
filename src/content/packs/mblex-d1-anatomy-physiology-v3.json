@@ -4,6 +4,7 @@
   "title": "MBLEx D1 Anatomy & Physiology v3 (clear stems + aligned distractors)",
   "meta": {
     "visibility": "active",
+    "domain_label": "Anatomy & Physiology",
     "generated_at": "2026-02-27T02:53:32.993370Z",
     "replaces": [
       "mblex-d1-anatomy-physiology-v1",

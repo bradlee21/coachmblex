@@ -11,6 +11,45 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-DOMAIN-LABEL-1
+
+- Status: `done`
+- Title: Show domain labels as primary pack names in `/test`
+- Goal: Render human-friendly domain labels in the Test Center pack list while preserving title/id context and filter behavior.
+- In scope:
+- Add `meta.domain_label` to currently active packs:
+- `mblex-d1-anatomy-physiology-v3` => `Anatomy & Physiology`
+- `mblex-d3-advanced-v2` => `Pathology / Contraindications / Special Populations`
+- Update `/test` pack loader to pass `domainLabel` with fallback to existing title
+- Update `/test` pack row UI to show `domainLabel` as primary text and title/id as smaller subtext
+- Extend `/test` pack search/filter to match `domainLabel`, title, and pack id
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- Pack question content changes
+- `/test/run` query behavior changes
+- Acceptance criteria:
+- `/test` shows domain label as primary line for packs with `meta.domain_label`
+- `/test` shows title (or id) as smaller secondary text
+- Search matches domain label text, title text, and pack id text
+- Missing `meta.domain_label` falls back to current title
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Manual: verify domain labels render in `/test` and filter matches domain label queries
+- Files expected to change:
+- `src/content/packs/mblex-d1-anatomy-physiology-v3.json`
+- `src/content/packs/mblex-d3-advanced-v2.json`
+- `app/test/page.js`
+- `app/test/TestCenterClient.js`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-PACK-LATEST-2
 
 - Status: `done`
