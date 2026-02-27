@@ -11,6 +11,40 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-TEST-PACK-ARCHIVE-1
+
+- Status: `done`
+- Title: Archive non-current packs for `/test` default selection
+- Goal: Keep only the intended current packs active in `src/content/packs` so `/test` default views prioritize current content.
+- In scope:
+- Keep `mblex-d1-anatomy-physiology-v3` active
+- Keep `mblex-d3-advanced-v2` active
+- Set `meta.visibility` to `archived` for all other `src/content/packs/*.json` files currently active
+- Ensure each pack file has explicit `meta.visibility`
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- Question content edits
+- Importer or `/test` logic changes
+- Acceptance criteria:
+- Only the two specified packs remain `meta.visibility: "active"`
+- Other pack files under `src/content/packs` are `meta.visibility: "archived"`
+- Every pack file has explicit `meta.visibility`
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d3-advanced-v1.json`
+- `src/content/packs/mblex-d3-pathology-contraindications-v3.json`
+- `src/content/packs/mblex-d3-pathology-contraindications-v4.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-TEST-PACK-LATEST-1
 
 - Status: `done`
