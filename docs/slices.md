@@ -11,6 +11,42 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D3-ADV-1
+
+- Status: `done`
+- Title: Add D3 Advanced v1 pack with strict-sanity-clean best-answer MCQs
+- Goal: Create a new advanced D3 MCQ pack (`20` items) with stronger MBLEx-style best-answer reasoning and pass strict sanity import with zero flagged rows.
+- In scope:
+- Add `src/content/packs/mblex-d3-advanced-v1.json` in house pack schema (`pack_id`, `source`, `title`, `meta`, `questions`)
+- Include `20` MCQ rows only, all `domain_code: "D3"`
+- Difficulty mix: `4 easy / 10 medium / 6 hard`
+- Ensure `answer` exactly equals `choices[correct_choice]`
+- Run strict sanity import and required validations
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- Importer/script logic changes
+- DB schema/migrations
+- Non-pack feature changes
+- Acceptance criteria:
+- New pack exists at expected path and loads as valid JSON
+- Strict import reports `Sanity flagged: 0`
+- Import inserts all rows without invalid rows
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/mblex-d3-advanced-v1.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d3-advanced-v1.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 20`, `Sanity flagged: 0`, `Inserted: 20`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-SEC-NEXT16
 
 - Status: `done`
