@@ -11,6 +11,40 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-SEC-NEXT16
+
+- Status: `done`
+- Title: Resolve remaining high npm audit finding by upgrading Next.js to 16
+- Goal: Remove the remaining high-severity `next` DoS advisory that persisted on `14.2.35` by performing the required major-version upgrade.
+- In scope:
+- Upgrade `next` from `^14.2.35` to `^16.1.6`
+- Refresh lockfile
+- Verify build and smoke checks pass after the major upgrade
+- Verify `npm audit` reports zero vulnerabilities
+- Out of scope:
+- Middleware-to-proxy migration refactor
+- Broad framework modernization beyond dependency upgrade
+- Acceptance criteria:
+- `package.json` uses `next@^16.1.6`
+- `npm run smoke` passes
+- `npm run build` passes
+- `npm audit` reports `found 0 vulnerabilities`
+- Required validation/tests:
+- `npm run build`
+- `npm run smoke`
+- `npm audit`
+- Files expected to change:
+- `package.json`
+- `package-lock.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- `npm run build` pass on Next.js `16.1.6`
+- `npm run smoke` pass on Next.js `16.1.6`
+- `npm audit` pass (`found 0 vulnerabilities`)
+- Build emits a non-blocking warning that `middleware` naming is deprecated in Next 16 (future follow-up slice).
+
 ### SLICE-D3-V4
 
 - Status: `done`
