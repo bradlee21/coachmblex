@@ -11,6 +11,78 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D3-V4
+
+- Status: `done`
+- Title: Generate D3 contraindications v4 MCQ pack with strict sanity pass
+- Goal: Add a new D3-only MCQ pack in house JSON format covering pathology/contraindications/special populations and pass strict importer sanity checks with zero flagged rows.
+- In scope:
+- Create `src/content/packs/mblex-d3-pathology-contraindications-v4.json`
+- Use pack shape: `pack_id`, `source`, `title`, `meta`, `questions`
+- Include 20 MCQs (`8 easy`, `10 medium`, `2 hard`) with scenario-based BEST/NEXT/MOST action framing
+- Ensure `answer` exactly matches `choices[correct_choice]` for all rows
+- Run strict sanity import and required smoke/build validation
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- DB schema/migrations
+- Importer logic changes
+- Non-D3 pack edits
+- Acceptance criteria:
+- New D3 v4 pack exists with top-level/meta conventions matching repo style
+- Import strict sanity report shows `Sanity flagged: 0`
+- Import result inserts all 20 rows with no invalid rows
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/mblex-d3-pathology-contraindications-v4.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d3-pathology-contraindications-v4.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 20`, `Sanity flagged: 0`, `Inserted: 20`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
+### SLICE-SANITY-1
+
+- Status: `done`
+- Title: Add deterministic importer question sanity checks + reporting
+- Goal: Add a lightweight, deterministic sanity validator for pack question rows and integrate it into import reporting with an optional strict skip mode.
+- In scope:
+- Add `validateQuestion(q)` utility for sanity-only warnings
+- Check MCQ/reverse A/B/C/D presence, `correct_choice` validity, and answer/choice mismatch
+- Flag duplicate choices, too-short prompt/answer, and likely part-vs-function pattern misses
+- Integrate sanity checks into `scripts/import-pack.mjs` with reporting and `--strict-sanity`
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- DB schema/migration changes
+- Pack format changes
+- Broad importer refactors
+- Acceptance criteria:
+- Importer prints sanity summary: total rows, flagged count, top issue types, and first N (10) flagged examples
+- Flagged example lines include row id, prompt, correct choice, answer, and pack id
+- Default import behavior remains backwards compatible (flagged rows still process)
+- `--strict-sanity` skips flagged rows
+- Required validation/tests:
+- `npm run import:pack -- src/content/packs/mblex-d1-anatomy-physiology-v3.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `scripts/lib/questionSanityCheck.mjs`
+- `scripts/import-pack.mjs`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Strict mode usage: `node scripts/import-pack.mjs --strict-sanity src/content/packs/<pack>.json`
+- Validation (2026-02-27):
+- `npm run import:pack -- src/content/packs/mblex-d1-anatomy-physiology-v3.json` pass (`Sanity flagged: 2`, top issue `likely_part_not_function: 2`, examples printed)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-PACK-V2
 
 - Status: `done`

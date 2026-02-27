@@ -1,0 +1,356 @@
+{
+  "pack_id": "mblex-d3-pathology-contraindications-v4",
+  "source": "codex-generated",
+  "title": "MBLEx D3 Pathology, Contraindications & Special Populations v4 (prompt-locked, aligned distractors)",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T12:49:02.3624665Z",
+    "replaces": [
+      "mblex-d3-pathology-contraindications-v1",
+      "mblex-d3-pathology-contraindications-v2",
+      "mblex-d3-pathology-contraindications-v3"
+    ]
+  },
+  "questions": [
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Mid-session, a client develops crushing chest pain, cold sweat, and shortness of breath. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Continue with lighter pressure and reassess in 15 minutes.",
+        "B": "Have the client drink water and walk slowly around the room.",
+        "C": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+        "D": "Finish only neck and shoulder work to reduce stress."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "This symptom cluster suggests a possible cardiac emergency, which is outside massage scope and needs immediate medical intervention. Ending care and calling emergency services is the safest response.",
+      "trap": "Waiting to reassess can delay lifesaving treatment.",
+      "hook": "Chest pain plus dyspnea: emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At intake, a client reports one-sided calf swelling and tenderness after a recent long car ride. What is the BEST next step?",
+      "choices": {
+        "A": "Deeply massage the calf to improve circulation.",
+        "B": "Do not massage the leg and refer for urgent medical evaluation for possible DVT.",
+        "C": "Apply heat to the area and recheck at the end of session.",
+        "D": "Continue full-body massage but skip direct calf pressure."
+      },
+      "correct_choice": "B",
+      "answer": "Do not massage the leg and refer for urgent medical evaluation for possible DVT.",
+      "why": "Unilateral calf swelling and tenderness after prolonged immobility are DVT red flags and require urgent referral. Massage could increase embolic risk and is contraindicated.",
+      "trap": "Skipping direct calf pressure still fails to address a possible clot.",
+      "hook": "One swollen calf: refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has fever and a rapidly spreading red streak on the forearm. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Perform light lymphatic strokes around the area.",
+        "B": "Continue treatment while wearing gloves.",
+        "C": "Use cold packs and complete the planned session.",
+        "D": "Do not treat and refer for same-day medical evaluation for possible acute infection."
+      },
+      "correct_choice": "D",
+      "answer": "Do not treat and refer for same-day medical evaluation for possible acute infection.",
+      "why": "Fever plus spreading erythema can indicate active infection requiring medical care beyond massage scope. Treating through it may worsen spread and delay needed care.",
+      "trap": "Gloves do not make an unstable systemic condition safe for massage.",
+      "hook": "Fever plus streaking: same-day referral."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client presents with a painful unilateral blistering rash in a dermatomal pattern consistent with active shingles. What is the BEST next step?",
+      "choices": {
+        "A": "Postpone massage and avoid skin contact until lesions are crusted and medically cleared.",
+        "B": "Massage surrounding tissue deeply to reduce nerve pain.",
+        "C": "Cover the rash and continue full-session massage.",
+        "D": "Apply moist heat over lesions before treatment."
+      },
+      "correct_choice": "A",
+      "answer": "Postpone massage and avoid skin contact until lesions are crusted and medically cleared.",
+      "why": "Active shingles can be contagious and painful, and direct massage over involved tissue is inappropriate. Deferral and medical guidance protect both client and therapist.",
+      "trap": "Covering lesions does not remove transmission and symptom-flare risk.",
+      "hook": "Active shingles: defer care."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Before treatment, a client has blood pressure 186/112 with severe headache and blurred vision. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Proceed with relaxation massage and monitor symptoms.",
+        "B": "Use deep neck work to reduce blood pressure quickly.",
+        "C": "Have the client rest for 20 minutes, then continue if improved.",
+        "D": "Stop the session and activate emergency medical response (call 911 or local emergency services)."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Markedly elevated blood pressure with neurologic symptoms may indicate hypertensive emergency and requires immediate medical care. Massage should not continue in this presentation.",
+      "trap": "A rest-and-recheck approach can delay urgent treatment.",
+      "hook": "Severe BP symptoms: emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At 24 weeks pregnant, a client becomes dizzy and nauseated when lying supine. What is the BEST next step?",
+      "choices": {
+        "A": "Keep the client supine and lower pressure.",
+        "B": "Switch to side-lying with bolstering and continue only if symptoms fully resolve.",
+        "C": "Turn the client prone immediately to improve circulation.",
+        "D": "Apply abdominal compression to reduce discomfort."
+      },
+      "correct_choice": "B",
+      "answer": "Switch to side-lying with bolstering and continue only if symptoms fully resolve.",
+      "why": "Supine hypotensive symptoms in pregnancy require immediate positional modification and close monitoring. Side-lying support is a standard safety adaptation within massage scope.",
+      "trap": "Continuing supine can worsen vena cava compression symptoms.",
+      "hook": "Pregnancy dizziness: side-lying now."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a session, a client with diabetes becomes shaky, sweaty, and mildly confused. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Continue massage because these signs are usually anxiety.",
+        "B": "Stop treatment, give fast-acting carbohydrate if the client is alert, and monitor response.",
+        "C": "Have the client sleep for 20 minutes, then resume treatment.",
+        "D": "Use brisk friction to increase circulation and alertness."
+      },
+      "correct_choice": "B",
+      "answer": "Stop treatment, give fast-acting carbohydrate if the client is alert, and monitor response.",
+      "why": "These are possible hypoglycemia signs requiring immediate safety management before any further bodywork. If symptoms persist or worsen, escalate to emergency care.",
+      "trap": "Treating through confusion can allow rapid deterioration.",
+      "hook": "Shaky sweaty confused: check glucose."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has an open, draining skin lesion near the treatment area. What is the BEST next step?",
+      "choices": {
+        "A": "Avoid direct contact with the wound, use standard precautions, and modify or defer local work.",
+        "B": "Massage directly over the dressing to reduce edema.",
+        "C": "Remove the dressing to inspect tissue before massage.",
+        "D": "Apply oil and deep pressure across wound margins."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid direct contact with the wound, use standard precautions, and modify or defer local work.",
+      "why": "Open or draining lesions are a local contraindication and require infection-control judgment and scope-appropriate modification. Direct work can increase contamination and tissue irritation.",
+      "trap": "Working through a dressing still risks contamination and delayed healing.",
+      "hook": "Open lesion: no direct work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client on warfarin reports frequent bruising and requests deep tissue to the thighs. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Deep tissue is safe if bruising is from minor bumps.",
+        "B": "Use lighter pressure, avoid aggressive techniques, and monitor for bruising or pain.",
+        "C": "Use percussion over bruised spots to clear pooled blood.",
+        "D": "Increase pressure gradually until tissue resistance decreases."
+      },
+      "correct_choice": "B",
+      "answer": "Use lighter pressure, avoid aggressive techniques, and monitor for bruising or pain.",
+      "why": "Anticoagulation raises bleeding and hematoma risk, so pressure and technique must be modified conservatively. This keeps care within safe massage parameters.",
+      "trap": "Gradually increasing to deep pressure can still injure fragile tissue.",
+      "hook": "Warfarin means pressure down."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetic peripheral neuropathy has markedly reduced sensation in both feet. What is the BEST approach?",
+      "choices": {
+        "A": "Use deep pressure because reduced sensation lowers discomfort.",
+        "B": "Use very hot stones to improve nerve signaling.",
+        "C": "Use conservative pressure, check feedback frequently, and avoid intense thermal input.",
+        "D": "Skip sensory questions and proceed with normal foot protocol."
+      },
+      "correct_choice": "C",
+      "answer": "Use conservative pressure, check feedback frequently, and avoid intense thermal input.",
+      "why": "Reduced protective sensation increases risk of unnoticed pressure or thermal injury during treatment. Frequent check-ins and conservative dosing are safest.",
+      "trap": "Less sensation does not mean tissues can tolerate more force or heat.",
+      "hook": "Less feeling, less force."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A 72-year-old client with osteoporosis and chronic steroid use requests vigorous back work. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Use rapid percussion over the thoracic spine to stimulate bone.",
+        "B": "Apply sustained deep compression over spinous processes.",
+        "C": "Favor gentle broad contact and avoid forceful pressure over fragile bony areas.",
+        "D": "Perform end-range spinal rotation stretches before massage."
+      },
+      "correct_choice": "C",
+      "answer": "Favor gentle broad contact and avoid forceful pressure over fragile bony areas.",
+      "why": "Bone fragility elevates injury risk with forceful localized techniques, especially over the spine and ribs. Broad, conservative pressure is safer and still therapeutic.",
+      "trap": "Percussion and focal compression increase fracture risk in fragile bone.",
+      "hook": "Fragile bone: broad gentle."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is 10 days post abdominal surgery with steri-strips still present and asks for scar work. What is the BEST next step?",
+      "choices": {
+        "A": "Provide deep abdominal work to prevent early adhesions.",
+        "B": "Avoid the surgical region and request medical clearance before regional treatment.",
+        "C": "Stretch the scar aggressively during this visit.",
+        "D": "Continue normal pressure because the incision is covered."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid the surgical region and request medical clearance before regional treatment.",
+      "why": "Early postoperative tissue is still healing and may not tolerate regional manipulation. Deferring local work and confirming readiness with the medical team is safest.",
+      "trap": "Coverage with steri-strips does not mean tissue can handle deep mobilization.",
+      "hook": "Recent surgery: clear first."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with prior mastectomy and axillary node removal reports new heaviness and swelling in the affected arm. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Perform strong distal-to-proximal strokes on the swollen arm.",
+        "B": "Avoid pressure to the affected arm and refer to the oncology team or a certified lymphedema therapist.",
+        "C": "Use vigorous cupping to move stagnant fluid quickly.",
+        "D": "Continue full-body massage and ignore arm symptoms."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid pressure to the affected arm and refer to the oncology team or a certified lymphedema therapist.",
+      "why": "New unilateral swelling after lymph node removal may indicate lymphedema requiring specialized management. Referral and regional caution are appropriate scope-based safety steps.",
+      "trap": "Aggressive fluid-moving techniques can aggravate symptoms when diagnosis and staging are unclear.",
+      "hook": "Post-node swelling: specialist referral."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During treatment, a client suddenly develops facial droop and slurred speech. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Offer water and reassess after 30 minutes.",
+        "B": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+        "C": "Continue gentle scalp massage while monitoring speech.",
+        "D": "Ask the client to drive to urgent care after the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Acute FAST-type neurologic changes suggest possible stroke and require immediate emergency activation. Massage must stop because this is a medical emergency.",
+      "trap": "Observation delays can reduce eligibility for time-sensitive stroke treatment.",
+      "hook": "FAST signs: call now."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives smelling strongly of alcohol with impaired balance and slowed responses. What is the BEST next step?",
+      "choices": {
+        "A": "Proceed if the client signs an additional consent form.",
+        "B": "Shorten the session to 30 minutes and avoid deep pressure.",
+        "C": "Decline treatment, follow clinic policy, and arrange safe transportation as needed.",
+        "D": "Treat only extremities to minimize risk."
+      },
+      "correct_choice": "C",
+      "answer": "Decline treatment, follow clinic policy, and arrange safe transportation as needed.",
+      "why": "Intoxication impairs consent quality, communication, and safety monitoring during manual therapy. Deferring treatment and following policy protects client welfare.",
+      "trap": "A signed form does not correct impaired decision-making capacity.",
+      "hook": "Impaired client: no treatment."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with recent lower-leg surgery reports calf pain and now sudden sharp chest pain with breathing. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Have the client breathe slowly and continue light massage.",
+        "B": "Massage the calf to reduce tension before reassessing chest pain.",
+        "C": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+        "D": "Recommend an urgent care visit after the appointment."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Recent surgery plus calf pain and pleuritic chest pain raises concern for thromboembolic emergency. Immediate emergency activation is required, not continued manual care.",
+      "trap": "Delaying for post-session referral may miss a life-threatening event.",
+      "hook": "Clot signs plus chest pain: emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has multiple ring-shaped, itchy skin lesions suspicious for a contagious fungal infection. What is the BEST next step?",
+      "choices": {
+        "A": "Massage through lotion to reduce itch and irritation.",
+        "B": "Cover lesions and continue full treatment.",
+        "C": "Avoid affected skin and postpone treatment if lesions appear contagious or widespread.",
+        "D": "Use friction over lesions to increase local immunity."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid affected skin and postpone treatment if lesions appear contagious or widespread.",
+      "why": "Potentially contagious dermal conditions require contact precautions and often deferral, depending on extent and setting policy. This reduces transmission risk and skin aggravation.",
+      "trap": "Covering lesions alone does not reliably control spread risk during massage.",
+      "hook": "Contagious rash: defer or modify."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Three days after a concussion, a client still has headache, dizziness, and light sensitivity but requests neck work. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Provide deep cervical work to break the headache cycle.",
+        "B": "Proceed with full treatment but avoid scalp contact.",
+        "C": "Defer treatment and refer for medical reassessment before massage.",
+        "D": "Use vigorous tapotement to improve alertness."
+      },
+      "correct_choice": "C",
+      "answer": "Defer treatment and refer for medical reassessment before massage.",
+      "why": "Persistent post-concussion symptoms indicate unresolved neurologic recovery and require medical reassessment. Massage can resume after stability and guidance are clarified.",
+      "trap": "Deep neck work can aggravate symptoms during an unstable recovery phase.",
+      "hook": "Persistent concussion signs: defer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "During prone work, a client reports pounding palpitations, becomes pale, then briefly loses responsiveness and wakes confused. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Resume treatment once the client says they feel better.",
+        "B": "Sit the client up quickly and monitor without calling for help.",
+        "C": "Stop care, monitor ABCs, and activate emergency medical response (call 911 or local emergency services).",
+        "D": "Give a sports drink and have the client walk slowly."
+      },
+      "correct_choice": "C",
+      "answer": "Stop care, monitor ABCs, and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Transient loss of responsiveness with cardiac symptoms is an emergency requiring immediate escalation and basic safety monitoring. Continuing massage is outside scope and unsafe.",
+      "trap": "Symptom improvement after syncope does not rule out serious arrhythmia.",
+      "hook": "Syncope plus palpitations: EMS."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Six days postpartum, a client requests leg massage but reports unilateral calf pain and new shortness of breath today. What is the BEST next step?",
+      "choices": {
+        "A": "Perform gentle lymphatic leg massage first, then reassess breathing.",
+        "B": "Provide a short relaxation massage and advise hydration.",
+        "C": "Treat upper body only and monitor symptoms during session.",
+        "D": "Stop the session and activate emergency medical response (call 911 or local emergency services)."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Postpartum status with unilateral calf pain and dyspnea suggests possible thromboembolic emergency requiring immediate medical care. Massage is contraindicated until cleared.",
+      "trap": "Limiting treatment area does not mitigate potentially life-threatening systemic risk.",
+      "hook": "Postpartum clot signs: emergency."
+    }
+  ]
+}

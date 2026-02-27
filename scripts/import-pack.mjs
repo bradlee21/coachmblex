@@ -1,8 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createClient } from '@supabase/supabase-js';
+import { validateQuestion } from './lib/questionSanityCheck.mjs';
 
 const BATCH_SIZE = 50;
+const SANITY_REPORT_LIMIT = 10;
 const ALLOWED_TYPES = new Set(['mcq', 'reverse', 'fill']);
 const CHOICE_KEYS = ['A', 'B', 'C', 'D'];
 const ALLOWED_DOMAIN_CODES = new Set(['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7']);
@@ -58,8 +60,60 @@ function loadEnvFile(filePath) {
 }
 
 function usageAndExit() {
-  console.error('Usage: node scripts/import-pack.mjs <path-to-pack.json>');
+  console.error('Usage: node scripts/import-pack.mjs [--strict-sanity] <path-to-pack.json>');
   process.exit(1);
+}
+
+function parseCliArgs(argv) {
+  let packPathArg = '';
+  let strictSanity = false;
+
+  for (const arg of argv) {
+    if (arg === '--strict-sanity') {
+      strictSanity = true;
+      continue;
+    }
+    if (arg.startsWith('--')) {
+      usageAndExit();
+    }
+    if (!packPathArg) {
+      packPathArg = arg;
+      continue;
+    }
+    usageAndExit();
+  }
+
+  return { packPathArg, strictSanity };
+}
+
+function getIssueCountEntries(issueCountByType) {
+  return [...issueCountByType.entries()].sort((a, b) => {
+    if (b[1] !== a[1]) return b[1] - a[1];
+    return a[0].localeCompare(b[0]);
+  });
+}
+
+function getExampleValue(value, fallback = '(none)') {
+  const normalized = normalizeText(value);
+  return normalized || fallback;
+}
+
+function toPromptPreview(prompt) {
+  const normalized = normalizeText(prompt);
+  if (normalized.length <= 140) return normalized || '(none)';
+  return `${normalized.slice(0, 137)}...`;
+}
+
+function buildSanityFlag(question, rowNo, packId, issues) {
+  return {
+    rowNo,
+    rowId: getExampleValue(question?.id),
+    prompt: toPromptPreview(question?.prompt),
+    correctChoice: getExampleValue(question?.correct_choice),
+    answer: getExampleValue(question?.answer || question?.correct_text || question?.explanation?.answer),
+    packId,
+    issues,
+  };
 }
 
 function getHostnameFromUrl(rawUrl) {
@@ -436,7 +490,7 @@ async function main() {
   loadEnvFile(resolve(process.cwd(), '.env.local'));
   loadEnvFile(resolve(process.cwd(), '.env'));
 
-  const packPathArg = process.argv[2];
+  const { packPathArg, strictSanity } = parseCliArgs(process.argv.slice(2));
   if (!packPathArg) usageAndExit();
 
   const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -494,6 +548,8 @@ async function main() {
 
   const validationFailures = [];
   const writeFailures = [];
+  const sanityFlags = [];
+  const sanityIssueCounts = new Map();
   const rowsToInsert = [];
   const rowNumbersToInsert = [];
   const rowsToUpdate = [];
@@ -502,6 +558,7 @@ async function main() {
   const taggedExistingIds = new Set();
   const stats = {
     duplicateSkippedCount: 0,
+    sanityStrictSkippedCount: 0,
   };
   let seenSignatures = new Set();
   let existingRowsByStrict = new Map();
@@ -520,7 +577,21 @@ async function main() {
   }
 
   for (let i = 0; i < pack.questions.length; i += 1) {
-    const result = validateAndMapQuestion(pack.questions[i], i, canonicalPackId);
+    const incomingQuestion = pack.questions[i];
+    const sanity = validateQuestion(incomingQuestion);
+    if (!sanity.ok) {
+      const sanityFlag = buildSanityFlag(incomingQuestion, i + 1, canonicalPackId, sanity.issues);
+      sanityFlags.push(sanityFlag);
+      for (const issue of sanity.issues) {
+        sanityIssueCounts.set(issue, Number(sanityIssueCounts.get(issue) || 0) + 1);
+      }
+      if (strictSanity) {
+        stats.sanityStrictSkippedCount += 1;
+        continue;
+      }
+    }
+
+    const result = validateAndMapQuestion(incomingQuestion, i, canonicalPackId);
     if (!result.ok) {
       validationFailures.push({ rowNo: result.rowNo, reasons: result.errors });
       continue;
@@ -602,10 +673,16 @@ async function main() {
   }
 
   const invalidCount = validationFailures.length;
+  const sanityFlaggedCount = sanityFlags.length;
   const writeFailureCount = writeFailures.length;
   console.log(`Pack: ${canonicalPackId}`);
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
+  console.log(`Sanity strict mode: ${strictSanity ? 'on' : 'off'}`);
   console.log(`Total rows: ${pack.questions.length}`);
+  console.log(`Sanity flagged: ${sanityFlaggedCount}`);
+  if (strictSanity) {
+    console.log(`Sanity strict skipped: ${stats.sanityStrictSkippedCount}`);
+  }
   console.log(`Updated: ${updatedCount}`);
   console.log(`Tagged: ${taggedCount}`);
   console.log(`Inserted: ${insertedCount}`);
@@ -621,6 +698,19 @@ async function main() {
     console.log(
       `Questions in DB after import: unavailable (${error instanceof Error ? error.message : String(error)})`
     );
+  }
+
+  if (sanityFlaggedCount > 0) {
+    console.log('Sanity issues (top types):');
+    for (const [issue, count] of getIssueCountEntries(sanityIssueCounts)) {
+      console.log(`- ${issue}: ${count}`);
+    }
+    console.log(`Sanity flagged examples (first ${Math.min(SANITY_REPORT_LIMIT, sanityFlaggedCount)}):`);
+    for (const flag of sanityFlags.slice(0, SANITY_REPORT_LIMIT)) {
+      console.log(
+        `- row ${flag.rowNo} | id: ${flag.rowId} | pack: ${flag.packId} | correct: ${flag.correctChoice} | answer: ${flag.answer} | prompt: ${flag.prompt} | issues: ${flag.issues.join(', ')}`
+      );
+    }
   }
 
   if (invalidCount > 0) {

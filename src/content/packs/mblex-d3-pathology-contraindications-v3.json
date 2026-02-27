@@ -1,0 +1,1715 @@
+{
+  "pack_id": "mblex-d3-pathology-contraindications-v3",
+  "source": "chatgpt-original",
+  "title": "MBLEx D3 Pathology, Contraindications & Special Populations v3 (prompt-locked, aligned distractors)",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T08:25:16.678738Z",
+    "replaces": [
+      "mblex-d3-pathology-contraindications-v1",
+      "mblex-d3-pathology-contraindications-v2"
+    ]
+  },
+  "questions": [
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports sudden chest pressure with shortness of breath and nausea. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Ask the client to rest for 10 minutes and continue if symptoms improve.",
+        "B": "Proceed with light massage to reduce stress.",
+        "C": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+        "D": "Recommend an over-the-counter anti-inflammatory and continue."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Possible cardiac symptoms are a medical emergency; end care and seek immediate emergency evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Waiting to see if it improves delays emergency care and increases risk.",
+      "hook": "Red flag = stop + emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports sudden chest pressure with shortness of breath and nausea. What is the BEST next step?",
+      "choices": {
+        "A": "Proceed with light massage to reduce stress.",
+        "B": "Ask the client to rest for 10 minutes and continue if symptoms improve.",
+        "C": "Perform deep work on the upper back to 'open the chest'.",
+        "D": "Stop the session and activate emergency medical response (call 911 or local emergency services)."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and activate emergency medical response (call 911 or local emergency services).",
+      "why": "Possible cardiac symptoms are a medical emergency; end care and seek immediate emergency evaluation.",
+      "trap": "Waiting to see if it improves delays emergency care and increases risk.",
+      "hook": "Red flag = stop + emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During intake, a client reports new unilateral calf swelling, warmth, and tenderness after a long flight. What is the BEST next step?",
+      "choices": {
+        "A": "Recommend stretching and continue the session.",
+        "B": "Do not treat; refer for urgent medical evaluation due to possible deep vein thrombosis.",
+        "C": "Use deep stripping to break up the tightness in the calf.",
+        "D": "Perform vigorous massage to improve circulation in the leg."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat; refer for urgent medical evaluation due to possible deep vein thrombosis.",
+      "why": "Unilateral swelling/warmth after prolonged immobility is a red flag for DVT; massage is contraindicated and referral is indicated.",
+      "trap": "Vigorous massage can dislodge a clot and is unsafe.",
+      "hook": "Unilateral swelling = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During intake, a client reports new unilateral calf swelling, warmth, and tenderness after a long flight. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Do not treat; refer for urgent medical evaluation due to possible deep vein thrombosis.",
+        "B": "Recommend stretching and continue the session.",
+        "C": "Perform vigorous massage to improve circulation in the leg.",
+        "D": "Use deep stripping to break up the tightness in the calf."
+      },
+      "correct_choice": "A",
+      "answer": "Do not treat; refer for urgent medical evaluation due to possible deep vein thrombosis.",
+      "why": "Unilateral swelling/warmth after prolonged immobility is a red flag for DVT; massage is contraindicated and referral is indicated. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Vigorous massage can dislodge a clot and is unsafe.",
+      "hook": "Unilateral swelling = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client presents with fever and a rapidly spreading red, hot area on the lower leg. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Perform lymphatic drainage to 'flush it out'.",
+        "B": "Use friction over the area to increase circulation.",
+        "C": "Apply heat and continue the session.",
+        "D": "Do not treat; refer for prompt medical evaluation for possible infection."
+      },
+      "correct_choice": "D",
+      "answer": "Do not treat; refer for prompt medical evaluation for possible infection.",
+      "why": "Signs of infection require medical evaluation; massage over/around an infected area can worsen spread and is contraindicated.",
+      "trap": "Avoiding the area still ignores systemic risk and possible contagion.",
+      "hook": "Hot/red + fever = infection."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client presents with fever and a rapidly spreading red, hot area on the lower leg. What is the BEST next step?",
+      "choices": {
+        "A": "Apply heat and continue the session.",
+        "B": "Do not treat; refer for prompt medical evaluation for possible infection.",
+        "C": "Proceed but avoid the red area.",
+        "D": "Perform lymphatic drainage to 'flush it out'."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat; refer for prompt medical evaluation for possible infection.",
+      "why": "Signs of infection require medical evaluation; massage over/around an infected area can worsen spread and is contraindicated. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Avoiding the area still ignores systemic risk and possible contagion.",
+      "hook": "Hot/red + fever = infection."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports low back pain with radiating leg pain AND new bowel/bladder changes. What is the BEST next step?",
+      "choices": {
+        "A": "Use stretching and continue if pain decreases.",
+        "B": "Proceed with deep gluteal work to release the sciatic nerve.",
+        "C": "Stop and refer for urgent medical evaluation (possible cauda equina syndrome).",
+        "D": "Recommend home exercises and complete the session."
+      },
+      "correct_choice": "C",
+      "answer": "Stop and refer for urgent medical evaluation (possible cauda equina syndrome).",
+      "why": "Neurologic red flags such as bowel/bladder changes with radicular symptoms warrant urgent medical assessment.",
+      "trap": "Deep work risks delaying needed care and may worsen symptoms.",
+      "hook": "Neuro red flag = urgent."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports low back pain with radiating leg pain AND new bowel/bladder changes. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Use stretching and continue if pain decreases.",
+        "B": "Stop and refer for urgent medical evaluation (possible cauda equina syndrome).",
+        "C": "Proceed with deep gluteal work to release the sciatic nerve.",
+        "D": "Focus on relaxation massage away from the painful area."
+      },
+      "correct_choice": "B",
+      "answer": "Stop and refer for urgent medical evaluation (possible cauda equina syndrome).",
+      "why": "Neurologic red flags such as bowel/bladder changes with radicular symptoms warrant urgent medical assessment. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Deep work risks delaying needed care and may worsen symptoms.",
+      "hook": "Neuro red flag = urgent."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client arrives for a session and appears intoxicated (slurred speech, impaired balance). What is the MOST appropriate action?",
+      "choices": {
+        "A": "Use deeper pressure to help them 'sleep it off'.",
+        "B": "Do not treat; follow clinic policy and arrange safe transportation if needed.",
+        "C": "Treat only if they sign an additional consent form.",
+        "D": "Continue but avoid the neck and head."
+      },
+      "correct_choice": "B",
+      "answer": "Do not treat; follow clinic policy and arrange safe transportation if needed.",
+      "why": "Impaired judgment and safety risk make treatment inappropriate; follow policy and prioritize safety. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Consent is not valid if the client is impaired; additional forms don't fix that.",
+      "hook": "Impaired = no session."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives for a session and appears intoxicated (slurred speech, impaired balance). What is the BEST next step?",
+      "choices": {
+        "A": "Proceed with a shorter session since the client already paid.",
+        "B": "Continue but avoid the neck and head.",
+        "C": "Do not treat; follow clinic policy and arrange safe transportation if needed.",
+        "D": "Treat only if they sign an additional consent form."
+      },
+      "correct_choice": "C",
+      "answer": "Do not treat; follow clinic policy and arrange safe transportation if needed.",
+      "why": "Impaired judgment and safety risk make treatment inappropriate; follow policy and prioritize safety. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Consent is not valid if the client is impaired; additional forms don't fix that.",
+      "hook": "Impaired = no session."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is taking anticoagulants and requests deep tissue on the calves. What is the BEST approach?",
+      "choices": {
+        "A": "Proceed with deep stripping because anticoagulants reduce clot risk.",
+        "B": "Use percussive techniques to improve circulation.",
+        "C": "Perform aggressive friction to break up adhesions.",
+        "D": "Use lighter pressure and avoid aggressive techniques; monitor closely for bruising and pain."
+      },
+      "correct_choice": "D",
+      "answer": "Use lighter pressure and avoid aggressive techniques; monitor closely for bruising and pain.",
+      "why": "Anticoagulants increase bruising/bleeding risk; modify pressure and avoid aggressive techniques. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Deep stripping increases bruising/hematoma risk.",
+      "hook": "Blood thinners = gentle."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client is taking anticoagulants and requests deep tissue on the calves. What is the BEST approach? (choose the best answer)",
+      "choices": {
+        "A": "Perform aggressive friction to break up adhesions.",
+        "B": "Use percussive techniques to improve circulation.",
+        "C": "Use lighter pressure and avoid aggressive techniques; monitor closely for bruising and pain.",
+        "D": "Proceed with deep stripping because anticoagulants reduce clot risk."
+      },
+      "correct_choice": "C",
+      "answer": "Use lighter pressure and avoid aggressive techniques; monitor closely for bruising and pain.",
+      "why": "Anticoagulants increase bruising/bleeding risk; modify pressure and avoid aggressive techniques.",
+      "trap": "Deep stripping increases bruising/hematoma risk.",
+      "hook": "Blood thinners = gentle."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a large fresh bruise and asks you to work directly over it. What is the MOST appropriate response?",
+      "choices": {
+        "A": "Avoid direct work over the bruise and modify the session to adjacent areas.",
+        "B": "Proceed normally because bruises are harmless.",
+        "C": "Use deep pressure to 'break up' the bruise.",
+        "D": "Apply heat and deep massage directly on it."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid direct work over the bruise and modify the session to adjacent areas.",
+      "why": "Fresh bruising indicates tissue damage; direct pressure can worsen bleeding and pain.",
+      "trap": "Trying to 'break up' a bruise is unsafe and may increase tissue trauma.",
+      "hook": "Bruise = avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has a large fresh bruise and asks you to work directly over it. What is the MOST appropriate response? (choose the best answer)",
+      "choices": {
+        "A": "Apply heat and deep massage directly on it.",
+        "B": "Use friction to speed healing.",
+        "C": "Use deep pressure to 'break up' the bruise.",
+        "D": "Avoid direct work over the bruise and modify the session to adjacent areas."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid direct work over the bruise and modify the session to adjacent areas.",
+      "why": "Fresh bruising indicates tissue damage; direct pressure can worsen bleeding and pain. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Trying to 'break up' a bruise is unsafe and may increase tissue trauma.",
+      "hook": "Bruise = avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports they took a strong pain medication and cannot accurately feel pressure. What is the BEST next step?",
+      "choices": {
+        "A": "Perform aggressive stretching to improve range of motion.",
+        "B": "Rely on your judgment and avoid asking for feedback.",
+        "C": "Use very conservative pressure with frequent check-ins, or reschedule if safe feedback is not possible.",
+        "D": "Increase intensity to maximize results while numb."
+      },
+      "correct_choice": "C",
+      "answer": "Use very conservative pressure with frequent check-ins, or reschedule if safe feedback is not possible.",
+      "why": "If sensation is impaired, the client cannot reliably guide pressure; conservative work or rescheduling reduces injury risk.",
+      "trap": "Numbness increases risk of tissue injury because pain feedback is blunted.",
+      "hook": "No feedback = risk."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports they took a strong pain medication and cannot accurately feel pressure. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Increase intensity to maximize results while numb.",
+        "B": "Proceed with deep pressure since they cannot feel discomfort.",
+        "C": "Use very conservative pressure with frequent check-ins, or reschedule if safe feedback is not possible.",
+        "D": "Perform aggressive stretching to improve range of motion."
+      },
+      "correct_choice": "C",
+      "answer": "Use very conservative pressure with frequent check-ins, or reschedule if safe feedback is not possible.",
+      "why": "If sensation is impaired, the client cannot reliably guide pressure; conservative work or rescheduling reduces injury risk. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Numbness increases risk of tissue injury because pain feedback is blunted.",
+      "hook": "No feedback = risk."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports unusual bruising since starting a new medication. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Ignore it unless bruises are painful.",
+        "B": "Use friction over bruised areas to reduce discoloration.",
+        "C": "Tell them to stop the medication before the next session.",
+        "D": "Use gentle techniques and recommend they discuss the bruising with their healthcare provider."
+      },
+      "correct_choice": "D",
+      "answer": "Use gentle techniques and recommend they discuss the bruising with their healthcare provider.",
+      "why": "New unexplained bruising may indicate medication side effects or bleeding risk; gentle care and referral to prescriber is appropriate.",
+      "trap": "Advising medication changes is outside scope; refer to the prescriber.",
+      "hook": "Unusual bruising = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports unusual bruising since starting a new medication. What is the BEST next step?",
+      "choices": {
+        "A": "Proceed with deep tissue to improve circulation.",
+        "B": "Use friction over bruised areas to reduce discoloration.",
+        "C": "Use gentle techniques and recommend they discuss the bruising with their healthcare provider.",
+        "D": "Ignore it unless bruises are painful."
+      },
+      "correct_choice": "C",
+      "answer": "Use gentle techniques and recommend they discuss the bruising with their healthcare provider.",
+      "why": "New unexplained bruising may indicate medication side effects or bleeding risk; gentle care and referral to prescriber is appropriate. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Advising medication changes is outside scope; refer to the prescriber.",
+      "hook": "Unusual bruising = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has an open wound covered by a dressing on the lower leg. What is the BEST approach?",
+      "choices": {
+        "A": "Avoid the wound area and maintain hygiene; modify treatment to protect tissue integrity.",
+        "B": "Remove the dressing to assess the wound.",
+        "C": "Work directly over the dressing to reduce swelling.",
+        "D": "Proceed normally because it is covered."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid the wound area and maintain hygiene; modify treatment to protect tissue integrity.",
+      "why": "Open wounds increase infection risk and are contraindicated for direct work; maintain boundaries and avoid the area.",
+      "trap": "Removing dressings is outside scope and risks contamination.",
+      "hook": "Open wound = avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has an open wound covered by a dressing on the lower leg. What is the BEST approach? (choose the best answer)",
+      "choices": {
+        "A": "Remove the dressing to assess the wound.",
+        "B": "Proceed normally because it is covered.",
+        "C": "Avoid the wound area and maintain hygiene; modify treatment to protect tissue integrity.",
+        "D": "Use friction around the wound to speed healing."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid the wound area and maintain hygiene; modify treatment to protect tissue integrity.",
+      "why": "Open wounds increase infection risk and are contraindicated for direct work; maintain boundaries and avoid the area. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Removing dressings is outside scope and risks contamination.",
+      "hook": "Open wound = avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has inflamed varicose veins and requests deep stripping over them. What is the MOST appropriate response?",
+      "choices": {
+        "A": "Avoid deep work over varicose veins and use gentle techniques or work elsewhere.",
+        "B": "Use vigorous friction to break up the veins.",
+        "C": "Perform percussion over the area to stimulate circulation.",
+        "D": "Apply heat and deep massage directly on the veins."
+      },
+      "correct_choice": "A",
+      "answer": "Avoid deep work over varicose veins and use gentle techniques or work elsewhere.",
+      "why": "Varicosities are fragile; aggressive pressure increases risk of pain, bruising, and vascular injury.",
+      "trap": "Deep stripping can damage fragile vessels and worsen symptoms.",
+      "hook": "Varicose = no deep."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has inflamed varicose veins and requests deep stripping over them. What is the MOST appropriate response? (choose the best answer)",
+      "choices": {
+        "A": "Proceed with deep stripping to improve venous return.",
+        "B": "Avoid deep work over varicose veins and use gentle techniques or work elsewhere.",
+        "C": "Perform percussion over the area to stimulate circulation.",
+        "D": "Use vigorous friction to break up the veins."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid deep work over varicose veins and use gentle techniques or work elsewhere.",
+      "why": "Varicosities are fragile; aggressive pressure increases risk of pain, bruising, and vascular injury.",
+      "trap": "Deep stripping can damage fragile vessels and worsen symptoms.",
+      "hook": "Varicose = no deep."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has a new rash that appears contagious and is not covered by clothing. What is the BEST next step?",
+      "choices": {
+        "A": "Reschedule and follow infection-control policy; advise medical evaluation if needed.",
+        "B": "Apply topical cream and continue.",
+        "C": "Proceed but avoid the rash area.",
+        "D": "Wear gloves and continue the session as normal."
+      },
+      "correct_choice": "A",
+      "answer": "Reschedule and follow infection-control policy; advise medical evaluation if needed.",
+      "why": "Potentially contagious rashes require rescheduling to protect others and follow hygiene policy. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Avoiding the area does not eliminate contagion risk.",
+      "hook": "Contagious rash = reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a new rash that appears contagious and is not covered by clothing. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Wear gloves and continue the session as normal.",
+        "B": "Proceed with light pressure only.",
+        "C": "Apply topical cream and continue.",
+        "D": "Reschedule and follow infection-control policy; advise medical evaluation if needed."
+      },
+      "correct_choice": "D",
+      "answer": "Reschedule and follow infection-control policy; advise medical evaluation if needed.",
+      "why": "Potentially contagious rashes require rescheduling to protect others and follow hygiene policy. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Avoiding the area does not eliminate contagion risk.",
+      "hook": "Contagious rash = reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A pregnant client reports dizziness when lying supine. What is the BEST modification?",
+      "choices": {
+        "A": "Continue supine but work faster to finish the session.",
+        "B": "Use prone positioning with firm pressure for support.",
+        "C": "Use side-lying or supported semi-reclined positioning to avoid supine hypotension.",
+        "D": "Keep the client supine and increase pillows under the head only."
+      },
+      "correct_choice": "C",
+      "answer": "Use side-lying or supported semi-reclined positioning to avoid supine hypotension.",
+      "why": "Supine positioning can compress major vessels; side-lying or semi-reclined positioning improves comfort and safety.",
+      "trap": "Pillows under head alone may not relieve vena cava compression.",
+      "hook": "Pregnancy + dizzy supine = side-lying."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A pregnant client reports dizziness when lying supine. What is the BEST modification? (choose the best answer)",
+      "choices": {
+        "A": "Use prone positioning with firm pressure for support.",
+        "B": "Keep the client supine and increase pillows under the head only.",
+        "C": "Continue supine but work faster to finish the session.",
+        "D": "Use side-lying or supported semi-reclined positioning to avoid supine hypotension."
+      },
+      "correct_choice": "D",
+      "answer": "Use side-lying or supported semi-reclined positioning to avoid supine hypotension.",
+      "why": "Supine positioning can compress major vessels; side-lying or semi-reclined positioning improves comfort and safety. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Pillows under head alone may not relieve vena cava compression.",
+      "hook": "Pregnancy + dizzy supine = side-lying."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "An older adult client has very fragile skin and bruises easily. What is the BEST approach?",
+      "choices": {
+        "A": "Use vigorous percussion to stimulate circulation.",
+        "B": "Use gentle techniques, reduce friction, and frequently reassess comfort and skin response.",
+        "C": "Proceed with strong pressure since bruising is normal with age.",
+        "D": "Avoid all massage and refer out immediately."
+      },
+      "correct_choice": "B",
+      "answer": "Use gentle techniques, reduce friction, and frequently reassess comfort and skin response.",
+      "why": "Fragile skin increases risk of tears and bruising; gentle pressure and reduced friction are appropriate.",
+      "trap": "Strong pressure increases injury risk and is not necessary.",
+      "hook": "Fragile skin = gentle."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "An older adult client has very fragile skin and bruises easily. What is the BEST approach? (choose the best answer)",
+      "choices": {
+        "A": "Use vigorous percussion to stimulate circulation.",
+        "B": "Avoid all massage and refer out immediately.",
+        "C": "Use deep friction to improve skin resilience.",
+        "D": "Use gentle techniques, reduce friction, and frequently reassess comfort and skin response."
+      },
+      "correct_choice": "D",
+      "answer": "Use gentle techniques, reduce friction, and frequently reassess comfort and skin response.",
+      "why": "Fragile skin increases risk of tears and bruising; gentle pressure and reduced friction are appropriate. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Strong pressure increases injury risk and is not necessary.",
+      "hook": "Fragile skin = gentle."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with osteoporosis requests aggressive deep tissue over the spine. What is the BEST next step?",
+      "choices": {
+        "A": "Decline aggressive spinal work and modify with gentle techniques; consider medical clearance if needed.",
+        "B": "Use high-velocity thrusts to improve mobility.",
+        "C": "Use heavy percussion directly over the spine.",
+        "D": "Proceed with deep pressure to strengthen bone."
+      },
+      "correct_choice": "A",
+      "answer": "Decline aggressive spinal work and modify with gentle techniques; consider medical clearance if needed.",
+      "why": "Osteoporosis increases fracture risk; avoid aggressive pressure over bony prominences and modify safely. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Deep pressure does not strengthen bone and may cause injury.",
+      "hook": "Osteoporosis = avoid aggressive."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with osteoporosis requests aggressive deep tissue over the spine. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Perform aggressive friction over spinous processes.",
+        "B": "Use high-velocity thrusts to improve mobility.",
+        "C": "Use heavy percussion directly over the spine.",
+        "D": "Decline aggressive spinal work and modify with gentle techniques; consider medical clearance if needed."
+      },
+      "correct_choice": "D",
+      "answer": "Decline aggressive spinal work and modify with gentle techniques; consider medical clearance if needed.",
+      "why": "Osteoporosis increases fracture risk; avoid aggressive pressure over bony prominences and modify safely.",
+      "trap": "Deep pressure does not strengthen bone and may cause injury.",
+      "hook": "Osteoporosis = avoid aggressive."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the BEST modification?",
+      "choices": {
+        "A": "Use stronger pressure since reduced sensation lowers discomfort.",
+        "B": "Use lighter pressure and frequent check-ins; inspect for skin issues and avoid compromised areas.",
+        "C": "Use heat packs to increase circulation regardless of sensation.",
+        "D": "Ignore foot sensation changes as long as pulses are present."
+      },
+      "correct_choice": "B",
+      "answer": "Use lighter pressure and frequent check-ins; inspect for skin issues and avoid compromised areas.",
+      "why": "Neuropathy reduces protective sensation; gentle pressure and skin checks reduce injury risk. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Reduced sensation increases risk of burns and tissue damage from heat or pressure.",
+      "hook": "Neuropathy = protect."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with diabetes reports decreased sensation in the feet. What is the BEST modification? (choose the best answer)",
+      "choices": {
+        "A": "Use lighter pressure and frequent check-ins; inspect for skin issues and avoid compromised areas.",
+        "B": "Use heat packs to increase circulation regardless of sensation.",
+        "C": "Use stronger pressure since reduced sensation lowers discomfort.",
+        "D": "Ignore foot sensation changes as long as pulses are present."
+      },
+      "correct_choice": "A",
+      "answer": "Use lighter pressure and frequent check-ins; inspect for skin issues and avoid compromised areas.",
+      "why": "Neuropathy reduces protective sensation; gentle pressure and skin checks reduce injury risk. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Reduced sensation increases risk of burns and tissue damage from heat or pressure.",
+      "hook": "Neuropathy = protect."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a session, a diabetic client becomes sweaty, shaky, and confused. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Tell them to drive home and eat.",
+        "B": "Continue the session to help them relax.",
+        "C": "Apply heat to raise blood sugar.",
+        "D": "Stop the session and follow hypoglycemia protocol (provide fast sugar if appropriate and seek help if not improving)."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and follow hypoglycemia protocol (provide fast sugar if appropriate and seek help if not improving).",
+      "why": "Symptoms suggest hypoglycemia; stop and provide immediate assistance and escalate if needed.",
+      "trap": "Continuing delays treatment and can be dangerous.",
+      "hook": "Low sugar = stop + treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During a session, a diabetic client becomes sweaty, shaky, and confused. What is the BEST next step?",
+      "choices": {
+        "A": "Stop the session and follow hypoglycemia protocol (provide fast sugar if appropriate and seek help if not improving).",
+        "B": "Apply heat to raise blood sugar.",
+        "C": "Continue the session to help them relax.",
+        "D": "Tell them to drive home and eat."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and follow hypoglycemia protocol (provide fast sugar if appropriate and seek help if not improving).",
+      "why": "Symptoms suggest hypoglycemia; stop and provide immediate assistance and escalate if needed. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Continuing delays treatment and can be dangerous.",
+      "hook": "Low sugar = stop + treat."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client in active cancer treatment reports extreme fatigue and lowered immunity. What is the BEST approach?",
+      "choices": {
+        "A": "Use intense friction over lymph nodes to 'boost immunity'.",
+        "B": "Use gentle, comfort-focused care and obtain medical clearance when indicated.",
+        "C": "Proceed with full-intensity massage to improve strength.",
+        "D": "Perform vigorous deep tissue to break up adhesions."
+      },
+      "correct_choice": "B",
+      "answer": "Use gentle, comfort-focused care and obtain medical clearance when indicated.",
+      "why": "Active treatment often requires conservative modifications; gentle comfort care with clearance is appropriate. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Aggressive techniques can be overly taxing and unsafe with low immunity.",
+      "hook": "Cancer tx = gentle + clearance."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client in active cancer treatment reports extreme fatigue and lowered immunity. What is the BEST approach? (choose the best answer)",
+      "choices": {
+        "A": "Use gentle, comfort-focused care and obtain medical clearance when indicated.",
+        "B": "Use intense friction over lymph nodes to 'boost immunity'.",
+        "C": "Avoid all touch and refuse service indefinitely.",
+        "D": "Perform vigorous deep tissue to break up adhesions."
+      },
+      "correct_choice": "A",
+      "answer": "Use gentle, comfort-focused care and obtain medical clearance when indicated.",
+      "why": "Active treatment often requires conservative modifications; gentle comfort care with clearance is appropriate.",
+      "trap": "Aggressive techniques can be overly taxing and unsafe with low immunity.",
+      "hook": "Cancer tx = gentle + clearance."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with lymphedema requests vigorous work on the swollen limb. What is the MOST appropriate response?",
+      "choices": {
+        "A": "Do not perform vigorous work on the swollen limb; use appropriate gentle techniques and refer to qualified lymphedema care as needed.",
+        "B": "Perform aggressive friction directly over swollen tissues.",
+        "C": "Proceed with deep stripping to push fluid out.",
+        "D": "Apply strong heat and deep massage."
+      },
+      "correct_choice": "A",
+      "answer": "Do not perform vigorous work on the swollen limb; use appropriate gentle techniques and refer to qualified lymphedema care as needed.",
+      "why": "Lymphedema requires specialized, gentle approaches; vigorous work can worsen swelling or damage tissue. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Trying to 'push fluid out' with deep work is not appropriate.",
+      "hook": "Lymphedema = gentle/specialist."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with lymphedema requests vigorous work on the swollen limb. What is the MOST appropriate response? (choose the best answer)",
+      "choices": {
+        "A": "Proceed with deep stripping to push fluid out.",
+        "B": "Do not perform vigorous work on the swollen limb; use appropriate gentle techniques and refer to qualified lymphedema care as needed.",
+        "C": "Perform aggressive friction directly over swollen tissues.",
+        "D": "Use heavy percussion to stimulate drainage."
+      },
+      "correct_choice": "B",
+      "answer": "Do not perform vigorous work on the swollen limb; use appropriate gentle techniques and refer to qualified lymphedema care as needed.",
+      "why": "Lymphedema requires specialized, gentle approaches; vigorous work can worsen swelling or damage tissue. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Trying to 'push fluid out' with deep work is not appropriate.",
+      "hook": "Lymphedema = gentle/specialist."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives with fever and a productive cough. What is the BEST next step?",
+      "choices": {
+        "A": "Treat only the back and avoid the face.",
+        "B": "Proceed with treatment to reduce stress.",
+        "C": "Reschedule and follow infection-control policy; advise medical evaluation if symptoms are severe.",
+        "D": "Continue if the client promises to sanitize afterward."
+      },
+      "correct_choice": "C",
+      "answer": "Reschedule and follow infection-control policy; advise medical evaluation if symptoms are severe.",
+      "why": "Fever and respiratory symptoms increase contagion risk; reschedule to protect the client and others. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Masking does not eliminate contagion risk in close-contact treatment settings.",
+      "hook": "Fever = reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client arrives with fever and a productive cough. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Reschedule and follow infection-control policy; advise medical evaluation if symptoms are severe.",
+        "B": "Proceed with treatment to reduce stress.",
+        "C": "Continue if the client promises to sanitize afterward.",
+        "D": "Wear a mask and continue regardless of fever."
+      },
+      "correct_choice": "A",
+      "answer": "Reschedule and follow infection-control policy; advise medical evaluation if symptoms are severe.",
+      "why": "Fever and respiratory symptoms increase contagion risk; reschedule to protect the client and others. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Masking does not eliminate contagion risk in close-contact treatment settings.",
+      "hook": "Fever = reschedule."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has acute inflammation in a joint today (hot, swollen, very painful). What is the BEST plan?",
+      "choices": {
+        "A": "Use percussion over the joint to stimulate circulation.",
+        "B": "Use deep friction to break up inflammation.",
+        "C": "Avoid aggressive work on the area; use gentle, non-irritating techniques or reschedule if needed.",
+        "D": "Apply strong heat and deep massage to the joint."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid aggressive work on the area; use gentle, non-irritating techniques or reschedule if needed.",
+      "why": "Acute inflammation can be aggravated by aggressive work; gentle comfort care or rescheduling is safer. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Deep friction and heat may increase inflammation and pain.",
+      "hook": "Acute inflammation = gentle/avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has acute inflammation in a joint today (hot, swollen, very painful). What is the BEST plan? (choose the best answer)",
+      "choices": {
+        "A": "Perform vigorous stretching into pain.",
+        "B": "Apply strong heat and deep massage to the joint.",
+        "C": "Avoid aggressive work on the area; use gentle, non-irritating techniques or reschedule if needed.",
+        "D": "Use deep friction to break up inflammation."
+      },
+      "correct_choice": "C",
+      "answer": "Avoid aggressive work on the area; use gentle, non-irritating techniques or reschedule if needed.",
+      "why": "Acute inflammation can be aggravated by aggressive work; gentle comfort care or rescheduling is safer.",
+      "trap": "Deep friction and heat may increase inflammation and pain.",
+      "hook": "Acute inflammation = gentle/avoid."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has a recent surgical incision that is still healing. What is the BEST approach?",
+      "choices": {
+        "A": "Use deep stripping along the incision line immediately.",
+        "B": "Avoid direct work over the incision and follow healing timelines/clearance; treat surrounding areas gently as appropriate.",
+        "C": "Perform friction directly over the incision to prevent scarring.",
+        "D": "Apply heat and deep pressure over the incision to speed healing."
+      },
+      "correct_choice": "B",
+      "answer": "Avoid direct work over the incision and follow healing timelines/clearance; treat surrounding areas gently as appropriate.",
+      "why": "Recent surgical sites require time and clearance; direct pressure can disrupt healing. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Early friction can damage healing tissue and increase inflammation.",
+      "hook": "Surgery site = protect."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a recent surgical incision that is still healing. What is the BEST approach? (choose the best answer)",
+      "choices": {
+        "A": "Perform friction directly over the incision to prevent scarring.",
+        "B": "Proceed normally because the incision is closed.",
+        "C": "Use deep stripping along the incision line immediately.",
+        "D": "Avoid direct work over the incision and follow healing timelines/clearance; treat surrounding areas gently as appropriate."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid direct work over the incision and follow healing timelines/clearance; treat surrounding areas gently as appropriate.",
+      "why": "Recent surgical sites require time and clearance; direct pressure can disrupt healing.",
+      "trap": "Early friction can damage healing tissue and increase inflammation.",
+      "hook": "Surgery site = protect."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports uncontrolled high blood pressure today and feels lightheaded. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Do not proceed; refer for medical evaluation and reschedule when stable.",
+        "B": "Recommend changing medication and continue.",
+        "C": "Proceed normally because massage lowers blood pressure.",
+        "D": "Use vigorous techniques to improve circulation."
+      },
+      "correct_choice": "A",
+      "answer": "Do not proceed; refer for medical evaluation and reschedule when stable.",
+      "why": "Lightheadedness with uncontrolled hypertension is a safety risk and warrants medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Massage is not a substitute for medical management and could worsen symptoms.",
+      "hook": "Uncontrolled BP + symptoms = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports uncontrolled high blood pressure today and feels lightheaded. What is the BEST next step?",
+      "choices": {
+        "A": "Recommend changing medication and continue.",
+        "B": "Use vigorous techniques to improve circulation.",
+        "C": "Continue and reassess after the session ends.",
+        "D": "Do not proceed; refer for medical evaluation and reschedule when stable."
+      },
+      "correct_choice": "D",
+      "answer": "Do not proceed; refer for medical evaluation and reschedule when stable.",
+      "why": "Lightheadedness with uncontrolled hypertension is a safety risk and warrants medical evaluation.",
+      "trap": "Massage is not a substitute for medical management and could worsen symptoms.",
+      "hook": "Uncontrolled BP + symptoms = stop."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with a seizure disorder reports they missed their medication today. What is the BEST next step?",
+      "choices": {
+        "A": "Use rapid percussion to stimulate the nervous system.",
+        "B": "Reschedule or proceed only with conservative care and a clear safety plan per policy; stop if any warning signs occur.",
+        "C": "Encourage them to take double medication now.",
+        "D": "Proceed with deep pressure to prevent seizures."
+      },
+      "correct_choice": "B",
+      "answer": "Reschedule or proceed only with conservative care and a clear safety plan per policy; stop if any warning signs occur.",
+      "why": "Missed medication may increase seizure risk; conservative planning or rescheduling is safest within policy. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Medication advice is outside scope; do not recommend dosing changes.",
+      "hook": "Seizure risk = safety plan."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with a seizure disorder reports they missed their medication today. What is the What should you do NEXT?",
+      "choices": {
+        "A": "Reschedule or proceed only with conservative care and a clear safety plan per policy; stop if any warning signs occur.",
+        "B": "Ignore the missed dose and treat as usual.",
+        "C": "Use rapid percussion to stimulate the nervous system.",
+        "D": "Encourage them to take double medication now."
+      },
+      "correct_choice": "A",
+      "answer": "Reschedule or proceed only with conservative care and a clear safety plan per policy; stop if any warning signs occur.",
+      "why": "Missed medication may increase seizure risk; conservative planning or rescheduling is safest within policy. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Medication advice is outside scope; do not recommend dosing changes.",
+      "hook": "Seizure risk = safety plan."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has pitting edema in both ankles. What is the BEST response?",
+      "choices": {
+        "A": "Perform deep stripping over the calves to remove swelling.",
+        "B": "Diagnose the cause and provide a treatment plan.",
+        "C": "Ignore it if the client is not in pain.",
+        "D": "Use conservative care and recommend medical evaluation to identify underlying cause."
+      },
+      "correct_choice": "D",
+      "answer": "Use conservative care and recommend medical evaluation to identify underlying cause.",
+      "why": "Bilateral pitting edema can indicate systemic issues; recommend medical evaluation and avoid aggressive techniques. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Deep work and heat may be inappropriate without understanding the cause.",
+      "hook": "Edema = screen + refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has pitting edema in both ankles. What is the BEST response? (choose the best answer)",
+      "choices": {
+        "A": "Diagnose the cause and provide a treatment plan.",
+        "B": "Use conservative care and recommend medical evaluation to identify underlying cause.",
+        "C": "Ignore it if the client is not in pain.",
+        "D": "Perform deep stripping over the calves to remove swelling."
+      },
+      "correct_choice": "B",
+      "answer": "Use conservative care and recommend medical evaluation to identify underlying cause.",
+      "why": "Bilateral pitting edema can indicate systemic issues; recommend medical evaluation and avoid aggressive techniques. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Deep work and heat may be inappropriate without understanding the cause.",
+      "hook": "Edema = screen + refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 26)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 26)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 27)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 27)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 28)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 28)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 29)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 29)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 30)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 30)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 31)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 31)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 32)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 32)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 33)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 33)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 34)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 34)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 35)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 35)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 36)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 36)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 37)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 37)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 38)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 38)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 39)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 39)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 40)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 40)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 41)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 41)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 42)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 42)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 43)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 43)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 44)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 44)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 45)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 45)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Use deep pressure on suboccipitals to reduce the headache.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 46)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Recommend hydration and finish the session.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Proceed with gentle neck stretching to relieve tension."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 46)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 47)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 47)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Proceed with gentle neck stretching to relieve tension.",
+        "C": "Stop the session and refer for urgent medical evaluation.",
+        "D": "Continue the session and re-check at the end."
+      },
+      "correct_choice": "C",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 48)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 48)",
+      "choices": {
+        "A": "Stop the session and refer for urgent medical evaluation.",
+        "B": "Continue the session and re-check at the end.",
+        "C": "Proceed with gentle neck stretching to relieve tension.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "A",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 49)",
+      "choices": {
+        "A": "Use deep pressure on suboccipitals to reduce the headache.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Recommend hydration and finish the session."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 49)",
+      "choices": {
+        "A": "Continue the session and re-check at the end.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This distinguishes plausible but unsafe options and keeps scope boundaries.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the MOST appropriate action? (Scenario 50)",
+      "choices": {
+        "A": "Recommend hydration and finish the session.",
+        "B": "Stop the session and refer for urgent medical evaluation.",
+        "C": "Continue the session and re-check at the end.",
+        "D": "Use deep pressure on suboccipitals to reduce the headache."
+      },
+      "correct_choice": "B",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports a new, severe headache with neck stiffness and fever. What is the BEST next step? (Scenario 50)",
+      "choices": {
+        "A": "Proceed with gentle neck stretching to relieve tension.",
+        "B": "Use deep pressure on suboccipitals to reduce the headache.",
+        "C": "Recommend hydration and finish the session.",
+        "D": "Stop the session and refer for urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Stop the session and refer for urgent medical evaluation.",
+      "why": "Severe headache with neck stiffness and fever is a red-flag presentation that requires urgent medical evaluation. This prioritizes safety and appropriate referral/modification.",
+      "trap": "Treating it as simple tension can delay critical care.",
+      "hook": "Severe + fever = refer."
+    }
+  ]
+}
