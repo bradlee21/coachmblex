@@ -7,6 +7,7 @@ import QuestionRunner from '../../_components/QuestionRunner';
 import { shuffleSessionQuestionChoices } from '../../_components/questionRunnerLogic.mjs';
 import { shuffleArray } from '../../_utils/shuffleArray.mjs';
 import { getSupabaseClient } from '../../../src/lib/supabaseClient';
+import { makeWeightedDomainPlan } from '../../../src/lib/makeWeightedDomainPlan.mjs';
 import { trackEvent } from '../../../src/lib/trackEvent';
 
 const QUICK_TYPES = ['mcq', 'reverse'];
@@ -14,8 +15,18 @@ const TEST_MATCH_COUNT_DEFAULT = 50;
 const TEST_MATCH_COUNT_MIN = 5;
 const TEST_MATCH_COUNT_MAX = 150;
 const TEST_PACK_ID_COLUMN = 'pack_id';
-const TEST_FETCH_POOL_MIN = 200;
+const TEST_FETCH_POOL_MAX = 5000;
 const KNOWN_PACK_IDS_FETCH_LIMIT = 2000;
+const EXAM_DOMAIN_CODES = ['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7'];
+const EXAM_DOMAIN_WEIGHTS = {
+  D1: 0.11,
+  D2: 0.12,
+  D3: 0.14,
+  D4: 0.15,
+  D5: 0.17,
+  D6: 0.16,
+  D7: 0.15,
+};
 
 function toText(value) {
   return typeof value === 'string' ? value.trim() : '';
@@ -103,6 +114,117 @@ function applyTestPackIdFilters(query, { packIds, types }) {
   const allowedTypes = (types || []).filter((type) => QUICK_TYPES.includes(type));
   next = next.in('question_type', allowedTypes.length > 0 ? allowedTypes : QUICK_TYPES);
   return next;
+}
+
+function normalizeDomainCode(value) {
+  const normalized = toText(value).toUpperCase();
+  return EXAM_DOMAIN_CODES.includes(normalized) ? normalized : '';
+}
+
+function makeInitialDomainPools(pool, random) {
+  const byDomain = Object.fromEntries(EXAM_DOMAIN_CODES.map((code) => [code, []]));
+  for (const question of pool || []) {
+    const domainCode = normalizeDomainCode(question?.domain_code);
+    if (!domainCode) continue;
+    byDomain[domainCode].push(question);
+  }
+  if (random) {
+    for (const domainCode of EXAM_DOMAIN_CODES) {
+      byDomain[domainCode] = shuffleArray(byDomain[domainCode]);
+    }
+  }
+  return byDomain;
+}
+
+function takeFromDomainPool(domainPools, domainCode, requested) {
+  const pool = domainPools[domainCode] || [];
+  const takeCount = Math.min(Math.max(0, requested), pool.length);
+  if (takeCount <= 0) return [];
+  const taken = pool.slice(0, takeCount);
+  domainPools[domainCode] = pool.slice(takeCount);
+  return taken;
+}
+
+function buildQuotaBasedSession(pool, requestedCount, random) {
+  const plan = makeWeightedDomainPlan(requestedCount, EXAM_DOMAIN_WEIGHTS);
+  const domainPools = makeInitialDomainPools(pool, random);
+  const availableTotal = EXAM_DOMAIN_CODES.reduce(
+    (sum, domainCode) => sum + (domainPools[domainCode]?.length || 0),
+    0
+  );
+  const warnings = [];
+  const picked = [];
+  let unfilled = 0;
+
+  for (const domainCode of EXAM_DOMAIN_CODES) {
+    const requested = Number(plan.countsByDomain[domainCode] || 0);
+    if (requested <= 0) continue;
+    const available = domainPools[domainCode]?.length || 0;
+    const taken = takeFromDomainPool(domainPools, domainCode, requested);
+    picked.push(...taken);
+    if (taken.length < requested) {
+      const shortfall = requested - taken.length;
+      unfilled += shortfall;
+      warnings.push({
+        domain_code: domainCode,
+        requested,
+        available,
+        shortfall,
+      });
+    }
+  }
+
+  if (unfilled > 0) {
+    const redistributionOrder = [...EXAM_DOMAIN_CODES].sort((a, b) => {
+      const remainingDiff = (domainPools[b]?.length || 0) - (domainPools[a]?.length || 0);
+      if (remainingDiff !== 0) return remainingDiff;
+      const weightDiff = (EXAM_DOMAIN_WEIGHTS[b] || 0) - (EXAM_DOMAIN_WEIGHTS[a] || 0);
+      if (weightDiff !== 0) return weightDiff;
+      return a.localeCompare(b);
+    });
+
+    for (const domainCode of redistributionOrder) {
+      if (unfilled <= 0) break;
+      const taken = takeFromDomainPool(domainPools, domainCode, unfilled);
+      picked.push(...taken);
+      unfilled -= taken.length;
+    }
+  }
+
+  if (unfilled > 0) {
+    warnings.push({
+      type: 'total_inventory_short',
+      requested: requestedCount,
+      availableTotal,
+      shortfall: unfilled,
+    });
+  }
+
+  return {
+    plan,
+    warnings,
+    picked,
+  };
+}
+
+function formatQuotaWarnings(warnings, requestedCount) {
+  if (!Array.isArray(warnings) || warnings.length === 0) return '';
+  const domainWarnings = warnings.filter((item) => item && item.domain_code);
+  const totalWarning = warnings.find((item) => item?.type === 'total_inventory_short');
+  const parts = [];
+  if (domainWarnings.length > 0) {
+    parts.push(
+      `Domain shortfalls: ${domainWarnings
+        .map((item) => `${item.domain_code} ${item.available}/${item.requested}`)
+        .join(', ')}.`
+    );
+  }
+  if (totalWarning) {
+    parts.push(
+      `Requested ${requestedCount}, but only ${totalWarning.availableTotal} question(s) available across D1-D7.`
+    );
+  }
+  return parts.join(' ');
 }
 
 async function detectPackIdColumnAvailability(supabase) {
@@ -317,7 +439,7 @@ export default function TestRunPage() {
       const selectedPackIds =
         validPackIds.length > 0 ? Array.from(new Set(validPackIds)) : knownPackIds;
 
-      const fetchLimit = Math.max(TEST_FETCH_POOL_MIN, parsedConfig.n);
+      const fetchLimit = TEST_FETCH_POOL_MAX;
       const { data, error } = await applyTestPackIdFilters(
         supabase
           .from('questions')
@@ -336,7 +458,8 @@ export default function TestRunPage() {
       }
 
       const pool = Array.isArray(data) ? data : [];
-      const picked = (parsedConfig.random ? shuffleArray(pool) : pool).slice(0, parsedConfig.n);
+      const quotaSession = buildQuotaBasedSession(pool, parsedConfig.n, parsedConfig.random);
+      const picked = quotaSession.picked.slice(0, parsedConfig.n);
       const sessionQuestions = picked.map(shuffleSessionQuestionChoices);
 
       if (sessionQuestions.length === 0) {
@@ -353,15 +476,21 @@ export default function TestRunPage() {
       });
       setQuestions(sessionQuestions);
 
+      const noticeParts = [];
+      const quotaWarning = formatQuotaWarnings(quotaSession.warnings, parsedConfig.n);
+      if (quotaWarning) {
+        noticeParts.push(quotaWarning);
+      }
       if (sessionQuestions.length < parsedConfig.n) {
-        setNotice(
+        noticeParts.push(
           `Only ${sessionQuestions.length} question(s) available across ${selectedPackIds.length} selected pack(s).`
         );
       } else if (requested.length > 0 && validPackIds.length < requested.length) {
-        setNotice(
+        noticeParts.push(
           `Ignored ${requested.length - validPackIds.length} unknown pack id(s); using ${selectedPackIds.length} pack(s).`
         );
       }
+      setNotice(noticeParts.join(' '));
 
       void trackEvent('test_run_start', {
         requested: parsedConfig.n,

@@ -11,6 +11,43 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-1
+
+- Status: `done`
+- Title: Weighted domain plan + quota-based exam assembly
+- Goal: Build deterministic weighted domain quotas (largest remainder) and use them in `/test/run` exam assembly with inventory-aware fallback warnings.
+- In scope:
+- Add pure `makeWeightedDomainPlan(N, weights)` using largest remainder with deterministic tie-breaks
+- Integrate `/test/run` assembly to apply domain quotas (`D1..D7`) against `questions.domain_code`
+- Add inventory-aware fallback warnings for per-domain and total inventory shortfalls
+- Add tiny self-test script for `makeWeightedDomainPlan`
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- SQL/schema changes
+- `/test` setup page UI changes
+- Pack import changes
+- Acceptance criteria:
+- `makeWeightedDomainPlan(100, weights)` returns `D1 11, D2 12, D3 14, D4 15, D5 17, D6 16, D7 15`
+- `makeWeightedDomainPlan(10, weights)` is deterministic and sums to 10
+- `/test/run` assembles with weighted quotas and redistributes shortfalls across available domains
+- If total domain inventory is insufficient, test starts with fewer questions and reports warning without crashing
+- Required validation/tests:
+- `node scripts/weighted-domain-plan-self-test.mjs`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/lib/makeWeightedDomainPlan.mjs`
+- `app/test/run/page.js`
+- `scripts/weighted-domain-plan-self-test.mjs`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Uses domain weights: `D1 0.11, D2 0.12, D3 0.14, D4 0.15, D5 0.17, D6 0.16, D7 0.15`.
+- Validation (2026-02-27):
+- `node scripts/weighted-domain-plan-self-test.mjs` pass (`N=100 => D1 11, D2 12, D3 14, D4 15, D5 17, D6 16, D7 15`; deterministic `N=10`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-I
 
 - Status: `done`
