@@ -1,0 +1,354 @@
+{
+  "pack_id": "mblex-d3-advanced-v2",
+  "source": "codex-generated",
+  "title": "MBLEx D3 Advanced Pathology, Contraindications & Special Populations v2 (polish-constrained)",
+  "meta": {
+    "visibility": "active",
+    "generated_at": "2026-02-27T13:34:56.3168011Z",
+    "replaces": [
+      "mblex-d3-advanced-v1"
+    ]
+  },
+  "questions": [
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks whether their newly diagnosed cellulitis can be \"massaged out\" because antibiotics started this morning. What is the BEST response?",
+      "choices": {
+        "A": "Defer massage and advise follow-up with the treating clinician until infection is medically controlled.",
+        "B": "Use very light strokes away from the area while monitoring pain.",
+        "C": "Apply warm compresses and continue if tenderness drops.",
+        "D": "Continue massage with gloves and avoid direct skin contact."
+      },
+      "correct_choice": "A",
+      "answer": "Defer massage and advise follow-up with the treating clinician until infection is medically controlled.",
+      "why": "Active bacterial skin infection is a local and systemic contraindication; defer care until medically improved and cleared by the treating clinician.",
+      "trap": "Light work still adds treatment load before infection stability is established.",
+      "hook": "Active infection means defer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At intake, a 14-week pregnant client reports new vaginal bleeding and lower abdominal cramping that started this morning. What is the MOST appropriate action?",
+      "choices": {
+        "A": "Proceed with side-lying relaxation massage and shorten the session.",
+        "B": "Defer massage and advise immediate obstetric evaluation today.",
+        "C": "Use gentle abdominal contact and reassess cramping after ten minutes.",
+        "D": "Provide upper-body work only and monitor symptoms through session."
+      },
+      "correct_choice": "B",
+      "answer": "Defer massage and advise immediate obstetric evaluation today.",
+      "why": "New bleeding and cramping in pregnancy require prompt obstetric assessment; massage should be deferred until medical evaluation determines safety.",
+      "trap": "Region-only modification may delay assessment of a potentially urgent obstetric issue.",
+      "hook": "Bleeding pregnancy needs OB now."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client asks you to tell them how much ibuprofen to take before tomorrow's session. What is the BEST response?",
+      "choices": {
+        "A": "Recommend the usual over-the-counter dose before treatment.",
+        "B": "Suggest doubling hydration instead of taking medication.",
+        "C": "State that medication dosing guidance belongs to the prescriber or pharmacist.",
+        "D": "Advise skipping food so the medication works faster."
+      },
+      "correct_choice": "C",
+      "answer": "State that medication dosing guidance belongs to the prescriber or pharmacist.",
+      "why": "Medication dosing advice is outside massage scope; direct dosing questions to the prescribing clinician or pharmacist before treatment planning.",
+      "trap": "Even common over-the-counter guidance can be unsafe without full medical context.",
+      "hook": "Dosing advice is not scope."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client has a draining postoperative incision covered with fresh dressing on the shoulder. What is the BEST approach today?",
+      "choices": {
+        "A": "Massage around the incision margins using minimal pressure.",
+        "B": "Apply local heat before treatment to improve comfort.",
+        "C": "Continue full routine while avoiding direct contact with dressing.",
+        "D": "Avoid shoulder-region work and use only distant techniques if overall status is stable."
+      },
+      "correct_choice": "D",
+      "answer": "Avoid shoulder-region work and use only distant techniques if overall status is stable.",
+      "why": "A draining postoperative site is a local contraindication; avoid regional work and use distant techniques only if overall condition is stable.",
+      "trap": "Treating near a draining site can irritate tissue and complicate healing.",
+      "hook": "Drainage site: no regional work."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is 10 days post concussion, now headache-free for two days, and has PCP note: \"resume light exercise as tolerated.\" They request deep cervical work for stiffness. What is the BEST plan?",
+      "choices": {
+        "A": "Begin with brief gentle nonprovocative work and defer deep cervical techniques.",
+        "B": "Proceed with deep cervical work because headache has resolved.",
+        "C": "Defer all massage for four additional weeks regardless of symptoms.",
+        "D": "Provide moderate full-body treatment and skip only neck work."
+      },
+      "correct_choice": "A",
+      "answer": "Begin with brief gentle nonprovocative work and defer deep cervical techniques.",
+      "why": "A is best because early symptom-free recovery supports cautious, low-load reintroduction. D is safer than deep neck work, but moderate full-body load can still provoke symptoms without stepwise progression.",
+      "trap": "Symptom-free days do not automatically justify immediate deep cervical loading.",
+      "hook": "Concussion return is graded."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client on apixaban says bruising increased after a new antibiotic started yesterday; no active bleeding. They ask for deep gluteal stripping. What is the BEST approach?",
+      "choices": {
+        "A": "Proceed deeply and avoid only visibly bruised tissue.",
+        "B": "Use light-to-moderate pressure and postpone deep techniques until stability is confirmed.",
+        "C": "Cancel all massage for two months regardless of clinical status.",
+        "D": "Proceed if the client signs additional risk consent."
+      },
+      "correct_choice": "B",
+      "answer": "Use light-to-moderate pressure and postpone deep techniques until stability is confirmed.",
+      "why": "B is best because recent medication changes may increase bleeding risk, so reduce pressure until prescriber confirms stability. A is safer than maximal force but still suboptimal because stripping can worsen bruising.",
+      "trap": "Additional paperwork does not reduce medication-related tissue bleeding risk.",
+      "hook": "Dose changes require gentler loading."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client finished oral antifungal treatment three days ago; lesions are dry and fully covered by clothing. They request back and neck massage, avoiding lesions. What is the BEST plan?",
+      "choices": {
+        "A": "Postpone all massage until a specialist visit next month.",
+        "B": "Use deep friction over lesions since medication is complete.",
+        "C": "Proceed with modified care away from lesions, with strict hygiene and no lesion contact.",
+        "D": "Treat normally including lesion regions because symptoms improved."
+      },
+      "correct_choice": "C",
+      "answer": "Proceed with modified care away from lesions, with strict hygiene and no lesion contact.",
+      "why": "C is best because covered improving lesions can allow modified care away from affected skin using strict hygiene. A is safer than lesion contact but suboptimal because blanket cancellation may be unnecessary.",
+      "trap": "Medication completion does not justify direct manual load on healing lesions.",
+      "hook": "Covered lesion means modify."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports mild calf tightness after travel. During intake you also note resting heart rate 122 and new unexplained shortness of breath on stairs today. What is the BEST action?",
+      "choices": {
+        "A": "Provide gentle leg flushing and reassess symptoms after treatment.",
+        "B": "Treat upper body only and advise hydration after session.",
+        "C": "Postpone treatment and suggest primary-care follow-up this week.",
+        "D": "Defer treatment and direct same-day urgent medical evaluation."
+      },
+      "correct_choice": "D",
+      "answer": "Defer treatment and direct same-day urgent medical evaluation.",
+      "why": "D is best because tachycardia plus new dyspnea outweighs nonspecific calf soreness and raises cardiopulmonary concern. C is safer than immediate treatment but suboptimal because week-long delay may miss an urgent condition.",
+      "trap": "Mild calf symptoms do not offset higher-priority cardiopulmonary warning signs.",
+      "hook": "Dyspnea plus tachycardia: triage."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client asks you to omit today's report of hand numbness from the chart so it doesn't \"complicate\" their surgery consult. What is the BEST response?",
+      "choices": {
+        "A": "Document findings objectively and explain records must remain accurate.",
+        "B": "Omit numbness details and chart only soft-tissue tightness.",
+        "C": "Avoid charting today and proceed with planned treatment.",
+        "D": "Continue if the client initials a note declining documentation."
+      },
+      "correct_choice": "A",
+      "answer": "Document findings objectively and explain records must remain accurate.",
+      "why": "A is best because accurate records are required for continuity and informed risk decisions. D is safer than falsifying notes but suboptimal because initials cannot replace complete, truthful documentation.",
+      "trap": "Selective documentation can undermine safety and create legal exposure.",
+      "hook": "Clinical records must be truthful."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client is six days after uncomplicated laparoscopic cholecystectomy, afebrile, and cleared for walking. They request full-body massage including abdomen. What is the BEST plan?",
+      "choices": {
+        "A": "Provide full-body work including light abdominal techniques today.",
+        "B": "Provide non-abdominal treatment now and defer abdominal work until surgeon confirms readiness.",
+        "C": "Cancel all massage for three months regardless of recovery progress.",
+        "D": "Use deep abdominal work early to reduce adhesion risk."
+      },
+      "correct_choice": "B",
+      "answer": "Provide non-abdominal treatment now and defer abdominal work until surgeon confirms readiness.",
+      "why": "B is best because early postoperative tissue may not tolerate abdominal work despite walking clearance. A is safer than deep pressure but suboptimal because even light regional contact may be premature.",
+      "trap": "General activity clearance does not automatically clear local manual tissue loading.",
+      "hook": "Post-op region needs clearance."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with chronic migraines presents with usual headache but today also reports new one-sided facial numbness that began an hour ago. What is the BEST action?",
+      "choices": {
+        "A": "Continue gentle massage and reassess facial symptoms after twenty minutes.",
+        "B": "Recommend hydration and home rest before seeking care.",
+        "C": "Stop session and direct immediate emergency evaluation.",
+        "D": "Proceed with seated relaxation while monitoring facial sensation."
+      },
+      "correct_choice": "C",
+      "answer": "Stop session and direct immediate emergency evaluation.",
+      "why": "C is best because new focal neurologic deficit is a red flag requiring immediate emergency assessment. D is safer than full treatment but suboptimal because continued care can delay stroke evaluation.",
+      "trap": "Known migraine history does not rule out a new neurologic emergency.",
+      "hook": "New focal deficit: emergency."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client hands you an MRI report and asks, \"Can you confirm this disc bulge is my real pain source?\" What is the BEST response?",
+      "choices": {
+        "A": "Confirm the MRI finding as the definite pain source and treat accordingly.",
+        "B": "Dismiss imaging and proceed with standard massage protocol.",
+        "C": "Recommend stopping prescribed therapy and trying massage only.",
+        "D": "Explain diagnosis-source decisions are outside scope and coordinate with the diagnosing provider."
+      },
+      "correct_choice": "D",
+      "answer": "Explain diagnosis-source decisions are outside scope and coordinate with the diagnosing provider.",
+      "why": "D is best because assigning pain source from imaging is diagnostic and outside massage scope. A sounds confident but is suboptimal because structural findings alone often do not establish symptom cause.",
+      "trap": "Therapist certainty can mislead clients when diagnostic uncertainty remains.",
+      "hook": "Imaging interpretation is referral."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A student athlete is 18 days post concussion, symptom-free for seven days, and cleared for full academics but not contact practice. They request moderate neck work. What is the BEST plan?",
+      "choices": {
+        "A": "Begin conservative treatment with frequent symptom checks and immediate stop rules.",
+        "B": "Use deep neck pressure because classes resumed without symptoms.",
+        "C": "Defer all massage until contact sports are fully resumed.",
+        "D": "Perform full routine while avoiding only suboccipital techniques."
+      },
+      "correct_choice": "A",
+      "answer": "Begin conservative treatment with frequent symptom checks and immediate stop rules.",
+      "why": "A is best because sustained symptom-free status supports cautious graded reintroduction with monitoring. C is safer than deep work but suboptimal because total deferral may be unnecessary when conservative dosing is tolerated.",
+      "trap": "Academic clearance is not equivalent to tolerance for high-intensity manual loading.",
+      "hook": "Symptom-free still needs progression."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client reports sudden sharp calf pain during warm-up after starting a long-haul flight schedule for work; exam shows no swelling. What is the BEST action?",
+      "choices": {
+        "A": "Perform light calf flush and reassess pain response after treatment.",
+        "B": "Defer calf treatment and advise same-day medical assessment before massage.",
+        "C": "Proceed with full-body treatment and recheck calf symptoms next week.",
+        "D": "Use deep stripping to determine whether pain is muscular."
+      },
+      "correct_choice": "B",
+      "answer": "Defer calf treatment and advise same-day medical assessment before massage.",
+      "why": "B is best because new calf pain after prolonged travel needs medical rule-out before manual loading. C is safer than direct calf work but suboptimal because delayed assessment can miss vascular pathology.",
+      "trap": "Absence of swelling does not safely exclude early vascular risk.",
+      "hook": "Travel calf pain needs rule-out."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client smells of alcohol, answers orientation questions correctly, but cannot accurately repeat treatment risks after explanation. What is the BEST action?",
+      "choices": {
+        "A": "Proceed gently with a companion present to observe.",
+        "B": "Delay ten minutes and retry informed-consent explanation once.",
+        "C": "Decline treatment due inadequate consent capacity and arrange safe departure.",
+        "D": "Continue treatment if the client signs a liability waiver."
+      },
+      "correct_choice": "C",
+      "answer": "Decline treatment due inadequate consent capacity and arrange safe departure.",
+      "why": "C is best because valid informed consent requires understanding and retention of material risks. B is safer than immediate treatment but suboptimal because brief delay does not reliably restore consent capacity.",
+      "trap": "Signed waivers cannot replace valid decision-making capacity.",
+      "hook": "Capacity first, treatment second."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "During prone treatment, a client with recent lumbar surgery history develops sudden severe back pain plus new bilateral leg weakness when standing from the table; vitals are stable. What is the BEST action?",
+      "choices": {
+        "A": "Continue seated treatment and observe leg strength over twenty minutes.",
+        "B": "Advise home rest with ice and arrange routine follow-up this week.",
+        "C": "Transfer to side-lying and reassess motor strength after fifteen minutes.",
+        "D": "Stop session and arrange urgent emergency evaluation for acute neurologic change."
+      },
+      "correct_choice": "D",
+      "answer": "Stop session and arrange urgent emergency evaluation for acute neurologic change.",
+      "why": "D is best because abrupt bilateral weakness after severe spinal pain suggests possible acute neurologic compromise requiring urgent emergency care. C is safer than continued treatment but suboptimal because reassessment delay can postpone time-sensitive diagnosis.",
+      "trap": "Stable vitals do not remove concern for evolving spinal neurologic injury.",
+      "hook": "New bilateral weakness is urgent."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client on combined hormonal contraception presents with mild calf ache, new pleuritic chest discomfort, and normal pulse oximetry at rest. They request only upper-body massage. What is the BEST action?",
+      "choices": {
+        "A": "Defer massage and direct same-day emergency evaluation for possible thromboembolic event.",
+        "B": "Perform upper-body treatment only and avoid all lower-extremity contact.",
+        "C": "Proceed with gentle full-body treatment and monitor breathing.",
+        "D": "Recommend primary-care evaluation within one week before next session."
+      },
+      "correct_choice": "A",
+      "answer": "Defer massage and direct same-day emergency evaluation for possible thromboembolic event.",
+      "why": "A is best because combined risk factors with pleuritic chest discomfort raise concern for thromboembolism despite normal resting oximetry. B is safer than full-body work but suboptimal because any treatment can delay urgent medical evaluation.",
+      "trap": "Normal resting oximetry does not reliably exclude early pulmonary embolic risk.",
+      "hook": "Pleuritic chest pain: urgent rule-out."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client completed neck radiation five days ago, skin is dry but fragile, and oncology follow-up is in four days. They ask for deep cervical stripping for stiffness. What is the BEST plan?",
+      "choices": {
+        "A": "Provide deep work at reduced speed if pain remains below three out of ten.",
+        "B": "Provide non-neck relaxation work and defer cervical treatment until oncology confirms readiness.",
+        "C": "Cancel all massage until all oncology treatment phases are complete.",
+        "D": "Perform light neck work over intact skin while avoiding tender spots."
+      },
+      "correct_choice": "B",
+      "answer": "Provide non-neck relaxation work and defer cervical treatment until oncology confirms readiness.",
+      "why": "B is best because recently irradiated cervical tissue may remain vulnerable despite intact skin, requiring oncology-timed clearance. D is safer than deep stripping but suboptimal because even light regional loading may be premature this soon after treatment.",
+      "trap": "Intact skin appearance can underestimate deeper treatment-related tissue reactivity.",
+      "hook": "Recent radiation: regional defer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with chronic kidney disease reports missing dialysis yesterday, now has increasing shortness of breath when lying flat and ankle swelling. They request leg drainage massage. What is the BEST action?",
+      "choices": {
+        "A": "Proceed with gentle seated massage and monitor breathing closely.",
+        "B": "Perform focused leg drainage to reduce fluid retention before referral.",
+        "C": "Defer treatment and direct urgent medical evaluation before massage.",
+        "D": "Provide upper-body massage only and reassess swelling next visit."
+      },
+      "correct_choice": "C",
+      "answer": "Defer treatment and direct urgent medical evaluation before massage.",
+      "why": "C is best because missed dialysis plus orthopnea and edema suggests fluid overload needing medical management, not manual drainage. A is safer than leg drainage but suboptimal because treatment may worsen distress and delay urgent care.",
+      "trap": "Manual edema approaches cannot replace urgent renal and cardiopulmonary assessment.",
+      "hook": "Missed dialysis plus dyspnea: defer."
+    },
+    {
+      "domain_code": "D3",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client arrives after taking a friend's benzodiazepine for travel anxiety; speech is slowed, gait is unsteady, and they insist on treatment with a signed waiver. What is the BEST action?",
+      "choices": {
+        "A": "Proceed with very light seated treatment and shorten the session.",
+        "B": "Wait twenty minutes, repeat orientation checks, then treat if improved.",
+        "C": "Treat extremities only to reduce injury risk from sedation effects.",
+        "D": "Decline treatment due impaired capacity and follow clinic procedure for safe transportation."
+      },
+      "correct_choice": "D",
+      "answer": "Decline treatment due impaired capacity and follow clinic procedure for safe transportation.",
+      "why": "D is best because slowed cognition and unsteady gait indicate impaired capacity and elevated safety risk. B is safer than immediate treatment but suboptimal because brief waiting does not reliably restore valid consent or coordination.",
+      "trap": "Waivers do not legitimize treatment when informed-consent capacity is impaired.",
+      "hook": "Impaired capacity means no treatment."
+    }
+  ]
+}

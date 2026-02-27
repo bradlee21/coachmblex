@@ -5,8 +5,19 @@ import { validateQuestion } from './lib/questionSanityCheck.mjs';
 
 const BATCH_SIZE = 50;
 const SANITY_REPORT_LIMIT = 10;
+const LINTER_REPORT_LIMIT = 20;
 const ALLOWED_TYPES = new Set(['mcq', 'reverse', 'fill']);
 const CHOICE_KEYS = ['A', 'B', 'C', 'D'];
+const WHY_WORD_LIMIT_BY_DIFFICULTY = {
+  easy: 22,
+  medium: 32,
+  hard: 40,
+};
+const POLICY_TERM = 'policy';
+const POLICY_TERM_LIMIT_20Q = 2;
+const MAX_CORRECT_CHOICE_PER_LETTER_20Q = 7;
+const EMERGENCY_ACTION_PHRASE = 'activate emergency medical response';
+const EMERGENCY_ACTION_LIMIT_20Q = 5;
 const ALLOWED_DOMAIN_CODES = new Set(['D1', 'D2', 'D3', 'D4', 'D5', 'D6', 'D7']);
 const DOMAIN_BY_SECTION_CODE = {
   '1': 'anatomy',
@@ -91,6 +102,106 @@ function getIssueCountEntries(issueCountByType) {
     if (b[1] !== a[1]) return b[1] - a[1];
     return a[0].localeCompare(b[0]);
   });
+}
+
+function countWords(value) {
+  const normalized = normalizeText(value);
+  if (!normalized) return 0;
+  return normalized.split(' ').length;
+}
+
+function countWholeWordOccurrences(value, word) {
+  const normalized = normalizeText(value).toLowerCase();
+  if (!normalized || !word) return 0;
+  const escaped = String(word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const matches = normalized.match(new RegExp(`\\b${escaped}\\b`, 'g'));
+  return matches ? matches.length : 0;
+}
+
+function collectPolishLintWarnings(pack) {
+  const warnings = [];
+  const questions = Array.isArray(pack?.questions) ? pack.questions : [];
+  const correctChoiceCountByLetter = new Map(
+    CHOICE_KEYS.map((letter) => [letter, 0])
+  );
+  let policyTermCount = 0;
+  let emergencyActionCount = 0;
+
+  for (let index = 0; index < questions.length; index += 1) {
+    const question = questions[index];
+    const rowNo = index + 1;
+    const difficulty = normalizeText(question?.difficulty).toLowerCase();
+    const whyText = normalizeText(question?.why);
+    const whyWordCount = countWords(whyText);
+    const whyWordLimit = WHY_WORD_LIMIT_BY_DIFFICULTY[difficulty];
+
+    if (typeof whyWordLimit === 'number' && whyWordCount > whyWordLimit) {
+      warnings.push({
+        code: 'why_length_exceeds_limit',
+        rowNo,
+        message: `row ${rowNo}: why is ${whyWordCount} words (limit ${whyWordLimit} for ${difficulty})`,
+      });
+    }
+
+    const promptText = normalizeText(question?.prompt);
+    const answerText = normalizeText(question?.answer);
+    const trapText = normalizeText(question?.trap);
+    const hookText = normalizeText(question?.hook);
+    const choicesObj =
+      question?.choices && typeof question.choices === 'object' && !Array.isArray(question.choices)
+        ? question.choices
+        : {};
+    const choiceTexts = CHOICE_KEYS.map((key) => normalizeText(choicesObj[key]));
+
+    policyTermCount += countWholeWordOccurrences(promptText, POLICY_TERM);
+    policyTermCount += countWholeWordOccurrences(answerText, POLICY_TERM);
+    policyTermCount += countWholeWordOccurrences(whyText, POLICY_TERM);
+    policyTermCount += countWholeWordOccurrences(trapText, POLICY_TERM);
+    policyTermCount += countWholeWordOccurrences(hookText, POLICY_TERM);
+    for (const choiceText of choiceTexts) {
+      policyTermCount += countWholeWordOccurrences(choiceText, POLICY_TERM);
+    }
+
+    if (normalizeText(question?.answer).toLowerCase().includes(EMERGENCY_ACTION_PHRASE)) {
+      emergencyActionCount += 1;
+    }
+
+    const correctChoice = normalizeText(question?.correct_choice).toUpperCase();
+    if (CHOICE_KEYS.includes(correctChoice)) {
+      correctChoiceCountByLetter.set(
+        correctChoice,
+        Number(correctChoiceCountByLetter.get(correctChoice) || 0) + 1
+      );
+    }
+  }
+
+  if (questions.length === 20) {
+    if (policyTermCount > POLICY_TERM_LIMIT_20Q) {
+      warnings.push({
+        code: 'policy_term_frequency_high',
+        message: `pack uses "${POLICY_TERM}" ${policyTermCount} times (limit ${POLICY_TERM_LIMIT_20Q} for 20-question pack)`,
+      });
+    }
+
+    for (const letter of CHOICE_KEYS) {
+      const count = Number(correctChoiceCountByLetter.get(letter) || 0);
+      if (count > MAX_CORRECT_CHOICE_PER_LETTER_20Q) {
+        warnings.push({
+          code: 'correct_choice_distribution_skew',
+          message: `correct_choice ${letter} appears ${count} times (limit ${MAX_CORRECT_CHOICE_PER_LETTER_20Q} for 20-question pack)`,
+        });
+      }
+    }
+
+    if (emergencyActionCount > EMERGENCY_ACTION_LIMIT_20Q) {
+      warnings.push({
+        code: 'emergency_action_frequency_high',
+        message: `"${EMERGENCY_ACTION_PHRASE}" appears in ${emergencyActionCount} answers (limit ${EMERGENCY_ACTION_LIMIT_20Q} for 20-question pack)`,
+      });
+    }
+  }
+
+  return warnings;
 }
 
 function getExampleValue(value, fallback = '(none)') {
@@ -550,6 +661,11 @@ async function main() {
   const writeFailures = [];
   const sanityFlags = [];
   const sanityIssueCounts = new Map();
+  const lintWarnings = collectPolishLintWarnings(pack);
+  const lintWarningCounts = new Map();
+  for (const warning of lintWarnings) {
+    lintWarningCounts.set(warning.code, Number(lintWarningCounts.get(warning.code) || 0) + 1);
+  }
   const rowsToInsert = [];
   const rowNumbersToInsert = [];
   const rowsToUpdate = [];
@@ -674,11 +790,13 @@ async function main() {
 
   const invalidCount = validationFailures.length;
   const sanityFlaggedCount = sanityFlags.length;
+  const lintWarningCount = lintWarnings.length;
   const writeFailureCount = writeFailures.length;
   console.log(`Pack: ${canonicalPackId}`);
   console.log(`Source: ${normalizeText(pack.source) || '(no source)'}`);
   console.log(`Sanity strict mode: ${strictSanity ? 'on' : 'off'}`);
   console.log(`Total rows: ${pack.questions.length}`);
+  console.log(`Linter warnings: ${lintWarningCount}`);
   console.log(`Sanity flagged: ${sanityFlaggedCount}`);
   if (strictSanity) {
     console.log(`Sanity strict skipped: ${stats.sanityStrictSkippedCount}`);
@@ -698,6 +816,17 @@ async function main() {
     console.log(
       `Questions in DB after import: unavailable (${error instanceof Error ? error.message : String(error)})`
     );
+  }
+
+  if (lintWarningCount > 0) {
+    console.log('Linter warning types:');
+    for (const [code, count] of getIssueCountEntries(lintWarningCounts)) {
+      console.log(`- ${code}: ${count}`);
+    }
+    console.log(`Linter warnings (first ${Math.min(LINTER_REPORT_LIMIT, lintWarningCount)}):`);
+    for (const warning of lintWarnings.slice(0, LINTER_REPORT_LIMIT)) {
+      console.log(`- ${warning.message}`);
+    }
   }
 
   if (sanityFlaggedCount > 0) {

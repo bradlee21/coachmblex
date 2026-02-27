@@ -11,6 +11,43 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D3-ADV-2
+
+- Status: `done`
+- Title: Add D3 advanced v2 pack with deterministic polish-lint warnings
+- Goal: Add deterministic MBLEx-polish lint warnings to the pack import/lint flow and create a new D3 advanced pack that passes strict sanity and zero lint warnings.
+- In scope:
+- Add pack-lint warning checks in `scripts/import-pack.mjs`:
+- `why` word limits by difficulty (`easy<=22`, `medium<=32`, `hard<=40`)
+- `policy` term frequency warning if over `2` in a `20`-question pack
+- `correct_choice` distribution warning if any letter appears more than `7` in a `20`-question pack
+- `"activate emergency medical response"` frequency warning if over `5` in a `20`-question pack
+- Create `src/content/packs/mblex-d3-advanced-v2.json` (`20` MCQ, `4 easy / 10 medium / 6 hard`)
+- Run strict import, smoke, and build validation
+- Update `docs/CHANGELOG.md` and `docs/slices.md`
+- Out of scope:
+- DB schema/migration changes
+- Non-D3 pack refactors
+- Acceptance criteria:
+- Import output includes linter warning count
+- `mblex-d3-advanced-v2` strict import reports `Linter warnings: 0` and `Sanity flagged: 0`
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/mblex-d3-advanced-v2.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `scripts/import-pack.mjs`
+- `src/content/packs/mblex-d3-advanced-v2.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 20`, `Linter warnings: 0`, `Sanity flagged: 0`, `Inserted: 20`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-D3-ADV-1
 
 - Status: `done`
