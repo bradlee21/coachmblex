@@ -11,6 +11,46 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-D2-V1-1
+
+- Status: `done`
+- Title: Create and import D2 kinesiology v1 pack (50 MCQ)
+- Goal: Add a new D2 v1 exam-grade MCQ pack in house format and import it with strict sanity/linter clean output.
+- In scope:
+- Create `src/content/packs/mblex-d2-kinesiology-v1.json` with:
+- `pack_id: mblex-d2-kinesiology-v1`
+- `source: codex-generated`
+- title/meta fields per request (`visibility`, `domain_code`, `domain_label`, `generated_at`)
+- `50` MCQ questions only (`12 easy / 26 medium / 12 hard`)
+- `answer === choices[correct_choice]` for every row
+- Run strict import and ensure zero sanity flags/linter warnings
+- Update docs (`docs/CHANGELOG.md`, `docs/slices.md`)
+- Run required validations
+- Out of scope:
+- DB schema changes
+- Non-pack feature changes
+- Acceptance criteria:
+- Strict import reports:
+- `Total rows: 50`
+- `Linter warnings: 0`
+- `Sanity flagged: 0`
+- Pack inserts cleanly with no invalid rows
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/mblex-d2-kinesiology-v1.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/mblex-d2-kinesiology-v1.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 50`, `Linter warnings: 0`, `Sanity flagged: 0`, `Inserted: 50`, `Skipped/invalid: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-NEXT16-PROXY-1
 
 - Status: `done`

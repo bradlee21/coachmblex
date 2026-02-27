@@ -1,0 +1,863 @@
+{
+  "pack_id": "mblex-d2-kinesiology-v1",
+  "source": "codex-generated",
+  "title": "MBLEx D2 Kinesiology v1 (best-answer reasoning, prompt-locked)",
+  "meta": {
+    "visibility": "active",
+    "domain_code": "D2",
+    "domain_label": "Kinesiology",
+    "generated_at": "2026-02-27T14:50:39.8648725Z"
+  },
+  "questions": [
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During a bodyweight squat, movement at the hips and knees occurs primarily in which plane?",
+      "choices": {
+        "A": "Sagittal plane",
+        "B": "Frontal plane",
+        "C": "Transverse plane",
+        "D": "Oblique plane"
+      },
+      "correct_choice": "A",
+      "answer": "Sagittal plane",
+      "why": "Squats are mainly flexion and extension, which are sagittal-plane actions.",
+      "trap": "Frontal and transverse planes mostly stabilize, not drive the main movement here.",
+      "hook": "Squat equals sagittal flex-extend."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "In a jumping jack, shoulder and hip abduction and adduction occur primarily in which plane?",
+      "choices": {
+        "A": "Sagittal plane",
+        "B": "Frontal plane",
+        "C": "Transverse plane",
+        "D": "Oblique plane"
+      },
+      "correct_choice": "B",
+      "answer": "Frontal plane",
+      "why": "Abduction and adduction are frontal-plane motions around an anterior-posterior axis.",
+      "trap": "Transverse rotation can occur, but it is not the dominant action.",
+      "hook": "Jacks live in frontal plane."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client turns to look behind while backing a car. This trunk action is primarily:",
+      "choices": {
+        "A": "Lateral flexion",
+        "B": "Extension",
+        "C": "Rotation in the transverse plane",
+        "D": "Flexion in the sagittal plane"
+      },
+      "correct_choice": "C",
+      "answer": "Rotation in the transverse plane",
+      "why": "Looking behind mainly requires axial trunk rotation in the transverse plane.",
+      "trap": "Extension may accompany turning, but rotation is the key movement.",
+      "hook": "Turning is transverse rotation."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which muscle team best supports scapular upward rotation during pain-free overhead reach?",
+      "choices": {
+        "A": "Rhomboids and levator scapulae",
+        "B": "Latissimus dorsi and pectoralis major",
+        "C": "Posterior deltoid and teres major",
+        "D": "Serratus anterior and lower trapezius"
+      },
+      "correct_choice": "D",
+      "answer": "Serratus anterior and lower trapezius",
+      "why": "Serratus anterior and trapezius force-couple to produce efficient upward rotation.",
+      "trap": "Downward rotators may feel active but often oppose full overhead mechanics.",
+      "hook": "Serratus plus lower trap lifts."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A positive Trendelenburg sign during single-leg stance most strongly suggests weakness of the:",
+      "choices": {
+        "A": "Stance-side gluteus medius",
+        "B": "Swing-side tibialis anterior",
+        "C": "Stance-side adductor longus",
+        "D": "Swing-side gastrocnemius"
+      },
+      "correct_choice": "A",
+      "answer": "Stance-side gluteus medius",
+      "why": "Contralateral pelvic drop reflects insufficient hip abductor support on the stance side.",
+      "trap": "Distal ankle muscles affect foot control, not primary pelvic leveling.",
+      "hook": "Trendelenburg points to glute med."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "For toe clearance during normal swing phase, which ankle action is most required?",
+      "choices": {
+        "A": "Plantarflexion",
+        "B": "Dorsiflexion",
+        "C": "Eversion",
+        "D": "Inversion"
+      },
+      "correct_choice": "B",
+      "answer": "Dorsiflexion",
+      "why": "Dorsiflexion lifts the forefoot and reduces toe drag during swing.",
+      "trap": "Plantarflexion is more important for push-off, not swing clearance.",
+      "hook": "Swing needs dorsiflexed toes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At terminal knee extension in open chain, the primary antagonist to quadriceps action is the:",
+      "choices": {
+        "A": "Gastrocnemius",
+        "B": "Popliteus",
+        "C": "Hamstring group",
+        "D": "Tensor fasciae latae"
+      },
+      "correct_choice": "C",
+      "answer": "Hamstring group",
+      "why": "Hamstrings flex the knee, directly opposing quadriceps-driven extension.",
+      "trap": "Popliteus helps unlocking, but not as the main antagonist through extension.",
+      "hook": "Quads extend, hamstrings oppose."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A client with rounded shoulders and scapular protraction most commonly presents with shortened:",
+      "choices": {
+        "A": "Lower trapezius",
+        "B": "Rhomboid major",
+        "C": "Infraspinatus",
+        "D": "Pectoralis minor"
+      },
+      "correct_choice": "D",
+      "answer": "Pectoralis minor",
+      "why": "Short pectoralis minor can pull the scapula into protraction and anterior tilt.",
+      "trap": "Rhomboids are often lengthened or inhibited in this posture pattern.",
+      "hook": "Rounded shoulders often mean pec minor."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "When anterior pelvic tilt is linked to short hip flexors, the BEST first movement strategy is:",
+      "choices": {
+        "A": "Hip flexor lengthening with glute activation",
+        "B": "Aggressive lumbar extension strengthening only",
+        "C": "Hamstring-only stretching",
+        "D": "Avoid all lower-body exercise"
+      },
+      "correct_choice": "A",
+      "answer": "Hip flexor lengthening with glute activation",
+      "why": "This pairing reduces front-side stiffness and restores posterior pelvic control.",
+      "trap": "Lumbar extensor-only focus can reinforce the same extension-biased posture.",
+      "hook": "Lengthen front, wake glutes."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A clear foot slap immediately after heel strike most strongly suggests weakness in the:",
+      "choices": {
+        "A": "Peroneus longus",
+        "B": "Tibialis anterior",
+        "C": "Soleus",
+        "D": "Flexor hallucis longus"
+      },
+      "correct_choice": "B",
+      "answer": "Tibialis anterior",
+      "why": "Tibialis anterior eccentrically controls plantarflexion after initial contact.",
+      "trap": "Soleus weakness affects push-off more than controlled forefoot lowering.",
+      "hook": "Foot slap means dorsiflexor lag."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which primary action is most associated with gluteus maximus during functional movement?",
+      "choices": {
+        "A": "Hip internal rotation",
+        "B": "Knee extension",
+        "C": "Hip extension",
+        "D": "Ankle dorsiflexion"
+      },
+      "correct_choice": "C",
+      "answer": "Hip extension",
+      "why": "Gluteus maximus is a major hip extensor during rising and acceleration tasks.",
+      "trap": "Knee extension is primarily a quadriceps role, not glute max.",
+      "hook": "Glute max drives extension."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During early stance, normal foot pronation is MOST useful for:",
+      "choices": {
+        "A": "Producing maximal push-off force",
+        "B": "Locking the midfoot rigidly",
+        "C": "Shortening the entire lower limb",
+        "D": "Shock absorption and surface adaptation"
+      },
+      "correct_choice": "D",
+      "answer": "Shock absorption and surface adaptation",
+      "why": "Controlled pronation dissipates load and adapts the foot to terrain.",
+      "trap": "A rigid midfoot is more relevant near push-off, not early loading.",
+      "hook": "Early pronation absorbs force."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has shoulder pain after 90 degrees of abduction and visibly limited scapular upward rotation. BEST exercise focus?",
+      "choices": {
+        "A": "Serratus anterior and lower trapezius retraining",
+        "B": "Rotator cuff isometrics only",
+        "C": "Thoracic mobility drills only",
+        "D": "Complete overhead rest for six weeks"
+      },
+      "correct_choice": "A",
+      "answer": "Serratus anterior and lower trapezius retraining",
+      "why": "This best restores scapular mechanics for elevation. Thoracic or cuff work helps, but usually cannot fix the upward-rotation deficit alone.",
+      "trap": "Rest can reduce symptoms briefly but does not rebuild overhead movement strategy.",
+      "hook": "Fix scap rhythm first."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "An overhead lifter reports painful arc symptoms but full strength and no trauma signs. What is the BEST next approach?",
+      "choices": {
+        "A": "Immediately max-load overhead to test tolerance",
+        "B": "Temporarily reduce overhead volume and retrain scapular posterior tilt",
+        "C": "Stop all upper-body training indefinitely",
+        "D": "Treat only with passive pectoral stretching"
+      },
+      "correct_choice": "B",
+      "answer": "Temporarily reduce overhead volume and retrain scapular posterior tilt",
+      "why": "Load modification plus motor retraining addresses symptoms and mechanics. Stretching alone may feel better, but often misses the key movement fault.",
+      "trap": "Long complete shutdown can decondition tissue without teaching better mechanics.",
+      "hook": "Modify load, retrain mechanics."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During squats, both knees collapse inward despite adequate ankle mobility. Which intervention is BEST first?",
+      "choices": {
+        "A": "Only stretch the adductors",
+        "B": "Only strengthen quadriceps",
+        "C": "Strengthen hip abductors and external rotators with knee-tracking cues",
+        "D": "Eliminate all squat patterns"
+      },
+      "correct_choice": "C",
+      "answer": "Strengthen hip abductors and external rotators with knee-tracking cues",
+      "why": "This targets frontal-plane control deficits directly. Stretching can help comfort, but usually does not normalize dynamic valgus on its own.",
+      "trap": "Removing squats entirely removes a useful pattern for graded retraining.",
+      "hook": "Control valgus from the hip."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "In gait, contralateral pelvic drop appears in mid-stance with no pain. BEST biomechanical interpretation?",
+      "choices": {
+        "A": "Primary ankle plantarflexor weakness",
+        "B": "Primary quadriceps overactivity",
+        "C": "Primary hamstring shortness",
+        "D": "Insufficient stance-side hip abductor support"
+      },
+      "correct_choice": "D",
+      "answer": "Insufficient stance-side hip abductor support",
+      "why": "Mid-stance pelvic drop classically reflects stance-side abductor control deficit. Plantarflexor weakness can alter timing but does not directly explain this frontal-plane sign.",
+      "trap": "Hamstring length alone is not the main pelvic level controller.",
+      "hook": "Mid-stance drop equals abductor demand."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A runner demonstrates early heel rise and persistent pronation. Ankle dorsiflexion is limited. BEST corrective priority?",
+      "choices": {
+        "A": "Improve calf length and dorsiflexion mobility",
+        "B": "Strengthen hip flexors only",
+        "C": "Use higher-heeled shoes permanently",
+        "D": "Stretch hamstrings only"
+      },
+      "correct_choice": "A",
+      "answer": "Improve calf length and dorsiflexion mobility",
+      "why": "Restoring dorsiflexion addresses the ankle rocker deficit driving both compensations. Hamstring stretching may help comfort, but misses the key restriction.",
+      "trap": "Permanent heel elevation masks limitation without restoring motion capacity.",
+      "hook": "Restore ankle rocker first."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client sits with posterior pelvic tilt and flattened lumbar curve. Hamstrings test short. BEST program emphasis?",
+      "choices": {
+        "A": "Only strengthen lumbar extensors",
+        "B": "Improve hamstring length and lumbar extension endurance",
+        "C": "Avoid all flexion activities permanently",
+        "D": "Only strengthen abdominals"
+      },
+      "correct_choice": "B",
+      "answer": "Improve hamstring length and lumbar extension endurance",
+      "why": "This addresses both posterior chain tension bias and extensor endurance. Abdominal work helps trunk control, but alone may reinforce flexion-dominant posture.",
+      "trap": "Permanent flexion avoidance reduces function without building adaptable control.",
+      "hook": "Length plus endurance restores curve."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "For upper-crossed posture with forward head and scapular depression, what is the BEST starting strategy?",
+      "choices": {
+        "A": "Strengthen upper trapezius and stretch lower trapezius",
+        "B": "Only perform cervical extension strengthening",
+        "C": "Strengthen deep neck flexors and lower trap while lengthening pectoralis minor",
+        "D": "Use passive thoracic manipulation only"
+      },
+      "correct_choice": "C",
+      "answer": "Strengthen deep neck flexors and lower trap while lengthening pectoralis minor",
+      "why": "This targets common weak and short contributors together. Passive treatment may help temporarily, but active rebalancing is needed for carryover.",
+      "trap": "Cervical extension-only work can worsen anterior head translation strategies.",
+      "hook": "Rebalance deep neck and scapula."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with impingement signs shows scapular anterior tilt during elevation. Which plan is BEST?",
+      "choices": {
+        "A": "Heavy deltoid strengthening only",
+        "B": "Complete overhead avoidance for three months",
+        "C": "Thoracic extension stretching only",
+        "D": "Load modification plus serratus and lower trap strengthening with pec minor mobility"
+      },
+      "correct_choice": "D",
+      "answer": "Load modification plus serratus and lower trap strengthening with pec minor mobility",
+      "why": "This combines symptom modulation and movement correction. Thoracic mobility helps, but isolated mobility usually fails to normalize loaded scapular control.",
+      "trap": "Deltoid-heavy loading can aggravate symptoms if scapular mechanics stay faulty.",
+      "hook": "Tilt control needs combined plan."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Lateral elbow pain worsens with gripping and wrist extension. BEST early exercise approach?",
+      "choices": {
+        "A": "Progressive wrist extensor loading with temporary volume reduction",
+        "B": "Full immobilization for six weeks",
+        "C": "Daily painful deep friction only",
+        "D": "Neck strengthening only"
+      },
+      "correct_choice": "A",
+      "answer": "Progressive wrist extensor loading with temporary volume reduction",
+      "why": "Progressive loading builds tendon capacity while reducing overload. Immobilization may calm pain, but prolonged unloading delays functional adaptation.",
+      "trap": "Friction alone does not rebuild load tolerance for gripping demands.",
+      "hook": "Load tendon, do not freeze."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Posterior thigh tension appears during straight-leg raise, but slump is negative and ankle dorsiflexion does not change symptoms. BEST interpretation?",
+      "choices": {
+        "A": "Primary sciatic neural tension",
+        "B": "Primary hamstring extensibility limitation",
+        "C": "Primary lumbar facet referral",
+        "D": "Primary vascular claudication"
+      },
+      "correct_choice": "B",
+      "answer": "Primary hamstring extensibility limitation",
+      "why": "When neural sensitizers do not alter symptoms, muscular length limitation is more likely. Neural involvement remains possible, but this pattern favors hamstrings.",
+      "trap": "Symptom location alone can overcall neural mechanisms.",
+      "hook": "Neural tests unchanged, think muscle."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client cannot generate strong elbow flexion when the shoulder is already fully flexed overhead. BEST explanation?",
+      "choices": {
+        "A": "Passive insufficiency of triceps",
+        "B": "Reflex inhibition from soleus",
+        "C": "Active insufficiency of the biceps brachii",
+        "D": "Primary wrist extensor fatigue"
+      },
+      "correct_choice": "C",
+      "answer": "Active insufficiency of the biceps brachii",
+      "why": "A two-joint muscle shortened at both joints loses force capacity. Triceps tension can influence motion, but this classic pattern indicates biceps active insufficiency.",
+      "trap": "Distal fatigue is less relevant than shoulder-elbow position context.",
+      "hook": "Too short muscles produce less."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "For early patellofemoral pain rehab during stairs, which option is generally BEST first?",
+      "choices": {
+        "A": "Open-chain knee extension to terminal lockout only",
+        "B": "Deep loaded lunges immediately",
+        "C": "Total rest from lower-body exercise",
+        "D": "Controlled closed-chain step-down with hip-knee alignment cues"
+      },
+      "correct_choice": "D",
+      "answer": "Controlled closed-chain step-down with hip-knee alignment cues",
+      "why": "This builds relevant functional control under manageable load. Open-chain work can help later, but is often less transferable early.",
+      "trap": "Jumping to deep high-load lunges can exceed current tolerance.",
+      "hook": "Train control in function."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client stands in knee hyperextension during quiet posture. BEST movement priority?",
+      "choices": {
+        "A": "Cue slight knee flexion and train hamstring plus proprioceptive control",
+        "B": "Strengthen calf raises only",
+        "C": "Brace in full extension all day",
+        "D": "Avoid all standing exercise"
+      },
+      "correct_choice": "A",
+      "answer": "Cue slight knee flexion and train hamstring plus proprioceptive control",
+      "why": "This changes motor habit and improves posterior knee support. Bracing in lockout may feel stable, but can preserve the same faulty strategy.",
+      "trap": "Single-muscle strengthening alone rarely changes persistent postural patterns.",
+      "hook": "Unlock, then control."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client walks with bilateral toe-out but no pain. What is the BEST first kinesiology step?",
+      "choices": {
+        "A": "Force toes-forward cue immediately",
+        "B": "Assess hip rotation ROM and lower-limb alignment before retraining",
+        "C": "Prescribe rigid orthotics immediately",
+        "D": "Strengthen quadriceps only"
+      },
+      "correct_choice": "B",
+      "answer": "Assess hip rotation ROM and lower-limb alignment before retraining",
+      "why": "Assessment should identify structural and mobility contributors before cue changes. Immediate correction cues may create compensations when root causes are unknown.",
+      "trap": "Orthotics may help selected cases but should not replace movement assessment.",
+      "hook": "Assess before cueing gait."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "In single-leg squat, the pelvis drops and trunk shifts away from stance leg. BEST corrective emphasis?",
+      "choices": {
+        "A": "Only ankle inversion strengthening",
+        "B": "Only passive IT band stretching",
+        "C": "Stance-side hip abductor strength and lateral chain control",
+        "D": "Avoid all unilateral training"
+      },
+      "correct_choice": "C",
+      "answer": "Stance-side hip abductor strength and lateral chain control",
+      "why": "This directly targets frontal-plane pelvic and trunk control deficits. Passive stretching may ease tension but rarely restores single-leg stability alone.",
+      "trap": "Avoiding unilateral tasks removes the context needed for retraining.",
+      "hook": "Single-leg control starts laterally."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client has flexion-intolerant low back pain during lifting. Which coaching strategy is BEST?",
+      "choices": {
+        "A": "Only stretch hamstrings",
+        "B": "Only brace abdominals harder",
+        "C": "Stop all lifting permanently",
+        "D": "Teach hip hinge with neutral spine and graded load"
+      },
+      "correct_choice": "D",
+      "answer": "Teach hip hinge with neutral spine and graded load",
+      "why": "Hip hinge retraining redistributes load while maintaining function. Bracing helps pressure control, but without pattern change it often fails under real lifting tasks.",
+      "trap": "Permanent lifting avoidance reduces resilience and daily capacity.",
+      "hook": "Hinge to spare lumbar flexion."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To bias gastrocnemius length testing, which setup is BEST?",
+      "choices": {
+        "A": "Measure ankle dorsiflexion with knee extended",
+        "B": "Measure ankle dorsiflexion with knee flexed deeply",
+        "C": "Measure hip flexion with knee bent",
+        "D": "Measure knee extension in seated posture"
+      },
+      "correct_choice": "A",
+      "answer": "Measure ankle dorsiflexion with knee extended",
+      "why": "Knee extension tensions gastrocnemius during dorsiflexion testing. Knee-flexed dorsiflexion is useful, but biases soleus more than gastrocnemius.",
+      "trap": "Hip or seated knee tests do not isolate ankle plantarflexor length well.",
+      "hook": "Knee straight biases gastrocnemius."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "To bias soleus length testing, which setup is BEST?",
+      "choices": {
+        "A": "Ankle dorsiflexion with knee hyperextended",
+        "B": "Ankle dorsiflexion with knee flexed",
+        "C": "Hip extension with knee flexed",
+        "D": "Prone knee flexion test"
+      },
+      "correct_choice": "B",
+      "answer": "Ankle dorsiflexion with knee flexed",
+      "why": "Flexing the knee slackens gastrocnemius so dorsiflexion limits better reflect soleus contribution. Knee-extended testing remains more gastrocnemius-influenced.",
+      "trap": "Hip and knee-only tests cannot answer this ankle-specific length question.",
+      "hook": "Knee bent biases soleus."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A field athlete with recent adductor strain wants to sprint tomorrow. BEST return-to-speed criterion?",
+      "choices": {
+        "A": "Pain-free walking only",
+        "B": "Full passive hip ROM only",
+        "C": "Pain-free resisted adduction and controlled lateral lunge",
+        "D": "No tenderness with static palpation only"
+      },
+      "correct_choice": "C",
+      "answer": "Pain-free resisted adduction and controlled lateral lunge",
+      "why": "This includes strength and movement-demand checks relevant to sprinting. Passive ROM is useful, but does not confirm dynamic tissue readiness.",
+      "trap": "Palpation alone can miss high-speed load deficits.",
+      "hook": "Readiness needs load tests."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Runner with lateral knee pain reports temporary relief from foam rolling only. BEST next step?",
+      "choices": {
+        "A": "Increase foam rolling duration only",
+        "B": "Stop running completely for two months",
+        "C": "Use only IT band stretching",
+        "D": "Progress hip abductor strength and cadence-based gait adjustment"
+      },
+      "correct_choice": "D",
+      "answer": "Progress hip abductor strength and cadence-based gait adjustment",
+      "why": "This addresses likely load drivers, not only symptoms. Stretching may feel better briefly, but rarely changes recurrent running mechanics alone.",
+      "trap": "Long full rest can reduce fitness without solving the root movement issue.",
+      "hook": "Change load drivers, not symptoms."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A keyboard worker reports nighttime thumb-index-middle numbness relieved by shaking the hand. BEST kinesiology interpretation?",
+      "choices": {
+        "A": "Median nerve compression at the carpal tunnel is likely",
+        "B": "Upper trapezius trigger points alone explain this pattern",
+        "C": "Pronator syndrome is most likely despite nighttime pattern",
+        "D": "Primary elbow extensor tendinopathy explains nocturnal numbness"
+      },
+      "correct_choice": "A",
+      "answer": "Median nerve compression at the carpal tunnel is likely",
+      "why": "Digit distribution and nighttime provocation strongly fit carpal tunnel. Pronator involvement can occur, but this timing pattern favors wrist-level median compression.",
+      "trap": "Myofascial pain can coexist but usually does not create this specific nerve pattern alone.",
+      "hook": "Night median symptoms suggest tunnel."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "During wall push-up, the medial border of the scapula wings prominently. Which muscle is MOST implicated?",
+      "choices": {
+        "A": "Rhomboid major",
+        "B": "Serratus anterior",
+        "C": "Levator scapulae",
+        "D": "Teres minor"
+      },
+      "correct_choice": "B",
+      "answer": "Serratus anterior",
+      "why": "Serratus anterior insufficiency commonly causes medial border winging during pushing tasks. Rhomboid issues affect retraction, but this sign points more to serratus control.",
+      "trap": "Teres minor is a rotator cuff muscle, not the primary scapular protraction stabilizer.",
+      "hook": "Winging often means serratus lag."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A client with knee osteoarthritis shows varus loading during gait. BEST exercise emphasis?",
+      "choices": {
+        "A": "Only seated knee extension with heavy load",
+        "B": "Only passive hamstring stretching",
+        "C": "Hip abductor strengthening with controlled step tasks",
+        "D": "Avoid all walking-based training"
+      },
+      "correct_choice": "C",
+      "answer": "Hip abductor strengthening with controlled step tasks",
+      "why": "This can improve frontal-plane control and reduce medial knee load strategy. Quadriceps work helps strength, but alone may not alter varus movement behavior.",
+      "trap": "Stopping all walking may worsen conditioning and confidence.",
+      "hook": "Support hip to unload knee."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "For anterior pelvic tilt with excessive lumbar lordosis, which combination is BEST?",
+      "choices": {
+        "A": "Strengthen lumbar extensors and hip flexors",
+        "B": "Stretch glutes and strengthen hip flexors",
+        "C": "Only abdominal bracing drills",
+        "D": "Lengthen hip flexors and strengthen glutes with abdominals"
+      },
+      "correct_choice": "D",
+      "answer": "Lengthen hip flexors and strengthen glutes with abdominals",
+      "why": "This addresses common short and weak contributors together. Bracing drills can aid awareness, but alone often fail to change loaded pelvic control.",
+      "trap": "More extensor dominance can reinforce the same extension-biased posture.",
+      "hook": "Open front, strengthen backline."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "Desk worker with thoracic kyphosis fatigues quickly in upright sitting. BEST training focus?",
+      "choices": {
+        "A": "Thoracic extension mobility and scapular endurance work",
+        "B": "Only lumbar flexion stretching",
+        "C": "Only neck rotation strengthening",
+        "D": "Avoid seated posture retraining"
+      },
+      "correct_choice": "A",
+      "answer": "Thoracic extension mobility and scapular endurance work",
+      "why": "This targets the segment and endurance demands of sustained upright posture. Neck-only work can help symptoms, but misses thoracic extension capacity.",
+      "trap": "Avoidance delays adaptation to needed daily posture tolerance.",
+      "hook": "Thoracic extension supports endurance."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "medium",
+      "prompt": "A distance runner overstrides with recurrent shin pain. Which gait cue is BEST supported?",
+      "choices": {
+        "A": "Land farther in front for braking control",
+        "B": "Increase cadence modestly to reduce overstride",
+        "C": "Use maximal vertical bounce for propulsion",
+        "D": "Keep cadence unchanged and increase stride length"
+      },
+      "correct_choice": "B",
+      "answer": "Increase cadence modestly to reduce overstride",
+      "why": "A modest cadence increase often reduces braking load and tibial stress exposure. Footwear changes may help comfort but less directly change overstride mechanics.",
+      "trap": "Longer stride usually increases braking and symptom-driving loads.",
+      "hook": "Higher cadence, shorter reach."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A baseball pitcher has late-cocking shoulder pain, reduced internal rotation, and visible scapular dyskinesis. BEST integrated plan?",
+      "choices": {
+        "A": "Immediate full-intensity throwing with posterior shoulder stretching only",
+        "B": "Complete throwing shutdown for three months without retraining",
+        "C": "Gradual throwing-load reduction plus posterior shoulder mobility and scapular control training",
+        "D": "Only passive pectoral release before games"
+      },
+      "correct_choice": "C",
+      "answer": "Gradual throwing-load reduction plus posterior shoulder mobility and scapular control training",
+      "why": "This combines irritability management, mobility restoration, and control retraining. Full shutdown may calm symptoms, but without graded reloading and mechanics work, durable return is less likely.",
+      "trap": "Single-modality soft tissue work rarely resolves a multi-factor throwing problem.",
+      "hook": "Integrate load, mobility, control."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "During gait analysis, a client leans trunk over the stance leg and reduces opposite pelvic drop. BEST biomechanical interpretation?",
+      "choices": {
+        "A": "Compensation for weak opposite quadratus lumborum",
+        "B": "Compensation for tight contralateral hamstrings",
+        "C": "Compensation for weak dorsiflexors on swing side",
+        "D": "Compensation to reduce demand on stance-side hip abductors"
+      },
+      "correct_choice": "D",
+      "answer": "Compensation to reduce demand on stance-side hip abductors",
+      "why": "This is a classic strategy to shorten the hip abductor moment arm demand. Other findings may coexist, but this trunk shift primarily unloads stance-side abductors.",
+      "trap": "Distal findings can distract from this proximal frontal-plane compensation.",
+      "hook": "Trunk lean unloads abductors."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A cyclist develops ring and little finger paresthesia after long elbow-flexed rides, with medial elbow sensitivity. BEST kinesiology interpretation?",
+      "choices": {
+        "A": "Ulnar nerve irritation at the cubital tunnel is most likely",
+        "B": "Median nerve compression at carpal tunnel is most likely",
+        "C": "Primary rhomboid referral explains distal paresthesia pattern",
+        "D": "Primary Achilles overuse explains hand symptoms"
+      },
+      "correct_choice": "A",
+      "answer": "Ulnar nerve irritation at the cubital tunnel is most likely",
+      "why": "Symptom distribution plus prolonged elbow flexion strongly fits cubital tunnel involvement. Median compression is common, but usually affects a different digit pattern.",
+      "trap": "Referral pain can coexist, but this neurologic pattern is more specific.",
+      "hook": "Elbow flexion plus ulnar digits."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A swayback pattern shows posterior pelvic shift, thoracic kyphosis, and knee hyperextension. BEST first corrective emphasis?",
+      "choices": {
+        "A": "Strengthen hamstrings and stretch hip flexors only",
+        "B": "Restore stacked alignment with hip-flexor and deep-core control plus hamstring length management",
+        "C": "Strengthen lumbar extensors aggressively",
+        "D": "Avoid corrective exercise until symptoms disappear"
+      },
+      "correct_choice": "B",
+      "answer": "Restore stacked alignment with hip-flexor and deep-core control plus hamstring length management",
+      "why": "This addresses global strategy and key control deficits, not one tissue. Hamstring-only emphasis can further reinforce posterior pelvic dominance in swayback.",
+      "trap": "Aggressive extension work may increase compensatory hinging rather than stacked posture.",
+      "hook": "Stack first, then strengthen."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client has painful shoulder abduction with visible scapular downward rotation at rest. Which intervention is BEST priority?",
+      "choices": {
+        "A": "Heavy latissimus strengthening for shoulder support",
+        "B": "Only glenohumeral joint stretching",
+        "C": "Upward-rotation motor retraining with serratus and lower trapezius loading",
+        "D": "Long-term overhead avoidance without retraining"
+      },
+      "correct_choice": "C",
+      "answer": "Upward-rotation motor retraining with serratus and lower trapezius loading",
+      "why": "This directly addresses the scapular force-couple problem driving painful elevation. Joint stretching may help range, but often fails without scapular control retraining.",
+      "trap": "Downward-rotator strengthening can worsen the resting scapular bias.",
+      "hook": "Rebuild upward-rotation control."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Runner shows knee valgus, hip internal rotation, and limited ankle dorsiflexion during step-down. BEST initial sequencing?",
+      "choices": {
+        "A": "Train knee alignment only without mobility work",
+        "B": "Only stretch hamstrings and continue full mileage",
+        "C": "Only hip strengthening without movement retraining",
+        "D": "Restore dorsiflexion, then integrate hip control in task-specific retraining"
+      },
+      "correct_choice": "D",
+      "answer": "Restore dorsiflexion, then integrate hip control in task-specific retraining",
+      "why": "This handles both the distal mobility limiter and proximal control need. Hip strengthening helps, but remains incomplete when ankle restriction keeps forcing compensation.",
+      "trap": "Alignment cues alone often fail if mobility cannot support the target position.",
+      "hook": "Mobility then integrated control."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A painter gets hand numbness during sustained overhead work; symptoms ease after lowering the arm. BEST kinesiology action plan?",
+      "choices": {
+        "A": "Reduce overhead duration and retrain scapular-thoracic mechanics with graded exposure",
+        "B": "Maximize overhead time daily to desensitize quickly",
+        "C": "Only perform wrist curls",
+        "D": "Stop all upper-body activity indefinitely"
+      },
+      "correct_choice": "A",
+      "answer": "Reduce overhead duration and retrain scapular-thoracic mechanics with graded exposure",
+      "why": "This reduces provocation while building capacity and mechanics progressively. Full inactivity may reduce symptoms temporarily but does not prepare for occupational overhead demand.",
+      "trap": "Rapid exposure increases can flare neural irritability and guarding.",
+      "hook": "Grade overhead, improve mechanics."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "A client with insertional Achilles pain worsens after deep heel-drop stretching. BEST loading strategy now?",
+      "choices": {
+        "A": "Continue deeper dorsiflexion stretching aggressively",
+        "B": "Use progressive calf raises on flat ground while avoiding deep dorsiflexion early",
+        "C": "Stop all calf loading for three months",
+        "D": "Switch only to toe-spreading drills"
+      },
+      "correct_choice": "B",
+      "answer": "Use progressive calf raises on flat ground while avoiding deep dorsiflexion early",
+      "why": "This builds tendon capacity while limiting insertional compression aggravation. Full unloading may calm pain, but often reduces tendon tolerance and function over time.",
+      "trap": "Deeper stretch is not always better when compression sensitivity dominates.",
+      "hook": "Load tendon without deep compression."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Client with anterior hip pain shows symptoms during deep flexion, adduction, and internal rotation. BEST exercise emphasis?",
+      "choices": {
+        "A": "Deep loaded squats to tolerance every session",
+        "B": "Only passive hip flexion stretching",
+        "C": "Strengthen gluteal control while limiting provocative deep flexion-adduction ranges",
+        "D": "Eliminate all lower-body strength training"
+      },
+      "correct_choice": "C",
+      "answer": "Strengthen gluteal control while limiting provocative deep flexion-adduction ranges",
+      "why": "This protects irritated positions while improving control in usable ranges. Passive stretching can feel helpful, but alone rarely changes dynamic loading behavior.",
+      "trap": "Repeated provocation often sustains irritability and delays progression.",
+      "hook": "Control hip, respect irritability."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Six weeks after ACL reconstruction, a client still lacks 5 degrees of knee extension and has quad lag. BEST rehab priority?",
+      "choices": {
+        "A": "Begin plyometrics immediately to normalize gait",
+        "B": "Focus only on hamstring strengthening",
+        "C": "Prioritize high-load leg press through partial flexion",
+        "D": "Restore full extension and quadriceps activation before higher-level loading"
+      },
+      "correct_choice": "D",
+      "answer": "Restore full extension and quadriceps activation before higher-level loading",
+      "why": "These are foundational deficits that drive compensations if ignored. Global strengthening helps, but progression quality remains limited until extension and quad activation normalize.",
+      "trap": "Early plyometrics can amplify faulty mechanics and irritability.",
+      "hook": "Extension and quad first."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "Posterior hip pain radiates down the thigh when sitting, but lumbar repeated motions are clear and symptoms worsen with prolonged hip external rotation. BEST interpretation?",
+      "choices": {
+        "A": "Deep gluteal or piriformis-related neural irritation is more likely",
+        "B": "Primary lumbar discogenic pain is most likely",
+        "C": "Primary quadriceps strain explains symptoms",
+        "D": "Primary plantar fascia overload explains symptoms"
+      },
+      "correct_choice": "A",
+      "answer": "Deep gluteal or piriformis-related neural irritation is more likely",
+      "why": "Hip-position sensitivity with clear lumbar repeated motions favors extra-spinal neural irritation. Lumbar referral remains a safety consideration, but current behavior points elsewhere.",
+      "trap": "Symptom location alone can mislead without movement-provocation context.",
+      "hook": "Hip-position sensitivity guides differential."
+    },
+    {
+      "domain_code": "D2",
+      "question_type": "mcq",
+      "difficulty": "hard",
+      "prompt": "In modified Thomas testing, the thigh stays elevated and the knee extends from 90 to 40 degrees while supine. BEST conclusion?",
+      "choices": {
+        "A": "Isolated iliopsoas shortness only",
+        "B": "Rectus femoris shortness contributes to the hip-flexor limitation",
+        "C": "Primary hamstring shortness",
+        "D": "Primary tibialis anterior shortness"
+      },
+      "correct_choice": "B",
+      "answer": "Rectus femoris shortness contributes to the hip-flexor limitation",
+      "why": "Knee extension drift during modified Thomas indicates two-joint rectus femoris tension. Iliopsoas may also contribute, but the knee change specifically implicates rectus involvement.",
+      "trap": "Hamstring length is assessed differently and does not explain this pattern.",
+      "hook": "Knee drift signals rectus tension."
+    }
+  ]
+}
