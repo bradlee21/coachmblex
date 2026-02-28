@@ -11,6 +11,41 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-MIDTERM-DISTRACTOR-1
+
+- Status: `done`
+- Title: Rebuild physiology-midterm-v1 distractors to chapter-consistent plausible options
+- Goal: Keep prompts/correct answers intact while replacing random distractors with topic-consistent alternatives so each MCQ reads plausibly within its chapter domain.
+- In scope:
+- Rebuild distractors in `src/content/packs/physiology-midterm-v1.json` using deterministic bucket inference from prompt/answer keywords
+- Maintain MCQ structure with 4 distinct options (`A/B/C/D`) per question
+- Preserve prompt text and correct answer text
+- Keep `domain_code: D1` and existing pack metadata fields
+- Validate with strict importer sanity and project smoke/build checks
+- Update docs (`docs/CHANGELOG.md`, `docs/slices.md`)
+- Out of scope:
+- Prompt rewrites
+- Correct-answer changes
+- DB schema changes
+- Acceptance criteria:
+- All questions keep original prompts and correct answers
+- Strict import reports `Sanity flagged: 0` and `Linter warnings: 0`
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/physiology-midterm-v1.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/physiology-midterm-v1.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- strict import pass (`Total rows: 109`, `Inserted: 109`, `Sanity flagged: 0`, `Linter warnings: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-MIDTERM-D1-FIX-1
 
 - Status: `done`
