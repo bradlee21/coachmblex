@@ -1,0 +1,1540 @@
+{
+  "pack_id": "physiology-midterm-v1",
+  "source": "physiology-midterm-review-docx",
+  "title": "Physiology Midterm v1",
+  "meta": {
+    "visibility": "active",
+    "domain_code": "D1",
+    "domain_label": "Anatomy & Physiology",
+    "generated_at": "2026-02-27T18:50:46Z",
+    "notes": "Questions copied verbatim from Physiology Midterm Review.docx; answers supplied as correct choices."
+  },
+  "questions": [
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Name the system of the body that consists of the skin, hair, and nails",
+      "choices": {
+        "A": "Plantar flexion",
+        "B": "Integumentary system",
+        "C": "Hypothalamus",
+        "D": "Red bone marrow"
+      },
+      "correct_choice": "B",
+      "answer": "Integumentary system"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Name the system that is involved with the breakdown and absorption of nutrients",
+      "choices": {
+        "A": "Digestive system",
+        "B": "Pleura (pleural membrane)",
+        "C": "Connective tissue",
+        "D": "Endocrine system"
+      },
+      "correct_choice": "A",
+      "answer": "Digestive system"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Name the system involved in hormone production",
+      "choices": {
+        "A": "Scoliosis",
+        "B": "Middle ear (the stapes)",
+        "C": "Osteon (Haversian system)",
+        "D": "Endocrine system"
+      },
+      "correct_choice": "D",
+      "answer": "Endocrine system"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The anatomical term referring to the back of the body:",
+      "choices": {
+        "A": "Autonomic nervous system (ANS)",
+        "B": "Posterior (dorsal)",
+        "C": "Hyaline cartilage",
+        "D": "Muscle fiber"
+      },
+      "correct_choice": "B",
+      "answer": "Posterior (dorsal)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The state of dynamic equilibrium of the internal environment of the body is called:",
+      "choices": {
+        "A": "Nociceptors",
+        "B": "Tendons",
+        "C": "Sarcomere",
+        "D": "Homeostasis"
+      },
+      "correct_choice": "D",
+      "answer": "Homeostasis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The study of the structure of the body is called:",
+      "choices": {
+        "A": "Cartilage",
+        "B": "Metaphase",
+        "C": "Thymine",
+        "D": "Anatomy"
+      },
+      "correct_choice": "D",
+      "answer": "Anatomy"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The smallest living units that make up the body’s structure are called:",
+      "choices": {
+        "A": "Epidermis",
+        "B": "Keratin",
+        "C": "Cells",
+        "D": "Sarcomere"
+      },
+      "correct_choice": "C",
+      "answer": "Cells"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of tissue covers or lines the body’s surfaces",
+      "choices": {
+        "A": "Cellular respiration (catabolism)",
+        "B": "Epithelial tissue",
+        "C": "Nervous tissue",
+        "D": "Vitamin D"
+      },
+      "correct_choice": "B",
+      "answer": "Epithelial tissue"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of tissue generates and transmits impulses to regulate body functions",
+      "choices": {
+        "A": "Nervous tissue",
+        "B": "Isotonic contraction",
+        "C": "Metaphase",
+        "D": "Osteon (Haversian system)"
+      },
+      "correct_choice": "A",
+      "answer": "Nervous tissue"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Name the major cavity encompassing the front of the body",
+      "choices": {
+        "A": "Ventral cavity",
+        "B": "Tendons",
+        "C": "Compound (open) fracture",
+        "D": "Nucleus pulposus"
+      },
+      "correct_choice": "A",
+      "answer": "Ventral cavity"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A particle without an electrical charge that is contained within the nucleus of an atom is called:",
+      "choices": {
+        "A": "Neutron",
+        "B": "7 pairs",
+        "C": "Fatty acids",
+        "D": "Mitosis"
+      },
+      "correct_choice": "A",
+      "answer": "Neutron"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A substance that can not be broken down into two or more substances is called:",
+      "choices": {
+        "A": "Astrocytes",
+        "B": "Element",
+        "C": "Filtration",
+        "D": "Axis (C2)"
+      },
+      "correct_choice": "B",
+      "answer": "Element"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A chemical combination of two or more elements is called:",
+      "choices": {
+        "A": "Exocrine glands",
+        "B": "Compound",
+        "C": "Cataract",
+        "D": "Exocytosis"
+      },
+      "correct_choice": "B",
+      "answer": "Compound"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "An ion with a negative charge is called:",
+      "choices": {
+        "A": "Vitamin D",
+        "B": "Cataract",
+        "C": "Tendons",
+        "D": "Anion"
+      },
+      "correct_choice": "D",
+      "answer": "Anion"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "How are ionic bonds formed?",
+      "choices": {
+        "A": "Ionic bonds form by transfer of electrons and electrostatic attraction between oppositely charged ions.",
+        "B": "Nociceptors",
+        "C": "Rheumatoid arthritis",
+        "D": "Keratin"
+      },
+      "correct_choice": "A",
+      "answer": "Ionic bonds form by transfer of electrons and electrostatic attraction between oppositely charged ions."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "How are covalent bonds formed?",
+      "choices": {
+        "A": "Prevents anterior displacement of the tibia (prevents the tibia from sliding forward).",
+        "B": "Autonomic nervous system (ANS)",
+        "C": "Synovial joints (diarthroses)",
+        "D": "Covalent bonds form by sharing electrons between atoms."
+      },
+      "correct_choice": "D",
+      "answer": "Covalent bonds form by sharing electrons between atoms."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What does pH stand for?",
+      "choices": {
+        "A": "Isotonic contraction",
+        "B": "Hypertonic solution",
+        "C": "Integumentary system",
+        "D": "Potential of hydrogen"
+      },
+      "correct_choice": "D",
+      "answer": "Potential of hydrogen"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A compound that dissociates in water to create a solution capable of producing an electrical charge is called:",
+      "choices": {
+        "A": "Nociceptors",
+        "B": "Electrolyte",
+        "C": "Plantar flexion",
+        "D": "Red bone marrow"
+      },
+      "correct_choice": "B",
+      "answer": "Electrolyte"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What is the name of the process by which complex compounds are broken down to release energy?",
+      "choices": {
+        "A": "Connective tissue",
+        "B": "Isotonic contraction",
+        "C": "Arrector pili muscle",
+        "D": "Cellular respiration (catabolism)"
+      },
+      "correct_choice": "D",
+      "answer": "Cellular respiration (catabolism)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "How is the atomic weight of an atom determined?",
+      "choices": {
+        "A": "Vasoconstriction (and insulation from subcutaneous fat)",
+        "B": "By adding the number of protons and neutrons (mass number).",
+        "C": "Autonomic nervous system (ANS)",
+        "D": "Produce ATP (energy) via cellular respiration."
+      },
+      "correct_choice": "B",
+      "answer": "By adding the number of protons and neutrons (mass number)."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of solution contains a higher concentration of solutes compared to the fluid within the cell",
+      "choices": {
+        "A": "Cellular respiration (catabolism)",
+        "B": "Hypertonic solution",
+        "C": "Nervous tissue",
+        "D": "Hippocampus"
+      },
+      "correct_choice": "B",
+      "answer": "Hypertonic solution"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What is the function of mitochondria?",
+      "choices": {
+        "A": "Motor (efferent) neuron",
+        "B": "Produce ATP (energy) via cellular respiration.",
+        "C": "Modify, package, and ship proteins and lipids.",
+        "D": "Compound (open) fracture"
+      },
+      "correct_choice": "B",
+      "answer": "Produce ATP (energy) via cellular respiration."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What is the chief purpose of the golgi apparatus?",
+      "choices": {
+        "A": "Synovial joints (diarthroses)",
+        "B": "Osteon (Haversian system)",
+        "C": "Pleura (pleural membrane)",
+        "D": "Modify, package, and ship proteins and lipids."
+      },
+      "correct_choice": "D",
+      "answer": "Modify, package, and ship proteins and lipids."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What does DNA stand for?",
+      "choices": {
+        "A": "Creatine phosphate (phosphocreatine)",
+        "B": "Deoxyribonucleic acid",
+        "C": "Fontanels (fontanelles)",
+        "D": "Vestibulocochlear nerve (CN VIII)"
+      },
+      "correct_choice": "B",
+      "answer": "Deoxyribonucleic acid"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A form of vesicular transport that releases substances outside the cell is called:",
+      "choices": {
+        "A": "Connective tissue",
+        "B": "Epiphyseal plate",
+        "C": "Plantar flexion",
+        "D": "Exocytosis"
+      },
+      "correct_choice": "D",
+      "answer": "Exocytosis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The type of cell division where one cells splits into two identical daughter cells is called:",
+      "choices": {
+        "A": "Filtration",
+        "B": "Mitosis",
+        "C": "Osteoarthritis",
+        "D": "Sella turcica"
+      },
+      "correct_choice": "B",
+      "answer": "Mitosis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "In which phase of mitosis do the chromosomes line up along the center of the cell?",
+      "choices": {
+        "A": "Nociceptors",
+        "B": "Hippocampus",
+        "C": "Exocrine glands",
+        "D": "Metaphase"
+      },
+      "correct_choice": "D",
+      "answer": "Metaphase"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which DNA nitrogenous base pairs with Adenine?",
+      "choices": {
+        "A": "Thymine",
+        "B": "Exocytosis",
+        "C": "Tendons",
+        "D": "Vitamin D"
+      },
+      "correct_choice": "A",
+      "answer": "Thymine"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of passive transport mechanism occurs when water and solutes move through a selectively permeable membrane as a result of hydrostatic pressure:",
+      "choices": {
+        "A": "Filtration",
+        "B": "Hypertonic solution",
+        "C": "Synovial fluid",
+        "D": "Ligaments"
+      },
+      "correct_choice": "A",
+      "answer": "Filtration"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "These cellular structures are hair like processes along the surface of a cell that beat in waves:",
+      "choices": {
+        "A": "Cilia",
+        "B": "Sarcomere",
+        "C": "Mitosis",
+        "D": "Axis (C2)"
+      },
+      "correct_choice": "A",
+      "answer": "Cilia"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A type of cell that can divide into a number of different cells is called:",
+      "choices": {
+        "A": "Cartilage",
+        "B": "Stem cell",
+        "C": "Calcaneus",
+        "D": "Exocrine glands"
+      },
+      "correct_choice": "B",
+      "answer": "Stem cell"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The most widespread and varied of all of the tissues is the:",
+      "choices": {
+        "A": "Ossification (osteogenesis)",
+        "B": "Potential of hydrogen",
+        "C": "Proprioceptors",
+        "D": "Connective tissue"
+      },
+      "correct_choice": "D",
+      "answer": "Connective tissue"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Structures that attach bone to bone:",
+      "choices": {
+        "A": "Thymine",
+        "B": "Stem cell",
+        "C": "Sarcomere",
+        "D": "Ligaments"
+      },
+      "correct_choice": "D",
+      "answer": "Ligaments"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Structures that attach muscle to bone:",
+      "choices": {
+        "A": "Nervous tissue",
+        "B": "Neutron",
+        "C": "Ventral cavity",
+        "D": "Tendons"
+      },
+      "correct_choice": "D",
+      "answer": "Tendons"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of tissue lacks blood vessels and must depend on a basement membrane for nutrients:",
+      "choices": {
+        "A": "Vitamin D",
+        "B": "Epithelial tissue",
+        "C": "Hypertonic solution",
+        "D": "Epiphyseal plate"
+      },
+      "correct_choice": "B",
+      "answer": "Epithelial tissue"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Glands that secretes its products into ducts:",
+      "choices": {
+        "A": "Muscle fiber",
+        "B": "Homeostasis",
+        "C": "Exocrine glands",
+        "D": "Cataract"
+      },
+      "correct_choice": "C",
+      "answer": "Exocrine glands"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "AKA liquid connective tissue:",
+      "choices": {
+        "A": "Cartilage",
+        "B": "Stem cell",
+        "C": "Melanoma",
+        "D": "Blood"
+      },
+      "correct_choice": "D",
+      "answer": "Blood"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Modified cells that produce large quantities of mucous are called:",
+      "choices": {
+        "A": "Filtration",
+        "B": "Goblet cells",
+        "C": "Stem cell",
+        "D": "Epiphyseal plate"
+      },
+      "correct_choice": "B",
+      "answer": "Goblet cells"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of cartilage is found at the ends of movable joints:",
+      "choices": {
+        "A": "Hyaline cartilage",
+        "B": "Osteoporosis",
+        "C": "Periosteum",
+        "D": "Stem cell"
+      },
+      "correct_choice": "A",
+      "answer": "Hyaline cartilage"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This membrane surrounds each lung and lines the thoracic cavity:",
+      "choices": {
+        "A": "Isotonic contraction",
+        "B": "Synovial fluid",
+        "C": "Pleura (pleural membrane)",
+        "D": "Epiphyseal plate"
+      },
+      "correct_choice": "C",
+      "answer": "Pleura (pleural membrane)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What is the name of the outermost layer of the skin?",
+      "choices": {
+        "A": "Neutron",
+        "B": "Vitamin D",
+        "C": "Tendons",
+        "D": "Epidermis"
+      },
+      "correct_choice": "D",
+      "answer": "Epidermis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Skin cells produce which tough, fibrous protein?",
+      "choices": {
+        "A": "Cerebellum",
+        "B": "Melanoma",
+        "C": "Keratin",
+        "D": "Sella turcica"
+      },
+      "correct_choice": "C",
+      "answer": "Keratin"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The skin initiates the production of which vitamin?",
+      "choices": {
+        "A": "Calcaneus",
+        "B": "Articulation",
+        "C": "Homeostasis",
+        "D": "Vitamin D"
+      },
+      "correct_choice": "D",
+      "answer": "Vitamin D"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of skin cancer is the most deadly because it quickly metastasizes?",
+      "choices": {
+        "A": "Sarcomere",
+        "B": "Osteoclasts",
+        "C": "Melanoma",
+        "D": "Osteoarthritis"
+      },
+      "correct_choice": "C",
+      "answer": "Melanoma"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "How does the skin help conserve body heat?",
+      "choices": {
+        "A": "Protection; temperature regulation; sensation; excretion; vitamin D production",
+        "B": "Vasoconstriction (and insulation from subcutaneous fat)",
+        "C": "Vestibulocochlear nerve (CN VIII)",
+        "D": "Medial longitudinal arch, lateral longitudinal arch, and transverse arch"
+      },
+      "correct_choice": "B",
+      "answer": "Vasoconstriction (and insulation from subcutaneous fat)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What structure in the dermis causes hair to “stand on end”?",
+      "choices": {
+        "A": "Hypothalamus",
+        "B": "Filtration",
+        "C": "Arrector pili muscle",
+        "D": "Digestive system"
+      },
+      "correct_choice": "C",
+      "answer": "Arrector pili muscle"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "List the 5 functions of the skin",
+      "choices": {
+        "A": "Protection; temperature regulation; sensation; excretion; vitamin D production",
+        "B": "Hyaline cartilage",
+        "C": "Epithelial tissue",
+        "D": "Compound"
+      },
+      "correct_choice": "A",
+      "answer": "Protection; temperature regulation; sensation; excretion; vitamin D production"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This skin disorder is the result of a genetic lack of melanin",
+      "choices": {
+        "A": "Epiphysis",
+        "B": "Ligaments",
+        "C": "Albinism",
+        "D": "Plantar flexion"
+      },
+      "correct_choice": "C",
+      "answer": "Albinism"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Explain the role of melanin in the skin",
+      "choices": {
+        "A": "Melanin absorbs UV radiation to help protect DNA and contributes to skin color.",
+        "B": "Exocytosis",
+        "C": "Nociceptors",
+        "D": "Sweet, sour, salty, bitter, umami"
+      },
+      "correct_choice": "A",
+      "answer": "Melanin absorbs UV radiation to help protect DNA and contributes to skin color."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The creation of new bone is called:",
+      "choices": {
+        "A": "Shoulder (glenohumeral joint)",
+        "B": "Ossification (osteogenesis)",
+        "C": "Epiphyseal plate",
+        "D": "Exocrine glands"
+      },
+      "correct_choice": "B",
+      "answer": "Ossification (osteogenesis)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The basic structural unit of bone is called an:",
+      "choices": {
+        "A": "Cartilaginous joints (amphiarthroses)",
+        "B": "Hypertonic solution",
+        "C": "Osteon (Haversian system)",
+        "D": "Isotonic contraction"
+      },
+      "correct_choice": "C",
+      "answer": "Osteon (Haversian system)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The layer of cartilage that separates the epiphysis and the diaphysis, AKA growth plate:",
+      "choices": {
+        "A": "Vitamin D",
+        "B": "Hippocampus",
+        "C": "Compound (open) fracture",
+        "D": "Epiphyseal plate"
+      },
+      "correct_choice": "D",
+      "answer": "Epiphyseal plate"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The head of a long bone is called:",
+      "choices": {
+        "A": "Tendons",
+        "B": "Calcaneus",
+        "C": "Nociceptors",
+        "D": "Epiphysis"
+      },
+      "correct_choice": "D",
+      "answer": "Epiphysis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Where are red blood cells produced?",
+      "choices": {
+        "A": "Red bone marrow",
+        "B": "Hippocampus",
+        "C": "Electrolyte",
+        "D": "Ossification (osteogenesis)"
+      },
+      "correct_choice": "A",
+      "answer": "Red bone marrow"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Type of fracture in which the bone pierces the skin:",
+      "choices": {
+        "A": "Sweet, sour, salty, bitter, umami",
+        "B": "Potential of hydrogen",
+        "C": "Compound (open) fracture",
+        "D": "Ventral cavity"
+      },
+      "correct_choice": "C",
+      "answer": "Compound (open) fracture"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A fetus’s first skeleton is primarily composed of?",
+      "choices": {
+        "A": "Cartilage",
+        "B": "Osteoporosis",
+        "C": "Synovial fluid",
+        "D": "Stem cell"
+      },
+      "correct_choice": "A",
+      "answer": "Cartilage"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Disorder that means “porous bone”",
+      "choices": {
+        "A": "Hyaline cartilage",
+        "B": "Glaucoma",
+        "C": "Sarcomere",
+        "D": "Osteoporosis"
+      },
+      "correct_choice": "D",
+      "answer": "Osteoporosis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Bone cells that dissolve unwanted or unhealthy bone are called:",
+      "choices": {
+        "A": "Nervous tissue",
+        "B": "Posterior (dorsal)",
+        "C": "Osteoclasts",
+        "D": "Melanoma"
+      },
+      "correct_choice": "C",
+      "answer": "Osteoclasts"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The dense, fibrous membrane that covers the diaphysis is called:",
+      "choices": {
+        "A": "Calcaneus",
+        "B": "Red bone marrow",
+        "C": "Cilia",
+        "D": "Periosteum"
+      },
+      "correct_choice": "D",
+      "answer": "Periosteum"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A lateral curvature of the spine is called:",
+      "choices": {
+        "A": "Neutron",
+        "B": "Articulation",
+        "C": "Keratin",
+        "D": "Scoliosis"
+      },
+      "correct_choice": "D",
+      "answer": "Scoliosis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Humans have how many pairs of true ribs?",
+      "choices": {
+        "A": "Neutron",
+        "B": "7 pairs",
+        "C": "Periosteum",
+        "D": "Metaphase"
+      },
+      "correct_choice": "B",
+      "answer": "7 pairs"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which part of the ox coxae supports your weight while sitting?",
+      "choices": {
+        "A": "Covalent bonds form by sharing electrons between atoms.",
+        "B": "Ischium (ischial tuberosity)",
+        "C": "Epithelial tissue",
+        "D": "Produce ATP (energy) via cellular respiration."
+      },
+      "correct_choice": "B",
+      "answer": "Ischium (ischial tuberosity)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which bone forms the heel?",
+      "choices": {
+        "A": "Calcium (Ca2+)",
+        "B": "Calcaneus",
+        "C": "Epiphysis",
+        "D": "Synovial fluid"
+      },
+      "correct_choice": "B",
+      "answer": "Calcaneus"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The pituitary gland rests in an indented area of the sphenoid bone known as the?",
+      "choices": {
+        "A": "Cerebellum",
+        "B": "Compound (open) fracture",
+        "C": "Sella turcica",
+        "D": "Potential of hydrogen"
+      },
+      "correct_choice": "C",
+      "answer": "Sella turcica"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "List the three arches of the foot",
+      "choices": {
+        "A": "Sweet, sour, salty, bitter, umami",
+        "B": "Cataract",
+        "C": "Kyphosis",
+        "D": "Medial longitudinal arch, lateral longitudinal arch, and transverse arch"
+      },
+      "correct_choice": "D",
+      "answer": "Medial longitudinal arch, lateral longitudinal arch, and transverse arch"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The gel-like core of an intervertebral disc is called:",
+      "choices": {
+        "A": "Sarcomere",
+        "B": "Acetylcholine (ACh)",
+        "C": "Nucleus pulposus",
+        "D": "Autonomic nervous system (ANS)"
+      },
+      "correct_choice": "C",
+      "answer": "Nucleus pulposus"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The soft spots on an infants’ skull are called:",
+      "choices": {
+        "A": "Osteon (Haversian system)",
+        "B": "Synovial joints (diarthroses)",
+        "C": "Goblet cells",
+        "D": "Fontanels (fontanelles)"
+      },
+      "correct_choice": "D",
+      "answer": "Fontanels (fontanelles)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "An exaggerated thoracic curve is called:",
+      "choices": {
+        "A": "Epiphysis",
+        "B": "Kyphosis",
+        "C": "Nervous tissue",
+        "D": "Keratin"
+      },
+      "correct_choice": "B",
+      "answer": "Kyphosis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Name of the second cervical vertebra",
+      "choices": {
+        "A": "Fatty acids",
+        "B": "Axis (C2)",
+        "C": "Filtration",
+        "D": "Compound"
+      },
+      "correct_choice": "B",
+      "answer": "Axis (C2)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The anterior cruciate ligament keeps the knee from doing this:",
+      "choices": {
+        "A": "7 pairs",
+        "B": "Keratin",
+        "C": "Prevents anterior displacement of the tibia (prevents the tibia from sliding forward).",
+        "D": "Extension"
+      },
+      "correct_choice": "C",
+      "answer": "Prevents anterior displacement of the tibia (prevents the tibia from sliding forward)."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Type of fluid that fills the joint capsule and lubricates the joint:",
+      "choices": {
+        "A": "Hypertonic solution",
+        "B": "Acetylcholine (ACh)",
+        "C": "Arrector pili muscle",
+        "D": "Synovial fluid"
+      },
+      "correct_choice": "D",
+      "answer": "Synovial fluid"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Another name for a joint",
+      "choices": {
+        "A": "Neurons",
+        "B": "Epidermis",
+        "C": "Articulation",
+        "D": "Cataract"
+      },
+      "correct_choice": "C",
+      "answer": "Articulation"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of arthritis is attributed to wear and tear:",
+      "choices": {
+        "A": "Cataract",
+        "B": "Osteoarthritis",
+        "C": "Element",
+        "D": "Ossification (osteogenesis)"
+      },
+      "correct_choice": "B",
+      "answer": "Osteoarthritis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This type of arthritis is an autoimmune disease:",
+      "choices": {
+        "A": "Cerebellum",
+        "B": "Rheumatoid arthritis",
+        "C": "Osteoarthritis",
+        "D": "Epithelial tissue"
+      },
+      "correct_choice": "B",
+      "answer": "Rheumatoid arthritis"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which type of joint is also known as amphiarthroses?",
+      "choices": {
+        "A": "Cartilaginous joints (amphiarthroses)",
+        "B": "Osteon (Haversian system)",
+        "C": "Sweet, sour, salty, bitter, umami",
+        "D": "Modify, package, and ship proteins and lipids."
+      },
+      "correct_choice": "A",
+      "answer": "Cartilaginous joints (amphiarthroses)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which type of joint is also known as diarthroses?",
+      "choices": {
+        "A": "Vasoconstriction (and insulation from subcutaneous fat)",
+        "B": "Osteon (Haversian system)",
+        "C": "Synovial joints (diarthroses)",
+        "D": "Endocrine system"
+      },
+      "correct_choice": "C",
+      "answer": "Synovial joints (diarthroses)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This movement involves straightening a joint, increasing the angle between the bones:",
+      "choices": {
+        "A": "Digestive system",
+        "B": "Extension",
+        "C": "Nociceptors",
+        "D": "Mitosis"
+      },
+      "correct_choice": "B",
+      "answer": "Extension"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This movement involves moving the toes or foot downward:",
+      "choices": {
+        "A": "Proprioceptors",
+        "B": "Calcium (Ca2+)",
+        "C": "Plantar flexion",
+        "D": "Sarcomere"
+      },
+      "correct_choice": "C",
+      "answer": "Plantar flexion"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which joint in the body is the most likely to be dislocated?",
+      "choices": {
+        "A": "Osteon (Haversian system)",
+        "B": "Rheumatoid arthritis",
+        "C": "Shoulder (glenohumeral joint)",
+        "D": "Vestibulocochlear nerve (CN VIII)"
+      },
+      "correct_choice": "C",
+      "answer": "Shoulder (glenohumeral joint)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A single muscle cell is called:",
+      "choices": {
+        "A": "Glaucoma",
+        "B": "Filtration",
+        "C": "Muscle fiber",
+        "D": "Twitch"
+      },
+      "correct_choice": "C",
+      "answer": "Muscle fiber"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Describe the steps of muscle contraction beginning at the neuromuscular junction",
+      "choices": {
+        "A": "At the NMJ, ACh triggers a muscle action potential; the AP travels along the sarcolemma and T-tubules; the SR releases Ca2+; Ca2+ binds troponin and shifts tropomyosin; myosin binds actin and performs power strokes; ATP detaches and re-cocks myosin; cycling continues while Ca2+ and ATP are present; relaxation occurs when ACh stops and Ca2+ is pumped back into the SR.",
+        "B": "Neutron",
+        "C": "Articulation",
+        "D": "Albinism"
+      },
+      "correct_choice": "A",
+      "answer": "At the NMJ, ACh triggers a muscle action potential; the AP travels along the sarcolemma and T-tubules; the SR releases Ca2+; Ca2+ binds troponin and shifts tropomyosin; myosin binds actin and performs power strokes; ATP detaches and re-cocks myosin; cycling continues while Ca2+ and ATP are present; relaxation occurs when ACh stops and Ca2+ is pumped back into the SR."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The individual contractile unit of a muscle is called a:",
+      "choices": {
+        "A": "Epithelial tissue",
+        "B": "Sarcomere",
+        "C": "Metaphase",
+        "D": "Goblet cells"
+      },
+      "correct_choice": "B",
+      "answer": "Sarcomere"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Identify the three types of muscle and the general characteristics of each",
+      "choices": {
+        "A": "Ligaments",
+        "B": "Neuroglia (glial cells)",
+        "C": "Axis (C2)",
+        "D": "Skeletal: striated, voluntary, moves bones. Cardiac: striated, involuntary, heart, intercalated discs. Smooth: nonstriated, involuntary, walls of organs and vessels."
+      },
+      "correct_choice": "D",
+      "answer": "Skeletal: striated, voluntary, moves bones. Cardiac: striated, involuntary, heart, intercalated discs. Smooth: nonstriated, involuntary, walls of organs and vessels."
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The storage form of energy within a muscle that is used for short bursts of activity is called:",
+      "choices": {
+        "A": "Creatine phosphate (phosphocreatine)",
+        "B": "Fontanels (fontanelles)",
+        "C": "Modify, package, and ship proteins and lipids.",
+        "D": "Posterior (dorsal)"
+      },
+      "correct_choice": "A",
+      "answer": "Creatine phosphate (phosphocreatine)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "At rest, muscles obtain most of their energy by metabolizing what substance?",
+      "choices": {
+        "A": "Osteoarthritis",
+        "B": "Periosteum",
+        "C": "Fatty acids",
+        "D": "7 pairs"
+      },
+      "correct_choice": "C",
+      "answer": "Fatty acids"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "During muscle contraction, the sarcoplasmic reticulum secretes what substance?",
+      "choices": {
+        "A": "Sarcomere",
+        "B": "Hypertonic solution",
+        "C": "Calcium (Ca2+)",
+        "D": "Homeostasis"
+      },
+      "correct_choice": "C",
+      "answer": "Calcium (Ca2+)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "A single, brief muscle contraction is called:",
+      "choices": {
+        "A": "Muscle fiber",
+        "B": "Olfaction",
+        "C": "Compound",
+        "D": "Twitch"
+      },
+      "correct_choice": "D",
+      "answer": "Twitch"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This chemical messenger is released from the end of a motor neuron:",
+      "choices": {
+        "A": "Acetylcholine (ACh)",
+        "B": "Sella turcica",
+        "C": "Hippocampus",
+        "D": "Ischium (ischial tuberosity)"
+      },
+      "correct_choice": "A",
+      "answer": "Acetylcholine (ACh)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Contraction in which the muscle changes length while the tension remains the same:",
+      "choices": {
+        "A": "Endocrine system",
+        "B": "Fatty acids",
+        "C": "Isotonic contraction",
+        "D": "Pleura (pleural membrane)"
+      },
+      "correct_choice": "C",
+      "answer": "Isotonic contraction"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Type of neuron that detects stimuli and transmits impulses to the brain and spinal cord:",
+      "choices": {
+        "A": "Sensory (afferent) neuron",
+        "B": "Cartilaginous joints (amphiarthroses)",
+        "C": "Osteon (Haversian system)",
+        "D": "Isotonic contraction"
+      },
+      "correct_choice": "A",
+      "answer": "Sensory (afferent) neuron"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Division of the nervous system that provides for the body’s automatic activities:",
+      "choices": {
+        "A": "Synovial joints (diarthroses)",
+        "B": "Osteon (Haversian system)",
+        "C": "Acetylcholine (ACh)",
+        "D": "Autonomic nervous system (ANS)"
+      },
+      "correct_choice": "D",
+      "answer": "Autonomic nervous system (ANS)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Type of neuron that relays messages from the brain to muscles of gland cells:",
+      "choices": {
+        "A": "Digestive system",
+        "B": "Hypertonic solution",
+        "C": "Nucleus pulposus",
+        "D": "Motor (efferent) neuron"
+      },
+      "correct_choice": "D",
+      "answer": "Motor (efferent) neuron"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Impulse conducting cells of the nervous system are called:",
+      "choices": {
+        "A": "Cilia",
+        "B": "Cerebellum",
+        "C": "Ligaments",
+        "D": "Neurons"
+      },
+      "correct_choice": "D",
+      "answer": "Neurons"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Division of the nervous system that carries signals from the organs:",
+      "choices": {
+        "A": "Digestive system",
+        "B": "Integumentary system",
+        "C": "Ossification (osteogenesis)",
+        "D": "Autonomic nervous system (ANS)"
+      },
+      "correct_choice": "D",
+      "answer": "Autonomic nervous system (ANS)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Supportive cells of the nervous system:",
+      "choices": {
+        "A": "Sensory (afferent) neuron",
+        "B": "Epithelial tissue",
+        "C": "Neuroglia (glial cells)",
+        "D": "Autonomic nervous system (ANS)"
+      },
+      "correct_choice": "C",
+      "answer": "Neuroglia (glial cells)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Type of neuroglia that make up the blood-brain barrier:",
+      "choices": {
+        "A": "Calcium (Ca2+)",
+        "B": "Astrocytes",
+        "C": "Scoliosis",
+        "D": "Mitosis"
+      },
+      "correct_choice": "B",
+      "answer": "Astrocytes"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This structure contains more neurons than any part of the brain:",
+      "choices": {
+        "A": "Hyaline cartilage",
+        "B": "Osteoclasts",
+        "C": "Stem cell",
+        "D": "Cerebellum"
+      },
+      "correct_choice": "D",
+      "answer": "Cerebellum"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This brain structure converts short-term memory into long-term memory:",
+      "choices": {
+        "A": "Deoxyribonucleic acid",
+        "B": "Osteoarthritis",
+        "C": "Ligaments",
+        "D": "Hippocampus"
+      },
+      "correct_choice": "D",
+      "answer": "Hippocampus"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "This brain structure contains control centers for hunger, thirst, and temperature regulation",
+      "choices": {
+        "A": "Muscle fiber",
+        "B": "Epithelial tissue",
+        "C": "Hypothalamus",
+        "D": "Exocytosis"
+      },
+      "correct_choice": "C",
+      "answer": "Hypothalamus"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "These receptors are responsible for color vision",
+      "choices": {
+        "A": "Cones",
+        "B": "Astrocytes",
+        "C": "Axis (C2)",
+        "D": "Sarcomere"
+      },
+      "correct_choice": "A",
+      "answer": "Cones"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Clouding of the lens of the eye is called:",
+      "choices": {
+        "A": "Cataract",
+        "B": "Neurons",
+        "C": "Proprioceptors",
+        "D": "Nervous tissue"
+      },
+      "correct_choice": "A",
+      "answer": "Cataract"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "The condition caused by an increase in intraocular pressure is called:",
+      "choices": {
+        "A": "Exocytosis",
+        "B": "Extension",
+        "C": "Glaucoma",
+        "D": "Anion"
+      },
+      "correct_choice": "C",
+      "answer": "Glaucoma"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Where is the smallest bone in the body located?",
+      "choices": {
+        "A": "Posterior (dorsal)",
+        "B": "Middle ear (the stapes)",
+        "C": "Hypertonic solution",
+        "D": "Nervous tissue"
+      },
+      "correct_choice": "B",
+      "answer": "Middle ear (the stapes)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "AKA pain receptors:",
+      "choices": {
+        "A": "Nociceptors",
+        "B": "Sella turcica",
+        "C": "Red bone marrow",
+        "D": "Hippocampus"
+      },
+      "correct_choice": "A",
+      "answer": "Nociceptors"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Receptor that allows you to orient your body in space:",
+      "choices": {
+        "A": "Proprioceptors",
+        "B": "Stem cell",
+        "C": "Plantar flexion",
+        "D": "Electrolyte"
+      },
+      "correct_choice": "A",
+      "answer": "Proprioceptors"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "List the 5 tastes:",
+      "choices": {
+        "A": "Synovial joints (diarthroses)",
+        "B": "Sweet, sour, salty, bitter, umami",
+        "C": "Cellular respiration (catabolism)",
+        "D": "Vasoconstriction (and insulation from subcutaneous fat)"
+      },
+      "correct_choice": "B",
+      "answer": "Sweet, sour, salty, bitter, umami"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Describe the pain pathway",
+      "choices": {
+        "A": "Nociceptor → sensory neuron → dorsal root ganglion → dorsal horn spinal cord → ascend via spinothalamic tract → thalamus → somatosensory cortex",
+        "B": "Deoxyribonucleic acid",
+        "C": "Kyphosis",
+        "D": "Scoliosis"
+      },
+      "correct_choice": "A",
+      "answer": "Nociceptor → sensory neuron → dorsal root ganglion → dorsal horn spinal cord → ascend via spinothalamic tract → thalamus → somatosensory cortex"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "Which nerve is involved in the process of hearing?",
+      "choices": {
+        "A": "By adding the number of protons and neutrons (mass number).",
+        "B": "Sensory (afferent) neuron",
+        "C": "Rheumatoid arthritis",
+        "D": "Vestibulocochlear nerve (CN VIII)"
+      },
+      "correct_choice": "D",
+      "answer": "Vestibulocochlear nerve (CN VIII)"
+    },
+    {
+      "domain_code": "D1",
+      "question_type": "mcq",
+      "difficulty": "easy",
+      "prompt": "What is the sense of smell called?",
+      "choices": {
+        "A": "Anatomy",
+        "B": "7 pairs",
+        "C": "Olfaction",
+        "D": "Cerebellum"
+      },
+      "correct_choice": "C",
+      "answer": "Olfaction"
+    }
+  ]
+}

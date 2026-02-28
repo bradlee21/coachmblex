@@ -11,6 +11,49 @@ Active slicing plan and status tracker for Brains / Hands / Tester collaboration
 
 ## Active / Recent Slices
 
+### SLICE-MIDTERM-D1-FIX-1
+
+- Status: `done`
+- Title: Fix physiology-midterm-v1 schema for D1 import compatibility
+- Goal: Make `physiology-midterm-v1.json` importable under current `domain_code` requirements while preserving all prompt text and answer correctness.
+- In scope:
+- Update `src/content/packs/physiology-midterm-v1.json` pack metadata:
+- `title: Physiology Midterm v1`
+- `meta.visibility: active`
+- `meta.domain_code: D1`
+- `meta.domain_label: Anatomy & Physiology`
+- For every question row:
+- Set `domain_code: D1`
+- Enforce `question_type: mcq`
+- Ensure `answer` exactly equals `choices[correct_choice]`
+- Keep prompts and correct-choice mapping unchanged
+- Run strict import and required validations
+- Update docs (`docs/CHANGELOG.md`, `docs/slices.md`)
+- Out of scope:
+- Prompt rewrites
+- Correct answer changes
+- DB schema changes
+- Acceptance criteria:
+- Pre-import check returns `missing=0` for `domain_code` validity
+- strict import reports `Inserted: 109` with no sanity/linter skips
+- `npm run smoke` passes
+- `npm run build` passes
+- Required validation/tests:
+- `node -e "const p=require('./src/content/packs/physiology-midterm-v1.json'); console.log('q=',p.questions.length,'missing=',p.questions.filter(q=>!q.domain_code||!/^D[1-7]$/.test(q.domain_code)).length)"`
+- `node scripts/import-pack.mjs --strict-sanity src/content/packs/physiology-midterm-v1.json`
+- `npm run smoke`
+- `npm run build`
+- Files expected to change:
+- `src/content/packs/physiology-midterm-v1.json`
+- `docs/CHANGELOG.md`
+- `docs/slices.md`
+- Notes:
+- Validation (2026-02-27):
+- one-liner pass (`q= 109 missing= 0`)
+- strict import pass (`Inserted: 109`, `Sanity flagged: 0`, `Linter warnings: 0`)
+- `npm run smoke` pass
+- `npm run build` pass
+
 ### SLICE-D2-V2-1
 
 - Status: `done`
